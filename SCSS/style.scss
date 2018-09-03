@@ -1,0 +1,305 @@
+// base.scss
+@import 'noDefaultStyle';
+@import 'varsMixinExtends';
+$menuHeight:50px;
+@font-face {
+	font-family: "Cinzel";
+	src: url(../Resources/Cinzel-Regular.ttf);
+}
+@font-face {
+	font-family: "Julius";
+	src: url(../Resources/JuliusSansOne-Regular.ttf);
+}
+body {
+	/*Classes*/
+	.markerPopUp{
+		background-color: rgba(150, 150, 130, 0.3);
+		box-shadow: 0px 0px 2px 1px rgba(150, 150, 130, 0.3);
+		height: 300px;
+		width: 500px;
+	}
+	.title{
+		color: $cream-color;
+		margin: 10px;
+		background-color: rgba(30, 30, 30, 0.4);
+		@include widthHeightsize($width-12, 40px);
+		@include flex(column, center, center);
+		font-family: "Julius";
+	}
+	.centered-content{
+		@include flex(column, center, center);
+	}
+	background: $primary-color;
+	display: block;
+	font-family: "Cinzel";
+	.menu{
+		z-index: 999;
+		@include flex(row, space-between, center);
+		@include widthHeightsize($width-12, $menuHeight);
+		background-color: $primary-color;
+		top: 0;
+		position: fixed;
+		.logo{
+			@extend %FB-row-cen-cen;
+			font-size: 20px;
+			letter-spacing: 0.9em;
+			color: $third-color100;
+			text-align: center;
+			@media (min-width: 160px) and (max-width: $smallWidth){
+				@include widthHeightsize($width-11, 80%);
+				margin-top: 5px;
+			}
+			@media (min-width: $smallWidth+1) and (max-width: $mediumWidth){
+				@include widthHeightsize($width-4, 80%);
+				margin-left: 10px;
+			}
+			@media (min-width: $mediumWidth+1){
+				@include widthHeightsize($width-4, 80%);
+				margin-left: 10px;
+			}
+		}
+		div{
+			@include flex(column, center, center);
+			@media (min-width: 160px) and (max-width: $smallWidth){
+				&::before{
+					content: "";
+					background-image: url(../Resources/menu.svg);
+					@include widthHeightsize(40px, 40px);
+					background-position: 0px;
+					background-size: cover;
+					cursor: pointer;
+					margin:  0px 10px 0px 0px;
+				}
+				@include widthHeightsize($width-1, 80%);
+			}
+			@media (min-width: $smallWidth+1) and (max-width: $mediumWidth){
+				@include widthHeightsize($width-6, 80%);
+			}
+			@media (min-width: $mediumWidth+1){
+				@include widthHeightsize($width-6, 80%);
+			}
+			&:hover ul{
+				@media (min-width: 160px) and (max-width: $smallWidth){
+					transform: translateX(0%);
+					opacity: 1;
+				}
+			}
+			ul{
+				@include widthHeightsize($width-12, 80%);
+				@media (min-width: 160px) and (max-width: $smallWidth){
+					transition: 0.6s ease;
+					opacity: 0;
+					@include flex(column, space-around, center);
+					position: fixed;
+					top: 0;
+					right: 0;
+					background-color: $secondary-color80;
+					@include widthHeightsize($width-6, 100%);
+					transform: translateX(100%);
+					padding-top: 20px;
+					&::before{
+						content:"Opciones";
+						text-transform: uppercase;
+						top: 0;
+						@include widthHeightsize($width-12, 10%);
+						position: absolute;
+						@include flex(column, flex-start, center);
+						color: $third-color60;
+						letter-spacing: 0.6em;
+						padding-top: 10px;
+					}
+				}
+				@media (min-width: $smallWidth+1) and (max-width: $mediumWidth){
+					@include flex(row, space-around, center);
+				}
+				@media (min-width: $mediumWidth+1){
+					@include flex(row, space-around, center);
+				}
+				li{
+					flex-grow: 1;
+					@media (min-width: 160px) and (max-width: $smallWidth){
+						@include widthHeightsize(90%, 50%);
+						flex-grow: 0;
+					}
+					@extend %FB-col-cen-cen;
+					@include widthHeightsize(auto, 100%);
+					.luxFX{
+						@extend %FB-col-cen-cen;
+						letter-spacing: 0.7em;
+						font-size: 10px;
+						border-bottom: 1px solid $third-color50;
+						transition: 0.6s ease;
+						text-transform: uppercase;
+						color: $third-color100;
+						background: linear-gradient(0deg, $third-color100, rgba(146,111,52,0.8), rgba(34,34,34,0), rgba(34,34,34,0));
+						background-position: 50% 15%;
+						background-size: 300% 300%;
+						border-radius: 20px 20px 0px 0px;
+						opacity: 0.8;
+						@media (min-width: 160px) and (max-width: $smallWidth){
+							background-position: 50% 1%;
+							border: 1px solid $third-color50;
+							@include widthHeightsize(90%, 100%);
+							border-radius: 0px 0px 0px 0px;
+							max-height: 50px;
+							min-height: 30px;
+						}
+						@media (min-width: $smallWidth+1) and (max-width: $mediumWidth){
+							@include widthHeightsize(100%, 100%);
+						}
+						@media (min-width: $mediumWidth+1){
+							@include widthHeightsize(80%, 100%);
+						}
+						&:active{
+							opacity: 1;
+							transition: 0.05s ease;
+						}
+						&:hover{
+							background-position: 50% 99%;
+							color: #fff;
+							letter-spacing: 0.9em;
+						}
+					}		
+				}
+			}
+		}
+	}
+	main{
+		margin-top: $menuHeight;
+		@extend %FB-col-cen-cen;
+		@include widthHeightsize($width-12, auto);
+		section{
+			@include widthHeightsize($width-12, auto);
+			@extend %FB-col-spcA-cen;
+			&#LFMap{
+				div#mapid{
+					@include widthHeightsize($width-12, 800px);
+					*{
+						z-index: 0;
+					}
+					.leaflet-popup-content-wrapper, .leaflet-popup-tip{
+						background-color: $primary-color;
+						border: 2px groove $third-color100;	
+						z-index: 100;
+					}
+					.leaflet-popup-content-wrapper{
+						color: $cream-color;
+						font-family: "Quattrocento";
+						font-size: 15px;
+						.leaflet-popup-content{
+							@include flex(column, space-around, flex-start);
+							.centered{
+								text-align: center;
+							}
+							.mainPopTitle{
+								color: $third-color60;
+								font-family: "Julius";
+								letter-spacing: 0.7em;
+								margin-bottom: 10px;
+							}
+							.popTitle{
+								color: $cream-color;
+								font-family: "Julius";
+							}
+							a{
+								color: #00BCD4;
+							}
+							p{
+								margin: 10px;
+							}
+							button{
+								@include widthHeightsize($width-12, auto);
+								font-family: Julius;
+								cursor: pointer;
+								margin-top: 15px;
+								padding: 10px;
+								@extend %FB-col-cen-cen;
+								letter-spacing: 0.7em;
+								font-size: 10px;
+								border: none;
+								border: 1px solid $third-color50;
+								transition: 0.6s ease;
+								text-transform: uppercase;
+								color: $third-color100;
+								background: linear-gradient(0deg, $third-color100, rgba(146,111,52,0.8), rgba(34,34,34,0), rgba(34,34,34,0));
+								background-position: 50% 15%;
+								background-size: 300% 300%;
+								opacity: 0.8;
+								&:active{
+									opacity: 1;
+									transition: 0.05s ease;
+								}
+								&:focus{
+									outline: none;
+								}
+								&:hover{
+									background-position: 50% 99%;
+									color: #fff;
+								}
+							}
+							.inputTxt{
+								@include widthHeightsize($width-12, auto);
+								margin-top: 15px;
+								padding: 10px 0px;
+								border: 1px solid $third-color50;
+								background: transparent;
+								@extend %FB-col-cen-cen;
+								transition: 0.6s ease;
+								background: linear-gradient(0deg, $third-color100, rgba(146,111,52,0.8), rgba(34,34,34,0), rgba(34,34,34,0));
+								background-position: 50% 15%;
+								background-size: 300% 300%;
+								text-align: center;
+								color: $third-color100;
+								font-family: Julius;
+								&:focus{
+									outline: none;
+								}
+								&:hover{
+									border: 1px solid $third-color80;
+									background-position: 50% 49%;
+								}
+								&:focus{
+									border: 1px solid $third-color100;
+									background-position: 50% 99%;
+									color: #fff;
+								}
+							}
+						}
+					}
+					.leaflet-popup-close-button{
+						color: $cream-color;
+						opacity: 0.8;
+						background-color: $secondary-color100;
+						transform: translate(-3px,3px);
+						@include flex(column, center, center);
+						border-radius: 100px;
+						padding: 0;
+						width: 30px;
+						height: 30px;
+					}					
+					.leaflet-popup-close-button:hover{
+						opacity: 1;
+					}
+				}
+				.leaflet-bar{
+					opacity: 0.6;
+					&:hover{
+						opacity: 1;
+					}
+				}
+			}
+			&#GMap{
+				div#map{
+					@include widthHeightsize($width-12, 800px);
+				}
+			}
+		}
+	}
+	footer{
+		@include widthHeightsize(100%, 300px);
+		background-color: $secondary-color80;
+		box-shadow: 0px -3px 18px 2px rgba(0, 0, 0, 0.7);
+		border-top: 5px solid $secondary-color100;
+		bottom: 0;
+	}
+}
