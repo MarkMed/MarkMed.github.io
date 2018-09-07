@@ -10,60 +10,60 @@
    xmlns:xlink="http://www.w3.org/1999/xlink"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="10"
-   height="10"
-   viewBox="0 0 2.6458333 2.6458334"
+   width="13"
+   height="13"
+   viewBox="0 0 3.4395833 3.4395834"
    version="1.1"
    id="svg8"
    inkscape:version="0.92.3 (2405546, 2018-03-11)"
-   sodipodi:docname="sqr.svg">
+   sodipodi:docname="circle.svg">
   <defs
      id="defs2">
     <linearGradient
        inkscape:collect="always"
-       id="linearGradient822">
+       id="linearGradient837">
       <stop
-         style="stop-color:#1e3641;stop-opacity:1;"
+         style="stop-color:#1e3641;stop-opacity:1"
          offset="0"
-         id="stop817" />
+         id="stop833" />
       <stop
          style="stop-color:#1e3663;stop-opacity:1"
          offset="1"
-         id="stop820" />
+         id="stop835" />
     </linearGradient>
     <linearGradient
        inkscape:collect="always"
-       id="linearGradient823">
+       id="linearGradient829">
       <stop
-         id="stop821"
+         style="stop-color:#f4ce72;stop-opacity:1"
          offset="0"
-         style="stop-color:#f4ce72;stop-opacity:1" />
+         id="stop825" />
       <stop
-         id="stop819"
+         style="stop-color:#ac7e0d;stop-opacity:1"
          offset="1"
-         style="stop-color:#ac7e0d;stop-opacity:1" />
+         id="stop827" />
     </linearGradient>
     <linearGradient
        inkscape:collect="always"
-       xlink:href="#linearGradient823"
-       id="linearGradient825"
-       x1="0.50350434"
-       y1="295.01059"
-       x2="2.1389313"
-       y2="295.84518"
+       xlink:href="#linearGradient829"
+       id="linearGradient831"
+       x1="0.24900003"
+       y1="294.81171"
+       x2="1.8252655"
+       y2="295.42111"
        gradientUnits="userSpaceOnUse"
        spreadMethod="reflect"
-       gradientTransform="matrix(0.88897958,0,0,0.89244496,0.14394615,31.798329)" />
+       gradientTransform="matrix(1.1333222,0,0,1.1333222,0.22031858,-39.801184)" />
     <linearGradient
        inkscape:collect="always"
-       xlink:href="#linearGradient822"
-       id="linearGradient824"
-       x1="1.9116008"
-       y1="296.25671"
-       x2="0.41961265"
-       y2="293.73102"
+       xlink:href="#linearGradient837"
+       id="linearGradient839"
+       x1="1.0716518"
+       y1="296.24124"
+       x2="0.91886401"
+       y2="295.11722"
        gradientUnits="userSpaceOnUse"
-       gradientTransform="matrix(0.99962232,0,0,1.003519,4.9984805e-4,-1.0415181)" />
+       gradientTransform="matrix(1.1333222,0,0,1.1333222,0.22031858,-39.801184)" />
   </defs>
   <sodipodi:namedview
      id="base"
@@ -72,10 +72,10 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="256"
-     inkscape:cx="6.9496451"
-     inkscape:cy="-0.1362915"
-     inkscape:document-units="mm"
+     inkscape:zoom="63.356768"
+     inkscape:cx="6.3396304"
+     inkscape:cy="7.7912576"
+     inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
      units="px"
@@ -100,15 +100,12 @@
      inkscape:label="Capa 1"
      inkscape:groupmode="layer"
      id="layer1"
-     transform="translate(0,-294.35415)">
-    <rect
-       style="fill:url(#linearGradient824);fill-opacity:1;stroke:url(#linearGradient825);stroke-width:0.51449138;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       id="rect817"
-       width="2.1328573"
-       height="2.1280725"
-       x="0.25703421"
-       y="294.61285"
-       ry="0"
-       rx="0" />
+     transform="translate(0,-293.56041)">
+    <circle
+       style="fill:url(#linearGradient839);fill-opacity:1;stroke:url(#linearGradient831);stroke-width:0.80655342;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="path815"
+       cx="1.7229559"
+       cy="295.27948"
+       r="1.3067007" />
   </g>
 </svg>

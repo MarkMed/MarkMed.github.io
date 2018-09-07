@@ -1,13 +1,53 @@
 var globalVar;
 window.addEventListener("load", () => {
-	var editorState="marker";
-	var map = L.map('mapid').setView([-34.83634999076386, -56.165848], 12)
-	L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibWFya21lZCIsImEiOiJjamxjOW5sMmwyaHlnM3FudGNyODZoZ2l4In0.JccJdeIlOEnkn9RPEYYu0w', {
+	var map = L.map('mapid').setView([-34.83634999076386, -56.165848], 12);
+	/*L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibWFya21lZCIsImEiOiJjamxjOW5sMmwyaHlnM3FudGNyODZoZ2l4In0.JccJdeIlOEnkn9RPEYYu0w', {
 		attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a> Designed by <a href="https://github.com/MarkMed/">Mark-Med</a>',
 		maxZoom: 20,
 		id: 'mapbox.outdoors',
 		accessToken: 'pk.eyJ1IjoibWFya21lZCIsImEiOiJjamxjOW5sMmwyaHlnM3FudGNyODZoZ2l4In0.JccJdeIlOEnkn9RPEYYu0w'
+	}).addTo(map);*/
+
+	L.tileLayer('http://{s}.tiles.wmflabs.org/bw-mapnik/{z}/{x}/{y}.png', {
+	//	attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> Designed by <a href="https://github.com/MarkMed/">Mark-Med</a>',
+		maxZoom: 20
+		//id: 'mapbox.outdoors',
+		//accessToken: 'pk.eyJ1IjoibWFya21lZCIsImEiOiJjamxjOW5sMmwyaHlnM3FudGNyODZoZ2l4In0.JccJdeIlOEnkn9RPEYYu0w'
 	}).addTo(map);
+
+	var mapsProviders=[
+		{
+			name: 'OpenStreetMap Normal',
+			url: 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
+			img: 'Resources/providersImgs/openstrtNormal.png'
+
+		},
+		{
+			name: 'OpenStreetMap Gray',
+			url: 'http://{s}.tiles.wmflabs.org/bw-mapnik/{z}/{x}/{y}.png',
+			img: 'Resources/providersImgs/openstrtGray.png'
+
+		},
+		{
+			name: 'Esri.WorldStreetMap',
+			url: 'https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}',
+			img: 'Resources/providersImgs/EsriWorldStreetMap.png'
+
+		},
+		{
+			name: 'Esri.WorldImagery',
+			url: 'https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',
+			img: 'Resources/providersImgs/EsriWorldSatelliteMap.png'
+
+		},
+		{
+			name: 'Esri.NatGeoWorldMap',
+			url: 'https://server.arcgisonline.com/ArcGIS/rest/services/NatGeo_World_Map/MapServer/tile/{z}/{y}/{x}',
+			img: 'Resources/providersImgs/natgeo.png'
+
+		}
+
+	];
 
 	//Mark Obj
 	function mark(id, title, markObj){
@@ -27,16 +67,22 @@ window.addEventListener("load", () => {
 		popupAnchor:	[0, -38.5]
 
 	});
-	var luxPoint=L.icon({
-		iconUrl: "Resources/point2.svg",
-		iconSize: [10, 10],
-		iconAnchor: [10, 10]
-
-	});
 	var luxSqr=L.icon({
 		iconUrl: "Resources/sqr.svg",
 		iconSize: [10, 10],
-		iconAnchor: [10, 10]
+		iconAnchor: [5, 5]
+
+	});
+	var luxCircle=L.icon({
+		iconUrl: "Resources/circle.svg",
+		iconSize: [13, 13],
+		iconAnchor: [6.5, 6.5]
+
+	});
+	var luxArea=L.icon({
+		iconUrl: "Resources/area.svg",
+		iconSize: [14, 11],
+		iconAnchor: [7, 5.5]
 
 	});
 
@@ -66,26 +112,28 @@ window.addEventListener("load", () => {
 		var marker=L.marker([coords.lat, coords.lng], {
 			icon: luxMark,
 			draggable: true,
-			title: "New Marker"
 		});
 		function fixData(){
 			setTimeout(()=>{
-				marker.bindPopup("<h3>Mark Title</h3><p>Here would be some info about location</p><p><i>Perhaps some meta info</i> and a <a href='google'>link</a></p><p>This represents fixed data added to the marker</p>");
-			},300);
+				marker.bindPopup("<h3>"+((!!markers[marker.id])?(markers[marker.id].title):("<i>Not save marker</i>"))+"</h3><p>Here would be some info about location</p><p><i>Perhaps some meta info</i> and a <a href='google'>link</a></p><p>This represents fixed data added to the marker</p>");
+			},10);
 		}
 		marker.addTo(map);
 
 		//Dragging
-		marker.addEventListener("drag", ()=>{
+		marker.addEventListener("dragstart", ()=>{
 			marker.removeEventListener("popupclose", fixData);
+		});
+		marker.addEventListener("drag", ()=>{
 			marker.bindPopup("<p>Lat: "+marker.getLatLng().lat+"</p><p>Long: "+marker.getLatLng().lng+"</p>").openPopup();
 		});
 		//End dragging
 		marker.addEventListener("dragend", ()=>{
 			marker.bindPopup("<h3>Moved</h3><p>I have been moved</p><p>Now, I am in Lat: "+marker.getLatLng().lat+" and Long.: "+marker.getLatLng().lng+"</p>");
+			marker.addEventListener("popupclose", fixData);
+			
 		});
 		marker.addEventListener("dblclick", ()=>{
-			console.log("dblclicked :v");
 		});
 		//Right Click
 		marker.addEventListener("contextmenu", ()=>{
@@ -125,7 +173,6 @@ window.addEventListener("load", () => {
 					takeCoord.appendChild(takeCoordBtn);
 					takeCoord.style.margin = '0';
 				}
-				console.log("Executed!");
 			});
 			takeCoord.appendChild(takeCoordBtn);
 
@@ -150,43 +197,73 @@ window.addEventListener("load", () => {
 			var rename=document.createElement("div");
 			rename.style.transition = '0.6s';
 			var renameBtn=document.createElement("button");
-			renameBtn.innerHTML="Rename Mark";
 			renameBtn.setAttribute("class", "luxBtn");
-			renameBtn.addEventListener("click", ()=>{
-				function resertForm(){
+			if(!!markers[marker.id]){
+				renameBtn.innerHTML="Rename Mark";
+			}
+			else{				
+				renameBtn.innerHTML="Regist Mark";
+			}
+			renameBtn.addEventListener("click", ()=>{				
+				if(!!markers[marker.id]){
+					
+					var inputForm=document.createElement("input");
+					var confirmBtn=document.createElement("button");
+					var cancelBtn=document.createElement("button");
+
+					inputForm.setAttribute("class", "inputTxt");
+					inputForm.setAttribute("placeholder", markers[marker.id].title);
+
+					confirmBtn.setAttribute("class", "luxBtn");
+					confirmBtn.innerHTML="Confirm";
+
+					cancelBtn.setAttribute("class", "luxBtn");
+					cancelBtn.innerHTML="Cancel";
+
 					rename.innerHTML="";
-					renameBtn.setAttribute("style", "");
+					rename.appendChild(renameBtn);
+					rename.appendChild(inputForm);
+					rename.appendChild(confirmBtn);
+					rename.appendChild(cancelBtn);
+					rename.style.margin="40px 0px";
+					renameBtn.setAttribute("style", "border: none; background: transparent; font-size: 12px; color:rgba(255, 254, 219, 1); cursor: initial;");
+					cancelBtn.addEventListener("click", ()=>{
+						resertForm(true)
+					});
+					confirmBtn.addEventListener("click", ()=>{
+						markers[marker.id].title=inputForm.value;
+						resertForm(true);
+						insertElements();
+					});
+				}
+				else{		
+					rename.innerHTML="<h4>Regist Marker</h4><p>Enter a name for this marker:</p><input class='inputTxt' type='text' placeholder='e.g: Las Vegas Hotel'></input>"
+					var regBtn=document.createElement("button");
+					regBtn.innerHTML="Save Marker";
+					regBtn.setAttribute("class", "luxBtn");
+					regBtn.addEventListener("click", (event)=>{
+						marker.addEventListener("popupclose", fixData);
+						title=event.target.parentElement.childNodes[2].value;
+						saveMarker();
+						resertForm(false);
+						renameBtn.setAttribute("style", "border: none; background: transparent; font-size: 12px; color:rgba(255, 254, 219, 1);");
+						renameBtn.innerHTML="Marker successfully saved!";
+						insertElements();
+						setTimeout(()=>{
+							marker.closePopup();
+						},500);
+					});
+					rename.appendChild(regBtn);
+					rename.style.margin="40px 0px";
+				}
+				function resertForm(boolVal){
+					rename.innerHTML="";
+					if(boolVal){
+						renameBtn.setAttribute("style", "");
+					}
 					rename.appendChild(renameBtn);
 					rename.style.margin="0";
 				}
-				var inputForm=document.createElement("input");
-				var confirmBtn=document.createElement("button");
-				var cancelBtn=document.createElement("button");
-
-				inputForm.setAttribute("class", "inputTxt");
-				inputForm.setAttribute("placeholder", markers[marker.id].title);
-
-				confirmBtn.setAttribute("class", "luxBtn");
-				confirmBtn.innerHTML="Confirm";
-
-				cancelBtn.setAttribute("class", "luxBtn");
-				cancelBtn.innerHTML="Cancel";
-
-				rename.innerHTML="";
-				rename.appendChild(renameBtn);
-				rename.appendChild(inputForm);
-				rename.appendChild(confirmBtn);
-				rename.appendChild(cancelBtn);
-				rename.style.margin="40px 0px";
-				renameBtn.setAttribute("style", "border: none; background: transparent; font-size: 12px; color:rgba(255, 254, 219, 1);");
-				cancelBtn.addEventListener("click", ()=>{
-					resertForm()
-				});
-				confirmBtn.addEventListener("click", ()=>{
-					markers[marker.id].title=inputForm.value;
-					resertForm();
-					insertElements();
-				});
 			});
 			rename.appendChild(renameBtn);
 			insertElements();
@@ -203,6 +280,7 @@ window.addEventListener("load", () => {
 		regBtn.innerHTML="Save Marker";
 		regBtn.setAttribute("class", "luxBtn");
 		regBtn.addEventListener("click", (event)=>{
+			marker.addEventListener("popupclose", fixData);
 			title=event.target.parentElement.childNodes[2].value;
 			saveMarker();
 			marker.closePopup();
@@ -221,46 +299,155 @@ window.addEventListener("load", () => {
 		}
 		
 	}
-	//Add Line
+	//AddLine
+	var coordsArray=[];
+	var lines=[0];
+	var polylines;
 	function addLine(event){
-		var coords=event.latlng;
-		var coordsArray=[];
+		var coords=event.latlng;		
 		var newCoord=[coords.lat, coords.lng];
-		coordsArray.push(newCoord);
-		console.log(JSON.stringify(coordsArray));
-
+		coordsArray[coordsArray.length-1].push(newCoord);
 
 		var marker=L.marker(newCoord, {
-			icon: luxPoint,
+			icon: luxCircle,
 			draggable: true
 		});		
 		marker.addTo(map);
+		marker.id=coordsArray[coordsArray.length-1].length-1;
+		drawPoli();
 
-		newCoord=[-34.906346218320856, -56.20427370071412];
-		coordsArray.push(newCoord);
+		marker.addEventListener("click", ()=>{
+			alert(marker.id);
+		});
+		marker.addEventListener("drag", ()=>{		
+			coordsArray[coordsArray.length-1][marker.id]=[marker.getLatLng().lat, marker.getLatLng().lng];
+			drawPoli();
+		});
+		/*marker.addEventListener("contextmenu", ()=>{
+			function insertElements(){
+				parentHTML.appendChild(removeBtn);
+			};
+			//Parent
+			var parentHTML=document.createElement("div");
+			//Buttons
+			/////////////////////////////////
+			var removeBtn=document.createElement("button");
+			removeBtn.innerHTML="Remove Marker";
+			removeBtn.setAttribute("class", "luxBtn");
+			removeBtn.addEventListener("click", ()=>{
+				console.log(coordsArray[coordsArray.length-1]);
+				coordsArray[coordsArray.length-1].splice(coordsArray[coordsArray.length-1][marker.id], 1);
+				marker.remove();
+				drawPoli();
+			});
+			/////////////////////////////////
+			insertElements();
+			
+			//PopUp
+			marker.bindPopup(parentHTML).openPopup();
+			//marker.addEventListener("popupclose", fixData);
+		});*/
+		function drawPoli(){
+			var polyline = L.polyline(coordsArray[coordsArray.length-1], {
+				color: "rgba(243, 200, 96, 1)",
+				weight: 3,
+				opacity: 1
+			});
+			polylines.push(polyline);//Registra en el array
+			if(polylines.length>2){//Elimina 1er lugar
+				polylines.splice(0, 1);
+				polylines[0].remove();//Elimina del mapa
+				polylines[1].addTo(map);//Agrega al mapa
+			}
 
-		newCoord=[-34.90719967760585, -56.20381236076356];
-		coordsArray.push(newCoord);
 
-		newCoord=[-34.90635941621238, -56.20426297187806];
-		coordsArray.push(newCoord);
+			polyline.addEventListener("contextmenu", ()=>{
+				polyline.remove();
+			});
+		}
+	}
+	//AddCircle
+	function addCircle(event){
+		var coords=event.latlng;		
+		var newCoord=[coords.lat, coords.lng];
 
-		newCoord=[-34.90691372574081, -56.19877517223359];
-		coordsArray.push(newCoord);
-		coordsArray=[
-			[-34.906346218320856, -56.20427370071412],
-			[-34.90805312801996, -56.20346903800965],
-			[-34.90708969623714, -56.20071709156037],
-			[-34.90691372574081, -56.19877517223359]
-		]
-		console.log(JSON.stringify(coordsArray));
+		function getDistance(origin, destination) {
+			// return distance in meters
+			var lon1 = toRadian(origin[1]),
+			lat1 = toRadian(origin[0]),
+			lon2 = toRadian(destination[1]),
+			lat2 = toRadian(destination[0]);
 
-		var latlngs = coordsArray;
-		var polyline = L.polyline(latlngs, {
-			color: "rgba(243, 200, 96, 1)",
-			weight: 5,
-			opacity: 1
-		}).addTo(map);
+			var deltaLat = lat2 - lat1;
+			var deltaLon = lon2 - lon1;
+
+			var a = Math.pow(Math.sin(deltaLat/2), 2) + Math.cos(lat1) * Math.cos(lat2) * Math.pow(Math.sin(deltaLon/2), 2);
+			var c = 2 * Math.asin(Math.sqrt(a));
+			var EARTH_RADIUS = 6371;
+			return c * EARTH_RADIUS * 1000;
+			function toRadian(value) {
+				return value*Math.PI/180;
+			}
+		}//Thx StackOverflow \^u^/
+		var center=L.marker(newCoord, {
+			icon: luxCircle,
+			draggable: true
+		});		
+		center.addTo(map);
+
+		var initialDist=getDistance(newCoord, [coords.lat+0.2, coords.lng]);
+		var zoomValuePlus=Math.pow(2, -(map.getZoom()))*150;
+		var coord2=[coords.lat, coords.lng+zoomValuePlus];
+		var finalDist=getDistance(newCoord, coord2);
+		var radMarker=L.marker(coord2, {
+			icon: luxCircle,
+			draggable: true
+		});		
+		radMarker.addTo(map);
+		var circle=L.circle(newCoord, {
+			color: 'rgba(243, 200, 96, 1)',
+			fillColor: 'rgba(30, 54, 65, 0.7)',
+			fillOpacity: 0.5,
+			radius: finalDist
+		}).addTo(map);/**/
+		function radiusChange(){
+			circle.setRadius(getDistance([center.getLatLng().lat, center.getLatLng().lng], [radMarker.getLatLng().lat, radMarker.getLatLng().lng]));
+		}
+		radMarker.addEventListener("drag", ()=>{
+			radiusChange();
+		});
+		var centerFixCoords;
+		var radFixCoords;
+		center.addEventListener("dragstart", ()=>{
+			centerFixCoords=[center.getLatLng().lat, center.getLatLng().lng];
+			radFixCoords=[radMarker.getLatLng().lat, radMarker.getLatLng().lng];
+		});
+		center.addEventListener("drag", ()=>{
+			circle.setLatLng([center.getLatLng().lat, center.getLatLng().lng]);
+			radMarker.setLatLng([(radFixCoords[0]+(center.getLatLng().lat-centerFixCoords[0])), (radFixCoords[1]+(center.getLatLng().lng-centerFixCoords[1]))]);
+		});
+		center.addEventListener("contextmenu", ()=>{
+			function insertElements(){
+				parentHTML.appendChild(removeBtn);
+			};
+			//Parent
+			var parentHTML=document.createElement("div");
+			//Buttons
+			/////////////////////////////////
+			var removeBtn=document.createElement("button");
+			removeBtn.innerHTML="Remove Circle";
+			removeBtn.setAttribute("class", "luxBtn");
+			removeBtn.addEventListener("click", ()=>{
+				center.remove();
+				radMarker.remove();
+				circle.remove();
+			});
+			/////////////////////////////////
+			insertElements();
+			
+			//PopUp
+			center.bindPopup(parentHTML).openPopup();
+		});
 	}
 	//Add Square
 	function addSqr(event){
@@ -272,30 +459,16 @@ window.addEventListener("load", () => {
 		});		
 		marker.addTo(map);
 	}
-	/*	function mapClick(event){
-		switch (editorState) {
-			case "marker":
-				addMarker(event);
-			break;
-			case "lineD":
-				addLine(event);
-				console.log('Clicked with Line Editor')
-			break;
-			case "circleD":
-				
-			break;
-			case "areaD":
-				
-			break;
-			case "sqrD":
-				addSqr(event);
-				console.log('Clicked with Square Editor')
-			break;
-			default:
-				addMarker(event);
-			break;
-		}
-	}*/
+	//Add Circle
+	function addArea(event){
+		var coords=event.latlng;
+		var coordsArray;
+		var marker=L.marker([coords.lat, coords.lng], {
+			icon: luxArea,
+			draggable: true
+		});		
+		marker.addTo(map);
+	}
 	function addingListeners(evName){
 		removingListeners();
 		map.addEventListener("click", evName);
@@ -303,7 +476,9 @@ window.addEventListener("load", () => {
 	function removingListeners(evName){
 		map.removeEventListener("click", addMarker);
 		map.removeEventListener("click", addLine);
+		map.removeEventListener("click", addCircle);
 		map.removeEventListener("click", addSqr);
+		map.removeEventListener("click", addArea);
 	}
 	addingListeners(addMarker);
 
@@ -435,14 +610,20 @@ window.addEventListener("load", () => {
 				if (actiB==="false"){
 					container.setAttribute("active", true);
 					addingListeners(addLine);
+					disableStyle(event);
+					var newArray=[];
+					coordsArray.push(newArray);
+					var newline=[0];
+					lines.push(newline);
+					polylines=lines[lines.length-1];
+
 				}
 				else{
 					container.setAttribute("active", false);
 					addingListeners(addMarker);
+					container.style.opacity = '';
 				}
 				event.stopPropagation();
-				console.log('Line Darwing Mode Activate');
-				editorState="lineD";
 			});
 			container.addEventListener("dblclick", ()=>{
 				event.stopPropagation();
@@ -460,6 +641,7 @@ window.addEventListener("load", () => {
 			var container = L.DomUtil.create('div', 'leaflet-bar leaflet-control leaflet-control-custom centered-content');
 			container.style.backgroundColor = 'white';
 			container.title="Circle Draw";
+			container.setAttribute("active", false);
 			container.innerHTML="&#9675";
 			container.style.width = '30px';
 			container.style.height = '30px';
@@ -468,8 +650,18 @@ window.addEventListener("load", () => {
 			container.style.overflow = 'hidden';
 			container.style.cursor = 'pointer';
 			container.addEventListener("click", ()=>{
+				var actiB=container.getAttribute("active");
+				if (actiB==="false"){
+					container.setAttribute("active", true);
+					addingListeners(addCircle);
+					disableStyle(event);
+				}
+				else{
+					container.setAttribute("active", false);
+					addingListeners(addMarker);
+					container.style.opacity = '';
+				}
 				event.stopPropagation();
-				console.log('Circle Darwing Mode Activate');
 			});
 			container.addEventListener("dblclick", ()=>{
 				event.stopPropagation();
@@ -493,6 +685,7 @@ window.addEventListener("load", () => {
 			var container = L.DomUtil.create('div', 'leaflet-bar leaflet-control leaflet-control-custom centered-content');
 			container.style.backgroundColor = 'white';
 			container.title="Square Draw";
+			container.setAttribute("active", false);
 			container.innerHTML="&#9633";
 			container.style.width = '30px';
 			container.style.height = '30px';
@@ -501,9 +694,18 @@ window.addEventListener("load", () => {
 			container.style.cursor = 'pointer';
 			container.style.fontSize = '20px';
 			container.addEventListener("click", ()=>{
+				var actiB=container.getAttribute("active");
+				if (actiB==="false"){
+					container.setAttribute("active", true);
+					addingListeners(addSqr);
+					disableStyle(event);
+				}
+				else{
+					container.setAttribute("active", false);
+					addingListeners(addMarker);
+					container.style.opacity = '';
+				}
 				event.stopPropagation();
-				console.log('Sqr Darwing Mode Activate');
-				editorState="sqrD";
 			});
 			container.addEventListener("dblclick", ()=>{
 				event.stopPropagation();
@@ -538,16 +740,15 @@ window.addEventListener("load", () => {
 				var actiB=container.getAttribute("active");
 				if (actiB==="false"){
 					container.setAttribute("active", true);
-					addingListeners(addSqr);
+					addingListeners(addArea);
+					disableStyle(event);
 				}
 				else{
 					container.setAttribute("active", false);
 					addingListeners(addMarker);
+					container.style.opacity = '';
 				}
 				event.stopPropagation();
-				editorState="sqrD";
-				event.stopPropagation();
-				console.log('Area Darwing Mode Activate');
 			});
 			container.addEventListener("dblclick", ()=>{
 				event.stopPropagation();
@@ -563,4 +764,81 @@ window.addEventListener("load", () => {
 	});
 	map.addControl(new customControl());
 
+	customControl =	L.Control.extend({
+
+		options: {
+			position: 'bottomleft'
+		},
+		onAdd: function (map) {
+			var container = L.DomUtil.create('div', 'leaflet-bar leaflet-control leaflet-control-custom centered-content');
+			container.style.backgroundColor = 'white';
+			container.title="Change Provider";
+			container.innerHTML="Map Providers";
+			container.style.width = '100px';
+			container.style.height = '30px';
+			container.style.transition = '0.6s';
+			container.style.borderRadius="50px";
+			container.style.overflow = 'hidden';
+			container.style.cursor = 'pointer';
+			var counter=0;
+			container.addEventListener("click", ()=>{
+				counter++
+				if(counter===1){
+
+					container.style.width = '400px';
+					container.style.height = '210px';
+					var providers=document.createElement("div");//List
+					providers.setAttribute("style", "width: 100%; height: 70%; margin-top: 10px; overflow-x: scroll; overflow-y: hidden; display: flex; justify-content: flex-start; flex-direction: row; align-items: center;");
+					for(var i=0; i<mapsProviders.length; i++){
+						var provider=document.createElement("div");//Item
+						provider.setAttribute("style", "width: 100px; height: 100%; margin: 0px 10px; display: flex; justify-content: space-around; flex-direction: column; align-items: center;");
+						var providerName=document.createElement("p");
+						providerName.innerHTML=mapsProviders[i].name;
+						var providerImg=document.createElement("img");
+						providerImg.setAttribute("src", mapsProviders[i].img);
+						providerImg.setAttribute("style", "width: 90px; height: 90px; margin: 0px 10px; background-color:blue; border-radius: 100%");
+						providerImg.setAttribute("providerUrl", mapsProviders[i].url);
+
+						provider.appendChild(providerImg);
+						provider.appendChild(providerName);
+						providers.appendChild(provider);
+						provider.addEventListener("click", ()=>{
+							console.log(providerImg.getAttribute("providerUrl"));
+							/*L.tileLayer(providerImg.getAttribute("providerUrl"), {
+								maxZoom: 20
+							}).addTo(map);*/
+						});
+					}
+
+					container.appendChild(providers);
+
+				}
+				event.stopPropagation();
+			});
+		/*	container.addEventListener("mouseleave", ()=>{
+				setTimeout(()=>{
+					container.style.width = '100px';
+					container.style.height = '30px';
+					setTimeout(()=>{
+						container.innerHTML="Map Providers";
+					},200);
+				},800);
+				counter=0;
+			});
+			container.addEventListener("dblclick", ()=>{
+				event.stopPropagation();
+			});*/
+			return container;
+		}
+	});
+	map.addControl(new customControl());
+
+	function disableStyle(event){
+		var currentElement=event.target;
+		var allElements=currentElement.parentElement.childNodes;
+		for(var i=0; i<allElements.length; i++){
+			allElements[i].style.opacity = '';
+		}
+		currentElement.style.opacity = '1';
+	}
 });
