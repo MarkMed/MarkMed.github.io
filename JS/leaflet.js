@@ -797,16 +797,15 @@ window.addEventListener("load", () => {
 						var providerImg=document.createElement("img");
 						providerImg.setAttribute("src", mapsProviders[i].img);
 						providerImg.setAttribute("style", "width: 90px; height: 90px; margin: 0px 10px; background-color:blue; border-radius: 100%");
-						providerImg.setAttribute("providerUrl", mapsProviders[i].url);
+						provider.setAttribute("providerUrl", mapsProviders[i].url);
 
 						provider.appendChild(providerImg);
 						provider.appendChild(providerName);
 						providers.appendChild(provider);
-						provider.addEventListener("click", ()=>{
-							console.log(providerImg.getAttribute("providerUrl"));
-							/*L.tileLayer(providerImg.getAttribute("providerUrl"), {
+						provider.addEventListener("click", (ev)=>{
+							L.tileLayer(ev.target.parentElement.getAttribute("providerUrl"), {
 								maxZoom: 20
-							}).addTo(map);*/
+							}).addTo(map);
 						});
 					}
 
@@ -815,19 +814,19 @@ window.addEventListener("load", () => {
 				}
 				event.stopPropagation();
 			});
-		/*	container.addEventListener("mouseleave", ()=>{
+			container.addEventListener("mouseleave", ()=>{
 				setTimeout(()=>{
 					container.style.width = '100px';
 					container.style.height = '30px';
 					setTimeout(()=>{
 						container.innerHTML="Map Providers";
+						counter=0;
 					},200);
-				},800);
-				counter=0;
+				},600);
 			});
 			container.addEventListener("dblclick", ()=>{
 				event.stopPropagation();
-			});*/
+			});
 			return container;
 		}
 	});
