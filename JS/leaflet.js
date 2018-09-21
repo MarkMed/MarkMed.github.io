@@ -1,19 +1,19 @@
 var globalVar;
 window.addEventListener("load", () => {
 	var map = L.map('mapid').setView([-34.83634999076386, -56.165848], 12);
-	/*L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibWFya21lZCIsImEiOiJjamxjOW5sMmwyaHlnM3FudGNyODZoZ2l4In0.JccJdeIlOEnkn9RPEYYu0w', {
+	L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibWFya21lZCIsImEiOiJjamxjOW5sMmwyaHlnM3FudGNyODZoZ2l4In0.JccJdeIlOEnkn9RPEYYu0w', {
 		attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a> Designed by <a href="https://github.com/MarkMed/">Mark-Med</a>',
 		maxZoom: 20,
 		id: 'mapbox.outdoors',
 		accessToken: 'pk.eyJ1IjoibWFya21lZCIsImEiOiJjamxjOW5sMmwyaHlnM3FudGNyODZoZ2l4In0.JccJdeIlOEnkn9RPEYYu0w'
-	}).addTo(map);*/
+	}).addTo(map);/**/
 
-	L.tileLayer('http://{s}.tiles.wmflabs.org/bw-mapnik/{z}/{x}/{y}.png', {
+	/*L.tileLayer('http://{s}.tiles.wmflabs.org/bw-mapnik/{z}/{x}/{y}.png', {
 	//	attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> Designed by <a href="https://github.com/MarkMed/">Mark-Med</a>',
 		maxZoom: 20
 		//id: 'mapbox.outdoors',
 		//accessToken: 'pk.eyJ1IjoibWFya21lZCIsImEiOiJjamxjOW5sMmwyaHlnM3FudGNyODZoZ2l4In0.JccJdeIlOEnkn9RPEYYu0w'
-	}).addTo(map);
+	}).addTo(map);*/
 
 	var mapsProviders=[
 		{
@@ -86,7 +86,7 @@ window.addEventListener("load", () => {
 
 	});
 
-	//Marker w/ infoPop
+	/*//Marker w/ infoPop
 	addMarker({latlng:{lat: -34.918113,lng: -56.165848}});
 
 	//Circle
@@ -95,14 +95,9 @@ window.addEventListener("load", () => {
 		fillColor: 'rgba(30, 54, 65, 1)',
 		fillOpacity: 0.5,
 		radius: 190
-	}).addTo(map);
+	}).addTo(map);*/
 
 	//Polygon
-	L.polygon([
-		[-34.73422859266736, -56.236165165901184],
-		[-34.748794, -56.420600],
-		[-34.848761, -56.225709]
-	]).addTo(map);
 
 	//Add Marker
 	function addMarker(event){
@@ -300,71 +295,50 @@ window.addEventListener("load", () => {
 		
 	}
 	//AddLine
-	var coordsArray=[];
-	var lines=[0];
-	var polylines;
+	var newLineCoords;
+	var polyline;
 	function addLine(event){
-		var coords=event.latlng;		
+		var coords=event.latlng;
 		var newCoord=[coords.lat, coords.lng];
-		coordsArray[coordsArray.length-1].push(newCoord);
-
+		newLineCoords.push(newCoord);
 		var marker=L.marker(newCoord, {
 			icon: luxCircle,
 			draggable: true
 		});		
 		marker.addTo(map);
-		marker.id=coordsArray[coordsArray.length-1].length-1;
-		drawPoli();
-
-		marker.addEventListener("click", ()=>{
-			alert(marker.id);
-		});
-		marker.addEventListener("drag", ()=>{		
-			coordsArray[coordsArray.length-1][marker.id]=[marker.getLatLng().lat, marker.getLatLng().lng];
-			drawPoli();
-		});
-		/*marker.addEventListener("contextmenu", ()=>{
-			function insertElements(){
-				parentHTML.appendChild(removeBtn);
-			};
-			//Parent
-			var parentHTML=document.createElement("div");
-			//Buttons
-			/////////////////////////////////
-			var removeBtn=document.createElement("button");
-			removeBtn.innerHTML="Remove Marker";
-			removeBtn.setAttribute("class", "luxBtn");
-			removeBtn.addEventListener("click", ()=>{
-				console.log(coordsArray[coordsArray.length-1]);
-				coordsArray[coordsArray.length-1].splice(coordsArray[coordsArray.length-1][marker.id], 1);
-				marker.remove();
-				drawPoli();
-			});
-			/////////////////////////////////
-			insertElements();
+		if(newLineCoords.length<2){
+			drawLine();
 			
-			//PopUp
-			marker.bindPopup(parentHTML).openPopup();
-			//marker.addEventListener("popupclose", fixData);
-		});*/
-		function drawPoli(){
-			var polyline = L.polyline(coordsArray[coordsArray.length-1], {
+			console.log("run if");
+		}
+		else{
+			console.log(polyline.getLatLngs());
+			polyline.addLatLng(newCoord);
+			console.log("run else");
+		}
+		function drawLine(){
+			polyline=L.polyline([[coords.lat, coords.lng]], {
 				color: "rgba(243, 200, 96, 1)",
 				weight: 3,
 				opacity: 1
 			});
-			polylines.push(polyline);//Registra en el array
-			if(polylines.length>2){//Elimina 1er lugar
-				polylines.splice(0, 1);
-				polylines[0].remove();//Elimina del mapa
-				polylines[1].addTo(map);//Agrega al mapa
-			}
-
-
-			polyline.addEventListener("contextmenu", ()=>{
-				polyline.remove();
-			});
+			polyline.addTo(map)
 		}
+		var markerIndex;
+		var lineCoords;
+		marker.addEventListener("dragstart", ()=>{
+			lineCoords=polyline.getLatLngs();//Obtiene la lista de coords de la linea
+			
+			markerIndex=lineCoords.map(toStringCoords).indexOf(marker.getLatLng().toString());//Pasa c/ coordenada a string para comparar
+
+			function toStringCoords(val) {
+				return val.toString();
+			}
+		});
+		marker.addEventListener("drag", ()=>{
+			lineCoords.splice(markerIndex, 1, marker.getLatLng());
+			polyline.setLatLngs(lineCoords);
+		});
 	}
 	//AddCircle
 	function addCircle(event){
@@ -395,8 +369,7 @@ window.addEventListener("load", () => {
 		});		
 		center.addTo(map);
 
-		var initialDist=getDistance(newCoord, [coords.lat+0.2, coords.lng]);
-		var zoomValuePlus=Math.pow(2, -(map.getZoom()))*150;
+		var zoomValuePlus=Math.pow(2, -(map.getZoom()))*150;//Calculate the value thst will be added in the new coord watching the zoom state
 		var coord2=[coords.lat, coords.lng+zoomValuePlus];
 		var finalDist=getDistance(newCoord, coord2);
 		var radMarker=L.marker(coord2, {
@@ -452,12 +425,75 @@ window.addEventListener("load", () => {
 	//Add Square
 	function addSqr(event){
 		var coords=event.latlng;
-		var coordsArray;
-		var marker=L.marker([coords.lat, coords.lng], {
+		var zoomValuePlus=Math.pow(2, -(map.getZoom()))*100;//Calculate the value thst will be added in the new coord watching the zoom state
+		var markerA=L.marker([coords.lat, coords.lng], {
 			icon: luxSqr,
 			draggable: true
 		});		
-		marker.addTo(map);
+		markerA.addTo(map);
+		var markerB=L.marker([coords.lat+zoomValuePlus, coords.lng], {
+			icon: luxSqr,
+			draggable: true
+		});		
+		markerB.addTo(map);
+		var markerC=L.marker([coords.lat+zoomValuePlus, coords.lng+zoomValuePlus], {
+			icon: luxSqr,
+			draggable: true
+		});		
+		markerC.addTo(map);
+		var markerD=L.marker([coords.lat, coords.lng+zoomValuePlus], {
+			icon: luxSqr,
+			draggable: true
+		});		
+		markerD.addTo(map);
+		
+		var sqr=L.polygon([
+			[markerA.getLatLng().lat, markerA.getLatLng().lng],
+			[markerB.getLatLng().lat, markerB.getLatLng().lng],
+			[markerC.getLatLng().lat, markerC.getLatLng().lng],
+			[markerD.getLatLng().lat, markerD.getLatLng().lng]
+		], 
+			{
+			color: 'rgba(243, 200, 96, 1)',
+			fillColor: 'rgba(30, 54, 65, 0.7)',
+			fillOpacity: 0.5
+		}).addTo(map);
+
+		var sqrMarkers=[markerA, markerB, markerC, markerD];
+		for(var i=0; i<sqrMarkers.length; i++){
+			sqrMarkers[i].addEventListener("drag", ()=>{
+				sqr.setLatLngs([
+					[markerA.getLatLng().lat, markerA.getLatLng().lng],
+					[markerB.getLatLng().lat, markerB.getLatLng().lng],
+					[markerC.getLatLng().lat, markerC.getLatLng().lng],
+					[markerD.getLatLng().lat, markerD.getLatLng().lng]
+				]);
+			});
+		}
+		
+		sqr.addEventListener("contextmenu", ()=>{
+			function insertElements(){
+				parentHTML.appendChild(removeBtn);
+			};
+			//Parent
+			var parentHTML=document.createElement("div");
+			//Buttons
+			/////////////////////////////////
+			var removeBtn=document.createElement("button");
+			removeBtn.innerHTML="Remove Square";
+			removeBtn.setAttribute("class", "luxBtn");
+			removeBtn.addEventListener("click", ()=>{
+				for(var i=0; i<sqrMarkers.length; i++){
+					sqrMarkers[i].remove();
+				}
+				sqr.remove();
+			});
+			/////////////////////////////////
+			insertElements();
+			
+			//PopUp
+			sqr.bindPopup(parentHTML).openPopup();
+		});
 	}
 	//Add Circle
 	function addArea(event){
@@ -611,11 +647,12 @@ window.addEventListener("load", () => {
 					container.setAttribute("active", true);
 					addingListeners(addLine);
 					disableStyle(event);
-					var newArray=[];
+				/*	var newArray=[];
 					coordsArray.push(newArray);
 					var newline=[0];
 					lines.push(newline);
-					polylines=lines[lines.length-1];
+					polylines=lines[lines.length-1];*/
+					newLineCoords=[];//Here will save the coords of the line
 
 				}
 				else{
@@ -803,6 +840,17 @@ window.addEventListener("load", () => {
 						provider.appendChild(providerName);
 						providers.appendChild(provider);
 						provider.addEventListener("click", (ev)=>{
+							for(var i=0; i<ev.target.parentElement.parentElement.children.length; i++){
+								L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibWFya21lZCIsImEiOiJjamxjOW5sMmwyaHlnM3FudGNyODZoZ2l4In0.JccJdeIlOEnkn9RPEYYu0w', {
+									attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a> Designed by <a href="https://github.com/MarkMed/">Mark-Med</a>',
+									maxZoom: 20,
+									id: 'mapbox.outdoors',
+									accessToken: 'pk.eyJ1IjoibWFya21lZCIsImEiOiJjamxjOW5sMmwyaHlnM3FudGNyODZoZ2l4In0.JccJdeIlOEnkn9RPEYYu0w'
+								}).remove();
+								L.tileLayer(ev.target.parentElement.parentElement.children[i].getAttribute("providerUrl"), {
+									maxZoom: 20
+								}).remove();
+							}
 							L.tileLayer(ev.target.parentElement.getAttribute("providerUrl"), {
 								maxZoom: 20
 							}).addTo(map);
