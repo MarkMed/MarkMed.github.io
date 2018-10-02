@@ -1,12 +1,14 @@
 var globalVar;
 window.addEventListener("load", () => {
 	var map = L.map('mapid').setView([-34.83634999076386, -56.165848], 12);
-	L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibWFya21lZCIsImEiOiJjamxjOW5sMmwyaHlnM3FudGNyODZoZ2l4In0.JccJdeIlOEnkn9RPEYYu0w', {
+	var originalLayer=L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibWFya21lZCIsImEiOiJjamxjOW5sMmwyaHlnM3FudGNyODZoZ2l4In0.JccJdeIlOEnkn9RPEYYu0w', {
 		attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a> Designed by <a href="https://github.com/MarkMed/">Mark-Med</a>',
 		maxZoom: 20,
 		id: 'mapbox.outdoors',
 		accessToken: 'pk.eyJ1IjoibWFya21lZCIsImEiOiJjamxjOW5sMmwyaHlnM3FudGNyODZoZ2l4In0.JccJdeIlOEnkn9RPEYYu0w'
-	}).addTo(map);/**/
+	});
+	originalLayer.addTo(map);/**/
+	globalVar=map;
 
 	/*L.tileLayer('http://{s}.tiles.wmflabs.org/bw-mapnik/{z}/{x}/{y}.png', {
 	//	attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> Designed by <a href="https://github.com/MarkMed/">Mark-Med</a>',
@@ -18,32 +20,47 @@ window.addEventListener("load", () => {
 	var mapsProviders=[
 		{
 			name: 'OpenStreetMap Normal',
-			url: 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
-			img: 'Resources/providersImgs/openstrtNormal.png'
+			id: 0,
+			img: 'Resources/providersImgs/openstrtNormal.png',
+			tLayer: L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+				maxZoom: 20
+			})
 
 		},
 		{
 			name: 'OpenStreetMap Gray',
-			url: 'http://{s}.tiles.wmflabs.org/bw-mapnik/{z}/{x}/{y}.png',
-			img: 'Resources/providersImgs/openstrtGray.png'
+			id: 1,
+			img: 'Resources/providersImgs/openstrtGray.png',
+			tLayer: L.tileLayer('http://{s}.tiles.wmflabs.org/bw-mapnik/{z}/{x}/{y}.png', {
+				maxZoom: 20
+			})
 
 		},
 		{
 			name: 'Esri.WorldStreetMap',
-			url: 'https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}',
-			img: 'Resources/providersImgs/EsriWorldStreetMap.png'
+			id: 2,
+			img: 'Resources/providersImgs/EsriWorldStreetMap.png',
+			tLayer: L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}', {
+				maxZoom: 20
+			})
 
 		},
 		{
 			name: 'Esri.WorldImagery',
-			url: 'https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',
-			img: 'Resources/providersImgs/EsriWorldSatelliteMap.png'
+			id: 3,
+			img: 'Resources/providersImgs/EsriWorldSatelliteMap.png',
+			tLayer: L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+				maxZoom: 20
+			})
 
 		},
 		{
 			name: 'Esri.NatGeoWorldMap',
-			url: 'https://server.arcgisonline.com/ArcGIS/rest/services/NatGeo_World_Map/MapServer/tile/{z}/{y}/{x}',
-			img: 'Resources/providersImgs/natgeo.png'
+			id: 4,
+			img: 'Resources/providersImgs/natgeo.png',
+			tLayer: L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/NatGeo_World_Map/MapServer/tile/{z}/{y}/{x}', {
+				maxZoom: 20
+			})
 
 		}
 
@@ -308,13 +325,10 @@ window.addEventListener("load", () => {
 		marker.addTo(map);
 		if(newLineCoords.length<2){
 			drawLine();
-			
-			console.log("run if");
 		}
 		else{
 			console.log(polyline.getLatLngs());
 			polyline.addLatLng(newCoord);
-			console.log("run else");
 		}
 		function drawLine(){
 			polyline=L.polyline([[coords.lat, coords.lng]], {
@@ -546,6 +560,12 @@ window.addEventListener("load", () => {
 	L.control.layers(baseMaps).addTo(map);*/
 
 	//Trying Custom Controls
+	var mapViews=[L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibWFya21lZCIsImEiOiJjamxjOW5sMmwyaHlnM3FudGNyODZoZ2l4In0.JccJdeIlOEnkn9RPEYYu0w', {id: 'mapbox.light', attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a> Designed by <a href="https://github.com/MarkMed/">Mark-Med</a>'}),
+
+	L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibWFya21lZCIsImEiOiJjamxjOW5sMmwyaHlnM3FudGNyODZoZ2l4In0.JccJdeIlOEnkn9RPEYYu0w', {id: 'mapbox.satellite', attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a> Designed by <a href="https://github.com/MarkMed/">Mark-Med</a>'}),
+
+	L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibWFya21lZCIsImEiOiJjamxjOW5sMmwyaHlnM3FudGNyODZoZ2l4In0.JccJdeIlOEnkn9RPEYYu0w', {id: 'mapbox.outdoors', attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a> Designed by <a href="https://github.com/MarkMed/">Mark-Med</a>'})]
+
 	var customControl =	L.Control.extend({
 
 		options: {
@@ -563,7 +583,14 @@ window.addEventListener("load", () => {
 			container.style.cursor = 'pointer';
 			container.addEventListener("click", ()=>{
 				event.stopPropagation();
-				L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibWFya21lZCIsImEiOiJjamxjOW5sMmwyaHlnM3FudGNyODZoZ2l4In0.JccJdeIlOEnkn9RPEYYu0w', {id: 'mapbox.light', attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a> Designed by <a href="https://github.com/MarkMed/">Mark-Med</a>'}).addTo(map);
+				for(var i=0; i<mapViews.length; i++){
+					map.removeLayer(mapViews[i]);
+				}
+				originalLayer.removeFrom(map);
+				for(var i=0; i<mapsProviders.length; i++){
+					map.removeLayer(mapsProviders[i].tLayer);
+				}
+				mapViews[0].addTo(map);
 			});
 			container.addEventListener("dblclick", ()=>{
 				event.stopPropagation();
@@ -589,7 +616,14 @@ window.addEventListener("load", () => {
 			container.style.cursor = 'pointer';
 			container.addEventListener("click", ()=>{
 				event.stopPropagation();
-				L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibWFya21lZCIsImEiOiJjamxjOW5sMmwyaHlnM3FudGNyODZoZ2l4In0.JccJdeIlOEnkn9RPEYYu0w', {id: 'mapbox.satellite', attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a> Designed by <a href="https://github.com/MarkMed/">Mark-Med</a>'}).addTo(map);
+				for(var i=0; i<mapViews.length; i++){
+					map.removeLayer(mapViews[i]);
+				}
+				originalLayer.removeFrom(map);
+				for(var i=0; i<mapsProviders.length; i++){
+					map.removeLayer(mapsProviders[i].tLayer);
+				}
+				mapViews[1].addTo(map);
 			});
 			container.addEventListener("dblclick", ()=>{
 				event.stopPropagation();
@@ -615,7 +649,14 @@ window.addEventListener("load", () => {
 			container.style.cursor = 'pointer';
 			container.addEventListener("click", ()=>{
 				event.stopPropagation();
-				L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibWFya21lZCIsImEiOiJjamxjOW5sMmwyaHlnM3FudGNyODZoZ2l4In0.JccJdeIlOEnkn9RPEYYu0w', {id: 'mapbox.outdoors', attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a> Designed by <a href="https://github.com/MarkMed/">Mark-Med</a>'}).addTo(map);
+				for(var i=0; i<mapViews.length; i++){
+					map.removeLayer(mapViews[i]);
+				}
+				originalLayer.removeFrom(map);
+				for(var i=0; i<mapsProviders.length; i++){
+					map.removeLayer(mapsProviders[i].tLayer);
+				}
+				mapViews[2].addTo(map);
 			});
 			container.addEventListener("dblclick", ()=>{
 				event.stopPropagation();
@@ -834,26 +875,21 @@ window.addEventListener("load", () => {
 						var providerImg=document.createElement("img");
 						providerImg.setAttribute("src", mapsProviders[i].img);
 						providerImg.setAttribute("style", "width: 90px; height: 90px; margin: 0px 10px; background-color:blue; border-radius: 100%");
-						provider.setAttribute("providerUrl", mapsProviders[i].url);
+						provider.setAttribute("providerId", mapsProviders[i].id);
 
 						provider.appendChild(providerImg);
 						provider.appendChild(providerName);
 						providers.appendChild(provider);
 						provider.addEventListener("click", (ev)=>{
-							for(var i=0; i<ev.target.parentElement.parentElement.children.length; i++){
-								L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibWFya21lZCIsImEiOiJjamxjOW5sMmwyaHlnM3FudGNyODZoZ2l4In0.JccJdeIlOEnkn9RPEYYu0w', {
-									attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a> Designed by <a href="https://github.com/MarkMed/">Mark-Med</a>',
-									maxZoom: 20,
-									id: 'mapbox.outdoors',
-									accessToken: 'pk.eyJ1IjoibWFya21lZCIsImEiOiJjamxjOW5sMmwyaHlnM3FudGNyODZoZ2l4In0.JccJdeIlOEnkn9RPEYYu0w'
-								}).remove();
-								L.tileLayer(ev.target.parentElement.parentElement.children[i].getAttribute("providerUrl"), {
-									maxZoom: 20
-								}).remove();
+							
+							originalLayer.removeFrom(map);
+							for(var i=0; i<mapViews.length; i++){
+								map.removeLayer(mapViews[i]);
 							}
-							L.tileLayer(ev.target.parentElement.getAttribute("providerUrl"), {
-								maxZoom: 20
-							}).addTo(map);
+							for(var i=0; i<ev.target.parentElement.parentElement.children.length; i++){
+								map.removeLayer(mapsProviders[i].tLayer);
+							}
+							(mapsProviders[ev.target.parentElement.getAttribute("providerId")].tLayer).addTo(map);
 						});
 					}
 
