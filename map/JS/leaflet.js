@@ -8,7 +8,6 @@ window.addEventListener("load", () => {
 		accessToken: 'pk.eyJ1IjoibWFya21lZCIsImEiOiJjamxjOW5sMmwyaHlnM3FudGNyODZoZ2l4In0.JccJdeIlOEnkn9RPEYYu0w'
 	});
 	originalLayer.addTo(map);/**/
-	globalVar=map;
 
 	/*L.tileLayer('http://{s}.tiles.wmflabs.org/bw-mapnik/{z}/{x}/{y}.png', {
 	//	attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> Designed by <a href="https://github.com/MarkMed/">Mark-Med</a>',
@@ -86,20 +85,20 @@ window.addEventListener("load", () => {
 	});
 	var luxSqr=L.icon({
 		iconUrl: "Resources/sqr.svg",
-		iconSize: [10, 10],
-		iconAnchor: [5, 5]
+		iconSize: [14, 14],
+		iconAnchor: [7, 7]
 
 	});
 	var luxCircle=L.icon({
 		iconUrl: "Resources/circle.svg",
-		iconSize: [13, 13],
-		iconAnchor: [6.5, 6.5]
+		iconSize: [16, 16],
+		iconAnchor: [8, 8]
 
 	});
 	var luxArea=L.icon({
 		iconUrl: "Resources/area.svg",
-		iconSize: [14, 11],
-		iconAnchor: [7, 5.5]
+		iconSize: [16, 14],
+		iconAnchor: [8, 7]
 
 	});
 
@@ -115,7 +114,15 @@ window.addEventListener("load", () => {
 	}).addTo(map);*/
 
 	//Polygon
-
+	/*var latlngs = [
+		[ // first polygon
+		  [-34.91141405267056, -56.16599321365357],[-34.91977177657637, -56.16571426391602],[-34.91924394550579, -56.16824626922608], [-34.917766000448786, -56.1691689491272], [-34.91558422339099, -56.169383525848396], [-34.91458129028733, -56.170413494110115], [-34.911651599730504, -56.169126033782966]
+		]
+	];
+	var polygon = L.polygon(latlngs, {color: 'blue'});
+	polygon.addTo(map)
+	globalVar=polygon;*/
+	 
 	//Add Marker
 	function addMarker(event){
 		var title="";
@@ -327,7 +334,6 @@ window.addEventListener("load", () => {
 			drawLine();
 		}
 		else{
-			console.log(polyline.getLatLngs());
 			polyline.addLatLng(newCoord);
 		}
 		function drawLine(){
@@ -509,16 +515,30 @@ window.addEventListener("load", () => {
 			sqr.bindPopup(parentHTML).openPopup();
 		});
 	}
-	//Add Circle
+	//AddArea
+	var poly;
 	function addArea(event){
 		var coords=event.latlng;
-		var coordsArray;
 		var marker=L.marker([coords.lat, coords.lng], {
 			icon: luxArea,
-			draggable: true
+			draggable: false
 		});		
 		marker.addTo(map);
+		var polyArray=poly.getLatLngs();
+		console.log(polyArray[0]);
+		if(polyArray[0].length===0){
+			poly.setLatLngs([[marker.getLatLng().lat, marker.getLatLng().lng]]);
+			poly.addTo(map);
+		}
+		else{
+			var newCoord2BAded=poly.getLatLngs()[0];
+			newCoord2BAded.push([marker.getLatLng().lat, marker.getLatLng().lng]);
+			poly.setLatLngs(newCoord2BAded)
+			
+			console.log(polyArray[0]);
+		}
 	}
+
 	function addingListeners(evName){
 		removingListeners();
 		map.addEventListener("click", evName);
@@ -820,6 +840,11 @@ window.addEventListener("load", () => {
 					container.setAttribute("active", true);
 					addingListeners(addArea);
 					disableStyle(event);
+					poly=L.polygon([[]], {
+						color: 'rgba(243, 200, 96, 1)',
+						fillColor: 'rgba(30, 54, 65, 0.7)',
+						fillOpacity: 0.5
+					});
 				}
 				else{
 					container.setAttribute("active", false);
