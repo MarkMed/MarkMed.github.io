@@ -126,6 +126,7 @@ body {
 					.luxFX{
 						@extend %FB-col-cen-cen;
 						letter-spacing: 0.7em;
+						cursor: pointer;
 						font-size: 10px;
 						border-bottom: 1px solid $third-color50;
 						transition: 0.6s ease;

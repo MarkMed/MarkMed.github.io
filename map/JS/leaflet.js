@@ -126,7 +126,6 @@ window.addEventListener("load", () => {
 	//Add Marker
 	function addMarker(event){
 		var title="";
-		var idVar;
 		var coords=event.latlng;
 		var marker=L.marker([coords.lat, coords.lng], {
 			icon: luxMark,
@@ -441,6 +440,9 @@ window.addEventListener("load", () => {
 			//PopUp
 			center.bindPopup(parentHTML).openPopup();
 		});
+		center.addEventListener("click", ()=>{
+			center.bindPopup("<p>Coordinates:<br/>["+center.getLatLng().lat+", "+center.getLatLng().lng+"]</p><p>Radio: "+finalDist+"</p>");
+		});
 	}
 	//Add Square
 	function addSqr(event){
@@ -517,6 +519,7 @@ window.addEventListener("load", () => {
 	}
 	//AddArea
 	var poly;
+	var polyMarkers=[];
 	function addArea(event){
 		var coords=event.latlng;
 		var marker=L.marker([coords.lat, coords.lng], {
@@ -525,7 +528,6 @@ window.addEventListener("load", () => {
 		});		
 		marker.addTo(map);
 		var polyArray=poly.getLatLngs();
-		console.log(polyArray[0]);
 		if(polyArray[0].length===0){
 			poly.setLatLngs([[marker.getLatLng().lat, marker.getLatLng().lng]]);
 			poly.addTo(map);
@@ -533,17 +535,47 @@ window.addEventListener("load", () => {
 		else{
 			var newCoord2BAded=poly.getLatLngs()[0];
 			newCoord2BAded.push([marker.getLatLng().lat, marker.getLatLng().lng]);
-			poly.setLatLngs(newCoord2BAded)
-			
-			console.log(polyArray[0]);
+			poly.setLatLngs(newCoord2BAded);			
 		}
+		polyMarkers.push(marker);
+		marker.addEventListener("contextmenu", ()=>{
+			function insertElements(){
+				parentHTML.appendChild(removeMark);
+				parentHTML.appendChild(removePoly);
+			};
+			//Parent
+			var parentHTML=document.createElement("div");
+			//Buttons
+			/////////////////////////////////
+			var removePoly=document.createElement("button");
+			removePoly.innerHTML="Remove Polygon";
+			removePoly.setAttribute("class", "luxBtn");
+			removePoly.addEventListener("click", ()=>{
+				poly.remove();
+				for(var i=0; i<polyMarkers.length; i++){
+					polyMarkers[i].remove();
+				}
+			});
+			/////////////////////////////////
+			var removeMark=document.createElement("button");
+			removeMark.innerHTML="Remove Marker";
+			removeMark.setAttribute("class", "luxBtn");
+			removeMark.addEventListener("click", ()=>{
+				marker.remove();
+			});
+			/////////////////////////////////
+			insertElements();
+			
+			//PopUp
+			marker.bindPopup(parentHTML).openPopup();
+		});
 	}
 
 	function addingListeners(evName){
 		removingListeners();
 		map.addEventListener("click", evName);
 	}
-	function removingListeners(evName){
+	function removingListeners(){
 		map.removeEventListener("click", addMarker);
 		map.removeEventListener("click", addLine);
 		map.removeEventListener("click", addCircle);
@@ -843,7 +875,8 @@ window.addEventListener("load", () => {
 					poly=L.polygon([[]], {
 						color: 'rgba(243, 200, 96, 1)',
 						fillColor: 'rgba(30, 54, 65, 0.7)',
-						fillOpacity: 0.5
+						fillOpacity: 0.5,
+						weight: 2
 					});
 				}
 				else{
@@ -949,4 +982,78 @@ window.addEventListener("load", () => {
 		}
 		currentElement.style.opacity = '1';
 	}
+
+	(document.getElementsByClassName("luxFX")[0]).addEventListener("click", ()=>{
+		map.eachLayer(function (layer) {
+			map.removeLayer(layer);
+		});
+		originalLayer.addTo(map);
+	});
+	(document.getElementsByClassName("luxFX")[1]).addEventListener("click", ()=>{
+		///////////////////////////////////////////////////////		
+		function addMMarker(autoCoords, autoTitle, popUpContent){
+			var title=autoTitle;
+			var coords=autoCoords.latlng;
+			var marker=L.marker([coords.lat, coords.lng], {
+				icon: luxMark,
+				draggable: false,
+			});
+			marker.bindPopup("<h3>"+((!!markers[marker.id])?(markers[marker.id].title):("<i>Not save marker</i>"))+"</h3>"+((!!popUpContent)?(popUpContent):("<p>Here would be some info about location</p><p><i>Perhaps some meta info</i> and a <a href='google'>link</a></p><p>This represents fixed data added to the marker</p>"))+"");
+			marker.addTo(map);
+	
+			
+			marker.addEventListener("dblclick", (ev)=>{
+				ev.preventDefault();
+			});
+	
+			function saveMarker(){
+				if(title===""){
+					title="Unassigned Name";
+				}
+				var newMark=new mark(markers.length, title, marker);
+				marker.id=markers.length;
+				markers.push(newMark);
+				markers[marker.id].markObj.options.title=title;
+			}
+			saveMarker();			
+		}
+		addMMarker({latlng:{lat: -34.918113,lng: -56.165848}}, "Fac. Ing. Marcos", "<p>La <a href='https://www.fing.edu.uy'>Facultad de Ingeniería de la UdelaR</a>.<br/>Acá sí o sí Marcos (a.k.a. Lolo/Ange) tiene que venir a estudiar.</p><p>Tanto como para él como para su trabajo es importante que curse la FIng.</p><p>Queda lejos (al igual que el trabajo de su padre), pero viviendo más en el centro de Montevideo mojara la posibilidad de asistir a clases. Regresando rápido a la casa, tomando solo un ómnibus o dos como máximo.</p>");
+		addMMarker({latlng:{lat: -34.861742833174596,lng: -56.169002652168274}}, "Inst. Sup. Lean", "<p><a href='https://www.linkedin.com/school/arias-balparda/'>Instituto Tecnológico Superior</a>.<br/>Acá de seguro Leandro (a.k.a: Tochy/Lean) podrá seguir su carrera ya que se dictan los cursos que a él le interesa.</p><p>Al vivir en los alrededores, Leandro tiene la gran ventaja de que le queda cerca el estudio. Simplemente sería tomarse un ómnibus o dos como mucho.</p><p>Dentro del area donde a los tres nos queda mejor, el estudio de Leandro es el más cercano a la casa.</p>");
+		addMMarker({latlng:{lat: -34.87849394341864,lng: -56.078854948282256}}, "GX. Labs. Marcos", "<p><a href='https://www.genexus.com/en/global'>GeneXus</a> Laboratories.<br/>El trabajo de Marcos.</p><p>Lamentablemente queda muy lejos y se sale del rango de a donde los tres nos queda mejor vivir.</p><p>Sin embargo, al mudarse más al centro de Montevideo, las posibilidades mejoran (se ahorra más dinero y tiempo).</p><p>Sería dos ómnibus como máximo, y gastando un boleto.</p>");
+		addMMarker({latlng:{lat: -34.81821845936467,lng: -56.19750916957856}}, "Radesca Miguel", "<p>Talleres de Baterías <a href='https://radesca.com'>Radesca</a>.</p><p>Donde trabaja Miguel (a.k.a: Babita/Papá).</p><p>La ventaja que viviendo más al centro tiene a las oficinas de Radesca cerca y clientes cerca (<a href='http://pm1.narvii.com/6322/74a7f8ff4a08667be19b72214cb558af8d610704_00.jpg'>Pontevedra</a> por ejemplo).</p><p>Dependiendo donde vivamos, podría dejar a Leandro en su estudio, o nos podría arrimar a la parada también.</p><p>Al igual que el estudio de Marcos, el trabajo de papá queda en los limites del área donde podríamos vivir.</p>");
+		///////////////////////////////////////////////////////
+		var center=L.marker([-34.863, -56.16022109985352], {
+			icon: luxCircle
+		});		
+		center.addTo(map);
+		center.addEventListener("click", ()=>{
+			center.bindPopup("<h4>Punto perfecto para vivir!</h4><p>Las areas de alrededor serían las zonas donde más nos conviene a los tres.</p><p>El círculo de más afuera es el menos conveniente. Viviendo en alguna zona del circula más externo beneficia a uno pero es contraproducente para otro.</p><p>Sin embargo, viviendo más al centro o viviendo en algunas de los círculos más internos, nos beneficiamos los tres!</p>");
+		});
+		L.circle([center.getLatLng().lat, center.getLatLng().lng], {
+			color: 'rgba(243, 200, 96, 0)',
+			fillColor: 'rgba(30, 54, 75, 0.7)',
+			fillOpacity: 0.5,
+			radius: 800
+		}).addTo(map);
+		L.circle([center.getLatLng().lat, center.getLatLng().lng], {
+			color: 'rgba(243, 200, 96, 0)',
+			fillColor: 'rgba(30, 54, 75, 0.7)',
+			fillOpacity: 0.5,
+			radius: 1600
+		}).addTo(map);
+		L.circle([center.getLatLng().lat, center.getLatLng().lng], {
+			color: 'rgba(243, 200, 96, 0)',
+			fillColor: 'rgba(30, 54, 65, 0.7)',
+			fillOpacity: 0.5,
+			radius: 2800
+		}).addTo(map);
+		L.circle([center.getLatLng().lat, center.getLatLng().lng], {
+			color: 'rgba(243, 200, 96, 1)',
+			fillColor: 'rgba(30, 54, 75, 0.7)',
+			fillOpacity: 0.5,
+			radius: 6100
+		}).addTo(map);
+
+		/*addCircle({latlng:{lat: -34.862693591832716, lng: -56.16022109985352}})*/
+	});
 });

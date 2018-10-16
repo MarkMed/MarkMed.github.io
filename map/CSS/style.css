@@ -1,16 +1,16 @@
-/* line 2, C:/Users/mmedina/Documents/Programming/Training/MarkMed.github.io/scss/_noDefaultStyle.scss */
+/* line 2, C:/Users/mmedina/Documents/Programming/Training/MarkMed.github.io/map/SCSS/_noDefaultStyle.scss */
 * {
   margin: 0;
   padding: 0;
 }
 
-/* line 6, C:/Users/mmedina/Documents/Programming/Training/MarkMed.github.io/scss/_noDefaultStyle.scss */
+/* line 6, C:/Users/mmedina/Documents/Programming/Training/MarkMed.github.io/map/SCSS/_noDefaultStyle.scss */
 a {
   text-decoration: none;
   color: black;
 }
 
-/* line 10, C:/Users/mmedina/Documents/Programming/Training/MarkMed.github.io/scss/_noDefaultStyle.scss */
+/* line 10, C:/Users/mmedina/Documents/Programming/Training/MarkMed.github.io/map/SCSS/_noDefaultStyle.scss */
 ul, ol {
   list-style: none;
 }
@@ -33,7 +33,7 @@ width of element:
 */
 /*Extends*/
 /*FlexBoxes*/
-/* line 65, C:/Users/mmedina/Documents/Programming/Training/MarkMed.github.io/scss/_varsMixinExtends.scss */
+/* line 65, C:/Users/mmedina/Documents/Programming/Training/MarkMed.github.io/map/SCSS/_varsMixinExtends.scss */
 body main section {
   display: flex;
   flex-direction: column;
@@ -41,7 +41,7 @@ body main section {
   align-items: center;
 }
 
-/* line 71, C:/Users/mmedina/Documents/Programming/Training/MarkMed.github.io/scss/_varsMixinExtends.scss */
+/* line 71, C:/Users/mmedina/Documents/Programming/Training/MarkMed.github.io/map/SCSS/_varsMixinExtends.scss */
 body main section {
   display: flex;
   flex-direction: column;
@@ -49,7 +49,7 @@ body main section {
   align-items: center;
 }
 
-/* line 77, C:/Users/mmedina/Documents/Programming/Training/MarkMed.github.io/scss/_varsMixinExtends.scss */
+/* line 77, C:/Users/mmedina/Documents/Programming/Training/MarkMed.github.io/map/SCSS/_varsMixinExtends.scss */
 body .menu .logo {
   display: flex;
   flex-direction: row;
@@ -57,7 +57,7 @@ body .menu .logo {
   align-items: center;
 }
 
-/* line 83, C:/Users/mmedina/Documents/Programming/Training/MarkMed.github.io/scss/_varsMixinExtends.scss */
+/* line 83, C:/Users/mmedina/Documents/Programming/Training/MarkMed.github.io/map/SCSS/_varsMixinExtends.scss */
 body .menu div ul li, body .menu div ul li .luxFX, body main, body main section#LFMap div#mapid .leaflet-popup-content-wrapper .leaflet-popup-content button, body main section#LFMap div#mapid .leaflet-popup-content-wrapper .leaflet-popup-content .inputTxt {
   display: flex;
   flex-direction: column;
@@ -76,7 +76,7 @@ body .menu div ul li, body .menu div ul li .luxFX, body main, body main section#
   src: url(../Resources/JuliusSansOne-Regular.ttf);
 }
 
-/* line 13, C:/Users/mmedina/Documents/Programming/Training/MarkMed.github.io/scss/style.scss */
+/* line 13, C:/Users/mmedina/Documents/Programming/Training/MarkMed.github.io/map/SCSS/style.scss */
 body {
   /*Classes*/
   background: #1e3641;
@@ -84,7 +84,7 @@ body {
   font-family: "Cinzel";
 }
 
-/* line 15, C:/Users/mmedina/Documents/Programming/Training/MarkMed.github.io/scss/style.scss */
+/* line 15, C:/Users/mmedina/Documents/Programming/Training/MarkMed.github.io/map/SCSS/style.scss */
 body .markerPopUp {
   background-color: rgba(150, 150, 130, 0.3);
   box-shadow: 0px 0px 2px 1px rgba(150, 150, 130, 0.3);
@@ -92,7 +92,7 @@ body .markerPopUp {
   width: 500px;
 }
 
-/* line 21, C:/Users/mmedina/Documents/Programming/Training/MarkMed.github.io/scss/style.scss */
+/* line 21, C:/Users/mmedina/Documents/Programming/Training/MarkMed.github.io/map/SCSS/style.scss */
 body .title {
   color: #fffedb;
   margin: 10px;
@@ -106,7 +106,7 @@ body .title {
   font-family: "Julius";
 }
 
-/* line 29, C:/Users/mmedina/Documents/Programming/Training/MarkMed.github.io/scss/style.scss */
+/* line 29, C:/Users/mmedina/Documents/Programming/Training/MarkMed.github.io/map/SCSS/style.scss */
 body .centered-content {
   display: flex;
   flex-direction: column;
@@ -114,7 +114,7 @@ body .centered-content {
   align-items: center;
 }
 
-/* line 35, C:/Users/mmedina/Documents/Programming/Training/MarkMed.github.io/scss/style.scss */
+/* line 35, C:/Users/mmedina/Documents/Programming/Training/MarkMed.github.io/map/SCSS/style.scss */
 body .menu {
   z-index: 999;
   display: flex;
@@ -128,7 +128,7 @@ body .menu {
   position: fixed;
 }
 
-/* line 42, C:/Users/mmedina/Documents/Programming/Training/MarkMed.github.io/scss/style.scss */
+/* line 42, C:/Users/mmedina/Documents/Programming/Training/MarkMed.github.io/map/SCSS/style.scss */
 body .menu .logo {
   font-size: 20px;
   letter-spacing: 0.9em;
@@ -137,7 +137,7 @@ body .menu .logo {
 }
 
 @media (min-width: 160px) and (max-width: 640px) {
-  /* line 42, C:/Users/mmedina/Documents/Programming/Training/MarkMed.github.io/scss/style.scss */
+  /* line 42, C:/Users/mmedina/Documents/Programming/Training/MarkMed.github.io/map/SCSS/style.scss */
   body .menu .logo {
     height: 80%;
     width: 91.66667%;
@@ -146,7 +146,7 @@ body .menu .logo {
 }
 
 @media (min-width: 641px) and (max-width: 1007px) {
-  /* line 42, C:/Users/mmedina/Documents/Programming/Training/MarkMed.github.io/scss/style.scss */
+  /* line 42, C:/Users/mmedina/Documents/Programming/Training/MarkMed.github.io/map/SCSS/style.scss */
   body .menu .logo {
     height: 80%;
     width: 33.33333%;
@@ -155,7 +155,7 @@ body .menu .logo {
 }
 
 @media (min-width: 1008px) {
-  /* line 42, C:/Users/mmedina/Documents/Programming/Training/MarkMed.github.io/scss/style.scss */
+  /* line 42, C:/Users/mmedina/Documents/Programming/Training/MarkMed.github.io/map/SCSS/style.scss */
   body .menu .logo {
     height: 80%;
     width: 33.33333%;
@@ -163,7 +163,7 @@ body .menu .logo {
   }
 }
 
-/* line 61, C:/Users/mmedina/Documents/Programming/Training/MarkMed.github.io/scss/style.scss */
+/* line 61, C:/Users/mmedina/Documents/Programming/Training/MarkMed.github.io/map/SCSS/style.scss */
 body .menu div {
   display: flex;
   flex-direction: column;
@@ -172,12 +172,12 @@ body .menu div {
 }
 
 @media (min-width: 160px) and (max-width: 640px) {
-  /* line 61, C:/Users/mmedina/Documents/Programming/Training/MarkMed.github.io/scss/style.scss */
+  /* line 61, C:/Users/mmedina/Documents/Programming/Training/MarkMed.github.io/map/SCSS/style.scss */
   body .menu div {
     height: 80%;
     width: 8.33333%;
   }
-  /* line 64, C:/Users/mmedina/Documents/Programming/Training/MarkMed.github.io/scss/style.scss */
+  /* line 64, C:/Users/mmedina/Documents/Programming/Training/MarkMed.github.io/map/SCSS/style.scss */
   body .menu div::before {
     content: "";
     background-image: url(../Resources/menu.svg);
@@ -191,7 +191,7 @@ body .menu div {
 }
 
 @media (min-width: 641px) and (max-width: 1007px) {
-  /* line 61, C:/Users/mmedina/Documents/Programming/Training/MarkMed.github.io/scss/style.scss */
+  /* line 61, C:/Users/mmedina/Documents/Programming/Training/MarkMed.github.io/map/SCSS/style.scss */
   body .menu div {
     height: 80%;
     width: 50%;
@@ -199,7 +199,7 @@ body .menu div {
 }
 
 @media (min-width: 1008px) {
-  /* line 61, C:/Users/mmedina/Documents/Programming/Training/MarkMed.github.io/scss/style.scss */
+  /* line 61, C:/Users/mmedina/Documents/Programming/Training/MarkMed.github.io/map/SCSS/style.scss */
   body .menu div {
     height: 80%;
     width: 50%;
@@ -207,21 +207,21 @@ body .menu div {
 }
 
 @media (min-width: 160px) and (max-width: 640px) {
-  /* line 81, C:/Users/mmedina/Documents/Programming/Training/MarkMed.github.io/scss/style.scss */
+  /* line 81, C:/Users/mmedina/Documents/Programming/Training/MarkMed.github.io/map/SCSS/style.scss */
   body .menu div:hover ul {
     transform: translateX(0%);
     opacity: 1;
   }
 }
 
-/* line 87, C:/Users/mmedina/Documents/Programming/Training/MarkMed.github.io/scss/style.scss */
+/* line 87, C:/Users/mmedina/Documents/Programming/Training/MarkMed.github.io/map/SCSS/style.scss */
 body .menu div ul {
   height: 80%;
   width: 100%;
 }
 
 @media (min-width: 160px) and (max-width: 640px) {
-  /* line 87, C:/Users/mmedina/Documents/Programming/Training/MarkMed.github.io/scss/style.scss */
+  /* line 87, C:/Users/mmedina/Documents/Programming/Training/MarkMed.github.io/map/SCSS/style.scss */
   body .menu div ul {
     transition: 0.6s ease;
     opacity: 0;
@@ -238,7 +238,7 @@ body .menu div ul {
     transform: translateX(100%);
     padding-top: 20px;
   }
-  /* line 100, C:/Users/mmedina/Documents/Programming/Training/MarkMed.github.io/scss/style.scss */
+  /* line 100, C:/Users/mmedina/Documents/Programming/Training/MarkMed.github.io/map/SCSS/style.scss */
   body .menu div ul::before {
     content: "Opciones";
     text-transform: uppercase;
@@ -257,7 +257,7 @@ body .menu div ul {
 }
 
 @media (min-width: 641px) and (max-width: 1007px) {
-  /* line 87, C:/Users/mmedina/Documents/Programming/Training/MarkMed.github.io/scss/style.scss */
+  /* line 87, C:/Users/mmedina/Documents/Programming/Training/MarkMed.github.io/map/SCSS/style.scss */
   body .menu div ul {
     display: flex;
     flex-direction: row;
@@ -267,7 +267,7 @@ body .menu div ul {
 }
 
 @media (min-width: 1008px) {
-  /* line 87, C:/Users/mmedina/Documents/Programming/Training/MarkMed.github.io/scss/style.scss */
+  /* line 87, C:/Users/mmedina/Documents/Programming/Training/MarkMed.github.io/map/SCSS/style.scss */
   body .menu div ul {
     display: flex;
     flex-direction: row;
@@ -276,7 +276,7 @@ body .menu div ul {
   }
 }
 
-/* line 118, C:/Users/mmedina/Documents/Programming/Training/MarkMed.github.io/scss/style.scss */
+/* line 118, C:/Users/mmedina/Documents/Programming/Training/MarkMed.github.io/map/SCSS/style.scss */
 body .menu div ul li {
   flex-grow: 1;
   height: 100%;
@@ -284,7 +284,7 @@ body .menu div ul li {
 }
 
 @media (min-width: 160px) and (max-width: 640px) {
-  /* line 118, C:/Users/mmedina/Documents/Programming/Training/MarkMed.github.io/scss/style.scss */
+  /* line 118, C:/Users/mmedina/Documents/Programming/Training/MarkMed.github.io/map/SCSS/style.scss */
   body .menu div ul li {
     height: 50%;
     width: 90%;
@@ -292,9 +292,10 @@ body .menu div ul li {
   }
 }
 
-/* line 126, C:/Users/mmedina/Documents/Programming/Training/MarkMed.github.io/scss/style.scss */
+/* line 126, C:/Users/mmedina/Documents/Programming/Training/MarkMed.github.io/map/SCSS/style.scss */
 body .menu div ul li .luxFX {
   letter-spacing: 0.7em;
+  cursor: pointer;
   font-size: 10px;
   border-bottom: 1px solid rgba(243, 200, 96, 0.5);
   transition: 0.6s ease;
@@ -308,7 +309,7 @@ body .menu div ul li .luxFX {
 }
 
 @media (min-width: 160px) and (max-width: 640px) {
-  /* line 126, C:/Users/mmedina/Documents/Programming/Training/MarkMed.github.io/scss/style.scss */
+  /* line 126, C:/Users/mmedina/Documents/Programming/Training/MarkMed.github.io/map/SCSS/style.scss */
   body .menu div ul li .luxFX {
     background-position: 50% 1%;
     border: 1px solid rgba(243, 200, 96, 0.5);
@@ -321,7 +322,7 @@ body .menu div ul li .luxFX {
 }
 
 @media (min-width: 641px) and (max-width: 1007px) {
-  /* line 126, C:/Users/mmedina/Documents/Programming/Training/MarkMed.github.io/scss/style.scss */
+  /* line 126, C:/Users/mmedina/Documents/Programming/Training/MarkMed.github.io/map/SCSS/style.scss */
   body .menu div ul li .luxFX {
     height: 100%;
     width: 100%;
@@ -329,65 +330,65 @@ body .menu div ul li .luxFX {
 }
 
 @media (min-width: 1008px) {
-  /* line 126, C:/Users/mmedina/Documents/Programming/Training/MarkMed.github.io/scss/style.scss */
+  /* line 126, C:/Users/mmedina/Documents/Programming/Training/MarkMed.github.io/map/SCSS/style.scss */
   body .menu div ul li .luxFX {
     height: 100%;
     width: 80%;
   }
 }
 
-/* line 153, C:/Users/mmedina/Documents/Programming/Training/MarkMed.github.io/scss/style.scss */
+/* line 154, C:/Users/mmedina/Documents/Programming/Training/MarkMed.github.io/map/SCSS/style.scss */
 body .menu div ul li .luxFX:active {
   opacity: 1;
   transition: 0.05s ease;
 }
 
-/* line 157, C:/Users/mmedina/Documents/Programming/Training/MarkMed.github.io/scss/style.scss */
+/* line 158, C:/Users/mmedina/Documents/Programming/Training/MarkMed.github.io/map/SCSS/style.scss */
 body .menu div ul li .luxFX:hover {
   background-position: 50% 99%;
   color: #fff;
   letter-spacing: 0.9em;
 }
 
-/* line 167, C:/Users/mmedina/Documents/Programming/Training/MarkMed.github.io/scss/style.scss */
+/* line 168, C:/Users/mmedina/Documents/Programming/Training/MarkMed.github.io/map/SCSS/style.scss */
 body main {
   margin-top: 50px;
   height: auto;
   width: 100%;
 }
 
-/* line 171, C:/Users/mmedina/Documents/Programming/Training/MarkMed.github.io/scss/style.scss */
+/* line 172, C:/Users/mmedina/Documents/Programming/Training/MarkMed.github.io/map/SCSS/style.scss */
 body main section {
   height: auto;
   width: 100%;
 }
 
-/* line 175, C:/Users/mmedina/Documents/Programming/Training/MarkMed.github.io/scss/style.scss */
+/* line 176, C:/Users/mmedina/Documents/Programming/Training/MarkMed.github.io/map/SCSS/style.scss */
 body main section#LFMap div#mapid {
   height: 800px;
   width: 100%;
 }
 
-/* line 177, C:/Users/mmedina/Documents/Programming/Training/MarkMed.github.io/scss/style.scss */
+/* line 178, C:/Users/mmedina/Documents/Programming/Training/MarkMed.github.io/map/SCSS/style.scss */
 body main section#LFMap div#mapid * {
   z-index: 0;
 }
 
-/* line 180, C:/Users/mmedina/Documents/Programming/Training/MarkMed.github.io/scss/style.scss */
+/* line 181, C:/Users/mmedina/Documents/Programming/Training/MarkMed.github.io/map/SCSS/style.scss */
 body main section#LFMap div#mapid .leaflet-popup-content-wrapper, body main section#LFMap div#mapid .leaflet-popup-tip {
   background-color: #1e3641;
   border: 2px groove #f3c860;
   z-index: 100;
 }
 
-/* line 185, C:/Users/mmedina/Documents/Programming/Training/MarkMed.github.io/scss/style.scss */
+/* line 186, C:/Users/mmedina/Documents/Programming/Training/MarkMed.github.io/map/SCSS/style.scss */
 body main section#LFMap div#mapid .leaflet-popup-content-wrapper {
   color: #fffedb;
   font-family: "Quattrocento";
   font-size: 15px;
 }
 
-/* line 189, C:/Users/mmedina/Documents/Programming/Training/MarkMed.github.io/scss/style.scss */
+/* line 190, C:/Users/mmedina/Documents/Programming/Training/MarkMed.github.io/map/SCSS/style.scss */
 body main section#LFMap div#mapid .leaflet-popup-content-wrapper .leaflet-popup-content {
   display: flex;
   flex-direction: column;
@@ -395,12 +396,12 @@ body main section#LFMap div#mapid .leaflet-popup-content-wrapper .leaflet-popup-
   align-items: flex-start;
 }
 
-/* line 191, C:/Users/mmedina/Documents/Programming/Training/MarkMed.github.io/scss/style.scss */
+/* line 192, C:/Users/mmedina/Documents/Programming/Training/MarkMed.github.io/map/SCSS/style.scss */
 body main section#LFMap div#mapid .leaflet-popup-content-wrapper .leaflet-popup-content .centered {
   text-align: center;
 }
 
-/* line 194, C:/Users/mmedina/Documents/Programming/Training/MarkMed.github.io/scss/style.scss */
+/* line 195, C:/Users/mmedina/Documents/Programming/Training/MarkMed.github.io/map/SCSS/style.scss */
 body main section#LFMap div#mapid .leaflet-popup-content-wrapper .leaflet-popup-content .mainPopTitle {
   color: rgba(243, 200, 96, 0.6);
   font-family: "Julius";
@@ -408,23 +409,23 @@ body main section#LFMap div#mapid .leaflet-popup-content-wrapper .leaflet-popup-
   margin-bottom: 10px;
 }
 
-/* line 200, C:/Users/mmedina/Documents/Programming/Training/MarkMed.github.io/scss/style.scss */
+/* line 201, C:/Users/mmedina/Documents/Programming/Training/MarkMed.github.io/map/SCSS/style.scss */
 body main section#LFMap div#mapid .leaflet-popup-content-wrapper .leaflet-popup-content .popTitle {
   color: #fffedb;
   font-family: "Julius";
 }
 
-/* line 204, C:/Users/mmedina/Documents/Programming/Training/MarkMed.github.io/scss/style.scss */
+/* line 205, C:/Users/mmedina/Documents/Programming/Training/MarkMed.github.io/map/SCSS/style.scss */
 body main section#LFMap div#mapid .leaflet-popup-content-wrapper .leaflet-popup-content a {
   color: #00BCD4;
 }
 
-/* line 207, C:/Users/mmedina/Documents/Programming/Training/MarkMed.github.io/scss/style.scss */
+/* line 208, C:/Users/mmedina/Documents/Programming/Training/MarkMed.github.io/map/SCSS/style.scss */
 body main section#LFMap div#mapid .leaflet-popup-content-wrapper .leaflet-popup-content p {
   margin: 10px;
 }
 
-/* line 210, C:/Users/mmedina/Documents/Programming/Training/MarkMed.github.io/scss/style.scss */
+/* line 211, C:/Users/mmedina/Documents/Programming/Training/MarkMed.github.io/map/SCSS/style.scss */
 body main section#LFMap div#mapid .leaflet-popup-content-wrapper .leaflet-popup-content button {
   height: auto;
   width: 100%;
@@ -445,24 +446,24 @@ body main section#LFMap div#mapid .leaflet-popup-content-wrapper .leaflet-popup-
   opacity: 0.8;
 }
 
-/* line 228, C:/Users/mmedina/Documents/Programming/Training/MarkMed.github.io/scss/style.scss */
+/* line 229, C:/Users/mmedina/Documents/Programming/Training/MarkMed.github.io/map/SCSS/style.scss */
 body main section#LFMap div#mapid .leaflet-popup-content-wrapper .leaflet-popup-content button:active {
   opacity: 1;
   transition: 0.05s ease;
 }
 
-/* line 232, C:/Users/mmedina/Documents/Programming/Training/MarkMed.github.io/scss/style.scss */
+/* line 233, C:/Users/mmedina/Documents/Programming/Training/MarkMed.github.io/map/SCSS/style.scss */
 body main section#LFMap div#mapid .leaflet-popup-content-wrapper .leaflet-popup-content button:focus {
   outline: none;
 }
 
-/* line 235, C:/Users/mmedina/Documents/Programming/Training/MarkMed.github.io/scss/style.scss */
+/* line 236, C:/Users/mmedina/Documents/Programming/Training/MarkMed.github.io/map/SCSS/style.scss */
 body main section#LFMap div#mapid .leaflet-popup-content-wrapper .leaflet-popup-content button:hover {
   background-position: 50% 99%;
   color: #fff;
 }
 
-/* line 240, C:/Users/mmedina/Documents/Programming/Training/MarkMed.github.io/scss/style.scss */
+/* line 241, C:/Users/mmedina/Documents/Programming/Training/MarkMed.github.io/map/SCSS/style.scss */
 body main section#LFMap div#mapid .leaflet-popup-content-wrapper .leaflet-popup-content .inputTxt {
   height: auto;
   width: 100%;
@@ -479,25 +480,25 @@ body main section#LFMap div#mapid .leaflet-popup-content-wrapper .leaflet-popup-
   font-family: Julius;
 }
 
-/* line 254, C:/Users/mmedina/Documents/Programming/Training/MarkMed.github.io/scss/style.scss */
+/* line 255, C:/Users/mmedina/Documents/Programming/Training/MarkMed.github.io/map/SCSS/style.scss */
 body main section#LFMap div#mapid .leaflet-popup-content-wrapper .leaflet-popup-content .inputTxt:focus {
   outline: none;
 }
 
-/* line 257, C:/Users/mmedina/Documents/Programming/Training/MarkMed.github.io/scss/style.scss */
+/* line 258, C:/Users/mmedina/Documents/Programming/Training/MarkMed.github.io/map/SCSS/style.scss */
 body main section#LFMap div#mapid .leaflet-popup-content-wrapper .leaflet-popup-content .inputTxt:hover {
   border: 1px solid rgba(243, 200, 96, 0.8);
   background-position: 50% 49%;
 }
 
-/* line 261, C:/Users/mmedina/Documents/Programming/Training/MarkMed.github.io/scss/style.scss */
+/* line 262, C:/Users/mmedina/Documents/Programming/Training/MarkMed.github.io/map/SCSS/style.scss */
 body main section#LFMap div#mapid .leaflet-popup-content-wrapper .leaflet-popup-content .inputTxt:focus {
   border: 1px solid #f3c860;
   background-position: 50% 99%;
   color: #fff;
 }
 
-/* line 269, C:/Users/mmedina/Documents/Programming/Training/MarkMed.github.io/scss/style.scss */
+/* line 270, C:/Users/mmedina/Documents/Programming/Training/MarkMed.github.io/map/SCSS/style.scss */
 body main section#LFMap div#mapid .leaflet-popup-close-button {
   color: #fffedb;
   opacity: 0.8;
@@ -513,28 +514,28 @@ body main section#LFMap div#mapid .leaflet-popup-close-button {
   height: 30px;
 }
 
-/* line 280, C:/Users/mmedina/Documents/Programming/Training/MarkMed.github.io/scss/style.scss */
+/* line 281, C:/Users/mmedina/Documents/Programming/Training/MarkMed.github.io/map/SCSS/style.scss */
 body main section#LFMap div#mapid .leaflet-popup-close-button:hover {
   opacity: 1;
 }
 
-/* line 284, C:/Users/mmedina/Documents/Programming/Training/MarkMed.github.io/scss/style.scss */
+/* line 285, C:/Users/mmedina/Documents/Programming/Training/MarkMed.github.io/map/SCSS/style.scss */
 body main section#LFMap .leaflet-bar {
   opacity: 0.5;
 }
 
-/* line 286, C:/Users/mmedina/Documents/Programming/Training/MarkMed.github.io/scss/style.scss */
+/* line 287, C:/Users/mmedina/Documents/Programming/Training/MarkMed.github.io/map/SCSS/style.scss */
 body main section#LFMap .leaflet-bar:hover {
   opacity: 1;
 }
 
-/* line 292, C:/Users/mmedina/Documents/Programming/Training/MarkMed.github.io/scss/style.scss */
+/* line 293, C:/Users/mmedina/Documents/Programming/Training/MarkMed.github.io/map/SCSS/style.scss */
 body main section#GMap div#map {
   height: 800px;
   width: 100%;
 }
 
-/* line 298, C:/Users/mmedina/Documents/Programming/Training/MarkMed.github.io/scss/style.scss */
+/* line 299, C:/Users/mmedina/Documents/Programming/Training/MarkMed.github.io/map/SCSS/style.scss */
 body footer {
   height: 300px;
   width: 100%;
@@ -544,4 +545,4 @@ body footer {
   bottom: 0;
 }
 
-/*# sourceMappingURL=../css/style.map */
+/*# sourceMappingURL=../CSS/style.map */
