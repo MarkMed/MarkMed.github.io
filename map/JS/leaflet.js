@@ -1027,7 +1027,7 @@ window.addEventListener("load", () => {
 		});		
 		center.addTo(map);
 		center.addEventListener("click", ()=>{
-			center.bindPopup("<h4>Punto perfecto para vivir!</h4><p>Las areas de alrededor serían las zonas donde más nos conviene a los tres.</p><p>El círculo de más afuera es el menos conveniente. Viviendo en alguna zona del circula más externo beneficia a uno pero es contraproducente para otro.</p><p>Sin embargo, viviendo más al centro o viviendo en algunas de los círculos más internos, nos beneficiamos los tres!</p>");
+			center.bindPopup("<h4>Punto perfecto para vivir!</h4><p>Las areas de alrededor serían las zonas donde más nos conviene a los tres.</p><p>El círculo de más afuera es el menos conveniente. Viviendo en alguna zona del circula más externo beneficia a uno pero es contraproducente para otro.</p><p>Sin embargo, viviendo más al centro o viviendo en algunas de los círculos más internos, nos beneficiamos los tres!</p><p><i>La circunferencia es para hallar el centro y de ahí ver qué zona nos beneficia.</i></p>");
 		});
 		L.circle([center.getLatLng().lat, center.getLatLng().lng], {
 			color: 'rgba(243, 200, 96, 0)',
@@ -1049,7 +1049,7 @@ window.addEventListener("load", () => {
 		}).addTo(map);
 		L.circle([center.getLatLng().lat, center.getLatLng().lng], {
 			color: 'rgba(243, 200, 96, 1)',
-			fillColor: 'rgba(30, 54, 75, 0.7)',
+			fillColor: 'rgba(30, 54, 75, 0)',
 			fillOpacity: 0.5,
 			radius: 6100
 		}).addTo(map);
