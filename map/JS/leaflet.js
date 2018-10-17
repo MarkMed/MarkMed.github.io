@@ -165,6 +165,7 @@ window.addEventListener("load", () => {
 			};
 			//Parent
 			var parentHTML=document.createElement("div");
+			parentHTML.style.width="100%";
 			//Buttons
 
 
@@ -293,6 +294,7 @@ window.addEventListener("load", () => {
 
 		//Regist marker
 		var parentDiv=document.createElement("div");
+		parentDiv.style.width="100%"
 		parentDiv.innerHTML="<h3>New Marker</h3><p>Enter a name for this marker:</p><input class='inputTxt' type='text' placeholder='e.g: Las Vegas Hotel'></input>"
 		var regBtn=document.createElement("button");
 		regBtn.innerHTML="Save Marker";
@@ -1029,31 +1031,17 @@ window.addEventListener("load", () => {
 		center.addEventListener("click", ()=>{
 			center.bindPopup("<h4>Punto perfecto para vivir!</h4><p>Las areas de alrededor serían las zonas donde más nos conviene a los tres.</p><p>El círculo de más afuera es el menos conveniente. Viviendo en alguna zona del circula más externo beneficia a uno pero es contraproducente para otro.</p><p>Sin embargo, viviendo más al centro o viviendo en algunas de los círculos más internos, nos beneficiamos los tres!</p><p><i>La circunferencia es para hallar el centro y de ahí ver qué zona nos beneficia.</i></p>");
 		});
-		L.circle([center.getLatLng().lat, center.getLatLng().lng], {
-			color: 'rgba(243, 200, 96, 0)',
-			fillColor: 'rgba(30, 54, 75, 0.7)',
-			fillOpacity: 0.5,
-			radius: 800
-		}).addTo(map);
-		L.circle([center.getLatLng().lat, center.getLatLng().lng], {
-			color: 'rgba(243, 200, 96, 0)',
-			fillColor: 'rgba(30, 54, 75, 0.7)',
-			fillOpacity: 0.5,
-			radius: 1600
-		}).addTo(map);
-		L.circle([center.getLatLng().lat, center.getLatLng().lng], {
-			color: 'rgba(243, 200, 96, 0)',
-			fillColor: 'rgba(30, 54, 65, 0.7)',
-			fillOpacity: 0.5,
-			radius: 2800
-		}).addTo(map);
-		L.circle([center.getLatLng().lat, center.getLatLng().lng], {
-			color: 'rgba(243, 200, 96, 1)',
-			fillColor: 'rgba(30, 54, 75, 0)',
-			fillOpacity: 0.5,
-			radius: 6100
-		}).addTo(map);
-
-		/*addCircle({latlng:{lat: -34.862693591832716, lng: -56.16022109985352}})*/
+		function addConcentricCircle( borderColor, colorVar, radiusVar){			
+			L.circle([center.getLatLng().lat, center.getLatLng().lng], {
+				color: borderColor,
+				fillColor: colorVar,
+				fillOpacity: 0.5,
+				radius: radiusVar
+			}).addTo(map);
+		}
+		addConcentricCircle("rgba(243, 200, 96, 0)", 'rgba(30, 54, 75, 0.7)', 800);
+		addConcentricCircle("rgba(243, 200, 96, 0)",'rgba(30, 54, 75, 0.7)', 1600);
+		addConcentricCircle("rgba(243, 200, 96, 0)", 'rgba(30, 54, 75, 0.7)', 2800);
+		addConcentricCircle("rgba(243, 200, 96, 1)", 'rgba(30, 54, 75, 0)', 6100);
 	});
 });

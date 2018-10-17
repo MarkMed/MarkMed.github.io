@@ -186,7 +186,8 @@ body {
 					.leaflet-popup-content-wrapper{
 						color: $cream-color;
 						font-family: "Quattrocento";
-						font-size: 15px;
+						font-size: 13px;
+						width: 280px;
 						.leaflet-popup-content{
 							@include flex(column, space-around, flex-start);
 							.centered{
