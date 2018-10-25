@@ -426,6 +426,8 @@ window.addEventListener("load", () => {
 			};
 			//Parent
 			var parentHTML=document.createElement("div");
+			parentHTML.innerHTML="<h3 class='mainPopTitle'>Options</h3>";
+			parentHTML.style.width="100%";
 			//Buttons
 			/////////////////////////////////
 			var removeBtn=document.createElement("button");
@@ -501,6 +503,8 @@ window.addEventListener("load", () => {
 			};
 			//Parent
 			var parentHTML=document.createElement("div");
+			parentHTML.innerHTML="<h3 class='mainPopTitle'>Options</h3>";
+			parentHTML.style.width="100%";
 			//Buttons
 			/////////////////////////////////
 			var removeBtn=document.createElement("button");
@@ -547,6 +551,8 @@ window.addEventListener("load", () => {
 			};
 			//Parent
 			var parentHTML=document.createElement("div");
+			parentHTML.innerHTML="<h3 class='mainPopTitle'>Options</h3>";
+			parentHTML.style.width="100%";
 			//Buttons
 			/////////////////////////////////
 			var removePoly=document.createElement("button");
