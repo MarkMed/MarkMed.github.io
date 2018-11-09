@@ -1,1 +1,257 @@
-style.scss
+// base.scss
+@import 'noDefaultStyle';
+@import 'varsMixinExtends';
+@font-face {
+	font-family: "Cinzel";
+	src: url(../Resources/Cinzel-Regular.ttf);
+}
+@font-face {
+	font-family: "Julius";
+	src: url(../Resources/JuliusSansOne-Regular.ttf);
+}
+@font-face {
+	font-family: "Quattro";
+	src: url(../Resources/Quattrocento-Regular.ttf);
+}
+.titleHeader{
+	text-decoration: none;
+	font-size: 15px;
+	font-family: "Julius";
+	color: $clearColor75;
+	font-weight: 100;
+}
+.luxFX{
+	@include flex(column, center, center, wrap);
+	letter-spacing: 0.7em;
+	cursor: pointer;
+	font-size: 10px;
+	border-bottom: 1px solid $thirdColor50;
+	transition: 0.6s $animationFX;
+	text-transform: uppercase;
+	color: $thirdColor100;
+	background: linear-gradient(0deg, $thirdColor100, rgba(146,111,52,0.8), rgba(34,34,34,0), rgba(34,34,34,0));
+	background-position: 50% 15%;
+	background-size: 300% 300%;
+	border-radius: 20px 20px 0px 0px;
+	opacity: 0.8;
+	@media (min-width: 160px) and (max-width: $smallWidth){
+		background-position: 50% 1%;
+		border: 1px solid $thirdColor50;
+		@include widthHeightsize(90%, 100%);
+		border-radius: 0px 0px 0px 0px;
+		max-height: 50px;
+		min-height: 30px;
+	}
+	@media (min-width: $smallWidth+1) and (max-width: $mediumWidth){
+		@include widthHeightsize(100%, 100%);
+	}
+	@media (min-width: $mediumWidth+1){
+		@include widthHeightsize(80%, 100%);
+	}
+	&:active{
+		opacity: 1;
+		transition: 0.05s $animationFX;
+	}
+	&:hover{
+		background-position: 50% 99%;
+		color: #fff;
+		letter-spacing: 0.9em;
+	}
+}
+body{
+	color: $clearColor75;
+	font-family: "Quattro";
+	background-color: $primaryColor100;
+	@media (min-width: 160px) and (max-width: $smallWidth){
+		margin-top: 20px;
+	}
+	@media (min-width: $smallWidth+1) and (max-width: $mediumWidth){
+		margin-top: 33px;
+	}
+	@media (min-width: $mediumWidth+1){
+		margin-top: 50px;
+	}
+	#menu{
+		font-family: "Cinzel";
+		top: 0;
+		position: fixed;
+		background-color: $primaryColor100;
+		opacity: 0.6;
+		font-weight: 100;
+		@include flex(row, space-between, center, wrap);
+		@media (min-width: 160px) and (max-width: $smallWidth){
+			@include widthHeightsize(100%, 20px);
+		}
+		@media (min-width: $smallWidth+1) and (max-width: $mediumWidth){
+			@include widthHeightsize(100%, 33px);
+		}
+		@media (min-width: $mediumWidth+1){
+			@include widthHeightsize(100%, 50px);
+		}
+		transition: 0.7s $animationFX;
+		&:hover{
+			opacity: 1;
+		}
+		h1{
+			color: rgba(243, 200, 96, 0.75);
+			letter-spacing: 0.8em;
+			font-family: "Cinzel";
+			@media (min-width: 160px) and (max-width: $smallWidth){
+				font-size: 16px;
+				word-wrap: break-word;
+				letter-spacing: 0.5em;
+			}
+			@media (min-width: 160px) and (max-width: $smallWidth) and (orientation: portrait){
+				font-size: 13px;
+				word-wrap: break-word;
+				letter-spacing: 0.3em;
+			}
+			@media (min-width: $smallWidth+1) and (max-width: $mediumWidth){
+				font-size: 18px;
+			}
+			@media (min-width: $mediumWidth+1){
+				font-size: 25px;
+			}
+			cursor: initial;
+		}
+		img{
+			margin-left: 2%;
+			@media (min-width: 160px) and (max-width: $smallWidth){
+				@include widthHeightsize(auto, 14px);
+			}
+			@media (min-width: $smallWidth+1) and (max-width: $mediumWidth){
+				@include widthHeightsize(auto, 29px);
+			}
+			@media (min-width: $mediumWidth+1){
+				@include widthHeightsize(auto, 48px);
+			}
+		}
+		input{
+			display: none;
+		}
+		#burger{
+			@include widthHeightsize(15px, 20px);
+			margin-right: 2%;
+			@include flex(column, space-around, center, wrap);
+			z-index: 1;
+			cursor: pointer;
+			@media (min-width: 160px) and (max-width: $smallWidth){
+				@include widthHeightsize(10px, 15px);
+			}
+			span{
+				border: 1px solid rgba(243, 200, 96, 0.75);
+				@include widthHeightsize(15px, 0px);
+				border-radius: 10px;
+				@media (min-width: 160px) and (max-width: $smallWidth){
+					@include widthHeightsize(10px, 0px);
+					border: 0.5px solid rgba(243, 200, 96, 0.75);
+				}
+			}
+		}
+		#itemContainer{
+			top: 0;
+			right: 0;
+			position: fixed;
+			@include flex(column, space-around, center, wrap);
+			transform: translateX(120%);
+			opacity: 0;
+			@media (min-width: 160px) and (max-width: $smallWidth){
+				@include widthHeightsize(180px, 100%);
+			}
+			@media (min-width: $smallWidth+1) and (max-width: $mediumWidth){
+				@include widthHeightsize(400px, 100%);
+			}
+			@media (min-width: $mediumWidth+1){
+				@include widthHeightsize(600px, 100%);
+			}
+			transition: 0.6s $animationFX;
+			&::before{
+				position: absolute;
+				right: 0; 
+				content: '';
+				z-index: -1;
+				background-color: $secondaryColor75;
+				transform: translate(20%, 0) rotateZ(9deg);
+				@media (min-width: 160px) and (max-width: $smallWidth){
+					@include widthHeightsize(300px, 120%);
+					transform: translate(25%, 0) rotateZ(9deg);
+				}
+				@media (min-width: $smallWidth+1) and (max-width: $mediumWidth){
+					@include widthHeightsize(500px, 120%);
+				}
+				@media (min-width: $mediumWidth+1){
+					@include widthHeightsize(800px, 120%);
+				}
+			}
+			.menuOpt{
+				transition: 0.7s $animationFX;
+				color: $clearColor50;
+				letter-spacing: 0.5em;
+				font-size: 20px;
+				opacity: 0;
+				transform: translateY(200%);
+				@include widthHeightsize(50%, auto);
+				text-align: center;
+				@media (min-width: 160px) and (max-width: $smallWidth){
+					font-size: 11px;
+					letter-spacing: 0.2em;
+				}
+				@media (min-width: 160px) and (max-width: $smallWidth) and (orientation: portrait){
+					font-size: 12px;
+					letter-spacing: 0.3em;
+				}
+				@media (min-width: $smallWidth+1) and (max-width: $mediumWidth){
+					font-size: 14px;
+				}
+				@media (min-width: $mediumWidth+1){
+					font-size: 16px;
+				}
+				&:hover{
+					letter-spacing: 1em;
+					color: $clearColor100;
+					transition-delay: 0s;
+				}
+				transition-delay: 0.4s
+			}
+		}
+		[id="openMenu"]:checked{
+			& ~ #itemContainer{
+				transform: translateX(0%);
+				opacity: 1;
+				.menuOpt{
+					transform: translateY(0%);
+					opacity: 1;
+					&:hover{
+						transition-delay: 0s;
+					}
+				}
+			}
+		}
+	}
+	header{
+		@include widthHeightsize(100%, 600px);
+		@include flex(column, space-around, center, wrap);
+		background-image: url("https://lh3.googleusercontent.com/-jTH-vkpbh6w/WtJiLSCBNqI/AAAAAAAAABE/NUi9yeHvudUO-CZlikLvRtCur9SzikU_gCLcBGAs/w2400-h1200-p-e365-fVignette=1,22.5,1.4,0,000000:Soften=1,0,0:-k-no/_C__Users_Miguel%25252520Angel%25252520Medina_Documents_Programaci%252525C3%252525B3n_Img_index.html.png");
+		background-size: cover;
+		background-position: center;
+		background-attachment: fixed;
+		background-repeat: no-repeat;
+	}
+	main{
+		@include widthHeightsize(100%, 600px);
+		@include flex(column, space-around, center, wrap);
+		ul{
+			@include widthHeightsize(75%, 100%);
+			@include flex(column, space-around, center, wrap);
+			background-color: rgba(0, 43, 54, 0.75);
+			li{
+				@include widthHeightsize(50%, 30px);
+				@include flex(column, center, center, wrap);
+				a{
+					@include widthHeightsize(100%, 100%);
+					text-align: center;
+				}
+			}
+		}
+	}
+}

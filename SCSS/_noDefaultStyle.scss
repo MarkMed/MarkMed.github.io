@@ -6,7 +6,11 @@
 a{
 	text-decoration: none;
 	color: black;
+	cursor: pointer
 }
 ul, ol{
 	list-style: none;
+}
+*:hover{
+	outline: none;
 }
