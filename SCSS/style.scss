@@ -76,8 +76,9 @@ body{
 		top: 0;
 		position: fixed;
 		background-color: $primaryColor100;
-		opacity: 0.6;
+		opacity: 0.7;
 		font-weight: 100;
+		z-index: 90;
 		@include flex(row, space-between, center, wrap);
 		@media (min-width: 160px) and (max-width: $smallWidth){
 			@include widthHeightsize(100%, 20px);
@@ -112,7 +113,7 @@ body{
 			@media (min-width: $mediumWidth+1){
 				font-size: 25px;
 			}
-			cursor: initial;
+			cursor: default;
 		}
 		img{
 			margin-left: 2%;
@@ -130,10 +131,10 @@ body{
 			display: none;
 		}
 		#burger{
+			z-index: 99;
 			@include widthHeightsize(15px, 20px);
 			margin-right: 2%;
 			@include flex(column, space-around, center, wrap);
-			z-index: 1;
 			cursor: pointer;
 			@media (min-width: 160px) and (max-width: $smallWidth){
 				@include widthHeightsize(10px, 15px);
@@ -149,6 +150,7 @@ body{
 			}
 		}
 		#itemContainer{
+			z-index: 91;
 			top: 0;
 			right: 0;
 			position: fixed;
@@ -166,11 +168,11 @@ body{
 			}
 			transition: 0.6s $animationFX;
 			&::before{
+				z-index: 89;
 				position: absolute;
 				right: 0; 
 				content: '';
-				z-index: -1;
-				background-color: $secondaryColor75;
+				background-color: $secondaryColor100;
 				transform: translate(20%, 0) rotateZ(9deg);
 				@media (min-width: 160px) and (max-width: $smallWidth){
 					@include widthHeightsize(300px, 120%);
@@ -184,12 +186,13 @@ body{
 				}
 			}
 			.menuOpt{
+				z-index: 95;
 				transition: 0.7s $animationFX;
 				color: $clearColor50;
 				letter-spacing: 0.5em;
 				font-size: 20px;
 				opacity: 0;
-				transform: translateY(200%);
+				transform: translateX(200%);
 				@include widthHeightsize(50%, auto);
 				text-align: center;
 				@media (min-width: 160px) and (max-width: $smallWidth){
@@ -209,9 +212,7 @@ body{
 				&:hover{
 					letter-spacing: 1em;
 					color: $clearColor100;
-					transition-delay: 0s;
 				}
-				transition-delay: 0.4s
 			}
 		}
 		[id="openMenu"]:checked{
@@ -221,9 +222,6 @@ body{
 				.menuOpt{
 					transform: translateY(0%);
 					opacity: 1;
-					&:hover{
-						transition-delay: 0s;
-					}
 				}
 			}
 		}
