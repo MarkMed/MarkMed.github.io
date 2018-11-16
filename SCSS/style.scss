@@ -140,6 +140,7 @@ body{
 				@include widthHeightsize(10px, 15px);
 			}
 			span{
+				transition: 0.3s $animationFX;
 				border: 1px solid rgba(243, 200, 96, 0.75);
 				@include widthHeightsize(15px, 0px);
 				border-radius: 10px;
@@ -224,6 +225,17 @@ body{
 					opacity: 1;
 				}
 			}
+			& ~ #burger{
+				span:nth-child(1){
+					transform: translate(0px, 5px)  rotateZ(45deg);
+				}
+				span:nth-child(2){
+					display: none;
+				}
+				span:nth-child(3){
+					transform: translate(0px, -5px)  rotateZ(-45deg);
+				}
+			}
 		}
 	}
 	header{
@@ -243,7 +255,7 @@ body{
 			@include flex(column, space-around, center, wrap);
 			background-color: rgba(0, 43, 54, 0.75);
 			li{
-				@include widthHeightsize(50%, 100px);
+				@include widthHeightsize(30%, 50px);
 				@include flex(column, center, center, wrap);
 				margin: 100px;
 				a{
