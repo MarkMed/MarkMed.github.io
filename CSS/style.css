@@ -467,7 +467,7 @@ body header {
 
 /* line 238, C:/Users/mmedina/Documents/Programming/Training/MarkMed.github.io/scss/style.scss */
 body main {
-  height: 600px;
+  height: auto;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -490,16 +490,17 @@ body main ul {
 
 /* line 245, C:/Users/mmedina/Documents/Programming/Training/MarkMed.github.io/scss/style.scss */
 body main ul li {
-  height: 30px;
+  height: 100px;
   width: 50%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
+  margin: 100px;
 }
 
-/* line 248, C:/Users/mmedina/Documents/Programming/Training/MarkMed.github.io/scss/style.scss */
+/* line 249, C:/Users/mmedina/Documents/Programming/Training/MarkMed.github.io/scss/style.scss */
 body main ul li a {
   height: 100%;
   width: 100%;

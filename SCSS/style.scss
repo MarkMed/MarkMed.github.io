@@ -236,15 +236,16 @@ body{
 		background-repeat: no-repeat;
 	}
 	main{
-		@include widthHeightsize(100%, 600px);
+		@include widthHeightsize(100%, auto);
 		@include flex(column, space-around, center, wrap);
 		ul{
 			@include widthHeightsize(75%, 100%);
 			@include flex(column, space-around, center, wrap);
 			background-color: rgba(0, 43, 54, 0.75);
 			li{
-				@include widthHeightsize(50%, 30px);
+				@include widthHeightsize(50%, 100px);
 				@include flex(column, center, center, wrap);
+				margin: 100px;
 				a{
 					@include widthHeightsize(100%, 100%);
 					text-align: center;
