@@ -397,7 +397,7 @@ body #menu #itemContainer .menuOpt {
   opacity: 0;
   transform: translateX(200%);
   height: auto;
-  width: 50%;
+  width: auto;
   text-align: center;
 }
 
