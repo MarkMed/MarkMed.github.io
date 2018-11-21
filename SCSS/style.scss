@@ -228,12 +228,18 @@ body{
 			& ~ #burger{
 				span:nth-child(1){
 					transform: translate(0px, 5px)  rotateZ(45deg);
+					@media (min-width: 160px) and (max-width: $smallWidth){
+						transform: translate(0px, 3.5px)  rotateZ(45deg);
+					}
 				}
 				span:nth-child(2){
 					display: none;
 				}
 				span:nth-child(3){
 					transform: translate(0px, -5px)  rotateZ(-45deg);
+					@media (min-width: 160px) and (max-width: $smallWidth){
+						transform: translate(0px, -3.5px)  rotateZ(-45deg);
+					}
 				}
 			}
 		}
@@ -256,8 +262,12 @@ body{
 			background-color: $secondaryColor100;
 			li{
 				@include widthHeightsize(30%, 50px);
-				@include flex(column, center, center, wrap);
 				margin: 100px;
+				@media (min-width: 160px) and (max-width: $mediumWidth){
+					@include widthHeightsize(80%, 50px);
+					margin: 50px 0px;
+				}
+				@include flex(column, center, center, wrap);
 				a{
 					@include widthHeightsize(100%, 100%);
 					text-align: center;

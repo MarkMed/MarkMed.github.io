@@ -455,17 +455,31 @@ body #menu [id="openMenu"]:checked ~ #burger span:nth-child(1) {
   transform: translate(0px, 5px) rotateZ(45deg);
 }
 
-/* line 232, C:/Users/mmedina/Documents/Programming/Training/MarkMed.github.io/scss/style.scss */
+@media (min-width: 160px) and (max-width: 640px) {
+  /* line 229, C:/Users/mmedina/Documents/Programming/Training/MarkMed.github.io/scss/style.scss */
+  body #menu [id="openMenu"]:checked ~ #burger span:nth-child(1) {
+    transform: translate(0px, 3.5px) rotateZ(45deg);
+  }
+}
+
+/* line 235, C:/Users/mmedina/Documents/Programming/Training/MarkMed.github.io/scss/style.scss */
 body #menu [id="openMenu"]:checked ~ #burger span:nth-child(2) {
   display: none;
 }
 
-/* line 235, C:/Users/mmedina/Documents/Programming/Training/MarkMed.github.io/scss/style.scss */
+/* line 238, C:/Users/mmedina/Documents/Programming/Training/MarkMed.github.io/scss/style.scss */
 body #menu [id="openMenu"]:checked ~ #burger span:nth-child(3) {
   transform: translate(0px, -5px) rotateZ(-45deg);
 }
 
-/* line 241, C:/Users/mmedina/Documents/Programming/Training/MarkMed.github.io/scss/style.scss */
+@media (min-width: 160px) and (max-width: 640px) {
+  /* line 238, C:/Users/mmedina/Documents/Programming/Training/MarkMed.github.io/scss/style.scss */
+  body #menu [id="openMenu"]:checked ~ #burger span:nth-child(3) {
+    transform: translate(0px, -3.5px) rotateZ(-45deg);
+  }
+}
+
+/* line 247, C:/Users/mmedina/Documents/Programming/Training/MarkMed.github.io/scss/style.scss */
 body header {
   height: 600px;
   width: 100%;
@@ -481,7 +495,7 @@ body header {
   background-repeat: no-repeat;
 }
 
-/* line 250, C:/Users/mmedina/Documents/Programming/Training/MarkMed.github.io/scss/style.scss */
+/* line 256, C:/Users/mmedina/Documents/Programming/Training/MarkMed.github.io/scss/style.scss */
 body main {
   height: auto;
   width: 100%;
@@ -492,7 +506,7 @@ body main {
   flex-wrap: wrap;
 }
 
-/* line 253, C:/Users/mmedina/Documents/Programming/Training/MarkMed.github.io/scss/style.scss */
+/* line 259, C:/Users/mmedina/Documents/Programming/Training/MarkMed.github.io/scss/style.scss */
 body main ul {
   height: 100%;
   width: 75%;
@@ -504,19 +518,28 @@ body main ul {
   background-color: #1e364b;
 }
 
-/* line 257, C:/Users/mmedina/Documents/Programming/Training/MarkMed.github.io/scss/style.scss */
+/* line 263, C:/Users/mmedina/Documents/Programming/Training/MarkMed.github.io/scss/style.scss */
 body main ul li {
   height: 50px;
   width: 30%;
+  margin: 100px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  margin: 100px;
 }
 
-/* line 261, C:/Users/mmedina/Documents/Programming/Training/MarkMed.github.io/scss/style.scss */
+@media (min-width: 160px) and (max-width: 1007px) {
+  /* line 263, C:/Users/mmedina/Documents/Programming/Training/MarkMed.github.io/scss/style.scss */
+  body main ul li {
+    height: 50px;
+    width: 80%;
+    margin: 50px 0px;
+  }
+}
+
+/* line 271, C:/Users/mmedina/Documents/Programming/Training/MarkMed.github.io/scss/style.scss */
 body main ul li a {
   height: 100%;
   width: 100%;
