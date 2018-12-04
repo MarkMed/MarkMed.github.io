@@ -1,0 +1,213 @@
+/* line 2, C:/Users/mmedina/Documents/Programming/Training/MarkMed.github.io/mmei/SCSS/_noDefaultStyle.scss */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* line 6, C:/Users/mmedina/Documents/Programming/Training/MarkMed.github.io/mmei/SCSS/_noDefaultStyle.scss */
+a {
+  text-decoration: none;
+  color: black;
+  cursor: pointer;
+}
+
+/* line 11, C:/Users/mmedina/Documents/Programming/Training/MarkMed.github.io/mmei/SCSS/_noDefaultStyle.scss */
+ul, ol {
+  list-style: none;
+}
+
+/* line 14, C:/Users/mmedina/Documents/Programming/Training/MarkMed.github.io/mmei/SCSS/_noDefaultStyle.scss */
+*:hover {
+  outline: none;
+}
+
+/*
+width of element:
+	12 cols - 100%
+	11 cols - 091,666666666%
+	10 cols - 083,333333333%
+	09 cols - 075%
+	08 cols - 066,666666666%
+	07 cols - 058,333333333%
+	06 cols - 050%
+	05 cols - 041,666666666%
+	04 cols - 033,333333333%
+	03 cols - 025%
+	02 cols - 016,666666666%
+	01 cols - 008,333333333%
+	00 cols - 000%
+*/
+/*Mixins*/
+@font-face {
+  font-family: "Cinzel";
+  src: url(../Resources/Cinzel-Regular.ttf);
+}
+
+@font-face {
+  font-family: "Julius";
+  src: url(../Resources/JuliusSansOne-Regular.ttf);
+}
+
+@font-face {
+  font-family: "Quattro";
+  src: url(../Resources/Quattrocento-Regular.ttf);
+}
+
+/* line 17, C:/Users/mmedina/Documents/Programming/Training/MarkMed.github.io/mmei/SCSS/style.scss */
+body {
+  background-color: #c8d2d9;
+  font-family: "Quattro";
+}
+
+@media (min-width: 160px) and (max-width: 640px) {
+  /* line 17, C:/Users/mmedina/Documents/Programming/Training/MarkMed.github.io/mmei/SCSS/style.scss */
+  body {
+    font-size: 10px;
+  }
+}
+
+@media (min-width: 641px) and (max-width: 1007px) {
+  /* line 17, C:/Users/mmedina/Documents/Programming/Training/MarkMed.github.io/mmei/SCSS/style.scss */
+  body {
+    font-size: 12px;
+  }
+}
+
+@media (min-width: 1008px) {
+  /* line 17, C:/Users/mmedina/Documents/Programming/Training/MarkMed.github.io/mmei/SCSS/style.scss */
+  body {
+    font-size: 14px;
+  }
+}
+
+/* line 29, C:/Users/mmedina/Documents/Programming/Training/MarkMed.github.io/mmei/SCSS/style.scss */
+body #banner {
+  background-color: #082b4c;
+  top: 0;
+  position: fixed;
+  height: 40px;
+  width: 100%;
+  transition: 0.7s cubic-bezier(0, 0, 0.27, 0.97);
+  color: rgba(251, 201, 100, 0.75);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+@media (min-width: 160px) and (max-width: 640px) and (orientation: portrait) {
+  /* line 29, C:/Users/mmedina/Documents/Programming/Training/MarkMed.github.io/mmei/SCSS/style.scss */
+  body #banner {
+    height: 50px;
+    width: 100%;
+  }
+}
+
+/* line 43, C:/Users/mmedina/Documents/Programming/Training/MarkMed.github.io/mmei/SCSS/style.scss */
+body #banner h1 {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
+  font-family: Unlock;
+  position: relative;
+  left: 10px;
+  font-weight: 100;
+  letter-spacing: 0.3vw;
+  height: 90%;
+  width: 66.66667%;
+}
+
+@media (min-width: 160px) and (max-width: 640px) {
+  /* line 43, C:/Users/mmedina/Documents/Programming/Training/MarkMed.github.io/mmei/SCSS/style.scss */
+  body #banner h1 {
+    font-size: 14px;
+  }
+}
+
+@media (min-width: 641px) and (max-width: 1007px) {
+  /* line 43, C:/Users/mmedina/Documents/Programming/Training/MarkMed.github.io/mmei/SCSS/style.scss */
+  body #banner h1 {
+    font-size: 16px;
+  }
+}
+
+@media (min-width: 1008px) {
+  /* line 43, C:/Users/mmedina/Documents/Programming/Training/MarkMed.github.io/mmei/SCSS/style.scss */
+  body #banner h1 {
+    font-size: 18px;
+  }
+}
+
+/* line 62, C:/Users/mmedina/Documents/Programming/Training/MarkMed.github.io/mmei/SCSS/style.scss */
+body #banner a {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  color: rgba(200, 210, 217, 0.75);
+  border: 1px solid rgba(200, 210, 217, 0.5);
+  border-radius: 5px;
+  transition: 0.7s cubic-bezier(0, 0, 0.27, 0.97);
+}
+
+@media (min-width: 160px) and (max-width: 640px) {
+  /* line 62, C:/Users/mmedina/Documents/Programming/Training/MarkMed.github.io/mmei/SCSS/style.scss */
+  body #banner a {
+    right: 2%;
+    height: 50%;
+    width: 60px;
+  }
+}
+
+@media (min-width: 641px) {
+  /* line 62, C:/Users/mmedina/Documents/Programming/Training/MarkMed.github.io/mmei/SCSS/style.scss */
+  body #banner a {
+    right: 7.5%;
+    height: 50%;
+    width: 80px;
+  }
+}
+
+/* line 77, C:/Users/mmedina/Documents/Programming/Training/MarkMed.github.io/mmei/SCSS/style.scss */
+body #banner a:hover {
+  color: rgba(19, 28, 41, 0.75);
+  background-color: rgba(200, 210, 217, 0.75);
+}
+
+/* line 87, C:/Users/mmedina/Documents/Programming/Training/MarkMed.github.io/mmei/SCSS/style.scss */
+body header {
+  margin-top: 40px;
+  height: calc( 100vh - 40px);
+  width: 100%;
+  background-color: red;
+}
+
+@media (min-width: 160px) and (max-width: 640px) and (orientation: portrait) {
+  /* line 87, C:/Users/mmedina/Documents/Programming/Training/MarkMed.github.io/mmei/SCSS/style.scss */
+  body header {
+    margin-top: 50px;
+    height: calc( 100vh - 50px);
+    width: 100%;
+  }
+}
+
+/* line 97, C:/Users/mmedina/Documents/Programming/Training/MarkMed.github.io/mmei/SCSS/style.scss */
+body main #srvAndRpr {
+  height: calc( 100vh - 40px);
+  width: 100%;
+}
+
+@media (min-width: 160px) and (max-width: 640px) and (orientation: portrait) {
+  /* line 97, C:/Users/mmedina/Documents/Programming/Training/MarkMed.github.io/mmei/SCSS/style.scss */
+  body main #srvAndRpr {
+    height: calc( 100vh - 50px);
+    width: 100%;
+  }
+}
+
+/*# sourceMappingURL=../CSS/style.map */

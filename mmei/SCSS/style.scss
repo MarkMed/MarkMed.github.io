@@ -1,0 +1,110 @@
+// base.scss
+@import 'noDefaultStyle';
+@import 'varsMixinExtends';
+@font-face {
+	font-family: "Cinzel";
+	src: url(../Resources/Cinzel-Regular.ttf);
+}
+@font-face {
+	font-family: "Julius";
+	src: url(../Resources/JuliusSansOne-Regular.ttf);
+}
+@font-face {
+	font-family: "Quattro";
+	src: url(../Resources/Quattrocento-Regular.ttf);
+}
+
+body{
+	background-color: $clearColor100;
+	font-family: "Quattro";
+	@media (min-width: 160px) and (max-width: $smallWidth){
+		font-size: 10px;
+	}
+	@media (min-width: $smallWidth+1) and (max-width: $mediumWidth){
+		font-size: 12px;
+	}
+	@media (min-width: $mediumWidth+1){
+		font-size: 14px;
+	}
+	#banner{
+		background-color: $primaryColor100;
+		top: 0;
+		position: fixed;
+		@include widthHeightsize(100%, 40px);
+
+		@media (min-width: 160px) and (max-width: $smallWidth) and (orientation: portrait){
+			@include widthHeightsize($width-12, 50px);
+		}
+		
+		transition: 0.7s $animationFX;
+		color: $thirdColor75;
+		@include flex(row, space-between, center, wrap);
+
+		h1{
+			@include flex(row, flex-start, center, wrap);
+			font-family: Unlock;
+			position: relative;
+			left: 10px;
+			font-weight: 100;
+			letter-spacing: 0.3vw;
+			@include widthHeightsize($width-8, 90%);
+			@media (min-width: 160px) and (max-width: $smallWidth){
+				font-size: 14px;
+			}
+			@media (min-width: $smallWidth+1) and (max-width: $mediumWidth){
+				font-size: 16px;
+			}
+			@media (min-width: $mediumWidth+1){
+				font-size: 18px;
+			}
+		}
+
+		a{
+			position: relative;
+			@include flex(row, center, center, wrap);
+			@media (min-width: 160px) and (max-width: $smallWidth){
+				right: 2%;
+				@include widthHeightsize(60px, 50%);
+			}
+			@media (min-width: $smallWidth+1){
+				right: 7.5%;
+				@include widthHeightsize(80px, 50%);
+			}
+			color: $clearColor75;
+			border: 1px solid $clearColor50;
+			border-radius: 5px;
+			transition: 0.7s $animationFX;
+			&:hover{
+				color: $secondaryColor75;
+				background-color: $clearColor75;
+			}
+		}
+		
+		&:hover{
+
+		}
+	}
+	header{
+		margin-top: 40px;
+		@include widthHeightsize($width-12, calc( 100vh - 40px ));
+		@media (min-width: 160px) and (max-width: $smallWidth) and (orientation: portrait){
+			margin-top: 50px;
+			@include widthHeightsize($width-12, calc( 100vh - 50px ));
+		}
+		background-color: red;
+	}
+	main{
+		#srvAndRpr{
+			@include widthHeightsize($width-12, calc( 100vh - 40px ));
+			@media (min-width: 160px) and (max-width: $smallWidth) and (orientation: portrait){
+				@include widthHeightsize($width-12, calc( 100vh - 50px ));
+			}
+		}
+	}
+}
+@media (min-width: 160px) and (max-width: $smallWidth){
+}
+@media (min-width: $smallWidth+1) and (max-width: $mediumWidth){
+}
+@media (min-width: $mediumWidth+1){
+}

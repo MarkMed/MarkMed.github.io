@@ -1,0 +1,79 @@
+// _varsMixinExtends.scss
+//General Vars
+
+$primaryColor100: rgba(8, 43, 76, 1);
+$primaryColor75: rgba(8, 43, 76, 0.75);
+$primaryColor50: rgba(8, 43, 76, 0.50);
+$primaryColor25: rgba(8, 43, 76, 0.25);
+$primaryColor0: rgba(8, 43, 76, 0);
+
+$secondaryColor100: rgba(19, 28, 41, 1);
+$secondaryColor75: rgba(19, 28, 41, 0.75);
+$secondaryColor50: rgba(19, 28, 41, 0.50);
+$secondaryColor25: rgba(19, 28, 41, 0.25);
+$secondaryColor0: rgba(19, 28, 41, 0);
+
+$thirdColor100: rgba(251, 201, 100, 1);
+$thirdColor75: rgba(251, 201, 100, 0.75);
+$thirdColor50: rgba(251, 201, 100, 0.5);
+$thirdColor25: rgba(251, 201, 100, 0.25);
+$thirdColor0: rgba(251, 201, 100, 0);
+
+$orangeColor100: rgba(219, 79, 50, 1);
+$orangeColor75: rgba(219, 79, 50, 0.75);
+$orangeColor50: rgba(219, 79, 50, 0.5);
+$orangeColor25: rgba(219, 79, 50, 0.25);
+$orangeColor0: rgba(219, 79, 50, 0);
+
+$clearColor100: rgba(200, 210, 217, 1);
+$clearColor75: rgba(200, 210, 217, 0.75);
+$clearColor50: rgba(200, 210, 217, 0.5);
+$clearColor25: rgba(200, 210, 217, 0.25);
+$clearColor0: rgba(200, 210, 217, 0);
+
+$animationFX: cubic-bezier(0, 0, 0.27, 0.97);
+/*
+width of element:
+	12 cols - 100%
+	11 cols - 091,666666666%
+	10 cols - 083,333333333%
+	09 cols - 075%
+	08 cols - 066,666666666%
+	07 cols - 058,333333333%
+	06 cols - 050%
+	05 cols - 041,666666666%
+	04 cols - 033,333333333%
+	03 cols - 025%
+	02 cols - 016,666666666%
+	01 cols - 008,333333333%
+	00 cols - 000%
+*/
+$width-12:100%;
+$width-11:91.666666666%;
+$width-10:83.333333333%;
+$width-9:75%;
+$width-8:66.666666666%;
+$width-7:58.333333333%;
+$width-6:50%;
+$width-5:41.666666666%;
+$width-4:33.333333333%;
+$width-3:25%;
+$width-2:16.666666666%;
+$width-1:8.333333333%;
+$width-0:0%;
+//RWD Vars
+$smallWidth: 640px;
+$mediumWidth: 1007px;
+
+/*Mixins*/
+@mixin widthHeightsize($valueX, $valueY) {
+	height:$valueY;
+	width:$valueX;
+}
+@mixin flex($direct, $justCont, $aligItem, $wrap){
+	display: flex;
+	flex-direction: $direct;
+	justify-content: $justCont;
+	align-items: $aligItem;
+	flex-wrap: $wrap;
+}
