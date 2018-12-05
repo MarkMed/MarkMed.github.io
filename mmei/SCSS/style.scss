@@ -85,12 +85,11 @@ body{
 	}
 	#headerBckgrnd{
 		z-index: -1;
-		background-image: url(../Resources/noOwnImg_TestImg2.jpg);
+		background-image: url(../Resources/noOwnImg_TestImg2_edited.jpg);
 		background-position: center;
 		background-attachment: scroll;
-		background-size: contain;
+		background-size: cover;
 		background-repeat: no-repeat;
-		filter: blur(7px);
 		position: absolute;
 		@include widthHeightsize($width-12, 100vh);
 		@media (min-width: 160px) and (max-width: $smallWidth) and (orientation: portrait){
