@@ -98,6 +98,7 @@ body{
 		}
 	}
 	header{
+		transition: 0.7s $animationFX;
 		z-index: 0;
 		@include widthHeightsize($width-12, 100vh);
 		@include flex(column, center, center, wrap);
@@ -124,7 +125,7 @@ body{
 			}
 			& li{
 				cursor: pointer;
-				transition: 0.7s $animationFX;		
+				transition: 0.7s $animationFX;	
 				@include flex(row, center, center, wrap);
 				@include widthHeightsize(200px, 60px);
 				@media (min-width: 160px) and (max-width: $mediumWidth){
@@ -150,6 +151,7 @@ body{
 			}
 		}
 		& > *{
+			transition: 0.7s $animationFX;
 			margin-top: 5%;
 			transform: translateY(60%);
 			@media (min-width: 160px) and (max-width: $smallWidth){
