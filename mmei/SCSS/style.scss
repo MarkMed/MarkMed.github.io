@@ -108,9 +108,14 @@ body{
 			font-size: 3.5em;
 			text-shadow: 0px 0px 10px $clearColor100;
 			font-family: Unlock;
+			@media (min-width: 160px) and (max-width: $smallWidth) and (orientation: landscape){
+				font-size: 2em;
+			}
 		}
 		p{
-			font-size: 2em;
+			@media (min-width: 160px) and (max-width: $smallWidth) and (orientation: landscape){
+				font-size: 1.3em;
+			}
 			text-shadow: 0px 0px 10px $clearColor100;
 			font-family: Quicksand;
 			font-weight: 900;
@@ -129,7 +134,6 @@ body{
 				@include flex(row, center, center, wrap);
 				@include widthHeightsize(200px, 60px);
 				@media (min-width: 160px) and (max-width: $mediumWidth){
-					@include widthHeightsize(100px, 60px);
 					margin: 20px 20px;
 				}
 				@media (min-width: $mediumWidth+1){
@@ -140,7 +144,7 @@ body{
 				& a{
 					transition: 0.7s $animationFX;
 					font-size: 20px;
-					@media (min-width: 160px) and (max-width: $mediumWidth){
+					@media (min-width: 160px) and (max-width: $smallWidth) and (orientation: landscape){
 						font-size: 16px;
 					}
 					color: $orangeColor100;
