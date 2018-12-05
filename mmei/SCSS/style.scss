@@ -87,14 +87,17 @@ body{
 		z-index: -1;
 		background-image: url(../Resources/noOwnImg_TestImg2.jpg);
 		background-position: center;
-		background-attachment: fixed;
-		background-size: cover;
+		background-attachment: scroll;
+		background-size: contain;
 		background-repeat: no-repeat;
 		filter: blur(7px);
 		position: absolute;
 		@include widthHeightsize($width-12, 100vh);
 		@media (min-width: 160px) and (max-width: $smallWidth) and (orientation: portrait){
-			background-position: 80% 0px;
+			background-position: 80% 20%;
+			background-size: cover;
+		}
+		@media (min-width: 160px) and (max-width: $smallWidth) and (orientation: landscape){
 		}
 	}
 	header{
