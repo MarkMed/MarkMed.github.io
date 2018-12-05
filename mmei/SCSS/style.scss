@@ -129,6 +129,7 @@ body{
 				@include flex(row, center, center, wrap);
 				@include widthHeightsize(200px, 60px);
 				@media (min-width: 160px) and (max-width: $mediumWidth){
+					@include widthHeightsize(100px, 60px);
 					margin: 20px 20px;
 				}
 				@media (min-width: $mediumWidth+1){
@@ -139,6 +140,9 @@ body{
 				& a{
 					transition: 0.7s $animationFX;
 					font-size: 20px;
+					@media (min-width: 160px) and (max-width: $mediumWidth){
+						font-size: 16px;
+					}
 					color: $orangeColor100;
 				}
 				&:hover{
