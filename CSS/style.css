@@ -255,7 +255,7 @@ body #menu img {
 @media (min-width: 641px) and (max-width: 1007px) {
   /* line 118, C:/Users/mmedina/Documents/Programming/Training/MarkMed.github.io/scss/style.scss */
   body #menu img {
-    height: 29px;
+    height: 28px;
     width: auto;
   }
 }
@@ -263,7 +263,7 @@ body #menu img {
 @media (min-width: 1008px) {
   /* line 118, C:/Users/mmedina/Documents/Programming/Training/MarkMed.github.io/scss/style.scss */
   body #menu img {
-    height: 48px;
+    height: 46px;
     width: auto;
   }
 }

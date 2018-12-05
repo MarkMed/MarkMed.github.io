@@ -27,6 +27,7 @@ body{
 		font-size: 14px;
 	}
 	#banner{
+		z-index: 99;
 		background-color: $primaryColor100;
 		top: 0;
 		position: fixed;
@@ -44,6 +45,7 @@ body{
 			@include flex(row, flex-start, center, wrap);
 			font-family: Unlock;
 			position: relative;
+			text-align: center;
 			left: 10px;
 			font-weight: 100;
 			letter-spacing: 0.3vw;
@@ -75,25 +77,95 @@ body{
 			border-radius: 5px;
 			transition: 0.7s $animationFX;
 			&:hover{
-				color: $secondaryColor75;
-				background-color: $clearColor75;
+				color: $secondaryColor100;
+				background-color: $orangeColor75;
+				border-color: $secondaryColor100;
 			}
 		}
-		
-		&:hover{
-
+	}
+	#headerBckgrnd{
+		z-index: -1;
+		background-image: url(../Resources/noOwnImg_TestImg2.jpg);
+		background-position: center;
+		background-attachment: fixed;
+		background-size: cover;
+		background-repeat: no-repeat;
+		filter: blur(7px);
+		position: absolute;
+		@include widthHeightsize($width-12, 100vh);
+		@media (min-width: 160px) and (max-width: $smallWidth) and (orientation: portrait){
+			background-position: 80% 0px;
 		}
 	}
 	header{
-		margin-top: 40px;
-		@include widthHeightsize($width-12, calc( 100vh - 40px ));
-		@media (min-width: 160px) and (max-width: $smallWidth) and (orientation: portrait){
-			margin-top: 50px;
-			@include widthHeightsize($width-12, calc( 100vh - 50px ));
+		z-index: 0;
+		@include widthHeightsize($width-12, 100vh);
+		@include flex(column, center, center, wrap);
+		color: $secondaryColor100;
+		text-align: center;
+		h2{
+			font-size: 3.5em;
+			text-shadow: 0px 0px 10px $clearColor100;
+			font-family: Unlock;
 		}
-		background-color: red;
+		p{
+			font-size: 2em;
+			text-shadow: 0px 0px 10px $clearColor100;
+			font-family: Quicksand;
+			font-weight: 900;
+		}
+		ul#anchorsBtns{
+			@include flex(row, center, center, wrap);
+			@media (min-width: 160px) and (max-width: $smallWidth){
+				@include widthHeightsize(auto, auto);
+			}
+			@media (min-width: $smallWidth+1) and (min-width: $mediumWidth+1){
+				@include widthHeightsize(80vw, auto);
+			}
+			& li{
+				cursor: pointer;
+				transition: 0.7s $animationFX;		
+				@include flex(row, center, center, wrap);
+				@include widthHeightsize(200px, 60px);
+				@media (min-width: 160px) and (max-width: $mediumWidth){
+					margin: 20px 20px;
+				}
+				@media (min-width: $mediumWidth+1){
+					margin: 0px 20px;
+				}
+				border: 1px solid $orangeColor75;
+				border-radius: 10px;
+				& a{
+					transition: 0.7s $animationFX;
+					font-size: 20px;
+					color: $orangeColor100;
+				}
+				&:hover{
+					background-color: $orangeColor75;
+					border-color: $secondaryColor100;
+				}
+				&:hover a{
+					color: $secondaryColor100;
+				}
+			}
+		}
+		& > *{
+			margin-top: 5%;
+			transform: translateY(60%);
+			@media (min-width: 160px) and (max-width: $smallWidth){
+				transform: translateY(0%);
+			}
+			@media (min-width: $smallWidth+1) and (max-width: $mediumWidth){
+				transform: translateY(0%);
+			}
+			@media (min-width: 160px) and (max-width: $smallWidth) and (orientation: portrait){
+				margin-top: 10%;
+				transform: translateY(0%);
+			}
+		}
 	}
 	main{
+		z-index: 0;
 		#srvAndRpr{
 			@include widthHeightsize($width-12, calc( 100vh - 40px ));
 			@media (min-width: 160px) and (max-width: $smallWidth) and (orientation: portrait){

@@ -121,10 +121,10 @@ body{
 				@include widthHeightsize(auto, 14px);
 			}
 			@media (min-width: $smallWidth+1) and (max-width: $mediumWidth){
-				@include widthHeightsize(auto, 29px);
+				@include widthHeightsize(auto, 28px);
 			}
 			@media (min-width: $mediumWidth+1){
-				@include widthHeightsize(auto, 48px);
+				@include widthHeightsize(auto, 46px);
 			}
 		}
 		input{
