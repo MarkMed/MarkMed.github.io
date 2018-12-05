@@ -109,12 +109,13 @@ body{
 			text-shadow: 0px 0px 10px $clearColor100;
 			font-family: Unlock;
 			@media (min-width: 160px) and (max-width: $smallWidth) and (orientation: landscape){
-				font-size: 2em;
+				font-size: 2.5em;
 			}
 		}
 		p{
+			font-size: 2em;
 			@media (min-width: 160px) and (max-width: $smallWidth) and (orientation: landscape){
-				font-size: 1.3em;
+				font-size: 1.7em;
 			}
 			text-shadow: 0px 0px 10px $clearColor100;
 			font-family: Quicksand;
@@ -135,6 +136,9 @@ body{
 				@include widthHeightsize(200px, 60px);
 				@media (min-width: 160px) and (max-width: $mediumWidth){
 					margin: 20px 20px;
+				}
+				@media (min-width: 160px) and (max-width: $smallWidth) and (orientation: landscape){
+					@include widthHeightsize(150px, 40px);
 				}
 				@media (min-width: $mediumWidth+1){
 					margin: 0px 20px;
