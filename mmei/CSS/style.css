@@ -56,7 +56,7 @@ width of element:
 /* line 17, C:/Users/mmedina/Documents/Programming/Training/MarkMed.github.io/mmei/SCSS/style.scss */
 body {
   background-color: #c8d2d9;
-  font-family: "Quattro";
+  font-family: Quicksand;
 }
 
 @media (min-width: 160px) and (max-width: 640px) {
@@ -152,6 +152,10 @@ body #banner a {
   align-items: center;
   flex-wrap: wrap;
   color: rgba(200, 210, 217, 0.75);
+  letter-spacing: 0.3rem;
+  font-size: 0.2rem;
+  padding: 0px 2%;
+  text-transform: uppercase;
   border: 1px solid rgba(200, 210, 217, 0.5);
   border-radius: 5px;
   transition: 0.7s cubic-bezier(0, 0, 0.27, 0.97);
@@ -162,7 +166,8 @@ body #banner a {
   body #banner a {
     right: 2%;
     height: 50%;
-    width: 60px;
+    width: auto;
+    letter-spacing: 0.2rem;
   }
 }
 
@@ -171,18 +176,18 @@ body #banner a {
   body #banner a {
     right: 7.5%;
     height: 50%;
-    width: 80px;
+    width: auto;
   }
 }
 
-/* line 79, C:/Users/mmedina/Documents/Programming/Training/MarkMed.github.io/mmei/SCSS/style.scss */
+/* line 84, C:/Users/mmedina/Documents/Programming/Training/MarkMed.github.io/mmei/SCSS/style.scss */
 body #banner a:hover {
   color: #131c29;
   background-color: rgba(219, 79, 50, 0.75);
   border-color: #131c29;
 }
 
-/* line 86, C:/Users/mmedina/Documents/Programming/Training/MarkMed.github.io/mmei/SCSS/style.scss */
+/* line 91, C:/Users/mmedina/Documents/Programming/Training/MarkMed.github.io/mmei/SCSS/style.scss */
 body #headerBckgrnd {
   z-index: -1;
   background-image: url(../Resources/noOwnImg_TestImg2_edited.jpg);
@@ -196,14 +201,14 @@ body #headerBckgrnd {
 }
 
 @media (min-width: 160px) and (max-width: 640px) and (orientation: portrait) {
-  /* line 86, C:/Users/mmedina/Documents/Programming/Training/MarkMed.github.io/mmei/SCSS/style.scss */
+  /* line 91, C:/Users/mmedina/Documents/Programming/Training/MarkMed.github.io/mmei/SCSS/style.scss */
   body #headerBckgrnd {
     background-position: 80% 20%;
     background-size: cover;
   }
 }
 
-/* line 102, C:/Users/mmedina/Documents/Programming/Training/MarkMed.github.io/mmei/SCSS/style.scss */
+/* line 107, C:/Users/mmedina/Documents/Programming/Training/MarkMed.github.io/mmei/SCSS/style.scss */
 body header {
   transition: 0.7s cubic-bezier(0, 0, 0.27, 0.97);
   z-index: 0;
@@ -218,7 +223,7 @@ body header {
   text-align: center;
 }
 
-/* line 109, C:/Users/mmedina/Documents/Programming/Training/MarkMed.github.io/mmei/SCSS/style.scss */
+/* line 114, C:/Users/mmedina/Documents/Programming/Training/MarkMed.github.io/mmei/SCSS/style.scss */
 body header h2 {
   font-size: 3.5em;
   text-shadow: 0px 0px 10px #c8d2d9;
@@ -226,28 +231,27 @@ body header h2 {
 }
 
 @media (min-width: 160px) and (max-width: 640px) and (orientation: landscape) {
-  /* line 109, C:/Users/mmedina/Documents/Programming/Training/MarkMed.github.io/mmei/SCSS/style.scss */
+  /* line 114, C:/Users/mmedina/Documents/Programming/Training/MarkMed.github.io/mmei/SCSS/style.scss */
   body header h2 {
     font-size: 2.3em;
   }
 }
 
-/* line 117, C:/Users/mmedina/Documents/Programming/Training/MarkMed.github.io/mmei/SCSS/style.scss */
+/* line 122, C:/Users/mmedina/Documents/Programming/Training/MarkMed.github.io/mmei/SCSS/style.scss */
 body header p {
   font-size: 1.8em;
   text-shadow: 0px 0px 10px #c8d2d9;
-  font-family: Quicksand;
   font-weight: 900;
 }
 
 @media (min-width: 160px) and (max-width: 640px) and (orientation: landscape) {
-  /* line 117, C:/Users/mmedina/Documents/Programming/Training/MarkMed.github.io/mmei/SCSS/style.scss */
+  /* line 122, C:/Users/mmedina/Documents/Programming/Training/MarkMed.github.io/mmei/SCSS/style.scss */
   body header p {
     font-size: 1.7em;
   }
 }
 
-/* line 126, C:/Users/mmedina/Documents/Programming/Training/MarkMed.github.io/mmei/SCSS/style.scss */
+/* line 130, C:/Users/mmedina/Documents/Programming/Training/MarkMed.github.io/mmei/SCSS/style.scss */
 body header ul#anchorsBtns {
   display: flex;
   flex-direction: row;
@@ -257,7 +261,7 @@ body header ul#anchorsBtns {
 }
 
 @media (min-width: 160px) and (max-width: 640px) {
-  /* line 126, C:/Users/mmedina/Documents/Programming/Training/MarkMed.github.io/mmei/SCSS/style.scss */
+  /* line 130, C:/Users/mmedina/Documents/Programming/Training/MarkMed.github.io/mmei/SCSS/style.scss */
   body header ul#anchorsBtns {
     height: auto;
     width: auto;
@@ -265,22 +269,17 @@ body header ul#anchorsBtns {
 }
 
 @media (min-width: 641px) and (min-width: 1008px) {
-  /* line 126, C:/Users/mmedina/Documents/Programming/Training/MarkMed.github.io/mmei/SCSS/style.scss */
+  /* line 130, C:/Users/mmedina/Documents/Programming/Training/MarkMed.github.io/mmei/SCSS/style.scss */
   body header ul#anchorsBtns {
     height: auto;
     width: 80vw;
   }
 }
 
-/* line 134, C:/Users/mmedina/Documents/Programming/Training/MarkMed.github.io/mmei/SCSS/style.scss */
+/* line 138, C:/Users/mmedina/Documents/Programming/Training/MarkMed.github.io/mmei/SCSS/style.scss */
 body header ul#anchorsBtns li {
   cursor: pointer;
   transition: 0.7s cubic-bezier(0, 0, 0.27, 0.97);
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
   height: 60px;
   width: 200px;
   border: 1px solid rgba(219, 79, 50, 0.75);
@@ -288,14 +287,14 @@ body header ul#anchorsBtns li {
 }
 
 @media (min-width: 160px) and (max-width: 1007px) {
-  /* line 134, C:/Users/mmedina/Documents/Programming/Training/MarkMed.github.io/mmei/SCSS/style.scss */
+  /* line 138, C:/Users/mmedina/Documents/Programming/Training/MarkMed.github.io/mmei/SCSS/style.scss */
   body header ul#anchorsBtns li {
-    margin: 20px 20px;
+    margin: 0px 20px 20px;
   }
 }
 
 @media (min-width: 160px) and (max-width: 640px) and (orientation: landscape) {
-  /* line 134, C:/Users/mmedina/Documents/Programming/Training/MarkMed.github.io/mmei/SCSS/style.scss */
+  /* line 138, C:/Users/mmedina/Documents/Programming/Training/MarkMed.github.io/mmei/SCSS/style.scss */
   body header ul#anchorsBtns li {
     height: 40px;
     width: 150px;
@@ -303,38 +302,47 @@ body header ul#anchorsBtns li {
 }
 
 @media (min-width: 1008px) {
-  /* line 134, C:/Users/mmedina/Documents/Programming/Training/MarkMed.github.io/mmei/SCSS/style.scss */
+  /* line 138, C:/Users/mmedina/Documents/Programming/Training/MarkMed.github.io/mmei/SCSS/style.scss */
   body header ul#anchorsBtns li {
     margin: 0px 20px;
   }
 }
 
-/* line 150, C:/Users/mmedina/Documents/Programming/Training/MarkMed.github.io/mmei/SCSS/style.scss */
+/* line 153, C:/Users/mmedina/Documents/Programming/Training/MarkMed.github.io/mmei/SCSS/style.scss */
 body header ul#anchorsBtns li a {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
   transition: 0.7s cubic-bezier(0, 0, 0.27, 0.97);
-  font-size: 20px;
+  font-size: 0.8rem;
+  letter-spacing: 0.3rem;
+  text-transform: uppercase;
   color: #db4f32;
 }
 
 @media (min-width: 160px) and (max-width: 640px) and (orientation: landscape) {
-  /* line 150, C:/Users/mmedina/Documents/Programming/Training/MarkMed.github.io/mmei/SCSS/style.scss */
+  /* line 153, C:/Users/mmedina/Documents/Programming/Training/MarkMed.github.io/mmei/SCSS/style.scss */
   body header ul#anchorsBtns li a {
-    font-size: 16px;
+    font-size: 13px;
   }
 }
 
-/* line 158, C:/Users/mmedina/Documents/Programming/Training/MarkMed.github.io/mmei/SCSS/style.scss */
+/* line 165, C:/Users/mmedina/Documents/Programming/Training/MarkMed.github.io/mmei/SCSS/style.scss */
 body header ul#anchorsBtns li:hover {
   background-color: rgba(219, 79, 50, 0.75);
   border-color: #131c29;
 }
 
-/* line 162, C:/Users/mmedina/Documents/Programming/Training/MarkMed.github.io/mmei/SCSS/style.scss */
+/* line 169, C:/Users/mmedina/Documents/Programming/Training/MarkMed.github.io/mmei/SCSS/style.scss */
 body header ul#anchorsBtns li:hover a {
   color: #131c29;
 }
 
-/* line 167, C:/Users/mmedina/Documents/Programming/Training/MarkMed.github.io/mmei/SCSS/style.scss */
+/* line 174, C:/Users/mmedina/Documents/Programming/Training/MarkMed.github.io/mmei/SCSS/style.scss */
 body header > * {
   transition: 0.7s cubic-bezier(0, 0, 0.27, 0.97);
   margin-top: 5%;
@@ -342,40 +350,40 @@ body header > * {
 }
 
 @media (min-width: 160px) and (max-width: 640px) {
-  /* line 167, C:/Users/mmedina/Documents/Programming/Training/MarkMed.github.io/mmei/SCSS/style.scss */
+  /* line 174, C:/Users/mmedina/Documents/Programming/Training/MarkMed.github.io/mmei/SCSS/style.scss */
   body header > * {
     transform: translateY(0%);
   }
 }
 
 @media (min-width: 641px) and (max-width: 1007px) {
-  /* line 167, C:/Users/mmedina/Documents/Programming/Training/MarkMed.github.io/mmei/SCSS/style.scss */
+  /* line 174, C:/Users/mmedina/Documents/Programming/Training/MarkMed.github.io/mmei/SCSS/style.scss */
   body header > * {
     transform: translateY(0%);
   }
 }
 
 @media (min-width: 160px) and (max-width: 640px) and (orientation: portrait) {
-  /* line 167, C:/Users/mmedina/Documents/Programming/Training/MarkMed.github.io/mmei/SCSS/style.scss */
+  /* line 174, C:/Users/mmedina/Documents/Programming/Training/MarkMed.github.io/mmei/SCSS/style.scss */
   body header > * {
     margin-top: 10%;
     transform: translateY(0%);
   }
 }
 
-/* line 183, C:/Users/mmedina/Documents/Programming/Training/MarkMed.github.io/mmei/SCSS/style.scss */
+/* line 190, C:/Users/mmedina/Documents/Programming/Training/MarkMed.github.io/mmei/SCSS/style.scss */
 body main {
   z-index: 0;
 }
 
-/* line 185, C:/Users/mmedina/Documents/Programming/Training/MarkMed.github.io/mmei/SCSS/style.scss */
+/* line 192, C:/Users/mmedina/Documents/Programming/Training/MarkMed.github.io/mmei/SCSS/style.scss */
 body main #srvAndRpr {
   height: calc( 100vh - 40px);
   width: 100%;
 }
 
 @media (min-width: 160px) and (max-width: 640px) and (orientation: portrait) {
-  /* line 185, C:/Users/mmedina/Documents/Programming/Training/MarkMed.github.io/mmei/SCSS/style.scss */
+  /* line 192, C:/Users/mmedina/Documents/Programming/Training/MarkMed.github.io/mmei/SCSS/style.scss */
   body main #srvAndRpr {
     height: calc( 100vh - 50px);
     width: 100%;
