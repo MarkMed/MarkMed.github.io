@@ -27,16 +27,11 @@ body{
 		font-size: 14px;
 	}
 	#banner{
+		opacity: 0;
 		z-index: 99;
 		background-color: $primaryColor100;
 		top: 0;
 		position: fixed;
-		@include widthHeightsize(100%, 40px);
-
-		@media (min-width: 160px) and (max-width: $smallWidth) and (orientation: portrait){
-			@include widthHeightsize($width-12, 50px);
-		}
-		
 		transition: 0.7s $animationFX;
 		color: $thirdColor75;
 		@include flex(row, space-between, center, wrap);
@@ -66,12 +61,12 @@ body{
 			@include flex(row, center, center, wrap);
 			@media (min-width: 160px) and (max-width: $smallWidth){
 				right: 2%;
-				@include widthHeightsize(auto, 50%);
+				@include widthHeightsize(auto, 20px);
 				letter-spacing: 0.2rem;
 			}
 			@media (min-width: $smallWidth+1){
 				right: 7.5%;
-				@include widthHeightsize(auto, 50%);
+				@include widthHeightsize(auto, 25px);
 			}
 			font-size: 9px;
 			color: $clearColor75;
@@ -88,6 +83,18 @@ body{
 			}
 		}
 	}
+	#banner.topFixed{		
+		@include widthHeightsize($width-12, 40px);
+		@media (min-width: 160px) and (max-width: $smallWidth) and (orientation: portrait){
+			@include widthHeightsize($width-12, 50px);
+		}
+		opacity: 1;
+	}
+	#banner.topExpanded{		
+		@include widthHeightsize($width-12, 50vh);
+		opacity: 0;
+	}
+
 	#headerBckgrnd{
 		z-index: -1;
 		background-image: url(../Resources/noOwnImg_TestImg2_edited.jpg);
