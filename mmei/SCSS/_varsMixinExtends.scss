@@ -34,33 +34,33 @@ $clearColor0: rgba(200, 210, 217, 0);
 $animationFX: cubic-bezier(0, 0, 0.27, 0.97);
 /*
 width of element:
-	12 cols - 100vw
-	11 cols - 091,666666666vw
-	10 cols - 083,333333333vw
-	09 cols - 075vw
-	08 cols - 066,666666666vw
-	07 cols - 058,333333333vw
-	06 cols - 050vw
-	05 cols - 041,666666666vw
-	04 cols - 033,333333333vw
-	03 cols - 025vw
-	02 cols - 016,666666666vw
-	01 cols - 008,333333333vw
-	00 cols - 000vw
+	12 cols - 100%
+	11 cols - 091,666666666%
+	10 cols - 083,333333333%
+	09 cols - 075%
+	08 cols - 066,666666666%
+	07 cols - 058,333333333%
+	06 cols - 050%
+	05 cols - 041,666666666%
+	04 cols - 033,333333333%
+	03 cols - 025%
+	02 cols - 016,666666666%
+	01 cols - 008,333333333%
+	00 cols - 000%
 */
-$width-12:100vw;
-$width-11:91.666666666vw;
-$width-10:83.333333333vw;
-$width-9:75vw;
-$width-8:66.666666666vw;
-$width-7:58.333333333vw;
-$width-6:50vw;
-$width-5:41.666666666vw;
-$width-4:33.333333333vw;
-$width-3:25vw;
-$width-2:16.666666666vw;
-$width-1:8.333333333vw;
-$width-0:0vw;
+$width-12:100%;
+$width-11:91.666666666%;
+$width-10:83.333333333%;
+$width-9:75%;
+$width-8:66.666666666%;
+$width-7:58.333333333%;
+$width-6:50%;
+$width-5:41.666666666%;
+$width-4:33.333333333%;
+$width-3:25%;
+$width-2:16.666666666%;
+$width-1:8.333333333%;
+$width-0:0%;
 //RWD Vars
 $smallWidth: 640px;
 $mediumWidth: 1007px;

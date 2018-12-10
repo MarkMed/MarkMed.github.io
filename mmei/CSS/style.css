@@ -23,19 +23,19 @@ ul, ol {
 
 /*
 width of element:
-	12 cols - 100vw
-	11 cols - 091,666666666vw
-	10 cols - 083,333333333vw
-	09 cols - 075vw
-	08 cols - 066,666666666vw
-	07 cols - 058,333333333vw
-	06 cols - 050vw
-	05 cols - 041,666666666vw
-	04 cols - 033,333333333vw
-	03 cols - 025vw
-	02 cols - 016,666666666vw
-	01 cols - 008,333333333vw
-	00 cols - 000vw
+	12 cols - 100%
+	11 cols - 091,666666666%
+	10 cols - 083,333333333%
+	09 cols - 075%
+	08 cols - 066,666666666%
+	07 cols - 058,333333333%
+	06 cols - 050%
+	05 cols - 041,666666666%
+	04 cols - 033,333333333%
+	03 cols - 025%
+	02 cols - 016,666666666%
+	01 cols - 008,333333333%
+	00 cols - 000%
 */
 /*Mixins*/
 @font-face {
@@ -110,7 +110,7 @@ body #banner h1 {
   font-weight: 100;
   letter-spacing: 0.3vw;
   height: 90%;
-  width: 66.66667vw;
+  width: 66.66667%;
 }
 
 @media (min-width: 160px) and (max-width: 640px) {
@@ -181,7 +181,7 @@ body #banner a:hover {
 /* line 86, C:/Users/mmedina/Documents/Programming/Training/MarkMed.github.io/mmei/SCSS/style.scss */
 body #banner.topFixed {
   height: 40px;
-  width: 100vw;
+  width: 100%;
   opacity: 1;
 }
 
@@ -189,14 +189,14 @@ body #banner.topFixed {
   /* line 86, C:/Users/mmedina/Documents/Programming/Training/MarkMed.github.io/mmei/SCSS/style.scss */
   body #banner.topFixed {
     height: 50px;
-    width: 100vw;
+    width: 100%;
   }
 }
 
 /* line 93, C:/Users/mmedina/Documents/Programming/Training/MarkMed.github.io/mmei/SCSS/style.scss */
 body #banner.topExpanded {
   height: 50vh;
-  width: 100vw;
+  width: 100%;
   opacity: 0;
 }
 
@@ -210,7 +210,7 @@ body #headerBckgrnd {
   background-repeat: no-repeat;
   position: absolute;
   height: 100vh;
-  width: 100vw;
+  width: 100%;
 }
 
 @media (min-width: 160px) and (max-width: 640px) and (orientation: portrait) {
@@ -226,7 +226,7 @@ body header {
   transition: 0.7s cubic-bezier(0, 0, 0.27, 0.97);
   z-index: 0;
   height: 100vh;
-  width: 100vw;
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -394,49 +394,49 @@ body main {
 /* line 201, C:/Users/mmedina/Documents/Programming/Training/MarkMed.github.io/mmei/SCSS/style.scss */
 body main #srvAndRpr {
   height: calc( 100vh - 40px);
-  width: 100vw;
+  width: 100%;
 }
 
 @media (min-width: 160px) and (max-width: 640px) and (orientation: portrait) {
   /* line 201, C:/Users/mmedina/Documents/Programming/Training/MarkMed.github.io/mmei/SCSS/style.scss */
   body main #srvAndRpr {
     height: calc( 100vh - 50px);
-    width: 100vw;
+    width: 100%;
   }
 }
 
 /* line 207, C:/Users/mmedina/Documents/Programming/Training/MarkMed.github.io/mmei/SCSS/style.scss */
 body main #contact {
   height: calc( 100vh - 40px);
-  width: 100vw;
+  width: 100%;
 }
 
 @media (min-width: 160px) and (max-width: 640px) and (orientation: portrait) {
   /* line 207, C:/Users/mmedina/Documents/Programming/Training/MarkMed.github.io/mmei/SCSS/style.scss */
   body main #contact {
     height: calc( 100vh - 50px);
-    width: 100vw;
+    width: 100%;
   }
 }
 
 /* line 214, C:/Users/mmedina/Documents/Programming/Training/MarkMed.github.io/mmei/SCSS/style.scss */
 body #gallery {
   height: calc( 100vh - 40px);
-  width: 100vw;
+  width: 100%;
 }
 
 @media (min-width: 160px) and (max-width: 640px) and (orientation: portrait) {
   /* line 214, C:/Users/mmedina/Documents/Programming/Training/MarkMed.github.io/mmei/SCSS/style.scss */
   body #gallery {
     height: calc( 100vh - 50px);
-    width: 100vw;
+    width: 100%;
   }
 }
 
 /* line 220, C:/Users/mmedina/Documents/Programming/Training/MarkMed.github.io/mmei/SCSS/style.scss */
 body .mmeiTitle {
   height: 0px;
-  width: 100vw;
+  width: 100%;
   border-top: 1px solid rgba(19, 28, 41, 0.75);
   margin: 4.5% 0px;
   display: flex;
