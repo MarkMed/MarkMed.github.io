@@ -1,0 +1,91 @@
+// base.scss
+@import 'noDefaultStyle';
+@import 'varsMixinExtends';
+@font-face {
+	font-family: "Cinzel";
+	src: url(../Resources/Cinzel-Regular.ttf);
+}
+@font-face {
+	font-family: "Julius";
+	src: url(../Resources/JuliusSansOne-Regular.ttf);
+}
+@font-face {
+	font-family: "Quattro";
+	src: url(../Resources/Quattrocento-Regular.ttf);
+}
+body{
+	background-color: rgb(30, 54, 65);
+}
+#svg_test #name{
+	cursor: pointer;
+}
+.spinnerTest{
+	width: 100%;
+	height: auto;
+}
+.FB_row_spcA_cen{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	align-items: center;
+	flex-wrap: wrap;
+}
+h3{
+	color: antiquewhite
+}
+h4{
+	font-style: italic;
+}
+svg{
+	cursor: pointer;
+}
+.svgContainerCircle{
+	width: 200px;
+	height: 200px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	#gaugeContainer{
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: 190px;
+		height: 190px;
+        border: 1px solid rgb(0, 92, 129);
+        border-radius: 50%;
+		box-shadow: 0px 0px 9px 0px rgba(0, 0, 0, 1) inset;
+		z-index: 0;
+		position: absolute;
+	}
+	svg{
+		transform: rotate(-90deg);
+		z-index: -1;
+	}
+	.gauge{		
+		content: '';
+		width: 130px;
+		height: 130px;
+		border-radius: 175px;
+		font-size: 1.1rem;
+		z-index: 1;
+		position: absolute;
+		background-color: rgb(0, 92, 129);
+		box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.8);
+	}
+	span#marker{
+		transition: 0.2s;
+		position: absolute;
+		height: 100px;
+		width: 2px;
+		&::before{
+			content: "";
+			border: 1px solid #616161;
+			border-radius: 50%;
+			box-shadow: 1px 3px 3px 0px rgba(0, 0, 0, 0.8);
+			height: 25px;
+			display: block;
+			background-color: #616161;
+			transform: translateY(-165%);
+		}
+	}
+}

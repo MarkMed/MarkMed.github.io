@@ -3,34 +3,7 @@
 <head>
 	<title>Test Spinner</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
-	<style type="text/css">
-		body{
-			background-color: rgb(30, 54, 65);
-		}
-		#svg_test #name{
-			cursor: pointer;
-		}
-		.spinnerTest{
-			width: 100%;
-			height: auto;
-		}
-		.FB_row_spcA_cen{
-			display: flex;
-			flex-direction: row;
-			justify-content: space-around;
-			align-items: center;
-			flex-wrap: wrap;
-		}
-		h3{
-			color: antiquewhite
-		}
-		h4{
-			font-style: italic;
-		}
-		svg{
-			cursor: pointer;
-		}
-	</style>
+	<link rel="stylesheet" href="CSS/style.css" type="text/css"/>
 </head>
 <body>
 	<h3>USE CHROME</h3>
@@ -446,117 +419,17 @@
 	<h2>Test 5</h2>
 	<br/>
 	<!-- Learn about this code on MDN: https://developer.mozilla.org/en-US/docs/Web/SVG/Element/mpath -->
-
-	<svg>
-		<defs>
-		  <g id="shape">
-			  <rect x="50" y="50" width="50" height="50" />
-			  <circle cx="50" cy="50" r="50" />
-		  </g>
-		</defs>
-	  
-		<use xlink:href="#shape" x="50" y="50" />
-		<use xlink:href="#shape" x="200" y="50" />
-	  
-	  </svg>
+	<div class="svgContainerCircle">
+		<svg id="meter" width="200" height="200" viewBox="0 0 380 380" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" >
+			<circle r="150" cx="50%" cy="50%" stroke="rgba(216, 16, 116, 1)" stroke-width="60" stroke-dasharray="0, 943" fill="none" amount="38"></circle>
+			<circle r="150" cx="50%" cy="50%" stroke="rgba(216, 116, 16, 1)" stroke-width="60" stroke-dasharray="0, 943" fill="none" amount="20"></circle> <!---->
+			<circle r="150" cx="50%" cy="50%" stroke="rgba(216, 216, 116, 1)" stroke-width="60" stroke-dasharray="0, 943" fill="none" amount="40"></circle>
+			<circle r="150" cx="50%" cy="50%" stroke="rgba(16, 216, 116, 1)" stroke-width="60" stroke-dasharray="0, 943" fill="none" amount="2"></circle>
+		</svg>
+		<div id="gaugeContainer"></div>
+		<span id="marker"></span>
+		<div class="gauge"></div>
+	</div>
 </body>
-<script>
-	window.addEventListener("load", ()=>{
-		var rotation=0;
-		var xValue=30;
-		var yValue=30;
-		window.addEventListener("keydown", (ev)=>{
-			switch (ev.key) {
-				case "ArrowUp":
-					rotation-=1;
-					break;
-				case "ArrowDown":
-					rotation+=1;
-					break;
-				case "a":
-					xValue-=1;
-					break;
-				case "d":
-					xValue+=1;
-					break;
-				case "w":
-					yValue-=1;
-					break;
-				case "s":
-					yValue+=1;
-					break;
-			}
-			document.getElementById("theMotionPath").setAttribute("d", "M50,110 A"+xValue+","+yValue+" "+rotation+" 0,1 110,10 A100,190 0 0,1 50,110");
-			/*document.getElementById("circleLimiter").setAttribute("cx", xValue);
-			document.getElementById("circleLimiter").setAttribute("cy", yValue);*/
-		});
-		document.getElementById("svg_test").addEventListener("click", ()=>{
-			document.getElementById("svg_test").children[1].innerHTML='<animateTransform attributeName="transform"	attributeType="XML"	type="translate" values="0 0; 0 10; 0 0; 0 -10; 0 0;" dur="1s" repeatCount="3"/>'
-			document.getElementById("svg_test").children[2].innerHTML='Mark Med<animateTransform attributeName="transform"	attributeType="XML"	type="translate" values="0 0; 0 10 ; 0 0; 0 -10; 0 0;" dur="1s" repeatCount="3"/>'
-		});
-		function refreshData(){
-			x = 5;  // 5 Seconds
-
-			// Do your thing here
-
-			setTimeout(refreshData, x*1000);
-		}
-		var animationRepeat0;
-		var animationRepeat1;
-		var rot=0;
-		var heightTrans=0;
-		var stateBool=true;
-		function toogleJSSpinner(){
-			console.log((!animationRepeat0)&&(!animationRepeat1));
-			console.log(animationRepeat0);
-			console.log(animationRepeat1);
-			if((!animationRepeat0)&&(!animationRepeat1)){
-				animationRepeat0=setInterval(()=>{
-					if(rot>360){
-						rot=0;
-					}
-					document.getElementById("spinner_outerCir").setAttribute("transform", "rotate("+rot+" 50 50)");
-					document.getElementById("spinner_innerCir").setAttribute("transform", "rotate("+(rot*-1)+" 50 50)");
-					rot+=0.5
-				},5);
-				animationRepeat1=setInterval(()=>{
-					if(heightTrans===15){
-						stateBool=false
-					}
-					else if(heightTrans===(10*-1)){
-						stateBool=true
-					}
-					(stateBool)?(heightTrans+=0.5):(heightTrans-=0.5);
-					document.getElementById("lines").children[0].setAttribute("transform", "translate(0, "+((heightTrans/2.5)+(heightTrans/1.6))+")");
-					document.getElementById("lines").children[1].setAttribute("transform", "translate(0, "+((heightTrans/2.5)+(heightTrans/2.2))+")");
-					document.getElementById("lines").children[2].setAttribute("transform", "translate(0, "+((heightTrans/1.5)+(heightTrans/1.8))+")");
-				},25);
-				
-			}
-			else{
-				clearInterval(animationRepeat0);
-				clearInterval(animationRepeat1);
-				
-				animationRepeat0=null;
-				animationRepeat1=null;
-			}
-			
-		}
-		toogleJSSpinner();
-		var svgs=document.querySelectorAll("svg");
-		for(var i=0; i<svgs.length; i++){
-			if(i===0){
-				svgs[i].addEventListener("click", ev => {
-				toogleJSSpinner();
-				});
-			}
-			else{
-				svgs[i].addEventListener("click", ev => {
-					console.log(ev.target);
-				});
-			}
-		}
-		
-	});
-</script>
+<script src="JS/script.js"></script>
 </html>

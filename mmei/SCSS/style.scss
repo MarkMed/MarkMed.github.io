@@ -35,7 +35,7 @@ body{
 		transition: 0.7s $animationFX;
 		color: $thirdColor75;
 		@include flex(row, space-between, center, wrap);
-
+		@include widthHeightsize($width-12, auto);
 		h1{
 			@include flex(row, flex-start, center, wrap);
 			font-family: Unlock;
@@ -82,17 +82,17 @@ body{
 				border-color: $secondaryColor100;
 			}
 		}
-	}
-	#banner.topFixed{		
-		@include widthHeightsize($width-12, 40px);
-		@media (min-width: 160px) and (max-width: $smallWidth) and (orientation: portrait){
-			@include widthHeightsize($width-12, 50px);
+		&.topFixed{		
+			height: 40px;
+			@media (min-width: 160px) and (max-width: $smallWidth) and (orientation: portrait){
+				height: 50px;
+			}
+			opacity: 1;
 		}
-		opacity: 1;
-	}
-	#banner.topExpanded{		
-		@include widthHeightsize($width-12, 50vh);
-		opacity: 0;
+		&.topExpanded{		
+			height: 50vh;
+			opacity: 0;
+		}
 	}
 
 	#headerBckgrnd{
@@ -199,9 +199,25 @@ body{
 	main{
 		z-index: 0;
 		#srvAndRpr{
-			@include widthHeightsize($width-12, calc( 100vh - 40px ));
-			@media (min-width: 160px) and (max-width: $smallWidth) and (orientation: portrait){
-				@include widthHeightsize($width-12, calc( 100vh - 50px ));
+			.catalogList{
+				@include widthHeightsize($width-12, calc( 100vh - 40px ));
+				@media (min-width: 160px) and (max-width: $smallWidth) and (orientation: portrait){
+					@include widthHeightsize($width-12, calc( 100vh - 50px ));
+				}
+				h4{
+					@include flex(column, center, center, wrap);
+					@include widthHeightsize($width-12, auto);
+				}
+				ul{					
+					@include widthHeightsize($width-12, auto);
+					@include flex(row, space-between, center, wrap);
+					li{
+						@include flex(column, center, center, wrap);
+						padding: 2em;
+						text-align: center;
+						border: 1px solid $secondaryColor75
+					}
+				}
 			}
 		}
 		#contact{
@@ -221,9 +237,7 @@ body{
 		@include widthHeightsize($width-12, 0px);
 		border-top: 1px solid $secondaryColor75;
 		margin: 4.5% 0px;
-		@include flex(row, center, center, wrap);
-		position: absolute;
-		
+		@include flex(row, center, center, wrap);		
 		h3{
 			padding: 5px 20px;
 			transform: skew(-25deg);
