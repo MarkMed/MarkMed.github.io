@@ -105,5 +105,15 @@ window.addEventListener("load", ()=>{
     console.log(gaugeRanges);
     for(var i=gaugeRanges.length-1; i>=0; i--){
         gaugeRanges[i].setAttribute("stroke-dasharray", (9.43*calcPercent((!!gaugeRanges[i+1])?(parseInt(gaugeRanges[i+1].getAttribute("amount"))):(0), parseInt(gaugeRanges[i].getAttribute("amount")))+", 943"));
-    }
+	}
+	
+
+    var svgContainer=document.querySelector(".svgContainerCircle23");
+    var svgGauge=svgContainer.querySelector("svg");
+    var gaugeRanges=svgGauge.querySelectorAll("circle");
+    var acumul=0;
+    console.log(gaugeRanges);
+    for(var i=gaugeRanges.length-1; i>=0; i--){
+        gaugeRanges[i].setAttribute("stroke-dasharray", (2.488*calcPercent((!!gaugeRanges[i+1])?(parseInt(gaugeRanges[i+1].getAttribute("amount"))):(0), parseInt(gaugeRanges[i].getAttribute("amount")))+", 248.16"));
+	}
 });
