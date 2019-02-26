@@ -43,7 +43,8 @@ width of element:
   src: url(../Resources/Quattrocento-Regular.ttf); }
 
 body {
-  background-color: #1e3641; }
+  background-color: #1e3641;
+  padding-bottom: 10%; }
 
 #svg_test #name {
   cursor: pointer; }
@@ -132,7 +133,8 @@ svg {
     position: absolute; }
   .svgContainerCircle2 svg {
     transform: rotate(-90deg);
-    z-index: -1; }
+    z-index: -1;
+    background-color: rgba(148, 200, 245, 0.5); }
   .svgContainerCircle2 .gauge {
     content: '';
     width: 130px;
@@ -149,6 +151,52 @@ svg {
     height: 100px;
     width: 2px; }
     .svgContainerCircle2 span#marker::before {
+      content: "";
+      border: 1px solid #616161;
+      border-radius: 50%;
+      box-shadow: 1px 3px 3px 0px rgba(0, 0, 0, 0.8);
+      height: 25px;
+      display: block;
+      background-color: #616161;
+      transform: translateY(-165%); }
+
+.svgContainerCircle23 {
+  width: 200px;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+  .svgContainerCircle23 #gaugeContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 190px;
+    height: 190px;
+    border: 1px solid #005c81;
+    border-radius: 50%;
+    box-shadow: 0px 0px 9px 0px black inset;
+    z-index: 0;
+    position: absolute; }
+  .svgContainerCircle23 svg {
+    transform: rotate(-90deg);
+    z-index: -1;
+    background-color: rgba(148, 200, 245, 0.5); }
+  .svgContainerCircle23 .gauge {
+    content: '';
+    width: 130px;
+    height: 130px;
+    border-radius: 175px;
+    font-size: 1.1rem;
+    z-index: 1;
+    position: absolute;
+    background-color: #005c81;
+    box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.8); }
+  .svgContainerCircle23 span#marker {
+    transition: 0.2s;
+    position: absolute;
+    height: 100px;
+    width: 2px; }
+    .svgContainerCircle23 span#marker::before {
       content: "";
       border: 1px solid #616161;
       border-radius: 50%;
