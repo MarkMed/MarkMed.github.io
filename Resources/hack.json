@@ -1,1 +1,7 @@
-{"IsError":false,"Result":true,"Count":"You need to download 2 more apps.","remaining":0,"done":2}
+{
+  "IsError":false,
+  "Result":true,
+  "Count":"You need to download 2 more apps.",
+  "remaining":0,
+  "done":2 
+}
