@@ -98,7 +98,7 @@ body{
 		opacity: 0.7;
 		font-weight: 100;
 		z-index: 90;
-		@include flex(row, space-between, center, wrap);
+		@include flex(row, space-around, center, wrap);
 		@media (min-width: 160px) and (max-width: $smallWidth){
 			@include widthHeightsize(100%, 20px);
 		}
@@ -135,7 +135,6 @@ body{
 			cursor: default;
 		}
 		img{
-			margin-left: 2%;
 			@media (min-width: 160px) and (max-width: $smallWidth){
 				@include widthHeightsize(auto, 14px);
 			}
@@ -152,7 +151,6 @@ body{
 		#burger{
 			z-index: 99;
 			@include widthHeightsize(15px, 20px);
-			right: 2%;
 			@include flex(column, space-around, center, wrap);
 			cursor: pointer;
 			@media (min-width: 160px) and (max-width: $smallWidth){
