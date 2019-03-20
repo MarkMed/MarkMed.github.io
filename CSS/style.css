@@ -49,10 +49,35 @@ width of element:
   src: url(../Resources/Quattrocento-Regular.ttf);
 }
 
+@font-face {
+  font-family: "RalewayLight";
+  src: url(../Resources/Raleway-Light_0.ttf);
+}
+
+@font-face {
+  font-family: "RalewayELight";
+  src: url(../Resources/Raleway-ExtraLight.ttf);
+}
+
+@font-face {
+  font-family: "RalewayThin";
+  src: url(../Resources/Raleway-Thin.ttf);
+}
+
+@font-face {
+  font-family: "DetalThin";
+  src: url(../Resources/Datalegreya-Thin.otf);
+}
+
+@font-face {
+  font-family: "BraGroLight";
+  src: url(../Resources/brandon-grotesque-light.woff);
+}
+
 .titleHeader {
   text-decoration: none;
   font-size: 15px;
-  font-family: "Julius";
+  font-family: "RalewayThin";
   color: rgba(255, 254, 219, 0.75);
   font-weight: 100;
 }
@@ -116,7 +141,7 @@ width of element:
 
 body {
   color: rgba(255, 254, 219, 0.75);
-  font-family: "Quattro";
+  font-family: "RalewayLight";
   background-color: #1e3641;
 }
 
@@ -139,7 +164,6 @@ body {
 }
 
 body #menu {
-  font-family: "Cinzel";
   top: 0;
   position: fixed;
   background-color: #1e3641;
@@ -182,7 +206,7 @@ body #menu:hover {
 body #menu h1 {
   color: rgba(255, 195, 60, 0.75);
   letter-spacing: 0.8em;
-  font-family: "Cinzel";
+  font-family: "DetalThin";
   cursor: default;
 }
 
@@ -247,7 +271,7 @@ body #menu #burger {
   z-index: 99;
   height: 20px;
   width: 15px;
-  margin-right: 2%;
+  right: 2%;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -425,18 +449,26 @@ body #menu [id="openMenu"]:checked ~ #burger span:nth-child(3) {
 }
 
 body header {
-  height: 600px;
+  height: 100vh;
   width: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  background-image: url("https://lh3.googleusercontent.com/-jTH-vkpbh6w/WtJiLSCBNqI/AAAAAAAAABE/NUi9yeHvudUO-CZlikLvRtCur9SzikU_gCLcBGAs/w2400-h1200-p-e365-fVignette=1,22.5,1.4,0,000000:Soften=1,0,0:-k-no/_C__Users_Miguel%25252520Angel%25252520Medina_Documents_Programaci%252525C3%252525B3n_Img_index.html.png");
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
   background-repeat: no-repeat;
+}
+
+body header h2, body header h3 {
+  font-weight: 100;
+  font-size: calc(1vw);
+  letter-spacing: calc(1vw);
+  margin-bottom: 2em;
+  text-transform: uppercase;
+  text-align: center;
 }
 
 body main {
@@ -483,4 +515,14 @@ body main ul li a {
   height: 100%;
   width: 100%;
   text-align: center;
+}
+
+body section {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
 }

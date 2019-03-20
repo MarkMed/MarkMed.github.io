@@ -13,10 +13,30 @@
 	font-family: "Quattro";
 	src: url(../Resources/Quattrocento-Regular.ttf);
 }
+@font-face {
+	font-family: "RalewayLight";
+	src: url(../Resources/Raleway-Light_0.ttf);
+}
+@font-face {
+	font-family: "RalewayELight";
+	src: url(../Resources/Raleway-ExtraLight.ttf);
+}
+@font-face {
+	font-family: "RalewayThin";
+	src: url(../Resources/Raleway-Thin.ttf);
+}
+@font-face {
+	font-family: "DetalThin";
+	src: url(../Resources/Datalegreya-Thin.otf);
+}
+@font-face {
+	font-family: "BraGroLight";
+	src: url(../Resources/brandon-grotesque-light.woff);
+}
 .titleHeader{
 	text-decoration: none;
 	font-size: 15px;
-	font-family: "Julius";
+	font-family: "RalewayThin";
 	color: $clearColor75;
 	font-weight: 100;
 }
@@ -60,7 +80,7 @@
 }
 body{
 	color: $clearColor75;
-	font-family: "Quattro";
+	font-family: "RalewayLight";
 	background-color: $primaryColor100;
 	@media (min-width: 160px) and (max-width: $smallWidth){
 		margin-top: 20px;
@@ -72,7 +92,6 @@ body{
 		margin-top: 50px;
 	}
 	#menu{
-		font-family: "Cinzel";
 		top: 0;
 		position: fixed;
 		background-color: $primaryColor100;
@@ -96,7 +115,7 @@ body{
 		h1{
 			color: $thirdColor75;
 			letter-spacing: 0.8em;
-			font-family: "Cinzel";
+			font-family: "DetalThin";
 			@media (min-width: 160px) and (max-width: $smallWidth){
 				font-size: 16px;
 				word-wrap: break-word;
@@ -133,7 +152,7 @@ body{
 		#burger{
 			z-index: 99;
 			@include widthHeightsize(15px, 20px);
-			margin-right: 2%;
+			right: 2%;
 			@include flex(column, space-around, center, wrap);
 			cursor: pointer;
 			@media (min-width: 160px) and (max-width: $smallWidth){
@@ -245,13 +264,20 @@ body{
 		}
 	}
 	header{
-		@include widthHeightsize(100%, 600px);
-		@include flex(column, space-around, center, wrap);
-		background-image: url("https://lh3.googleusercontent.com/-jTH-vkpbh6w/WtJiLSCBNqI/AAAAAAAAABE/NUi9yeHvudUO-CZlikLvRtCur9SzikU_gCLcBGAs/w2400-h1200-p-e365-fVignette=1,22.5,1.4,0,000000:Soften=1,0,0:-k-no/_C__Users_Miguel%25252520Angel%25252520Medina_Documents_Programaci%252525C3%252525B3n_Img_index.html.png");
+		@include widthHeightsize(100%, 100vh);
+		@include flex(column, center, center, wrap);
 		background-size: cover;
 		background-position: center;
 		background-attachment: fixed;
 		background-repeat: no-repeat;
+		h2, h3{
+			font-weight: 100;
+			font-size: calc(1vw);
+			letter-spacing: calc(1vw);
+			margin-bottom: 2em;
+			text-transform: uppercase;
+			text-align: center;
+		}
 	}
 	main{
 		@include widthHeightsize(100%, auto);
@@ -274,5 +300,9 @@ body{
 				}
 			}
 		}
+	}
+	section{
+		@include widthHeightsize(100%, 100vh);
+		@include flex(column, space-around, center, wrap);
 	}
 }
