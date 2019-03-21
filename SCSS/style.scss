@@ -44,7 +44,7 @@
 	@include flex(column, center, center, wrap);
 	letter-spacing: 1em;
 	cursor: pointer;
-	font-size: 1em;
+	font-size: 0.5em;
 	border-bottom: 1px solid $thirdColor50;
 	transition: 0.6s $animationFX;
 	text-transform: uppercase;
@@ -78,6 +78,9 @@
 		letter-spacing: 2em;
 	}
 }
+html{	
+	scrollbar-width: none;
+}
 body{
 	color: $clearColor75;
 	font-family: "RalewayLight";
@@ -90,6 +93,9 @@ body{
 	}
 	@media (min-width: $mediumWidth+1){
 		margin-top: 50px;
+	}
+	&::-webkit-scrollbar { 
+		display: none; 
 	}
 	#menu{
 		top: 0;
@@ -150,7 +156,7 @@ body{
 		}
 		#burger{
 			z-index: 99;
-			@include widthHeightsize(15px, 20px);
+			@include widthHeightsize(20px, 20px);
 			@include flex(column, space-around, center, wrap);
 			cursor: pointer;
 			@media (min-width: 160px) and (max-width: $smallWidth){
@@ -161,9 +167,22 @@ body{
 				border: 1px solid $thirdColor75;
 				@include widthHeightsize(15px, 0px);
 				border-radius: 10px;
+				position: absolute;
 				@media (min-width: 160px) and (max-width: $smallWidth){
 					@include widthHeightsize(10px, 0px);
-					border: 0.5px solid $thirdColor75;
+					border: 0.25px solid $thirdColor75;
+				}
+			}
+			span:nth-child(1){
+				transform: translate(0px, 5px)  rotateZ(0deg);
+				@media (min-width: 160px) and (max-width: $smallWidth){
+					transform: translate(0px, 3.5px)  rotateZ(0deg);
+				}
+			}
+			span:nth-child(3){
+				transform: translate(0px, -5px)  rotateZ(0deg);
+				@media (min-width: 160px) and (max-width: $smallWidth){
+					transform: translate(0px, -3.5px)  rotateZ(0deg);
 				}
 			}
 		}
@@ -172,90 +191,83 @@ body{
 			top: 0;
 			right: 0;
 			position: fixed;
-			@include flex(column, space-around, center, wrap);
-			transform: translateX(120%);
 			opacity: 0;
-			@media (min-width: 160px) and (max-width: $smallWidth){
-				@include widthHeightsize(180px, 100%);
-			}
-			@media (min-width: $smallWidth+1) and (max-width: $mediumWidth){
-				@include widthHeightsize(400px, 100%);
-			}
-			@media (min-width: $mediumWidth+1){
-				@include widthHeightsize(600px, 100%);
-			}
-			transition: 0.6s $animationFX;
-			&::before{
-				z-index: 89;
-				position: absolute;
-				right: 0; 
-				content: '';
-				background-color: $secondaryColor100;
-				transform: translate(20%, 0) rotateZ(9deg);
-				@media (min-width: 160px) and (max-width: $smallWidth){
-					@include widthHeightsize(300px, 120%);
-					transform: translate(25%, 0) rotateZ(9deg);
-				}
-				@media (min-width: $smallWidth+1) and (max-width: $mediumWidth){
-					@include widthHeightsize(500px, 120%);
-				}
-				@media (min-width: $mediumWidth+1){
-					@include widthHeightsize(800px, 120%);
-				}
-			}
-			.menuOpt{
-				z-index: 95;
-				transition: 0.7s $animationFX;
-				color: $clearColor50;
-				letter-spacing: 0.5em;
-				font-size: 20px;
+			@include widthHeightsize(100vw, 0vh);
+			background-color: $primaryColor100;
+			transition: 0.4s $animationFX;
+			transition-delay: 0.2s;
+			@include flex(column, center, center, wrap);
+			#itemBox{
+				@include flex(column, space-around, center, wrap);
+				display: none;
+				@include widthHeightsize(20vw, 100vh);
+				transform: translateY(2vh);
+				transition: 0.4s $animationFX;
 				opacity: 0;
-				transform: translateX(200%);
-				@include widthHeightsize(auto, auto);
-				text-align: center;
-				@media (min-width: 160px) and (max-width: $smallWidth){
-					font-size: 11px;
-					letter-spacing: 0.2em;
-				}
-				@media (min-width: 160px) and (max-width: $smallWidth) and (orientation: portrait){
-					font-size: 12px;
-					letter-spacing: 0.3em;
-				}
-				@media (min-width: $smallWidth+1) and (max-width: $mediumWidth){
-					font-size: 14px;
-				}
-				@media (min-width: $mediumWidth+1){
-					font-size: 16px;
-				}
-				&:hover{
-					letter-spacing: 1em;
-					color: $clearColor100;
+				.menuOpt{
+					transform: translateY(2vh);
+					z-index: 95;
+					transition-delay: 0s;
+					transition: 0.4s $animationFX;
+					color: $clearColor50;
+					letter-spacing: 0.5em;
+					font-size: 20px;
+					transition-delay: 0s;
+					@include widthHeightsize(auto, auto);
+					text-align: center;
+					@media (min-width: 160px) and (max-width: $smallWidth){
+						font-size: 11px;
+						letter-spacing: 0.2em;
+					}
+					@media (min-width: 160px) and (max-width: $smallWidth) and (orientation: portrait){
+						font-size: 12px;
+						letter-spacing: 0.3em;
+					}
+					@media (min-width: $smallWidth+1) and (max-width: $mediumWidth){
+						font-size: 14px;
+					}
+					@media (min-width: $mediumWidth+1){
+						font-size: 16px;
+					}
+					&:hover{
+						letter-spacing: 1em;
+						color: $clearColor100;
+					}
 				}
 			}
 		}
 		[id="openMenu"]:checked{
 			& ~ #itemContainer{
-				transform: translateX(0%);
 				opacity: 1;
-				.menuOpt{
+				@include widthHeightsize(100vw, 100vh);
+				transition-delay: 0s;
+				transition: 0.4s $animationFX;
+				#itemBox{
+					display: flex;
+					transition-delay: 0.4s;
 					transform: translateY(0%);
 					opacity: 1;
 				}
 			}
 			& ~ #burger{
 				span:nth-child(1){
-					transform: translate(0px, 5px)  rotateZ(45deg);
+					transform: translate(0px, 0px)  rotateZ(45deg);
 					@media (min-width: 160px) and (max-width: $smallWidth){
-						transform: translate(0px, 3.5px)  rotateZ(45deg);
+						transform: translate(0px, 0px)  rotateZ(45deg);
 					}
 				}
 				span:nth-child(2){
-					display: none;
+					@include widthHeightsize(22px, 22px);
+					border-radius: 50%;
+					@media (min-width: 160px) and (max-width: $smallWidth){
+						@include widthHeightsize(15px, 15px);
+					}
+					cursor: pointer;
 				}
 				span:nth-child(3){
-					transform: translate(0px, -5px)  rotateZ(-45deg);
+					transform: translate(0px, 0px)  rotateZ(-45deg);
 					@media (min-width: 160px) and (max-width: $smallWidth){
-						transform: translate(0px, -3.5px)  rotateZ(-45deg);
+						transform: translate(0px, 0px)  rotateZ(-45deg);
 					}
 				}
 			}
@@ -281,7 +293,7 @@ body{
 		@include widthHeightsize(100%, auto);
 		@include flex(column, space-around, center, wrap);
 		ul{
-			@include widthHeightsize(75%, 100%);
+			@include widthHeightsize(100%, 100%);
 			@include flex(column, space-around, center, wrap);
 			background-color: $secondaryColor100;
 			li{
