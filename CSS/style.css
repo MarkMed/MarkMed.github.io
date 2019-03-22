@@ -43,16 +43,6 @@ width of element:
 }
 
 @font-face {
-  font-family: "Julius";
-  src: url(../Resources/JuliusSansOne-Regular.ttf);
-}
-
-@font-face {
-  font-family: "Quattro";
-  src: url(../Resources/Quattrocento-Regular.ttf);
-}
-
-@font-face {
   font-family: "RalewayLight";
   src: url(../Resources/Raleway-Light_0.ttf);
 }
@@ -215,10 +205,13 @@ body #menu:hover {
 }
 
 body #menu h1 {
-  color: rgba(255, 195, 60, 0.75);
   letter-spacing: 0.8em;
   font-family: "DetalThin";
   cursor: default;
+}
+
+body #menu h1 a {
+  color: rgba(255, 195, 60, 0.75);
 }
 
 @media (min-width: 160px) and (max-width: 640px) {
@@ -288,8 +281,8 @@ body #menu #burger {
 
 @media (min-width: 160px) and (max-width: 640px) {
   body #menu #burger {
-    height: 15px;
-    width: 10px;
+    height: 20px;
+    width: 20px;
   }
 }
 
@@ -472,14 +465,80 @@ body header {
 
 body header h2, body header h3 {
   font-weight: 100;
-  font-size: calc(1vw);
   letter-spacing: calc(1vw);
   margin-bottom: 2em;
   text-transform: uppercase;
   text-align: center;
 }
 
+@media (min-width: 160px) and (max-width: 640px) {
+  body header h2, body header h3 {
+    font-size: 12px;
+  }
+}
+
+@media (min-width: 641px) and (max-width: 1007px) {
+  body header h2, body header h3 {
+    font-size: 15px;
+  }
+}
+
+@media (min-width: 1008px) {
+  body header h2, body header h3 {
+    font-size: 20px;
+  }
+}
+
+body header svg {
+  cursor: pointer;
+}
+
+@media (min-width: 160px) and (max-width: 640px) {
+  body header svg {
+    height: 30px;
+    width: 30px;
+  }
+}
+
+@media (min-width: 641px) and (max-width: 1007px) {
+  body header svg {
+    height: 40px;
+    width: 40px;
+  }
+}
+
+@media (min-width: 1008px) {
+  body header svg {
+    height: 50px;
+    width: 50px;
+  }
+}
+
+@keyframes moving {
+  from {
+    transform: translateY(0px);
+  }
+  to {
+    transform: translateY(10px);
+  }
+}
+
+body header svg g {
+  stroke: rgba(255, 254, 219, 0.75);
+  stroke-width: 2px;
+  transition: 0.4s cubic-bezier(0, 0, 0.27, 0.97);
+}
+
+body header svg g path {
+  animation: moving 1s cubic-bezier(1, 0, 0.5, 1) infinite alternate;
+}
+
+body header svg:hover g {
+  stroke: aqua;
+}
+
 body main {
+  position: absolute;
   height: auto;
   width: 100%;
   display: flex;

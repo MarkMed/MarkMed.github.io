@@ -1,0 +1,68 @@
+* {
+  margin: 0;
+  padding: 0;
+  cursor: default;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+  cursor: pointer;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+*:focus {
+  outline: none;
+  color: black;
+  text-decoration: none;
+}
+
+/*
+width of element:
+	12 cols - 100%
+	11 cols - 091,666666666%
+	10 cols - 083,333333333%
+	09 cols - 075%
+	08 cols - 066,666666666%
+	07 cols - 058,333333333%
+	06 cols - 050%
+	05 cols - 041,666666666%
+	04 cols - 033,333333333%
+	03 cols - 025%
+	02 cols - 016,666666666%
+	01 cols - 008,333333333%
+	00 cols - 000%
+*/
+/*Mixins*/
+@font-face {
+  font-family: "Cinzel";
+  src: url(../Resources/Cinzel-Regular.ttf);
+}
+
+@font-face {
+  font-family: "RalewayLight";
+  src: url(../Resources/Raleway-Light_0.ttf);
+}
+
+@font-face {
+  font-family: "RalewayELight";
+  src: url(../Resources/Raleway-ExtraLight.ttf);
+}
+
+@font-face {
+  font-family: "RalewayThin";
+  src: url(../Resources/Raleway-Thin.ttf);
+}
+
+@font-face {
+  font-family: "DetalThin";
+  src: url(../Resources/Datalegreya-Thin.otf);
+}
+
+@font-face {
+  font-family: "BraGroLight";
+  src: url(../Resources/brandon-grotesque-light.woff);
+}

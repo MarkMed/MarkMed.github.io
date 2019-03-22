@@ -4,34 +4,44 @@
 	<meta charset="utf-8" />
 	<title>MkM Page</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1"/>
+	<link rel="stylesheet" href="../CSS/style.css" type="text/css"/>
 	<link rel="stylesheet" href="CSS/style.css" type="text/css"/>
+	<link rel="stylesheet" href="../CSS/style.css" type="text/css"/>
 	<link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet"/>
-	<script src="JS/jquery.min.js"></script>
+	<script src="../JS/jquery.min.js"></script>
 	<script src="JS/script.js"></script>
 </head>
 <body>
-	<div id="menu" role="menu">
-		<img src="../Resources/MkMLogo1.svg"/>
-		<h1 class="titleHeader">Mark Med Test Web Site</h1>
-		<input type="checkbox" id="openMenu" role="button"/>
-		<label id="burger" for="openMenu">
-			<span></span>
-			<span></span>
-			<span></span>
-		</label>
-		<div id="itemContainer">
-			<a class="menuOpt">Home</a>
-			<a class="menuOpt">Work</a>
-			<a class="menuOpt">SomeOption</a>
-			<a class="menuOpt">About</a>
-		</div>
-	</div>
-	<header><h2>A web site developed by MarkMed</h2><h3>Used to test pages and apply new knowledge.</h3></header>
+        <div id="menu" role="menu">
+                <img src="../Resources/MkMLogo1.svg"/>
+                <h1 class="titleHeader"><a href="../index.html">Med Test Web Site</a></h1>
+                <input type="checkbox" id="openMenu" role="button"/>
+                <label id="burger" for="openMenu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </label>
+                <label for="openMenu" id="itemContainer">
+                    <div id="itemBox">
+                        <a class="menuOpt" href="../index.html">Home</a>
+                        <a class="menuOpt">Work</a>
+                        <a class="menuOpt">SomeOption</a>
+                        <a class="menuOpt">About</a>
+                    </div>
+                </label>
+            </div>
+    <header><h2>Payment Register</h2>
+        <svg id="svgScrollDown" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+            <g fill="none">
+                <circle cx="50" cy="50" r="49" />
+                <path d="M 25,25 L 50,75 L 75,25">
+                    <animation></animation>
+                </path>
+            </g>
+        </svg>
+    </header>
 	<main>
 	</main>
-	<section>
-		Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero impedit minus, doloribus quidem dolores laudantium sit voluptate ut magnam quos, corporis alias commodi perspiciatis quam veniam iure nobis asperiores enim!
-	</section>
 	<footer></footer>
 </body>
 </html>

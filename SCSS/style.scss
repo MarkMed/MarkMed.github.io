@@ -1,38 +1,6 @@
 // base.scss
 @import 'noDefaultStyle';
 @import 'varsMixinExtends';
-@font-face {
-	font-family: "Cinzel";
-	src: url(../Resources/Cinzel-Regular.ttf);
-}
-@font-face {
-	font-family: "Julius";
-	src: url(../Resources/JuliusSansOne-Regular.ttf);
-}
-@font-face {
-	font-family: "Quattro";
-	src: url(../Resources/Quattrocento-Regular.ttf);
-}
-@font-face {
-	font-family: "RalewayLight";
-	src: url(../Resources/Raleway-Light_0.ttf);
-}
-@font-face {
-	font-family: "RalewayELight";
-	src: url(../Resources/Raleway-ExtraLight.ttf);
-}
-@font-face {
-	font-family: "RalewayThin";
-	src: url(../Resources/Raleway-Thin.ttf);
-}
-@font-face {
-	font-family: "DetalThin";
-	src: url(../Resources/Datalegreya-Thin.otf);
-}
-@font-face {
-	font-family: "BraGroLight";
-	src: url(../Resources/brandon-grotesque-light.woff);
-}
 .titleHeader{
 	text-decoration: none;
 	font-size: 15px;
@@ -119,7 +87,9 @@ body{
 			opacity: 1;
 		}
 		h1{
-			color: $thirdColor75;
+			a{
+				color: $thirdColor75;
+			}
 			letter-spacing: 0.8em;
 			font-family: "DetalThin";
 			@media (min-width: 160px) and (max-width: $smallWidth){
@@ -160,7 +130,7 @@ body{
 			@include flex(column, space-around, center, wrap);
 			cursor: pointer;
 			@media (min-width: 160px) and (max-width: $smallWidth){
-				@include widthHeightsize(10px, 15px);
+				@include widthHeightsize(20px, 20px);
 			}
 			span{
 				transition: 0.3s $animationFX;
@@ -282,14 +252,54 @@ body{
 		background-repeat: no-repeat;
 		h2, h3{
 			font-weight: 100;
-			font-size: calc(1vw);
 			letter-spacing: calc(1vw);
 			margin-bottom: 2em;
 			text-transform: uppercase;
 			text-align: center;
+			@media (min-width: 160px) and (max-width: $smallWidth){
+				font-size: 12px;
+			}
+			@media (min-width: $smallWidth+1) and (max-width: $mediumWidth){
+				font-size: 15px;
+			}
+			@media (min-width: $mediumWidth+1){
+				font-size: 20px;
+			}
+		}
+		svg{
+			cursor: pointer;
+			@media (min-width: 160px) and (max-width: $smallWidth){
+				@include widthHeightsize(30px, 30px);
+			}
+			@media (min-width: $smallWidth+1) and (max-width: $mediumWidth){
+				@include widthHeightsize(40px, 40px);
+			}
+			@media (min-width: $mediumWidth+1){
+				@include widthHeightsize(50px, 50px);
+			}
+			@keyframes moving{
+				from{
+					transform: translateY(0px);
+				}
+				to{
+					transform: translateY(10px);
+				}
+			}
+			g{
+				stroke: $clearColor75;
+				stroke-width: 2px;
+				transition: 0.4s $animationFX;
+				path{
+					animation: moving 1s cubic-bezier(1, 0, 0.5, 1) infinite alternate;
+				}
+			}
+			&:hover g{
+				stroke: aqua;
+			}
 		}
 	}
 	main{
+		position: absolute;
 		@include widthHeightsize(100%, auto);
 		@include flex(column, space-around, center, wrap);
 		ul{
