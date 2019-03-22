@@ -46,7 +46,8 @@
 		letter-spacing: 2em;
 	}
 }
-html{	
+html{
+	scroll-behavior: smooth;
 	scrollbar-width: none;
 }
 body{
@@ -65,7 +66,7 @@ body{
 	&::-webkit-scrollbar { 
 		display: none; 
 	}
-	#menu{
+	#menu.fixed{
 		top: 0;
 		position: fixed;
 		background-color: $primaryColor100;
@@ -121,6 +122,8 @@ body{
 				@include widthHeightsize(auto, 46px);
 			}
 		}
+	}
+	#menu{
 		input{
 			display: none;
 		}
@@ -244,12 +247,12 @@ body{
 		}
 	}
 	header{
+		z-index: -1;
+		top: 0;
+		position: fixed;
 		@include widthHeightsize(100%, 100vh);
 		@include flex(column, center, center, wrap);
-		background-size: cover;
-		background-position: center;
-		background-attachment: fixed;
-		background-repeat: no-repeat;
+		background-color: $primaryColor100;
 		h2, h3{
 			font-weight: 100;
 			letter-spacing: calc(1vw);
@@ -299,9 +302,10 @@ body{
 		}
 	}
 	main{
-		position: absolute;
+		margin-top: 100vh;
 		@include widthHeightsize(100%, auto);
 		@include flex(column, space-around, center, wrap);
+		background-color: $secondaryColor100;
 		ul{
 			@include widthHeightsize(100%, 100%);
 			@include flex(column, space-around, center, wrap);

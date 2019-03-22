@@ -133,6 +133,7 @@ width of element:
 }
 
 html {
+  scroll-behavior: smooth;
   scrollbar-width: none;
 }
 
@@ -164,7 +165,7 @@ body::-webkit-scrollbar {
   display: none;
 }
 
-body #menu {
+body #menu.fixed {
   top: 0;
   position: fixed;
   background-color: #1e3641;
@@ -180,42 +181,42 @@ body #menu {
 }
 
 @media (min-width: 160px) and (max-width: 640px) {
-  body #menu {
+  body #menu.fixed {
     height: 20px;
     width: 100%;
   }
 }
 
 @media (min-width: 641px) and (max-width: 1007px) {
-  body #menu {
+  body #menu.fixed {
     height: 33px;
     width: 100%;
   }
 }
 
 @media (min-width: 1008px) {
-  body #menu {
+  body #menu.fixed {
     height: 50px;
     width: 100%;
   }
 }
 
-body #menu:hover {
+body #menu.fixed:hover {
   opacity: 1;
 }
 
-body #menu h1 {
+body #menu.fixed h1 {
   letter-spacing: 0.8em;
   font-family: "DetalThin";
   cursor: default;
 }
 
-body #menu h1 a {
+body #menu.fixed h1 a {
   color: rgba(255, 195, 60, 0.75);
 }
 
 @media (min-width: 160px) and (max-width: 640px) {
-  body #menu h1 {
+  body #menu.fixed h1 {
     font-size: 16px;
     word-wrap: break-word;
     letter-spacing: 0.5em;
@@ -223,7 +224,7 @@ body #menu h1 a {
 }
 
 @media (min-width: 160px) and (max-width: 640px) and (orientation: portrait) {
-  body #menu h1 {
+  body #menu.fixed h1 {
     font-size: 13px;
     word-wrap: break-word;
     letter-spacing: 0.3em;
@@ -231,33 +232,33 @@ body #menu h1 a {
 }
 
 @media (min-width: 641px) and (max-width: 1007px) {
-  body #menu h1 {
+  body #menu.fixed h1 {
     font-size: 18px;
   }
 }
 
 @media (min-width: 1008px) {
-  body #menu h1 {
+  body #menu.fixed h1 {
     font-size: 25px;
   }
 }
 
 @media (min-width: 160px) and (max-width: 640px) {
-  body #menu img {
+  body #menu.fixed img {
     height: 14px;
     width: auto;
   }
 }
 
 @media (min-width: 641px) and (max-width: 1007px) {
-  body #menu img {
+  body #menu.fixed img {
     height: 28px;
     width: auto;
   }
 }
 
 @media (min-width: 1008px) {
-  body #menu img {
+  body #menu.fixed img {
     height: 46px;
     width: auto;
   }
@@ -450,6 +451,9 @@ body #menu [id="openMenu"]:checked ~ #burger span:nth-child(3) {
 }
 
 body header {
+  z-index: -1;
+  top: 0;
+  position: fixed;
   height: 100vh;
   width: 100%;
   display: flex;
@@ -457,10 +461,7 @@ body header {
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-  background-repeat: no-repeat;
+  background-color: #1e3641;
 }
 
 body header h2, body header h3 {
@@ -538,7 +539,7 @@ body header svg:hover g {
 }
 
 body main {
-  position: absolute;
+  margin-top: 100vh;
   height: auto;
   width: 100%;
   display: flex;
@@ -546,6 +547,7 @@ body main {
   justify-content: space-around;
   align-items: center;
   flex-wrap: wrap;
+  background-color: #1e364b;
 }
 
 body main ul {
