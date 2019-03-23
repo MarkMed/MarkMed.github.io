@@ -51,6 +51,7 @@ html{
 	scrollbar-width: none;
 }
 body{
+	scroll-behavior: smooth;
 	color: $clearColor75;
 	font-family: "RalewayLight";
 	background-color: $primaryColor100;
@@ -297,7 +298,7 @@ body{
 				}
 			}
 			&:hover g{
-				stroke: aqua;
+				stroke: $thirdColor100;
 			}
 		}
 	}

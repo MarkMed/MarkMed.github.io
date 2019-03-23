@@ -1,19 +1,24 @@
+@charset "UTF-8";
+/* line 2, C:/Users/Miguel Angel Medina/Documents/Programación/MarkMed.github.io/SCSS/_noDefaultStyle.scss */
 * {
   margin: 0;
   padding: 0;
   cursor: default;
 }
 
+/* line 7, C:/Users/Miguel Angel Medina/Documents/Programación/MarkMed.github.io/SCSS/_noDefaultStyle.scss */
 a {
   text-decoration: none;
   color: black;
   cursor: pointer;
 }
 
+/* line 12, C:/Users/Miguel Angel Medina/Documents/Programación/MarkMed.github.io/SCSS/_noDefaultStyle.scss */
 ul, ol {
   list-style: none;
 }
 
+/* line 15, C:/Users/Miguel Angel Medina/Documents/Programación/MarkMed.github.io/SCSS/_noDefaultStyle.scss */
 *:focus {
   outline: none;
   color: black;
@@ -67,6 +72,7 @@ width of element:
   src: url(../Resources/brandon-grotesque-light.woff);
 }
 
+/* line 4, C:/Users/Miguel Angel Medina/Documents/Programación/MarkMed.github.io/SCSS/style.scss */
 .titleHeader {
   text-decoration: none;
   font-size: 15px;
@@ -75,6 +81,7 @@ width of element:
   font-weight: 100;
 }
 
+/* line 11, C:/Users/Miguel Angel Medina/Documents/Programación/MarkMed.github.io/SCSS/style.scss */
 .luxFX {
   display: flex;
   flex-direction: column;
@@ -96,6 +103,7 @@ width of element:
 }
 
 @media (min-width: 160px) and (max-width: 640px) {
+  /* line 11, C:/Users/Miguel Angel Medina/Documents/Programación/MarkMed.github.io/SCSS/style.scss */
   .luxFX {
     background-position: 50% 1%;
     border: 1px solid rgba(255, 195, 60, 0.5);
@@ -108,6 +116,7 @@ width of element:
 }
 
 @media (min-width: 641px) and (max-width: 1007px) {
+  /* line 11, C:/Users/Miguel Angel Medina/Documents/Programación/MarkMed.github.io/SCSS/style.scss */
   .luxFX {
     height: 100%;
     width: 100%;
@@ -115,56 +124,67 @@ width of element:
 }
 
 @media (min-width: 1008px) {
+  /* line 11, C:/Users/Miguel Angel Medina/Documents/Programación/MarkMed.github.io/SCSS/style.scss */
   .luxFX {
     height: 100%;
     width: 80%;
   }
 }
 
+/* line 39, C:/Users/Miguel Angel Medina/Documents/Programación/MarkMed.github.io/SCSS/style.scss */
 .luxFX:active {
   opacity: 1;
   transition: 0.05s cubic-bezier(0, 0, 0.27, 0.97);
 }
 
+/* line 43, C:/Users/Miguel Angel Medina/Documents/Programación/MarkMed.github.io/SCSS/style.scss */
 .luxFX:hover {
   background-position: 50% 99%;
   color: #fff;
   letter-spacing: 2em;
 }
 
+/* line 49, C:/Users/Miguel Angel Medina/Documents/Programación/MarkMed.github.io/SCSS/style.scss */
 html {
   scroll-behavior: smooth;
   scrollbar-width: none;
 }
 
+/* line 53, C:/Users/Miguel Angel Medina/Documents/Programación/MarkMed.github.io/SCSS/style.scss */
 body {
+  scroll-behavior: smooth;
   color: rgba(255, 254, 219, 0.75);
   font-family: "RalewayLight";
   background-color: #1e3641;
 }
 
 @media (min-width: 160px) and (max-width: 640px) {
+  /* line 53, C:/Users/Miguel Angel Medina/Documents/Programación/MarkMed.github.io/SCSS/style.scss */
   body {
     margin-top: 20px;
   }
 }
 
 @media (min-width: 641px) and (max-width: 1007px) {
+  /* line 53, C:/Users/Miguel Angel Medina/Documents/Programación/MarkMed.github.io/SCSS/style.scss */
   body {
     margin-top: 33px;
   }
 }
 
 @media (min-width: 1008px) {
+  /* line 53, C:/Users/Miguel Angel Medina/Documents/Programación/MarkMed.github.io/SCSS/style.scss */
   body {
     margin-top: 50px;
   }
 }
 
+/* line 67, C:/Users/Miguel Angel Medina/Documents/Programación/MarkMed.github.io/SCSS/style.scss */
 body::-webkit-scrollbar {
   display: none;
 }
 
+/* line 70, C:/Users/Miguel Angel Medina/Documents/Programación/MarkMed.github.io/SCSS/style.scss */
 body #menu.fixed {
   top: 0;
   position: fixed;
@@ -181,6 +201,7 @@ body #menu.fixed {
 }
 
 @media (min-width: 160px) and (max-width: 640px) {
+  /* line 70, C:/Users/Miguel Angel Medina/Documents/Programación/MarkMed.github.io/SCSS/style.scss */
   body #menu.fixed {
     height: 20px;
     width: 100%;
@@ -188,6 +209,7 @@ body #menu.fixed {
 }
 
 @media (min-width: 641px) and (max-width: 1007px) {
+  /* line 70, C:/Users/Miguel Angel Medina/Documents/Programación/MarkMed.github.io/SCSS/style.scss */
   body #menu.fixed {
     height: 33px;
     width: 100%;
@@ -195,27 +217,32 @@ body #menu.fixed {
 }
 
 @media (min-width: 1008px) {
+  /* line 70, C:/Users/Miguel Angel Medina/Documents/Programación/MarkMed.github.io/SCSS/style.scss */
   body #menu.fixed {
     height: 50px;
     width: 100%;
   }
 }
 
+/* line 88, C:/Users/Miguel Angel Medina/Documents/Programación/MarkMed.github.io/SCSS/style.scss */
 body #menu.fixed:hover {
   opacity: 1;
 }
 
+/* line 91, C:/Users/Miguel Angel Medina/Documents/Programación/MarkMed.github.io/SCSS/style.scss */
 body #menu.fixed h1 {
   letter-spacing: 0.8em;
   font-family: "DetalThin";
   cursor: default;
 }
 
+/* line 92, C:/Users/Miguel Angel Medina/Documents/Programación/MarkMed.github.io/SCSS/style.scss */
 body #menu.fixed h1 a {
   color: rgba(255, 195, 60, 0.75);
 }
 
 @media (min-width: 160px) and (max-width: 640px) {
+  /* line 91, C:/Users/Miguel Angel Medina/Documents/Programación/MarkMed.github.io/SCSS/style.scss */
   body #menu.fixed h1 {
     font-size: 16px;
     word-wrap: break-word;
@@ -224,6 +251,7 @@ body #menu.fixed h1 a {
 }
 
 @media (min-width: 160px) and (max-width: 640px) and (orientation: portrait) {
+  /* line 91, C:/Users/Miguel Angel Medina/Documents/Programación/MarkMed.github.io/SCSS/style.scss */
   body #menu.fixed h1 {
     font-size: 13px;
     word-wrap: break-word;
@@ -232,18 +260,21 @@ body #menu.fixed h1 a {
 }
 
 @media (min-width: 641px) and (max-width: 1007px) {
+  /* line 91, C:/Users/Miguel Angel Medina/Documents/Programación/MarkMed.github.io/SCSS/style.scss */
   body #menu.fixed h1 {
     font-size: 18px;
   }
 }
 
 @media (min-width: 1008px) {
+  /* line 91, C:/Users/Miguel Angel Medina/Documents/Programación/MarkMed.github.io/SCSS/style.scss */
   body #menu.fixed h1 {
     font-size: 25px;
   }
 }
 
 @media (min-width: 160px) and (max-width: 640px) {
+  /* line 115, C:/Users/Miguel Angel Medina/Documents/Programación/MarkMed.github.io/SCSS/style.scss */
   body #menu.fixed img {
     height: 14px;
     width: auto;
@@ -251,6 +282,7 @@ body #menu.fixed h1 a {
 }
 
 @media (min-width: 641px) and (max-width: 1007px) {
+  /* line 115, C:/Users/Miguel Angel Medina/Documents/Programación/MarkMed.github.io/SCSS/style.scss */
   body #menu.fixed img {
     height: 28px;
     width: auto;
@@ -258,16 +290,19 @@ body #menu.fixed h1 a {
 }
 
 @media (min-width: 1008px) {
+  /* line 115, C:/Users/Miguel Angel Medina/Documents/Programación/MarkMed.github.io/SCSS/style.scss */
   body #menu.fixed img {
     height: 46px;
     width: auto;
   }
 }
 
+/* line 128, C:/Users/Miguel Angel Medina/Documents/Programación/MarkMed.github.io/SCSS/style.scss */
 body #menu input {
   display: none;
 }
 
+/* line 131, C:/Users/Miguel Angel Medina/Documents/Programación/MarkMed.github.io/SCSS/style.scss */
 body #menu #burger {
   z-index: 99;
   height: 20px;
@@ -281,12 +316,14 @@ body #menu #burger {
 }
 
 @media (min-width: 160px) and (max-width: 640px) {
+  /* line 131, C:/Users/Miguel Angel Medina/Documents/Programación/MarkMed.github.io/SCSS/style.scss */
   body #menu #burger {
     height: 20px;
     width: 20px;
   }
 }
 
+/* line 139, C:/Users/Miguel Angel Medina/Documents/Programación/MarkMed.github.io/SCSS/style.scss */
 body #menu #burger span {
   transition: 0.3s cubic-bezier(0, 0, 0.27, 0.97);
   border: 1px solid rgba(255, 195, 60, 0.75);
@@ -297,6 +334,7 @@ body #menu #burger span {
 }
 
 @media (min-width: 160px) and (max-width: 640px) {
+  /* line 139, C:/Users/Miguel Angel Medina/Documents/Programación/MarkMed.github.io/SCSS/style.scss */
   body #menu #burger span {
     height: 0px;
     width: 10px;
@@ -304,26 +342,31 @@ body #menu #burger span {
   }
 }
 
+/* line 150, C:/Users/Miguel Angel Medina/Documents/Programación/MarkMed.github.io/SCSS/style.scss */
 body #menu #burger span:nth-child(1) {
   transform: translate(0px, 5px) rotateZ(0deg);
 }
 
 @media (min-width: 160px) and (max-width: 640px) {
+  /* line 150, C:/Users/Miguel Angel Medina/Documents/Programación/MarkMed.github.io/SCSS/style.scss */
   body #menu #burger span:nth-child(1) {
     transform: translate(0px, 3.5px) rotateZ(0deg);
   }
 }
 
+/* line 156, C:/Users/Miguel Angel Medina/Documents/Programación/MarkMed.github.io/SCSS/style.scss */
 body #menu #burger span:nth-child(3) {
   transform: translate(0px, -5px) rotateZ(0deg);
 }
 
 @media (min-width: 160px) and (max-width: 640px) {
+  /* line 156, C:/Users/Miguel Angel Medina/Documents/Programación/MarkMed.github.io/SCSS/style.scss */
   body #menu #burger span:nth-child(3) {
     transform: translate(0px, -3.5px) rotateZ(0deg);
   }
 }
 
+/* line 163, C:/Users/Miguel Angel Medina/Documents/Programación/MarkMed.github.io/SCSS/style.scss */
 body #menu #itemContainer {
   z-index: 91;
   top: 0;
@@ -342,6 +385,7 @@ body #menu #itemContainer {
   flex-wrap: wrap;
 }
 
+/* line 174, C:/Users/Miguel Angel Medina/Documents/Programación/MarkMed.github.io/SCSS/style.scss */
 body #menu #itemContainer #itemBox {
   display: flex;
   flex-direction: column;
@@ -356,6 +400,7 @@ body #menu #itemContainer #itemBox {
   opacity: 0;
 }
 
+/* line 181, C:/Users/Miguel Angel Medina/Documents/Programación/MarkMed.github.io/SCSS/style.scss */
 body #menu #itemContainer #itemBox .menuOpt {
   transform: translateY(2vh);
   z-index: 95;
@@ -371,6 +416,7 @@ body #menu #itemContainer #itemBox .menuOpt {
 }
 
 @media (min-width: 160px) and (max-width: 640px) {
+  /* line 181, C:/Users/Miguel Angel Medina/Documents/Programación/MarkMed.github.io/SCSS/style.scss */
   body #menu #itemContainer #itemBox .menuOpt {
     font-size: 11px;
     letter-spacing: 0.2em;
@@ -378,6 +424,7 @@ body #menu #itemContainer #itemBox .menuOpt {
 }
 
 @media (min-width: 160px) and (max-width: 640px) and (orientation: portrait) {
+  /* line 181, C:/Users/Miguel Angel Medina/Documents/Programación/MarkMed.github.io/SCSS/style.scss */
   body #menu #itemContainer #itemBox .menuOpt {
     font-size: 12px;
     letter-spacing: 0.3em;
@@ -385,22 +432,26 @@ body #menu #itemContainer #itemBox .menuOpt {
 }
 
 @media (min-width: 641px) and (max-width: 1007px) {
+  /* line 181, C:/Users/Miguel Angel Medina/Documents/Programación/MarkMed.github.io/SCSS/style.scss */
   body #menu #itemContainer #itemBox .menuOpt {
     font-size: 14px;
   }
 }
 
 @media (min-width: 1008px) {
+  /* line 181, C:/Users/Miguel Angel Medina/Documents/Programación/MarkMed.github.io/SCSS/style.scss */
   body #menu #itemContainer #itemBox .menuOpt {
     font-size: 16px;
   }
 }
 
+/* line 206, C:/Users/Miguel Angel Medina/Documents/Programación/MarkMed.github.io/SCSS/style.scss */
 body #menu #itemContainer #itemBox .menuOpt:hover {
   letter-spacing: 1em;
   color: #fffedb;
 }
 
+/* line 214, C:/Users/Miguel Angel Medina/Documents/Programación/MarkMed.github.io/SCSS/style.scss */
 body #menu [id="openMenu"]:checked ~ #itemContainer {
   opacity: 1;
   height: 100vh;
@@ -409,6 +460,7 @@ body #menu [id="openMenu"]:checked ~ #itemContainer {
   transition: 0.4s cubic-bezier(0, 0, 0.27, 0.97);
 }
 
+/* line 219, C:/Users/Miguel Angel Medina/Documents/Programación/MarkMed.github.io/SCSS/style.scss */
 body #menu [id="openMenu"]:checked ~ #itemContainer #itemBox {
   display: flex;
   transition-delay: 0.4s;
@@ -416,16 +468,19 @@ body #menu [id="openMenu"]:checked ~ #itemContainer #itemBox {
   opacity: 1;
 }
 
+/* line 227, C:/Users/Miguel Angel Medina/Documents/Programación/MarkMed.github.io/SCSS/style.scss */
 body #menu [id="openMenu"]:checked ~ #burger span:nth-child(1) {
   transform: translate(0px, 0px) rotateZ(45deg);
 }
 
 @media (min-width: 160px) and (max-width: 640px) {
+  /* line 227, C:/Users/Miguel Angel Medina/Documents/Programación/MarkMed.github.io/SCSS/style.scss */
   body #menu [id="openMenu"]:checked ~ #burger span:nth-child(1) {
     transform: translate(0px, 0px) rotateZ(45deg);
   }
 }
 
+/* line 233, C:/Users/Miguel Angel Medina/Documents/Programación/MarkMed.github.io/SCSS/style.scss */
 body #menu [id="openMenu"]:checked ~ #burger span:nth-child(2) {
   height: 22px;
   width: 22px;
@@ -434,22 +489,26 @@ body #menu [id="openMenu"]:checked ~ #burger span:nth-child(2) {
 }
 
 @media (min-width: 160px) and (max-width: 640px) {
+  /* line 233, C:/Users/Miguel Angel Medina/Documents/Programación/MarkMed.github.io/SCSS/style.scss */
   body #menu [id="openMenu"]:checked ~ #burger span:nth-child(2) {
     height: 15px;
     width: 15px;
   }
 }
 
+/* line 241, C:/Users/Miguel Angel Medina/Documents/Programación/MarkMed.github.io/SCSS/style.scss */
 body #menu [id="openMenu"]:checked ~ #burger span:nth-child(3) {
   transform: translate(0px, 0px) rotateZ(-45deg);
 }
 
 @media (min-width: 160px) and (max-width: 640px) {
+  /* line 241, C:/Users/Miguel Angel Medina/Documents/Programación/MarkMed.github.io/SCSS/style.scss */
   body #menu [id="openMenu"]:checked ~ #burger span:nth-child(3) {
     transform: translate(0px, 0px) rotateZ(-45deg);
   }
 }
 
+/* line 250, C:/Users/Miguel Angel Medina/Documents/Programación/MarkMed.github.io/SCSS/style.scss */
 body header {
   z-index: -1;
   top: 0;
@@ -464,6 +523,7 @@ body header {
   background-color: #1e3641;
 }
 
+/* line 257, C:/Users/Miguel Angel Medina/Documents/Programación/MarkMed.github.io/SCSS/style.scss */
 body header h2, body header h3 {
   font-weight: 100;
   letter-spacing: calc(1vw);
@@ -473,28 +533,33 @@ body header h2, body header h3 {
 }
 
 @media (min-width: 160px) and (max-width: 640px) {
+  /* line 257, C:/Users/Miguel Angel Medina/Documents/Programación/MarkMed.github.io/SCSS/style.scss */
   body header h2, body header h3 {
     font-size: 12px;
   }
 }
 
 @media (min-width: 641px) and (max-width: 1007px) {
+  /* line 257, C:/Users/Miguel Angel Medina/Documents/Programación/MarkMed.github.io/SCSS/style.scss */
   body header h2, body header h3 {
     font-size: 15px;
   }
 }
 
 @media (min-width: 1008px) {
+  /* line 257, C:/Users/Miguel Angel Medina/Documents/Programación/MarkMed.github.io/SCSS/style.scss */
   body header h2, body header h3 {
     font-size: 20px;
   }
 }
 
+/* line 273, C:/Users/Miguel Angel Medina/Documents/Programación/MarkMed.github.io/SCSS/style.scss */
 body header svg {
   cursor: pointer;
 }
 
 @media (min-width: 160px) and (max-width: 640px) {
+  /* line 273, C:/Users/Miguel Angel Medina/Documents/Programación/MarkMed.github.io/SCSS/style.scss */
   body header svg {
     height: 30px;
     width: 30px;
@@ -502,6 +567,7 @@ body header svg {
 }
 
 @media (min-width: 641px) and (max-width: 1007px) {
+  /* line 273, C:/Users/Miguel Angel Medina/Documents/Programación/MarkMed.github.io/SCSS/style.scss */
   body header svg {
     height: 40px;
     width: 40px;
@@ -509,6 +575,7 @@ body header svg {
 }
 
 @media (min-width: 1008px) {
+  /* line 273, C:/Users/Miguel Angel Medina/Documents/Programación/MarkMed.github.io/SCSS/style.scss */
   body header svg {
     height: 50px;
     width: 50px;
@@ -524,20 +591,24 @@ body header svg {
   }
 }
 
+/* line 292, C:/Users/Miguel Angel Medina/Documents/Programación/MarkMed.github.io/SCSS/style.scss */
 body header svg g {
   stroke: rgba(255, 254, 219, 0.75);
   stroke-width: 2px;
   transition: 0.4s cubic-bezier(0, 0, 0.27, 0.97);
 }
 
+/* line 296, C:/Users/Miguel Angel Medina/Documents/Programación/MarkMed.github.io/SCSS/style.scss */
 body header svg g path {
   animation: moving 1s cubic-bezier(1, 0, 0.5, 1) infinite alternate;
 }
 
+/* line 300, C:/Users/Miguel Angel Medina/Documents/Programación/MarkMed.github.io/SCSS/style.scss */
 body header svg:hover g {
-  stroke: aqua;
+  stroke: #ffc33c;
 }
 
+/* line 305, C:/Users/Miguel Angel Medina/Documents/Programación/MarkMed.github.io/SCSS/style.scss */
 body main {
   margin-top: 100vh;
   height: auto;
@@ -550,6 +621,7 @@ body main {
   background-color: #1e364b;
 }
 
+/* line 310, C:/Users/Miguel Angel Medina/Documents/Programación/MarkMed.github.io/SCSS/style.scss */
 body main ul {
   height: 100%;
   width: 100%;
@@ -561,6 +633,7 @@ body main ul {
   background-color: #1e364b;
 }
 
+/* line 314, C:/Users/Miguel Angel Medina/Documents/Programación/MarkMed.github.io/SCSS/style.scss */
 body main ul li {
   height: 100px;
   width: 50%;
@@ -573,6 +646,7 @@ body main ul li {
 }
 
 @media (min-width: 160px) and (max-width: 1007px) {
+  /* line 314, C:/Users/Miguel Angel Medina/Documents/Programación/MarkMed.github.io/SCSS/style.scss */
   body main ul li {
     height: 80px;
     width: 80%;
@@ -580,12 +654,14 @@ body main ul li {
   }
 }
 
+/* line 322, C:/Users/Miguel Angel Medina/Documents/Programación/MarkMed.github.io/SCSS/style.scss */
 body main ul li a {
   height: 100%;
   width: 100%;
   text-align: center;
 }
 
+/* line 329, C:/Users/Miguel Angel Medina/Documents/Programación/MarkMed.github.io/SCSS/style.scss */
 body section {
   height: 100vh;
   width: 100%;
@@ -595,3 +671,5 @@ body section {
   align-items: center;
   flex-wrap: wrap;
 }
+
+/*# sourceMappingURL=../CSS/style.map */
