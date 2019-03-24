@@ -116,4 +116,8 @@ window.addEventListener("load", ()=>{
     for(var i=gaugeRanges.length-1; i>=0; i--){
         gaugeRanges[i].setAttribute("stroke-dasharray", (2.488*calcPercent((!!gaugeRanges[i+1])?(parseInt(gaugeRanges[i+1].getAttribute("amount"))):(0), parseInt(gaugeRanges[i].getAttribute("amount")))+", 248.16"));
 	}
+
+	document.getElementById("MkMmenu").addEventListener("click", (ev)=>{
+		console.log(ev.target);
+	});
 });

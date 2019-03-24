@@ -1,5 +1,27 @@
 $(document).ready(()=>{
-	// let lastScrollTop = 0;
+	// function isTop(){
+	// 	var actualTop=$(document).scrollTop();
+	// 	var boolvar;
+	// 	(actualTop>($("#wlcmCover").height())/4)?(boolvar=true):(boolvar=false);
+	// 	return boolvar;
+	// }
+	// (isTop())
+	// 	?($("#MkM").addClass("topFixed"))
+	// 	:(
+	// 		$("#MkM").addClass("expanded")			
+	// 		$("body").css("overflow", "hidden")
+	// 	);
+	// $(document).scroll(()=>{
+	// 	(isTop())
+	// 		?( ($("#MkM").hasClass("expanded"))
+	// 			?($("#MkM").removeAttr("class").addClass("topFixed"))
+	// 			:(false)
+	// 		)
+	// 		:(
+	// 			$("#MkM").removeAttr("class").addClass("expanded")
+	// 			$("body").css("overflow", "hidden")
+	// 		);
+	// });
 	let chapters=$('[class="chapter"]');
 	$('html, body').animate(
 		{
@@ -24,13 +46,7 @@ $(document).ready(()=>{
 		// 	'linear'
 		// );
 	// }
-	$(document).scroll(function(e){
-		// e.preventDefault()
-		// changeSection();
-		// chapters.map((elemIndex)=>{
-		// 	console.log(chapters[elemIndex]);
-		// })
-		
+	$(document).scroll(function(e){		
 		$("header").css(
 			{
 				"opacity": 1-($(document).scrollTop()/800),
@@ -41,6 +57,11 @@ $(document).ready(()=>{
 	$("#openMenu").change(()=>{
 		($("#openMenu").prop('checked'))?($("body").css("overflow", "hidden")):($("body").css("overflow", ""));
 	});
+
+	$("#burger").click((ev)=>{
+		(ev.target.parentElement.children[2].checked)?(ev.target.parentElement.children[2].checked=false):(ev.target.parentElement.children[2].checked=true);
+	});
+
 	$("#svgScrollDown").click(()=>{
 		$('html, body').animate(
 			{

@@ -67,7 +67,7 @@ body{
 	&::-webkit-scrollbar { 
 		display: none; 
 	}
-	#menu.fixed{
+	#MkM.topFixed{
 		top: 0;
 		position: fixed;
 		background-color: $primaryColor100;
@@ -112,7 +112,7 @@ body{
 			}
 			cursor: default;
 		}
-		img{
+		#MkMlogo{
 			@media (min-width: 160px) and (max-width: $smallWidth){
 				@include widthHeightsize(auto, 14px);
 			}
@@ -124,39 +124,47 @@ body{
 			}
 		}
 	}
-	#menu{
+	#MkM{
 		input{
 			display: none;
 		}
 		#burger{
 			z-index: 99;
+		@media (min-width: 160px) and (max-width: $smallWidth){
 			@include widthHeightsize(20px, 20px);
-			@include flex(column, space-around, center, wrap);
+		}
+		@media (min-width: $smallWidth+1) and (max-width: $mediumWidth){
+			@include widthHeightsize(33px, 33px);
+		}
+		@media (min-width: $mediumWidth+1){
+			@include widthHeightsize(50px, 50px);
+		}
 			cursor: pointer;
-			@media (min-width: 160px) and (max-width: $smallWidth){
-				@include widthHeightsize(20px, 20px);
-			}
-			span{
-				transition: 0.3s $animationFX;
-				border: 1px solid $thirdColor75;
-				@include widthHeightsize(15px, 0px);
-				border-radius: 10px;
-				position: absolute;
-				@media (min-width: 160px) and (max-width: $smallWidth){
-					@include widthHeightsize(10px, 0px);
-					border: 0.25px solid $thirdColor75;
+			g{
+				transition: 0.4s $animationFX;
+				path{
+					transition: 0.4s $animationFX;
+					transform: translateY(0px);
+				}
+				circle{
+					transition: 0.4s $animationFX;
 				}
 			}
-			span:nth-child(1){
-				transform: translate(0px, 5px)  rotateZ(0deg);
-				@media (min-width: 160px) and (max-width: $smallWidth){
-					transform: translate(0px, 3.5px)  rotateZ(0deg);
-				}
-			}
-			span:nth-child(3){
-				transform: translate(0px, -5px)  rotateZ(0deg);
-				@media (min-width: 160px) and (max-width: $smallWidth){
-					transform: translate(0px, -3.5px)  rotateZ(0deg);
+			&:hover{
+				g{
+					stroke-width: 2;
+					path:nth-child(1){
+						d: path("M 25,35 L 75,35");
+					}
+					path:nth-child(2){
+						d: path("M 50,50 L 50,50");
+					}
+					path:nth-child(3){
+						d: path("M 25,65 L 75,65")
+					}
+					circle{
+						r: 10;
+					}
 				}
 			}
 		}
@@ -224,24 +232,19 @@ body{
 				}
 			}
 			& ~ #burger{
-				span:nth-child(1){
-					transform: translate(0px, 0px)  rotateZ(45deg);
-					@media (min-width: 160px) and (max-width: $smallWidth){
-						transform: translate(0px, 0px)  rotateZ(45deg);
+				g{
+					stroke-width: 2;
+					path:nth-child(1){
+						d: path("M 65,65 L 35,35");
 					}
-				}
-				span:nth-child(2){
-					@include widthHeightsize(22px, 22px);
-					border-radius: 50%;
-					@media (min-width: 160px) and (max-width: $smallWidth){
-						@include widthHeightsize(15px, 15px);
+					path:nth-child(2){
+						d: path("M 50,50 L 50,50");
 					}
-					cursor: pointer;
-				}
-				span:nth-child(3){
-					transform: translate(0px, 0px)  rotateZ(-45deg);
-					@media (min-width: 160px) and (max-width: $smallWidth){
-						transform: translate(0px, 0px)  rotateZ(-45deg);
+					path:nth-child(3){
+						d: path("M 65,35 L 35,65");
+					}
+					circle{
+						r: 35;
 					}
 				}
 			}

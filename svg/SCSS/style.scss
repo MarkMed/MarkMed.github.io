@@ -194,3 +194,75 @@ svg{
 		}
 	}
 }
+#MkMmenu{
+	g{
+		stroke-width: 2px;
+		transition: 0.4s $animationFX;
+		path{
+			transition: 0.4s $animationFX;
+			transform: translateY(0px);
+		}
+	}
+	&:hover{
+		g{
+			path:nth-child(1){
+				transform: translateY(10px);
+			}
+			path:nth-child(3){
+				transform: translateY(-10px);
+			}
+		}
+	}
+	&:active{		
+		g{
+			path:nth-child(1){
+				transform: rotate(45deg);
+			}
+			path:nth-child(3){
+				transform: rotate(-45deg);
+			}
+		}
+	}
+}
+#MkMmenu3{
+	g{
+		stroke-width: 2px;
+		transition: 0.4s $animationFX;
+		path{
+			transition: 0.4s $animationFX;
+			transform: translateY(0px);
+		}
+		circle{
+			transition: 0.4s $animationFX;
+		}
+	}
+	&:hover{
+		g{
+			path:nth-child(1){
+				d: path("M 25,35 L 75,35");
+			}
+			path:nth-child(2){
+				d: path("M 50,50 L 50,50");
+			}
+			path:nth-child(3){
+				d: path("M 25,65 L 75,65")
+			}
+			circle{
+				r: 10;
+			}
+		}
+	}
+	&:active{		
+		g{
+			path:nth-child(1){
+				d: path("M 75,75 L 25,25");
+			}
+			path:nth-child(3){
+				d: path("M 75,25 L 25,75");
+			}
+			circle{
+				r: 45;
+			}
+		}
+	}
+}
