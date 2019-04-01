@@ -1,1 +1,4 @@
-wea12345
+<h1>MkM AJAX test</h1>
+<p>I need upload this file in a server.</p>
+<p>AJAX is a technique for accessing web servers from a web page.</p>
+<p>AJAX stands for Asynchronous JavaScript And XML.</p>
