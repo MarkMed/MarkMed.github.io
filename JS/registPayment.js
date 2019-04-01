@@ -8,8 +8,8 @@ $(document).ready(()=>{
     console.log(xhr.status);
 
     xhr.onreadystatechange = function() {
-        
-        if(xhr.readystate === 4 && xhr.status === 200) {
+        console.log("xhr.onreadystatechange");
+        if(this.readyState == 4 && this.status == 200) {
             console.log(xhr.readystate);
             console.log(xhr.status);
             console.log(xhr.responsetext);
