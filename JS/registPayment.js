@@ -10,6 +10,8 @@ $(document).ready(()=>{
     xhr.onreadystatechange = function() {
         
         if(xhr.readystate === 4 && xhr.status === 200) {
+            console.log(xhr.readystate);
+            console.log(xhr.status);
             console.log(xhr.responsetext);
         }
     }
