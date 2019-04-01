@@ -1,7 +1,7 @@
 $(document).ready(()=>{
 	let xhr= new XMLHttpRequest();
 
-    xhr.open('get', 'regis.txt', true);
+    xhr.open('get', 'Resources/regis.txt', true);
     xhr.send();
 
     console.log(xhr.readystate);
