@@ -4,22 +4,61 @@
 
 body{
 	main{
+		@include flex(row, flex-start, center, wrap);
 		form{
-			@include widthHeightsize(60vw, 60vh);
+			@include widthHeightsize(50vw, 100vh);
 			@include flex(column, space-around, center, wrap);
-			background-color: rgba(0, 0, 0, 0.3);
-			input{
-				border: 1px solid $clearColor75;
-				border-radius: 20px;
-				cursor: initial;
-				padding: 10px;
-				color: $clearColor75;
-				transition: 0.4s $animationFX;
-				&:focus{
-					border: 1px solid $thirdColor75;
-					color: $thirdColor75;
+			transition:  0.4s $animationFX;
+			.input{
+				@include flex(column, space-around, flex-start, wrap);
+				@include widthHeightsize(60%, 10vh);
+				input{
+					@include widthHeightsize(80%, auto);
+					border: 1px solid $clearColor75;
+					border-radius: 20px;
+					cursor: initial;
+					padding: 10px;
+					color: $clearColor75;
+					transition: 0.4s $animationFX;
+					&:focus{
+						border: 1px solid $thirdColor75;
+						color: $thirdColor75;
+					}
 				}
 			}
+			span{
+				@include flex(column, center, center, wrap);
+				transition:  0.4s $animationFX;
+				@include widthHeightsize(200px, 70px);
+				border: 1px solid $clearColor75;
+				color: $clearColor75;
+				text-align: center;
+				letter-spacing: 5px;
+				background-color: $clearColor0;
+				cursor: pointer;
+				text-transform: uppercase;
+				&:hover{
+					border: 1px solid $thirdColor75;
+					color: $thirdColor75;
+					letter-spacing: 8px;
+				}
+				&:active{
+					border: 1px solid $primaryColor75;
+					color: $primaryColor75;
+					letter-spacing: 8px;
+					background-color: $clearColor75;
+				}
+			}
+		}
+		article{
+			@include widthHeightsize(50vw, 100vh);
+			@include flex(column, space-around, center, wrap);
+			background-color: $clearColor75;
+			color: $primaryColor75;
+			& *{
+				@include widthHeightsize(80%, auto);
+			}
+			box-shadow: inset 4px 1px 8px 0px rgba(0, 0, 0, 0.6);
 		}
 	}
 	section{
