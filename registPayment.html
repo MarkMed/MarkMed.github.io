@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>MkM Regist Payment</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+	<link rel="stylesheet" href="CSS/style.css" type="text/css"/>
+	<link rel="stylesheet" href="CSS/registPayment.css" type="text/css"/>
+	<script src="JS/jquery.min.js"></script>
+	<script src="JS/script.js"></script>
+	<script src="JS/registPayment.js"></script>
+</head>
+<body>
+        <div id="MkM" role="menu" class="topFixed">
+            <svg id="MkMlogo" viewBox="0 -30 130 200" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink">
+                <g fill="none" stroke="rgba(255, 195, 60, 0.75)" stroke-width="3">
+                    <path d="M 6.6353177,89.614838 6.9264777,-29.333476 52.459989,44.341006 V 163.57976" ></path>
+                    <path d="m 80.600168,163.57976 2e-5,-119.238764 45.533462,-73.674472 -1e-5,119.371394" ></path>
+                    <path d="m 34.969489,118.18086 -0.0171,-136.721944 31.415862,52.247967 31.415873,-52.236447 0.30653,136.710424" ></path>
+                </g>
+            </svg>
+            <h1 class="titleHeader"><a href="index.html">Med Test Web Site</a></h1>
+            <input type="checkbox" id="openMenu" role="button"/>
+            
+            <svg id="burger" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink">
+                <g fill="none" stroke="rgba(255, 195, 60, 0.75)" stroke-width="3">
+                    <path d="M 25,25 L 75,25" ></path>
+                    <path d="M 25,50 L 75,50"></path>
+                    <path d="M 25,75 L 75,75"></path>
+                    <circle cx="50" cy="50" r="1"></circle>
+                </g>
+            </svg>
+            <label for="openMenu" id="itemContainer">
+                <div id="itemBox">
+                    <a class="menuOpt" href="index.html">Home</a>
+                    <a class="menuOpt">Work</a>
+                    <a class="menuOpt">SomeOption</a>
+                    <a class="menuOpt">About</a>
+                </div>
+            </label>
+        </div>
+    <header class="chapter"><h2>Payment Register</h2>
+		<svg id="svgScrollDown" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+			<g fill="none">
+				<circle cx="50" cy="50" r="49" />
+				<path d="M 25,25 L 50,75 L 75,25">
+				</path>
+			</g>
+		</svg>
+    </header>
+	<main class="chapter">
+        <form>
+            <input id="userName" type="text"/>
+            <input id="userPass" type="password"/>
+        </form>
+	</main>
+	<footer></footer>
+</body>
+</html>

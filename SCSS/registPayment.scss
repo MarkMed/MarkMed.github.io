@@ -1,0 +1,29 @@
+// base.scss
+@import 'noDefaultStyle';
+@import 'varsMixinExtends';
+
+body{
+	main{
+		form{
+			@include widthHeightsize(60vw, 60vh);
+			@include flex(column, space-around, center, wrap);
+			background-color: rgba(0, 0, 0, 0.3);
+			input{
+				border: 1px solid $clearColor75;
+				border-radius: 20px;
+				cursor: initial;
+				padding: 10px;
+				color: $clearColor75;
+				transition: 0.4s $animationFX;
+				&:focus{
+					border: 1px solid $thirdColor75;
+					color: $thirdColor75;
+				}
+			}
+		}
+	}
+	section{
+		@include widthHeightsize(100%, 100vh);
+		@include flex(column, space-around, center, wrap);
+	}
+}

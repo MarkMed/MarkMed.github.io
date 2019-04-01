@@ -67,7 +67,10 @@ $(document).ready(()=>{
 			{
 				scrollTop: $(chapters[1]).offset().top
 			},
-			400
+			{
+				duration: 400, 
+				easing: "linear"
+			}
 		);
 	});
 });

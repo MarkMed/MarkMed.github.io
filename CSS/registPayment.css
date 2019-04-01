@@ -20,6 +20,11 @@ ul, ol {
   text-decoration: none;
 }
 
+input {
+  background-color: transparent;
+  border: none;
+}
+
 /*
 width of element:
 	12 cols - 100%
@@ -65,4 +70,39 @@ width of element:
 @font-face {
   font-family: "BraGroLight";
   src: url(../Resources/brandon-grotesque-light.woff);
+}
+
+body main form {
+  height: 60vh;
+  width: 60vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+body main form input {
+  border: 1px solid rgba(255, 254, 219, 0.75);
+  border-radius: 20px;
+  cursor: initial;
+  padding: 10px;
+  color: rgba(255, 254, 219, 0.75);
+  transition: 0.4s cubic-bezier(0, 0, 0.27, 0.97);
+}
+
+body main form input:focus {
+  border: 1px solid rgba(255, 195, 60, 0.75);
+  color: rgba(255, 195, 60, 0.75);
+}
+
+body section {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
 }
