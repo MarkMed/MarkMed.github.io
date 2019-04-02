@@ -72,52 +72,200 @@ width of element:
   src: url(../Resources/brandon-grotesque-light.woff);
 }
 
-body main {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  align-items: center;
-  flex-wrap: wrap;
+body section {
+  background-color: #1e364b;
+  margin-top: 100vh;
 }
 
-body main form {
-  height: 100vh;
-  width: 50vw;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
-  flex-wrap: wrap;
+@media (min-width: 160px) and (max-width: 640px) {
+  body section {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+}
+
+@media (min-width: 160px) and (max-width: 640px) and (orientation: portrait) {
+  body section {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+}
+
+@media (min-width: 641px) and (max-width: 1007px) {
+  body section {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+}
+
+@media (min-width: 1008px) {
+  body section {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+}
+
+body section form {
   transition: 0.4s cubic-bezier(0, 0, 0.27, 0.97);
 }
 
-body main form .input {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: flex-start;
-  flex-wrap: wrap;
-  height: 10vh;
-  width: 60%;
+@media (min-width: 160px) and (max-width: 640px) {
+  body section form {
+    height: 100%;
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+  }
 }
 
-body main form .input input {
-  height: auto;
-  width: 80%;
-  border: 1px solid rgba(255, 254, 219, 0.75);
+@media (min-width: 160px) and (max-width: 640px) and (orientation: portrait) {
+  body section form {
+    height: 50%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+}
+
+@media (min-width: 641px) and (max-width: 1007px) {
+  body section form {
+    height: 100vh;
+    width: 50vw;
+  }
+}
+
+@media (min-width: 1008px) {
+  body section form {
+    height: 100vh;
+    width: 50vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+}
+
+body section form .input {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  transition: 0.4s cubic-bezier(0, 0, 0.27, 0.97);
+  cursor: pointer;
+  letter-spacing: 4px;
+}
+
+@media (min-width: 160px) and (max-width: 640px) {
+  body section form .input {
+    height: 30%;
+    width: 80%;
+    font-size: 13px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+}
+
+@media (min-width: 160px) and (max-width: 640px) and (orientation: portrait) {
+  body section form .input {
+    height: 30%;
+    width: 80%;
+    font-size: 13px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+}
+
+@media (min-width: 641px) and (max-width: 1007px) {
+  body section form .input {
+    height: 20vh;
+    width: 60%;
+  }
+}
+
+@media (min-width: 1008px) {
+  body section form .input {
+    height: 20vh;
+    width: 60%;
+  }
+}
+
+body section form .input:hover {
+  color: rgba(255, 195, 60, 0.75);
+}
+
+body section form .input label.expanded {
+  margin-bottom: 20px;
+}
+
+body section form .input input.expanded {
+  border: 1px solid rgba(255, 254, 219, 0.5);
   border-radius: 20px;
   cursor: initial;
   padding: 10px;
-  color: rgba(255, 254, 219, 0.75);
+  color: rgba(255, 254, 219, 0.5);
   transition: 0.4s cubic-bezier(0, 0, 0.27, 0.97);
 }
 
-body main form .input input:focus {
+@media (min-width: 160px) and (max-width: 640px) {
+  body section form .input input.expanded {
+    height: 5px;
+    width: calc(100% - 30px);
+  }
+}
+
+@media (min-width: 160px) and (max-width: 640px) and (orientation: portrait) {
+  body section form .input input.expanded {
+    height: 5px;
+    width: calc(100% - 30px);
+  }
+}
+
+@media (min-width: 641px) and (max-width: 1007px) {
+  body section form .input input.expanded {
+    height: auto;
+    width: calc(100% - 20px);
+  }
+}
+
+@media (min-width: 1008px) {
+  body section form .input input.expanded {
+    height: auto;
+    width: calc(100% - 20px);
+  }
+}
+
+body section form .input input.expanded:focus {
   border: 1px solid rgba(255, 195, 60, 0.75);
   color: rgba(255, 195, 60, 0.75);
 }
 
-body main form span {
+body section form span {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -126,8 +274,8 @@ body main form span {
   transition: 0.4s cubic-bezier(0, 0, 0.27, 0.97);
   height: 70px;
   width: 200px;
-  border: 1px solid rgba(255, 254, 219, 0.75);
-  color: rgba(255, 254, 219, 0.75);
+  border: 1px solid rgba(255, 254, 219, 0.5);
+  color: rgba(255, 254, 219, 0.5);
   text-align: center;
   letter-spacing: 5px;
   background-color: rgba(255, 254, 219, 0);
@@ -135,22 +283,57 @@ body main form span {
   text-transform: uppercase;
 }
 
-body main form span:hover {
+@media (min-width: 160px) and (max-width: 640px) {
+  body section form span {
+    height: 40px;
+    width: 110px;
+    font-size: 0.6em;
+  }
+}
+
+@media (min-width: 160px) and (max-width: 640px) and (orientation: portrait) {
+  body section form span {
+    height: 40px;
+    width: 120px;
+    font-size: 0.6em;
+  }
+}
+
+@media (min-width: 641px) and (max-width: 1007px) {
+  body section form span {
+    height: auto;
+    width: 90%;
+  }
+}
+
+@media (min-width: 1008px) {
+  body section form span {
+    height: auto;
+    width: 90%;
+  }
+}
+
+@media (min-width: 641px) {
+  body section form span {
+    height: 35px;
+    width: 100px;
+    font-size: 0.8em;
+  }
+}
+
+body section form span:hover {
   border: 1px solid rgba(255, 195, 60, 0.75);
   color: rgba(255, 195, 60, 0.75);
   letter-spacing: 8px;
 }
 
-body main form span:active {
+body section form span:active {
   border: 1px solid rgba(30, 54, 65, 0.75);
   color: rgba(30, 54, 65, 0.75);
-  letter-spacing: 8px;
-  background-color: rgba(255, 254, 219, 0.75);
+  background-color: rgba(255, 254, 219, 0.5);
 }
 
-body main article {
-  height: 100vh;
-  width: 50vw;
+body section article {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -158,20 +341,79 @@ body main article {
   flex-wrap: wrap;
   background-color: rgba(255, 254, 219, 0.75);
   color: rgba(30, 54, 65, 0.75);
-  box-shadow: inset 4px 1px 8px 0px rgba(0, 0, 0, 0.6);
 }
 
-body main article * {
-  height: auto;
-  width: 80%;
+@media (min-width: 160px) and (max-width: 640px) {
+  body section article {
+    height: 100%;
+    width: 50%;
+  }
 }
 
-body section {
-  height: 100vh;
+@media (min-width: 160px) and (max-width: 640px) and (orientation: portrait) {
+  body section article {
+    height: 50%;
+    width: 100%;
+    box-shadow: inset 0px -2px 8px 0px rgba(0, 0, 0, 0.6);
+  }
+}
+
+@media (min-width: 641px) and (max-width: 1007px) {
+  body section article {
+    height: 100vh;
+    width: 50vw;
+  }
+}
+
+@media (min-width: 1008px) {
+  body section article {
+    height: 100vh;
+    width: 50vw;
+    box-shadow: inset 4px 1px 8px 0px rgba(0, 0, 0, 0.6);
+  }
+}
+
+@media (min-width: 160px) and (max-width: 640px) {
+  body section article * {
+    height: auto;
+    width: 90%;
+  }
+}
+
+@media (min-width: 160px) and (max-width: 640px) and (orientation: portrait) {
+  body section article * {
+    height: auto;
+    width: 90%;
+  }
+}
+
+@media (min-width: 641px) and (max-width: 1007px) {
+  body section article * {
+    height: auto;
+    width: 80%;
+  }
+}
+
+@media (min-width: 1008px) {
+  body section article * {
+    height: auto;
+    width: 80%;
+  }
+}
+
+body main {
+  margin-top: 0;
+  height: 0vh;
   width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
   flex-wrap: wrap;
+  transition: 0.4s cubic-bezier(0, 0, 0.27, 0.97);
+}
+
+body main.expanded {
+  height: 100vh;
+  width: 100%;
 }

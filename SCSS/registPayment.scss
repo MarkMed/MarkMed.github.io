@@ -3,22 +3,83 @@
 @import 'varsMixinExtends';
 
 body{
-	main{
-		@include flex(row, flex-start, center, wrap);
+	section{
+		background-color: $secondaryColor100;
+		margin-top: 100vh;
+		@media (min-width: 160px) and (max-width: $smallWidth){
+			@include flex(row, flex-start, center, wrap);
+		}
+		@media (min-width: 160px) and (max-width: $smallWidth) and (orientation: portrait){
+			@include flex(column-reverse, flex-start, center, wrap);
+		}
+		@media (min-width: $smallWidth+1) and (max-width: $mediumWidth){
+			@include flex(row, flex-start, center, wrap);
+		}
+		@media (min-width: $mediumWidth+1){
+			@include flex(row, flex-start, center, wrap);
+		}
 		form{
-			@include widthHeightsize(50vw, 100vh);
-			@include flex(column, space-around, center, wrap);
+			@media (min-width: 160px) and (max-width: $smallWidth){
+				@include widthHeightsize(50%, 100%);
+				@include flex(row, space-around, center, wrap);
+			}
+			@media (min-width: 160px) and (max-width: $smallWidth) and (orientation: portrait){
+				@include widthHeightsize(100%, 50%);
+				@include flex(row, space-around, center, wrap);
+			}
+			@media (min-width: $smallWidth+1) and (max-width: $mediumWidth){
+				@include widthHeightsize(50vw, 100vh);
+			}
+			@media (min-width: $mediumWidth+1){
+				@include widthHeightsize(50vw, 100vh);
+				@include flex(column, space-around, center, wrap);
+			}
 			transition:  0.4s $animationFX;
 			.input{
-				@include flex(column, space-around, flex-start, wrap);
-				@include widthHeightsize(60%, 10vh);
-				input{
-					@include widthHeightsize(80%, auto);
-					border: 1px solid $clearColor75;
+				@include flex(column, flex-start, flex-start, wrap);
+				transition:  0.4s $animationFX;
+				cursor: pointer;
+				letter-spacing: 4px;
+				@media (min-width: 160px) and (max-width: $smallWidth){
+					@include widthHeightsize(80%, 30%);
+					font-size: 13px;
+					@include flex(column, center, flex-start, wrap);
+				}
+				@media (min-width: 160px) and (max-width: $smallWidth) and (orientation: portrait){
+					@include widthHeightsize(80%, 30%);
+					font-size: 13px;
+					@include flex(column, flex-start, flex-start, wrap);
+				}
+				@media (min-width: $smallWidth+1) and (max-width: $mediumWidth){
+					@include widthHeightsize(60%, 20vh);
+				}
+				@media (min-width: $mediumWidth+1){
+					@include widthHeightsize(60%, 20vh);
+				}
+				&:hover{
+					color: $thirdColor75;
+				}
+				label.expanded{
+					margin-bottom: 20px;
+				}
+				input.expanded{
+					@media (min-width: 160px) and (max-width: $smallWidth){
+						@include widthHeightsize(calc(100% - 30px), 5px);
+					}
+					@media (min-width: 160px) and (max-width: $smallWidth) and (orientation: portrait){
+						@include widthHeightsize(calc(100% - 30px), 5px);
+					}
+					@media (min-width: $smallWidth+1) and (max-width: $mediumWidth){
+						@include widthHeightsize(calc(100% - 20px), auto);
+					}
+					@media (min-width: $mediumWidth+1){
+						@include widthHeightsize(calc(100% - 20px), auto);
+					}
+					border: 1px solid $clearColor50;
 					border-radius: 20px;
 					cursor: initial;
 					padding: 10px;
-					color: $clearColor75;
+					color: $clearColor50;
 					transition: 0.4s $animationFX;
 					&:focus{
 						border: 1px solid $thirdColor75;
@@ -27,16 +88,34 @@ body{
 				}
 			}
 			span{
+				@media (min-width: 160px) and (max-width: $smallWidth){
+					@include widthHeightsize(110px, 40px);
+					font-size: 0.6em;
+				}
+				@media (min-width: 160px) and (max-width: $smallWidth) and (orientation: portrait){
+					@include widthHeightsize(120px, 40px);
+					font-size: 0.6em;
+				}
+				@media (min-width: $smallWidth+1) and (max-width: $mediumWidth){
+					@include widthHeightsize(90%, auto);
+				}
+				@media (min-width: $mediumWidth+1){
+					@include widthHeightsize(90%, auto);
+				}
 				@include flex(column, center, center, wrap);
 				transition:  0.4s $animationFX;
 				@include widthHeightsize(200px, 70px);
-				border: 1px solid $clearColor75;
-				color: $clearColor75;
+				border: 1px solid $clearColor50;
+				color: $clearColor50;
 				text-align: center;
 				letter-spacing: 5px;
 				background-color: $clearColor0;
 				cursor: pointer;
 				text-transform: uppercase;
+				@media (min-width: $smallWidth+1){
+					@include widthHeightsize(100px, 35px);
+					font-size: 0.8em
+				}
 				&:hover{
 					border: 1px solid $thirdColor75;
 					color: $thirdColor75;
@@ -45,24 +124,51 @@ body{
 				&:active{
 					border: 1px solid $primaryColor75;
 					color: $primaryColor75;
-					letter-spacing: 8px;
-					background-color: $clearColor75;
+					background-color: $clearColor50;
 				}
 			}
 		}
 		article{
-			@include widthHeightsize(50vw, 100vh);
+			@media (min-width: 160px) and (max-width: $smallWidth){
+				@include widthHeightsize(50%, 100%);
+			}
+			@media (min-width: 160px) and (max-width: $smallWidth) and (orientation: portrait){
+				@include widthHeightsize(100%, 50%);
+				box-shadow: inset 0px -2px 8px 0px rgba(0, 0, 0, 0.6);
+			}
+			@media (min-width: $smallWidth+1) and (max-width: $mediumWidth){
+				@include widthHeightsize(50vw, 100vh);
+			}
+			@media (min-width: $mediumWidth+1){
+				@include widthHeightsize(50vw, 100vh);
+				box-shadow: inset 4px 1px 8px 0px rgba(0, 0, 0, 0.6);
+			}
 			@include flex(column, space-around, center, wrap);
 			background-color: $clearColor75;
 			color: $primaryColor75;
 			& *{
-				@include widthHeightsize(80%, auto);
+				@media (min-width: 160px) and (max-width: $smallWidth){
+					@include widthHeightsize(90%, auto);
+				}
+				@media (min-width: 160px) and (max-width: $smallWidth) and (orientation: portrait){
+					@include widthHeightsize(90%, auto);
+				}
+				@media (min-width: $smallWidth+1) and (max-width: $mediumWidth){
+					@include widthHeightsize(80%, auto);
+				}
+				@media (min-width: $mediumWidth+1){
+					@include widthHeightsize(80%, auto);
+				}
 			}
-			box-shadow: inset 4px 1px 8px 0px rgba(0, 0, 0, 0.6);
 		}
 	}
-	section{
-		@include widthHeightsize(100%, 100vh);
+	main{
+		margin-top: 0;
+		@include widthHeightsize(100%, 0vh);
 		@include flex(column, space-around, center, wrap);
+		transition:  0.4s $animationFX;
+		&.expanded{
+			@include widthHeightsize(100%, 100vh);
+		}
 	}
 }

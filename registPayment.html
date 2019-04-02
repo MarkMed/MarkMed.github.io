@@ -10,7 +10,7 @@
 	<script src="JS/script.js"></script>
 	<script src="JS/registPayment.js"></script>
 </head>
-<body>
+<body >
         <div id="MkM" role="menu" class="topFixed">
             <svg id="MkMlogo" viewBox="0 -30 130 200" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink">
                 <g fill="none" stroke="rgba(255, 195, 60, 0.75)" stroke-width="3">
@@ -48,26 +48,31 @@
 			</g>
 		</svg>
     </header>
-	<main class="chapter">
+	<section class="chapter">
         <form>
-            <label for="userName" class="input">
-                User Name:
-                <input id="userName" type="text"/>
-            </label>
-            <label for="userName" class="input">
-                Password:
-                <input id="userPass" type="password"/>
-            </label>
+            <div class="input" class="expanded">
+                <label for="userName"  class="expanded">
+                    User Name:
+                </label>
+                <input id="userName" type="text"  class="expanded"/>
+            </div>
+            <div class="input" class="expanded">
+                <label for="userPass" class="expanded">
+                    Password:
+                </label>
+                <input id="userPass" type="password"  class="expanded"/>
+            </div>
+            <span id="log">Sing In</span>
             <span id="log">Login</span>
         </form>
         <article>
-            <h3>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</h3>
-            <p>Consectetur inventore, voluptate sequi eveniet vitae magnam sunt animi ratione porro tempore nisi eaque illum quibusdam architecto est exercitationem ducimus ipsa dolores!</p>
+            <h3>Login or Sing up</h3>
+            <p>You need have an account to save your data.<br/><br/>If you do not have any account, just type an <b><i>User Name</i></b> and assign an <b><i>User Password</i></b> and click in <i>Sing In</i> button..<br/>If you already have an account, complete both data field, and click in <i>Login</i> button.</p>
         </article>
-    </main>
-    <section id="target">
-
     </section>
+    <main id="target">
+
+    </main>
 	<footer></footer>
 </body>
 </html>
