@@ -28,7 +28,8 @@ body{
 				@include flex(row, space-around, center, wrap);
 			}
 			@media (min-width: $smallWidth+1) and (max-width: $mediumWidth){
-				@include widthHeightsize(50vw, 100vh);
+				@include widthHeightsize(50%, 100%);
+				@include flex(row, space-around, center, wrap);
 			}
 			@media (min-width: $mediumWidth+1){
 				@include widthHeightsize(50vw, 100vh);
@@ -51,7 +52,9 @@ body{
 					@include flex(column, flex-start, flex-start, wrap);
 				}
 				@media (min-width: $smallWidth+1) and (max-width: $mediumWidth){
-					@include widthHeightsize(60%, 20vh);
+					@include widthHeightsize(80%, 30%);
+					font-size: 13px;
+					@include flex(column, center, flex-start, wrap);
 				}
 				@media (min-width: $mediumWidth+1){
 					@include widthHeightsize(60%, 20vh);
@@ -70,7 +73,7 @@ body{
 						@include widthHeightsize(calc(100% - 30px), 5px);
 					}
 					@media (min-width: $smallWidth+1) and (max-width: $mediumWidth){
-						@include widthHeightsize(calc(100% - 20px), auto);
+						@include widthHeightsize(calc(100% - 30px), 5px);
 					}
 					@media (min-width: $mediumWidth+1){
 						@include widthHeightsize(calc(100% - 20px), auto);
@@ -97,14 +100,14 @@ body{
 					font-size: 0.6em;
 				}
 				@media (min-width: $smallWidth+1) and (max-width: $mediumWidth){
-					@include widthHeightsize(90%, auto);
+					@include widthHeightsize(140px, 40px);
+					font-size: 0.6em;
 				}
 				@media (min-width: $mediumWidth+1){
 					@include widthHeightsize(90%, auto);
 				}
 				@include flex(column, center, center, wrap);
 				transition:  0.4s $animationFX;
-				@include widthHeightsize(200px, 70px);
 				border: 1px solid $clearColor50;
 				color: $clearColor50;
 				text-align: center;
@@ -112,10 +115,6 @@ body{
 				background-color: $clearColor0;
 				cursor: pointer;
 				text-transform: uppercase;
-				@media (min-width: $smallWidth+1){
-					@include widthHeightsize(100px, 35px);
-					font-size: 0.8em
-				}
 				&:hover{
 					border: 1px solid $thirdColor75;
 					color: $thirdColor75;
@@ -131,6 +130,7 @@ body{
 		article{
 			@media (min-width: 160px) and (max-width: $smallWidth){
 				@include widthHeightsize(50%, 100%);
+				box-shadow: inset 4px 1px 8px 0px rgba(0, 0, 0, 0.6);
 			}
 			@media (min-width: 160px) and (max-width: $smallWidth) and (orientation: portrait){
 				@include widthHeightsize(100%, 50%);
@@ -138,6 +138,7 @@ body{
 			}
 			@media (min-width: $smallWidth+1) and (max-width: $mediumWidth){
 				@include widthHeightsize(50vw, 100vh);
+				box-shadow: inset 4px 1px 8px 0px rgba(0, 0, 0, 0.6);
 			}
 			@media (min-width: $mediumWidth+1){
 				@include widthHeightsize(50vw, 100vh);
