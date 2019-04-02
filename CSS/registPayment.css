@@ -238,6 +238,7 @@ body section form .input input.expanded {
   border: 1px solid rgba(255, 254, 219, 0.5);
   border-radius: 20px;
   cursor: initial;
+  font-family: "RalewayELight";
   padding: 10px;
   color: rgba(255, 254, 219, 0.5);
   transition: 0.4s cubic-bezier(0, 0, 0.27, 0.97);
