@@ -162,7 +162,7 @@ body section form {
     height: 100vh;
     width: 50vw;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: space-around;
     align-items: center;
     flex-wrap: wrap;
@@ -170,13 +170,7 @@ body section form {
 }
 
 body section form .input {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start;
-  flex-wrap: wrap;
   transition: 0.4s cubic-bezier(0, 0, 0.27, 0.97);
-  cursor: pointer;
   letter-spacing: 4px;
 }
 
@@ -222,23 +216,30 @@ body section form .input {
 @media (min-width: 1008px) {
   body section form .input {
     height: 20vh;
-    width: 60%;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-start;
+    flex-wrap: wrap;
   }
 }
 
-body section form .input:hover {
-  color: rgba(255, 195, 60, 0.75);
+body section form .input label.expanded {
+  transition: 0.4s cubic-bezier(0, 0, 0.27, 0.97);
+  margin-bottom: 20px;
+  cursor: pointer;
 }
 
-body section form .input label.expanded {
-  margin-bottom: 20px;
+body section form .input label.expanded:hover {
+  color: rgba(255, 195, 60, 0.75);
 }
 
 body section form .input input.expanded {
   border: 1px solid rgba(255, 254, 219, 0.5);
   border-radius: 20px;
   cursor: initial;
-  font-family: "RalewayELight";
+  font-family: "RalewayLight";
   padding: 10px;
   color: rgba(255, 254, 219, 0.5);
   transition: 0.4s cubic-bezier(0, 0, 0.27, 0.97);
@@ -272,9 +273,16 @@ body section form .input input.expanded {
   }
 }
 
-body section form .input input.expanded:focus {
+body section form .input input.expanded:hover {
   border: 1px solid rgba(255, 195, 60, 0.75);
   color: rgba(255, 195, 60, 0.75);
+}
+
+body section form .input input.expanded:focus {
+  border: 1px solid rgba(30, 54, 65, 0.75);
+  color: rgba(30, 54, 65, 0.75);
+  background-color: #fffedb;
+  box-shadow: inset 0px 0px 5px 0px #1e3641;
 }
 
 body section form span {
@@ -283,9 +291,12 @@ body section form span {
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
+  font-size: 0.7em;
+  font-family: "RalewayELight";
   transition: 0.4s cubic-bezier(0, 0, 0.27, 0.97);
   border: 1px solid rgba(255, 254, 219, 0.5);
-  color: rgba(255, 254, 219, 0.5);
+  color: rgba(255, 254, 219, 0.75);
+  border-radius: 20px;
   text-align: center;
   letter-spacing: 5px;
   background-color: rgba(255, 254, 219, 0);
@@ -297,7 +308,6 @@ body section form span {
   body section form span {
     height: 40px;
     width: 110px;
-    font-size: 0.6em;
   }
 }
 
@@ -305,7 +315,6 @@ body section form span {
   body section form span {
     height: 40px;
     width: 120px;
-    font-size: 0.6em;
   }
 }
 
@@ -313,14 +322,13 @@ body section form span {
   body section form span {
     height: 40px;
     width: 140px;
-    font-size: 0.6em;
   }
 }
 
 @media (min-width: 1008px) {
   body section form span {
-    height: auto;
-    width: 90%;
+    height: 60px;
+    width: 200px;
   }
 }
 
@@ -333,7 +341,7 @@ body section form span:hover {
 body section form span:active {
   border: 1px solid rgba(30, 54, 65, 0.75);
   color: rgba(30, 54, 65, 0.75);
-  background-color: rgba(255, 254, 219, 0.5);
+  background-color: rgba(255, 254, 219, 0.75);
 }
 
 body section article {

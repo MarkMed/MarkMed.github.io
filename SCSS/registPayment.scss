@@ -33,13 +33,11 @@ body{
 			}
 			@media (min-width: $mediumWidth+1){
 				@include widthHeightsize(50vw, 100vh);
-				@include flex(column, space-around, center, wrap);
+				@include flex(row, space-around, center, wrap);
 			}
 			transition:  0.4s $animationFX;
 			.input{
-				@include flex(column, flex-start, flex-start, wrap);
 				transition:  0.4s $animationFX;
-				cursor: pointer;
 				letter-spacing: 4px;
 				@media (min-width: 160px) and (max-width: $smallWidth){
 					@include widthHeightsize(80%, 30%);
@@ -57,13 +55,16 @@ body{
 					@include flex(column, center, flex-start, wrap);
 				}
 				@media (min-width: $mediumWidth+1){
-					@include widthHeightsize(60%, 20vh);
-				}
-				&:hover{
-					color: $thirdColor75;
+					@include widthHeightsize(80%, 20vh);
+					@include flex(column, space-around, flex-start, wrap);
 				}
 				label.expanded{
+					transition:  0.4s $animationFX;
 					margin-bottom: 20px;
+					cursor: pointer;
+					&:hover{
+						color: $thirdColor75;
+					}
 				}
 				input.expanded{
 					@media (min-width: 160px) and (max-width: $smallWidth){
@@ -81,36 +82,42 @@ body{
 					border: 1px solid $clearColor50;
 					border-radius: 20px;
 					cursor: initial;
-					font-family: "RalewayELight";
+					font-family: "RalewayLight";
 					padding: 10px;
 					color: $clearColor50;
 					transition: 0.4s $animationFX;
-					&:focus{
+					&:hover{
 						border: 1px solid $thirdColor75;
 						color: $thirdColor75;
+					}
+					&:focus{
+						border: 1px solid $primaryColor75;
+						color: $primaryColor75;
+						background-color: $clearColor100;
+						box-shadow: inset 0px 0px 5px 0px $primaryColor100;
 					}
 				}
 			}
 			span{
 				@media (min-width: 160px) and (max-width: $smallWidth){
 					@include widthHeightsize(110px, 40px);
-					font-size: 0.6em;
 				}
 				@media (min-width: 160px) and (max-width: $smallWidth) and (orientation: portrait){
 					@include widthHeightsize(120px, 40px);
-					font-size: 0.6em;
 				}
 				@media (min-width: $smallWidth+1) and (max-width: $mediumWidth){
 					@include widthHeightsize(140px, 40px);
-					font-size: 0.6em;
 				}
 				@media (min-width: $mediumWidth+1){
-					@include widthHeightsize(90%, auto);
+					@include widthHeightsize(200px, 60px);
 				}
 				@include flex(column, center, center, wrap);
+				font-size: 0.7em;
+				font-family: "RalewayELight";
 				transition:  0.4s $animationFX;
 				border: 1px solid $clearColor50;
-				color: $clearColor50;
+				color: $clearColor75;
+				border-radius: 20px;
 				text-align: center;
 				letter-spacing: 5px;
 				background-color: $clearColor0;
@@ -124,7 +131,7 @@ body{
 				&:active{
 					border: 1px solid $primaryColor75;
 					color: $primaryColor75;
-					background-color: $clearColor50;
+					background-color: $clearColor75;
 				}
 			}
 		}
