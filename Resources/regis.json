@@ -1,0 +1,17 @@
+{
+  "users":
+    [
+      {
+        "name": "markmed",
+        "pass": "ajna432"
+      },
+      {
+        "name": "person1",
+        "pass": "pass1"
+      },
+      {
+        "name": "person2",
+        "pass": "pass2"
+      }
+    ]
+}
