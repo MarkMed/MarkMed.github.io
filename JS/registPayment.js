@@ -11,6 +11,6 @@ $(document).ready(()=>{
             $("section#target").html(this.responseText)
         }
     }
-    xhr.open('get', 'Resources/regis.txt', true);
+    xhr.open('get', 'https://markmed.github.io/Resources/regis.json', true);
     xhr.send();
 });
