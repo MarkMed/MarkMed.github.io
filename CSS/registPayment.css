@@ -173,6 +173,7 @@ body section form {
 }
 
 body section form .input {
+  font-family: "RalewayELight";
   transition: 0.4s cubic-bezier(0, 0, 0.27, 0.97);
   letter-spacing: 4px;
 }
@@ -288,7 +289,7 @@ body section form .input input.expanded:focus {
   box-shadow: inset 0px 0px 5px 0px #1e3641;
 }
 
-body section form span {
+body section form div.formBtn {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -308,46 +309,47 @@ body section form span {
 }
 
 @media (min-width: 160px) and (max-width: 640px) {
-  body section form span {
+  body section form div.formBtn {
     height: 40px;
     width: 110px;
   }
 }
 
 @media (min-width: 160px) and (max-width: 640px) and (orientation: portrait) {
-  body section form span {
+  body section form div.formBtn {
     height: 40px;
     width: 120px;
   }
 }
 
 @media (min-width: 641px) and (max-width: 1007px) {
-  body section form span {
+  body section form div.formBtn {
     height: 40px;
     width: 140px;
   }
 }
 
 @media (min-width: 1008px) {
-  body section form span {
+  body section form div.formBtn {
     height: 60px;
     width: 200px;
   }
 }
 
-body section form span:hover {
+body section form div.formBtn:hover {
   border: 1px solid rgba(255, 195, 60, 0.75);
   color: rgba(255, 195, 60, 0.75);
   letter-spacing: 8px;
 }
 
-body section form span:active {
+body section form div.formBtn:active {
   border: 1px solid rgba(30, 54, 65, 0.75);
   color: rgba(30, 54, 65, 0.75);
   background-color: rgba(255, 254, 219, 0.75);
 }
 
 body section article {
+  font-family: "BraGroLight";
   display: flex;
   flex-direction: column;
   justify-content: space-around;

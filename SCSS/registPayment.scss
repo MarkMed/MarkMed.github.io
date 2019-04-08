@@ -39,6 +39,7 @@ body{
 			}
 			transition:  0.4s $animationFX;
 			.input{
+				font-family: "RalewayELight";
 				transition:  0.4s $animationFX;
 				letter-spacing: 4px;
 				@media (min-width: 160px) and (max-width: $smallWidth){
@@ -100,7 +101,7 @@ body{
 					}
 				}
 			}
-			span{
+			div.formBtn{
 				@media (min-width: 160px) and (max-width: $smallWidth){
 					@include widthHeightsize(110px, 40px);
 				}
@@ -138,6 +139,7 @@ body{
 			}
 		}
 		article{
+			font-family: "BraGroLight";
 			@media (min-width: 160px) and (max-width: $smallWidth){
 				@include widthHeightsize(50%, 100%);
 				box-shadow: inset 4px 1px 8px 0px rgba(0, 0, 0, 0.6);
