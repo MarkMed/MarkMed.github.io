@@ -72,6 +72,9 @@ width of element:
   src: url(../Resources/brandon-grotesque-light.woff);
 }
 
+/*html{
+	filter: sepia(70%);
+}Night Shift*/
 body section {
   background-color: #1e364b;
   margin-top: 100vh;
