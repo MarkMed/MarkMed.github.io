@@ -96,6 +96,7 @@ body{
 	}
 
 	#headerBckgrnd{
+		filter: blur(1px);
 		z-index: -1;
 		background-image: url("../Resources/WhatsApp Image 2019-04-11 at 16.40.33.jpeg");
 		background-position: inherit;
