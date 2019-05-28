@@ -1,6 +1,30 @@
 // _varsMixinExtends.scss
 //General Vars
 
+$grad-primaryColor100: rgba(30, 54, 65, 1), rgba(30, 54, 54, 1);
+$grad-primaryColor75: rgba(30, 54, 65, 0.75), rgba(30, 54, 54, 0.75);
+$grad-primaryColor50: rgba(30, 54, 65, 0.5), rgba(30, 54, 54, 0.5);
+$grad-primaryColor25: rgba(30, 54, 65, 0.25), rgba(30, 54, 54, 0.25);
+$grad-primaryColor0: rgba(30, 54, 65, 0), rgba(30, 54, 54, 0);
+
+$grad-secondaryColor100: rgba(19, 43, 64, 1), rgba(30, 54, 75, 1);
+$grad-secondaryColor75: rgba(19, 43, 64, 0.75), rgba(30, 54, 75, 0.75);
+$grad-secondaryColor50: rgba(19, 43, 64, 0.5), rgba(30, 54, 75, 0.5);
+$grad-secondaryColor25: rgba(19, 43, 64, 0.251), rgba(30, 54, 75, 0.25);
+$grad-secondaryColor0: rgba(19, 43, 64, 0), rgba(30, 54, 75, 0);
+
+$grad-thirdColor100: rgba(215, 156, 5, 1), rgba(255, 217, 60, 1);
+$grad-thirdColor75: rgba(215, 156, 5, 0.75), rgba(255, 217, 60, 0.75);
+$grad-thirdColor50: rgba(215, 156, 5, 0.5), rgba(255, 217, 60, 0.5);
+$grad-thirdColor25: rgba(215, 156, 5, 0.25), rgba(255, 217, 60, 0.25);
+$grad-thirdColor0: rgba(215, 156, 5, 0), rgba(255, 217, 60, 0);
+
+$grad-clearColor100: rgba(255, 254, 219, 1), rgba(239, 238, 202, 1);
+$grad-clearColor75: rgba(255, 254, 219, 0.75), rgba(239, 238, 202, 0.75);
+$grad-clearColor50: rgba(255, 254, 219, 0.5), rgba(239, 238, 202, 0.5);
+$grad-clearColor25: rgba(255, 254, 219, 0.25), rgba(239, 238, 202, 0.25);
+$grad-clearColor0: rgba(255, 254, 219, 0), rgba(239, 238, 202, 0);
+
 $primaryColor100: rgba(30, 54, 65, 1);
 $primaryColor75: rgba(30, 54, 65, 0.75);
 $primaryColor50: rgba(30, 54, 65, 0.50);
