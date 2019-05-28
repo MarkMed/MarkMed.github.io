@@ -10,11 +10,11 @@
 }
 .luxFX{
 	@include flex(column, center, center, wrap);
-	letter-spacing: 0.8em;
+	letter-spacing: 1em;
 	cursor: pointer;
 	font-size: 0.5em;
 	border-bottom: 1px solid $thirdColor50;
-	transition: 0.4s $animationFX;
+	transition: 0.6s $animationFX;
 	text-transform: uppercase;
 	color: $thirdColor75;
 	background: linear-gradient(0deg, $thirdColor100, rgba(146,111,52,0.8), rgba(34,34,34,0), rgba(34,34,34,0));
@@ -22,7 +22,6 @@
 	background-size: 300% 300%;
 	border-radius: 20px 20px 0px 0px;
 	opacity: 0.8;
-	text-align: center;
 	@media (min-width: 160px) and (max-width: $smallWidth){
 		background-position: 50% 1%;
 		border: 1px solid $thirdColor50;
@@ -44,35 +43,7 @@
 	&:hover{
 		background-position: 50% 99%;
 		color: #fff;
-		letter-spacing: 1.2em;
-	}
-}
-.lineSeparator{
-	box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.5) inset;
-}
-.mainTitle{
-	margin: 10px;
-	@include flex(column, space-around, center, wrap);
-	h3{		
-		@media (min-width: 160px) and (max-width: $smallWidth){
-			font-size: 22px;
-		}
-		@media (min-width: $smallWidth+1) and (max-width: $mediumWidth){
-			font-size: 24px;
-		}
-		@media (min-width: $mediumWidth+1){
-			font-size: 26px;
-		}
-		font-weight: 100;
-		letter-spacing: 0.5em;
-		text-transform: uppercase;
-		font-family: "RalewayELight";
-		color: $clearColor75;
-		text-align: center;
-		@include flex(row, center, center, wrap);
-	}
-	.lineSeparator{		
-		@include widthHeightsize(100%, 2px);
+		letter-spacing: 2em;
 	}
 }
 html{
@@ -83,8 +54,7 @@ body{
 	scroll-behavior: smooth;
 	color: $clearColor75;
 	font-family: "RalewayLight";
-	background-color: $primaryColor100;;
-	background-image: linear-gradient(to right bottom, $grad-primaryColor100);
+	background-color: $primaryColor100;
 	@media (min-width: 160px) and (max-width: $smallWidth){
 		margin-top: 20px;
 	}
@@ -100,8 +70,7 @@ body{
 	#MkM.topFixed{
 		top: 0;
 		position: fixed;
-		background-color: $primaryColor100;;
-		background-image: linear-gradient(to right bottom, $grad-primaryColor100);
+		background-color: $primaryColor100;
 		opacity: 0.7;
 		font-weight: 100;
 		z-index: 90;
@@ -206,8 +175,7 @@ body{
 			position: fixed;
 			opacity: 0;
 			@include widthHeightsize(100vw, 0vh);
-			background-color: $primaryColor100;;
-			background-image: linear-gradient(to right bottom, $grad-primaryColor100);
+			background-color: $primaryColor100;
 			transition: 0.4s $animationFX;
 			transition-delay: 0.2s;
 			@include flex(column, center, center, wrap);
@@ -288,6 +256,7 @@ body{
 		position: fixed;
 		@include widthHeightsize(100%, 100vh);
 		@include flex(column, center, center, wrap);
+		background-color: $primaryColor100;
 		h2, h3{
 			font-weight: 100;
 			letter-spacing: calc(1vw);
@@ -340,74 +309,22 @@ body{
 		margin-top: 100vh;
 		@include widthHeightsize(100%, auto);
 		@include flex(column, space-around, center, wrap);
-		border-radius: 23px;
-		box-shadow: 0px 0px 20px 1px $clearColor25;
-		background-color: $secondaryColor100;;
-		background-image: linear-gradient(to right bottom, $grad-secondaryColor100);
-		.mainTitle{
-			@include widthHeightsize(80%, auto);
-		}
+		background-color: $secondaryColor100;
 		ul{
 			@include widthHeightsize(100%, 100%);
 			@include flex(column, space-around, center, wrap);
+			background-color: $secondaryColor100;
 			li{
-				@include widthHeightsize(100%, auto);
-				@include flex(row, center, center, wrap);
-				margin: 100px 0px;
-				div.projectCard{				
-					@media (min-width: 160px) and (max-width: $mediumWidth){
-						@include flex(column, space-around, flex-start, wrap);	
-						@include widthHeightsize(90%, auto);
-					}
-					transition: 0.4s $animationFX;
-					&.w-bk{
-						padding: 10px;
-						background-color: $clearColor100;
-						box-shadow: 0px 2px 2px 2px $primaryColor50;
-						color: $primaryColor100;
-						border-radius: 20px;
-					}
-					overflow: hidden;
-					img{
-						@include widthHeightsize(auto, 200px);
-						border-radius: 50%;
-						position: absolute;
-						margin-left: 50%;
-						z-index: 0;
-					}
-					div.projTitle{
-						@include widthHeightsize(50%, auto);
-						@include flex(column, space-between, flex-start, wrap);
-							margin-bottom: 100px;
-						h4{
-							text-align: center;
-							font-weight: 200;
-							z-index: 1;
-							letter-spacing: 0.7em;
-							@media (min-width: 160px) and (max-width: $smallWidth){
-								font-size: 20px;
-							}
-							@media (min-width: $smallWidth+1) and (max-width: $mediumWidth){
-								font-size: 22px;
-							}
-							@media (min-width: $mediumWidth+1){
-								font-size: 24px;
-							}
-						}
-						.lineSeparator{
-							@include widthHeightsize(100%, 2px);
-						}
-					}
-					p{
-						@include widthHeightsize(50%, 20%);
-						z-index: 1;
-						margin-bottom: 50px;
-					}
-					a{
-						text-align: center;
-						@include widthHeightsize(50%, 20%);
-						z-index: 1;
-					}
+				@include widthHeightsize(50%, 100px);
+				margin: 100px;
+				@media (min-width: 160px) and (max-width: $mediumWidth){
+					@include widthHeightsize(80%, 80px);
+					margin: 100px 0px;
+				}
+				@include flex(column, center, center, wrap);
+				a{
+					@include widthHeightsize(100%, 100%);
+					text-align: center;
 				}
 			}
 		}
