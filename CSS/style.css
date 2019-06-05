@@ -96,7 +96,6 @@ width of element:
   background: linear-gradient(0deg, #ffc33c, rgba(146, 111, 52, 0.8), rgba(34, 34, 34, 0), rgba(34, 34, 34, 0));
   background-position: 50% 15%;
   background-size: 300% 300%;
-  border-radius: 20px 20px 0px 0px;
   opacity: 0.8;
   text-align: center;
 }
@@ -596,7 +595,6 @@ body main {
   align-items: center;
   flex-wrap: wrap;
   border-radius: 23px;
-  box-shadow: 0px 0px 20px 1px rgba(255, 254, 219, 0.25);
   background-color: #1e364b;
   background-image: linear-gradient(to right bottom, #132b40, #1e364b);
 }
@@ -628,17 +626,17 @@ body main ul li {
 }
 
 body main ul li div.projectCard {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
   transition: 0.4s cubic-bezier(0, 0, 0.27, 0.97);
   overflow: hidden;
 }
 
 @media (min-width: 160px) and (max-width: 1007px) {
   body main ul li div.projectCard {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: flex-start;
-    flex-wrap: wrap;
     height: auto;
     width: 90%;
   }
@@ -656,8 +654,6 @@ body main ul li div.projectCard img {
   height: 200px;
   width: auto;
   border-radius: 50%;
-  position: absolute;
-  margin-left: 50%;
   z-index: 0;
 }
 
@@ -669,7 +665,7 @@ body main ul li div.projectCard div.projTitle {
   justify-content: space-between;
   align-items: flex-start;
   flex-wrap: wrap;
-  margin-bottom: 100px;
+  margin: 0px 20vw 50px 0px;
 }
 
 body main ul li div.projectCard div.projTitle h4 {
@@ -706,14 +702,17 @@ body main ul li div.projectCard p {
   height: 20%;
   width: 50%;
   z-index: 1;
-  margin-bottom: 50px;
+  margin-bottom: 5vw;
+  margin-right: 5vw;
+  margin-top: 5vw;
 }
 
 body main ul li div.projectCard a {
   text-align: center;
-  height: 20%;
-  width: 50%;
+  height: 40px;
+  width: 225px;
   z-index: 1;
+  margin-top: 5vw;
 }
 
 body section {

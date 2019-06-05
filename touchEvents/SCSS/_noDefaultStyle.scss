@@ -1,0 +1,24 @@
+//_noDefaultStyle.scss
+*{
+	margin: 0;
+	padding: 0;
+	cursor: default;
+}
+a{
+	text-decoration: none;
+	color: black;
+	cursor: pointer
+}
+ul, ol{
+	list-style: none;
+}
+*:focus{
+	outline: none;
+	color: black;
+	text-decoration: none,
+}
+
+input{
+	background-color: rgba(0, 0, 0, 0);
+	border: none;
+}
