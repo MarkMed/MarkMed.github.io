@@ -98,28 +98,23 @@ $mediumWidth: 1007px;
 	flex-wrap: $wrap;
 }
 
-
-@font-face {
-	font-family: "Cinzel";
-	src: url(../Resources/Cinzel-Regular.ttf);
-}
 @font-face {
 	font-family: "RalewayLight";
-	src: url(../Resources/Raleway-Light_0.ttf);
+	src: url(../../Resources/Raleway-Light_0.ttf);
 }
 @font-face {
 	font-family: "RalewayELight";
-	src: url(../Resources/Raleway-ExtraLight.ttf);
+	src: url(../../Resources/Raleway-ExtraLight.ttf);
 }
 @font-face {
 	font-family: "RalewayThin";
-	src: url(../Resources/Raleway-Thin.ttf);
+	src: url(../../Resources/Raleway-Thin.ttf);
 }
 @font-face {
 	font-family: "DetalThin";
-	src: url(../Resources/Datalegreya-Thin.otf);
+	src: url(../../Resources/Datalegreya-Thin.otf);
 }
 @font-face {
 	font-family: "BraGroLight";
-	src: url(../Resources/brandon-grotesque-light.woff);
+	src: url(../../Resources/brandon-grotesque-light.woff);
 }
