@@ -20,7 +20,6 @@
 	background: linear-gradient(0deg, $thirdColor100, rgba(146,111,52,0.8), rgba(34,34,34,0), rgba(34,34,34,0));
 	background-position: 50% 15%;
 	background-size: 300% 300%;
-	border-radius: 20px 20px 0px 0px;
 	opacity: 0.8;
 	@media (min-width: 160px) and (max-width: $smallWidth){
 		background-position: 50% 1%;
@@ -309,22 +308,75 @@ body{
 		margin-top: 100vh;
 		@include widthHeightsize(100%, auto);
 		@include flex(column, space-around, center, wrap);
-		background-color: $secondaryColor100;
+		border-radius: 23px;
+		background-color: $secondaryColor100;;
+		background-image: linear-gradient(to right bottom, $grad-secondaryColor100);
+		.mainTitle{
+			@include widthHeightsize(80%, auto);
+		}
 		ul{
 			@include widthHeightsize(100%, 100%);
 			@include flex(column, space-around, center, wrap);
 			background-color: $secondaryColor100;
 			li{
-				@include widthHeightsize(50%, 100px);
-				margin: 100px;
-				@media (min-width: 160px) and (max-width: $mediumWidth){
-					@include widthHeightsize(80%, 80px);
-					margin: 100px 0px;
-				}
-				@include flex(column, center, center, wrap);
-				a{
-					@include widthHeightsize(100%, 100%);
-					text-align: center;
+				@include widthHeightsize(100%, auto);
+				@include flex(row, center, center, wrap);
+				margin: 100px 0px;
+				div.projectCard{
+					@include flex(row, space-around, center, wrap);	
+					@media (min-width: 160px) and (max-width: $mediumWidth){
+						@include widthHeightsize(90%, auto);
+					}
+					transition: 0.4s $animationFX;
+					&.w-bk{
+						padding: 10px;
+						background-color: $clearColor100;
+						box-shadow: 0px 2px 2px 2px $primaryColor50;
+						color: $primaryColor100;
+						border-radius: 20px;
+					}
+					overflow: hidden;
+					img{
+						@include widthHeightsize(auto, 200px);
+						border-radius: 50%;
+						z-index: 0;
+					}
+					div.projTitle{
+						@include widthHeightsize(50%, auto);
+						@include flex(column, space-between, flex-start, wrap);
+						margin: 0px 20vw 50px 0px;
+						h4{
+							text-align: center;
+							font-weight: 200;
+							z-index: 1;
+							letter-spacing: 0.7em;
+							@media (min-width: 160px) and (max-width: $smallWidth){
+								font-size: 20px;
+							}
+							@media (min-width: $smallWidth+1) and (max-width: $mediumWidth){
+								font-size: 22px;
+							}
+							@media (min-width: $mediumWidth+1){
+								font-size: 24px;
+							}
+						}
+						.lineSeparator{
+							@include widthHeightsize(100%, 2px);
+						}
+					}
+					p{
+						@include widthHeightsize(50%, 20%);
+						z-index: 1;
+						margin-bottom: 5vw;
+						margin-right: 5vw;
+						margin-top: 5vw;
+					}
+					a{
+						text-align: center;
+						@include widthHeightsize(225px, 40px);
+						z-index: 1;
+						margin-top: 5vw;
+					}
 				}
 			}
 		}
