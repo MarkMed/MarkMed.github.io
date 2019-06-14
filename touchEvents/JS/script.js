@@ -10,4 +10,13 @@ $(document).ready(()=>{
 			}
 		);
 	});
+	
+	$(document).scroll(function(e){		
+		$("header").css(
+			{
+				"opacity": 1-($(document).scrollTop()/700),
+				"transform": "translateY("+$(document).scrollTop()/2+"px)"
+			}
+		);
+	});
 });
