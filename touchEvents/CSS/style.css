@@ -251,7 +251,7 @@ body main .sectionTitle .lineSeparator {
 /* line 99, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/touchEvents/scss/style.scss */
 body main .caseSection {
   background-color: #1e364b;
-  background-image: linear-gradient(to bottom, #132b40, #1e364b);
+  background-image: linear-gradient(to top, #132b40, #1e364b);
   border-radius: 20px;
   box-shadow: 3px 6px 9px 0px rgba(30, 54, 75, 0.5);
   display: flex;
@@ -266,7 +266,7 @@ body main .caseSection {
   body main .caseSection {
     height: 80vh;
     width: 83.33333%;
-    margin: 10vh 0;
+    margin: 5vh 0;
   }
 }
 
