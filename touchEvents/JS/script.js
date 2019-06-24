@@ -20,8 +20,30 @@ $(document).ready(()=>{
 		);
 	});
 	let touchStartDiv = $("#touchStart");
+	let touchEndDiv = $("#touchEnd");
+	let touchEventsDiv = $("#touchEvents");
+	let touchMoveDiv = $("#touchMove")
+	/////////////////////////////////////////
 	touchStartDiv.on("touchstart", ()=>{
-		touchStartDiv.html("Touched!")
+		touchStartDiv.html(`Touch Start!`)
+	});
+	/////////////////////////////////////////
+	touchEndDiv.on("touchend", (ev)=>{
+		touchEndDiv.html(`Touch End!`)
+	});
+	/////////////////////////////////////////
+	touchMoveDiv.on("touchmove", (ev)=>{
+		touchMoveDiv.html(`Moving in: <br/> x: ${ev.touches[0].clientX} y:  ${ev.touches[0].clientY}`)
+	});
+	/////////////////////////////////////////
+	touchEventsDiv.on("touchstart", ()=>{
+		touchEventsDiv.html(`Touch Start!`)
+	});
+	touchEventsDiv.on("touchend", ()=>{
+		touchEventsDiv.html(`Touch End!`)
+	});
+	touchEventsDiv.on("touchmove", (ev)=>{
+		touchEventsDiv.html(`Moving in: <br/> x: ${ev.touches[0].clientX} y:  ${ev.touches[0].clientY}`)
 	});
 });
 // function functionTest(){
