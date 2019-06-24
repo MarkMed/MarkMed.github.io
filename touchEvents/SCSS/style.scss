@@ -28,9 +28,10 @@ body{
 			text-transform: uppercase;
 			letter-spacing: 0.2em;
 		}
-		section{
+		& section{
 			@include widthHeightsize($width-12, 80%);
 			@include flex(column, center, center, wrap);
+			background-color: rgba(0, 0, 0, 0);
 			*{
 				@include widthHeightsize($width-12, auto);
 				text-align: center;
@@ -80,7 +81,7 @@ body{
 		@include widthHeightsize(50vw, 2px);
 		margin: 20px 25vw;
 	}
-	main{
+	section#touchEventsTests{
 		.sectionTitle{
 			@include flex(column, space-around, center, wrap);
 			h2{	
