@@ -293,12 +293,12 @@ body main .caseSection .eventTriggerArea {
   flex-wrap: wrap;
   color: rgba(255, 254, 219, 0.75);
   font-size: 20px;
-  font-weight: 900;
   font-family: BraGroLight;
   background-color: #1e3641;
   background-image: linear-gradient(to right bottom, #1e3641, #1e3636);
   box-shadow: 0px 0px 9px 0px rgba(255, 254, 219, 0.25);
   letter-spacing: 0.2em;
+  text-align: center;
 }
 
 /* line 131, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/touchEvents/scss/style.scss */
