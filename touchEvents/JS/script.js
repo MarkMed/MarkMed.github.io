@@ -19,4 +19,8 @@ $(document).ready(()=>{
 			}
 		);
 	});
+	let touchStartDiv = $("#touchStart");
+	touchStartDiv.on("touchstar", ()=>{
+		touchStartDiv.html("Touched!")
+	});
 });
