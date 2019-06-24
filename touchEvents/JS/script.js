@@ -20,7 +20,10 @@ $(document).ready(()=>{
 		);
 	});
 	let touchStartDiv = $("#touchStart");
-	touchStartDiv.on("touchstar", ()=>{
+	touchStartDiv.on("touchstart", ()=>{
 		touchStartDiv.html("Touched!")
 	});
 });
+// function functionTest(){
+// 	$("#touchStart").html("Touched1!")
+// }
