@@ -12,7 +12,9 @@ $(document).ready(()=>{
 	});
 	const header = $("header");
 	const firstTitle = $("#touchEventsTests .sectionTitle h2");
+	const secondTitle = $("#swipeEvents .sectionTitle h2");
 	let deviceHeight = $(window).height();
+	let documentHeight = $(document).height();
 	$(document).scroll(function(e){
 		if($(document).scrollTop() < deviceHeight){
 			header.css(
@@ -22,8 +24,11 @@ $(document).ready(()=>{
 				}
 			);
 		}
-		if($(document).scrollTop() > deviceHeight/2){
+		if($(document).scrollTop() > firstTitle.offset().top/1.1){
 			firstTitle.attr("class", "show");
+		}
+		if($(document).scrollTop() > secondTitle.offset().top/1.1){
+			secondTitle.attr("class", "show");
 		}
 	});
 	let touchStartDiv = $("#touchStart");
