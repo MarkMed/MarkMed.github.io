@@ -340,7 +340,7 @@ body section#swipeEvents {
   flex-wrap: wrap;
 }
 
-/* line 151, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/touchEvents/scss/style.scss */
+/* line 153, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/touchEvents/scss/style.scss */
 body section#swipeEvents .sectionTitle {
   display: flex;
   flex-direction: column;
@@ -349,14 +349,14 @@ body section#swipeEvents .sectionTitle {
   flex-wrap: wrap;
 }
 
-/* line 153, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/touchEvents/scss/style.scss */
+/* line 155, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/touchEvents/scss/style.scss */
 body section#swipeEvents .sectionTitle h2 {
   margin: 20px 0px 10px;
   color: rgba(255, 254, 219, 0.5);
   font-size: 28px;
 }
 
-/* line 158, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/touchEvents/scss/style.scss */
+/* line 160, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/touchEvents/scss/style.scss */
 body section#swipeEvents .sectionTitle .lineSeparator {
   height: 2px;
   width: 50%;
@@ -365,6 +365,38 @@ body section#swipeEvents .sectionTitle .lineSeparator {
 }
 
 /* line 166, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/touchEvents/scss/style.scss */
+body section#swipeEvents .sectionDescription {
+  color: rgba(30, 54, 65, 0.75);
+  border-radius: 20px;
+  background-image: linear-gradient(to top left, rgba(255, 254, 219, 0.75), rgba(239, 238, 202, 0.75));
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+@media (min-width: 160px) and (max-width: 640px) {
+  /* line 166, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/touchEvents/scss/style.scss */
+  body section#swipeEvents .sectionDescription {
+    height: auto;
+    width: 83.33333%;
+    margin: 5vh 0;
+  }
+}
+
+/* line 175, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/touchEvents/scss/style.scss */
+body section#swipeEvents .sectionDescription h4 {
+  margin: 5% 30% 10% 5%;
+  font-size: 23px;
+}
+
+/* line 179, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/touchEvents/scss/style.scss */
+body section#swipeEvents .sectionDescription p {
+  margin: 0% 20% 5% 10%;
+}
+
+/* line 183, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/touchEvents/scss/style.scss */
 body section#swipeEvents .caseSection {
   background-image: linear-gradient(to top left, rgba(255, 254, 219, 0.75), rgba(239, 238, 202, 0.75));
   color: rgba(30, 54, 65, 0.75);
@@ -377,7 +409,7 @@ body section#swipeEvents .caseSection {
 }
 
 @media (min-width: 160px) and (max-width: 640px) {
-  /* line 166, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/touchEvents/scss/style.scss */
+  /* line 183, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/touchEvents/scss/style.scss */
   body section#swipeEvents .caseSection {
     height: 80vh;
     width: 83.33333%;
@@ -385,18 +417,18 @@ body section#swipeEvents .caseSection {
   }
 }
 
-/* line 175, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/touchEvents/scss/style.scss */
+/* line 192, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/touchEvents/scss/style.scss */
 body section#swipeEvents .caseSection h3 {
   margin: 5% 30% 10% 5%;
   font-size: 23px;
 }
 
-/* line 179, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/touchEvents/scss/style.scss */
+/* line 196, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/touchEvents/scss/style.scss */
 body section#swipeEvents .caseSection p {
   margin: 5% 30% 10% 5%;
 }
 
-/* line 182, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/touchEvents/scss/style.scss */
+/* line 199, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/touchEvents/scss/style.scss */
 body section#swipeEvents .caseSection .eventTriggerArea {
   height: 50%;
   width: 83.33333%;
@@ -416,7 +448,7 @@ body section#swipeEvents .caseSection .eventTriggerArea {
   text-align: center;
 }
 
-/* line 197, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/touchEvents/scss/style.scss */
+/* line 214, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/touchEvents/scss/style.scss */
 body footer {
   height: 500px;
   width: 100vw;

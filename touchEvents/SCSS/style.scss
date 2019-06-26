@@ -148,6 +148,8 @@ body{
 		}
 	}	
 	section#swipeEvents{
+		@include widthHeightsize(100vw, auto);
+		@include flex(row, space-around, center, wrap);
 		.sectionTitle{
 			@include flex(column, space-around, center, wrap);
 			h2{	
@@ -161,8 +163,23 @@ body{
 				box-shadow: 0px 0px 2px 0px $clearColor50 inset;
 			}
 		}
-		@include widthHeightsize(100vw, auto);
-		@include flex(row, space-around, center, wrap);
+		.sectionDescription{
+			@media (min-width: 160px) and (max-width: $smallWidth){
+				@include widthHeightsize($width-10, auto);
+				margin: 5vh 0;
+			}
+			color: $primaryColor75;
+			border-radius: 20px;
+			background-image: linear-gradient(to top left, $grad-clearColor75);
+			@include flex(column, space-around, flex-start, wrap);
+			h4{
+				margin: 5% 30% 10% 5%;
+				font-size: 23px;
+			}
+			p{
+				margin: 0% 20% 5% 10%;
+			}
+		}
 		.caseSection{
 			background-image: linear-gradient(to top left, $grad-clearColor75);
 			@media (min-width: 160px) and (max-width: $smallWidth){
