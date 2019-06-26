@@ -88,6 +88,65 @@ body{
 				margin: 20px 0px 10px;
 				color: $primaryColor50;
 				font-size: 28px;
+				transition: 0.5s $animationFX;
+				transition-delay: 0.3s;
+				&.show{
+					transform: translateY(0px);
+					opacity: 1;
+				}
+				&.hidden{
+					transform: translateY(-20px);
+					opacity: 0.1;
+				}
+			}
+			.lineSeparator{		
+				@include widthHeightsize(50%, 2px);
+				margin: 10px 5px;
+			}
+
+		}
+		@include widthHeightsize(100vw, auto);
+		@include flex(row, space-around, center, wrap);
+		background-color: $clearColor75;
+		.caseSection{
+			background-color: $secondaryColor100;
+			background-image: linear-gradient(to top, $grad-secondaryColor100);
+			@media (min-width: 160px) and (max-width: $smallWidth){
+				@include widthHeightsize($width-10, 80vh);
+				margin: 5vh 0;
+			}
+			border-radius: 20px;
+			box-shadow: 3px 6px 9px 0px $secondaryColor50;
+			@include flex(row, space-around, flex-start, wrap);
+			h3{
+				margin: 5% 30% 10% 5%;
+				font-size: 23px;
+			}
+			p{
+				margin: 5% 30% 10% 5%;
+			}
+			.eventTriggerArea{
+				@include widthHeightsize($width-10, 50%);
+				border-radius: 20px;
+				@include flex(row, center, center, wrap);
+				color: $clearColor75;
+				font-size: 20px;
+				font-family: BraGroLight;
+				background-color: $primaryColor100;;
+				background-image: linear-gradient(to right bottom, $grad-primaryColor100);
+				box-shadow: 0px 0px 9px 0px $clearColor25;
+				letter-spacing: 0.2em;
+				text-align: center;
+			}
+		}
+	}	
+	section#swipeEvents{
+		.sectionTitle{
+			@include flex(column, space-around, center, wrap);
+			h2{	
+				margin: 20px 0px 10px;
+				color: $primaryColor50;
+				font-size: 28px;
 			}
 			.lineSeparator{		
 				@include widthHeightsize(50%, 2px);
