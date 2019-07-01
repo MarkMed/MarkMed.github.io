@@ -1,4 +1,11 @@
 $(document).ready(()=>{
+	//////////////////////////////////////////////////////////////////////////////////
+	const header = $("header");
+	const firstTitle = $("#touchEventsTests .sectionTitle h2");
+	const secondTitle = $("#swipeEvents .sectionTitle h2");
+	let deviceHeight = $(window).height();
+	let documentHeight = $(document).height();
+	//////////////////////////////////////////////////////////////////////////////////
 	$("#svgScrollDown").click(()=>{
 		$('html, body').animate(
 			{
@@ -10,11 +17,7 @@ $(document).ready(()=>{
 			}
 		);
 	});
-	const header = $("header");
-	const firstTitle = $("#touchEventsTests .sectionTitle h2");
-	const secondTitle = $("#swipeEvents .sectionTitle h2");
-	let deviceHeight = $(window).height();
-	let documentHeight = $(document).height();
+	//////////////////////////////////////////////////////////////////////////////////
 	$(document).scroll(function(e){
 		if($(document).scrollTop() < deviceHeight){
 			header.css(
@@ -31,10 +34,55 @@ $(document).ready(()=>{
 			secondTitle.attr("class", "show");
 		}
 	});
+	//////////////////////////////////////////////////////////////////////////////////
 	let touchStartDiv = $("#touchStart");
 	let touchEndDiv = $("#touchEnd");
 	let touchEventsDiv = $("#touchEvents");
 	let touchMoveDiv = $("#touchMove")
+	//////////////////////////////////////////////////////////////////////////////////
+	///// Double Tap Event /////
+	function doubleTap(elem){
+		const bool= (elem.attr("db-tap")==="true")?(true):(false);
+		elem.attr("db-tap", true);
+		setTimeout( function() { elem.attr("db-tap", false) }, 500 );
+		if(bool) {
+			let cEvent= new CustomEvent("dblTap");
+			elem.get(0).dispatchEvent(cEvent);
+			console.log("suppose to trigger the ev");
+			return false;
+		}
+		event.preventDefault();
+	}
+	//////////////////////////////////////////////////////////////////////////////////
+	///// Swipe Event /////
+	function swipe(ev){
+		
+	}
+	//////////////////////////////////////////////////////////////////////////////////
+	//////////////////////////////////////////////////////////////////////////////////
+	///// Swipe Up Event /////
+	function swipeUp(ev){
+		
+	}
+	//////////////////////////////////////////////////////////////////////////////////
+	//////////////////////////////////////////////////////////////////////////////////
+	///// Swipe Down Event /////
+	function swipeDown(ev){
+		
+	}
+	//////////////////////////////////////////////////////////////////////////////////
+	//////////////////////////////////////////////////////////////////////////////////
+	///// Swipe Rigth Event /////
+	function swipeRight(ev){
+		
+	}
+	//////////////////////////////////////////////////////////////////////////////////
+	//////////////////////////////////////////////////////////////////////////////////
+	///// Swipe Left Event /////
+	function swipeLeft(ev){
+		//
+	}
+	//////////////////////////////////////////////////////////////////////////////////
 	/////////////////////////////////////////
 	touchStartDiv.on("touchstart", (ev)=>{
 		ev.preventDefault();
@@ -55,15 +103,26 @@ $(document).ready(()=>{
 		ev.preventDefault();
 		touchEventsDiv.html(`Touch Start!`)
 	});
-	touchEventsDiv.on("touchend", (ev)=>{
-		ev.preventDefault();
-		touchEventsDiv.html(`Touch End!`)
-	});
 	touchEventsDiv.on("touchmove", (ev)=>{
 		ev.preventDefault();
 		touchEventsDiv.html(`Moving in: <br/> x: ${ev.touches[0].clientX} y:  ${ev.touches[0].clientY}`)
 	});
+	touchEventsDiv.on("touchend", (ev)=>{
+		ev.preventDefault();
+		touchEventsDiv.html(`Touch End!`)
+	});
 	/////////////////////////////////////////
+	$("#doubleTap").on("touchstart", (ev)=>{
+		ev.preventDefault();
+		let elem = $(ev.target)
+		elem.attr("db-tap", (!!elem.attr("db-tap"))?((elem.attr("db-tap")==="true")?(true):(false)):(false));
+		doubleTap(elem);
+	});
+	$("#doubleTap").on('dblTap', () => {
+		console.log("Listen that!");
+	});
+	/////////////////////////////////////////
+	//////////////////////////////////////////////////////////////////////////////////
 	// // Swipe Up / Down / Left / Right
 	// var initialX = null;
 	// var initialY = null;
