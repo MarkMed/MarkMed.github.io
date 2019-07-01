@@ -119,7 +119,7 @@ $(document).ready(()=>{
 		doubleTap(elem);
 	});
 	$("#doubleTap").on('dblTap', () => {
-		console.log("Listen that!");
+		$("#doubleTap").html(`Double Tap!`)
 	});
 	/////////////////////////////////////////
 	//////////////////////////////////////////////////////////////////////////////////
