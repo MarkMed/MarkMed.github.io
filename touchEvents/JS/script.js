@@ -41,12 +41,12 @@ $(document).ready(()=>{
 	let touchMoveDiv = $("#touchMove")
 	//////////////////////////////////////////////////////////////////////////////////
 	///// Double Tap Event /////
+	let cEvent= new CustomEvent("dblTap", { bubbles: true });
 	function doubleTap(elem){
 		const bool= (elem.attr("db-tap")==="true")?(true):(false);
 		elem.attr("db-tap", true);
 		setTimeout( function() { elem.attr("db-tap", false) }, 500 );
 		if(bool) {
-			let cEvent= new CustomEvent("dblTap");
 			elem.get(0).dispatchEvent(cEvent);
 			return false;
 		}
@@ -54,33 +54,84 @@ $(document).ready(()=>{
 	}
 	//////////////////////////////////////////////////////////////////////////////////
 	///// Swipe Event /////
-	function swipe(ev){
-		
-	}
-	//////////////////////////////////////////////////////////////////////////////////
-	//////////////////////////////////////////////////////////////////////////////////
+	let swipe = new CustomEvent("swipe", { bubbles: true });
 	///// Swipe Up Event /////
-	function swipeUp(ev){
-		
-	}
-	//////////////////////////////////////////////////////////////////////////////////
-	//////////////////////////////////////////////////////////////////////////////////
+	let swipeUp = new CustomEvent("swipeUp", { bubbles: true });
 	///// Swipe Down Event /////
-	function swipeDown(ev){
-		
-	}
-	//////////////////////////////////////////////////////////////////////////////////
-	//////////////////////////////////////////////////////////////////////////////////
+	let swipeDown = new CustomEvent("swipeDown", { bubbles: true });
 	///// Swipe Rigth Event /////
-	function swipeRight(ev){
-		
-	}
-	//////////////////////////////////////////////////////////////////////////////////
-	//////////////////////////////////////////////////////////////////////////////////
+	let swipeRight = new CustomEvent("swipeRight", { bubbles: true });
 	///// Swipe Left Event /////
-	function swipeLeft(ev){
-		//
-	}
+	let swipeLeft = new CustomEvent("swipeLeft", { bubbles: true });
+
+	$("#swipeEvent").on("touchstart", startTouch);
+	$("#swipeEvent").on("touchmove", moveTouch);
+	$("#swipeEvent").css(
+		{
+			"transition": "0.3s"
+		}
+	);
+	var initialX = null;
+	var initialY = null;
+	
+	function startTouch(e) {
+		initialX = e.touches[0].clientX;
+		initialY = e.touches[0].clientY;
+	};
+	
+	function moveTouch(e) {
+		
+		e.preventDefault();
+
+
+		if (initialX === null) {
+			return;
+		}
+		
+		if (initialY === null) {
+			return;
+		}
+		
+		var currentX = e.touches[0].clientX;
+		var currentY = e.touches[0].clientY;
+		
+		var diffX = initialX - currentX;
+		var diffY = initialY - currentY;
+		
+		e.target.dispatchEvent(swipe);
+
+		if (Math.abs(diffX) > Math.abs(diffY)) {
+			// sliding horizontally
+			if (diffX > 0) {
+		 		// swiped left
+				e.target.dispatchEvent(swipeLeft);
+				$("#swipeEvent").html("Swiped left");
+			} else {
+		 		// swiped right
+				e.target.dispatchEvent(swipeRight);
+		 		$("#swipeEvent").html("Swiped right");
+			}  
+		} else {
+			// sliding vertically
+			if (diffY > 0) {
+				// swiped up
+				e.target.dispatchEvent(swipeUp);
+				$("#swipeEvent").html("Swiped up");
+			} else {
+				// swiped down
+				e.target.dispatchEvent(swipeDown);
+				$("#swipeEvent").html("Swiped down");
+			}  
+		}
+		$("#swipeEvent").css(
+			{
+				"transform": "translate("+-diffX+"px, "+-diffY+"px)"
+			}
+		);
+		initialX = null;
+		initialY = null;
+	};
+
 	//////////////////////////////////////////////////////////////////////////////////
 	/////////////////////////////////////////
 	touchStartDiv.on("touchstart", (ev)=>{
@@ -122,67 +173,4 @@ $(document).ready(()=>{
 		$("#doubleTap").html(`Double Tap!`)
 	});
 	/////////////////////////////////////////
-	//////////////////////////////////////////////////////////////////////////////////
-	// Swipe Up / Down / Left / Right
-
-	$("#swipeEvent").on("touchstart", startTouch);
-	$("#swipeEvent").on("touchmove", moveTouch);
-	$("#swipeEvent").css(
-		{
-			"transition": "0.3s"
-		}
-	);
-	var initialX = null;
-	var initialY = null;
-	
-	function startTouch(e) {
-		initialX = e.touches[0].clientX;
-		initialY = e.touches[0].clientY;
-	};
-	
-	function moveTouch(e) {
-		
-		e.preventDefault();
-
-		if (initialX === null) {
-			return;
-		}
-		
-		if (initialY === null) {
-			return;
-		}
-		
-		var currentX = e.touches[0].clientX;
-		var currentY = e.touches[0].clientY;
-		
-		var diffX = initialX - currentX;
-		var diffY = initialY - currentY;
-		
-		if (Math.abs(diffX) > Math.abs(diffY)) {
-			// sliding horizontally
-			if (diffX > 0) {
-		 		// swiped left
-				$("#swipeEvent").html("Swiped left");
-			} else {
-		 		// swiped right
-		 		$("#swipeEvent").html("Swiped right");
-			}  
-		} else {
-			// sliding vertically
-			if (diffY > 0) {
-				// swiped up
-				$("#swipeEvent").html("Swiped up");
-			} else {
-				// swiped down
-				$("#swipeEvent").html("Swiped down");
-			}  
-		}
-		$("#swipeEvent").css(
-			{
-				"transform": "translate("+-diffX+"px, "+-diffY+"px)"
-			}
-		);
-		initialX = null;
-		initialY = null;
-	};
 });
