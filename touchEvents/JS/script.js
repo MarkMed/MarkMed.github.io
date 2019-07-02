@@ -127,6 +127,11 @@ $(document).ready(()=>{
 
 	$("#swipeEvent").on("touchstart", startTouch);
 	$("#swipeEvent").on("touchmove", moveTouch);
+	$("#swipeEvent").css(
+		{
+			"transition": "0.3s"
+		}
+	);
 	var initialX = null;
 	var initialY = null;
 	
@@ -157,7 +162,7 @@ $(document).ready(()=>{
 			// sliding horizontally
 			if (diffX > 0) {
 		 		// swiped left
-				 $("#swipeEvent").html("Swiped left");
+				$("#swipeEvent").html("Swiped left");
 			} else {
 		 		// swiped right
 		 		$("#swipeEvent").html("Swiped right");
@@ -172,7 +177,11 @@ $(document).ready(()=>{
 				$("#swipeEvent").html("Swiped down");
 			}  
 		}
-
+		$("#swipeEvent").css(
+			{
+				"transform": "translate("+-diffX+"px, "+-diffY+"px)"
+			}
+		);
 		initialX = null;
 		initialY = null;
 	};
