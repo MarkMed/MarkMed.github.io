@@ -68,7 +68,7 @@ $(document).ready(()=>{
 	$("#swipeEvent").on("touchmove", moveTouch);
 	$("#swipeEvent").css(
 		{
-			"transition": "0.3s"
+			"transition": "0.4s cubic-bezier(0.17, 0.99, 0.88, 1.32)"
 		}
 	);
 	var initialX = null;
@@ -105,31 +105,27 @@ $(document).ready(()=>{
 			if (diffX > 0) {
 		 		// swiped left
 				e.target.dispatchEvent(swipeLeft);
-				$("#swipeEvent").html("Swiped left");
 			} else {
 		 		// swiped right
 				e.target.dispatchEvent(swipeRight);
-		 		$("#swipeEvent").html("Swiped right");
 			}  
 		} else {
 			// sliding vertically
 			if (diffY > 0) {
 				// swiped up
 				e.target.dispatchEvent(swipeUp);
-				$("#swipeEvent").html("Swiped up");
 			} else {
 				// swiped down
 				e.target.dispatchEvent(swipeDown);
-				$("#swipeEvent").html("Swiped down");
 			}  
 		}
+		initialX = null;
+		initialY = null;
 		$("#swipeEvent").css(
 			{
 				"transform": "translate("+-diffX+"px, "+-diffY+"px)"
 			}
 		);
-		initialX = null;
-		initialY = null;
 	};
 
 	//////////////////////////////////////////////////////////////////////////////////
@@ -168,9 +164,25 @@ $(document).ready(()=>{
 		elem.attr("db-tap", (!!elem.attr("db-tap"))?((elem.attr("db-tap")==="true")?(true):(false)):(false));
 		doubleTap(elem);
 	});
-	/*Listening new event and doing something*/
-	$("#doubleTap").on('dblTap', () => {
+	/////////////////////////////////////////
+	/*Listening new events and doing something*/
+	$("#doubleTap").on("dblTap", () => {
 		$("#doubleTap").html(`Double Tap!`)
+	});
+	/////////////////////////////////////////
+	$("#swipeEvent").on("swipe", () => {
+	});
+	$("#swipeEvent").on("swipeUp", () => {
+		$("#swipeEvent").html("Swiped Up");
+	});
+	$("#swipeEvent").on("swipeDown", () => {
+		$("#swipeEvent").html("Swiped Down");
+	});
+	$("#swipeEvent").on("swipeRight", () => {
+		$("#swipeEvent").html("Swiped Right");
+	});
+	$("#swipeEvent").on("swipeLeft", () => {
+		$("#swipeEvent").html("Swiped Left");
 	});
 	/////////////////////////////////////////
 });
