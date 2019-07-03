@@ -65,72 +65,77 @@ $(document).ready(()=>{
 	///// Swipe Left Event /////
 	let swipeLeft = new CustomEvent("swipeLeft", { bubbles: true });
 
-	$("#swipeEvent").on("touchstart", startTouch);
-	$("#swipeEvent").on("touchmove", moveTouch);
+
+	function makeSwipable(elem){
+		
+		elem.on("touchstart", startTouch);
+		elem.on("touchmove", moveTouch);
+
+		var initialX = null;
+		var initialY = null;
+		
+		function startTouch(e) {
+			initialX = e.touches[0].clientX;
+			initialY = e.touches[0].clientY;
+		};
+		
+		function moveTouch(e) {
+			
+			e.preventDefault();
+
+
+			if (initialX === null) {
+				return;
+			}
+			
+			if (initialY === null) {
+				return;
+			}
+			
+			var currentX = e.touches[0].clientX;
+			var currentY = e.touches[0].clientY;
+			
+			var diffX = initialX - currentX;
+			var diffY = initialY - currentY;
+
+			swipe = new CustomEvent("swipe", { 
+				bubbles: true, 
+				detail:{
+					"swipeAmountX": -diffX,
+					"swipeAmountY": -diffY
+				}
+			});
+			
+			e.target.dispatchEvent(swipe);
+
+			if (Math.abs(diffX) > Math.abs(diffY)) {
+				// sliding horizontally
+				if (diffX > 0) {
+					// swiped left
+					e.target.dispatchEvent(swipeLeft);
+				} else {
+					// swiped right
+					e.target.dispatchEvent(swipeRight);
+				}  
+			} else {
+				// sliding vertically
+				if (diffY > 0) {
+					// swiped up
+					e.target.dispatchEvent(swipeUp);
+				} else {
+					// swiped down
+					e.target.dispatchEvent(swipeDown);
+				}  
+			}
+			initialX = null;
+			initialY = null;
+		};
+	}
 	$("#swipeEvent").css(
 		{
 			"transition": "0.4s cubic-bezier(0.17, 0.99, 0.88, 1.32)"
 		}
 	);
-	var initialX = null;
-	var initialY = null;
-	
-	function startTouch(e) {
-		initialX = e.touches[0].clientX;
-		initialY = e.touches[0].clientY;
-	};
-	
-	function moveTouch(e) {
-		
-		e.preventDefault();
-
-
-		if (initialX === null) {
-			return;
-		}
-		
-		if (initialY === null) {
-			return;
-		}
-		
-		var currentX = e.touches[0].clientX;
-		var currentY = e.touches[0].clientY;
-		
-		var diffX = initialX - currentX;
-		var diffY = initialY - currentY;
-
-		swipe = new CustomEvent("swipe", { 
-			bubbles: true, 
-			detail:{
-				"swipeAmountX": -diffX,
-				"swipeAmountY": -diffY
-			}
-		});
-		
-		e.target.dispatchEvent(swipe);
-
-		if (Math.abs(diffX) > Math.abs(diffY)) {
-			// sliding horizontally
-			if (diffX > 0) {
-		 		// swiped left
-				e.target.dispatchEvent(swipeLeft);
-			} else {
-		 		// swiped right
-				e.target.dispatchEvent(swipeRight);
-			}  
-		} else {
-			// sliding vertically
-			if (diffY > 0) {
-				// swiped up
-				e.target.dispatchEvent(swipeUp);
-			} else {
-				// swiped down
-				e.target.dispatchEvent(swipeDown);
-			}  
-		}
-		initialX = null;
-		initialY = null;
-	};
 
 	//////////////////////////////////////////////////////////////////////////////////
 	/////////////////////////////////////////
@@ -174,6 +179,17 @@ $(document).ready(()=>{
 		$("#doubleTap").html(`Double Tap!`)
 	});
 	/////////////////////////////////////////
+	makeSwipable($("#swipeLeft"));
+	$("#swipeLeft").on("swipe", (ev) => {
+		
+		$("#swipeLeft").css(
+			{
+				"transform": "translate("+ev.detail.swipeAmountX+"px, "+ev.detail.swipeAmountY+"px)"
+			}
+		);
+	});
+	/////////////////////////////////////////
+	makeSwipable($("#swipeEvent"));
 	$("#swipeEvent").on("swipe", (ev) => {
 		
 		$("#swipeEvent").css(
@@ -181,7 +197,6 @@ $(document).ready(()=>{
 				"transform": "translate("+ev.detail.swipeAmountX+"px, "+ev.detail.swipeAmountY+"px)"
 			}
 		);
-		console.log(ev.detail);
 	});
 	$("#swipeEvent").on("swipeUp", () => {
 		$("#swipeEvent").html("Swiped Up");
