@@ -54,19 +54,19 @@ $(document).ready(()=>{
 		event.preventDefault();
 	}
 	//////////////////////////////////////////////////////////////////////////////////
-	///// Swipe Event /////
-	let swipe;
-	///// Swipe Up Event /////
-	let swipeUp = new CustomEvent("swipeUp", { bubbles: true });
-	///// Swipe Down Event /////
-	let swipeDown = new CustomEvent("swipeDown", { bubbles: true });
-	///// Swipe Rigth Event /////
-	let swipeRight = new CustomEvent("swipeRight", { bubbles: true });
-	///// Swipe Left Event /////
-	let swipeLeft = new CustomEvent("swipeLeft", { bubbles: true });
 
 
 	function makeSwipable(elem){
+		///// Swipe Event /////
+		let swipe;
+		///// Swipe Up Event /////
+		let swipeUp = new CustomEvent("swipeUp", { bubbles: true });
+		///// Swipe Down Event /////
+		let swipeDown = new CustomEvent("swipeDown", { bubbles: true });
+		///// Swipe Rigth Event /////
+		let swipeRight = new CustomEvent("swipeRight", { bubbles: true });
+		///// Swipe Left Event /////
+		let swipeLeft = new CustomEvent("swipeLeft", { bubbles: true });
 		
 		elem.on("touchstart", startTouch);
 		elem.on("touchmove", moveTouch);
@@ -131,11 +131,6 @@ $(document).ready(()=>{
 			initialY = null;
 		};
 	}
-	$("#swipeEvent").css(
-		{
-			"transition": "0.4s cubic-bezier(0.17, 0.99, 0.88, 1.32)"
-		}
-	);
 
 	//////////////////////////////////////////////////////////////////////////////////
 	/////////////////////////////////////////
@@ -179,36 +174,56 @@ $(document).ready(()=>{
 		$("#doubleTap").html(`Double Tap!`)
 	});
 	/////////////////////////////////////////
-	makeSwipable($("#swipeLeft"));
-	$("#swipeLeft").on("swipe", (ev) => {
-		
-		$("#swipeLeft").css(
-			{
-				"transform": "translate("+ev.detail.swipeAmountX+"px, "+ev.detail.swipeAmountY+"px)"
-			}
-		);
+	const swipeUp = $("#swipeUp");
+	makeSwipable(swipeUp);
+	swipeUp.on("swipeUp", () => {
+		swipeUp.html("Swiped Up!");
 	});
 	/////////////////////////////////////////
-	makeSwipable($("#swipeEvent"));
-	$("#swipeEvent").on("swipe", (ev) => {
+	const swipeDown = $("#swipeDown");
+	makeSwipable(swipeDown);
+	swipeDown.on("swipeDown", () => {
+		swipeDown.html("Swiped Down!");
+	});
+	/////////////////////////////////////////
+	const swipeRight = $("#swipeRight");
+	makeSwipable(swipeRight);
+	swipeRight.on("swipeRight", () => {
+		swipeRight.html("Swiped Right!");
+	});
+	/////////////////////////////////////////
+	const swipeLeft = $("#swipeLeft");
+	makeSwipable(swipeLeft);
+	swipeLeft.on("swipeLeft", () => {
+		swipeLeft.html("Swiped Left!");
+	});
+	/////////////////////////////////////////
+	const swipeEvent = $("#swipeEvent");
+	swipeEvent.css(
+		{
+			"transition": "0.4s cubic-bezier(0.17, 0.99, 0.88, 1.32)"
+		}
+	);
+	makeSwipable(swipeEvent);
+	swipeEvent.on("swipe", (ev) => {
 		
-		$("#swipeEvent").css(
+		swipeEvent.css(
 			{
 				"transform": "translate("+ev.detail.swipeAmountX+"px, "+ev.detail.swipeAmountY+"px)"
 			}
 		);
 	});
-	$("#swipeEvent").on("swipeUp", () => {
-		$("#swipeEvent").html("Swiped Up");
+	swipeEvent.on("swipeUp", () => {
+		swipeEvent.html("Swiped Up!");
 	});
-	$("#swipeEvent").on("swipeDown", () => {
-		$("#swipeEvent").html("Swiped Down");
+	swipeEvent.on("swipeDown", () => {
+		swipeEvent.html("Swiped Down!");
 	});
-	$("#swipeEvent").on("swipeRight", () => {
-		$("#swipeEvent").html("Swiped Right");
+	swipeEvent.on("swipeRight", () => {
+		swipeEvent.html("Swiped Right!");
 	});
-	$("#swipeEvent").on("swipeLeft", () => {
-		$("#swipeEvent").html("Swiped Left");
+	swipeEvent.on("swipeLeft", () => {
+		swipeEvent.html("Swiped Left!");
 	});
 	/////////////////////////////////////////
 });
