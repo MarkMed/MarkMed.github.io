@@ -36,11 +36,6 @@ $(document).ready(()=>{
 		}
 	});
 	//////////////////////////////////////////////////////////////////////////////////
-	let touchStartDiv = $("#touchStart");
-	let touchEndDiv = $("#touchEnd");
-	let touchEventsDiv = $("#touchEvents");
-	let touchMoveDiv = $("#touchMove")
-	//////////////////////////////////////////////////////////////////////////////////
 	///// Double Tap Event /////
 	let dblTap= new CustomEvent("dblTap", { bubbles: true });
 	function doubleTap(elem){
@@ -134,21 +129,25 @@ $(document).ready(()=>{
 
 	//////////////////////////////////////////////////////////////////////////////////
 	/////////////////////////////////////////
+	let touchStartDiv = $("#touchStart");
 	touchStartDiv.on("touchstart", (ev)=>{
 		ev.preventDefault();
 		touchStartDiv.html(`Touch Start!`)
 	});
 	/////////////////////////////////////////
+	let touchEndDiv = $("#touchEnd");
 	touchEndDiv.on("touchend", (ev)=>{
 		ev.preventDefault();
 		touchEndDiv.html(`Touch End!`)
 	});
 	/////////////////////////////////////////
+	let touchMoveDiv = $("#touchMove");
 	touchMoveDiv.on("touchmove", (ev)=>{
 		ev.preventDefault();
 		touchMoveDiv.html(`Moving in: <br/> x: ${ev.touches[0].clientX} y:  ${ev.touches[0].clientY}`)
 	});
 	/////////////////////////////////////////
+	let touchEventsDiv = $("#touchEvents");
 	touchEventsDiv.on("touchstart", (ev)=>{
 		ev.preventDefault();
 		touchEventsDiv.html(`Touch Start!`)

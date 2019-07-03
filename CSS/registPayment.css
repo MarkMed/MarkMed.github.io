@@ -1,30 +1,30 @@
+/* line 2, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/scss/_noDefaultStyle.scss */
 * {
   margin: 0;
   padding: 0;
   cursor: default;
-  font-weight: 100;
-}
+  font-weight: 100; }
 
+/* line 8, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/scss/_noDefaultStyle.scss */
 a {
   text-decoration: none;
   color: black;
-  cursor: pointer;
-}
+  cursor: pointer; }
 
+/* line 13, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/scss/_noDefaultStyle.scss */
 ul, ol {
-  list-style: none;
-}
+  list-style: none; }
 
+/* line 16, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/scss/_noDefaultStyle.scss */
 *:focus {
   outline: none;
   color: black;
-  text-decoration: none;
-}
+  text-decoration: none; }
 
+/* line 22, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/scss/_noDefaultStyle.scss */
 input {
   background-color: transparent;
-  border: none;
-}
+  border: none; }
 
 /*
 width of element:
@@ -45,381 +45,309 @@ width of element:
 /*Mixins*/
 @font-face {
   font-family: "Cinzel";
-  src: url(../Resources/Cinzel-Regular.ttf);
-}
+  src: url(../Resources/Cinzel-Regular.ttf); }
 
 @font-face {
   font-family: "RalewayLight";
-  src: url(../Resources/Raleway-Light_0.ttf);
-}
+  src: url(../Resources/Raleway-Light_0.ttf); }
 
 @font-face {
   font-family: "RalewayELight";
-  src: url(../Resources/Raleway-ExtraLight.ttf);
-}
+  src: url(../Resources/Raleway-ExtraLight.ttf); }
 
 @font-face {
   font-family: "RalewayThin";
-  src: url(../Resources/Raleway-Thin.ttf);
-}
+  src: url(../Resources/Raleway-Thin.ttf); }
 
 @font-face {
   font-family: "DetalThin";
-  src: url(../Resources/Datalegreya-Thin.otf);
-}
+  src: url(../Resources/Datalegreya-Thin.otf); }
 
 @font-face {
   font-family: "BraGroLight";
-  src: url(../Resources/brandon-grotesque-light.woff);
-}
+  src: url(../Resources/brandon-grotesque-light.woff); }
 
 /*html{
 	filter: sepia(70%);
 }Night Shift*/
+/* line 8, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/scss/registPayment.scss */
 body section {
   background-color: #1e364b;
-  margin-top: 100vh;
-}
-
-@media (min-width: 160px) and (max-width: 640px) {
-  body section {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    align-items: center;
-    flex-wrap: wrap;
-  }
-}
-
-@media (min-width: 160px) and (max-width: 640px) and (orientation: portrait) {
-  body section {
-    display: flex;
-    flex-direction: column-reverse;
-    justify-content: flex-start;
-    align-items: center;
-    flex-wrap: wrap;
-  }
-}
-
-@media (min-width: 641px) and (max-width: 1007px) {
-  body section {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    align-items: center;
-    flex-wrap: wrap;
-  }
-}
-
-@media (min-width: 1008px) {
-  body section {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    align-items: center;
-    flex-wrap: wrap;
-  }
-}
-
-body section form {
-  transition: 0.4s cubic-bezier(0, 0, 0.27, 0.97);
-}
-
-@media (min-width: 160px) and (max-width: 640px) {
+  margin-top: 100vh; }
+  @media (min-width: 160px) and (max-width: 640px) {
+    /* line 8, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/scss/registPayment.scss */
+    body section {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      align-items: center;
+      flex-wrap: wrap; } }
+  @media (min-width: 160px) and (max-width: 640px) and (orientation: portrait) {
+    /* line 8, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/scss/registPayment.scss */
+    body section {
+      display: flex;
+      flex-direction: column-reverse;
+      justify-content: flex-start;
+      align-items: center;
+      flex-wrap: wrap; } }
+  @media (min-width: 641px) and (max-width: 1007px) {
+    /* line 8, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/scss/registPayment.scss */
+    body section {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      align-items: center;
+      flex-wrap: wrap; } }
+  @media (min-width: 1008px) {
+    /* line 8, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/scss/registPayment.scss */
+    body section {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      align-items: center;
+      flex-wrap: wrap; } }
+  /* line 23, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/scss/registPayment.scss */
   body section form {
-    height: 100%;
-    width: 50%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-    flex-wrap: wrap;
-  }
-}
-
-@media (min-width: 160px) and (max-width: 640px) and (orientation: portrait) {
-  body section form {
-    height: 50%;
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-    flex-wrap: wrap;
-  }
-}
-
-@media (min-width: 641px) and (max-width: 1007px) {
-  body section form {
-    height: 100%;
-    width: 50%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-    flex-wrap: wrap;
-  }
-}
-
-@media (min-width: 1008px) {
-  body section form {
-    height: 100vh;
-    width: 50vw;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-    flex-wrap: wrap;
-  }
-}
-
-body section form .input {
-  font-family: "RalewayELight";
-  transition: 0.4s cubic-bezier(0, 0, 0.27, 0.97);
-  letter-spacing: 4px;
-}
-
-@media (min-width: 160px) and (max-width: 640px) {
-  body section form .input {
-    height: 30%;
-    width: 80%;
-    font-size: 13px;
+    transition: 0.4s cubic-bezier(0, 0, 0.27, 0.97); }
+    @media (min-width: 160px) and (max-width: 640px) {
+      /* line 23, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/scss/registPayment.scss */
+      body section form {
+        height: 100%;
+        width: 50%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        flex-wrap: wrap; } }
+    @media (min-width: 160px) and (max-width: 640px) and (orientation: portrait) {
+      /* line 23, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/scss/registPayment.scss */
+      body section form {
+        height: 50%;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        flex-wrap: wrap; } }
+    @media (min-width: 641px) and (max-width: 1007px) {
+      /* line 23, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/scss/registPayment.scss */
+      body section form {
+        height: 100%;
+        width: 50%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        flex-wrap: wrap; } }
+    @media (min-width: 1008px) {
+      /* line 23, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/scss/registPayment.scss */
+      body section form {
+        height: 100vh;
+        width: 50vw;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        flex-wrap: wrap; } }
+    /* line 41, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/scss/registPayment.scss */
+    body section form .input {
+      font-family: "RalewayELight";
+      transition: 0.4s cubic-bezier(0, 0, 0.27, 0.97);
+      letter-spacing: 4px; }
+      @media (min-width: 160px) and (max-width: 640px) {
+        /* line 41, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/scss/registPayment.scss */
+        body section form .input {
+          height: 30%;
+          width: 80%;
+          font-size: 13px;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: flex-start;
+          flex-wrap: wrap; } }
+      @media (min-width: 160px) and (max-width: 640px) and (orientation: portrait) {
+        /* line 41, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/scss/registPayment.scss */
+        body section form .input {
+          height: 30%;
+          width: 80%;
+          font-size: 13px;
+          display: flex;
+          flex-direction: column;
+          justify-content: flex-start;
+          align-items: flex-start;
+          flex-wrap: wrap; } }
+      @media (min-width: 641px) and (max-width: 1007px) {
+        /* line 41, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/scss/registPayment.scss */
+        body section form .input {
+          height: 30%;
+          width: 80%;
+          font-size: 13px;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: flex-start;
+          flex-wrap: wrap; } }
+      @media (min-width: 1008px) {
+        /* line 41, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/scss/registPayment.scss */
+        body section form .input {
+          height: 20vh;
+          width: 80%;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-around;
+          align-items: flex-start;
+          flex-wrap: wrap; } }
+      /* line 64, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/scss/registPayment.scss */
+      body section form .input label.expanded {
+        transition: 0.4s cubic-bezier(0, 0, 0.27, 0.97);
+        margin-bottom: 20px;
+        cursor: pointer; }
+        /* line 68, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/scss/registPayment.scss */
+        body section form .input label.expanded:hover {
+          color: rgba(255, 195, 60, 0.75); }
+      /* line 72, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/scss/registPayment.scss */
+      body section form .input input.expanded {
+        border: 1px solid rgba(255, 254, 219, 0.5);
+        border-radius: 20px;
+        cursor: initial;
+        font-family: "RalewayLight";
+        padding: 10px;
+        color: rgba(255, 254, 219, 0.5);
+        transition: 0.4s cubic-bezier(0, 0, 0.27, 0.97); }
+        @media (min-width: 160px) and (max-width: 640px) {
+          /* line 72, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/scss/registPayment.scss */
+          body section form .input input.expanded {
+            height: 5px;
+            width: calc(100% - 30px); } }
+        @media (min-width: 160px) and (max-width: 640px) and (orientation: portrait) {
+          /* line 72, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/scss/registPayment.scss */
+          body section form .input input.expanded {
+            height: 5px;
+            width: calc(100% - 30px); } }
+        @media (min-width: 641px) and (max-width: 1007px) {
+          /* line 72, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/scss/registPayment.scss */
+          body section form .input input.expanded {
+            height: 5px;
+            width: calc(100% - 30px); } }
+        @media (min-width: 1008px) {
+          /* line 72, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/scss/registPayment.scss */
+          body section form .input input.expanded {
+            height: auto;
+            width: calc(100% - 20px); } }
+        /* line 92, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/scss/registPayment.scss */
+        body section form .input input.expanded:hover {
+          border: 1px solid rgba(255, 195, 60, 0.75);
+          color: rgba(255, 195, 60, 0.75); }
+        /* line 96, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/scss/registPayment.scss */
+        body section form .input input.expanded:focus {
+          border: 1px solid rgba(30, 54, 65, 0.75);
+          color: rgba(30, 54, 65, 0.75);
+          background-color: #fffedb;
+          box-shadow: inset 0px 0px 5px 0px #1e3641; }
+    /* line 104, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/scss/registPayment.scss */
+    body section form div.formBtn {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      font-size: 0.7em;
+      font-family: "RalewayELight";
+      transition: 0.4s cubic-bezier(0, 0, 0.27, 0.97);
+      border: 1px solid rgba(255, 254, 219, 0.5);
+      color: rgba(255, 254, 219, 0.75);
+      border-radius: 20px;
+      text-align: center;
+      letter-spacing: 5px;
+      background-color: rgba(255, 254, 219, 0);
+      cursor: pointer;
+      text-transform: uppercase; }
+      @media (min-width: 160px) and (max-width: 640px) {
+        /* line 104, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/scss/registPayment.scss */
+        body section form div.formBtn {
+          height: 40px;
+          width: 110px; } }
+      @media (min-width: 160px) and (max-width: 640px) and (orientation: portrait) {
+        /* line 104, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/scss/registPayment.scss */
+        body section form div.formBtn {
+          height: 40px;
+          width: 120px; } }
+      @media (min-width: 641px) and (max-width: 1007px) {
+        /* line 104, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/scss/registPayment.scss */
+        body section form div.formBtn {
+          height: 40px;
+          width: 140px; } }
+      @media (min-width: 1008px) {
+        /* line 104, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/scss/registPayment.scss */
+        body section form div.formBtn {
+          height: 60px;
+          width: 200px; } }
+      /* line 129, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/scss/registPayment.scss */
+      body section form div.formBtn:hover {
+        border: 1px solid rgba(255, 195, 60, 0.75);
+        color: rgba(255, 195, 60, 0.75);
+        letter-spacing: 8px; }
+      /* line 134, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/scss/registPayment.scss */
+      body section form div.formBtn:active {
+        border: 1px solid rgba(30, 54, 65, 0.75);
+        color: rgba(30, 54, 65, 0.75);
+        background-color: rgba(255, 254, 219, 0.75); }
+  /* line 141, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/scss/registPayment.scss */
+  body section article {
+    font-family: "BraGroLight";
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    flex-wrap: wrap;
-  }
-}
-
-@media (min-width: 160px) and (max-width: 640px) and (orientation: portrait) {
-  body section form .input {
-    height: 30%;
-    width: 80%;
-    font-size: 13px;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
-    flex-wrap: wrap;
-  }
-}
-
-@media (min-width: 641px) and (max-width: 1007px) {
-  body section form .input {
-    height: 30%;
-    width: 80%;
-    font-size: 13px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    flex-wrap: wrap;
-  }
-}
-
-@media (min-width: 1008px) {
-  body section form .input {
-    height: 20vh;
-    width: 80%;
-    display: flex;
-    flex-direction: column;
     justify-content: space-around;
-    align-items: flex-start;
+    align-items: center;
     flex-wrap: wrap;
-  }
-}
+    background-color: rgba(255, 254, 219, 0.75);
+    color: rgba(30, 54, 65, 0.75); }
+    @media (min-width: 160px) and (max-width: 640px) {
+      /* line 141, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/scss/registPayment.scss */
+      body section article {
+        height: 100%;
+        width: 50%;
+        box-shadow: inset 4px 1px 8px 0px rgba(0, 0, 0, 0.6); } }
+    @media (min-width: 160px) and (max-width: 640px) and (orientation: portrait) {
+      /* line 141, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/scss/registPayment.scss */
+      body section article {
+        height: 50%;
+        width: 100%;
+        box-shadow: inset 0px -2px 8px 0px rgba(0, 0, 0, 0.6); } }
+    @media (min-width: 641px) and (max-width: 1007px) {
+      /* line 141, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/scss/registPayment.scss */
+      body section article {
+        height: 100vh;
+        width: 50vw;
+        box-shadow: inset 4px 1px 8px 0px rgba(0, 0, 0, 0.6); } }
+    @media (min-width: 1008px) {
+      /* line 141, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/scss/registPayment.scss */
+      body section article {
+        height: 100vh;
+        width: 50vw;
+        box-shadow: inset 4px 1px 8px 0px rgba(0, 0, 0, 0.6); } }
+    @media (min-width: 160px) and (max-width: 640px) {
+      /* line 162, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/scss/registPayment.scss */
+      body section article * {
+        height: auto;
+        width: 90%; } }
+    @media (min-width: 160px) and (max-width: 640px) and (orientation: portrait) {
+      /* line 162, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/scss/registPayment.scss */
+      body section article * {
+        height: auto;
+        width: 90%; } }
+    @media (min-width: 641px) and (max-width: 1007px) {
+      /* line 162, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/scss/registPayment.scss */
+      body section article * {
+        height: auto;
+        width: 80%; } }
+    @media (min-width: 1008px) {
+      /* line 162, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/scss/registPayment.scss */
+      body section article * {
+        height: auto;
+        width: 80%; } }
 
-body section form .input label.expanded {
-  transition: 0.4s cubic-bezier(0, 0, 0.27, 0.97);
-  margin-bottom: 20px;
-  cursor: pointer;
-}
-
-body section form .input label.expanded:hover {
-  color: rgba(255, 195, 60, 0.75);
-}
-
-body section form .input input.expanded {
-  border: 1px solid rgba(255, 254, 219, 0.5);
-  border-radius: 20px;
-  cursor: initial;
-  font-family: "RalewayLight";
-  padding: 10px;
-  color: rgba(255, 254, 219, 0.5);
-  transition: 0.4s cubic-bezier(0, 0, 0.27, 0.97);
-}
-
-@media (min-width: 160px) and (max-width: 640px) {
-  body section form .input input.expanded {
-    height: 5px;
-    width: calc(100% - 30px);
-  }
-}
-
-@media (min-width: 160px) and (max-width: 640px) and (orientation: portrait) {
-  body section form .input input.expanded {
-    height: 5px;
-    width: calc(100% - 30px);
-  }
-}
-
-@media (min-width: 641px) and (max-width: 1007px) {
-  body section form .input input.expanded {
-    height: 5px;
-    width: calc(100% - 30px);
-  }
-}
-
-@media (min-width: 1008px) {
-  body section form .input input.expanded {
-    height: auto;
-    width: calc(100% - 20px);
-  }
-}
-
-body section form .input input.expanded:hover {
-  border: 1px solid rgba(255, 195, 60, 0.75);
-  color: rgba(255, 195, 60, 0.75);
-}
-
-body section form .input input.expanded:focus {
-  border: 1px solid rgba(30, 54, 65, 0.75);
-  color: rgba(30, 54, 65, 0.75);
-  background-color: #fffedb;
-  box-shadow: inset 0px 0px 5px 0px #1e3641;
-}
-
-body section form div.formBtn {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  font-size: 0.7em;
-  font-family: "RalewayELight";
-  transition: 0.4s cubic-bezier(0, 0, 0.27, 0.97);
-  border: 1px solid rgba(255, 254, 219, 0.5);
-  color: rgba(255, 254, 219, 0.75);
-  border-radius: 20px;
-  text-align: center;
-  letter-spacing: 5px;
-  background-color: rgba(255, 254, 219, 0);
-  cursor: pointer;
-  text-transform: uppercase;
-}
-
-@media (min-width: 160px) and (max-width: 640px) {
-  body section form div.formBtn {
-    height: 40px;
-    width: 110px;
-  }
-}
-
-@media (min-width: 160px) and (max-width: 640px) and (orientation: portrait) {
-  body section form div.formBtn {
-    height: 40px;
-    width: 120px;
-  }
-}
-
-@media (min-width: 641px) and (max-width: 1007px) {
-  body section form div.formBtn {
-    height: 40px;
-    width: 140px;
-  }
-}
-
-@media (min-width: 1008px) {
-  body section form div.formBtn {
-    height: 60px;
-    width: 200px;
-  }
-}
-
-body section form div.formBtn:hover {
-  border: 1px solid rgba(255, 195, 60, 0.75);
-  color: rgba(255, 195, 60, 0.75);
-  letter-spacing: 8px;
-}
-
-body section form div.formBtn:active {
-  border: 1px solid rgba(30, 54, 65, 0.75);
-  color: rgba(30, 54, 65, 0.75);
-  background-color: rgba(255, 254, 219, 0.75);
-}
-
-body section article {
-  font-family: "BraGroLight";
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
-  flex-wrap: wrap;
-  background-color: rgba(255, 254, 219, 0.75);
-  color: rgba(30, 54, 65, 0.75);
-}
-
-@media (min-width: 160px) and (max-width: 640px) {
-  body section article {
-    height: 100%;
-    width: 50%;
-    box-shadow: inset 4px 1px 8px 0px rgba(0, 0, 0, 0.6);
-  }
-}
-
-@media (min-width: 160px) and (max-width: 640px) and (orientation: portrait) {
-  body section article {
-    height: 50%;
-    width: 100%;
-    box-shadow: inset 0px -2px 8px 0px rgba(0, 0, 0, 0.6);
-  }
-}
-
-@media (min-width: 641px) and (max-width: 1007px) {
-  body section article {
-    height: 100vh;
-    width: 50vw;
-    box-shadow: inset 4px 1px 8px 0px rgba(0, 0, 0, 0.6);
-  }
-}
-
-@media (min-width: 1008px) {
-  body section article {
-    height: 100vh;
-    width: 50vw;
-    box-shadow: inset 4px 1px 8px 0px rgba(0, 0, 0, 0.6);
-  }
-}
-
-@media (min-width: 160px) and (max-width: 640px) {
-  body section article * {
-    height: auto;
-    width: 90%;
-  }
-}
-
-@media (min-width: 160px) and (max-width: 640px) and (orientation: portrait) {
-  body section article * {
-    height: auto;
-    width: 90%;
-  }
-}
-
-@media (min-width: 641px) and (max-width: 1007px) {
-  body section article * {
-    height: auto;
-    width: 80%;
-  }
-}
-
-@media (min-width: 1008px) {
-  body section article * {
-    height: auto;
-    width: 80%;
-  }
-}
-
+/* line 178, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/scss/registPayment.scss */
 body main {
   margin-top: 0;
   height: 0vh;
@@ -429,10 +357,10 @@ body main {
   justify-content: space-around;
   align-items: center;
   flex-wrap: wrap;
-  transition: 0.4s cubic-bezier(0, 0, 0.27, 0.97);
-}
+  transition: 0.4s cubic-bezier(0, 0, 0.27, 0.97); }
+  /* line 183, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/scss/registPayment.scss */
+  body main.expanded {
+    height: 100vh;
+    width: 100%; }
 
-body main.expanded {
-  height: 100vh;
-  width: 100%;
-}
+/*# sourceMappingURL=../css/registPayment.map */
