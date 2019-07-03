@@ -1,3 +1,4 @@
+var globalVar;
 $(document).ready(()=>{
 	//////////////////////////////////////////////////////////////////////////////////
 	const header = $("header");
@@ -41,20 +42,20 @@ $(document).ready(()=>{
 	let touchMoveDiv = $("#touchMove")
 	//////////////////////////////////////////////////////////////////////////////////
 	///// Double Tap Event /////
-	let cEvent= new CustomEvent("dblTap", { bubbles: true });
+	let dblTap= new CustomEvent("dblTap", { bubbles: true });
 	function doubleTap(elem){
 		const bool= (elem.attr("db-tap")==="true")?(true):(false);
 		elem.attr("db-tap", true);
 		setTimeout( function() { elem.attr("db-tap", false) }, 500 );
 		if(bool) {
-			elem.get(0).dispatchEvent(cEvent);
+			elem.get(0).dispatchEvent(dblTap);
 			return false;
 		}
 		event.preventDefault();
 	}
 	//////////////////////////////////////////////////////////////////////////////////
 	///// Swipe Event /////
-	let swipe = new CustomEvent("swipe", { bubbles: true });
+	let swipe;
 	///// Swipe Up Event /////
 	let swipeUp = new CustomEvent("swipeUp", { bubbles: true });
 	///// Swipe Down Event /////
@@ -97,6 +98,14 @@ $(document).ready(()=>{
 		
 		var diffX = initialX - currentX;
 		var diffY = initialY - currentY;
+
+		swipe = new CustomEvent("swipe", { 
+			bubbles: true, 
+			detail:{
+				"swipeAmountX": -diffX,
+				"swipeAmountY": -diffY
+			}
+		});
 		
 		e.target.dispatchEvent(swipe);
 
@@ -121,11 +130,6 @@ $(document).ready(()=>{
 		}
 		initialX = null;
 		initialY = null;
-		$("#swipeEvent").css(
-			{
-				"transform": "translate("+-diffX+"px, "+-diffY+"px)"
-			}
-		);
 	};
 
 	//////////////////////////////////////////////////////////////////////////////////
@@ -170,7 +174,14 @@ $(document).ready(()=>{
 		$("#doubleTap").html(`Double Tap!`)
 	});
 	/////////////////////////////////////////
-	$("#swipeEvent").on("swipe", () => {
+	$("#swipeEvent").on("swipe", (ev) => {
+		
+		$("#swipeEvent").css(
+			{
+				"transform": "translate("+ev.detail.swipeAmountX+"px, "+ev.detail.swipeAmountY+"px)"
+			}
+		);
+		console.log(ev.detail);
 	});
 	$("#swipeEvent").on("swipeUp", () => {
 		$("#swipeEvent").html("Swiped Up");
