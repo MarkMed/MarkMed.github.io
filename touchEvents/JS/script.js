@@ -38,15 +38,22 @@ $(document).ready(()=>{
 	//////////////////////////////////////////////////////////////////////////////////
 	///// Double Tap Event /////
 	let dblTap= new CustomEvent("dblTap", { bubbles: true });
-	function doubleTap(elem){
-		const bool= (elem.attr("db-tap")==="true")?(true):(false);
-		elem.attr("db-tap", true);
-		setTimeout( function() { elem.attr("db-tap", false) }, 500 );
-		if(bool) {
-			elem.get(0).dispatchEvent(dblTap);
-			return false;
+	function makeDblTapable(elem){
+		function doubleTap(elem){
+			const bool= (elem.attr("db-tap")==="true")?(true):(false);
+			elem.attr("db-tap", true);
+			setTimeout( function() { elem.attr("db-tap", false) }, 500 );
+			if(bool) {
+				elem.get(0).dispatchEvent(dblTap);
+				return false;
+			}
+			event.preventDefault();
 		}
-		event.preventDefault();
+		elem.on("touchstart", (ev)=>{
+			ev.preventDefault();
+			elem.attr("db-tap", (!!elem.attr("db-tap"))?((elem.attr("db-tap")==="true")?(true):(false)):(false));
+			doubleTap(elem);
+		});
 	}
 	//////////////////////////////////////////////////////////////////////////////////
 
@@ -161,16 +168,11 @@ $(document).ready(()=>{
 		touchEventsDiv.html(`Touch End!`)
 	});
 	/////////////////////////////////////////
-	$("#doubleTap").on("touchstart", (ev)=>{
-		ev.preventDefault();
-		let elem = $(ev.target)
-		elem.attr("db-tap", (!!elem.attr("db-tap"))?((elem.attr("db-tap")==="true")?(true):(false)):(false));
-		doubleTap(elem);
-	});
-	/////////////////////////////////////////
+	const doubleTap = $("#doubleTap");
+	makeDblTapable(doubleTap);
 	/*Listening new events and doing something*/
-	$("#doubleTap").on("dblTap", () => {
-		$("#doubleTap").html(`Double Tap!`)
+	doubleTap.on("dblTap", () => {
+		doubleTap.html(`Double Tap!`)
 	});
 	/////////////////////////////////////////
 	const swipeUp = $("#swipeUp");
