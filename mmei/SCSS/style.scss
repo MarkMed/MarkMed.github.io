@@ -27,7 +27,6 @@ body{
 		font-size: 14px;
 	}
 	#banner{
-		opacity: 0;
 		z-index: 99;
 		background-color: $primaryColor100;
 		top: 0;
@@ -40,20 +39,11 @@ body{
 			@include flex(row, flex-start, center, wrap);
 			font-family: Unlock;
 			position: relative;
-			text-align: center;
 			left: 10px;
 			font-weight: 100;
 			letter-spacing: 0.3vw;
-			@include widthHeightsize($width-8, 90%);
-			@media (min-width: 160px) and (max-width: $smallWidth){
-				font-size: 14px;
-			}
-			@media (min-width: $smallWidth+1) and (max-width: $mediumWidth){
-				font-size: 16px;
-			}
-			@media (min-width: $mediumWidth+1){
-				font-size: 18px;
-			}
+			@include widthHeightsize($width-7, 90%);
+			font-size: 1rem;
 		}
 
 		a{
