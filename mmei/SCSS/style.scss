@@ -95,6 +95,7 @@ body{
 		background-position: 100% 50%;
 		@media (min-width: 160px) and (max-width: $smallWidth) and (orientation: portrait){
 			background-attachment: fixed;
+			background-position: center;
 		}
 	}
 	header{
