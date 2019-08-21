@@ -93,6 +93,9 @@ body{
 		background-size: cover;
 		@include widthHeightsize($width-12, 100vh);
 		background-position: 100% 50%;
+		@media (min-width: 160px) and (max-width: $smallWidth) and (orientation: portrait){
+			background-attachment: fixed;
+		}
 	}
 	header{
 		transition: 0.7s $animationFX;
