@@ -90,7 +90,7 @@ body{
 		background-image: url("../Resources/WhatsApp Image 2019-04-11 at 16.40.33.jpeg");
 		background-repeat: no-repeat;
 		position: absolute;
-		background-size: 150% 150%;
+		background-size: cover;
 		@include widthHeightsize($width-12, 100vh);
 		background-position: 100% 50%;
 	}
