@@ -86,21 +86,13 @@ body{
 	}
 
 	#headerBckgrnd{
-		filter: blur(1px);
 		z-index: -1;
 		background-image: url("../Resources/WhatsApp Image 2019-04-11 at 16.40.33.jpeg");
-		background-position: center;
-		background-attachment: fixed;
-		background-size: cover;
 		background-repeat: no-repeat;
 		position: absolute;
+		background-size: 150% 150%;
 		@include widthHeightsize($width-12, 100vh);
-		@media (min-width: 160px) and (max-width: $smallWidth) and (orientation: portrait){
-			background-position: 80% 50%;
-			background-size: cover;
-		}
-		@media (min-width: 160px) and (max-width: $smallWidth) and (orientation: landscape){
-		}
+		background-position: 100% 50%;
 	}
 	header{
 		transition: 0.7s $animationFX;
@@ -188,6 +180,7 @@ body{
 		}
 	}
 	main{
+		background-color: $clearColor100;
 		z-index: 0;
 		#srvAndRpr{
 			transform: translateY(40px);

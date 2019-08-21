@@ -13,7 +13,7 @@
 //  });
 (()=>{
 
-	function getElement(id){
+	function elementID(id){
 		return document.getElementById(id);
 	}
 	function addEvent(element, event, callback){
@@ -23,18 +23,21 @@
 		element.removeEventListener(event, callback);
 	}
 
-	const banner = getElement("banner");
+	const banner = elementID("banner");
 	const screenSizes = {
 		height: window.innerHeight,
 		width: window.innerWidth
 	}
 	document.addEventListener("scroll", ()=>{
-		if(window.pageYOffset > (screenSizes.height/3)){
+		let windowScroll=window.pageYOffset;
+		if(windowScroll > (screenSizes.height/3)){
 			banner.setAttribute("class", "topFixed");
 		}
 		else{
 			banner.setAttribute("class", "topExpanded");
 		}
-
+		if(windowScroll < (screenSizes.height)){
+			elementID("headerBckgrnd").style.backgroundPosition= `100% ${50-windowScroll/20}%`;
+		}
 	});
 })();
