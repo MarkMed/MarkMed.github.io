@@ -37,7 +37,7 @@
 			banner.setAttribute("class", "topExpanded");
 		}
 		if(windowScroll < (screenSizes.height)){
-			elementID("headerBckgrnd").style.backgroundPosition= `100% ${50-windowScroll/20}%`;
+			elementID("headerBckgrnd").style.backgroundPosition= `center ${50-windowScroll/50}%`;
 		}
 	});
 })();
