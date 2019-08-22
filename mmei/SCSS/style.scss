@@ -79,7 +79,7 @@ body{
 			}
 			opacity: 1;
 		}
-		&.topExpanded{		
+		&.topExpanded{
 			height: 50vh;
 			opacity: 0;
 		}
@@ -102,16 +102,16 @@ body{
 		// }
 	}
 	header{
-		background-image: linear-gradient(to bottom right, $secondaryColor100 56%, $secondaryColor0 69%);
+		background-image: linear-gradient(to bottom right, rgba($secondaryColor100, 0.9) 56%, $secondaryColor0 69%);
 		@media (min-width: 160px) and (max-width: $smallWidth) and (orientation: portrait){
-			background-image: linear-gradient(to bottom, $secondaryColor100 33%, $secondaryColor0);
+			background-image: linear-gradient(to bottom, rgba($secondaryColor100, 0.9) 33%, $secondaryColor0);
 			padding-left: 0px;
 		}
 		background-position: 80% 20%;
 		background-size: 150% 150%;
 		transition: 0.7s $animationFX;
 		z-index: 0;
-		@include widthHeightsize($width-12, 100vh);
+		@include widthHeightsize(calc($width-12 - 20px), 100vh);
 		@include flex(column, space-around, flex-start, wrap);
 		color: $primaryColor100;
 		text-align: center;
@@ -202,7 +202,7 @@ body{
 					@include flex(column, center, center, wrap);
 					@include widthHeightsize($width-12, auto);
 				}
-				ul{					
+				ul{
 					@include widthHeightsize($width-12, auto);
 					@include flex(row, space-between, center, wrap);
 					li{
@@ -235,7 +235,7 @@ body{
 		@include widthHeightsize($width-12, 0px);
 		border-top: 1px solid $secondaryColor75;
 		margin: 4.5% 0px;
-		@include flex(row, center, center, wrap);		
+		@include flex(row, center, center, wrap);
 		h3{
 			padding: 5px 20px;
 			transform: skew(-25deg);
