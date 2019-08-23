@@ -149,7 +149,7 @@ body{
 					@include widthHeightsize(60%, 50px);
 				}
 				@media (min-width: 160px) and (max-width: $smallWidth) and (orientation: landscape){
-					@include widthHeightsize(150px, 40px);
+					@include widthHeightsize(130px, 40px);
 					margin: 10px;
 				}
 				@media (min-width: $mediumWidth+1){
