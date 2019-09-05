@@ -2,15 +2,15 @@ var globalVar;
 $(document).ready(()=>{
 	//////////////////////////////////////////////////////////////////////////////////
 	const header = $("header");
-	const firstTitle = $("#touchEventsTests .sectionTitle h2");
-	const secondTitle = $("#swipeEvents .sectionTitle h2");
+	const firstTitle = $("#simpleDD .sectionTitle h2");
+	// const secondTitle = $("#swipeEvents .sectionTitle h2");
 	let deviceHeight = $(window).height();
 	let documentHeight = $(document).height();
 	//////////////////////////////////////////////////////////////////////////////////
 	$("#svgScrollDown").click(()=>{
 		$('html, body').animate(
 			{
-				scrollTop: $("#touchEventsTests").offset().top
+				scrollTop: $("#simpleDD").offset().top
 			},
 			{
 				duration: 400, 
@@ -31,9 +31,9 @@ $(document).ready(()=>{
 		if($(document).scrollTop() > firstTitle.offset().top/1.1){
 			firstTitle.attr("class", "show");
 		}
-		if($(document).scrollTop() > secondTitle.offset().top/1.1){
-			secondTitle.attr("class", "show");
-		}
+		// if($(document).scrollTop() > secondTitle.offset().top/1.1){
+		// 	secondTitle.attr("class", "show");
+		// }
 	});
 	//////////////////////////////////////////////////////////////////////////////////
 	///// Double Tap Event /////
