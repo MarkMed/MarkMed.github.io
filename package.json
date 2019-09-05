@@ -1,0 +1,25 @@
+{
+  "name": "markmed.github.io",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "lite-server": "^2.5.4"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "lite": "lite-server",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "npm run lite"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MarkMed/MarkMed.github.io.git"
+  },
+  "author": "Marcos Medina",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MarkMed/MarkMed.github.io/issues"
+  },
+  "homepage": "https://github.com/MarkMed/MarkMed.github.io#readme"
+}
