@@ -1,0 +1,218 @@
+// base.scss
+@import 'noDefaultStyle';
+@import 'varsMixinExtends';
+html{
+	scroll-behavior: smooth;
+	scrollbar-width: none;
+}
+.lineSeparator{
+	box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.5) inset;
+}
+body{
+	&::-webkit-scrollbar { 
+		display: none; 
+	}
+	scroll-behavior: smooth;
+	color: $clearColor75;
+	font-family: "RalewayLight";
+	background-color: $primaryColor100;
+	background-image: linear-gradient(to right bottom, $grad-primaryColor100);
+	@include widthHeightsize(100vw, auto);
+	header{
+		@include widthHeightsize(100vw, 100vh);
+		@include flex(column, space-around, center, wrap);
+		h1{
+			@include widthHeightsize($width-12, auto);
+			font-family: "RalewayELight";
+			font-weight: 100;
+			text-transform: uppercase;
+			letter-spacing: 0.2em;
+		}
+		& section{
+			@include widthHeightsize($width-12, 80%);
+			@include flex(column, center, center, wrap);
+			background-color: rgba(0, 0, 0, 0);
+			*{
+				@include widthHeightsize($width-12, auto);
+				text-align: center;
+			}
+			h4{
+				font-size: 25px;
+				font-weight: 100;
+			}
+			p{
+				font-size: 15px;
+			}
+			svg{
+				margin-top: 20px;
+				cursor: pointer;
+				@media (min-width: 160px) and (max-width: $smallWidth){
+					@include widthHeightsize(30px, 30px);
+				}
+				@media (min-width: $smallWidth+1) and (max-width: $mediumWidth){
+					@include widthHeightsize(40px, 40px);
+				}
+				@media (min-width: $mediumWidth+1){
+					@include widthHeightsize(50px, 50px);
+				}
+				@keyframes moving{
+					from{
+						transform: translateY(0px);
+					}
+					to{
+						transform: translateY(10px);
+					}
+				}
+				g{
+					stroke: $clearColor75;
+					stroke-width: 2px;
+					transition: 0.4s $animationFX;
+					path{
+						animation: moving 1s cubic-bezier(1, 0, 0.5, 1) infinite alternate;
+					}
+				}
+				&:hover g{
+					stroke: $thirdColor100;
+				}
+			}
+		}
+	}
+	.lineSeparator{		
+		@include widthHeightsize(50vw, 2px);
+		margin: 20px 25vw;
+	}
+	section{
+		.sectionTitle{
+			@include flex(column, space-around, center, wrap);
+			h2{
+				transition: 0.5s $animationFX;
+				transition-delay: 0.3s;
+				&.show{
+					transform: translateY(0px);
+					opacity: 1;
+				}
+				&.hidden{
+					transform: translateY(-20px);
+					opacity: 0;
+				}
+			}
+		}
+	}
+	section#touchEventsTests{
+		.sectionTitle{
+			@include flex(column, space-around, center, wrap);
+			h2{	
+				margin: 20px 0px 10px;
+				color: $primaryColor50;
+				font-size: 28px;
+			}
+			.lineSeparator{		
+				@include widthHeightsize(50%, 2px);
+				margin: 10px 5px;
+			}
+
+		}
+		@include widthHeightsize(100vw, auto);
+		@include flex(row, space-around, center, wrap);
+		background-color: $clearColor75;
+		.caseSection{
+			background-color: $secondaryColor100;
+			background-image: linear-gradient(to top, $grad-secondaryColor100);
+			@media (min-width: 160px) and (max-width: $smallWidth){
+				@include widthHeightsize($width-10, 80vh);
+				margin: 5vh 0;
+			}
+			border-radius: 20px;
+			box-shadow: 3px 6px 9px 0px $secondaryColor50;
+			@include flex(row, space-around, flex-start, wrap);
+			h3{
+				margin: 5% 30% 10% 5%;
+				font-size: 23px;
+			}
+			p{
+				margin: 5% 30% 10% 5%;
+			}
+			.eventTriggerArea{
+				@include widthHeightsize($width-10, 50%);
+				border-radius: 20px;
+				@include flex(row, center, center, wrap);
+				color: $clearColor75;
+				font-size: 20px;
+				font-family: BraGroLight;
+				background-color: $primaryColor100;;
+				background-image: linear-gradient(to right bottom, $grad-primaryColor100);
+				box-shadow: 0px 0px 9px 0px $clearColor25;
+				letter-spacing: 0.2em;
+				text-align: center;
+			}
+		}
+	}	
+	section#swipeEvents{
+		@include widthHeightsize(100vw, auto);
+		@include flex(row, space-around, center, wrap);
+		.sectionTitle{
+			@include flex(column, space-around, center, wrap);
+			h2{	
+				margin: 20px 0px 10px;
+				color: $clearColor50;
+				font-size: 28px;
+			}
+			.lineSeparator{		
+				@include widthHeightsize(50%, 2px);
+				margin: 10px 5px;
+				box-shadow: 0px 0px 2px 0px $clearColor50 inset;
+			}
+		}
+		.sectionDescription{
+			@media (min-width: 160px) and (max-width: $smallWidth){
+				@include widthHeightsize($width-10, auto);
+				margin: 5vh 0;
+			}
+			color: $primaryColor75;
+			border-radius: 20px;
+			background-image: linear-gradient(to top left, $grad-clearColor75);
+			@include flex(column, space-around, flex-start, wrap);
+			h4{
+				margin: 5% 30% 10% 5%;
+				font-size: 23px;
+			}
+			p{
+				margin: 0% 20% 5% 10%;
+			}
+		}
+		.caseSection{
+			background-image: linear-gradient(to top left, $grad-clearColor75);
+			@media (min-width: 160px) and (max-width: $smallWidth){
+				@include widthHeightsize($width-10, 80vh);
+				margin: 5vh 0;
+			}
+			color: $primaryColor75;
+			border-radius: 20px;
+			@include flex(column, space-around, flex-start, wrap);
+			h3{
+				margin: 5% 30% 10% 5%;
+				font-size: 23px;
+			}
+			p{
+				margin: 5% 30% 10% 5%;
+			}
+			.eventTriggerArea{
+				@include widthHeightsize($width-10, 50%);
+				border-radius: 20px;
+				@include flex(column, center, center, wrap);
+				color: $clearColor75;
+				font-size: 20px;
+				font-family: BraGroLight;
+				background-color: $secondaryColor100;
+				background-image: linear-gradient(to right bottom, $grad-secondaryColor100);
+				box-shadow: 0px 0px 9px 0px $secondaryColor75;
+				letter-spacing: 0.2em;
+				text-align: center;
+				margin: 0 $width-1;
+			}
+		}
+	}
+	footer{
+		@include widthHeightsize(100vw, 500px);
+	}
+}

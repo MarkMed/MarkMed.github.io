@@ -1,0 +1,458 @@
+/* line 2, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/touchEvents/scss/_noDefaultStyle.scss */
+* {
+  margin: 0;
+  padding: 0;
+  cursor: default;
+  font-weight: 100;
+}
+
+/* line 8, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/touchEvents/scss/_noDefaultStyle.scss */
+a {
+  text-decoration: none;
+  color: black;
+  cursor: pointer;
+}
+
+/* line 13, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/touchEvents/scss/_noDefaultStyle.scss */
+ul, ol {
+  list-style: none;
+}
+
+/* line 16, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/touchEvents/scss/_noDefaultStyle.scss */
+*:focus {
+  outline: none;
+  color: black;
+  text-decoration: none;
+}
+
+/* line 22, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/touchEvents/scss/_noDefaultStyle.scss */
+input {
+  background-color: transparent;
+  border: none;
+}
+
+/*
+width of element:
+	12 cols - 100%
+	11 cols - 091,666666666%
+	10 cols - 083,333333333%
+	09 cols - 075%
+	08 cols - 066,666666666%
+	07 cols - 058,333333333%
+	06 cols - 050%
+	05 cols - 041,666666666%
+	04 cols - 033,333333333%
+	03 cols - 025%
+	02 cols - 016,666666666%
+	01 cols - 008,333333333%
+	00 cols - 000%
+*/
+/*Mixins*/
+@font-face {
+  font-family: "RalewayLight";
+  src: url(../../Resources/Raleway-Light_0.ttf);
+}
+
+@font-face {
+  font-family: "RalewayELight";
+  src: url(../../Resources/Raleway-ExtraLight.ttf);
+}
+
+@font-face {
+  font-family: "RalewayThin";
+  src: url(../../Resources/Raleway-Thin.ttf);
+}
+
+@font-face {
+  font-family: "DetalThin";
+  src: url(../../Resources/Datalegreya-Thin.otf);
+}
+
+@font-face {
+  font-family: "BraGroLight";
+  src: url(../../Resources/brandon-grotesque-light.woff);
+}
+
+/* line 4, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/touchEvents/scss/style.scss */
+html {
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+}
+
+/* line 8, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/touchEvents/scss/style.scss */
+.lineSeparator {
+  box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.5) inset;
+}
+
+/* line 11, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/touchEvents/scss/style.scss */
+body {
+  scroll-behavior: smooth;
+  color: rgba(255, 254, 219, 0.75);
+  font-family: "RalewayLight";
+  background-color: #1e3641;
+  background-image: linear-gradient(to right bottom, #1e3641, #1e3636);
+  height: auto;
+  width: 100vw;
+}
+
+/* line 12, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/touchEvents/scss/style.scss */
+body::-webkit-scrollbar {
+  display: none;
+}
+
+/* line 21, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/touchEvents/scss/style.scss */
+body header {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+/* line 24, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/touchEvents/scss/style.scss */
+body header h1 {
+  height: auto;
+  width: 100%;
+  font-family: "RalewayELight";
+  font-weight: 100;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+}
+
+/* line 31, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/touchEvents/scss/style.scss */
+body header section {
+  height: 80%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  background-color: transparent;
+}
+
+/* line 35, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/touchEvents/scss/style.scss */
+body header section * {
+  height: auto;
+  width: 100%;
+  text-align: center;
+}
+
+/* line 39, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/touchEvents/scss/style.scss */
+body header section h4 {
+  font-size: 25px;
+  font-weight: 100;
+}
+
+/* line 43, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/touchEvents/scss/style.scss */
+body header section p {
+  font-size: 15px;
+}
+
+/* line 46, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/touchEvents/scss/style.scss */
+body header section svg {
+  margin-top: 20px;
+  cursor: pointer;
+}
+
+@media (min-width: 160px) and (max-width: 640px) {
+  /* line 46, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/touchEvents/scss/style.scss */
+  body header section svg {
+    height: 30px;
+    width: 30px;
+  }
+}
+
+@media (min-width: 641px) and (max-width: 1007px) {
+  /* line 46, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/touchEvents/scss/style.scss */
+  body header section svg {
+    height: 40px;
+    width: 40px;
+  }
+}
+
+@media (min-width: 1008px) {
+  /* line 46, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/touchEvents/scss/style.scss */
+  body header section svg {
+    height: 50px;
+    width: 50px;
+  }
+}
+
+@keyframes moving {
+  from {
+    transform: translateY(0px);
+  }
+  to {
+    transform: translateY(10px);
+  }
+}
+
+/* line 66, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/touchEvents/scss/style.scss */
+body header section svg g {
+  stroke: rgba(255, 254, 219, 0.75);
+  stroke-width: 2px;
+  transition: 0.4s cubic-bezier(0, 0, 0.27, 0.97);
+}
+
+/* line 70, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/touchEvents/scss/style.scss */
+body header section svg g path {
+  animation: moving 1s cubic-bezier(1, 0, 0.5, 1) infinite alternate;
+}
+
+/* line 74, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/touchEvents/scss/style.scss */
+body header section svg:hover g {
+  stroke: #ffc33c;
+}
+
+/* line 80, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/touchEvents/scss/style.scss */
+body .lineSeparator {
+  height: 2px;
+  width: 50vw;
+  margin: 20px 25vw;
+}
+
+/* line 85, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/touchEvents/scss/style.scss */
+body section .sectionTitle {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+/* line 87, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/touchEvents/scss/style.scss */
+body section .sectionTitle h2 {
+  transition: 0.5s cubic-bezier(0, 0, 0.27, 0.97);
+  transition-delay: 0.3s;
+}
+
+/* line 90, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/touchEvents/scss/style.scss */
+body section .sectionTitle h2.show {
+  transform: translateY(0px);
+  opacity: 1;
+}
+
+/* line 94, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/touchEvents/scss/style.scss */
+body section .sectionTitle h2.hidden {
+  transform: translateY(-20px);
+  opacity: 0;
+}
+
+/* line 101, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/touchEvents/scss/style.scss */
+body section#touchEventsTests {
+  height: auto;
+  width: 100vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  background-color: rgba(255, 254, 219, 0.75);
+}
+
+/* line 102, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/touchEvents/scss/style.scss */
+body section#touchEventsTests .sectionTitle {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+/* line 104, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/touchEvents/scss/style.scss */
+body section#touchEventsTests .sectionTitle h2 {
+  margin: 20px 0px 10px;
+  color: rgba(30, 54, 65, 0.5);
+  font-size: 28px;
+}
+
+/* line 109, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/touchEvents/scss/style.scss */
+body section#touchEventsTests .sectionTitle .lineSeparator {
+  height: 2px;
+  width: 50%;
+  margin: 10px 5px;
+}
+
+/* line 118, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/touchEvents/scss/style.scss */
+body section#touchEventsTests .caseSection {
+  background-color: #1e364b;
+  background-image: linear-gradient(to top, #132b40, #1e364b);
+  border-radius: 20px;
+  box-shadow: 3px 6px 9px 0px rgba(30, 54, 75, 0.5);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+@media (min-width: 160px) and (max-width: 640px) {
+  /* line 118, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/touchEvents/scss/style.scss */
+  body section#touchEventsTests .caseSection {
+    height: 80vh;
+    width: 83.33333%;
+    margin: 5vh 0;
+  }
+}
+
+/* line 128, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/touchEvents/scss/style.scss */
+body section#touchEventsTests .caseSection h3 {
+  margin: 5% 30% 10% 5%;
+  font-size: 23px;
+}
+
+/* line 132, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/touchEvents/scss/style.scss */
+body section#touchEventsTests .caseSection p {
+  margin: 5% 30% 10% 5%;
+}
+
+/* line 135, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/touchEvents/scss/style.scss */
+body section#touchEventsTests .caseSection .eventTriggerArea {
+  height: 50%;
+  width: 83.33333%;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  color: rgba(255, 254, 219, 0.75);
+  font-size: 20px;
+  font-family: BraGroLight;
+  background-color: #1e3641;
+  background-image: linear-gradient(to right bottom, #1e3641, #1e3636);
+  box-shadow: 0px 0px 9px 0px rgba(255, 254, 219, 0.25);
+  letter-spacing: 0.2em;
+  text-align: center;
+}
+
+/* line 150, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/touchEvents/scss/style.scss */
+body section#swipeEvents {
+  height: auto;
+  width: 100vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+/* line 153, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/touchEvents/scss/style.scss */
+body section#swipeEvents .sectionTitle {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+/* line 155, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/touchEvents/scss/style.scss */
+body section#swipeEvents .sectionTitle h2 {
+  margin: 20px 0px 10px;
+  color: rgba(255, 254, 219, 0.5);
+  font-size: 28px;
+}
+
+/* line 160, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/touchEvents/scss/style.scss */
+body section#swipeEvents .sectionTitle .lineSeparator {
+  height: 2px;
+  width: 50%;
+  margin: 10px 5px;
+  box-shadow: 0px 0px 2px 0px rgba(255, 254, 219, 0.5) inset;
+}
+
+/* line 166, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/touchEvents/scss/style.scss */
+body section#swipeEvents .sectionDescription {
+  color: rgba(30, 54, 65, 0.75);
+  border-radius: 20px;
+  background-image: linear-gradient(to top left, rgba(255, 254, 219, 0.75), rgba(239, 238, 202, 0.75));
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+@media (min-width: 160px) and (max-width: 640px) {
+  /* line 166, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/touchEvents/scss/style.scss */
+  body section#swipeEvents .sectionDescription {
+    height: auto;
+    width: 83.33333%;
+    margin: 5vh 0;
+  }
+}
+
+/* line 175, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/touchEvents/scss/style.scss */
+body section#swipeEvents .sectionDescription h4 {
+  margin: 5% 30% 10% 5%;
+  font-size: 23px;
+}
+
+/* line 179, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/touchEvents/scss/style.scss */
+body section#swipeEvents .sectionDescription p {
+  margin: 0% 20% 5% 10%;
+}
+
+/* line 183, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/touchEvents/scss/style.scss */
+body section#swipeEvents .caseSection {
+  background-image: linear-gradient(to top left, rgba(255, 254, 219, 0.75), rgba(239, 238, 202, 0.75));
+  color: rgba(30, 54, 65, 0.75);
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+@media (min-width: 160px) and (max-width: 640px) {
+  /* line 183, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/touchEvents/scss/style.scss */
+  body section#swipeEvents .caseSection {
+    height: 80vh;
+    width: 83.33333%;
+    margin: 5vh 0;
+  }
+}
+
+/* line 192, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/touchEvents/scss/style.scss */
+body section#swipeEvents .caseSection h3 {
+  margin: 5% 30% 10% 5%;
+  font-size: 23px;
+}
+
+/* line 196, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/touchEvents/scss/style.scss */
+body section#swipeEvents .caseSection p {
+  margin: 5% 30% 10% 5%;
+}
+
+/* line 199, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/touchEvents/scss/style.scss */
+body section#swipeEvents .caseSection .eventTriggerArea {
+  height: 50%;
+  width: 83.33333%;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  color: rgba(255, 254, 219, 0.75);
+  font-size: 20px;
+  font-family: BraGroLight;
+  background-color: #1e364b;
+  background-image: linear-gradient(to right bottom, #132b40, #1e364b);
+  box-shadow: 0px 0px 9px 0px rgba(30, 54, 75, 0.75);
+  letter-spacing: 0.2em;
+  text-align: center;
+  margin: 0 8.33333%;
+}
+
+/* line 215, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/touchEvents/scss/style.scss */
+body footer {
+  height: 500px;
+  width: 100vw;
+}
+
+/*# sourceMappingURL=../css/style.map */
