@@ -83,12 +83,12 @@ body{
 	}
 	section{
 		.sectionTitle{
-			@include widthHeightsize($width-12, 100px);
+			@include widthHeightsize($width-12, 60px);
 			@include flex(column, space-around, center, wrap);
 			h2{
 				transition: 0.5s $animationFX;
 				transition-delay: 0.3s;
-				margin: 20px 0px 10px;
+				margin: 10px 0px 5px;
 				color: $primaryColor50;
 				font-size: 28px;
 				&.show{
@@ -101,29 +101,50 @@ body{
 				}
 			}
 			.lineSeparator{		
-				@include widthHeightsize(50%, 2px);
-				margin: 10px 5px;
+				@include widthHeightsize(40%, 2px);
+				margin: 0px 5px;
 			}
 		}
 	}
 	section#simpleDD{
-		@include widthHeightsize(100vw, auto);
+		@include widthHeightsize(100vw, 100vh);
 		@include flex(row, space-around, center, wrap);
 		background-color: $clearColor75;
 		.elementsContainer{
+			@include widthHeightsize($width-4, calc(90vh - 20px - 60px - 10vh));
 			padding: 10px;
 			background-color: $secondaryColor100;
 			background-image: linear-gradient(to top, $grad-secondaryColor100);
-			@include widthHeightsize($width-5, 80vh);
 			margin: 5vh 0;
 			border-radius: 20px;
 			box-shadow: 3px 6px 9px 0px $secondaryColor50;
-			h3{
-				margin: 5% 30% 10% 5%;
-				font-size: 23px;
+			img{
+				cursor: pointer;
+				&:hover{
+					filter: blur(10px);
+				}
 			}
-			p{
-				margin: 5% 30% 10% 5%;
+			@mixin divTitle {
+				position: absolute;
+				font-weight: 900;
+				text-transform: uppercase;
+				color: $primaryColor50;
+				font-size: 1rem;
+				@include widthHeightsize($width-4, 50px);
+				transform: translateY(-50px);
+				@include flex(row, flex-start, center, wrap);
+			}
+			&:nth-child(2){
+				&::before{
+					content: "Cloud Storage";
+					@include divTitle;
+				}
+			}
+			&:nth-child(3){
+				&::before{
+					content: "Local Storage";
+					@include divTitle;
+				}
 			}
 		}
 	}
