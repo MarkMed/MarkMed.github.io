@@ -36,19 +36,20 @@ $(document).ready(()=>{
 		// }
 	});
 	//////////////////////////////////////////////////////////////////////////////////
-	
+	let elementDragging;
 	function allowDrop(ev) {
 		ev.preventDefault();
 	}
 	
 	function drag(ev) {
 		console.log(ev.target);
-		ev.dataTransfer.addElement(ev.target);
+		elementDragging = ev.target;
+		ev.dataTransfer.setData('text/plain',null);
 	}
 	
 	function drop(ev) {
 		ev.preventDefault();
-		console.log(ev);
+		console.log("Drop!", ev);
 		var data = ev.dataTransfer.getData("DOMString");
 		$(ev.target).append(document.getElementById(data));
 	}
@@ -58,13 +59,21 @@ $(document).ready(()=>{
 	for(let i=0; i<items.length; i++){
 		$(items[i]).on("dragstart", ()=>{
 			drag(event);
-			$(items[i]).css({backgroundColor: "#ffe", borderLeft: "5px solid #ccc" })
+			$(items[i]).addClass("dragging");
+		});
+		$(items[i]).on("dragend", ()=>{
+			drag(event);
+			$(items[i]).addClass("dragged");
+			setTimeout(()=>{
+				$(items[i]).css({display: "none"});
+			}, 600);
 		});
 	}
 	cloudDiv.on("dragover", ()=>{
 		allowDrop(event);
 	})
 	cloudDiv.on("drop", ()=>{
+		console.log("Drop!", event);
 		drop(event);
 	})
 
