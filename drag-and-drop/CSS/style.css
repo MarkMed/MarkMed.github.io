@@ -218,7 +218,7 @@ body {
         cursor: pointer; }
         /* line 123, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/drag-and-drop/scss/style.scss */
         body section#simpleDD .elementsContainer img:hover {
-          filter: blur(10px); }
+          filter: drop-shadow(0 0 0.75rem #c7ebff); }
       /* line 138, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/drag-and-drop/scss/style.scss */
       body section#simpleDD .elementsContainer:nth-child(2)::before {
         content: "Cloud Storage";

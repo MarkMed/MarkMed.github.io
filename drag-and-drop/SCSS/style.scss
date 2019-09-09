@@ -121,7 +121,7 @@ body{
 			img{
 				cursor: pointer;
 				&:hover{
-					filter: blur(10px);
+					filter: drop-shadow(0 0 0.75rem rgb(199, 235, 255))
 				}
 			}
 			@mixin divTitle {
