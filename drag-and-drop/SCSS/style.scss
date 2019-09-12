@@ -5,20 +5,18 @@ html{
 	scroll-behavior: smooth;
 	scrollbar-width: none;
 }
-.lineSeparator{
-	box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.5) inset;
-}
 body{
 	&::-webkit-scrollbar { 
 		display: none; 
 	}
-	scroll-behavior: smooth;
 	color: $clearColor75;
 	font-family: "RalewayLight";
 	background-color: $primaryColor100;
 	background-image: linear-gradient(to right bottom, $grad-primaryColor100);
 	@include widthHeightsize(100vw, auto);
 	header{
+		position: relative;
+		z-index: 0;
 		@include widthHeightsize(100vw, 100vh);
 		@include flex(column, space-around, center, wrap);
 		h1{
@@ -80,6 +78,7 @@ body{
 	.lineSeparator{		
 		@include widthHeightsize(50vw, 2px);
 		margin: 20px 25vw;
+		border-bottom: 2px solid $clearColor25;
 	}
 	section{
 		.sectionTitle{
@@ -103,10 +102,13 @@ body{
 			.lineSeparator{		
 				@include widthHeightsize(40%, 2px);
 				margin: 0px 5px;
+				border-bottom: 2px solid $primaryColor25;
 			}
 		}
 	}
 	section#simpleDD{
+		position: relative;
+		z-index: 0;
 		@include widthHeightsize(100vw, 100vh);
 		@include flex(row, space-around, center, wrap);
 		background-color: $clearColor75;
