@@ -119,6 +119,9 @@ body{
 		background-color: $clearColor75;
 		.elementsContainer{
 			@include widthHeightsize($width-4, calc(90vh - 20px - 60px - 10vh));
+			@media (min-width: 160px) and (max-width: $smallWidth) and (orientation: portrait){
+				@include widthHeightsize($width-10, calc(25vh));
+			}
 			padding: 10px;
 			background-color: $secondaryColor100;
 			background-image: linear-gradient(to top, $grad-secondaryColor100);
@@ -147,6 +150,9 @@ body{
 				}
 			}
 			@mixin divTitle {
+				@media (min-width: 160px) and (max-width: $smallWidth) and (orientation: portrait){
+					@include widthHeightsize($width-10, 50px);
+				}
 				position: absolute;
 				font-weight: 900;
 				text-transform: uppercase;
