@@ -81,10 +81,10 @@ html {
 
 /* line 8, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/drag-and-drop/scss/style.scss */
 body {
-  color: rgba(255, 254, 219, 0.75);
+  color: rgba(240, 240, 223, 0.75);
   font-family: "RalewayLight";
-  background-color: #1e3641;
-  background-image: linear-gradient(to right bottom, #1e3641, #1e3636);
+  background-color: #0a3144;
+  background-image: linear-gradient(to right bottom, #0a3144, #1e3636);
   height: auto;
   width: 100vw;
 }
@@ -188,7 +188,7 @@ body header section svg {
 
 /* line 64, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/drag-and-drop/scss/style.scss */
 body header section svg g {
-  stroke: rgba(255, 254, 219, 0.75);
+  stroke: rgba(240, 240, 223, 0.75);
   stroke-width: 2px;
   transition: 0.4s cubic-bezier(0, 0, 0.27, 0.97);
 }
@@ -208,7 +208,7 @@ body .lineSeparator {
   height: 2px;
   width: 50vw;
   margin: 20px 25vw;
-  border-bottom: 2px solid rgba(255, 254, 219, 0.25);
+  border-bottom: 2px solid rgba(240, 240, 223, 0.25);
   transition: 0.5s cubic-bezier(0, 0, 0.27, 0.97);
 }
 
@@ -228,7 +228,7 @@ body section .sectionTitle {
 body section .sectionTitle h2 {
   transition-delay: 1s;
   margin: 10px 0px 5px;
-  color: rgba(30, 54, 65, 0.5);
+  color: rgba(10, 49, 68, 0.5);
   font-size: 28px;
 }
 
@@ -238,7 +238,7 @@ body section .sectionTitle .lineSeparator {
   height: 2px;
   width: 0%;
   margin: 0px 5px;
-  border-bottom: 2px solid rgba(30, 54, 65, 0.25);
+  border-bottom: 2px solid rgba(10, 49, 68, 0.25);
 }
 
 /* line 101, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/drag-and-drop/scss/style.scss */
@@ -270,7 +270,7 @@ body section#simpleDD {
   justify-content: space-around;
   align-items: center;
   flex-wrap: wrap;
-  background-color: rgba(255, 254, 219, 0.75);
+  background-color: rgba(240, 240, 223, 0.75);
 }
 
 /* line 120, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/drag-and-drop/scss/style.scss */
@@ -278,11 +278,11 @@ body section#simpleDD .elementsContainer {
   height: calc(90vh - 20px - 60px - 10vh);
   width: 33.33333%;
   padding: 10px;
-  background-color: #1e364b;
-  background-image: linear-gradient(to top, #132b40, #1e364b);
+  background-color: #283e51;
+  background-image: linear-gradient(to top, #132b40, #283e51);
   margin: 5vh 0;
   border-radius: 20px;
-  box-shadow: 3px 6px 9px 0px rgba(30, 54, 75, 0.5);
+  box-shadow: 3px 6px 9px 0px rgba(40, 62, 81, 0.5);
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
@@ -333,7 +333,7 @@ body section#simpleDD .elementsContainer:nth-child(2)::before {
   position: absolute;
   font-weight: 900;
   text-transform: uppercase;
-  color: rgba(30, 54, 65, 0.5);
+  color: rgba(10, 49, 68, 0.5);
   font-size: 1rem;
   height: 50px;
   width: 33.33333%;
@@ -359,7 +359,7 @@ body section#simpleDD .elementsContainer:nth-child(3)::before {
   position: absolute;
   font-weight: 900;
   text-transform: uppercase;
-  color: rgba(30, 54, 65, 0.5);
+  color: rgba(10, 49, 68, 0.5);
   font-size: 1rem;
   height: 50px;
   width: 33.33333%;
