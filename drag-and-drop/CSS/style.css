@@ -209,9 +209,10 @@ body .lineSeparator {
   width: 50vw;
   margin: 20px 25vw;
   border-bottom: 2px solid rgba(255, 254, 219, 0.25);
+  transition: 0.5s cubic-bezier(0, 0, 0.27, 0.97);
 }
 
-/* line 84, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/drag-and-drop/scss/style.scss */
+/* line 85, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/drag-and-drop/scss/style.scss */
 body section .sectionTitle {
   height: 60px;
   width: 100%;
@@ -220,38 +221,45 @@ body section .sectionTitle {
   justify-content: space-around;
   align-items: center;
   flex-wrap: wrap;
+  transition: 0.5s cubic-bezier(0, 0, 0.27, 0.97);
 }
 
-/* line 87, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/drag-and-drop/scss/style.scss */
+/* line 89, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/drag-and-drop/scss/style.scss */
 body section .sectionTitle h2 {
-  transition: 0.5s cubic-bezier(0, 0, 0.27, 0.97);
-  transition-delay: 0.3s;
+  transition-delay: 1s;
   margin: 10px 0px 5px;
   color: rgba(30, 54, 65, 0.5);
   font-size: 28px;
 }
 
-/* line 93, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/drag-and-drop/scss/style.scss */
-body section .sectionTitle h2.show {
-  transform: translateY(0px);
-  opacity: 1;
-}
-
-/* line 97, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/drag-and-drop/scss/style.scss */
-body section .sectionTitle h2.hidden {
-  transform: translateY(-20px);
-  opacity: 0;
-}
-
-/* line 102, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/drag-and-drop/scss/style.scss */
+/* line 95, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/drag-and-drop/scss/style.scss */
 body section .sectionTitle .lineSeparator {
+  transition-delay: 0.4s;
   height: 2px;
-  width: 40%;
+  width: 0%;
   margin: 0px 5px;
   border-bottom: 2px solid rgba(30, 54, 65, 0.25);
 }
 
-/* line 109, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/drag-and-drop/scss/style.scss */
+/* line 101, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/drag-and-drop/scss/style.scss */
+body section .sectionTitle.show {
+  transform: translateY(0px);
+  opacity: 1;
+}
+
+/* line 104, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/drag-and-drop/scss/style.scss */
+body section .sectionTitle.show .lineSeparator {
+  height: 2px;
+  width: 50%;
+}
+
+/* line 108, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/drag-and-drop/scss/style.scss */
+body section .sectionTitle.hidden {
+  transform: translateY(-20px);
+  opacity: 0;
+}
+
+/* line 114, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/drag-and-drop/scss/style.scss */
 body section#simpleDD {
   position: relative;
   z-index: 0;
@@ -265,7 +273,7 @@ body section#simpleDD {
   background-color: rgba(255, 254, 219, 0.75);
 }
 
-/* line 115, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/drag-and-drop/scss/style.scss */
+/* line 120, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/drag-and-drop/scss/style.scss */
 body section#simpleDD .elementsContainer {
   height: calc(90vh - 20px - 60px - 10vh);
   width: 33.33333%;
@@ -284,7 +292,7 @@ body section#simpleDD .elementsContainer {
   transition: 0.4s ease;
 }
 
-/* line 126, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/drag-and-drop/scss/style.scss */
+/* line 131, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/drag-and-drop/scss/style.scss */
 body section#simpleDD .elementsContainer .element2Drag {
   height: 35px;
   width: 35px;
@@ -293,24 +301,24 @@ body section#simpleDD .elementsContainer .element2Drag {
   margin: 2px;
 }
 
-/* line 131, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/drag-and-drop/scss/style.scss */
+/* line 136, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/drag-and-drop/scss/style.scss */
 body section#simpleDD .elementsContainer .element2Drag:hover {
   filter: drop-shadow(0 0 0.75rem #c7ebff);
 }
 
-/* line 134, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/drag-and-drop/scss/style.scss */
+/* line 139, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/drag-and-drop/scss/style.scss */
 body section#simpleDD .elementsContainer .element2Drag.dragging {
   opacity: 0.6;
 }
 
-/* line 137, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/drag-and-drop/scss/style.scss */
+/* line 142, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/drag-and-drop/scss/style.scss */
 body section#simpleDD .elementsContainer .element2Drag.dragged {
   width: 0px;
   opacity: 0;
   margin: 0px;
 }
 
-/* line 154, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/drag-and-drop/scss/style.scss */
+/* line 159, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/drag-and-drop/scss/style.scss */
 body section#simpleDD .elementsContainer:nth-child(2)::before {
   content: "Cloud Storage";
   position: absolute;
@@ -328,7 +336,7 @@ body section#simpleDD .elementsContainer:nth-child(2)::before {
   flex-wrap: wrap;
 }
 
-/* line 160, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/drag-and-drop/scss/style.scss */
+/* line 165, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/drag-and-drop/scss/style.scss */
 body section#simpleDD .elementsContainer:nth-child(3)::before {
   content: "Local Storage";
   position: absolute;
@@ -346,7 +354,7 @@ body section#simpleDD .elementsContainer:nth-child(3)::before {
   flex-wrap: wrap;
 }
 
-/* line 167, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/drag-and-drop/scss/style.scss */
+/* line 172, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/drag-and-drop/scss/style.scss */
 body footer {
   height: 500px;
   width: 100vw;

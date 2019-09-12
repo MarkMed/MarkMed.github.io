@@ -79,30 +79,35 @@ body{
 		@include widthHeightsize(50vw, 2px);
 		margin: 20px 25vw;
 		border-bottom: 2px solid $clearColor25;
+		transition: 0.5s $animationFX;
 	}
 	section{
 		.sectionTitle{
 			@include widthHeightsize($width-12, 60px);
 			@include flex(column, space-around, center, wrap);
+			transition: 0.5s $animationFX;
 			h2{
-				transition: 0.5s $animationFX;
-				transition-delay: 0.3s;
+				transition-delay: 1s;
 				margin: 10px 0px 5px;
 				color: $primaryColor50;
 				font-size: 28px;
-				&.show{
-					transform: translateY(0px);
-					opacity: 1;
-				}
-				&.hidden{
-					transform: translateY(-20px);
-					opacity: 0;
-				}
 			}
-			.lineSeparator{		
-				@include widthHeightsize(40%, 2px);
+			.lineSeparator{
+				transition-delay: 0.4s;
+				@include widthHeightsize(0%, 2px);
 				margin: 0px 5px;
 				border-bottom: 2px solid $primaryColor25;
+			}
+			&.show{
+				transform: translateY(0px);
+				opacity: 1;
+				.lineSeparator{
+					@include widthHeightsize(50%, 2px);
+				}
+			}
+			&.hidden{
+				transform: translateY(-20px);
+				opacity: 0;
 			}
 		}
 	}
