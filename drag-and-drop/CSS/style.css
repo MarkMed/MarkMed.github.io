@@ -290,9 +290,10 @@ body section#simpleDD .elementsContainer {
   flex-wrap: wrap;
   align-content: flex-start;
   transition: 0.4s ease;
+  overflow: auto;
 }
 
-/* line 131, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/drag-and-drop/scss/style.scss */
+/* line 132, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/drag-and-drop/scss/style.scss */
 body section#simpleDD .elementsContainer .element2Drag {
   height: 35px;
   width: 35px;
@@ -301,24 +302,24 @@ body section#simpleDD .elementsContainer .element2Drag {
   margin: 2px;
 }
 
-/* line 136, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/drag-and-drop/scss/style.scss */
+/* line 137, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/drag-and-drop/scss/style.scss */
 body section#simpleDD .elementsContainer .element2Drag:hover {
   filter: drop-shadow(0 0 0.75rem #c7ebff);
 }
 
-/* line 139, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/drag-and-drop/scss/style.scss */
+/* line 140, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/drag-and-drop/scss/style.scss */
 body section#simpleDD .elementsContainer .element2Drag.dragging {
   opacity: 0.6;
 }
 
-/* line 142, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/drag-and-drop/scss/style.scss */
+/* line 143, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/drag-and-drop/scss/style.scss */
 body section#simpleDD .elementsContainer .element2Drag.dragged {
   width: 0px;
   opacity: 0;
   margin: 0px;
 }
 
-/* line 159, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/drag-and-drop/scss/style.scss */
+/* line 160, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/drag-and-drop/scss/style.scss */
 body section#simpleDD .elementsContainer:nth-child(2)::before {
   content: "Cloud Storage";
   position: absolute;
@@ -336,7 +337,7 @@ body section#simpleDD .elementsContainer:nth-child(2)::before {
   flex-wrap: wrap;
 }
 
-/* line 165, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/drag-and-drop/scss/style.scss */
+/* line 166, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/drag-and-drop/scss/style.scss */
 body section#simpleDD .elementsContainer:nth-child(3)::before {
   content: "Local Storage";
   position: absolute;
@@ -354,7 +355,7 @@ body section#simpleDD .elementsContainer:nth-child(3)::before {
   flex-wrap: wrap;
 }
 
-/* line 172, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/drag-and-drop/scss/style.scss */
+/* line 173, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/drag-and-drop/scss/style.scss */
 body footer {
   height: 500px;
   width: 100vw;
