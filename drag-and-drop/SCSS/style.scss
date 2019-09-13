@@ -137,7 +137,7 @@ body{
 			overflow: auto;
 			.element2Drag{
 				@include widthHeightsize(35px, 35px);
-				transition: 0.4s ease;
+				transition: 0.2s ease;
 				cursor: pointer;
 				margin: 2px;
 				&:hover{
