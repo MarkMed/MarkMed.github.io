@@ -116,7 +116,9 @@ body{
 		z-index: 0;
 		@include widthHeightsize(100vw, 100vh);
 		@include flex(row, space-around, center, wrap);
-		align-content: space-between;
+		@media (min-width: 160px) and (max-width: $mediumWidth){
+			align-content: space-between;
+		}
 		background-color: $clearColor75;
 		.elementsContainer{
 			@include widthHeightsize($width-4, calc(90vh - 20px - 60px - 10vh));
