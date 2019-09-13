@@ -31,9 +31,6 @@ $(document).ready(()=>{
 		if($(document).scrollTop() > firstTitle.offset().top/1.1){
 			firstTitle.removeClass("hidden").addClass("show");
 		}
-		// if($(document).scrollTop() > secondTitle.offset().top/1.1){
-		// 	secondTitle.attr("class", "show");
-		// }
 	});
 	//////////////////////////////////////////////////////////////////////////////////
 	let elementDragging;
@@ -42,39 +39,59 @@ $(document).ready(()=>{
 	}
 	
 	function drag(ev) {
-		console.log(ev.target);
 		elementDragging = ev.target;
-		ev.dataTransfer.setData('text/plain',null);
+		console.log("elementDragging", elementDragging);
+		ev.dataTransfer.setData('text/plain', elementDragging);
 	}
 	
-	function drop(ev) {
-		ev.preventDefault();
-		console.log("Drop!", ev);
-		var data = ev.dataTransfer.getData("DOMString");
-		$(ev.target).append(document.getElementById(data));
-	}
 	let cloudDiv = $("#cloudDiv");
 	let storageDiv = $("#storageDiv");
 	let items = storageDiv.children();
 	for(let i=0; i<items.length; i++){
 		$(items[i]).on("dragstart", ()=>{
-			drag(event);
 			$(items[i]).addClass("dragging");
+			drag(event);
 		});
 		$(items[i]).on("dragend", ()=>{
 			drag(event);
-			$(items[i]).addClass("dragged");
-			setTimeout(()=>{
-				$(items[i]).css({display: "none"});
-			}, 600);
+			$(items[i]).removeClass("dragging").addClass("dragged");
 		});
 	}
-	cloudDiv.on("dragover", ()=>{
+	cloudDiv.on("dragover", (ev)=>{
+		// console.log("You are now draging over cloudDiv and the event traget is: ", ev.target);
+		event.dataTransfer.dropEffect = 'move';
 		allowDrop(event);
 	})
-	cloudDiv.on("drop", ()=>{
+	cloudDiv.on("drop", (ev)=>{
 		console.log("Drop!", event);
-		drop(event);
+		console.log("Drop!", ev.target);
+		
+		setTimeout(()=>{
+			elementDragging.parentNode.removeChild( elementDragging );
+			ev.target.appendChild( elementDragging );
+			setTimeout(()=>{
+				$(elementDragging).removeClass("dragged").removeClass("dragging");
+			}, 200);
+			
+		}, 200);
+	})
+	storageDiv.on("dragover", (ev)=>{
+		// console.log("You are now draging over cloudDiv and the event traget is: ", ev.target);
+		event.dataTransfer.dropEffect = 'move';
+		allowDrop(event);
+	})
+	storageDiv.on("drop", (ev)=>{
+		console.log("Drop!", event);
+		console.log("Drop!", ev.target);
+		
+		setTimeout(()=>{
+			elementDragging.parentNode.removeChild( elementDragging );
+			ev.target.appendChild( elementDragging );
+			setTimeout(()=>{
+				$(elementDragging).removeClass("dragged").removeClass("dragging");
+			}, 200);
+			
+		}, 200);
 	})
 
 
