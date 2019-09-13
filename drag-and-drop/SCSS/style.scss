@@ -116,6 +116,7 @@ body{
 		z-index: 0;
 		@include widthHeightsize(100vw, 100vh);
 		@include flex(row, space-around, center, wrap);
+		align-content: space-between;
 		background-color: $clearColor75;
 		.elementsContainer{
 			@include widthHeightsize($width-4, calc(90vh - 20px - 60px - 10vh));
@@ -163,13 +164,23 @@ body{
 				@include flex(row, flex-start, center, wrap);
 			}
 			&:nth-child(2){
-				&::before{
+				&::after{
 					content: "Cloud Storage";
 					@include divTitle;
 				}
+				// &::before{
+				// 	content: "<<";
+				// 	position: absolute;
+				// 	@include flex(row, center, center, wrap);
+				// 	@include widthHeightsize(auto, calc(90vh - 20px - 60px - 10vh));
+				// 	font-weight: 900;
+				// 	text-transform: uppercase;
+				// 	color: $primaryColor50;
+				// 	font-size: 1.2rem;
+				// }
 			}
 			&:nth-child(3){
-				&::before{
+				&::after{
 					content: "Local Storage";
 					@include divTitle;
 				}

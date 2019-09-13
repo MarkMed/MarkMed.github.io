@@ -270,10 +270,11 @@ body section#simpleDD {
   justify-content: space-around;
   align-items: center;
   flex-wrap: wrap;
+  align-content: space-between;
   background-color: rgba(240, 240, 223, 0.75);
 }
 
-/* line 120, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/drag-and-drop/scss/style.scss */
+/* line 121, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/drag-and-drop/scss/style.scss */
 body section#simpleDD .elementsContainer {
   height: calc(90vh - 20px - 60px - 10vh);
   width: 33.33333%;
@@ -294,14 +295,14 @@ body section#simpleDD .elementsContainer {
 }
 
 @media (min-width: 160px) and (max-width: 640px) and (orientation: portrait) {
-  /* line 120, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/drag-and-drop/scss/style.scss */
+  /* line 121, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/drag-and-drop/scss/style.scss */
   body section#simpleDD .elementsContainer {
     height: calc(25vh);
     width: 83.33333%;
   }
 }
 
-/* line 135, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/drag-and-drop/scss/style.scss */
+/* line 136, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/drag-and-drop/scss/style.scss */
 body section#simpleDD .elementsContainer .element2Drag {
   height: 35px;
   width: 35px;
@@ -310,25 +311,25 @@ body section#simpleDD .elementsContainer .element2Drag {
   margin: 2px;
 }
 
-/* line 140, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/drag-and-drop/scss/style.scss */
+/* line 141, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/drag-and-drop/scss/style.scss */
 body section#simpleDD .elementsContainer .element2Drag:hover {
   filter: drop-shadow(0 0 0.75rem #c7ebff);
 }
 
-/* line 143, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/drag-and-drop/scss/style.scss */
+/* line 144, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/drag-and-drop/scss/style.scss */
 body section#simpleDD .elementsContainer .element2Drag.dragging {
   opacity: 0.6;
 }
 
-/* line 146, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/drag-and-drop/scss/style.scss */
+/* line 147, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/drag-and-drop/scss/style.scss */
 body section#simpleDD .elementsContainer .element2Drag.dragged {
   width: 0px;
   opacity: 0;
   margin: 0px;
 }
 
-/* line 166, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/drag-and-drop/scss/style.scss */
-body section#simpleDD .elementsContainer:nth-child(2)::before {
+/* line 167, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/drag-and-drop/scss/style.scss */
+body section#simpleDD .elementsContainer:nth-child(2)::after {
   content: "Cloud Storage";
   position: absolute;
   font-weight: 900;
@@ -346,15 +347,15 @@ body section#simpleDD .elementsContainer:nth-child(2)::before {
 }
 
 @media (min-width: 160px) and (max-width: 640px) and (orientation: portrait) {
-  /* line 166, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/drag-and-drop/scss/style.scss */
-  body section#simpleDD .elementsContainer:nth-child(2)::before {
+  /* line 167, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/drag-and-drop/scss/style.scss */
+  body section#simpleDD .elementsContainer:nth-child(2)::after {
     height: 50px;
     width: 83.33333%;
   }
 }
 
-/* line 172, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/drag-and-drop/scss/style.scss */
-body section#simpleDD .elementsContainer:nth-child(3)::before {
+/* line 183, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/drag-and-drop/scss/style.scss */
+body section#simpleDD .elementsContainer:nth-child(3)::after {
   content: "Local Storage";
   position: absolute;
   font-weight: 900;
@@ -372,14 +373,14 @@ body section#simpleDD .elementsContainer:nth-child(3)::before {
 }
 
 @media (min-width: 160px) and (max-width: 640px) and (orientation: portrait) {
-  /* line 172, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/drag-and-drop/scss/style.scss */
-  body section#simpleDD .elementsContainer:nth-child(3)::before {
+  /* line 183, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/drag-and-drop/scss/style.scss */
+  body section#simpleDD .elementsContainer:nth-child(3)::after {
     height: 50px;
     width: 83.33333%;
   }
 }
 
-/* line 179, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/drag-and-drop/scss/style.scss */
+/* line 190, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/drag-and-drop/scss/style.scss */
 body footer {
   height: 500px;
   width: 100vw;
