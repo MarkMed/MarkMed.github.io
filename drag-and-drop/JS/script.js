@@ -33,6 +33,20 @@ $(document).ready(()=>{
 		}
 	});
 	//////////////////////////////////////////////////////////////////////////////////
+	
+	//////////////////////////////////////////////////////////////////////////////////
+
+
+	function makeDragable(elem){
+		///// drag start Event /////
+		let dragStart = new CustomEvent("dragStart", { bubbles: true });
+
+		///// drag end Event /////
+		let dragEnd = new CustomEvent("dragEnd", { bubbles: true });
+	}
+
+	//////////////////////////////////////////////////////////////////////////////////
+
 	let elementDragging;
 	function allowDrop(ev) {
 		ev.preventDefault();
@@ -93,6 +107,5 @@ $(document).ready(()=>{
 			
 		}, 200);
 	})
-
 
 });
