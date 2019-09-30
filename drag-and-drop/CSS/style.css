@@ -1,1 +1,363 @@
-*{margin:0;padding:0;cursor:default;font-weight:100}a{text-decoration:none;color:black;cursor:pointer}ul,ol{list-style:none}*:focus{outline:none;color:black;text-decoration:none}input{background-color:transparent;border:none}@font-face{font-family:"RalewayLight";src:url(../../Resources/Raleway-Light_0.ttf)}@font-face{font-family:"RalewayELight";src:url(../../Resources/Raleway-ExtraLight.ttf)}@font-face{font-family:"RalewayThin";src:url(../../Resources/Raleway-Thin.ttf)}@font-face{font-family:"DetalThin";src:url(../../Resources/Datalegreya-Thin.otf)}@font-face{font-family:"BraGroLight";src:url(../../Resources/brandon-grotesque-light.woff)}html{scroll-behavior:smooth;scrollbar-width:none}body{color:rgba(240,240,223,0.75);font-family:"RalewayLight";background-color:#012a39;background-image:linear-gradient(to right bottom, #012a39,#1e3636);height:auto;width:100vw}body::-webkit-scrollbar{display:none}body header{position:relative;z-index:0;height:100vh;width:100vw;display:flex;flex-direction:column;justify-content:space-around;align-items:center;flex-wrap:wrap}body header h1{height:auto;width:100%;font-family:"RalewayELight";font-weight:100;text-transform:uppercase;letter-spacing:0.2em}body header section{height:80%;width:100%;display:flex;flex-direction:column;justify-content:center;align-items:center;flex-wrap:wrap;background-color:transparent}body header section *{height:auto;width:100%;text-align:center}body header section h4{font-size:25px;font-weight:100}body header section p{font-size:15px}body header section svg{margin-top:20px;cursor:pointer}@media (min-width: 160px) and (max-width: 640px){body header section svg{height:30px;width:30px}}@media (min-width: 641px) and (max-width: 1007px){body header section svg{height:40px;width:40px}}@media (min-width: 1008px){body header section svg{height:50px;width:50px}}@keyframes moving{from{transform:translateY(0px)}to{transform:translateY(10px)}}body header section svg g{stroke:rgba(240,240,223,0.75);stroke-width:2px;transition:0.4s cubic-bezier(0, 0, 0.27, 0.97)}body header section svg g path{animation:moving 1s cubic-bezier(1, 0, 0.5, 1) infinite alternate}body header section svg:hover g{stroke:#ffc33c}body .lineSeparator{height:2px;width:50vw;margin:20px 25vw;border-bottom:2px solid rgba(240,240,223,0.25);transition:0.5s cubic-bezier(0, 0, 0.27, 0.97)}body section .sectionTitle{height:60px;width:100%;display:flex;flex-direction:column;justify-content:space-around;align-items:center;flex-wrap:wrap;transition:0.5s cubic-bezier(0, 0, 0.27, 0.97)}body section .sectionTitle h2{transition-delay:1s;margin:10px 0px 5px;color:rgba(1,42,57,0.5);font-size:28px}body section .sectionTitle .lineSeparator{transition-delay:0.4s;height:2px;width:0%;margin:0px 5px;border-bottom:2px solid rgba(1,42,57,0.25)}body section .sectionTitle.show{transform:translateY(0px);opacity:1}body section .sectionTitle.show .lineSeparator{height:2px;width:50%}body section .sectionTitle.hidden{transform:translateY(-20px);opacity:0}body section#simpleDD{position:relative;z-index:0;height:100vh;width:100vw;display:flex;flex-direction:row;justify-content:space-around;align-items:center;flex-wrap:wrap;background-color:rgba(240,240,223,0.75)}@media (min-width: 160px) and (max-width: 1007px){body section#simpleDD{align-content:space-between}}body section#simpleDD .elementsContainer{height:calc(90vh - 20px - 60px - 10vh);width:33.33333%;padding:10px;background-color:#1b2e40;background-image:linear-gradient(to top, #132b40,#1b2e40);margin:5vh 0;border-radius:20px;box-shadow:3px 6px 9px 0px rgba(27,46,64,0.5);display:flex;flex-direction:row;justify-content:flex-start;align-items:flex-start;flex-wrap:wrap;align-content:flex-start;transition:0.4s ease;overflow:auto}@media (min-width: 160px) and (max-width: 640px) and (orientation: portrait){body section#simpleDD .elementsContainer{height:calc(25vh);width:83.33333%}}body section#simpleDD .elementsContainer .element2Drag{height:35px;width:35px;transition:0.2s ease;cursor:pointer;margin:2px}body section#simpleDD .elementsContainer .element2Drag:hover{filter:drop-shadow(0 0 0.75rem #c7ebff)}body section#simpleDD .elementsContainer .element2Drag.dragging{opacity:0.6}body section#simpleDD .elementsContainer .element2Drag.dragged{width:0px;opacity:0;margin:0px}body section#simpleDD .elementsContainer:nth-child(2)::after{content:"Cloud Storage";position:absolute;font-weight:900;text-transform:uppercase;color:rgba(1,42,57,0.5);font-size:1rem;height:50px;width:33.33333%;transform:translateY(-50px);display:flex;flex-direction:row;justify-content:flex-start;align-items:center;flex-wrap:wrap}@media (min-width: 160px) and (max-width: 640px) and (orientation: portrait){body section#simpleDD .elementsContainer:nth-child(2)::after{height:50px;width:83.33333%}}body section#simpleDD .elementsContainer:nth-child(3)::after{content:"Local Storage";position:absolute;font-weight:900;text-transform:uppercase;color:rgba(1,42,57,0.5);font-size:1rem;height:50px;width:33.33333%;transform:translateY(-50px);display:flex;flex-direction:row;justify-content:flex-start;align-items:center;flex-wrap:wrap}@media (min-width: 160px) and (max-width: 640px) and (orientation: portrait){body section#simpleDD .elementsContainer:nth-child(3)::after{height:50px;width:83.33333%}}body footer{height:500px;width:100vw}
+* {
+  margin: 0;
+  padding: 0;
+  cursor: default;
+  font-weight: 100;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+  cursor: pointer;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+*:focus {
+  outline: none;
+  color: black;
+  text-decoration: none;
+}
+
+input {
+  background-color: transparent;
+  border: none;
+}
+
+/*
+width of element:
+	12 cols - 100%
+	11 cols - 091,666666666%
+	10 cols - 083,333333333%
+	09 cols - 075%
+	08 cols - 066,666666666%
+	07 cols - 058,333333333%
+	06 cols - 050%
+	05 cols - 041,666666666%
+	04 cols - 033,333333333%
+	03 cols - 025%
+	02 cols - 016,666666666%
+	01 cols - 008,333333333%
+	00 cols - 000%
+*/
+/*Mixins*/
+@font-face {
+  font-family: "RalewayLight";
+  src: url(../../Resources/Raleway-Light_0.ttf);
+}
+
+@font-face {
+  font-family: "RalewayELight";
+  src: url(../../Resources/Raleway-ExtraLight.ttf);
+}
+
+@font-face {
+  font-family: "RalewayThin";
+  src: url(../../Resources/Raleway-Thin.ttf);
+}
+
+@font-face {
+  font-family: "DetalThin";
+  src: url(../../Resources/Datalegreya-Thin.otf);
+}
+
+@font-face {
+  font-family: "BraGroLight";
+  src: url(../../Resources/brandon-grotesque-light.woff);
+}
+
+html {
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+}
+
+body {
+  color: rgba(240, 240, 223, 0.75);
+  font-family: "RalewayLight";
+  background-color: #012a39;
+  background-image: linear-gradient(to right bottom, #012a39, #1e3636);
+  height: auto;
+  width: 100vw;
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+body header {
+  position: relative;
+  z-index: 0;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+body header h1 {
+  height: auto;
+  width: 100%;
+  font-family: "RalewayELight";
+  font-weight: 100;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+}
+
+body header section {
+  height: 80%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  background-color: transparent;
+}
+
+body header section * {
+  height: auto;
+  width: 100%;
+  text-align: center;
+}
+
+body header section h4 {
+  font-size: 25px;
+  font-weight: 100;
+}
+
+body header section p {
+  font-size: 15px;
+}
+
+body header section svg {
+  margin-top: 20px;
+  cursor: pointer;
+}
+
+@media (min-width: 160px) and (max-width: 640px) {
+  body header section svg {
+    height: 30px;
+    width: 30px;
+  }
+}
+
+@media (min-width: 641px) and (max-width: 1007px) {
+  body header section svg {
+    height: 40px;
+    width: 40px;
+  }
+}
+
+@media (min-width: 1008px) {
+  body header section svg {
+    height: 50px;
+    width: 50px;
+  }
+}
+
+@keyframes moving {
+  from {
+    transform: translateY(0px);
+  }
+  to {
+    transform: translateY(10px);
+  }
+}
+
+body header section svg g {
+  stroke: rgba(240, 240, 223, 0.75);
+  stroke-width: 2px;
+  transition: 0.4s cubic-bezier(0, 0, 0.27, 0.97);
+}
+
+body header section svg g path {
+  animation: moving 1s cubic-bezier(1, 0, 0.5, 1) infinite alternate;
+}
+
+body header section svg:hover g {
+  stroke: #ffc33c;
+}
+
+body .lineSeparator {
+  height: 2px;
+  width: 50vw;
+  margin: 20px 25vw;
+  border-bottom: 2px solid rgba(240, 240, 223, 0.25);
+  transition: 0.5s cubic-bezier(0, 0, 0.27, 0.97);
+}
+
+body section {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(240, 240, 223, 0.75);
+}
+
+body section .sectionTitle {
+  height: 60px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  transition: 0.5s cubic-bezier(0, 0, 0.27, 0.97);
+}
+
+body section .sectionTitle h2 {
+  transition-delay: 1s;
+  margin: 10px 0px 5px;
+  color: rgba(1, 42, 57, 0.5);
+  font-size: 28px;
+}
+
+body section .sectionTitle .lineSeparator {
+  transition-delay: 0.4s;
+  height: 2px;
+  width: 0%;
+  margin: 0px 5px;
+  border-bottom: 2px solid rgba(1, 42, 57, 0.25);
+}
+
+body section .sectionTitle.show {
+  transform: translateY(0px);
+  opacity: 1;
+}
+
+body section .sectionTitle.show .lineSeparator {
+  height: 2px;
+  width: 50%;
+}
+
+body section .sectionTitle.hidden {
+  transform: translateY(-20px);
+  opacity: 0;
+}
+
+body section .elementsContainer {
+  height: calc(90vh - 20px - 60px - 10vh);
+  width: 33.33333%;
+  padding: 10px;
+  background-color: #1b2e40;
+  background-image: linear-gradient(to top, #132b40, #1b2e40);
+  margin: 5vh 0;
+  border-radius: 20px;
+  box-shadow: 3px 6px 9px 0px rgba(27, 46, 64, 0.5);
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  transition: 0.4s ease;
+  overflow: auto;
+}
+
+@media (min-width: 160px) and (max-width: 640px) and (orientation: portrait) {
+  body section .elementsContainer {
+    height: calc(25vh);
+    width: 83.33333%;
+  }
+}
+
+body section .elementsContainer .element2Drag {
+  height: 35px;
+  width: 35px;
+  transition: 0.2s ease;
+  cursor: pointer;
+  margin: 2px;
+}
+
+body section .elementsContainer .element2Drag:hover {
+  filter: drop-shadow(0 0 0.75rem #c7ebff);
+}
+
+body section .elementsContainer .element2Drag.dragging {
+  opacity: 0.6;
+}
+
+body section .elementsContainer .element2Drag.dragged {
+  width: 0px;
+  opacity: 0;
+  margin: 0px;
+}
+
+body section section#simpleDD {
+  position: relative;
+  z-index: 0;
+}
+
+@media (min-width: 160px) and (max-width: 1007px) {
+  body section section#simpleDD {
+    align-content: space-between;
+  }
+}
+
+body section section#simpleDD:nth-child(2)::after {
+  content: "Cloud Storage";
+  position: absolute;
+  font-weight: 900;
+  text-transform: uppercase;
+  color: rgba(1, 42, 57, 0.5);
+  font-size: 1rem;
+  height: 50px;
+  width: 33.33333%;
+  transform: translateY(-50px);
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+@media (min-width: 160px) and (max-width: 640px) and (orientation: portrait) {
+  body section section#simpleDD:nth-child(2)::after {
+    height: 50px;
+    width: 83.33333%;
+  }
+}
+
+body section section#simpleDD:nth-child(3)::after {
+  content: "Local Storage";
+  position: absolute;
+  font-weight: 900;
+  text-transform: uppercase;
+  color: rgba(1, 42, 57, 0.5);
+  font-size: 1rem;
+  height: 50px;
+  width: 33.33333%;
+  transform: translateY(-50px);
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+@media (min-width: 160px) and (max-width: 640px) and (orientation: portrait) {
+  body section section#simpleDD:nth-child(3)::after {
+    height: 50px;
+    width: 83.33333%;
+  }
+}
+
+body section#DDinSD p {
+  text-align: center;
+  margin-top: 30px;
+  height: 60px;
+  width: 100%;
+  color: rgba(1, 42, 57, 0.5);
+}
+
+body footer {
+  height: 500px;
+  width: 100vw;
+}
