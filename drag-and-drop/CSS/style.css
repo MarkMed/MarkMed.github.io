@@ -246,9 +246,9 @@ body section .elementsContainer {
   height: calc(90vh - 20px - 60px - 10vh);
   width: 33.33333%;
   padding: 10px;
+  margin: 5vh 0;
   background-color: #1b2e40;
   background-image: linear-gradient(to top, #132b40, #1b2e40);
-  margin: 5vh 0;
   border-radius: 20px;
   box-shadow: 3px 6px 9px 0px rgba(27, 46, 64, 0.5);
   display: flex;
@@ -265,6 +265,13 @@ body section .elementsContainer {
   body section .elementsContainer {
     height: calc(25vh);
     width: 83.33333%;
+    margin: 0 0;
+  }
+}
+
+@media (min-width: 160px) and (max-width: 640px) {
+  body section .elementsContainer {
+    margin: 0 0;
   }
 }
 
@@ -355,6 +362,12 @@ body section#DDinSD p {
   height: 60px;
   width: 100%;
   color: rgba(1, 42, 57, 0.5);
+}
+
+@media (min-width: 160px) and (max-width: 640px) {
+  body section#DDinSD p {
+    margin-top: 0px;
+  }
 }
 
 body footer {
