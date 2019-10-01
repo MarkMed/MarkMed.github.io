@@ -333,21 +333,21 @@ body section .elementsContainer .element2Drag.dragged {
   margin: 0px;
 }
 
-/* line 153, ../Programming/MarkMed.github.io/drag-and-drop/SCSS/style.scss */
-body section section#simpleDD {
-  position: relative;
+/* line 154, ../Programming/MarkMed.github.io/drag-and-drop/SCSS/style.scss */
+body section#simpleDD {
   z-index: 0;
+  position: relative;
 }
 
 @media (min-width: 160px) and (max-width: 1007px) {
-  /* line 153, ../Programming/MarkMed.github.io/drag-and-drop/SCSS/style.scss */
-  body section section#simpleDD {
+  /* line 154, ../Programming/MarkMed.github.io/drag-and-drop/SCSS/style.scss */
+  body section#simpleDD {
     align-content: space-between;
   }
 }
 
-/* line 173, ../Programming/MarkMed.github.io/drag-and-drop/SCSS/style.scss */
-body section section#simpleDD:nth-child(2)::after {
+/* line 174, ../Programming/MarkMed.github.io/drag-and-drop/SCSS/style.scss */
+body section#simpleDD:nth-child(2)::after {
   content: "Cloud Storage";
   position: absolute;
   font-weight: 900;
@@ -365,15 +365,15 @@ body section section#simpleDD:nth-child(2)::after {
 }
 
 @media (min-width: 160px) and (max-width: 640px) and (orientation: portrait) {
-  /* line 173, ../Programming/MarkMed.github.io/drag-and-drop/SCSS/style.scss */
-  body section section#simpleDD:nth-child(2)::after {
+  /* line 174, ../Programming/MarkMed.github.io/drag-and-drop/SCSS/style.scss */
+  body section#simpleDD:nth-child(2)::after {
     height: 50px;
     width: 83.33333%;
   }
 }
 
-/* line 189, ../Programming/MarkMed.github.io/drag-and-drop/SCSS/style.scss */
-body section section#simpleDD:nth-child(3)::after {
+/* line 190, ../Programming/MarkMed.github.io/drag-and-drop/SCSS/style.scss */
+body section#simpleDD:nth-child(3)::after {
   content: "Local Storage";
   position: absolute;
   font-weight: 900;
@@ -391,8 +391,8 @@ body section section#simpleDD:nth-child(3)::after {
 }
 
 @media (min-width: 160px) and (max-width: 640px) and (orientation: portrait) {
-  /* line 189, ../Programming/MarkMed.github.io/drag-and-drop/SCSS/style.scss */
-  body section section#simpleDD:nth-child(3)::after {
+  /* line 190, ../Programming/MarkMed.github.io/drag-and-drop/SCSS/style.scss */
+  body section#simpleDD:nth-child(3)::after {
     height: 50px;
     width: 83.33333%;
   }

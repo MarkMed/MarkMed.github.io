@@ -149,47 +149,47 @@ body{
 					margin: 0px;
 				}
 			}
+		}
 	}
 	section#simpleDD{
-		position: relative;
 		z-index: 0;
+		position: relative;
 		@media (min-width: 160px) and (max-width: $mediumWidth){
 			align-content: space-between;
 		}
-			@mixin divTitle {
-				@media (min-width: 160px) and (max-width: $smallWidth) and (orientation: portrait){
-					@include widthHeightsize($width-10, 50px);
-				}
-				position: absolute;
-				font-weight: 900;
-				text-transform: uppercase;
-				color: $primaryColor50;
-				font-size: 1rem;
-				@include widthHeightsize($width-4, 50px);
-				transform: translateY(-50px);
-				@include flex(row, flex-start, center, wrap);
+		@mixin divTitle {
+			@media (min-width: 160px) and (max-width: $smallWidth) and (orientation: portrait){
+				@include widthHeightsize($width-10, 50px);
 			}
-			&:nth-child(2){
-				&::after{
-					content: "Cloud Storage";
-					@include divTitle;
-				}
-				// &::before{
-				// 	content: "<<";
-				// 	position: absolute;
-				// 	@include flex(row, center, center, wrap);
-				// 	@include widthHeightsize(auto, calc(90vh - 20px - 60px - 10vh));
-				// 	font-weight: 900;
-				// 	text-transform: uppercase;
-				// 	color: $primaryColor50;
-				// 	font-size: 1.2rem;
-				// }
+			position: absolute;
+			font-weight: 900;
+			text-transform: uppercase;
+			color: $primaryColor50;
+			font-size: 1rem;
+			@include widthHeightsize($width-4, 50px);
+			transform: translateY(-50px);
+			@include flex(row, flex-start, center, wrap);
+		}
+		&:nth-child(2){
+			&::after{
+				content: "Cloud Storage";
+				@include divTitle;
 			}
-			&:nth-child(3){
-				&::after{
-					content: "Local Storage";
-					@include divTitle;
-				}
+			// &::before{
+			// 	content: "<<";
+			// 	position: absolute;
+			// 	@include flex(row, center, center, wrap);
+			// 	@include widthHeightsize(auto, calc(90vh - 20px - 60px - 10vh));
+			// 	font-weight: 900;
+			// 	text-transform: uppercase;
+			// 	color: $primaryColor50;
+			// 	font-size: 1.2rem;
+			// }
+		}
+		&:nth-child(3){
+			&::after{
+				content: "Local Storage";
+				@include divTitle;
 			}
 		}
 	}
