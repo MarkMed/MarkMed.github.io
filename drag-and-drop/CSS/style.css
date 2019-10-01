@@ -80,6 +80,18 @@ html {
 }
 
 /* line 8, ../Programming/MarkMed.github.io/drag-and-drop/SCSS/style.scss */
+.show, body section .sectionTitle.show {
+  transform: translateY(0px);
+  opacity: 1;
+}
+
+/* line 12, ../Programming/MarkMed.github.io/drag-and-drop/SCSS/style.scss */
+.hidden, body section .sectionTitle.hidden {
+  transform: translateY(-20px);
+  opacity: 0;
+}
+
+/* line 16, ../Programming/MarkMed.github.io/drag-and-drop/SCSS/style.scss */
 body {
   color: rgba(240, 240, 223, 0.75);
   font-family: "RalewayLight";
@@ -89,12 +101,12 @@ body {
   width: 100vw;
 }
 
-/* line 9, ../Programming/MarkMed.github.io/drag-and-drop/SCSS/style.scss */
+/* line 17, ../Programming/MarkMed.github.io/drag-and-drop/SCSS/style.scss */
 body::-webkit-scrollbar {
   display: none;
 }
 
-/* line 17, ../Programming/MarkMed.github.io/drag-and-drop/SCSS/style.scss */
+/* line 25, ../Programming/MarkMed.github.io/drag-and-drop/SCSS/style.scss */
 body header {
   position: relative;
   z-index: 0;
@@ -107,7 +119,7 @@ body header {
   flex-wrap: wrap;
 }
 
-/* line 22, ../Programming/MarkMed.github.io/drag-and-drop/SCSS/style.scss */
+/* line 30, ../Programming/MarkMed.github.io/drag-and-drop/SCSS/style.scss */
 body header h1 {
   height: auto;
   width: 100%;
@@ -117,7 +129,7 @@ body header h1 {
   letter-spacing: 0.2em;
 }
 
-/* line 29, ../Programming/MarkMed.github.io/drag-and-drop/SCSS/style.scss */
+/* line 37, ../Programming/MarkMed.github.io/drag-and-drop/SCSS/style.scss */
 body header section {
   height: 80%;
   width: 100%;
@@ -129,32 +141,32 @@ body header section {
   background-color: rgba(0, 0, 0, 0);
 }
 
-/* line 33, ../Programming/MarkMed.github.io/drag-and-drop/SCSS/style.scss */
+/* line 41, ../Programming/MarkMed.github.io/drag-and-drop/SCSS/style.scss */
 body header section * {
   height: auto;
   width: 100%;
   text-align: center;
 }
 
-/* line 37, ../Programming/MarkMed.github.io/drag-and-drop/SCSS/style.scss */
+/* line 45, ../Programming/MarkMed.github.io/drag-and-drop/SCSS/style.scss */
 body header section h4 {
   font-size: 25px;
   font-weight: 100;
 }
 
-/* line 41, ../Programming/MarkMed.github.io/drag-and-drop/SCSS/style.scss */
+/* line 49, ../Programming/MarkMed.github.io/drag-and-drop/SCSS/style.scss */
 body header section p {
   font-size: 15px;
 }
 
-/* line 44, ../Programming/MarkMed.github.io/drag-and-drop/SCSS/style.scss */
+/* line 52, ../Programming/MarkMed.github.io/drag-and-drop/SCSS/style.scss */
 body header section svg {
   margin-top: 20px;
   cursor: pointer;
 }
 
 @media (min-width: 160px) and (max-width: 640px) {
-  /* line 44, ../Programming/MarkMed.github.io/drag-and-drop/SCSS/style.scss */
+  /* line 52, ../Programming/MarkMed.github.io/drag-and-drop/SCSS/style.scss */
   body header section svg {
     height: 30px;
     width: 30px;
@@ -162,7 +174,7 @@ body header section svg {
 }
 
 @media (min-width: 641px) and (max-width: 1007px) {
-  /* line 44, ../Programming/MarkMed.github.io/drag-and-drop/SCSS/style.scss */
+  /* line 52, ../Programming/MarkMed.github.io/drag-and-drop/SCSS/style.scss */
   body header section svg {
     height: 40px;
     width: 40px;
@@ -170,7 +182,7 @@ body header section svg {
 }
 
 @media (min-width: 1008px) {
-  /* line 44, ../Programming/MarkMed.github.io/drag-and-drop/SCSS/style.scss */
+  /* line 52, ../Programming/MarkMed.github.io/drag-and-drop/SCSS/style.scss */
   body header section svg {
     height: 50px;
     width: 50px;
@@ -186,33 +198,33 @@ body header section svg {
   }
 }
 
-/* line 64, ../Programming/MarkMed.github.io/drag-and-drop/SCSS/style.scss */
+/* line 72, ../Programming/MarkMed.github.io/drag-and-drop/SCSS/style.scss */
 body header section svg g {
   stroke: rgba(240, 240, 223, 0.75);
   stroke-width: 2px;
   transition: 0.4s cubic-bezier(0, 0, 0.27, 0.97);
 }
 
-/* line 68, ../Programming/MarkMed.github.io/drag-and-drop/SCSS/style.scss */
+/* line 76, ../Programming/MarkMed.github.io/drag-and-drop/SCSS/style.scss */
 body header section svg g path {
   animation: moving 1s cubic-bezier(1, 0, 0.5, 1) infinite alternate;
 }
 
-/* line 72, ../Programming/MarkMed.github.io/drag-and-drop/SCSS/style.scss */
+/* line 80, ../Programming/MarkMed.github.io/drag-and-drop/SCSS/style.scss */
 body header section svg:hover g {
   stroke: #ffc33c;
 }
 
-/* line 78, ../Programming/MarkMed.github.io/drag-and-drop/SCSS/style.scss */
+/* line 86, ../Programming/MarkMed.github.io/drag-and-drop/SCSS/style.scss */
 body .lineSeparator {
   height: 2px;
   width: 50vw;
   margin: 20px 25vw;
   border-bottom: 2px solid rgba(240, 240, 223, 0.25);
-  transition: 0.5s cubic-bezier(0, 0, 0.27, 0.97);
+  transition: 0.3s cubic-bezier(0, 0, 0.27, 0.97);
 }
 
-/* line 84, ../Programming/MarkMed.github.io/drag-and-drop/SCSS/style.scss */
+/* line 92, ../Programming/MarkMed.github.io/drag-and-drop/SCSS/style.scss */
 body section {
   display: flex;
   flex-direction: row;
@@ -224,7 +236,7 @@ body section {
   background-color: rgba(240, 240, 223, 0.75);
 }
 
-/* line 88, ../Programming/MarkMed.github.io/drag-and-drop/SCSS/style.scss */
+/* line 96, ../Programming/MarkMed.github.io/drag-and-drop/SCSS/style.scss */
 body section .sectionTitle {
   height: 60px;
   width: 100%;
@@ -236,7 +248,7 @@ body section .sectionTitle {
   transition: 0.5s cubic-bezier(0, 0, 0.27, 0.97);
 }
 
-/* line 92, ../Programming/MarkMed.github.io/drag-and-drop/SCSS/style.scss */
+/* line 100, ../Programming/MarkMed.github.io/drag-and-drop/SCSS/style.scss */
 body section .sectionTitle h2 {
   transition-delay: 1s;
   margin: 10px 0px 5px;
@@ -244,7 +256,7 @@ body section .sectionTitle h2 {
   font-size: 28px;
 }
 
-/* line 98, ../Programming/MarkMed.github.io/drag-and-drop/SCSS/style.scss */
+/* line 106, ../Programming/MarkMed.github.io/drag-and-drop/SCSS/style.scss */
 body section .sectionTitle .lineSeparator {
   transition-delay: 0.4s;
   height: 2px;
@@ -253,25 +265,13 @@ body section .sectionTitle .lineSeparator {
   border-bottom: 2px solid rgba(1, 42, 57, 0.25);
 }
 
-/* line 104, ../Programming/MarkMed.github.io/drag-and-drop/SCSS/style.scss */
-body section .sectionTitle.show {
-  transform: translateY(0px);
-  opacity: 1;
-}
-
-/* line 107, ../Programming/MarkMed.github.io/drag-and-drop/SCSS/style.scss */
+/* line 114, ../Programming/MarkMed.github.io/drag-and-drop/SCSS/style.scss */
 body section .sectionTitle.show .lineSeparator {
   height: 2px;
   width: 50%;
 }
 
-/* line 111, ../Programming/MarkMed.github.io/drag-and-drop/SCSS/style.scss */
-body section .sectionTitle.hidden {
-  transform: translateY(-20px);
-  opacity: 0;
-}
-
-/* line 116, ../Programming/MarkMed.github.io/drag-and-drop/SCSS/style.scss */
+/* line 122, ../Programming/MarkMed.github.io/drag-and-drop/SCSS/style.scss */
 body section .elementsContainer {
   height: calc(90vh - 20px - 60px - 10vh);
   width: 33.33333%;
@@ -292,7 +292,7 @@ body section .elementsContainer {
 }
 
 @media (min-width: 160px) and (max-width: 640px) and (orientation: portrait) {
-  /* line 116, ../Programming/MarkMed.github.io/drag-and-drop/SCSS/style.scss */
+  /* line 122, ../Programming/MarkMed.github.io/drag-and-drop/SCSS/style.scss */
   body section .elementsContainer {
     height: calc(25vh);
     width: 83.33333%;
@@ -301,13 +301,13 @@ body section .elementsContainer {
 }
 
 @media (min-width: 160px) and (max-width: 640px) {
-  /* line 116, ../Programming/MarkMed.github.io/drag-and-drop/SCSS/style.scss */
+  /* line 122, ../Programming/MarkMed.github.io/drag-and-drop/SCSS/style.scss */
   body section .elementsContainer {
     margin: 0 0;
   }
 }
 
-/* line 135, ../Programming/MarkMed.github.io/drag-and-drop/SCSS/style.scss */
+/* line 141, ../Programming/MarkMed.github.io/drag-and-drop/SCSS/style.scss */
 body section .elementsContainer .element2Drag {
   height: 35px;
   width: 35px;
@@ -316,37 +316,30 @@ body section .elementsContainer .element2Drag {
   margin: 2px;
 }
 
-/* line 140, ../Programming/MarkMed.github.io/drag-and-drop/SCSS/style.scss */
+/* line 146, ../Programming/MarkMed.github.io/drag-and-drop/SCSS/style.scss */
 body section .elementsContainer .element2Drag:hover {
   filter: drop-shadow(0 0 0.75rem #c7ebff);
 }
 
-/* line 143, ../Programming/MarkMed.github.io/drag-and-drop/SCSS/style.scss */
+/* line 149, ../Programming/MarkMed.github.io/drag-and-drop/SCSS/style.scss */
 body section .elementsContainer .element2Drag.dragging {
   opacity: 0.6;
 }
 
-/* line 146, ../Programming/MarkMed.github.io/drag-and-drop/SCSS/style.scss */
+/* line 152, ../Programming/MarkMed.github.io/drag-and-drop/SCSS/style.scss */
 body section .elementsContainer .element2Drag.dragged {
   width: 0px;
   opacity: 0;
   margin: 0px;
 }
 
-/* line 154, ../Programming/MarkMed.github.io/drag-and-drop/SCSS/style.scss */
+/* line 160, ../Programming/MarkMed.github.io/drag-and-drop/SCSS/style.scss */
 body section#simpleDD {
   z-index: 0;
   position: relative;
 }
 
-@media (min-width: 160px) and (max-width: 1007px) {
-  /* line 154, ../Programming/MarkMed.github.io/drag-and-drop/SCSS/style.scss */
-  body section#simpleDD {
-    align-content: space-between;
-  }
-}
-
-/* line 174, ../Programming/MarkMed.github.io/drag-and-drop/SCSS/style.scss */
+/* line 177, ../Programming/MarkMed.github.io/drag-and-drop/SCSS/style.scss */
 body section#simpleDD:nth-child(2)::after {
   content: "Cloud Storage";
   position: absolute;
@@ -365,14 +358,14 @@ body section#simpleDD:nth-child(2)::after {
 }
 
 @media (min-width: 160px) and (max-width: 640px) and (orientation: portrait) {
-  /* line 174, ../Programming/MarkMed.github.io/drag-and-drop/SCSS/style.scss */
+  /* line 177, ../Programming/MarkMed.github.io/drag-and-drop/SCSS/style.scss */
   body section#simpleDD:nth-child(2)::after {
     height: 50px;
     width: 83.33333%;
   }
 }
 
-/* line 190, ../Programming/MarkMed.github.io/drag-and-drop/SCSS/style.scss */
+/* line 193, ../Programming/MarkMed.github.io/drag-and-drop/SCSS/style.scss */
 body section#simpleDD:nth-child(3)::after {
   content: "Local Storage";
   position: absolute;
@@ -391,30 +384,34 @@ body section#simpleDD:nth-child(3)::after {
 }
 
 @media (min-width: 160px) and (max-width: 640px) and (orientation: portrait) {
-  /* line 190, ../Programming/MarkMed.github.io/drag-and-drop/SCSS/style.scss */
+  /* line 193, ../Programming/MarkMed.github.io/drag-and-drop/SCSS/style.scss */
   body section#simpleDD:nth-child(3)::after {
     height: 50px;
     width: 83.33333%;
   }
 }
 
-/* line 197, ../Programming/MarkMed.github.io/drag-and-drop/SCSS/style.scss */
+/* line 200, ../Programming/MarkMed.github.io/drag-and-drop/SCSS/style.scss */
 body section#DDinSD p {
   text-align: center;
   margin-top: 30px;
   height: 60px;
   width: 100%;
   color: rgba(1, 42, 57, 0.5);
+  transition: 0.4s;
+  transition-delay: 0.5s;
 }
 
-@media (min-width: 160px) and (max-width: 640px) {
-  /* line 197, ../Programming/MarkMed.github.io/drag-and-drop/SCSS/style.scss */
+@media (min-width: 160px) and (max-width: 1007px) {
+  /* line 210, ../Programming/MarkMed.github.io/drag-and-drop/SCSS/style.scss */
   body section#DDinSD p {
-    margin-top: 0px;
+    margin-top: 20px;
+    height: 30px;
+    width: 100%;
   }
 }
 
-/* line 207, ../Programming/MarkMed.github.io/drag-and-drop/SCSS/style.scss */
+/* line 216, ../Programming/MarkMed.github.io/drag-and-drop/SCSS/style.scss */
 body footer {
   height: 500px;
   width: 100vw;

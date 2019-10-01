@@ -5,6 +5,14 @@ html{
 	scroll-behavior: smooth;
 	scrollbar-width: none;
 }
+.show{
+	transform: translateY(0px);
+	opacity: 1;
+}
+.hidden{
+	transform: translateY(-20px);
+	opacity: 0;
+}
 body{
 	&::-webkit-scrollbar { 
 		display: none; 
@@ -79,7 +87,7 @@ body{
 		@include widthHeightsize(50vw, 2px);
 		margin: 20px 25vw;
 		border-bottom: 2px solid $clearColor25;
-		transition: 0.5s $animationFX;
+		transition: 0.3s $animationFX;
 	}
 	section{
 		@include flex(row, space-around, center, wrap);
@@ -102,15 +110,13 @@ body{
 				border-bottom: 2px solid $primaryColor25;
 			}
 			&.show{
-				transform: translateY(0px);
-				opacity: 1;
+				@extend .show;
 				.lineSeparator{
 					@include widthHeightsize(50%, 2px);
 				}
 			}
 			&.hidden{
-				transform: translateY(-20px);
-				opacity: 0;
+				@extend .hidden;
 			}
 		}
 		.elementsContainer{
@@ -154,9 +160,6 @@ body{
 	section#simpleDD{
 		z-index: 0;
 		position: relative;
-		@media (min-width: 160px) and (max-width: $mediumWidth){
-			align-content: space-between;
-		}
 		@mixin divTitle {
 			@media (min-width: 160px) and (max-width: $smallWidth) and (orientation: portrait){
 				@include widthHeightsize($width-10, 50px);
@@ -199,8 +202,14 @@ body{
 			margin-top: 30px;
 			@include widthHeightsize($width-12, 60px);
 			color: $primaryColor50;
-			@media (min-width: 160px) and (max-width: $smallWidth){
-				margin-top: 0px;
+			transition: 0.4s;
+			transition-delay: 0.5s;
+		}
+		
+		@media (min-width: 160px) and (max-width: $mediumWidth){
+			p{
+				margin-top: 20px;
+				@include widthHeightsize($width-12, 30px);
 			}
 		}
 	}

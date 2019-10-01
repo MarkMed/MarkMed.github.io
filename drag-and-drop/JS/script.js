@@ -34,6 +34,7 @@ $(document).ready(()=>{
 		}
 		if($(document).scrollTop() > secondTitle.offset().top/1.1){
 			secondTitle.removeClass("hidden").addClass("show");
+			$("#DDinSD p").removeClass("hidden").addClass("show");
 		}
 	});
 	//////////////////////////////////////////////////////////////////////////////////
@@ -101,26 +102,34 @@ $(document).ready(()=>{
 	let cloudDiv = $("#cloudDiv");
 	let storageDiv = $("#storageDiv");
 	let items = storageDiv.children();
+
 	for(let i=0; i<items.length; i++){
+
 		makeDragable($(items[i]));
+
 		$(items[i]).on("gxDrag", (ev)=>{
 			elementDragging = ev.target;
 			console.log("gx-drag fired");
 			$(items[i]).addClass("dragging");
 		});
+
 		$(items[i]).on("dragend", (ev)=>{
 			console.log("elementDragging", elementDragging);
 			$(items[i]).removeClass("dragging").addClass("dragged");
 			console.log("Drag End!", ev);
 			console.log("The element has been dropped in: ", ev.toElement.parentNode)
 		});
+
 	}
+
 	cloudDiv.on("dragover", (ev)=>{
 		// console.log("You are now draging over cloudDiv and the event traget is: ", ev.target);
 		event.dataTransfer.dropEffect = 'move';
 		allowDrop(event);
 	})
+
 	cloudDiv.on("drop", (ev)=>{
+
 		console.log("Drop!", event);
 		event.dataTransfer.dropEffect = 'move';
 		
@@ -132,6 +141,7 @@ $(document).ready(()=>{
 			}, 200);
 			
 		}, 200);
+
 	})
 	
 	cloudDiv.on("dragenter", (ev)=>{
@@ -140,13 +150,17 @@ $(document).ready(()=>{
 		console.log("dropTarget", ev.target.acceptDrop);
 		console.log("drag enter!");
 	});
+
 	cloudDiv.on("dragleave", ()=>{
 		console.log("drag canceled");
 	});
+
 	storageDiv.on("dragover", (ev)=>{
 		allowDrop(event);
-	})
+	});
+
 	storageDiv.on("drop", (ev)=>{
+
 		event.dataTransfer.dropEffect = 'move';
 		console.log("Drop!", event);
 		console.log("Drop!", ev.target);
