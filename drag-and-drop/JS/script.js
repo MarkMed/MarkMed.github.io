@@ -62,42 +62,53 @@ $(document).ready(()=>{
 	
 	//////////////////////////////////////////////////////////////////////////////////
 
+	let elementDragging;
+
 	function makeDragable(elem){
+	
+		function drag(ev) {
+			elementDragging = ev.target;
+			console.log("elementDragging", elementDragging);
+			ev.dataTransfer.setData('text/plain', elementDragging);
+		}
+
 		///// drag start Event /////
-		let dragStart = new CustomEvent("gx-drag", { bubbles: true });
+		let dragStart = new CustomEvent("gxDrag", { bubbles: true });
+		$(elem).on("dragstart", ()=>{
+			console.log("gx-drag will be fired");
+			drag(event);
+			elem.get(0).dispatchEvent(dragStart);
+		});
+
 
 		///// drag end Event /////
-		let dragEnd = new CustomEvent("gx-drag-accepted", { bubbles: true });
+		let dragEnd = new CustomEvent("gxDragAccepted", { bubbles: true });
+
 	}
 
 	function makeDropable(elem){
+		//////////// PREGUNTAR SOBRE DropAccepted https://wiki.genexus.com/commwiki/servlet/wiki?22542,DropAccepted+event+in+Smart+Devices ///////////
 		///// drop Event /////
-		let drop = new CustomEvent("gx-drop", { bubbles: true });
+		let drop = new CustomEvent("gxDrop", { bubbles: true });
 	}
 
 	//////////////////////////////////////////////////////////////////////////////////
 
-	let elementDragging;
 	function allowDrop(ev) {
 		ev.preventDefault();
-	}
-	
-	function drag(ev) {
-		elementDragging = ev.target;
-		console.log("elementDragging", elementDragging);
-		ev.dataTransfer.setData('text/plain', elementDragging);
 	}
 	
 	let cloudDiv = $("#cloudDiv");
 	let storageDiv = $("#storageDiv");
 	let items = storageDiv.children();
 	for(let i=0; i<items.length; i++){
-		$(items[i]).on("dragstart", ()=>{
+		makeDragable($(items[i]));
+		$(items[i]).on("gxDrag", (ev)=>{
+			elementDragging = ev.target;
+			console.log("gx-drag fired");
 			$(items[i]).addClass("dragging");
-			drag(event);
 		});
 		$(items[i]).on("dragend", (ev)=>{
-			elementDragging = ev.target;
 			console.log("elementDragging", elementDragging);
 			$(items[i]).removeClass("dragging").addClass("dragged");
 			console.log("Drag End!", ev);
