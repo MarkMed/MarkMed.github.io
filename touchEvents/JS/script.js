@@ -37,8 +37,8 @@ $(document).ready(()=>{
 	});
 	//////////////////////////////////////////////////////////////////////////////////
 	///// Double Tap Event /////
-	let dblTap= new CustomEvent("dblTap", { bubbles: true });
 	function makeDblTapable(elem){
+		let dblTap= new CustomEvent("dblTap", { bubbles: true });
 		function doubleTap(elem){
 			const bool= (elem.attr("db-tap")==="true")?(true):(false);
 			elem.attr("db-tap", true);
