@@ -38,7 +38,7 @@ $(document).ready(()=>{
 		}
 	});
 	//////////////////////////////////////////////////////////////////////////////////
-	let longTapTime = 1;
+	let longTapTime = 1000;
 	///// Long Tap Event /////
 	let longTap = new CustomEvent("longTap", { bubbles: true });
 	function makeLongTapable(elem){
@@ -49,6 +49,7 @@ $(document).ready(()=>{
 		// }
 
 		elem.on("touchstart", (ev)=>{
+			console.log("touch of Long Tap")
 			ev.preventDefault();
 			timer = setTimeout( function() { 
 				elem.get(0).dispatchEvent(longTap);
@@ -88,7 +89,6 @@ $(document).ready(()=>{
 	}
 
 	function makeDropable(elem){
-		//////////// PREGUNTAR SOBRE DropAccepted https://wiki.genexus.com/commwiki/servlet/wiki?22542,DropAccepted+event+in+Smart+Devices ///////////
 		///// drop Event /////
 		let drop = new CustomEvent("gxDrop", { bubbles: true });
 	}
@@ -103,8 +103,11 @@ $(document).ready(()=>{
 	let storageDiv = $("#storageDiv");
 	let items = storageDiv.children();
 
-	for(let i=0; i<items.length; i++){
+	let startStorage = $("#startStorage");
+	let targetStorage = $("#targetStorage");
+	let items2 = startStorage.children();
 
+	for(let i=0; i<items.length; i++){
 		makeDragable($(items[i]));
 
 		$(items[i]).on("gxDrag", (ev)=>{
@@ -120,6 +123,14 @@ $(document).ready(()=>{
 			console.log("The element has been dropped in: ", ev.toElement.parentNode)
 		});
 
+	}
+
+	for(let i=0; i<items2.length; i++){
+		makeLongTapable($(items2[i]));
+
+		$(items2[i]).on("longTap", (ev)=>{
+			console.log("Long tap!");
+		});
 	}
 
 	cloudDiv.on("dragover", (ev)=>{
