@@ -42,11 +42,7 @@ $(document).ready(()=>{
 	///// Long Tap Event /////
 	let longTap = new CustomEvent("longTap", { bubbles: true });
 	function makeLongTapable(elem){
-
 		let timer;
-
-		// function longTap(elem){
-		// }
 
 		elem.on("touchstart", (ev)=>{
 			console.log("touch of Long Tap")
@@ -63,7 +59,6 @@ $(document).ready(()=>{
 	}
 	
 	//////////////////////////////////////////////////////////////////////////////////
-
 	let elementDragging;
 
 	function makeDragable(elem){

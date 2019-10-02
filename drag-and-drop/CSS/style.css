@@ -362,7 +362,7 @@ body section#DDinSD p {
 
 @media (min-width: 160px) and (max-width: 1007px) {
   body section#DDinSD p {
-    margin-top: 20px;
+    margin-top: 0px;
     height: 30px;
     width: 100%;
   }
