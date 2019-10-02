@@ -125,6 +125,7 @@ $(document).ready(()=>{
 
 		$(items2[i]).on("longTap", (ev)=>{
 			console.log("Long tap!");
+			$(items2[i]).addClass("dragging");
 		});
 	}
 

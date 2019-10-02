@@ -289,6 +289,8 @@ body section .elementsContainer .element2Drag:hover {
 
 body section .elementsContainer .element2Drag.dragging {
   opacity: 0.6;
+  border: 2px solid rgba(33, 160, 200, 0.5);
+  border-radius: 10px;
 }
 
 body section .elementsContainer .element2Drag.dragged {
