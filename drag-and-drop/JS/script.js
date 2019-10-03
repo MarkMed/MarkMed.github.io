@@ -123,7 +123,8 @@ $(document).ready(()=>{
 	for(let i=0; i<items2.length; i++){
 		makeLongTapable($(items2[i]));
 
-		$(items2[i]).on("longTap", (ev)=>{
+		$(items2[i]).on("longTap", (ev)=>{			
+			ev.preventDefault();
 			console.log("Long tap!");
 			$(items2[i]).addClass("dragging");
 		});
