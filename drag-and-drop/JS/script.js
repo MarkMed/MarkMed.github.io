@@ -44,7 +44,12 @@ $(document).ready(()=>{
 	function makeLongTapable(elem){
 		let timer;
 
-		elem.on("touchstart", (ev)=>{
+		elem.on("touchstart", (ev)=>{			
+			window.oncontextmenu = function(event) {
+				event.preventDefault();
+				event.stopPropagation();
+				return false;
+			};
 			console.log("touch of Long Tap")
 			ev.preventDefault();
 			timer = setTimeout( function() { 
@@ -124,11 +129,6 @@ $(document).ready(()=>{
 		makeLongTapable($(items2[i]));
 
 		$(items2[i]).on("longTap", (ev)=>{
-			window.oncontextmenu = function(event) {
-				event.preventDefault();
-				event.stopPropagation();
-				return false;
-			};
 			console.log("Long tap!");
 			$(items2[i]).addClass("dragging");
 		});
