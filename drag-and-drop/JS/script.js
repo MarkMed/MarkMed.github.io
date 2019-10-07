@@ -44,12 +44,11 @@ $(document).ready(()=>{
 	function makeLongTapable(elem){
 		let timer;
 
-		elem.on("touchstart", (ev)=>{			
-			window.oncontextmenu = function(event) {
-				event.preventDefault();
-				event.stopPropagation();
-				return false;
-			};
+		elem.on("contextmenu", (ev)=>{
+			e.preventDefault();
+		});
+
+		elem.on("touchstart", (ev)=>{
 			ev.preventDefault();
 			timer = setTimeout( function() { 
 				elem.get(0).dispatchEvent(longTap);
