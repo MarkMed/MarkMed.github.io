@@ -44,19 +44,31 @@ $(document).ready(()=>{
 	function makeLongTapable(elem){
 		let timer;
 
-		elem.on("contextmenu", (ev)=>{
-			e.preventDefault();
-		});
+		function absorbEvent_(event) {
+		  var e = event || window.event;
+		  e.preventDefault && e.preventDefault();
+		  e.stopPropagation && e.stopPropagation();
+		  e.cancelBubble = true;
+		  e.returnValue = false;
+		  return false;
+		}
+	
+		function preventLongPressMenu(node) {
+		  node.ontouchstart = absorbEvent_;
+		  node.ontouchmove = absorbEvent_;
+		  node.ontouchend = absorbEvent_;
+		  node.ontouchcancel = absorbEvent_;
+		}
+
+		preventLongPressMenu(elem);
 
 		elem.on("touchstart", (ev)=>{
-			ev.preventDefault();
 			timer = setTimeout( function() { 
 				elem.get(0).dispatchEvent(longTap);
 			}, longTapTime);
 		});
 
 		elem.on("touchend", (ev)=>{
-			ev.preventDefault();
 			clearTimeout(timer);
 		});
 	}
