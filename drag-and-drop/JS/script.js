@@ -24,7 +24,7 @@ $(document).ready(()=>{
 		if($(document).scrollTop() < deviceHeight){
 			header.css(
 				{
-					"opacity": 1-($(document).scrollTop()/700),
+					"opacity": 1-($(document).scrollTop()/500),
 					"transform": "translateY("+$(document).scrollTop()/2+"px)"
 				}
 			);
@@ -50,7 +50,6 @@ $(document).ready(()=>{
 				event.stopPropagation();
 				return false;
 			};
-			console.log("touch of Long Tap")
 			ev.preventDefault();
 			timer = setTimeout( function() { 
 				elem.get(0).dispatchEvent(longTap);
@@ -131,7 +130,32 @@ $(document).ready(()=>{
 		$(items2[i]).on("longTap", (ev)=>{
 			console.log("Long tap!");
 			$(items2[i]).addClass("dragging");
+			console.log("transform translate("+ev.target.x+"px, "+ev.target.y+"px)");
+			$(items2[i]).css(
+				{
+					"position": "fixed",
+					"top": ev.target.y+"px",
+					"left": ev.target.x+"px",
+					"transition": "0s"
+				}
+			);
+			$(items2[i]).on("touchmove", (ev)=>{
+				$(items2[i]).css(
+					{
+						"top": ev.touches[0].clientY - 16+"px",
+						"left": ev.touches[0].clientX - 16+"px"
+					}
+				);
+			});
+			
 		});
+
+		// $(items2[i]).on("click", (ev)=>{
+		// 	let eventIntance = document.createEvent("HTMLEvents");
+		// 	eventIntance.initEvent("dblclick", true, false);
+		// 	console.log($(items2[i]).get(0));
+		// 	$(items2[i]).get(0).dispatchEvent(eventIntance);
+		// });
 	}
 
 	cloudDiv.on("dragover", (ev)=>{
