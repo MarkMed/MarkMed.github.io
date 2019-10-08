@@ -88,8 +88,12 @@ $(document).ready(()=>{
 		let dragStart = new CustomEvent("gxDrag", { bubbles: true });
 		$(elem).on("dragstart", ()=>{
 			console.log("gx-drag will be fired");
-			drag(event);
+			console.log(event)
+			// drag(event);
 			elem.get(0).dispatchEvent(dragStart);
+			$("body").css({
+				"overflow": "hidden"
+			})
 		});
 
 
@@ -101,6 +105,15 @@ $(document).ready(()=>{
 	function makeDropable(elem){
 		///// drop Event /////
 		let drop = new CustomEvent("gxDrop", { bubbles: true });
+		$(elem).on("dragstart", ()=>{
+			console.log("gx-drag will be fired");
+			console.log(event)
+			// drag(event);
+			elem.get(0).dispatchEvent(dragStart);
+			$("body").css({
+				"overflow": "hidden"
+			})
+		});
 	}
 
 	//////////////////////////////////////////////////////////////////////////////////
@@ -109,6 +122,11 @@ $(document).ready(()=>{
 		ev.preventDefault();
 	}
 	
+	function isTouchDevice() {
+		return !!window.ontouchstart;
+	}
+	
+	alert(isTouchDevice());
 	let cloudDiv = $("#cloudDiv");
 	let storageDiv = $("#storageDiv");
 	let items = storageDiv.children();
@@ -136,12 +154,18 @@ $(document).ready(()=>{
 	}
 
 	for(let i=0; i<items2.length; i++){
-		makeLongTapable($(items2[i]));
+		
 
-		$(items2[i]).on("longTap", (ev)=>{
-			console.log("Long tap!");
+		makeLongTapable($(items2[i]));
+	//////////////////////////////////////////////////////////////////////////////////
+
+		makeDragable($(items2[i]));
+
+		$(items2[i]).on("gxDrag", (ev)=>{
+			elementDragging = ev.target;
+			console.log("gx-drag fired");
 			$(items2[i]).addClass("dragging");
-			console.log("transform translate("+ev.target.x+"px, "+ev.target.y+"px)");
+
 			$(items2[i]).css(
 				{
 					"position": "fixed",
@@ -150,6 +174,7 @@ $(document).ready(()=>{
 					"transition": "0s"
 				}
 			);
+			
 			$(items2[i]).on("touchmove", (ev)=>{
 				$(items2[i]).css(
 					{
@@ -158,7 +183,23 @@ $(document).ready(()=>{
 					}
 				);
 			});
+		});
+
+		$(items2[i]).on("dragend", (ev)=>{
+			console.log("elementDragging", elementDragging);
+			$(items2[i]).removeClass("dragging").addClass("dragged");
+			console.log("Drag End!", ev);
+			console.log("The element has been dropped in: ", ev.toElement.parentNode)
+		});
+
+	//////////////////////////////////////////////////////////////////////////////////
+
+		$(items2[i]).on("longTap", (ev)=>{
 			
+			let eventIntance = document.createEvent("HTMLEvents");
+			eventIntance.initEvent("dragstart", true, false);
+			$(items2[i]).get(0).dispatchEvent(eventIntance);
+
 		});
 
 		// $(items2[i]).on("click", (ev)=>{
