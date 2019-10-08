@@ -121,12 +121,12 @@ $(document).ready(()=>{
 	function allowDrop(ev) {
 		ev.preventDefault();
 	}
-	
+
 	function isTouchDevice() {
 		return !!window.ontouchstart;
 	}
 	
-	alert(isTouchDevice());
+	alert("The device is touchable: "+isTouchDevice());
 	let cloudDiv = $("#cloudDiv");
 	let storageDiv = $("#storageDiv");
 	let items = storageDiv.children();
