@@ -246,7 +246,7 @@ body section .elementsContainer {
   height: calc(90vh - 20px - 60px - 10vh);
   width: 33.33333%;
   padding: 10px;
-  margin: 5vh 0;
+  margin-bottom: 5vh;
   background-color: #1b2e40;
   background-image: linear-gradient(to top, #132b40, #1b2e40);
   border-radius: 20px;

@@ -122,7 +122,7 @@ body{
 		.elementsContainer{
 			@include widthHeightsize($width-4, calc(90vh - 20px - 60px - 10vh));
 			padding: 10px;
-			margin: 5vh 0;
+			margin-bottom: 5vh;
 			@media (min-width: 160px) and (max-width: $smallWidth) and (orientation: portrait){
 				@include widthHeightsize($width-10, calc(25vh));
 				margin: 0 0;

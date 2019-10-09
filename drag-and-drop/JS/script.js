@@ -77,6 +77,19 @@ $(document).ready(()=>{
 	let elementDragging;
 
 	function makeDragable(elem){
+		
+		function is_touch_device() {
+			var prefixes = ' -webkit- -moz- -o- -ms- '.split(' ');
+			var matchQ = function(query) {
+			  return window.matchMedia(query).matches;
+			}
+		  
+			if (('ontouchstart' in window) || window.DocumentTouch && document instanceof DocumentTouch) {
+			  return true;
+			}
+			var query = ['(', prefixes.join('touch-enabled),('), 'heartz', ')'].join('');
+			return matchQ(query);
+		}
 	
 		function drag(ev) {
 			elementDragging = ev.target;
@@ -85,20 +98,38 @@ $(document).ready(()=>{
 		}
 
 		///// drag start Event /////
-		let dragStart = new CustomEvent("gxDrag", { bubbles: true });
+		let gxDragStart = new CustomEvent("gxDrag", { bubbles: true });
 		$(elem).on("dragstart", ()=>{
 			console.log("gx-drag will be fired");
 			console.log(event)
 			// drag(event);
-			elem.get(0).dispatchEvent(dragStart);
-			$("body").css({
-				"overflow": "hidden"
-			})
+			elem.get(0).dispatchEvent(gxDragStart);
+
+			if (is_touch_device()){
+				$("body").css({
+					"overflow": "hidden"
+				})
+			
+				$(elem).on("touchmove", (ev)=>{
+					$(elem).css(
+						{
+							"top": ev.touches[0].clientY - 16+"px",
+							"left": ev.touches[0].clientX - 16+"px"
+						}
+					);
+				});	
+			}
 		});
 
 
 		///// drag end Event /////
-		let dragEnd = new CustomEvent("gxDragAccepted", { bubbles: true });
+		let dragEnd = new CustomEvent("gxDragEnd", { bubbles: true });
+		$(elem).on("dragend", ()=>{
+			console.log("gx-drag will be fired");
+			console.log(event)
+			// drag(event);
+			elem.get(0).dispatchEvent(dragEnd);
+		});
 
 	}
 
@@ -109,7 +140,7 @@ $(document).ready(()=>{
 			console.log("gx-drag will be fired");
 			console.log(event)
 			// drag(event);
-			elem.get(0).dispatchEvent(dragStart);
+			elem.get(0).dispatchEvent();
 			$("body").css({
 				"overflow": "hidden"
 			})
@@ -121,24 +152,6 @@ $(document).ready(()=>{
 	function allowDrop(ev) {
 		ev.preventDefault();
 	}
-
-	function is_touch_device() {
-		var prefixes = ' -webkit- -moz- -o- -ms- '.split(' ');
-		var mq = function(query) {
-		  return window.matchMedia(query).matches;
-		}
-	  
-		if (('ontouchstart' in window) || window.DocumentTouch && document instanceof DocumentTouch) {
-		  return true;
-		}
-	  
-		// include the 'heartz' as a way to have a non matching MQ to help terminate the join
-		// https://git.io/vznFH
-		var query = ['(', prefixes.join('touch-enabled),('), 'heartz', ')'].join('');
-		return mq(query);
-	  }
-	
-	alert("The device is touchable: "+is_touch_device());
 	let cloudDiv = $("#cloudDiv");
 	let storageDiv = $("#storageDiv");
 	let items = storageDiv.children();
@@ -146,6 +159,8 @@ $(document).ready(()=>{
 	let startStorage = $("#startStorage");
 	let targetStorage = $("#targetStorage");
 	let items2 = startStorage.children();
+
+	//////////////////////////////////////////////////////////////////////////////////
 
 	for(let i=0; i<items.length; i++){
 		makeDragable($(items[i]));
@@ -165,11 +180,11 @@ $(document).ready(()=>{
 
 	}
 
+	//////////////////////////////////////////////////////////////////////////////////
+
 	for(let i=0; i<items2.length; i++){
 		
-
 		makeLongTapable($(items2[i]));
-	//////////////////////////////////////////////////////////////////////////////////
 
 		makeDragable($(items2[i]));
 
@@ -186,15 +201,6 @@ $(document).ready(()=>{
 					"transition": "0s"
 				}
 			);
-			
-			$(items2[i]).on("touchmove", (ev)=>{
-				$(items2[i]).css(
-					{
-						"top": ev.touches[0].clientY - 16+"px",
-						"left": ev.touches[0].clientX - 16+"px"
-					}
-				);
-			});
 		});
 
 		$(items2[i]).on("dragend", (ev)=>{
