@@ -114,24 +114,24 @@ $(document).ready(()=>{
 			console.log(event)
 			// drag(event);
 			elem.get(0).dispatchEvent(gxDragStart);
+			if (touch_device()){
+				console.log("Touch device detected! Will add ");
+				$("body").css({
+					"overflow": "hidden"
+				});
+				$(elem).on("touchmove", moveElement);
+			}
 		});
 
-		if (touch_device()){
-			console.log("Touch device detected! Will add ");
-			$("body").css({
-				"overflow": "hidden"
-			});
-			$(elem).on("touchmove", moveElement);
-		}
-
 		///// drag end Event /////
-		let dragEnd = new CustomEvent("gxDragEnd", { bubbles: true });
+		let gxDragEnd = new CustomEvent("gxDragEnd", { bubbles: true });
 		$(elem).on("dragend", ()=>{
 			console.log("gxDragEnd will be fired");
 			console.log(event)
-			elem.get(0).dispatchEvent(dragEnd);
+			elem.get(0).dispatchEvent(gxDragEnd);
 
 			if (touch_device()){
+				console.log("Touch end, will remove the move fx");
 				$("body").css({
 					"overflow": ""
 				});
@@ -155,6 +155,14 @@ $(document).ready(()=>{
 		});
 	}
 
+	//////////////////////////////////////////////////////////////////////////////////
+	function emitEvent(elem, eventToEmit){
+			
+		let eventIntance = document.createEvent("HTMLEvents");
+		eventIntance.initEvent(eventToEmit, true, false);
+		elem.get(0).dispatchEvent(eventIntance);
+
+	}
 	//////////////////////////////////////////////////////////////////////////////////
 
 	function allowDrop(ev) {
@@ -213,26 +221,18 @@ $(document).ready(()=>{
 
 		$(items2[i]).on("gxDragEnd", (ev)=>{
 			console.log("elementDragging", elementDragging);
-			$(items2[i]).removeClass("dragging").addClass("dragged");
+			// $(items2[i]).removeClass("dragging").addClass("dragged");
 			console.log("Drag End!", ev);
 		});
 
 	//////////////////////////////////////////////////////////////////////////////////
 
 		$(items2[i]).on("longTap", (ev)=>{
-			
-			let eventIntance = document.createEvent("HTMLEvents");
-			eventIntance.initEvent("dragstart", true, false);
-			$(items2[i]).get(0).dispatchEvent(eventIntance);
+			emitEvent($(items2[i]), "dragstart");
 
-		});
-
-		$(items2[i]).on("touchend", (ev)=>{
-
-			let eventIntance = document.createEvent("HTMLEvents");
-			eventIntance.initEvent("dragend", true, false);
-			$(items2[i]).get(0).dispatchEvent(eventIntance);
-
+			$(items2[i]).on("touchend", (ev)=>{
+				emitEvent($(items2[i]), "dragend");
+			});
 		});
 
 		// $(items2[i]).on("click", (ev)=>{
