@@ -78,7 +78,7 @@ $(document).ready(()=>{
 
 	function makeDragable(elem){
 		
-		function is_touch_device() {
+		function touch_device() {
 			var prefixes = ' -webkit- -moz- -o- -ms- '.split(' ');
 			var matchQ = function(query) {
 			  return window.matchMedia(query).matches;
@@ -97,38 +97,46 @@ $(document).ready(()=>{
 			ev.dataTransfer.setData('text/plain', elementDragging);
 		}
 
+		function moveElement(ev){
+			console.log("ev >> ", ev);
+			$(this).css(
+				{
+					"top": ev.touches[0].clientY - 16+"px",
+					"left": ev.touches[0].clientX - 16+"px"
+				}
+			);
+		}
+
 		///// drag start Event /////
 		let gxDragStart = new CustomEvent("gxDrag", { bubbles: true });
 		$(elem).on("dragstart", ()=>{
-			console.log("gx-drag will be fired");
+			console.log("gxDrag will be fired");
 			console.log(event)
 			// drag(event);
 			elem.get(0).dispatchEvent(gxDragStart);
-
-			if (is_touch_device()){
-				$("body").css({
-					"overflow": "hidden"
-				})
-			
-				$(elem).on("touchmove", (ev)=>{
-					$(elem).css(
-						{
-							"top": ev.touches[0].clientY - 16+"px",
-							"left": ev.touches[0].clientX - 16+"px"
-						}
-					);
-				});	
-			}
 		});
 
+		if (touch_device()){
+			console.log("Touch device detected! Will add ");
+			$("body").css({
+				"overflow": "hidden"
+			});
+			$(elem).on("touchmove", moveElement);
+		}
 
 		///// drag end Event /////
 		let dragEnd = new CustomEvent("gxDragEnd", { bubbles: true });
 		$(elem).on("dragend", ()=>{
-			console.log("gx-drag will be fired");
+			console.log("gxDragEnd will be fired");
 			console.log(event)
-			// drag(event);
 			elem.get(0).dispatchEvent(dragEnd);
+
+			if (touch_device()){
+				$("body").css({
+					"overflow": ""
+				});
+				$(elem).off("touchmove", moveElement);
+			}
 		});
 
 	}
@@ -136,8 +144,8 @@ $(document).ready(()=>{
 	function makeDropable(elem){
 		///// drop Event /////
 		let drop = new CustomEvent("gxDrop", { bubbles: true });
-		$(elem).on("dragstart", ()=>{
-			console.log("gx-drag will be fired");
+		$(elem).on("drop", ()=>{
+			console.log("gxDrop will be fired");
 			console.log(event)
 			// drag(event);
 			elem.get(0).dispatchEvent();
@@ -203,11 +211,10 @@ $(document).ready(()=>{
 			);
 		});
 
-		$(items2[i]).on("dragend", (ev)=>{
+		$(items2[i]).on("gxDragEnd", (ev)=>{
 			console.log("elementDragging", elementDragging);
 			$(items2[i]).removeClass("dragging").addClass("dragged");
 			console.log("Drag End!", ev);
-			console.log("The element has been dropped in: ", ev.toElement.parentNode)
 		});
 
 	//////////////////////////////////////////////////////////////////////////////////
