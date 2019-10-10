@@ -165,6 +165,12 @@ $(document).ready(()=>{
 	}
 	//////////////////////////////////////////////////////////////////////////////////
 
+	function removeListener(elem, eventToRemove, callbackFunc){		
+		elem.off(eventToRemove, callbackFunc);
+	}
+
+	//////////////////////////////////////////////////////////////////////////////////
+
 	function allowDrop(ev) {
 		ev.preventDefault();
 	}
@@ -229,10 +235,11 @@ $(document).ready(()=>{
 
 		$(items2[i]).on("longTap", (ev)=>{
 			emitEvent($(items2[i]), "dragstart");
-
-			$(items2[i]).on("touchend", (ev)=>{
+			let dragEndFunc = (ev)=>{
 				emitEvent($(items2[i]), "dragend");
-			});
+				removeListener($(items2[i]), "touchend", dragEndFunc)
+			}
+			$(items2[i]).on("touchend", dragEndFunc);
 		});
 
 		// $(items2[i]).on("click", (ev)=>{
