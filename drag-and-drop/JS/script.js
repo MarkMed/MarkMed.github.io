@@ -227,6 +227,14 @@ $(document).ready(()=>{
 
 		});
 
+		$(items2[i]).on("touchend", (ev)=>{
+
+			let eventIntance = document.createEvent("HTMLEvents");
+			eventIntance.initEvent("dragend", true, false);
+			$(items2[i]).get(0).dispatchEvent(eventIntance);
+
+		});
+
 		// $(items2[i]).on("click", (ev)=>{
 		// 	let eventIntance = document.createEvent("HTMLEvents");
 		// 	eventIntance.initEvent("dblclick", true, false);
