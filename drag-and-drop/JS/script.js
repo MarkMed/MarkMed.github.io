@@ -98,11 +98,10 @@ $(document).ready(()=>{
 		}
 
 		function moveElement(ev){
-			console.log("ev >> ", ev);
 			$(this).css(
 				{
-					"top": ev.touches[0].clientY - 16+"px",
-					"left": ev.touches[0].clientX - 16+"px"
+					"top": ev.touches[0].clientY - (ev.target.width / 2)+"px",
+					"left": ev.touches[0].clientX - (ev.target.height / 2)+"px"
 				}
 			);
 		}
