@@ -1,66 +1,31 @@
-program PrincipalTarea1;
-type
-   EnteroPositivo = 1 .. MaxInt;
-var
-   num1,num2 : EnteroPositivo;
-
-{ funciones aritméticas }
-function doble(x : integer) : integer;
-begin
-   doble:= x + x
-end;
-
-function mitad(x : integer) : integer;
-begin
-   mitad:= x div 2
-end;
-
-function esImpar(n : integer) : boolean;
-begin
-   esImpar:= odd(n)
-end;
-
 function MultiplicacionRusa(a, b: integer) : integer;
 
-var num, num2, resulta, expected: integer;
+var numero, numero2, resulta: integer;
 
 begin
 
-  num := a;
-  num2 := b;
+  numero := a;
+  numero2 := b;
   resulta := 0;
 
-  if(num >= num2) then
+  if (numero >= numero2) then
+      repeat
 
-    repeat
+        if (esImpar(numero2)) then
+          resulta := resulta + numero;
+        numero2 := mitad(numero2);
+        numero := doble(numero)
 
-      if (esImpar(num2)) then
-        resulta = resulta + num
-
-      num2 := mitad(num2);
-      num := num + num
-
-    until (num2 = 1)
-
+      until (numero2 < 1)
   else
+      repeat
 
-    repeat
+        if (esImpar(numero)) then
+          resulta := resulta + numero2;
+        numero := mitad(numero);
+        numero2 := doble(numero2)
 
-      if (esImpar(num))
-        resulta := resulta + num2
-
-      num := mitad(num);
-      num2 := num2 + num2;
-
-    until (num = 1);
+      until (numero < 1);
 
   MultiplicacionRusa := resulta;
 end;
-
-
-begin
-   write('Ingrese números: ');
-   readln(num1,num2);
-
-   writeln('Resultado: ',MultiplicacionRusa(num1,num2))
-end.
