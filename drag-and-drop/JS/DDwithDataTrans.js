@@ -1,0 +1,4 @@
+var globalVar;
+$(document).ready(()=>{
+
+})
