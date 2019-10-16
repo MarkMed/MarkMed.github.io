@@ -205,6 +205,23 @@ body{
 			}
 		}
 	}
+	section#DDwithDT{
+		p{
+			text-align: center;
+			margin-top: 30px;
+			@include widthHeightsize($width-12, 60px);
+			color: $primaryColor50;
+			transition: 0.4s;
+			transition-delay: 0.5s;
+		}
+		
+		@media (min-width: 160px) and (max-width: $mediumWidth){
+			p{
+				margin-top: 0px;
+				@include widthHeightsize($width-12, 30px);
+			}
+		}
+	}
 	footer{
 		@include widthHeightsize(100vw, 500px);
 	}

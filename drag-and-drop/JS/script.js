@@ -4,6 +4,7 @@ $(document).ready(()=>{
 	const header = $("header");
 	const firstTitle = $("#simpleDD .sectionTitle");
 	const secondTitle = $("#DDinSD .sectionTitle");
+	const thirdTitle = $("#DDwithDT .sectionTitle");
 	// const secondTitle = $("#swipeEvents .sectionTitle h2");
 	let deviceHeight = $(window).height();
 	let documentHeight = $(document).height();
@@ -35,6 +36,10 @@ $(document).ready(()=>{
 		if($(document).scrollTop() > secondTitle.offset().top/1.1){
 			secondTitle.removeClass("hidden").addClass("show");
 			$("#DDinSD p").removeClass("hidden").addClass("show");
+		}
+		if($(document).scrollTop() > thirdTitle.offset().top/1.1){
+			thirdTitle.removeClass("hidden").addClass("show");
+			$("#DDwithDT p").removeClass("hidden").addClass("show");
 		}
 	});
 
