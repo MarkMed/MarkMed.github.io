@@ -91,10 +91,6 @@ $(document).ready(()=>{
 	}
 	//////////////////////////////////////////////////////////////////////////////////
 
-	function removeListener(elem, eventToRemove, callbackFunc){		
-		elem.off(eventToRemove, callbackFunc);
-	}
-
 	function allowDrop(ev) {
 		ev.preventDefault();
 	}
