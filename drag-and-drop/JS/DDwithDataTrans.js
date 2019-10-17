@@ -20,8 +20,7 @@ $(document).ready(()=>{
 
 	function dragOverFunc(e){
 		e.preventDefault();
-		e.dataTransfer.dropEffect = "copy";
-        // More things here
+		e.dataTransfer.dropEffect = "copy"; // "Drop Effect" is the function that allows to display an icon next to the cursor pointer. link - copy - move
 	}
 
     function dropFunc(e){
