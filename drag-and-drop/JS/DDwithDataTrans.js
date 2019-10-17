@@ -36,10 +36,25 @@ $(document).ready(()=>{
     function dragStartFunc(e){
 		console.log("DragStart");
 
-		let draggingElement = e.target.outerHTML;
-		console.log(e);
-		e.dataTransfer.setData("Text", draggingElement);
-    }
+		let draggingElement = e.target;
+
+		$(draggingElement).addClass("dragging");;
+		e.dataTransfer.setData("Text", draggingElement.outerHTML);
+	}
+	
+	function dragEndFunc(e){
+		console.log("DragEnd");
+
+		let draggingElement = e.target;
+		
+		setTimeout(()=>{
+			$(draggingElement).addClass("dragged");
+			setTimeout(()=>{
+				draggingElement.parentNode.removeChild( draggingElement);
+			}, 200);
+		}, 200);
+
+	}
 
     function allowDrag(elem){
         elem.setAttribute("draggable", "true");
@@ -55,6 +70,7 @@ $(document).ready(()=>{
     for(let i=0; i<items.length; i++){
 		allowDrag(items[i]);
 		addEvent("dragstart", $(items[i]), dragStartFunc, false);
+		addEvent("dragend", $(items[i]), dragEndFunc, false);
     }
 
 })
