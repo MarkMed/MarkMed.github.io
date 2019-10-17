@@ -6,7 +6,11 @@ $(document).ready(()=>{
     const elemStart = $("#elementStart");
     let items = elemStart.children();
 
-    //////////////////////////////////////////////////////////////////////////////////
+	//////////////////////////////////////////////////////////////////////////////////
+	
+	function addEvent(listenEvent, elem, func, useCapture){
+		elem.get(0).addEventListener(listenEvent, func, useCapture);
+	}
 	
 	function dragEnterFunc(e){
         e.preventDefault();
@@ -43,16 +47,15 @@ $(document).ready(()=>{
     }
 
 	//////////////////////////////////////////////////////////////////////////////////
-	
-	elemeTarget.get(0).addEventListener("dragenter", dragEnterFunc, false);
-	
-	elemeTarget.get(0).addEventListener("dragover", dragOverFunc);
+	addEvent("dragenter", elemeTarget, dragEnterFunc, false);
 
-    elemeTarget.get(0).addEventListener("drop", dropFunc, false);
+	addEvent("dragover", elemeTarget, dragOverFunc, false);
+
+	addEvent("drop", elemeTarget, dropFunc, false);
 
     for(let i=0; i<items.length; i++){
-        allowDrag(items[i])
-        $(items[i]).get(0).addEventListener("dragstart", dragStartFunc, false);
+		allowDrag(items[i]);
+		addEvent("dragstart", $(items[i]), dragStartFunc, false);
     }
 
 })
