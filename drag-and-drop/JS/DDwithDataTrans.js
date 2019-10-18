@@ -65,7 +65,13 @@ $(document).ready(()=>{
 				draggingElement.parentNode.removeChild( draggingElement);
 			}, 200);
 		}, 200);
-
+	}
+	
+	function cancelContextMenuTest(elem){
+		elem.addEventListener("contextmenu", (e)=>{
+			e.preventDefault();
+			alert("contextmenu canceled!");
+		});
 	}
 
 	//////////////////////////////////////////////////////////////////////////////////
@@ -78,6 +84,7 @@ $(document).ready(()=>{
 	addEvent("drop", elemeTarget, dropFunc, false);
 
     for(let i=0; i<items.length; i++){
+		cancelContextMenuTest(items[i]);
 		allowDrag(items[i], false);
 		addEvent("dragstart", $(items[i]), dragStartFunc, false);
 		addEvent("dragend", $(items[i]), dragEndFunc, false);
