@@ -14,13 +14,19 @@ $(document).ready(()=>{
 	
 	function dragEnterFunc(e){
         e.preventDefault();
-        console.log("Dragging element has entered into the drop target");
-        // More things here
+		console.log("Dragging element has entered into the drop target");
+		$(e.target).addClass("allowDrop");
+		e.dataTransfer.dropEffect = "copy"; // "Drop Effect" is the function that allows to display an icon next to the cursor pointer. link - copy - move
 	}
 
 	function dragOverFunc(e){
 		e.preventDefault();
-		e.dataTransfer.dropEffect = "copy"; // "Drop Effect" is the function that allows to display an icon next to the cursor pointer. link - copy - move
+	}
+
+	function dragLeaveFunc(e){
+		
+		$(e.target).removeClass("allowDrop");
+
 	}
 
     function dropFunc(e){
@@ -28,6 +34,8 @@ $(document).ready(()=>{
 		let landingElement = e.target;
 
 		console.log(e.dataTransfer.getData("Text"));
+		
+		$(e.target).removeClass("allowDrop");
 
 		landingElement.innerHTML += (e.dataTransfer.getData("Text"));
 		
@@ -64,6 +72,8 @@ $(document).ready(()=>{
 	addEvent("dragenter", elemeTarget, dragEnterFunc, false);
 
 	addEvent("dragover", elemeTarget, dragOverFunc, false);
+
+	addEvent("dragleave", elemeTarget, dragLeaveFunc, false);
 
 	addEvent("drop", elemeTarget, dropFunc, false);
 

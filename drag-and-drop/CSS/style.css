@@ -275,6 +275,10 @@ body section .elementsContainer {
   }
 }
 
+body section .elementsContainer.allowDrop {
+  box-shadow: 0px 0px 20px 5px rgba(32, 195, 32, 0.6);
+}
+
 body section .elementsContainer .element2Drag {
   height: 35px;
   width: 35px;

@@ -138,6 +138,9 @@ body{
 			align-content: flex-start;
 			transition: 0.4s ease;
 			overflow: auto;
+			&.allowDrop{
+				box-shadow: 0px 0px 20px 5px rgba(32, 195, 32, 0.6);
+			}
 			.element2Drag{
 				@include widthHeightsize(35px, 35px);
 				transition: 0.2s ease;
