@@ -41,6 +41,10 @@ $(document).ready(()=>{
 		
     }
 
+    function allowDrag(elem, allow){
+        elem.setAttribute("draggable", allow);
+    }
+
     function dragStartFunc(e){
 		console.log("DragStart");
 
@@ -64,10 +68,6 @@ $(document).ready(()=>{
 
 	}
 
-    function allowDrag(elem){
-        elem.setAttribute("draggable", "true");
-    }
-
 	//////////////////////////////////////////////////////////////////////////////////
 	addEvent("dragenter", elemeTarget, dragEnterFunc, false);
 
@@ -78,7 +78,7 @@ $(document).ready(()=>{
 	addEvent("drop", elemeTarget, dropFunc, false);
 
     for(let i=0; i<items.length; i++){
-		allowDrag(items[i]);
+		allowDrag(items[i], false);
 		addEvent("dragstart", $(items[i]), dragStartFunc, false);
 		addEvent("dragend", $(items[i]), dragEndFunc, false);
     }
