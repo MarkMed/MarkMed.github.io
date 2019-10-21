@@ -230,7 +230,7 @@ body{
 			background-color: $clearColor100;
 			color: $primaryColor75;
 			border-radius: 20px;
-			@include flex(column, flex-start, center, wrap);
+			@include flex(column, space-around, center, wrap);
 			.cardImg{
 				@include widthHeightsize(25%, 100%);
 				@include flex(row, center, center, wrap);
@@ -247,28 +247,40 @@ body{
 					font-size: 0.3 em;
 				}
 			}
+			.actionSection{
+				@include flex(row, space-around, center, wrap);
+				button{
+					@include widthHeightsize(auto, 80%);
+
+					background-color: $secondaryColor50;
+				}
+			}
+
 			@media (min-width: 160px) and (max-width: $smallWidth){
-				@include widthHeightsize(100%, 200px);
+				@include widthHeightsize(150px, 100%);
 				.cardImg{
-					@include widthHeightsize(25%, 100%);
-					@include flex(row, center, center, wrap);
+					@include widthHeightsize(100%, 50%);
+					flex: 1;
 					img{
-						@include widthHeightsize(90%, auto);
-						margin: auto 5%;
-						border-radius: 50%;
+						@include widthHeightsize(auto, 90%);
 					}
 				}
 				.cardInfo{
 					@include flex(column, flex-start, center, wrap);
-					@include widthHeightsize(75%, 100%);
+					@include widthHeightsize(100%, 25%);
 					p{
 						display: none;
 						font-size: 0.3 em;
 					}
 				}
+				.actionSection{
+					@include widthHeightsize(100%, 25%);
+				}
 			}
+
 			@media (min-width: 160px) and (max-width: $smallWidth) and (orientation: landscape){
 			}
+			
 			@media (min-width: $smallWidth+1) and (max-width: $mediumWidth){
 			}
 		}

@@ -3,6 +3,8 @@
   padding: 0;
   cursor: default;
   font-weight: 100;
+  background: none;
+  border: none;
 }
 
 a {
@@ -400,7 +402,7 @@ body section#DDwithDT .card {
   border-radius: 20px;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: space-around;
   align-items: center;
   flex-wrap: wrap;
 }
@@ -436,25 +438,33 @@ body section#DDwithDT .card .cardInfo p {
   font-size: 0.3 em;
 }
 
+body section#DDwithDT .card .actionSection {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+body section#DDwithDT .card .actionSection button {
+  height: 80%;
+  width: auto;
+  background-color: rgba(27, 46, 64, 0.5);
+}
+
 @media (min-width: 160px) and (max-width: 640px) {
   body section#DDwithDT .card {
-    height: 200px;
-    width: 100%;
+    height: 100%;
+    width: 150px;
   }
   body section#DDwithDT .card .cardImg {
-    height: 100%;
-    width: 25%;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
+    height: 50%;
+    width: 100%;
+    flex: 1;
   }
   body section#DDwithDT .card .cardImg img {
-    height: auto;
-    width: 90%;
-    margin: auto 5%;
-    border-radius: 50%;
+    height: 90%;
+    width: auto;
   }
   body section#DDwithDT .card .cardInfo {
     display: flex;
@@ -462,12 +472,16 @@ body section#DDwithDT .card .cardInfo p {
     justify-content: flex-start;
     align-items: center;
     flex-wrap: wrap;
-    height: 100%;
-    width: 75%;
+    height: 25%;
+    width: 100%;
   }
   body section#DDwithDT .card .cardInfo p {
     display: none;
     font-size: 0.3 em;
+  }
+  body section#DDwithDT .card .actionSection {
+    height: 25%;
+    width: 100%;
   }
 }
 
