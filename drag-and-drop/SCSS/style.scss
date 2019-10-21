@@ -224,6 +224,54 @@ body{
 				@include widthHeightsize($width-12, 30px);
 			}
 		}
+		
+		.card{
+			@include widthHeightsize(500px, 200px);
+			background-color: $clearColor100;
+			color: $primaryColor75;
+			border-radius: 20px;
+			@include flex(column, flex-start, center, wrap);
+			.cardImg{
+				@include widthHeightsize(25%, 100%);
+				@include flex(row, center, center, wrap);
+				img{
+					@include widthHeightsize(90%, auto);
+					margin: auto 5%;
+					border-radius: 50%;
+				}
+			}
+			.cardInfo{
+				@include flex(column, flex-start, center, wrap);
+				@include widthHeightsize(75%, 100%);
+				p{
+					font-size: 0.3 em;
+				}
+			}
+			@media (min-width: 160px) and (max-width: $smallWidth){
+				@include widthHeightsize(100%, 200px);
+				.cardImg{
+					@include widthHeightsize(25%, 100%);
+					@include flex(row, center, center, wrap);
+					img{
+						@include widthHeightsize(90%, auto);
+						margin: auto 5%;
+						border-radius: 50%;
+					}
+				}
+				.cardInfo{
+					@include flex(column, flex-start, center, wrap);
+					@include widthHeightsize(75%, 100%);
+					p{
+						display: none;
+						font-size: 0.3 em;
+					}
+				}
+			}
+			@media (min-width: 160px) and (max-width: $smallWidth) and (orientation: landscape){
+			}
+			@media (min-width: $smallWidth+1) and (max-width: $mediumWidth){
+			}
+		}
 	}
 	footer{
 		@include widthHeightsize(100vw, 500px);

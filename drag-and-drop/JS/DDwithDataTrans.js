@@ -86,6 +86,7 @@ $(document).ready(()=>{
     for(let i=0; i<items.length; i++){
 		cancelContextMenuTest(items[i]);
 		allowDrag(items[i], false);
+		console.log(items[i]);
 		addEvent("dragstart", $(items[i]), dragStartFunc, false);
 		addEvent("dragend", $(items[i]), dragEndFunc, false);
     }
