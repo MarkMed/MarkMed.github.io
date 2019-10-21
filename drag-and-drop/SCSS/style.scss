@@ -209,6 +209,9 @@ body{
 		}
 	}
 	section#DDwithDT{
+		.elementsContainer{
+			padding: 8px;
+		}
 		p{
 			text-align: center;
 			margin-top: 30px;
@@ -219,6 +222,9 @@ body{
 		}
 		
 		@media (min-width: 160px) and (max-width: $mediumWidth){
+			h2{
+				font-size: 21px;
+			}
 			p{
 				margin-top: 0px;
 				@include widthHeightsize($width-12, 30px);
@@ -230,6 +236,8 @@ body{
 			background-color: $clearColor100;
 			color: $primaryColor75;
 			border-radius: 20px;
+			margin-right: 8px;
+			margin-bottom: 8px;
 			@include flex(column, space-around, center, wrap);
 			.cardImg{
 				@include widthHeightsize(25%, 100%);
@@ -248,33 +256,35 @@ body{
 				}
 			}
 			.actionSection{
+				@include widthHeightsize(75%, 25%);
 				@include flex(row, space-around, center, wrap);
 				button{
-					@include widthHeightsize(auto, 80%);
-
+					@include widthHeightsize(auto, 50%);
+					color: $clearColor75;
 					background-color: $secondaryColor50;
+					border-radius: 20px;
+					padding: 0 5px;
 				}
 			}
 
 			@media (min-width: 160px) and (max-width: $smallWidth){
-				@include widthHeightsize(150px, 100%);
+				@include widthHeightsize(auto, 100px);
+				margin-right: 0px;
 				.cardImg{
-					@include widthHeightsize(100%, 50%);
-					flex: 1;
+					@include widthHeightsize(30%, 100%);
 					img{
-						@include widthHeightsize(auto, 90%);
+						@include widthHeightsize(90%, auto);
 					}
 				}
 				.cardInfo{
-					@include flex(column, flex-start, center, wrap);
-					@include widthHeightsize(100%, 25%);
+					@include flex(column, center, center, wrap);
+					@include widthHeightsize(60%, 50%);
 					p{
 						display: none;
-						font-size: 0.3 em;
 					}
 				}
 				.actionSection{
-					@include widthHeightsize(100%, 25%);
+					@include widthHeightsize(60%, 50%);
 				}
 			}
 
