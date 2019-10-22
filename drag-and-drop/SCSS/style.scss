@@ -209,15 +209,9 @@ body{
 		}
 	}
 	section#DDwithDT{
-
-		@media (min-width: 160px) and (max-width: $mediumWidth) and (orientation: landscape){
-			
-			.elementsContainer{
-				width: 40%;
-			}
-		}
 		.elementsContainer{
 			padding: 8px;
+			width: 40%;
 		}
 		p{
 			text-align: center;
@@ -239,31 +233,35 @@ body{
 		}
 		
 		.card{
-			@include widthHeightsize(500px, 200px);
+			@include widthHeightsize(300px, 300px);
 			background-color: $clearColor100;
 			color: $primaryColor75;
 			border-radius: 20px;
-			margin-right: 8px;
-			margin-bottom: 8px;
+			margin: 8px;
 			@include flex(column, space-around, center, wrap);
 			.cardImg{
-				@include widthHeightsize(25%, 100%);
+				@include widthHeightsize(100%, 40%);
 				@include flex(row, center, center, wrap);
 				img{
-					@include widthHeightsize(90%, auto);
+					@include widthHeightsize(auto, 90%);
 					margin: auto 5%;
 					border-radius: 50%;
 				}
 			}
 			.cardInfo{
-				@include flex(column, flex-start, center, wrap);
-				@include widthHeightsize(75%, 100%);
+				@include flex(column, space-around, center, wrap);
+				@include widthHeightsize(100%, 40%);
+				span{
+					font-size: 20px;
+				}
 				p{
 					font-size: 0.3 em;
+					margin: 0;
+					@include widthHeightsize(100%, auto);
 				}
 			}
 			.actionSection{
-				@include widthHeightsize(75%, 25%);
+				@include widthHeightsize(80%, 20%);
 				@include flex(row, space-around, center, wrap);
 				button{
 					@include widthHeightsize(auto, 50%);
