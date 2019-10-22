@@ -378,7 +378,18 @@ body section#DDinSD p {
 
 body section#DDwithDT .elementsContainer {
   padding: 8px;
-  width: 40%;
+}
+
+@media (min-width: 1008px) {
+  body section#DDwithDT .elementsContainer {
+    width: 40%;
+  }
+}
+
+@media (min-width: 160px) and (max-width: 1007px) and (orientation: landscape) {
+  body section#DDwithDT .elementsContainer {
+    width: 40%;
+  }
 }
 
 body section#DDwithDT p {
@@ -477,7 +488,8 @@ body section#DDwithDT .card .actionSection button {
   body section#DDwithDT .card {
     height: 100px;
     width: auto;
-    margin-right: 0px;
+    margin: 0px;
+    margin-bottom: 8px;
   }
   body section#DDwithDT .card .cardImg {
     height: 100%;
@@ -502,6 +514,15 @@ body section#DDwithDT .card .actionSection button {
   body section#DDwithDT .card .actionSection {
     height: 50%;
     width: 65%;
+  }
+}
+
+@media (min-width: 160px) and (max-width: 1007px) and (orientation: portrait) {
+  body section#DDwithDT .card {
+    height: 100px;
+    width: auto;
+    margin: 0px;
+    margin-bottom: 8px;
   }
 }
 

@@ -210,8 +210,13 @@ body{
 	}
 	section#DDwithDT{
 		.elementsContainer{
+			@media (min-width: $mediumWidth+1){
+				width: 40%;
+			}
+			@media (min-width: 160px) and (max-width: $mediumWidth) and (orientation: landscape){
+				width: 40%;
+			}
 			padding: 8px;
-			width: 40%;
 		}
 		p{
 			text-align: center;
@@ -274,7 +279,8 @@ body{
 
 			@media (min-width: 160px) and (max-width: $mediumWidth){
 				@include widthHeightsize(auto, 100px);
-				margin-right: 0px;
+				margin: 0px;
+				margin-bottom: 8px;
 				.cardImg{
 					@include widthHeightsize(30%, 100%);
 					img{
@@ -291,6 +297,11 @@ body{
 				.actionSection{
 					@include widthHeightsize(65%, 50%);
 				}
+			}
+			@media (min-width: 160px) and (max-width: $mediumWidth) and (orientation: portrait){
+				@include widthHeightsize(auto, 100px);
+				margin: 0px;
+				margin-bottom: 8px;
 			}
 		}
 	}
