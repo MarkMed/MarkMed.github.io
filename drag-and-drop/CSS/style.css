@@ -376,7 +376,7 @@ body section#DDinSD p {
   }
 }
 
-@media (min-width: 160px) and (max-width: 640px) and (orientation: landscape) {
+@media (min-width: 160px) and (max-width: 1007px) and (orientation: landscape) {
   body section#DDwithDT .elementsContainer {
     width: 40%;
   }
@@ -472,7 +472,7 @@ body section#DDwithDT .card .actionSection button {
   padding: 0 5px;
 }
 
-@media (min-width: 160px) and (max-width: 640px) {
+@media (min-width: 160px) and (max-width: 1007px) {
   body section#DDwithDT .card {
     height: 100px;
     width: auto;
