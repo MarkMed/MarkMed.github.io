@@ -24,7 +24,7 @@ ul, ol {
 }
 
 input {
-  background-color: transparent;
+  background-color: rgba(0, 0, 0, 0);
   border: none;
 }
 
@@ -127,7 +127,7 @@ body header section {
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  background-color: transparent;
+  background-color: rgba(0, 0, 0, 0);
 }
 
 body header section * {
@@ -376,6 +376,12 @@ body section#DDinSD p {
   }
 }
 
+@media (min-width: 160px) and (max-width: 640px) and (orientation: landscape) {
+  body section#DDwithDT .elementsContainer {
+    width: 40%;
+  }
+}
+
 body section#DDwithDT .elementsContainer {
   padding: 8px;
 }
@@ -494,7 +500,7 @@ body section#DDwithDT .card .actionSection button {
   }
   body section#DDwithDT .card .actionSection {
     height: 50%;
-    width: 60%;
+    width: 65%;
   }
 }
 
