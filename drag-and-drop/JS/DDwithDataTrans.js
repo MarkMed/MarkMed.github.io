@@ -11,6 +11,43 @@ $(document).ready(()=>{
 	function addEvent(listenEvent, elem, func, useCapture){
 		elem.get(0).addEventListener(listenEvent, func, useCapture);
 	}
+
+	
+	let longTapTime = 1000;
+	///// Long Tap Event /////
+	let longTap = new CustomEvent("longTap", { bubbles: true });
+	function makeLongTapable(elem){
+		let timer;
+
+		function absorbEvent_(event) {
+		  var e = event || window.event;
+		  e.preventDefault && e.preventDefault();
+		  e.stopPropagation && e.stopPropagation();
+		  e.cancelBubble = true;
+		  e.returnValue = false;
+		  return false;
+		}
+	
+		function preventLongPressMenu(node) {
+		  node.ontouchstart = absorbEvent_;
+		  node.ontouchmove = absorbEvent_;
+		  node.ontouchend = absorbEvent_;
+		  node.ontouchcancel = absorbEvent_;
+		}
+
+		preventLongPressMenu(elem);
+
+		elem.on("touchstart", (ev)=>{
+			timer = setTimeout( function() { 
+				elem.get(0).dispatchEvent(longTap);
+			}, longTapTime);
+		});
+
+		elem.on("touchend", (ev)=>{
+			clearTimeout(timer);
+		});
+	}
+	/////
 	
 	function dragEnterFunc(e){
         e.preventDefault();
@@ -85,7 +122,9 @@ $(document).ready(()=>{
 
     for(let i=0; i<items.length; i++){
 		cancelContextMenuTest(items[i]);
-		allowDrag(items[i], false);
+		allowDrag(items[i], true);
+		// makeLongTapable($(items[i]))
+		// addEvent("longTap", $(items[i]), longTapFunc, false);
 		console.log(items[i]);
 		addEvent("dragstart", $(items[i]), dragStartFunc, false);
 		addEvent("dragend", $(items[i]), dragEndFunc, false);
