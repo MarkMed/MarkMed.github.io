@@ -71,7 +71,7 @@ $(document).ready(()=>{
 
 		///// drag start Event /////
 		let gxDragStart = new CustomEvent("gxDrag", { bubbles: true });
-		$(elem).on("mousedown", ()=>{
+		$(elem).on("dragstart", ()=>{
 			console.log("gxDrag will be fired");
 			console.log(event)
 			// drag(event);
@@ -178,7 +178,7 @@ $(document).ready(()=>{
 
 		/* Execute the dragstart through the Long Tap*/
 		$(items[i]).on("longTap", (ev)=>{
-			emitEvent($(items[i]), "mousedown");
+			emitEvent($(items[i]), "dragstart");
 			let dragEndFunc = (ev)=>{
 				emitEvent($(items[i]), "dragend");
 				removeListener($(items[i]), "touchend", dragEndFunc)
