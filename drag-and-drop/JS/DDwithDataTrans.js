@@ -12,6 +12,19 @@ $(document).ready(()=>{
 		elem.get(0).addEventListener(listenEvent, func, useCapture);
 	}
 
+	function verifTouchDevice(){
+		var prefixes = ' -webkit- -moz- -o- -ms- '.split(' ');
+		var matchQ = function(query) {
+		  return window.matchMedia(query).matches;
+		}
+	  
+		if (('ontouchstart' in window) || window.DocumentTouch && document instanceof DocumentTouch) {
+		  return true;
+		}
+		var query = ['(', prefixes.join('touch-enabled),('), 'heartz', ')'].join('');
+		return matchQ(query);
+	}
+
 	
 	let longTapTime = 1000;
 	///// Long Tap Event /////
@@ -46,6 +59,10 @@ $(document).ready(()=>{
 		elem.on("touchend", (ev)=>{
 			clearTimeout(timer);
 		});
+	}
+
+	function longTapFunc(e){
+		console.log("LongTap!");
 	}
 	/////
 	
@@ -120,13 +137,18 @@ $(document).ready(()=>{
 
 	addEvent("drop", elemeTarget, dropFunc, false);
 
+	if(verifTouchDevice()){
+		console.log("This device allows touchable events");
+	}
     for(let i=0; i<items.length; i++){
 		cancelContextMenuTest(items[i]);
 		allowDrag(items[i], true);
 
-		// makeLongTapable($(items[i]))
-		// addEvent("longTap", $(items[i]), longTapFunc, false);
-		
+		if(verifTouchDevice()){
+			makeLongTapable($(items[i]))
+			addEvent("longTap", $(items[i]), longTapFunc, false);
+		}
+
 		console.log(items[i]);
 		addEvent("dragstart", $(items[i]), dragStartFunc, false);
 		addEvent("dragend", $(items[i]), dragEndFunc, false);
