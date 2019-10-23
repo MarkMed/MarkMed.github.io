@@ -103,9 +103,24 @@ $(document).ready(()=>{
 		console.log("DragStart");
 
 		let draggingElement = e.target;
-
-		$(draggingElement).addClass("dragging");;
 		e.dataTransfer.setData("Text", draggingElement.outerHTML);
+
+		$(draggingElement).addClass("dragging");
+
+		if(verifTouchDevice()){	
+			$("body").css({
+				"overflow": "hidden"
+			});
+
+			$(draggingElement).css(
+				{
+					"position": "fixed",
+					"top": ev.target.y+"px",
+					"left": ev.target.x+"px",
+					"transition": "0s"
+				}
+			);
+		}		
 	}
 	
 	function dragEndFunc(e){
