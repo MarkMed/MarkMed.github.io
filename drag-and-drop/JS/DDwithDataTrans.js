@@ -12,6 +12,14 @@ $(document).ready(()=>{
 		elem.get(0).addEventListener(listenEvent, func, useCapture);
 	}
 
+	function emitEvent(elem, eventToEmit){
+			
+		let eventIntance = document.createEvent("HTMLEvents");
+		eventIntance.initEvent(eventToEmit, true, false);
+		elem.dispatchEvent(eventIntance);
+
+	}
+
 	function verifTouchDevice(){
 		var prefixes = ' -webkit- -moz- -o- -ms- '.split(' ');
 		var matchQ = function(query) {
@@ -31,17 +39,16 @@ $(document).ready(()=>{
 	let longTap = new CustomEvent("longTap", { bubbles: true });
 	function makeLongTapable(elem){
 		let timer;
-
-		function absorbEvent_(event) {
-		  var e = event || window.event;
-		  e.preventDefault && e.preventDefault();
-		  e.stopPropagation && e.stopPropagation();
-		  e.cancelBubble = true;
-		  e.returnValue = false;
-		  return false;
-		}
 	
 		function preventLongPressMenu(node) {
+			function absorbEvent_(event) {
+			var e = event || window.event;
+			e.preventDefault && e.preventDefault();
+			e.stopPropagation && e.stopPropagation();
+			e.cancelBubble = true;
+			e.returnValue = false;
+			return false;
+			}
 		  node.ontouchstart = absorbEvent_;
 		  node.ontouchmove = absorbEvent_;
 		  node.ontouchend = absorbEvent_;
@@ -63,6 +70,7 @@ $(document).ready(()=>{
 
 	function longTapFunc(e){
 		console.log("LongTap!");
+		emitEvent(e.target, "dragstart");
 	}
 	/////
 	
@@ -102,6 +110,7 @@ $(document).ready(()=>{
     function dragStartFunc(e){
 		console.log("DragStart");
 
+		console.log(e);
 		let draggingElement = e.target;
 		e.dataTransfer.setData("Text", draggingElement.outerHTML);
 
@@ -115,8 +124,8 @@ $(document).ready(()=>{
 			$(draggingElement).css(
 				{
 					"position": "fixed",
-					"top": ev.target.y+"px",
-					"left": ev.target.x+"px",
+					"top": e.target.y+"px",
+					"left": e.target.x+"px",
 					"transition": "0s"
 				}
 			);
