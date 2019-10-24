@@ -12,12 +12,26 @@ $(document).ready(()=>{
 		elem.get(0).addEventListener(listenEvent, func, useCapture);
 	}
 
-	function emitEvent(elem, eventToEmit){
-			
-		let eventIntance = document.createEvent("HTMLEvents");
-		eventIntance.initEvent(eventToEmit, true, false);
-		elem.dispatchEvent(eventIntance);
+	function triggerEvent(elem, eventToEmit, data){
 
+		let event;
+		data = data || {};
+		if (document.createEvent) {
+			event = document.createEvent("HTMLEvents");
+			event.initEvent(eventToEmit, true, true);
+		} else {
+			event = document.createEventObject();
+			event.eventType = eventToEmit;
+		}
+
+		event.eventName = eventToEmit;
+		event = $.extend(event, data);
+
+		if (document.createEvent) {
+			elem.dispatchEvent(event);
+		} else {
+			elem.fireEvent("on" + event.eventType, event);
+		}
 	}
 
 	function verifTouchDevice(){
@@ -70,7 +84,7 @@ $(document).ready(()=>{
 
 	function longTapFunc(e){
 		console.log("LongTap!");
-		emitEvent(e.target, "dragstart");
+		triggerEvent(e.target, "dragstart");
 	}
 	/////
 	
