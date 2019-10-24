@@ -24,7 +24,7 @@ ul, ol {
 }
 
 input {
-  background-color: rgba(0, 0, 0, 0);
+  background-color: transparent;
   border: none;
 }
 
@@ -127,7 +127,7 @@ body header section {
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  background-color: rgba(0, 0, 0, 0);
+  background-color: transparent;
 }
 
 body header section * {
@@ -506,7 +506,10 @@ body section#DDwithDT .card .actionSection button {
     align-items: center;
     flex-wrap: wrap;
     height: 50%;
-    width: 60%;
+    width: 65%;
+  }
+  body section#DDwithDT .card .cardInfo span {
+    font-size: 17px;
   }
   body section#DDwithDT .card .cardInfo p {
     display: none;
@@ -514,6 +517,9 @@ body section#DDwithDT .card .actionSection button {
   body section#DDwithDT .card .actionSection {
     height: 50%;
     width: 65%;
+  }
+  body section#DDwithDT .card .actionSection button {
+    font-size: 12px;
   }
 }
 

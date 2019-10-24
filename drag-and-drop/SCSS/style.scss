@@ -289,13 +289,19 @@ body{
 				}
 				.cardInfo{
 					@include flex(column, center, center, wrap);
-					@include widthHeightsize(60%, 50%);
+					@include widthHeightsize(65%, 50%);
+					span{
+						font-size: 17px;
+					}
 					p{
 						display: none;
 					}
 				}
 				.actionSection{
 					@include widthHeightsize(65%, 50%);
+					button{
+						font-size: 12px;
+					}
 				}
 			}
 			@media (min-width: 160px) and (max-width: $mediumWidth) and (orientation: portrait){
