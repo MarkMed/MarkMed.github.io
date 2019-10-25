@@ -84,7 +84,7 @@ $(document).ready(()=>{
 
 	function longTapFunc(e){
 		console.log("LongTap!");
-		triggerEvent(e.target, "dragstart");
+		triggerEvent(e.target, "mousedown");
 	}
 	/////
 	
@@ -159,6 +159,14 @@ $(document).ready(()=>{
 		}, 200);
 	}
 	
+	function mouseDownFunc(ev){
+		console.log("mousedown");
+		
+	}
+	function mouseMoveFunc(ev){
+		console.log("mouseMove");
+	}
+
 	function cancelContextMenuTest(elem){
 		elem.addEventListener("contextmenu", (e)=>{
 			e.preventDefault();
@@ -190,6 +198,8 @@ $(document).ready(()=>{
 		console.log(items[i]);
 		addEvent("dragstart", $(items[i]), dragStartFunc, false);
 		addEvent("dragend", $(items[i]), dragEndFunc, false);
+		addEvent("mousedown", $(items[i]), mouseDownFunc, false);
+		addEvent("mousemove", $(items[i]), mouseMoveFunc, false);
     }
 
 })
