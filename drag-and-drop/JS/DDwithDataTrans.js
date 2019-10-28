@@ -84,7 +84,7 @@ $(document).ready(()=>{
 
 	function longTapFunc(e){
 		console.log("LongTap!");
-		triggerEvent(e.target, "mousedown");
+		triggerEvent(e.target, "dragstart");
 	}
 	/////
 	
@@ -122,11 +122,21 @@ $(document).ready(()=>{
     }
 
     function dragStartFunc(e){
+		
+		function moveElement(ev){
+			$(this).css(
+				{
+					"top": ev.touches[0].clientY - (ev.target.width / 2)+"px",
+					"left": ev.touches[0].clientX - (ev.target.height / 2)+"px"
+				}
+			);
+		}
+
 		console.log("DragStart");
 
 		console.log(e);
 		let draggingElement = e.target;
-		e.dataTransfer.setData("Text", draggingElement.outerHTML);
+		// e.dataTransfer.setData("Text", draggingElement.outerHTML);
 
 		$(draggingElement).addClass("dragging");
 
@@ -143,6 +153,7 @@ $(document).ready(()=>{
 					"transition": "0s"
 				}
 			);
+			$(draggingElement).on("touchmove", moveElement);
 		}		
 	}
 	
