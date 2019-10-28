@@ -168,10 +168,22 @@ $(document).ready(()=>{
 	}
 
 	function cancelContextMenuTest(elem){
-		elem.addEventListener("contextmenu", (e)=>{
-			e.preventDefault();
-			alert("contextmenu canceled!");
-		});
+		// elem.addEventListener("contextmenu", (e)=>{
+		// 	e.preventDefault();
+		// 	alert("contextmenu canceled!");
+		// });
+		function absorbEvent_(event) {
+			var e = event || window.event;
+			e.preventDefault && e.preventDefault();
+			e.stopPropagation && e.stopPropagation();
+			e.cancelBubble = true;
+			e.returnValue = false;
+			return false;
+		}
+		elem.ontouchstart = absorbEvent_;
+		elem.ontouchmove = absorbEvent_;
+		elem.ontouchend = absorbEvent_;
+		elem.ontouchcancel = absorbEvent_;
 	}
 
 	//////////////////////////////////////////////////////////////////////////////////
