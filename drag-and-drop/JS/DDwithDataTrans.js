@@ -1,3 +1,4 @@
+var global;
 $(document).ready(()=>{
 
     //////////////////////////////////////////////////////////////////////////////////
@@ -120,21 +121,22 @@ $(document).ready(()=>{
     function allowDrag(elem, allow){
         elem.setAttribute("draggable", allow);
     }
+		
+	function moveElement(e){
+		$(e.currentTarget).css(
+			{
+				"top": e.touches[0].clientY - 50+"px",
+				"left": e.touches[0].clientX - 100+"px"
+			}
+		);
+	}
 
     function dragStartFunc(e){
-		
-		function moveElement(ev){
-			$(this).css(
-				{
-					"top": ev.touches[0].clientY - (ev.target.width / 2)+"px",
-					"left": ev.touches[0].clientX - (ev.target.height / 2)+"px"
-				}
-			);
-		}
+		// alert("dragStarted");
 
 		console.log("DragStart");
-
 		console.log(e);
+
 		let draggingElement = e.target;
 		// e.dataTransfer.setData("Text", draggingElement.outerHTML);
 
@@ -145,12 +147,13 @@ $(document).ready(()=>{
 				"overflow": "hidden"
 			});
 
+			global = draggingElement;
 			$(draggingElement).css(
 				{
+					"left": e.target.offsetLeft+"px",
+					"top": e.target.offsetHeight+"px",
 					"position": "fixed",
-					"top": e.target.y+"px",
-					"left": e.target.x+"px",
-					"transition": "0s"
+					"width": e.target.offsetWidth+"px"
 				}
 			);
 			$(draggingElement).on("touchmove", moveElement);
@@ -162,6 +165,12 @@ $(document).ready(()=>{
 
 		let draggingElement = e.target;
 		
+		if(verifTouchDevice()){	
+			$("body").css({
+				"overflow": ""
+			});
+			$(elem).off("touchmove", moveElement);
+		}
 		setTimeout(()=>{
 			$(draggingElement).addClass("dragged");
 			setTimeout(()=>{
@@ -210,7 +219,7 @@ $(document).ready(()=>{
 		console.log("This device allows touchable events");
 	}
     for(let i=0; i<items.length; i++){
-		cancelContextMenuTest(items[i]);
+		// cancelContextMenuTest(items[i]);
 		allowDrag(items[i], true);
 
 		if(verifTouchDevice()){
