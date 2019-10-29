@@ -427,6 +427,18 @@ body section#DDwithDT .card {
   flex-wrap: wrap;
 }
 
+body section#DDwithDT .card.dragging {
+  opacity: 0.6;
+  border: 2px solid rgba(33, 160, 200, 0.5);
+  border-radius: 10px;
+}
+
+body section#DDwithDT .card.dragged {
+  width: 0px;
+  opacity: 0;
+  margin: 0px;
+}
+
 body section#DDwithDT .card .cardImg {
   height: 40%;
   width: 100%;
