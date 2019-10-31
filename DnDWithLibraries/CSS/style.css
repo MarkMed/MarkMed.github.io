@@ -82,13 +82,13 @@ html {
 }
 
 /* line 8, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/DnDWithLibraries/SCSS/style.scss */
-.show, body section .sectionTitle.show {
+.show {
   transform: translateY(0px);
   opacity: 1;
 }
 
 /* line 12, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/DnDWithLibraries/SCSS/style.scss */
-.hidden, body section .sectionTitle.hidden {
+.hidden {
   transform: translateY(-20px);
   opacity: 0;
 }
@@ -274,14 +274,15 @@ body header {
 /* line 116, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/DnDWithLibraries/SCSS/style.scss */
 body header h1 {
   height: auto;
-  width: 100%;
+  width: calc(100% - 20px);
   font-family: "RalewayELight";
   font-weight: 100;
   text-transform: uppercase;
   letter-spacing: 0.2em;
+  margin-left: 20px;
 }
 
-/* line 123, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/DnDWithLibraries/SCSS/style.scss */
+/* line 124, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/DnDWithLibraries/SCSS/style.scss */
 body header section {
   height: 80%;
   width: 100%;
@@ -293,32 +294,32 @@ body header section {
   background-color: transparent;
 }
 
-/* line 127, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/DnDWithLibraries/SCSS/style.scss */
+/* line 128, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/DnDWithLibraries/SCSS/style.scss */
 body header section * {
   height: auto;
   width: 100%;
   text-align: center;
 }
 
-/* line 131, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/DnDWithLibraries/SCSS/style.scss */
+/* line 132, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/DnDWithLibraries/SCSS/style.scss */
 body header section h4 {
   font-size: 25px;
   font-weight: 100;
 }
 
-/* line 135, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/DnDWithLibraries/SCSS/style.scss */
+/* line 136, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/DnDWithLibraries/SCSS/style.scss */
 body header section p {
   font-size: 15px;
 }
 
-/* line 138, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/DnDWithLibraries/SCSS/style.scss */
+/* line 139, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/DnDWithLibraries/SCSS/style.scss */
 body header section svg {
   margin-top: 20px;
   cursor: pointer;
 }
 
 @media (min-width: 160px) and (max-width: 640px) {
-  /* line 138, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/DnDWithLibraries/SCSS/style.scss */
+  /* line 139, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/DnDWithLibraries/SCSS/style.scss */
   body header section svg {
     height: 30px;
     width: 30px;
@@ -326,7 +327,7 @@ body header section svg {
 }
 
 @media (min-width: 641px) and (max-width: 1007px) {
-  /* line 138, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/DnDWithLibraries/SCSS/style.scss */
+  /* line 139, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/DnDWithLibraries/SCSS/style.scss */
   body header section svg {
     height: 40px;
     width: 40px;
@@ -334,7 +335,7 @@ body header section svg {
 }
 
 @media (min-width: 1008px) {
-  /* line 138, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/DnDWithLibraries/SCSS/style.scss */
+  /* line 139, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/DnDWithLibraries/SCSS/style.scss */
   body header section svg {
     height: 50px;
     width: 50px;
@@ -350,273 +351,30 @@ body header section svg {
   }
 }
 
-/* line 158, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/DnDWithLibraries/SCSS/style.scss */
+/* line 159, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/DnDWithLibraries/SCSS/style.scss */
 body header section svg g {
   stroke: rgba(240, 240, 223, 0.75);
   stroke-width: 2px;
   transition: 0.4s cubic-bezier(0, 0, 0.27, 0.97);
 }
 
-/* line 162, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/DnDWithLibraries/SCSS/style.scss */
+/* line 163, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/DnDWithLibraries/SCSS/style.scss */
 body header section svg g path {
   animation: moving 1s cubic-bezier(1, 0, 0.5, 1) infinite alternate;
 }
 
-/* line 166, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/DnDWithLibraries/SCSS/style.scss */
+/* line 167, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/DnDWithLibraries/SCSS/style.scss */
 body header section svg:hover g {
   stroke: #ffc33c;
 }
 
-/* line 172, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/DnDWithLibraries/SCSS/style.scss */
+/* line 173, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/DnDWithLibraries/SCSS/style.scss */
 body .lineSeparator {
   height: 2px;
   width: 50vw;
   margin: 20px 25vw;
   border-bottom: 2px solid rgba(240, 240, 223, 0.25);
   transition: 0.3s cubic-bezier(0, 0, 0.27, 0.97);
-}
-
-/* line 178, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/DnDWithLibraries/SCSS/style.scss */
-body section {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  align-items: center;
-  flex-wrap: wrap;
-  height: 100vh;
-  width: 100vw;
-  background-color: rgba(240, 240, 223, 0.75);
-}
-
-/* line 182, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/DnDWithLibraries/SCSS/style.scss */
-body section .sectionTitle {
-  height: 60px;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
-  flex-wrap: wrap;
-  transition: 0.5s cubic-bezier(0, 0, 0.27, 0.97);
-}
-
-/* line 186, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/DnDWithLibraries/SCSS/style.scss */
-body section .sectionTitle h2 {
-  transition-delay: 1s;
-  margin: 10px 0px 5px;
-  color: rgba(1, 42, 57, 0.5);
-  font-size: 28px;
-}
-
-/* line 192, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/DnDWithLibraries/SCSS/style.scss */
-body section .sectionTitle .lineSeparator {
-  transition-delay: 0.4s;
-  height: 2px;
-  width: 0%;
-  margin: 0px 5px;
-  border-bottom: 2px solid rgba(1, 42, 57, 0.25);
-}
-
-/* line 200, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/DnDWithLibraries/SCSS/style.scss */
-body section .sectionTitle.show .lineSeparator {
-  height: 2px;
-  width: 50%;
-}
-
-/* line 208, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/DnDWithLibraries/SCSS/style.scss */
-body section .elementsContainer {
-  height: calc(90vh - 20px - 60px - 10vh);
-  width: 33.33333%;
-  padding: 10px;
-  margin-bottom: 5vh;
-  background-color: #1b2e40;
-  background-image: linear-gradient(to top, #132b40, #1b2e40);
-  border-radius: 20px;
-  box-shadow: 3px 6px 9px 0px rgba(27, 46, 64, 0.5);
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  align-items: flex-start;
-  flex-wrap: wrap;
-  align-content: flex-start;
-  transition: 0.4s ease;
-  overflow: auto;
-}
-
-@media (min-width: 160px) and (max-width: 640px) and (orientation: portrait) {
-  /* line 208, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/DnDWithLibraries/SCSS/style.scss */
-  body section .elementsContainer {
-    height: calc(25vh);
-    width: 83.33333%;
-    margin: 0 0;
-  }
-}
-
-@media (min-width: 160px) and (max-width: 640px) {
-  /* line 208, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/DnDWithLibraries/SCSS/style.scss */
-  body section .elementsContainer {
-    margin: 0 0;
-  }
-}
-
-/* line 227, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/DnDWithLibraries/SCSS/style.scss */
-body section .elementsContainer.allowDrop {
-  box-shadow: 0px 0px 20px 5px rgba(32, 195, 32, 0.6);
-}
-
-/* line 230, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/DnDWithLibraries/SCSS/style.scss */
-body section .elementsContainer .element2Drag {
-  height: 35px;
-  width: 35px;
-  transition: 0.2s ease;
-  cursor: pointer;
-  margin: 2px;
-}
-
-/* line 235, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/DnDWithLibraries/SCSS/style.scss */
-body section .elementsContainer .element2Drag:hover {
-  filter: drop-shadow(0 0 0.75rem #c7ebff);
-}
-
-/* line 238, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/DnDWithLibraries/SCSS/style.scss */
-body section .elementsContainer .element2Drag.dragging {
-  opacity: 0.6;
-  border: 2px solid rgba(33, 160, 200, 0.5);
-  border-radius: 10px;
-}
-
-/* line 243, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/DnDWithLibraries/SCSS/style.scss */
-body section .elementsContainer .element2Drag.dragged {
-  width: 0px;
-  opacity: 0;
-  margin: 0px;
-}
-
-/* line 251, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/DnDWithLibraries/SCSS/style.scss */
-body section#simpleDD {
-  z-index: 0;
-  position: relative;
-}
-
-/* line 268, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/DnDWithLibraries/SCSS/style.scss */
-body section#simpleDD:nth-child(2)::after {
-  content: "Cloud Storage";
-  position: absolute;
-  font-weight: 900;
-  text-transform: uppercase;
-  color: rgba(1, 42, 57, 0.5);
-  font-size: 1rem;
-  height: 50px;
-  width: 33.33333%;
-  transform: translateY(-50px);
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  align-items: center;
-  flex-wrap: wrap;
-}
-
-@media (min-width: 160px) and (max-width: 640px) and (orientation: portrait) {
-  /* line 268, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/DnDWithLibraries/SCSS/style.scss */
-  body section#simpleDD:nth-child(2)::after {
-    height: 50px;
-    width: 83.33333%;
-  }
-}
-
-/* line 274, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/DnDWithLibraries/SCSS/style.scss */
-body section#simpleDD:nth-child(3)::after {
-  content: "Local Storage";
-  position: absolute;
-  font-weight: 900;
-  text-transform: uppercase;
-  color: rgba(1, 42, 57, 0.5);
-  font-size: 1rem;
-  height: 50px;
-  width: 33.33333%;
-  transform: translateY(-50px);
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  align-items: center;
-  flex-wrap: wrap;
-}
-
-@media (min-width: 160px) and (max-width: 640px) and (orientation: portrait) {
-  /* line 274, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/DnDWithLibraries/SCSS/style.scss */
-  body section#simpleDD:nth-child(3)::after {
-    height: 50px;
-    width: 83.33333%;
-  }
-}
-
-/* line 281, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/DnDWithLibraries/SCSS/style.scss */
-body section#DDinSD p {
-  text-align: center;
-  margin-top: 30px;
-  height: 60px;
-  width: 100%;
-  color: rgba(1, 42, 57, 0.5);
-  transition: 0.4s;
-  transition-delay: 0.5s;
-}
-
-@media (min-width: 160px) and (max-width: 1007px) {
-  /* line 291, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/DnDWithLibraries/SCSS/style.scss */
-  body section#DDinSD p {
-    margin-top: 0px;
-    height: 30px;
-    width: 100%;
-  }
-}
-
-/* line 298, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/DnDWithLibraries/SCSS/style.scss */
-body section#DDwithDT .elementsContainer {
-  padding: 8px;
-}
-
-@media (min-width: 1008px) {
-  /* line 298, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/DnDWithLibraries/SCSS/style.scss */
-  body section#DDwithDT .elementsContainer {
-    width: 40%;
-  }
-}
-
-@media (min-width: 160px) and (max-width: 1007px) and (orientation: landscape) {
-  /* line 298, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/DnDWithLibraries/SCSS/style.scss */
-  body section#DDwithDT .elementsContainer {
-    width: 40%;
-  }
-}
-
-/* line 307, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/DnDWithLibraries/SCSS/style.scss */
-body section#DDwithDT p {
-  text-align: center;
-  margin-top: 30px;
-  height: 60px;
-  width: 100%;
-  color: rgba(1, 42, 57, 0.5);
-  transition: 0.4s;
-  transition-delay: 0.5s;
-}
-
-@media (min-width: 160px) and (max-width: 1007px) {
-  /* line 317, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/DnDWithLibraries/SCSS/style.scss */
-  body section#DDwithDT h2 {
-    font-size: 21px;
-  }
-  /* line 320, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/DnDWithLibraries/SCSS/style.scss */
-  body section#DDwithDT p {
-    margin-top: 0px;
-    height: 30px;
-    width: 100%;
-  }
-}
-
-/* line 327, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/DnDWithLibraries/SCSS/style.scss */
-body footer {
-  height: 500px;
-  width: 100vw;
 }
 
 /*# sourceMappingURL=../CSS/style.map */

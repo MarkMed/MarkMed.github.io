@@ -103,7 +103,7 @@ body{
 			margin-bottom: 8px;
 		}
 	}
-	
+
 	&::-webkit-scrollbar { 
 		display: none; 
 	}
@@ -114,11 +114,12 @@ body{
 		@include widthHeightsize(100vw, 100vh);
 		@include flex(column, space-around, center, wrap);
 		h1{
-			@include widthHeightsize($width-12, auto);
+			@include widthHeightsize(calc(100% - 20px), auto);
 			font-family: "RalewayELight";
 			font-weight: 100;
 			text-transform: uppercase;
 			letter-spacing: 0.2em;
+			margin-left: 20px;
 		}
 		& section{
 			@include widthHeightsize($width-12, 80%);
@@ -174,157 +175,5 @@ body{
 		margin: 20px 25vw;
 		border-bottom: 2px solid $clearColor25;
 		transition: 0.3s $animationFX;
-	}
-	section{
-		@include flex(row, space-around, center, wrap);
-		@include widthHeightsize(100vw, 100vh);
-		background-color: $clearColor75;
-		.sectionTitle{
-			@include widthHeightsize($width-12, 60px);
-			@include flex(column, space-around, center, wrap);
-			transition: 0.5s $animationFX;
-			h2{
-				transition-delay: 1s;
-				margin: 10px 0px 5px;
-				color: $primaryColor50;
-				font-size: 28px;
-			}
-			.lineSeparator{
-				transition-delay: 0.4s;
-				@include widthHeightsize(0%, 2px);
-				margin: 0px 5px;
-				border-bottom: 2px solid $primaryColor25;
-			}
-			&.show{
-				@extend .show;
-				.lineSeparator{
-					@include widthHeightsize(50%, 2px);
-				}
-			}
-			&.hidden{
-				@extend .hidden;
-			}
-		}
-		.elementsContainer{
-			@include widthHeightsize($width-4, calc(90vh - 20px - 60px - 10vh));
-			padding: 10px;
-			margin-bottom: 5vh;
-			@media (min-width: 160px) and (max-width: $smallWidth) and (orientation: portrait){
-				@include widthHeightsize($width-10, calc(25vh));
-				margin: 0 0;
-			}
-			@media (min-width: 160px) and (max-width: $smallWidth){
-				margin: 0 0;
-			}
-			background-color: $secondaryColor100;
-			background-image: linear-gradient(to top, $grad-secondaryColor100);
-			border-radius: 20px;
-			box-shadow: 3px 6px 9px 0px $secondaryColor50;
-			@include flex(row, flex-start, flex-start, wrap);
-			align-content: flex-start;
-			transition: 0.4s ease;
-			overflow: auto;
-			&.allowDrop{
-				box-shadow: 0px 0px 20px 5px rgba(32, 195, 32, 0.6);
-			}
-			.element2Drag{
-				@include widthHeightsize(35px, 35px);
-				transition: 0.2s ease;
-				cursor: pointer;
-				margin: 2px;
-				&:hover{
-					filter: drop-shadow(0 0 0.75rem rgb(199, 235, 255))
-				}
-				&.dragging{
-					opacity: 0.6;
-					border: 2px solid rgba(33, 160, 200, 0.5);
-					border-radius: 10px;
-				}
-				&.dragged{
-					width: 0px;
-					opacity: 0;
-					margin: 0px;
-				}
-			}
-		}
-	}
-	section#simpleDD{
-		z-index: 0;
-		position: relative;
-		@mixin divTitle {
-			@media (min-width: 160px) and (max-width: $smallWidth) and (orientation: portrait){
-				@include widthHeightsize($width-10, 50px);
-			}
-			position: absolute;
-			font-weight: 900;
-			text-transform: uppercase;
-			color: $primaryColor50;
-			font-size: 1rem;
-			@include widthHeightsize($width-4, 50px);
-			transform: translateY(-50px);
-			@include flex(row, flex-start, center, wrap);
-		}
-		&:nth-child(2){
-			&::after{
-				content: "Cloud Storage";
-				@include divTitle;
-			}
-		}
-		&:nth-child(3){
-			&::after{
-				content: "Local Storage";
-				@include divTitle;
-			}
-		}
-	}
-	section#DDinSD{
-		p{
-			text-align: center;
-			margin-top: 30px;
-			@include widthHeightsize($width-12, 60px);
-			color: $primaryColor50;
-			transition: 0.4s;
-			transition-delay: 0.5s;
-		}
-		
-		@media (min-width: 160px) and (max-width: $mediumWidth){
-			p{
-				margin-top: 0px;
-				@include widthHeightsize($width-12, 30px);
-			}
-		}
-	}
-	section#DDwithDT{
-		.elementsContainer{
-			@media (min-width: $mediumWidth+1){
-				width: 40%;
-			}
-			@media (min-width: 160px) and (max-width: $mediumWidth) and (orientation: landscape){
-				width: 40%;
-			}
-			padding: 8px;
-		}
-		p{
-			text-align: center;
-			margin-top: 30px;
-			@include widthHeightsize($width-12, 60px);
-			color: $primaryColor50;
-			transition: 0.4s;
-			transition-delay: 0.5s;
-		}
-		
-		@media (min-width: 160px) and (max-width: $mediumWidth){
-			h2{
-				font-size: 21px;
-			}
-			p{
-				margin-top: 0px;
-				@include widthHeightsize($width-12, 30px);
-			}
-		}
-		
-	}
-	footer{
-		@include widthHeightsize(100vw, 500px);
 	}
 }
