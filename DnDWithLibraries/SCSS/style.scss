@@ -1,0 +1,330 @@
+// base.scss
+@import 'noDefaultStyle';
+@import 'varsMixinExtends';
+html{
+	scroll-behavior: smooth;
+	scrollbar-width: none;
+}
+.show{
+	transform: translateY(0px);
+	opacity: 1;
+}
+.hidden{
+	transform: translateY(-20px);
+	opacity: 0;
+}
+body{
+	color: $clearColor75;
+	font-family: "RalewayLight";
+	background-color: $primaryColor100;
+	background-image: linear-gradient(to right bottom, $grad-primaryColor100);
+	@include widthHeightsize(100vw, auto);
+	
+	.card{
+		@include widthHeightsize(300px, 300px);
+		background-color: $clearColor100;
+		color: $primaryColor75;
+		border-radius: 20px;
+		margin: 8px;
+		&.dragging{
+			opacity: 0.6;
+			border: 2px solid rgba(33, 160, 200, 0.5);
+			border-radius: 10px;
+		}
+		&.dragged{
+			width: 0px;
+			opacity: 0;
+			margin: 0px;
+		}
+		@include flex(column, space-around, center, wrap);
+		.cardImg{
+			@include widthHeightsize(100%, 40%);
+			@include flex(row, center, center, wrap);
+			img{
+				@include widthHeightsize(auto, 90%);
+				margin: auto 5%;
+				border-radius: 50%;
+			}
+		}
+		.cardInfo{
+			@include flex(column, space-around, center, wrap);
+			@include widthHeightsize(100%, 40%);
+			span{
+				font-size: 20px;
+			}
+			p{
+				font-size: 0.3 em;
+				margin: 0;
+				@include widthHeightsize(100%, auto);
+			}
+		}
+		.actionSection{
+			@include widthHeightsize(80%, 20%);
+			@include flex(row, space-around, center, wrap);
+			button{
+				@include widthHeightsize(auto, 50%);
+				color: $clearColor75;
+				background-color: $secondaryColor50;
+				border-radius: 20px;
+				padding: 0 5px;
+			}
+		}
+
+		@media (min-width: 160px) and (max-width: $mediumWidth){
+			@include widthHeightsize(auto, 100px);
+			margin: 0px;
+			margin-bottom: 8px;
+			.cardImg{
+				@include widthHeightsize(30%, 100%);
+				img{
+					@include widthHeightsize(90%, auto);
+				}
+			}
+			.cardInfo{
+				@include flex(column, center, center, wrap);
+				@include widthHeightsize(65%, 50%);
+				span{
+					font-size: 17px;
+				}
+				p{
+					display: none;
+				}
+			}
+			.actionSection{
+				@include widthHeightsize(65%, 50%);
+				button{
+					font-size: 12px;
+				}
+			}
+		}
+		@media (min-width: 160px) and (max-width: $mediumWidth) and (orientation: portrait){
+			@include widthHeightsize(auto, 100px);
+			margin: 0px;
+			margin-bottom: 8px;
+		}
+	}
+	
+	&::-webkit-scrollbar { 
+		display: none; 
+	}
+
+	header{
+		position: relative;
+		z-index: 0;
+		@include widthHeightsize(100vw, 100vh);
+		@include flex(column, space-around, center, wrap);
+		h1{
+			@include widthHeightsize($width-12, auto);
+			font-family: "RalewayELight";
+			font-weight: 100;
+			text-transform: uppercase;
+			letter-spacing: 0.2em;
+		}
+		& section{
+			@include widthHeightsize($width-12, 80%);
+			@include flex(column, center, center, wrap);
+			background-color: rgba(0, 0, 0, 0);
+			*{
+				@include widthHeightsize($width-12, auto);
+				text-align: center;
+			}
+			h4{
+				font-size: 25px;
+				font-weight: 100;
+			}
+			p{
+				font-size: 15px;
+			}
+			svg{
+				margin-top: 20px;
+				cursor: pointer;
+				@media (min-width: 160px) and (max-width: $smallWidth){
+					@include widthHeightsize(30px, 30px);
+				}
+				@media (min-width: $smallWidth+1) and (max-width: $mediumWidth){
+					@include widthHeightsize(40px, 40px);
+				}
+				@media (min-width: $mediumWidth+1){
+					@include widthHeightsize(50px, 50px);
+				}
+				@keyframes moving{
+					from{
+						transform: translateY(0px);
+					}
+					to{
+						transform: translateY(10px);
+					}
+				}
+				g{
+					stroke: $clearColor75;
+					stroke-width: 2px;
+					transition: 0.4s $animationFX;
+					path{
+						animation: moving 1s cubic-bezier(1, 0, 0.5, 1) infinite alternate;
+					}
+				}
+				&:hover g{
+					stroke: $thirdColor100;
+				}
+			}
+		}
+	}
+	.lineSeparator{		
+		@include widthHeightsize(50vw, 2px);
+		margin: 20px 25vw;
+		border-bottom: 2px solid $clearColor25;
+		transition: 0.3s $animationFX;
+	}
+	section{
+		@include flex(row, space-around, center, wrap);
+		@include widthHeightsize(100vw, 100vh);
+		background-color: $clearColor75;
+		.sectionTitle{
+			@include widthHeightsize($width-12, 60px);
+			@include flex(column, space-around, center, wrap);
+			transition: 0.5s $animationFX;
+			h2{
+				transition-delay: 1s;
+				margin: 10px 0px 5px;
+				color: $primaryColor50;
+				font-size: 28px;
+			}
+			.lineSeparator{
+				transition-delay: 0.4s;
+				@include widthHeightsize(0%, 2px);
+				margin: 0px 5px;
+				border-bottom: 2px solid $primaryColor25;
+			}
+			&.show{
+				@extend .show;
+				.lineSeparator{
+					@include widthHeightsize(50%, 2px);
+				}
+			}
+			&.hidden{
+				@extend .hidden;
+			}
+		}
+		.elementsContainer{
+			@include widthHeightsize($width-4, calc(90vh - 20px - 60px - 10vh));
+			padding: 10px;
+			margin-bottom: 5vh;
+			@media (min-width: 160px) and (max-width: $smallWidth) and (orientation: portrait){
+				@include widthHeightsize($width-10, calc(25vh));
+				margin: 0 0;
+			}
+			@media (min-width: 160px) and (max-width: $smallWidth){
+				margin: 0 0;
+			}
+			background-color: $secondaryColor100;
+			background-image: linear-gradient(to top, $grad-secondaryColor100);
+			border-radius: 20px;
+			box-shadow: 3px 6px 9px 0px $secondaryColor50;
+			@include flex(row, flex-start, flex-start, wrap);
+			align-content: flex-start;
+			transition: 0.4s ease;
+			overflow: auto;
+			&.allowDrop{
+				box-shadow: 0px 0px 20px 5px rgba(32, 195, 32, 0.6);
+			}
+			.element2Drag{
+				@include widthHeightsize(35px, 35px);
+				transition: 0.2s ease;
+				cursor: pointer;
+				margin: 2px;
+				&:hover{
+					filter: drop-shadow(0 0 0.75rem rgb(199, 235, 255))
+				}
+				&.dragging{
+					opacity: 0.6;
+					border: 2px solid rgba(33, 160, 200, 0.5);
+					border-radius: 10px;
+				}
+				&.dragged{
+					width: 0px;
+					opacity: 0;
+					margin: 0px;
+				}
+			}
+		}
+	}
+	section#simpleDD{
+		z-index: 0;
+		position: relative;
+		@mixin divTitle {
+			@media (min-width: 160px) and (max-width: $smallWidth) and (orientation: portrait){
+				@include widthHeightsize($width-10, 50px);
+			}
+			position: absolute;
+			font-weight: 900;
+			text-transform: uppercase;
+			color: $primaryColor50;
+			font-size: 1rem;
+			@include widthHeightsize($width-4, 50px);
+			transform: translateY(-50px);
+			@include flex(row, flex-start, center, wrap);
+		}
+		&:nth-child(2){
+			&::after{
+				content: "Cloud Storage";
+				@include divTitle;
+			}
+		}
+		&:nth-child(3){
+			&::after{
+				content: "Local Storage";
+				@include divTitle;
+			}
+		}
+	}
+	section#DDinSD{
+		p{
+			text-align: center;
+			margin-top: 30px;
+			@include widthHeightsize($width-12, 60px);
+			color: $primaryColor50;
+			transition: 0.4s;
+			transition-delay: 0.5s;
+		}
+		
+		@media (min-width: 160px) and (max-width: $mediumWidth){
+			p{
+				margin-top: 0px;
+				@include widthHeightsize($width-12, 30px);
+			}
+		}
+	}
+	section#DDwithDT{
+		.elementsContainer{
+			@media (min-width: $mediumWidth+1){
+				width: 40%;
+			}
+			@media (min-width: 160px) and (max-width: $mediumWidth) and (orientation: landscape){
+				width: 40%;
+			}
+			padding: 8px;
+		}
+		p{
+			text-align: center;
+			margin-top: 30px;
+			@include widthHeightsize($width-12, 60px);
+			color: $primaryColor50;
+			transition: 0.4s;
+			transition-delay: 0.5s;
+		}
+		
+		@media (min-width: 160px) and (max-width: $mediumWidth){
+			h2{
+				font-size: 21px;
+			}
+			p{
+				margin-top: 0px;
+				@include widthHeightsize($width-12, 30px);
+			}
+		}
+		
+	}
+	footer{
+		@include widthHeightsize(100vw, 500px);
+	}
+}
