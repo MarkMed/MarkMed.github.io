@@ -2,7 +2,7 @@ var globalVar;
 $(document).ready(()=>{
 	//////////////////////////////////////////////////////////////////////////////////
 	const header = $("header");
-	// const firstTitle = $("#simpleDD .sectionTitle");
+	const firstTitle = $("main .sectionTitle");
 	// const secondTitle = $("#DDinSD .sectionTitle");
 	// const thirdTitle = $("#DDwithDT .sectionTitle");
 	// const secondTitle = $("#swipeEvents .sectionTitle h2");
@@ -10,29 +10,29 @@ $(document).ready(()=>{
 	let documentHeight = $(document).height();
 	//////////////////////////////////////////////////////////////////////////////////
 	$("#svgScrollDown").click(()=>{
-		// $('html, body').animate(
-		// 	{
-		// 		scrollTop: $("#simpleDD").offset().top
-		// 	},
-		// 	{
-		// 		duration: 400, 
-		// 		easing: "linear"
-		// 	}
-		// );
+		$('html, body').animate(
+			{
+				scrollTop: $("main").offset().top
+			},
+			{
+				duration: 400, 
+				easing: "linear"
+			}
+		);
 	});
 	//////////////////////////////////////////////////////////////////////////////////
-	// $(document).scroll(function(e){
-	// 	if($(document).scrollTop() < deviceHeight){
-	// 		header.css(
-	// 			{
-	// 				"opacity": 1-($(document).scrollTop()/500),
-	// 				"transform": "translateY("+$(document).scrollTop()/2+"px)"
-	// 			}
-	// 		);
-	// 	}
-	// 	if($(document).scrollTop() > firstTitle.offset().top/1.1){
-	// 		firstTitle.removeClass("hidden").addClass("show");
-	// 	}
+	$(document).scroll(function(e){
+		if($(document).scrollTop() < deviceHeight){
+			header.css(
+				{
+					"opacity": 1-($(document).scrollTop()/500),
+					"transform": "translateY("+$(document).scrollTop()/2+"px)"
+				}
+			);
+		}
+		if($(document).scrollTop() > firstTitle.offset().top/1.1){
+			firstTitle.removeClass("hidden").addClass("show");
+		}
 	// 	if($(document).scrollTop() > secondTitle.offset().top/1.1){
 	// 		secondTitle.removeClass("hidden").addClass("show");
 	// 		$("#DDinSD p").removeClass("hidden").addClass("show");
@@ -41,6 +41,6 @@ $(document).ready(()=>{
 	// 		thirdTitle.removeClass("hidden").addClass("show");
 	// 		$("#DDwithDT p").removeClass("hidden").addClass("show");
 	// 	}
-	// });
+	});
 
 })
