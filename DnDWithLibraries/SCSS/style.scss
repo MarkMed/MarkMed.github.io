@@ -19,93 +19,43 @@ body{
 	background-color: $primaryColor100;
 	background-image: linear-gradient(to right bottom, $grad-primaryColor100);
 	@include widthHeightsize(100vw, auto);
-	
-	.card{
-		@include widthHeightsize(300px, 300px);
-		background-color: $clearColor100;
-		color: $primaryColor75;
-		border-radius: 20px;
-		margin: 8px;
-		&.dragging{
-			opacity: 0.6;
-			border: 2px solid rgba(33, 160, 200, 0.5);
-			border-radius: 10px;
-		}
-		&.dragged{
-			width: 0px;
-			opacity: 0;
-			margin: 0px;
-		}
-		@include flex(column, space-around, center, wrap);
-		.cardImg{
-			@include widthHeightsize(100%, 40%);
-			@include flex(row, center, center, wrap);
-			img{
-				@include widthHeightsize(auto, 90%);
-				margin: auto 5%;
-				border-radius: 50%;
-			}
-		}
-		.cardInfo{
-			@include flex(column, space-around, center, wrap);
-			@include widthHeightsize(100%, 40%);
-			span{
-				font-size: 20px;
-			}
-			p{
-				font-size: 0.3 em;
-				margin: 0;
-				@include widthHeightsize(100%, auto);
-			}
-		}
-		.actionSection{
-			@include widthHeightsize(80%, 20%);
-			@include flex(row, space-around, center, wrap);
-			button{
-				@include widthHeightsize(auto, 50%);
-				color: $clearColor75;
-				background-color: $secondaryColor50;
-				border-radius: 20px;
-				padding: 0 5px;
-			}
-		}
-
-		@media (min-width: 160px) and (max-width: $mediumWidth){
-			@include widthHeightsize(auto, 100px);
-			margin: 0px;
-			margin-bottom: 8px;
-			.cardImg{
-				@include widthHeightsize(30%, 100%);
-				img{
-					@include widthHeightsize(90%, auto);
-				}
-			}
-			.cardInfo{
-				@include flex(column, center, center, wrap);
-				@include widthHeightsize(65%, 50%);
-				span{
-					font-size: 17px;
-				}
-				p{
-					display: none;
-				}
-			}
-			.actionSection{
-				@include widthHeightsize(65%, 50%);
-				button{
-					font-size: 12px;
-				}
-			}
-		}
-		@media (min-width: 160px) and (max-width: $mediumWidth) and (orientation: portrait){
-			@include widthHeightsize(auto, 100px);
-			margin: 0px;
-			margin-bottom: 8px;
-		}
-	}
 
 	&::-webkit-scrollbar { 
 		display: none; 
+	}
+
+	.lineSeparator{		
+		@include widthHeightsize(50vw, 2px);
+		margin: 20px 25vw;
+		border-bottom: 2px solid $clearColor25;
+		transition: 0.3s $animationFX;
+	}
+	
+	.sectionTitle{
+		@include widthHeightsize($width-12, 60px);
+		@include flex(column, space-around, center, wrap);
+		transition: 0.5s $animationFX;
+		h2{
+			transition-delay: 1s;
+			margin: 10px 0px 5px;
+			color: $primaryColor50;
+			font-size: 28px;
+		}
+		.lineSeparator{
+			transition-delay: 0.4s;
+			@include widthHeightsize(0%, 2px);
+			margin: 0px 5px;
+			border-bottom: 2px solid $primaryColor25;
+		}
+		&.show{
+			@extend .show;
+			.lineSeparator{
+				@include widthHeightsize(50%, 2px);
+			}
+		}
+		&.hidden{
+			@extend .hidden;
+		}
 	}
 
 	header{
@@ -120,6 +70,7 @@ body{
 			text-transform: uppercase;
 			letter-spacing: 0.2em;
 			margin-left: 20px;
+			font-size: 1.5em;
 		}
 		& section{
 			@include widthHeightsize($width-12, 80%);
@@ -130,11 +81,11 @@ body{
 				text-align: center;
 			}
 			h4{
-				font-size: 25px;
+				font-size: 1.3em;
 				font-weight: 100;
 			}
 			p{
-				font-size: 15px;
+				font-size: 0.9em;
 			}
 			svg{
 				margin-top: 20px;
@@ -170,10 +121,22 @@ body{
 			}
 		}
 	}
-	.lineSeparator{		
-		@include widthHeightsize(50vw, 2px);
-		margin: 20px 25vw;
-		border-bottom: 2px solid $clearColor25;
-		transition: 0.3s $animationFX;
+
+	main{
+		color: $clearColor75;
+		position: absolute;
+		background-color: $clearColor75;
+		@include widthHeightsize(100vw, 100vh);
+		@include flex(row, space-around, center, wrap);
+		border-radius: 20px 20px 0 0;
+		section{
+			background-color: $secondaryColor100;
+			border-radius: 20px;
+			@media (min-width: 160px) and (max-width: $mediumWidth) and (orientation: portrait){
+				padding: 10px;
+				@include widthHeightsize(calc(90% - 20px), calc(30% - 20px));
+			}
+		}
+
 	}
 }
