@@ -132,8 +132,9 @@ body{
 		section{
 			background-color: $secondaryColor100;
 			border-radius: 20px;
+			padding: 10px;
+			@include widthHeightsize(calc(40% - 20px), calc(70% - 20px));
 			@media (min-width: 160px) and (max-width: $mediumWidth) and (orientation: portrait){
-				padding: 10px;
 				@include widthHeightsize(calc(90% - 20px), calc(30% - 20px));
 			}
 		}
