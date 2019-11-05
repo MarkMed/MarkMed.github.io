@@ -131,10 +131,49 @@ body{
 		border-radius: 20px 20px 0 0;
 		section{
 			background-color: $secondaryColor100;
+			@include flex(column, space-around, center, wrap);
 			border-radius: 20px;
-			padding: 10px;
-			@include widthHeightsize(calc(40% - 20px), calc(70% - 20px));
+			span{
+				font-size: 1.1em;
+				font-weight: 600;
+				@include widthHeightsize(90%, 10%);
+
+			}
+			img{
+				@include widthHeightsize(50%, auto);
+				@media (min-width: 160px) and (max-width: $mediumWidth) and (orientation: portrait){
+					@include widthHeightsize(50%, 40px);
+				}
+			}
+			p{
+				display: none;
+			}
+			.links{
+				@include widthHeightsize(90%, 20%);
+				@include flex(row, space-around, center, wrap);
+				a{
+					border: 1px solid $clearColor50;
+					color: $clearColor75;
+					padding: 10px;
+					border-radius: 20px;
+					transition: 0.4s $animationFX;
+					cursor: pointer;
+					font-size: 0.8em;
+					&:hover{
+						background-color: $clearColor75;
+						color: $primaryColor75;
+						box-shadow: 0px 0px 5px 2px $clearColor75;
+					}
+					&:active{
+						box-shadow: 0px 0px 10px 3px $clearColor75;
+						transition: 0.1s $animationFX;
+					}
+
+				}
+			}
+			border-radius: 20px;
 			@media (min-width: 160px) and (max-width: $mediumWidth) and (orientation: portrait){
+				padding: 10px;
 				@include widthHeightsize(calc(90% - 20px), calc(30% - 20px));
 			}
 		}
