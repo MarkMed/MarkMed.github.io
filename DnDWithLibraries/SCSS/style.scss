@@ -131,27 +131,43 @@ body{
 		border-radius: 20px 20px 0 0;
 		section{
 			background-color: $secondaryColor100;
-			@include flex(column, space-around, center, wrap);
+			@include flex(row, space-around, center, wrap);
 			border-radius: 20px;
+			overflow: hidden;
+			@include widthHeightsize(calc(40%), calc(70%));
+			@media (min-width: 160px) and (max-width: $mediumWidth) and (orientation: portrait){
+				@include widthHeightsize(calc(100% - 20px), calc(45% - 20px));
+			}
 			span{
 				font-size: 1.1em;
 				font-weight: 600;
+				@include flex(row, center, center, wrap);
 				@include widthHeightsize(90%, 10%);
+				text-align: center;
+				@media (min-width: 160px) and (max-width: $mediumWidth){
+					@include widthHeightsize(50%, 10%);
+					font-size: 1.0em;
+				}
 
 			}
 			img{
 				@include widthHeightsize(50%, auto);
-				@media (min-width: 160px) and (max-width: $mediumWidth) and (orientation: portrait){
-					@include widthHeightsize(50%, 40px);
-				}
+				max-height: 10%;
 			}
 			p{
-				display: none;
+				@include widthHeightsize(90%, 60%);
+				@include flex(row, center, center, wrap);
+				@media (min-width: 160px) and (max-width: $mediumWidth){
+					font-size: 0.8em;
+				}
 			}
 			.links{
-				@include widthHeightsize(90%, 20%);
+				@include widthHeightsize(90%, 10%);
 				@include flex(row, space-around, center, wrap);
+				margin-bottom: 10px;
 				a{
+					@include widthHeightsize(33%, 20%);
+					@include flex(row, center, center, wrap);
 					border: 1px solid $clearColor50;
 					color: $clearColor75;
 					padding: 10px;
@@ -159,6 +175,10 @@ body{
 					transition: 0.4s $animationFX;
 					cursor: pointer;
 					font-size: 0.8em;
+					@media (min-width: 160px) and (max-width: $mediumWidth){
+						@include widthHeightsize(40%, 100%);
+						padding: 0;
+					}
 					&:hover{
 						background-color: $clearColor75;
 						color: $primaryColor75;
@@ -170,11 +190,6 @@ body{
 					}
 
 				}
-			}
-			border-radius: 20px;
-			@media (min-width: 160px) and (max-width: $mediumWidth) and (orientation: portrait){
-				padding: 10px;
-				@include widthHeightsize(calc(90% - 20px), calc(30% - 20px));
 			}
 		}
 
