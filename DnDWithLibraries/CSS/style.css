@@ -325,8 +325,8 @@ body main section span {
 
 /* line 153, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/DnDWithLibraries/SCSS/style.scss */
 body main section img {
-  height: auto;
-  width: 50%;
+  height: 10%;
+  width: auto;
   max-height: 10%;
 }
 

@@ -151,7 +151,7 @@ body{
 
 			}
 			img{
-				@include widthHeightsize(50%, auto);
+				@include widthHeightsize(auto, 10%);
 				max-height: 10%;
 			}
 			p{
