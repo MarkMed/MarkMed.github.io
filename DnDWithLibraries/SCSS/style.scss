@@ -155,8 +155,20 @@ body{
 				max-height: 10%;
 			}
 			p{
-				@include widthHeightsize(90%, 60%);
-				@include flex(row, center, center, wrap);
+				@include widthHeightsize(90%, auto);
+				align-self: center;
+				a{
+					color: rgba(29, 91, 199, 0.8);
+					&:active{
+						color: rgba(29, 91, 199, 0.8);
+					}
+					&:focus{
+						color: rgba(29, 91, 199, 0.8);
+					}
+				}
+				b{
+					font-weight: 600;
+				}
 				@media (min-width: 160px) and (max-width: $mediumWidth){
 					font-size: 0.8em;
 				}

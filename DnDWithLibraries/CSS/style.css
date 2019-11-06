@@ -332,13 +332,29 @@ body main section img {
 
 /* line 157, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/DnDWithLibraries/SCSS/style.scss */
 body main section p {
-  height: 60%;
+  height: auto;
   width: 90%;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
+  align-self: center;
+}
+
+/* line 160, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/DnDWithLibraries/SCSS/style.scss */
+body main section p a {
+  color: rgba(29, 91, 199, 0.8);
+}
+
+/* line 162, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/DnDWithLibraries/SCSS/style.scss */
+body main section p a:active {
+  color: rgba(29, 91, 199, 0.8);
+}
+
+/* line 165, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/DnDWithLibraries/SCSS/style.scss */
+body main section p a:focus {
+  color: rgba(29, 91, 199, 0.8);
+}
+
+/* line 169, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/DnDWithLibraries/SCSS/style.scss */
+body main section p b {
+  font-weight: 600;
 }
 
 @media (min-width: 160px) and (max-width: 1007px) {
@@ -348,7 +364,7 @@ body main section p {
   }
 }
 
-/* line 164, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/DnDWithLibraries/SCSS/style.scss */
+/* line 176, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/DnDWithLibraries/SCSS/style.scss */
 body main section .links {
   height: 10%;
   width: 90%;
@@ -360,7 +376,7 @@ body main section .links {
   margin-bottom: 10px;
 }
 
-/* line 168, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/DnDWithLibraries/SCSS/style.scss */
+/* line 180, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/DnDWithLibraries/SCSS/style.scss */
 body main section .links a {
   height: 20%;
   width: 33%;
@@ -379,7 +395,7 @@ body main section .links a {
 }
 
 @media (min-width: 160px) and (max-width: 1007px) {
-  /* line 168, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/DnDWithLibraries/SCSS/style.scss */
+  /* line 180, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/DnDWithLibraries/SCSS/style.scss */
   body main section .links a {
     height: 100%;
     width: 40%;
@@ -387,14 +403,14 @@ body main section .links a {
   }
 }
 
-/* line 182, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/DnDWithLibraries/SCSS/style.scss */
+/* line 194, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/DnDWithLibraries/SCSS/style.scss */
 body main section .links a:hover {
   background-color: rgba(240, 240, 223, 0.75);
   color: rgba(1, 42, 57, 0.75);
   box-shadow: 0px 0px 5px 2px rgba(240, 240, 223, 0.75);
 }
 
-/* line 187, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/DnDWithLibraries/SCSS/style.scss */
+/* line 199, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/DnDWithLibraries/SCSS/style.scss */
 body main section .links a:active {
   box-shadow: 0px 0px 10px 3px rgba(240, 240, 223, 0.75);
   transition: 0.1s cubic-bezier(0, 0, 0.27, 0.97);
