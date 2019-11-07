@@ -14,10 +14,19 @@ html{
 	opacity: 0;
 }
 body{
+	
+	a{
+		color: rgba(29, 91, 199, 0.8);
+		&:active{
+			color: rgba(29, 91, 199, 0.8);
+		}
+		&:focus{
+			color: rgba(29, 91, 199, 0.8);
+		}
+	}
 	color: $clearColor75;
 	font-family: "RalewayLight";
 	background-color: $primaryColor100;
-	background-image: linear-gradient(to right bottom, $grad-primaryColor100);
 	@include widthHeightsize(100vw, auto);
 
 	&::-webkit-scrollbar { 
@@ -70,7 +79,7 @@ body{
 			text-transform: uppercase;
 			letter-spacing: 0.2em;
 			margin-left: 20px;
-			font-size: 1.5em;
+			font-size: 1.8em;
 		}
 		& section{
 			@include widthHeightsize($width-12, 80%);
@@ -81,14 +90,15 @@ body{
 				text-align: center;
 			}
 			h4{
-				font-size: 1.3em;
+				font-size: 1.6em;
 				font-weight: 100;
 			}
 			p{
 				font-size: 0.9em;
 			}
 			svg{
-				margin-top: 20px;
+				position: absolute;
+				bottom: 10%;
 				cursor: pointer;
 				@media (min-width: 160px) and (max-width: $smallWidth){
 					@include widthHeightsize(30px, 30px);
@@ -130,6 +140,7 @@ body{
 		@include flex(row, space-around, center, wrap);
 		border-radius: 20px 20px 0 0;
 		section{
+			box-shadow: 0px 0px 2px 2px $secondaryColor100;
 			background-color: $secondaryColor100;
 			@include flex(row, space-around, center, wrap);
 			border-radius: 20px;
@@ -157,15 +168,6 @@ body{
 			p{
 				@include widthHeightsize(90%, auto);
 				align-self: center;
-				a{
-					color: rgba(29, 91, 199, 0.8);
-					&:active{
-						color: rgba(29, 91, 199, 0.8);
-					}
-					&:focus{
-						color: rgba(29, 91, 199, 0.8);
-					}
-				}
 				b{
 					font-weight: 600;
 				}
