@@ -234,7 +234,21 @@ begin
 end;
 
 function estanTodas(lista: ListaPalabras; vocabulario: TipoVocabulario): boolean;
+var
+	auxPointer: ListaPalabras;
+	resultado: boolean;
 begin
+	resultado := false;
+	if lista <> nil then
+		begin
+			auxPointer := lista;
+			resultado := true;
+			while (auxPointer <> nil) and (pertenecePalabra(auxPointer^.info, vocabulario)) do
+				auxPointer := auxPointer^.sig;
+			if auxPointer <> nil then
+				resultado := false
+		end;
+	estanTodas := resultado
 end;
 {///////////////////////////////////////////////////////////////////////////////////////////////////////}
 
