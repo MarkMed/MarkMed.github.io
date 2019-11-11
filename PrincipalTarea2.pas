@@ -105,7 +105,7 @@ end;
 function esPrefijo(pal1,pal2: TipoPalabra): boolean;
 var
 	i: integer;
-	prefijo: boolean
+	prefijo: boolean;
 begin
 	i := 1;
 	prefijo := true;
@@ -118,8 +118,8 @@ begin
 		end
 	else
 		begin
-			while i <= pal1.largo and pal1.info[i] = pal2.info[i] do
-				i = i+1;
+			while (i <= pal1.largo) and (pal1.info[i] = pal2.info[i]) do
+				i := i+1;
 			if i <> (pal1.largo + 1) then
 				prefijo := false;
 			esPrefijo := prefijo;
@@ -132,16 +132,16 @@ var
 	sonIguales: boolean;
 begin
 	if pal1.largo <> pal2.largo then
-		sonIguales := false;
+		sonIguales := false
 	else
 	begin
 		i := 1;
-        while i <= pal1.largo and pal1.info[i] = pal2.info[i] do
-			i = i+1;
+        while (i <= pal1.largo) and (pal1.info[i] = pal2.info[i]) do
+			i := i+1;
         if i <> (pal1.largo + 1) then
-            sonIguales := false;
+            sonIguales := false
         else
-            sonIguales := true;
+            sonIguales := true
 	end;
     igualPalabra := sonIguales;
 end;
@@ -154,7 +154,7 @@ begin
 	resultado.hayPalabra:= false;
 	for i:=1 to MaxVocabulario do
 		begin
-			palabradDeVocabulario = vocabulario[i];
+			palabradDeVocabulario := vocabulario[i];
 			if not resultado.hayPalabra then
 				if ( distanciaPalabra(palabra, palabradDeVocabulario) < distancia ) then
 				begin
@@ -169,22 +169,17 @@ var
 	i: integer;
 	palabradDeVocabulario: TipoPalabra;
 begin
-	resultado.hayPalabra:= false;
 	for i:=1 to MaxVocabulario do
 		begin
-			palabradDeVocabulario = vocabulario[i];
+			palabradDeVocabulario := vocabulario[i];
 			if ( distanciaPalabra(palabra, palabradDeVocabulario) < distancia ) then
-				if resultado.hayPalabra then
-					if ( distanciaPalabra(palabra, palabradDeVocabulario) < distanciaPalabra(palabra, resultado.palabra) ) then
-						begin
-							resultado.palabra := palabradDeVocabulario
-							distancia := distanciaPalabra(palabra, palabradDeVocabulario);
-						end
-					else
-						begin
-							resultado.hayPalabra := true;
-							resultado.palabra := palabradDeVocabulario;
-						end
+				if ( distanciaPalabra(palabra, palabradDeVocabulario) < distanciaPalabra(palabra, resultado) ) then
+					begin
+						resultado:= palabradDeVocabulario;
+						distancia := distanciaPalabra(palabra, palabradDeVocabulario);
+					end
+				else
+					resultado:= palabradDeVocabulario
 		end;
 end;
 
@@ -193,18 +188,20 @@ var
 	i: integer;
 	j: integer;
 begin
-	while i <= MaxVocabulario and (palabra.largo <> vocabulario.[i].largo or palabra.largo = vocabulario[i].largo) do
+	while (i <= MaxVocabulario) and ((palabra.largo <> vocabulario[i].largo) or (palabra.largo = vocabulario[i].largo)) do
 	begin
-		if palabra.largo = vocabulario[i].largo then
-			while j <= palabra.largo and (palabra.info[j] = vocabulario[i].info[j]) do
+		if (palabra.largo = vocabulario[i].largo) then
+		begin
+			while (j <= palabra.largo) and (palabra.info[j] = vocabulario[i].info[j]) do
 				j := j+1;
-			if j = palabra.largo + 1 then
+			if (j = (palabra.largo + 1)) then
 				pertenecePalabra := true;
 			j := 1;
-		i = i + 1;
+		end;
+		i := i + 1;
 	end;
 	if i = MaxVocabulario + 1 then
-		pertenecePalabra := false;
+		pertenecePalabra := false
 end;
 
 function completarPalabra(prefijo: TipoPalabra; vocabulario: TipoVocabulario): ListaPalabras;
@@ -214,7 +211,7 @@ var
 	auxPointer: ListaPalabras;
 	palabradDeVocabulario: TipoPalabra;
 begin
-	resultado: nil;
+	resultado := nil;
 	for i := 1 to MaxVocabulario do
 		palabradDeVocabulario := vocabulario[i];
 		if esPrefijo(prefijo, palabradDeVocabulario) then
@@ -223,11 +220,11 @@ begin
 					new(resultado);
 					resultado^.info := palabradDeVocabulario;
 					auxPointer := resultado;
-				end;
+				end
 			else
 				begin
-					new(auxPointer^sig);
-					auxPointer := auxPointer^sig;
+					new(auxPointer^.sig);
+					auxPointer := auxPointer^.sig;
 					auxPointer^.info := palabradDeVocabulario;
 				end;
 	completarPalabra := resultado;
