@@ -208,7 +208,29 @@ begin
 end;
 
 function completarPalabra(prefijo: TipoPalabra; vocabulario: TipoVocabulario): ListaPalabras;
+var
+	resultado: ListaPalabras;
+	i: integer;
+	auxPointer: ListaPalabras;
+	palabradDeVocabulario: TipoPalabra;
 begin
+	resultado: nil;
+	for i := 1 to MaxVocabulario do
+		palabradDeVocabulario := vocabulario[i];
+		if esPrefijo(prefijo, palabradDeVocabulario) then
+			if resultado = nil then
+				begin
+					new(resultado);
+					resultado^.info := palabradDeVocabulario;
+					auxPointer := resultado;
+				end;
+			else
+				begin
+					new(auxPointer^sig);
+					auxPointer := auxPointer^sig;
+					auxPointer^.info := palabradDeVocabulario;
+				end;
+	completarPalabra := resultado;
 end;
 
 function estanTodas(lista: ListaPalabras; vocabulario: TipoVocabulario): boolean;
