@@ -149,7 +149,7 @@ body{
 					transition-delay: 1s;
 					margin: 10px 0px 5px;
 					color: $primaryColor50;
-					font-size: 28px;
+					font-size: 1.3em;
 				}
 				.lineSeparator{
 					transition-delay: 0.4s;
@@ -247,9 +247,6 @@ body{
 			}
 			
 			@media (min-width: 160px) and (max-width: $mediumWidth){
-				h2{
-					font-size: 21px;
-				}
 				p{
 					margin-top: 0px;
 					@include widthHeightsize($width-12, 30px);
