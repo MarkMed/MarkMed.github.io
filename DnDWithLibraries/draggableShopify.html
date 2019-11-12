@@ -4,7 +4,7 @@
         <meta charset="utf-8" />
         <title>DnD Event</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
-        <link rel="stylesheet" href="CSS/style.css" type="text/css"/>
+        <link rel="stylesheet" href="CSS/styleLibraries.css" type="text/css"/>
         <script src="JS/jquery.min.js"></script>
         <script src="JS/script.js"></script>
     </head>
@@ -25,8 +25,87 @@
         </header>
         <div class="lineSeparator"></div>
         <main>
-            <section>InteractJS</section>
-            <section>Shopify Draggable</section>
+            <section id="DDinSD">
+                <div class="sectionTitle hidden">
+                    <h2>Drag and Drop in SD</h2>
+                    <div class="lineSeparator"></div>
+                </div>
+                <p class="hidden">Drag and Drop event research in Smart devices (devices with touch screen)</p>
+                <div class="elementsContainer" id="targetStorage">
+                </div>
+                <div class="elementsContainer" id="startStorage">
+                        <img class="element2Drag" draggable="true" src="Resources/doc.png"/>
+                        <img class="element2Drag" draggable="true" src="Resources/doc.png"/>
+                        <img class="element2Drag" draggable="true" src="Resources/jpg.png"/>
+                        <img class="element2Drag" draggable="true" src="Resources/pdf.png"/>
+                        <img class="element2Drag" draggable="true" src="Resources/pdf.png"/>
+                        <img class="element2Drag" draggable="true" src="Resources/png.png"/>
+                        <img class="element2Drag" draggable="true" src="Resources/jpg.png"/>
+                        <img class="element2Drag" draggable="true" src="Resources/zip.png"/>
+                        <img class="element2Drag" draggable="true" src="Resources/zip.png"/>
+                        <img class="element2Drag" draggable="true" src="Resources/zip.png"/>
+                        <img class="element2Drag" draggable="true" src="Resources/doc.png"/>
+                        <img class="element2Drag" draggable="true" src="Resources/doc.png"/>
+                        <img class="element2Drag" draggable="true" src="Resources/jpg.png"/>
+                        <img class="element2Drag" draggable="true" src="Resources/pdf.png"/>
+                        <img class="element2Drag" draggable="true" src="Resources/pdf.png"/>
+                        <img class="element2Drag" draggable="true" src="Resources/png.png"/>
+                        <img class="element2Drag" draggable="true" src="Resources/jpg.png"/>
+                        <img class="element2Drag" draggable="true" src="Resources/zip.png"/>
+                        <img class="element2Drag" draggable="true" src="Resources/zip.png"/>
+                </div>
+            </section>
+            <div class="lineSeparator"></div>
+            <section id="DDwithDT">
+                <div class="sectionTitle hidden">
+                    <h2>Drag and Drop with Data Transfer</h2>
+                    <div class="lineSeparator"></div>
+                </div>
+                <p class="hidden">Drag and Drop event research with Data Transfer</p>
+                <div class="elementsContainer" id="elementTarget">
+                </div>
+                <div class="elementsContainer" id="elementStart">
+                        <div class="card">
+                            <div class="cardImg">
+                                <img src="Resources/profile.jpg"/>
+                            </div>
+                            <div class="cardInfo">
+                                <span class="cardName">Marcos Medina</span>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus, earum sit animi labore aliquam quas molestiae quisquam quos quo tempore.</p>
+                            </div>
+                            <div class="actionSection">
+                                <button>Profile</button>
+                                <button>Open Chat</button>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="cardImg">
+                                <img src="Resources/profile.jpg"/>
+                            </div>
+                            <div class="cardInfo">
+                                <span class="cardName">Luissina Eia</span>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus, earum sit animi labore aliquam quas molestiae quisquam quos quo tempore.</p>
+                            </div>
+                            <div class="actionSection">
+                                <button>Profile</button>
+                                <button>Open Chat</button>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="cardImg">
+                                <img src="Resources/profile.jpg"/>
+                            </div>
+                            <div class="cardInfo">
+                                <span class="cardName">Alice WonderL</span>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus, earum sit animi labore aliquam quas molestiae quisquam quos quo tempore.</p>
+                            </div>
+                            <div class="actionSection">
+                                <button>Profile</button>
+                                <button>Open Chat</button>
+                            </div>
+                        </div>
+                </div>
+            </section>
         </main>
     </body>
 </html>
