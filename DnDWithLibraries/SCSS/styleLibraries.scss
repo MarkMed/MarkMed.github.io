@@ -184,7 +184,6 @@ body{
 				@include flex(row, flex-start, flex-start, wrap);
 				align-content: flex-start;
 				transition: 0.4s ease;
-				overflow: auto;
 				&.allowDrop{
 					box-shadow: 0px 0px 20px 5px rgba(32, 195, 32, 0.6);
 				}

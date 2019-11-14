@@ -355,7 +355,6 @@ body main section .elementsContainer {
   flex-wrap: wrap;
   align-content: flex-start;
   transition: 0.4s ease;
-  overflow: auto;
 }
 
 @media (min-width: 160px) and (max-width: 640px) and (orientation: portrait) {
@@ -374,12 +373,12 @@ body main section .elementsContainer {
   }
 }
 
-/* line 188, ../Programming/MarkMed.github.io/DnDWithLibraries/SCSS/styleLibraries.scss */
+/* line 187, ../Programming/MarkMed.github.io/DnDWithLibraries/SCSS/styleLibraries.scss */
 body main section .elementsContainer.allowDrop {
   box-shadow: 0px 0px 20px 5px rgba(32, 195, 32, 0.6);
 }
 
-/* line 191, ../Programming/MarkMed.github.io/DnDWithLibraries/SCSS/styleLibraries.scss */
+/* line 190, ../Programming/MarkMed.github.io/DnDWithLibraries/SCSS/styleLibraries.scss */
 body main section .elementsContainer .element2Drag {
   height: 35px;
   width: 35px;
@@ -387,26 +386,26 @@ body main section .elementsContainer .element2Drag {
   margin: 2px;
 }
 
-/* line 195, ../Programming/MarkMed.github.io/DnDWithLibraries/SCSS/styleLibraries.scss */
+/* line 194, ../Programming/MarkMed.github.io/DnDWithLibraries/SCSS/styleLibraries.scss */
 body main section .elementsContainer .element2Drag:hover {
   filter: drop-shadow(0 0 0.75rem #c7ebff);
 }
 
-/* line 198, ../Programming/MarkMed.github.io/DnDWithLibraries/SCSS/styleLibraries.scss */
+/* line 197, ../Programming/MarkMed.github.io/DnDWithLibraries/SCSS/styleLibraries.scss */
 body main section .elementsContainer .element2Drag.dragging {
   opacity: 0.6;
   border: 2px solid rgba(33, 160, 200, 0.5);
   border-radius: 10px;
 }
 
-/* line 203, ../Programming/MarkMed.github.io/DnDWithLibraries/SCSS/styleLibraries.scss */
+/* line 202, ../Programming/MarkMed.github.io/DnDWithLibraries/SCSS/styleLibraries.scss */
 body main section .elementsContainer .element2Drag.dragged {
   width: 0px;
   opacity: 0;
   margin: 0px;
 }
 
-/* line 213, ../Programming/MarkMed.github.io/DnDWithLibraries/SCSS/styleLibraries.scss */
+/* line 212, ../Programming/MarkMed.github.io/DnDWithLibraries/SCSS/styleLibraries.scss */
 body main section#DDinSD p {
   text-align: center;
   margin-top: 30px;
@@ -418,7 +417,7 @@ body main section#DDinSD p {
 }
 
 @media (min-width: 160px) and (max-width: 1007px) {
-  /* line 223, ../Programming/MarkMed.github.io/DnDWithLibraries/SCSS/styleLibraries.scss */
+  /* line 222, ../Programming/MarkMed.github.io/DnDWithLibraries/SCSS/styleLibraries.scss */
   body main section#DDinSD p {
     margin-top: 0px;
     height: 30px;
@@ -426,26 +425,26 @@ body main section#DDinSD p {
   }
 }
 
-/* line 230, ../Programming/MarkMed.github.io/DnDWithLibraries/SCSS/styleLibraries.scss */
+/* line 229, ../Programming/MarkMed.github.io/DnDWithLibraries/SCSS/styleLibraries.scss */
 body main section#DDwithDT .elementsContainer {
   padding: 8px;
 }
 
 @media (min-width: 1008px) {
-  /* line 230, ../Programming/MarkMed.github.io/DnDWithLibraries/SCSS/styleLibraries.scss */
+  /* line 229, ../Programming/MarkMed.github.io/DnDWithLibraries/SCSS/styleLibraries.scss */
   body main section#DDwithDT .elementsContainer {
     width: 40%;
   }
 }
 
 @media (min-width: 160px) and (max-width: 1007px) and (orientation: landscape) {
-  /* line 230, ../Programming/MarkMed.github.io/DnDWithLibraries/SCSS/styleLibraries.scss */
+  /* line 229, ../Programming/MarkMed.github.io/DnDWithLibraries/SCSS/styleLibraries.scss */
   body main section#DDwithDT .elementsContainer {
     width: 40%;
   }
 }
 
-/* line 239, ../Programming/MarkMed.github.io/DnDWithLibraries/SCSS/styleLibraries.scss */
+/* line 238, ../Programming/MarkMed.github.io/DnDWithLibraries/SCSS/styleLibraries.scss */
 body main section#DDwithDT p {
   text-align: center;
   margin-top: 30px;
@@ -457,7 +456,7 @@ body main section#DDwithDT p {
 }
 
 @media (min-width: 160px) and (max-width: 1007px) {
-  /* line 249, ../Programming/MarkMed.github.io/DnDWithLibraries/SCSS/styleLibraries.scss */
+  /* line 248, ../Programming/MarkMed.github.io/DnDWithLibraries/SCSS/styleLibraries.scss */
   body main section#DDwithDT p {
     margin-top: 0px;
     height: 30px;
@@ -465,7 +464,7 @@ body main section#DDwithDT p {
   }
 }
 
-/* line 255, ../Programming/MarkMed.github.io/DnDWithLibraries/SCSS/styleLibraries.scss */
+/* line 254, ../Programming/MarkMed.github.io/DnDWithLibraries/SCSS/styleLibraries.scss */
 body main section#DDwithDT .card {
   height: 300px;
   width: 300px;
@@ -480,21 +479,21 @@ body main section#DDwithDT .card {
   flex-wrap: wrap;
 }
 
-/* line 261, ../Programming/MarkMed.github.io/DnDWithLibraries/SCSS/styleLibraries.scss */
+/* line 260, ../Programming/MarkMed.github.io/DnDWithLibraries/SCSS/styleLibraries.scss */
 body main section#DDwithDT .card.dragging {
   opacity: 0.6;
   border: 2px solid rgba(33, 160, 200, 0.5);
   border-radius: 10px;
 }
 
-/* line 266, ../Programming/MarkMed.github.io/DnDWithLibraries/SCSS/styleLibraries.scss */
+/* line 265, ../Programming/MarkMed.github.io/DnDWithLibraries/SCSS/styleLibraries.scss */
 body main section#DDwithDT .card.dragged {
   width: 0px;
   opacity: 0;
   margin: 0px;
 }
 
-/* line 272, ../Programming/MarkMed.github.io/DnDWithLibraries/SCSS/styleLibraries.scss */
+/* line 271, ../Programming/MarkMed.github.io/DnDWithLibraries/SCSS/styleLibraries.scss */
 body main section#DDwithDT .card .cardImg {
   height: 40%;
   width: 100%;
@@ -505,7 +504,7 @@ body main section#DDwithDT .card .cardImg {
   flex-wrap: wrap;
 }
 
-/* line 275, ../Programming/MarkMed.github.io/DnDWithLibraries/SCSS/styleLibraries.scss */
+/* line 274, ../Programming/MarkMed.github.io/DnDWithLibraries/SCSS/styleLibraries.scss */
 body main section#DDwithDT .card .cardImg img {
   height: 90%;
   width: auto;
@@ -513,7 +512,7 @@ body main section#DDwithDT .card .cardImg img {
   border-radius: 50%;
 }
 
-/* line 281, ../Programming/MarkMed.github.io/DnDWithLibraries/SCSS/styleLibraries.scss */
+/* line 280, ../Programming/MarkMed.github.io/DnDWithLibraries/SCSS/styleLibraries.scss */
 body main section#DDwithDT .card .cardInfo {
   display: flex;
   flex-direction: column;
@@ -524,12 +523,12 @@ body main section#DDwithDT .card .cardInfo {
   width: 100%;
 }
 
-/* line 284, ../Programming/MarkMed.github.io/DnDWithLibraries/SCSS/styleLibraries.scss */
+/* line 283, ../Programming/MarkMed.github.io/DnDWithLibraries/SCSS/styleLibraries.scss */
 body main section#DDwithDT .card .cardInfo span {
   font-size: 20px;
 }
 
-/* line 287, ../Programming/MarkMed.github.io/DnDWithLibraries/SCSS/styleLibraries.scss */
+/* line 286, ../Programming/MarkMed.github.io/DnDWithLibraries/SCSS/styleLibraries.scss */
 body main section#DDwithDT .card .cardInfo p {
   font-size: 0.3 em;
   margin: 0;
@@ -537,7 +536,7 @@ body main section#DDwithDT .card .cardInfo p {
   width: 100%;
 }
 
-/* line 293, ../Programming/MarkMed.github.io/DnDWithLibraries/SCSS/styleLibraries.scss */
+/* line 292, ../Programming/MarkMed.github.io/DnDWithLibraries/SCSS/styleLibraries.scss */
 body main section#DDwithDT .card .actionSection {
   height: 20%;
   width: 80%;
@@ -548,7 +547,7 @@ body main section#DDwithDT .card .actionSection {
   flex-wrap: wrap;
 }
 
-/* line 296, ../Programming/MarkMed.github.io/DnDWithLibraries/SCSS/styleLibraries.scss */
+/* line 295, ../Programming/MarkMed.github.io/DnDWithLibraries/SCSS/styleLibraries.scss */
 body main section#DDwithDT .card .actionSection button {
   height: 50%;
   width: auto;
@@ -559,24 +558,24 @@ body main section#DDwithDT .card .actionSection button {
 }
 
 @media (min-width: 160px) and (max-width: 1007px) {
-  /* line 255, ../Programming/MarkMed.github.io/DnDWithLibraries/SCSS/styleLibraries.scss */
+  /* line 254, ../Programming/MarkMed.github.io/DnDWithLibraries/SCSS/styleLibraries.scss */
   body main section#DDwithDT .card {
     height: 100px;
     width: auto;
     margin: 0px;
     margin-bottom: 8px;
   }
-  /* line 309, ../Programming/MarkMed.github.io/DnDWithLibraries/SCSS/styleLibraries.scss */
+  /* line 308, ../Programming/MarkMed.github.io/DnDWithLibraries/SCSS/styleLibraries.scss */
   body main section#DDwithDT .card .cardImg {
     height: 100%;
     width: 30%;
   }
-  /* line 311, ../Programming/MarkMed.github.io/DnDWithLibraries/SCSS/styleLibraries.scss */
+  /* line 310, ../Programming/MarkMed.github.io/DnDWithLibraries/SCSS/styleLibraries.scss */
   body main section#DDwithDT .card .cardImg img {
     height: auto;
     width: 90%;
   }
-  /* line 315, ../Programming/MarkMed.github.io/DnDWithLibraries/SCSS/styleLibraries.scss */
+  /* line 314, ../Programming/MarkMed.github.io/DnDWithLibraries/SCSS/styleLibraries.scss */
   body main section#DDwithDT .card .cardInfo {
     display: flex;
     flex-direction: column;
@@ -586,27 +585,27 @@ body main section#DDwithDT .card .actionSection button {
     height: 50%;
     width: 65%;
   }
-  /* line 318, ../Programming/MarkMed.github.io/DnDWithLibraries/SCSS/styleLibraries.scss */
+  /* line 317, ../Programming/MarkMed.github.io/DnDWithLibraries/SCSS/styleLibraries.scss */
   body main section#DDwithDT .card .cardInfo span {
     font-size: 17px;
   }
-  /* line 321, ../Programming/MarkMed.github.io/DnDWithLibraries/SCSS/styleLibraries.scss */
+  /* line 320, ../Programming/MarkMed.github.io/DnDWithLibraries/SCSS/styleLibraries.scss */
   body main section#DDwithDT .card .cardInfo p {
     display: none;
   }
-  /* line 325, ../Programming/MarkMed.github.io/DnDWithLibraries/SCSS/styleLibraries.scss */
+  /* line 324, ../Programming/MarkMed.github.io/DnDWithLibraries/SCSS/styleLibraries.scss */
   body main section#DDwithDT .card .actionSection {
     height: 50%;
     width: 65%;
   }
-  /* line 327, ../Programming/MarkMed.github.io/DnDWithLibraries/SCSS/styleLibraries.scss */
+  /* line 326, ../Programming/MarkMed.github.io/DnDWithLibraries/SCSS/styleLibraries.scss */
   body main section#DDwithDT .card .actionSection button {
     font-size: 12px;
   }
 }
 
 @media (min-width: 160px) and (max-width: 1007px) and (orientation: portrait) {
-  /* line 255, ../Programming/MarkMed.github.io/DnDWithLibraries/SCSS/styleLibraries.scss */
+  /* line 254, ../Programming/MarkMed.github.io/DnDWithLibraries/SCSS/styleLibraries.scss */
   body main section#DDwithDT .card {
     height: 100px;
     width: auto;

@@ -4,7 +4,10 @@ $(document).ready(()=>{
 	const header = $("header");
 	const firstTitle = $("#DDinSD .sectionTitle");
 	const secondTitle = $("#DDwithDT .sectionTitle");
+	const imgTarget = $("#targetStorage");
+	const cardTarget = $("#elementTarget");
 	const imgArray = $("#startStorage").children();
+	const cardsArray = $("#elementStart .card");
 	let deviceHeight = $(window).height();
 	let documentHeight = $(document).height();
 	//////////////////////////////////////////////////////////////////////////////////
@@ -18,24 +21,40 @@ $(document).ready(()=>{
 
 		interact(elem.get(0)).draggable({
 			listeners: {
-			  start (event) {
-				console.log(event.type, event.target);
-				console.log("dragStart");
-			  },
-			  move (event) {
-				console.log("dragging")
-				position.x += event.dx
-				position.y += event.dy
-		  
-				event.target.style.transform =
-				  `translate(${position.x}px, ${position.y}px)`
-			  },
-			  end (event) {
-				console.log("drag end")
-			  }
+				start (event) {
+					console.log(event.type, event.target);
+					console.log("dragStart");
+					elem.css({
+						"z-index": "99",
+					});
+				},
+				move (event) {
+					console.log("dragging");
+					position.x += event.dx;
+					position.y += event.dy;
+					event.target.style.transform = `translate(${position.x}px, ${position.y}px)`;
+				},
+				end (event) {
+					console.log("drag end");
+					elem.css({
+						"z-index": "",
+					});
+				}
 			}
-		  })
+		})
+	}
 
+	function makeDroppable(elem, elemnts2Accept){
+		interact(elem.get(0))
+		.dropzone({
+			accept: elemnts2Accept,
+			ondrop: (event)=>{
+				console.log(event.relatedTarget.getAttribute("class")
+					+ ' was dropped into '
+					+ event.target.getAttribute("class"));
+				console.log(event);
+				}
+		});
 	}
 
 	//////////////////////////////////////////////////////////////////////////////////
@@ -73,5 +92,12 @@ $(document).ready(()=>{
 	for(let i=0; i<imgArray.length; i++){
 		makeDraggable($(imgArray[i]));
 	}
+
+	for(let i=0; i<cardsArray.length; i++){
+		makeDraggable($(cardsArray[i]));
+	}
+
+	makeDroppable(imgTarget, "img.element2Drag");
+	makeDroppable(cardTarget, "div.card");
 
 })
