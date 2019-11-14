@@ -4,9 +4,40 @@ $(document).ready(()=>{
 	const header = $("header");
 	const firstTitle = $("#DDinSD .sectionTitle");
 	const secondTitle = $("#DDwithDT .sectionTitle");
-	// const secondTitle = $("#swipeEvents .sectionTitle h2");
+	const imgArray = $("#startStorage").children();
 	let deviceHeight = $(window).height();
 	let documentHeight = $(document).height();
+	//////////////////////////////////////////////////////////////////////////////////
+
+	function makeDraggable(elem){
+		const position = { x: 0, y: 0 }
+		elem.css({
+			"touch-action": "none",
+			"user-select": "none"
+		});
+
+		interact(elem.get(0)).draggable({
+			listeners: {
+			  start (event) {
+				console.log(event.type, event.target);
+				console.log("dragStart");
+			  },
+			  move (event) {
+				console.log("dragging")
+				position.x += event.dx
+				position.y += event.dy
+		  
+				event.target.style.transform =
+				  `translate(${position.x}px, ${position.y}px)`
+			  },
+			  end (event) {
+				console.log("drag end")
+			  }
+			}
+		  })
+
+	}
+
 	//////////////////////////////////////////////////////////////////////////////////
 	$("#svgScrollDown").click(()=>{
 		$('html, body').animate(
@@ -19,7 +50,7 @@ $(document).ready(()=>{
 			}
 		);
 	});
-	//////////////////////////////////////////////////////////////////////////////////
+	///////////////////////////////////////
 	$(document).scroll(function(e){
 		if($(document).scrollTop() < deviceHeight){
 			header.css(
@@ -38,28 +69,9 @@ $(document).ready(()=>{
 			$("#DDwithDT p").removeClass("hidden").addClass("show");
 		}
 	});
-	//////////////////////////////////////////////////////////////////////////////////
 
-	const slider = interact('.slider')    // target elements with the "slider" class
-
-	slider
-	// Step 2
-	.draggable({                        // make the element fire drag events
-		origin: 'self',                   // (0, 0) will be the element's top-left
-		inertia: true,                    // start inertial movement if thrown
-		modifiers: [
-		interact.modifiers.restrict({
-			restriction: 'self'            // keep the drag coords within the element
-		})
-		]
-	})
-	// Step 3
-	.on('dragmove', function (event) {  // call this listener on every dragmove
-		const sliderWidth = interact.getElementRect(event.target.parentNode).width
-		const value = event.pageX / sliderWidth
-
-		event.target.style.paddingLeft = (value * 102) + '%'
-		event.target.setAttribute('data-value', value.toFixed(2))
-	})
+	for(let i=0; i<imgArray.length; i++){
+		makeDraggable($(imgArray[i]));
+	}
 
 })
