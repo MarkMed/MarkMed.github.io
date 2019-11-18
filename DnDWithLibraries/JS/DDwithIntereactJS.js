@@ -10,11 +10,18 @@ window.onload=(()=>{
 		elem.setAttribute("style",
 			"touch-action: none; user-select: none"
 		);
-
 		interact(elem).draggable({
+			inertia: true,
+			modifiers: [
+				interact.modifiers.restrictRect({
+					restriction: 'parent',
+					endOnly: true
+				})
+			],
 			listeners: {
 				start (event) {
 					console.log(event.type, event.target);
+					globalVar=elem;
 					console.log("dragStart");
 				},
 				move (event) {
