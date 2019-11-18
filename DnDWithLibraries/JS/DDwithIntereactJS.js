@@ -30,7 +30,7 @@ window.onload=(()=>{
 				move (event) {
 					console.log("dragging");
 					position.x += event.dx;
-					position.y += event.dy;				
+					position.y += event.dy;
 					event.target.style.transform = `translate(${position.x}px, ${position.y}px)`;
 				},
 				end (event) {
