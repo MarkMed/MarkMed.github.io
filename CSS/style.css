@@ -1,30 +1,35 @@
-/* line 2, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/scss/_noDefaultStyle.scss */
+/* line 2, ../Programming/MarkMed.github.io/SCSS/_noDefaultStyle.scss */
 * {
   margin: 0;
   padding: 0;
   cursor: default;
-  font-weight: 100; }
+  font-weight: 100;
+}
 
-/* line 8, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/scss/_noDefaultStyle.scss */
+/* line 8, ../Programming/MarkMed.github.io/SCSS/_noDefaultStyle.scss */
 a {
   text-decoration: none;
   color: black;
-  cursor: pointer; }
+  cursor: pointer;
+}
 
-/* line 13, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/scss/_noDefaultStyle.scss */
+/* line 13, ../Programming/MarkMed.github.io/SCSS/_noDefaultStyle.scss */
 ul, ol {
-  list-style: none; }
+  list-style: none;
+}
 
-/* line 16, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/scss/_noDefaultStyle.scss */
+/* line 16, ../Programming/MarkMed.github.io/SCSS/_noDefaultStyle.scss */
 *:focus {
   outline: none;
   color: black;
-  text-decoration: none; }
+  text-decoration: none;
+}
 
-/* line 22, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/scss/_noDefaultStyle.scss */
+/* line 22, ../Programming/MarkMed.github.io/SCSS/_noDefaultStyle.scss */
 input {
-  background-color: transparent;
-  border: none; }
+  background-color: rgba(0, 0, 0, 0);
+  border: none;
+}
 
 /*
 width of element:
@@ -45,37 +50,44 @@ width of element:
 /*Mixins*/
 @font-face {
   font-family: "Cinzel";
-  src: url(../Resources/Cinzel-Regular.ttf); }
+  src: url(../Resources/Cinzel-Regular.ttf);
+}
 
 @font-face {
   font-family: "RalewayLight";
-  src: url(../Resources/Raleway-Light_0.ttf); }
+  src: url(../Resources/Raleway-Light_0.ttf);
+}
 
 @font-face {
   font-family: "RalewayELight";
-  src: url(../Resources/Raleway-ExtraLight.ttf); }
+  src: url(../Resources/Raleway-ExtraLight.ttf);
+}
 
 @font-face {
   font-family: "RalewayThin";
-  src: url(../Resources/Raleway-Thin.ttf); }
+  src: url(../Resources/Raleway-Thin.ttf);
+}
 
 @font-face {
   font-family: "DetalThin";
-  src: url(../Resources/Datalegreya-Thin.otf); }
+  src: url(../Resources/Datalegreya-Thin.otf);
+}
 
 @font-face {
   font-family: "BraGroLight";
-  src: url(../Resources/brandon-grotesque-light.woff); }
+  src: url(../Resources/brandon-grotesque-light.woff);
+}
 
-/* line 4, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/scss/style.scss */
+/* line 4, ../Programming/MarkMed.github.io/SCSS/style.scss */
 .titleHeader {
   text-decoration: none;
   font-size: 15px;
   font-family: "RalewayThin";
-  color: rgba(255, 254, 219, 0.75);
-  font-weight: 100; }
+  color: rgba(240, 240, 223, 0.75);
+  font-weight: 100;
+}
 
-/* line 11, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/scss/style.scss */
+/* line 11, ../Programming/MarkMed.github.io/SCSS/style.scss */
 .luxFX {
   display: flex;
   flex-direction: column;
@@ -92,464 +104,663 @@ width of element:
   background: linear-gradient(0deg, #ffc33c, rgba(146, 111, 52, 0.8), rgba(34, 34, 34, 0), rgba(34, 34, 34, 0));
   background-position: 50% 15%;
   background-size: 300% 300%;
-  opacity: 0.8; }
-  @media (min-width: 160px) and (max-width: 640px) {
-    /* line 11, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/scss/style.scss */
-    .luxFX {
-      background-position: 50% 1%;
-      border: 1px solid rgba(255, 195, 60, 0.5);
-      height: 100%;
-      width: 90%;
-      border-radius: 0px 0px 0px 0px;
-      max-height: 50px;
-      min-height: 30px; } }
-  @media (min-width: 641px) and (max-width: 1007px) {
-    /* line 11, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/scss/style.scss */
-    .luxFX {
-      height: 100%;
-      width: 100%; } }
-  @media (min-width: 1008px) {
-    /* line 11, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/scss/style.scss */
-    .luxFX {
-      height: 100%;
-      width: 80%; } }
-  /* line 38, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/scss/style.scss */
-  .luxFX:active {
-    opacity: 1;
-    transition: 0.05s cubic-bezier(0, 0, 0.27, 0.97); }
-  /* line 42, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/scss/style.scss */
-  .luxFX:hover {
-    background-position: 50% 99%;
-    color: #fff;
-    letter-spacing: 2em; }
+  opacity: 0.8;
+}
 
-/* line 48, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/scss/style.scss */
+@media (min-width: 160px) and (max-width: 640px) {
+  /* line 11, ../Programming/MarkMed.github.io/SCSS/style.scss */
+  .luxFX {
+    background-position: 50% 1%;
+    border: 1px solid rgba(255, 195, 60, 0.5);
+    height: 100%;
+    width: 90%;
+    border-radius: 0px 0px 0px 0px;
+    max-height: 50px;
+    min-height: 30px;
+  }
+}
+
+@media (min-width: 641px) and (max-width: 1007px) {
+  /* line 11, ../Programming/MarkMed.github.io/SCSS/style.scss */
+  .luxFX {
+    height: 100%;
+    width: 100%;
+  }
+}
+
+@media (min-width: 1008px) {
+  /* line 11, ../Programming/MarkMed.github.io/SCSS/style.scss */
+  .luxFX {
+    height: 100%;
+    width: 80%;
+  }
+}
+
+/* line 38, ../Programming/MarkMed.github.io/SCSS/style.scss */
+.luxFX:active {
+  opacity: 1;
+  transition: 0.05s cubic-bezier(0, 0, 0.27, 0.97);
+}
+
+/* line 42, ../Programming/MarkMed.github.io/SCSS/style.scss */
+.luxFX:hover {
+  background-position: 50% 99%;
+  color: #fff;
+  letter-spacing: 2em;
+}
+
+/* line 48, ../Programming/MarkMed.github.io/SCSS/style.scss */
 html {
   scroll-behavior: smooth;
-  scrollbar-width: none; }
+  scrollbar-width: none;
+}
 
-/* line 52, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/scss/style.scss */
+/* line 52, ../Programming/MarkMed.github.io/SCSS/style.scss */
 body {
   scroll-behavior: smooth;
-  color: rgba(255, 254, 219, 0.75);
+  color: rgba(240, 240, 223, 0.75);
   font-family: "RalewayLight";
-  background-color: #1e3641; }
-  @media (min-width: 160px) and (max-width: 640px) {
-    /* line 52, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/scss/style.scss */
-    body {
-      margin-top: 20px; } }
-  @media (min-width: 641px) and (max-width: 1007px) {
-    /* line 52, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/scss/style.scss */
-    body {
-      margin-top: 33px; } }
-  @media (min-width: 1008px) {
-    /* line 52, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/scss/style.scss */
-    body {
-      margin-top: 50px; } }
-  /* line 66, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/scss/style.scss */
-  body::-webkit-scrollbar {
-    display: none; }
-  /* line 69, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/scss/style.scss */
+  background-color: #013239;
+}
+
+@media (min-width: 160px) and (max-width: 640px) {
+  /* line 52, ../Programming/MarkMed.github.io/SCSS/style.scss */
+  body {
+    margin-top: 20px;
+  }
+}
+
+@media (min-width: 641px) and (max-width: 1007px) {
+  /* line 52, ../Programming/MarkMed.github.io/SCSS/style.scss */
+  body {
+    margin-top: 33px;
+  }
+}
+
+@media (min-width: 1008px) {
+  /* line 52, ../Programming/MarkMed.github.io/SCSS/style.scss */
+  body {
+    margin-top: 50px;
+  }
+}
+
+/* line 66, ../Programming/MarkMed.github.io/SCSS/style.scss */
+body::-webkit-scrollbar {
+  display: none;
+}
+
+/* line 69, ../Programming/MarkMed.github.io/SCSS/style.scss */
+body #MkM.topFixed {
+  top: 0;
+  position: fixed;
+  background-color: #013239;
+  opacity: 0.7;
+  font-weight: 100;
+  z-index: 90;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  transition: 0.7s cubic-bezier(0, 0, 0.27, 0.97);
+}
+
+@media (min-width: 160px) and (max-width: 640px) {
+  /* line 69, ../Programming/MarkMed.github.io/SCSS/style.scss */
   body #MkM.topFixed {
-    top: 0;
-    position: fixed;
-    background-color: #1e3641;
-    opacity: 0.7;
-    font-weight: 100;
-    z-index: 90;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-    flex-wrap: wrap;
-    transition: 0.7s cubic-bezier(0, 0, 0.27, 0.97); }
-    @media (min-width: 160px) and (max-width: 640px) {
-      /* line 69, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/scss/style.scss */
-      body #MkM.topFixed {
-        height: 20px;
-        width: 100%; } }
-    @media (min-width: 641px) and (max-width: 1007px) {
-      /* line 69, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/scss/style.scss */
-      body #MkM.topFixed {
-        height: 33px;
-        width: 100%; } }
-    @media (min-width: 1008px) {
-      /* line 69, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/scss/style.scss */
-      body #MkM.topFixed {
-        height: 50px;
-        width: 100%; } }
-    /* line 87, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/scss/style.scss */
-    body #MkM.topFixed:hover {
-      opacity: 1; }
-    /* line 90, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/scss/style.scss */
-    body #MkM.topFixed h1 {
-      letter-spacing: 0.8em;
-      font-family: "DetalThin";
-      cursor: default; }
-      /* line 91, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/scss/style.scss */
-      body #MkM.topFixed h1 a {
-        color: rgba(255, 195, 60, 0.75); }
-      @media (min-width: 160px) and (max-width: 640px) {
-        /* line 90, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/scss/style.scss */
-        body #MkM.topFixed h1 {
-          font-size: 16px;
-          word-wrap: break-word;
-          letter-spacing: 0.5em; } }
-      @media (min-width: 160px) and (max-width: 640px) and (orientation: portrait) {
-        /* line 90, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/scss/style.scss */
-        body #MkM.topFixed h1 {
-          font-size: 13px;
-          word-wrap: break-word;
-          letter-spacing: 0.3em; } }
-      @media (min-width: 641px) and (max-width: 1007px) {
-        /* line 90, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/scss/style.scss */
-        body #MkM.topFixed h1 {
-          font-size: 18px; } }
-      @media (min-width: 1008px) {
-        /* line 90, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/scss/style.scss */
-        body #MkM.topFixed h1 {
-          font-size: 25px; } }
-    @media (min-width: 160px) and (max-width: 640px) {
-      /* line 114, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/scss/style.scss */
-      body #MkM.topFixed #MkMlogo {
-        height: 14px;
-        width: auto; } }
-    @media (min-width: 641px) and (max-width: 1007px) {
-      /* line 114, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/scss/style.scss */
-      body #MkM.topFixed #MkMlogo {
-        height: 28px;
-        width: auto; } }
-    @media (min-width: 1008px) {
-      /* line 114, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/scss/style.scss */
-      body #MkM.topFixed #MkMlogo {
-        height: 46px;
-        width: auto; } }
-  /* line 127, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/scss/style.scss */
-  body #MkM input {
-    display: none; }
-  /* line 130, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/scss/style.scss */
-  body #MkM #burger {
-    z-index: 99;
-    cursor: pointer; }
-    @media (min-width: 160px) and (max-width: 640px) {
-      /* line 130, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/scss/style.scss */
-      body #MkM #burger {
-        height: 20px;
-        width: 20px; } }
-    @media (min-width: 641px) and (max-width: 1007px) {
-      /* line 130, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/scss/style.scss */
-      body #MkM #burger {
-        height: 33px;
-        width: 33px; } }
-    @media (min-width: 1008px) {
-      /* line 130, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/scss/style.scss */
-      body #MkM #burger {
-        height: 50px;
-        width: 50px; } }
-    /* line 142, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/scss/style.scss */
-    body #MkM #burger g {
-      transition: 0.4s cubic-bezier(0, 0, 0.27, 0.97); }
-      /* line 144, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/scss/style.scss */
-      body #MkM #burger g path {
-        transition: 0.4s cubic-bezier(0, 0, 0.27, 0.97);
-        transform: translateY(0px); }
-      /* line 148, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/scss/style.scss */
-      body #MkM #burger g circle {
-        transition: 0.4s cubic-bezier(0, 0, 0.27, 0.97); }
-    /* line 153, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/scss/style.scss */
-    body #MkM #burger:hover g {
-      stroke-width: 2; }
-      /* line 155, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/scss/style.scss */
-      body #MkM #burger:hover g path:nth-child(1) {
-        d: path("M 25,35 L 75,35"); }
-      /* line 158, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/scss/style.scss */
-      body #MkM #burger:hover g path:nth-child(2) {
-        d: path("M 50,50 L 50,50"); }
-      /* line 161, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/scss/style.scss */
-      body #MkM #burger:hover g path:nth-child(3) {
-        d: path("M 25,65 L 75,65"); }
-      /* line 164, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/scss/style.scss */
-      body #MkM #burger:hover g circle {
-        r: 10; }
-  /* line 170, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/scss/style.scss */
-  body #MkM #itemContainer {
-    z-index: 91;
-    top: 0;
-    right: 0;
-    position: fixed;
-    opacity: 0;
-    height: 0vh;
-    width: 100vw;
-    background-color: #1e3641;
-    transition: 0.4s cubic-bezier(0, 0, 0.27, 0.97);
-    transition-delay: 0.2s;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap; }
-    /* line 181, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/scss/style.scss */
-    body #MkM #itemContainer #itemBox {
-      display: flex;
-      flex-direction: column;
-      justify-content: space-around;
-      align-items: center;
-      flex-wrap: wrap;
-      display: none;
-      height: 100vh;
-      width: 20vw;
-      transform: translateY(2vh);
-      transition: 0.4s cubic-bezier(0, 0, 0.27, 0.97);
-      opacity: 0; }
-      /* line 188, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/scss/style.scss */
-      body #MkM #itemContainer #itemBox .menuOpt {
-        transform: translateY(2vh);
-        z-index: 95;
-        transition-delay: 0s;
-        transition: 0.4s cubic-bezier(0, 0, 0.27, 0.97);
-        color: rgba(255, 254, 219, 0.5);
-        letter-spacing: 0.5em;
-        font-size: 20px;
-        transition-delay: 0s;
-        height: auto;
-        width: auto;
-        text-align: center; }
-        @media (min-width: 160px) and (max-width: 640px) {
-          /* line 188, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/scss/style.scss */
-          body #MkM #itemContainer #itemBox .menuOpt {
-            font-size: 11px;
-            letter-spacing: 0.2em; } }
-        @media (min-width: 160px) and (max-width: 640px) and (orientation: portrait) {
-          /* line 188, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/scss/style.scss */
-          body #MkM #itemContainer #itemBox .menuOpt {
-            font-size: 12px;
-            letter-spacing: 0.3em; } }
-        @media (min-width: 641px) and (max-width: 1007px) {
-          /* line 188, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/scss/style.scss */
-          body #MkM #itemContainer #itemBox .menuOpt {
-            font-size: 14px; } }
-        @media (min-width: 1008px) {
-          /* line 188, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/scss/style.scss */
-          body #MkM #itemContainer #itemBox .menuOpt {
-            font-size: 16px; } }
-        /* line 213, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/scss/style.scss */
-        body #MkM #itemContainer #itemBox .menuOpt:hover {
-          letter-spacing: 1em;
-          color: #fffedb; }
-  /* line 221, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/scss/style.scss */
-  body #MkM [id="openMenu"]:checked ~ #itemContainer {
-    opacity: 1;
-    height: 100vh;
-    width: 100vw;
-    transition-delay: 0s;
-    transition: 0.4s cubic-bezier(0, 0, 0.27, 0.97); }
-    /* line 226, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/scss/style.scss */
-    body #MkM [id="openMenu"]:checked ~ #itemContainer #itemBox {
-      display: flex;
-      transition-delay: 0.4s;
-      transform: translateY(0%);
-      opacity: 1; }
-  /* line 234, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/scss/style.scss */
-  body #MkM [id="openMenu"]:checked ~ #burger g {
-    stroke-width: 2; }
-    /* line 236, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/scss/style.scss */
-    body #MkM [id="openMenu"]:checked ~ #burger g path:nth-child(1) {
-      d: path("M 65,65 L 35,35"); }
-    /* line 239, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/scss/style.scss */
-    body #MkM [id="openMenu"]:checked ~ #burger g path:nth-child(2) {
-      d: path("M 50,50 L 50,50"); }
-    /* line 242, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/scss/style.scss */
-    body #MkM [id="openMenu"]:checked ~ #burger g path:nth-child(3) {
-      d: path("M 65,35 L 35,65"); }
-    /* line 245, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/scss/style.scss */
-    body #MkM [id="openMenu"]:checked ~ #burger g circle {
-      r: 35; }
-  /* line 252, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/scss/style.scss */
-  body header {
-    z-index: -1;
-    top: 0;
-    position: fixed;
-    height: 100vh;
+    height: 20px;
     width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    background-color: #1e3641; }
-    /* line 259, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/scss/style.scss */
-    body header h2, body header h3 {
-      font-weight: 100;
-      letter-spacing: calc(1vw);
-      margin-bottom: 2em;
-      text-transform: uppercase;
-      text-align: center; }
-      @media (min-width: 160px) and (max-width: 640px) {
-        /* line 259, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/scss/style.scss */
-        body header h2, body header h3 {
-          font-size: 12px; } }
-      @media (min-width: 641px) and (max-width: 1007px) {
-        /* line 259, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/scss/style.scss */
-        body header h2, body header h3 {
-          font-size: 15px; } }
-      @media (min-width: 1008px) {
-        /* line 259, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/scss/style.scss */
-        body header h2, body header h3 {
-          font-size: 20px; } }
-    /* line 275, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/scss/style.scss */
-    body header svg {
-      cursor: pointer; }
-      @media (min-width: 160px) and (max-width: 640px) {
-        /* line 275, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/scss/style.scss */
-        body header svg {
-          height: 30px;
-          width: 30px; } }
-      @media (min-width: 641px) and (max-width: 1007px) {
-        /* line 275, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/scss/style.scss */
-        body header svg {
-          height: 40px;
-          width: 40px; } }
-      @media (min-width: 1008px) {
-        /* line 275, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/scss/style.scss */
-        body header svg {
-          height: 50px;
-          width: 50px; } }
+  }
+}
+
+@media (min-width: 641px) and (max-width: 1007px) {
+  /* line 69, ../Programming/MarkMed.github.io/SCSS/style.scss */
+  body #MkM.topFixed {
+    height: 33px;
+    width: 100%;
+  }
+}
+
+@media (min-width: 1008px) {
+  /* line 69, ../Programming/MarkMed.github.io/SCSS/style.scss */
+  body #MkM.topFixed {
+    height: 50px;
+    width: 100%;
+  }
+}
+
+/* line 87, ../Programming/MarkMed.github.io/SCSS/style.scss */
+body #MkM.topFixed:hover {
+  opacity: 1;
+}
+
+/* line 90, ../Programming/MarkMed.github.io/SCSS/style.scss */
+body #MkM.topFixed h1 {
+  letter-spacing: 0.8em;
+  font-family: "DetalThin";
+  cursor: default;
+}
+
+/* line 91, ../Programming/MarkMed.github.io/SCSS/style.scss */
+body #MkM.topFixed h1 a {
+  color: rgba(255, 195, 60, 0.75);
+}
+
+@media (min-width: 160px) and (max-width: 640px) {
+  /* line 90, ../Programming/MarkMed.github.io/SCSS/style.scss */
+  body #MkM.topFixed h1 {
+    font-size: 16px;
+    word-wrap: break-word;
+    letter-spacing: 0.5em;
+  }
+}
+
+@media (min-width: 160px) and (max-width: 640px) and (orientation: portrait) {
+  /* line 90, ../Programming/MarkMed.github.io/SCSS/style.scss */
+  body #MkM.topFixed h1 {
+    font-size: 13px;
+    word-wrap: break-word;
+    letter-spacing: 0.3em;
+  }
+}
+
+@media (min-width: 641px) and (max-width: 1007px) {
+  /* line 90, ../Programming/MarkMed.github.io/SCSS/style.scss */
+  body #MkM.topFixed h1 {
+    font-size: 18px;
+  }
+}
+
+@media (min-width: 1008px) {
+  /* line 90, ../Programming/MarkMed.github.io/SCSS/style.scss */
+  body #MkM.topFixed h1 {
+    font-size: 25px;
+  }
+}
+
+@media (min-width: 160px) and (max-width: 640px) {
+  /* line 114, ../Programming/MarkMed.github.io/SCSS/style.scss */
+  body #MkM.topFixed #MkMlogo {
+    height: 14px;
+    width: auto;
+  }
+}
+
+@media (min-width: 641px) and (max-width: 1007px) {
+  /* line 114, ../Programming/MarkMed.github.io/SCSS/style.scss */
+  body #MkM.topFixed #MkMlogo {
+    height: 28px;
+    width: auto;
+  }
+}
+
+@media (min-width: 1008px) {
+  /* line 114, ../Programming/MarkMed.github.io/SCSS/style.scss */
+  body #MkM.topFixed #MkMlogo {
+    height: 46px;
+    width: auto;
+  }
+}
+
+/* line 127, ../Programming/MarkMed.github.io/SCSS/style.scss */
+body #MkM input {
+  display: none;
+}
+
+/* line 130, ../Programming/MarkMed.github.io/SCSS/style.scss */
+body #MkM #burger {
+  z-index: 99;
+  cursor: pointer;
+}
+
+@media (min-width: 160px) and (max-width: 640px) {
+  /* line 130, ../Programming/MarkMed.github.io/SCSS/style.scss */
+  body #MkM #burger {
+    height: 20px;
+    width: 20px;
+  }
+}
+
+@media (min-width: 641px) and (max-width: 1007px) {
+  /* line 130, ../Programming/MarkMed.github.io/SCSS/style.scss */
+  body #MkM #burger {
+    height: 33px;
+    width: 33px;
+  }
+}
+
+@media (min-width: 1008px) {
+  /* line 130, ../Programming/MarkMed.github.io/SCSS/style.scss */
+  body #MkM #burger {
+    height: 50px;
+    width: 50px;
+  }
+}
+
+/* line 142, ../Programming/MarkMed.github.io/SCSS/style.scss */
+body #MkM #burger g {
+  transition: 0.4s cubic-bezier(0, 0, 0.27, 0.97);
+}
+
+/* line 144, ../Programming/MarkMed.github.io/SCSS/style.scss */
+body #MkM #burger g path {
+  transition: 0.4s cubic-bezier(0, 0, 0.27, 0.97);
+  transform: translateY(0px);
+}
+
+/* line 148, ../Programming/MarkMed.github.io/SCSS/style.scss */
+body #MkM #burger g circle {
+  transition: 0.4s cubic-bezier(0, 0, 0.27, 0.97);
+}
+
+/* line 153, ../Programming/MarkMed.github.io/SCSS/style.scss */
+body #MkM #burger:hover g {
+  stroke-width: 2;
+}
+
+/* line 155, ../Programming/MarkMed.github.io/SCSS/style.scss */
+body #MkM #burger:hover g path:nth-child(1) {
+  d: path("M 25,35 L 75,35");
+}
+
+/* line 158, ../Programming/MarkMed.github.io/SCSS/style.scss */
+body #MkM #burger:hover g path:nth-child(2) {
+  d: path("M 50,50 L 50,50");
+}
+
+/* line 161, ../Programming/MarkMed.github.io/SCSS/style.scss */
+body #MkM #burger:hover g path:nth-child(3) {
+  d: path("M 25,65 L 75,65");
+}
+
+/* line 164, ../Programming/MarkMed.github.io/SCSS/style.scss */
+body #MkM #burger:hover g circle {
+  r: 10;
+}
+
+/* line 170, ../Programming/MarkMed.github.io/SCSS/style.scss */
+body #MkM #itemContainer {
+  z-index: 91;
+  top: 0;
+  right: 0;
+  position: fixed;
+  opacity: 0;
+  height: 0vh;
+  width: 100vw;
+  background-color: #013239;
+  transition: 0.4s cubic-bezier(0, 0, 0.27, 0.97);
+  transition-delay: 0.2s;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+/* line 181, ../Programming/MarkMed.github.io/SCSS/style.scss */
+body #MkM #itemContainer #itemBox {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  display: none;
+  height: 100vh;
+  width: 20vw;
+  transform: translateY(2vh);
+  transition: 0.4s cubic-bezier(0, 0, 0.27, 0.97);
+  opacity: 0;
+}
+
+/* line 188, ../Programming/MarkMed.github.io/SCSS/style.scss */
+body #MkM #itemContainer #itemBox .menuOpt {
+  transform: translateY(2vh);
+  z-index: 95;
+  transition-delay: 0s;
+  transition: 0.4s cubic-bezier(0, 0, 0.27, 0.97);
+  color: rgba(240, 240, 223, 0.5);
+  letter-spacing: 0.5em;
+  font-size: 20px;
+  transition-delay: 0s;
+  height: auto;
+  width: auto;
+  text-align: center;
+}
+
+@media (min-width: 160px) and (max-width: 640px) {
+  /* line 188, ../Programming/MarkMed.github.io/SCSS/style.scss */
+  body #MkM #itemContainer #itemBox .menuOpt {
+    font-size: 11px;
+    letter-spacing: 0.2em;
+  }
+}
+
+@media (min-width: 160px) and (max-width: 640px) and (orientation: portrait) {
+  /* line 188, ../Programming/MarkMed.github.io/SCSS/style.scss */
+  body #MkM #itemContainer #itemBox .menuOpt {
+    font-size: 12px;
+    letter-spacing: 0.3em;
+  }
+}
+
+@media (min-width: 641px) and (max-width: 1007px) {
+  /* line 188, ../Programming/MarkMed.github.io/SCSS/style.scss */
+  body #MkM #itemContainer #itemBox .menuOpt {
+    font-size: 14px;
+  }
+}
+
+@media (min-width: 1008px) {
+  /* line 188, ../Programming/MarkMed.github.io/SCSS/style.scss */
+  body #MkM #itemContainer #itemBox .menuOpt {
+    font-size: 16px;
+  }
+}
+
+/* line 213, ../Programming/MarkMed.github.io/SCSS/style.scss */
+body #MkM #itemContainer #itemBox .menuOpt:hover {
+  letter-spacing: 1em;
+  color: #f0f0df;
+}
+
+/* line 221, ../Programming/MarkMed.github.io/SCSS/style.scss */
+body #MkM [id="openMenu"]:checked ~ #itemContainer {
+  opacity: 1;
+  height: 100vh;
+  width: 100vw;
+  transition-delay: 0s;
+  transition: 0.4s cubic-bezier(0, 0, 0.27, 0.97);
+}
+
+/* line 226, ../Programming/MarkMed.github.io/SCSS/style.scss */
+body #MkM [id="openMenu"]:checked ~ #itemContainer #itemBox {
+  display: flex;
+  transition-delay: 0.4s;
+  transform: translateY(0%);
+  opacity: 1;
+}
+
+/* line 234, ../Programming/MarkMed.github.io/SCSS/style.scss */
+body #MkM [id="openMenu"]:checked ~ #burger g {
+  stroke-width: 2;
+}
+
+/* line 236, ../Programming/MarkMed.github.io/SCSS/style.scss */
+body #MkM [id="openMenu"]:checked ~ #burger g path:nth-child(1) {
+  d: path("M 65,65 L 35,35");
+}
+
+/* line 239, ../Programming/MarkMed.github.io/SCSS/style.scss */
+body #MkM [id="openMenu"]:checked ~ #burger g path:nth-child(2) {
+  d: path("M 50,50 L 50,50");
+}
+
+/* line 242, ../Programming/MarkMed.github.io/SCSS/style.scss */
+body #MkM [id="openMenu"]:checked ~ #burger g path:nth-child(3) {
+  d: path("M 65,35 L 35,65");
+}
+
+/* line 245, ../Programming/MarkMed.github.io/SCSS/style.scss */
+body #MkM [id="openMenu"]:checked ~ #burger g circle {
+  r: 35;
+}
+
+/* line 252, ../Programming/MarkMed.github.io/SCSS/style.scss */
+body header {
+  z-index: -1;
+  top: 0;
+  position: fixed;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  background-color: #013239;
+}
+
+/* line 259, ../Programming/MarkMed.github.io/SCSS/style.scss */
+body header h2, body header h3 {
+  font-weight: 100;
+  letter-spacing: calc(1vw);
+  margin-bottom: 2em;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+@media (min-width: 160px) and (max-width: 640px) {
+  /* line 259, ../Programming/MarkMed.github.io/SCSS/style.scss */
+  body header h2, body header h3 {
+    font-size: 12px;
+  }
+}
+
+@media (min-width: 641px) and (max-width: 1007px) {
+  /* line 259, ../Programming/MarkMed.github.io/SCSS/style.scss */
+  body header h2, body header h3 {
+    font-size: 15px;
+  }
+}
+
+@media (min-width: 1008px) {
+  /* line 259, ../Programming/MarkMed.github.io/SCSS/style.scss */
+  body header h2, body header h3 {
+    font-size: 20px;
+  }
+}
+
+/* line 275, ../Programming/MarkMed.github.io/SCSS/style.scss */
+body header svg {
+  cursor: pointer;
+}
+
+@media (min-width: 160px) and (max-width: 640px) {
+  /* line 275, ../Programming/MarkMed.github.io/SCSS/style.scss */
+  body header svg {
+    height: 30px;
+    width: 30px;
+  }
+}
+
+@media (min-width: 641px) and (max-width: 1007px) {
+  /* line 275, ../Programming/MarkMed.github.io/SCSS/style.scss */
+  body header svg {
+    height: 40px;
+    width: 40px;
+  }
+}
+
+@media (min-width: 1008px) {
+  /* line 275, ../Programming/MarkMed.github.io/SCSS/style.scss */
+  body header svg {
+    height: 50px;
+    width: 50px;
+  }
+}
 
 @keyframes moving {
   from {
-    transform: translateY(0px); }
+    transform: translateY(0px);
+  }
   to {
-    transform: translateY(10px); } }
-      /* line 294, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/scss/style.scss */
-      body header svg g {
-        stroke: rgba(255, 254, 219, 0.75);
-        stroke-width: 2px;
-        transition: 0.4s cubic-bezier(0, 0, 0.27, 0.97); }
-        /* line 298, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/scss/style.scss */
-        body header svg g path {
-          animation: moving 1s cubic-bezier(1, 0, 0.5, 1) infinite alternate; }
-      /* line 302, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/scss/style.scss */
-      body header svg:hover g {
-        stroke: #ffc33c; }
-  /* line 307, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/scss/style.scss */
-  body main {
-    margin-top: 100vh;
-    height: auto;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-    flex-wrap: wrap;
-    border-radius: 23px;
-    background-color: #1e364b;
-    background-image: linear-gradient(to right bottom, #132b40, #1e364b); }
-    /* line 314, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/scss/style.scss */
-    body main .mainTitle {
-      height: auto;
-      width: 80%; }
-    /* line 317, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/scss/style.scss */
-    body main ul {
-      height: 100%;
-      width: 100%;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-around;
-      align-items: center;
-      flex-wrap: wrap;
-      background-color: #1e364b; }
-      /* line 321, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/scss/style.scss */
-      body main ul li {
-        height: auto;
-        width: 100%;
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
-        flex-wrap: wrap;
-        margin: 100px 0px; }
-        /* line 325, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/scss/style.scss */
-        body main ul li div.projectCard {
-          display: flex;
-          flex-direction: row;
-          justify-content: space-around;
-          align-items: center;
-          flex-wrap: wrap;
-          transition: 0.4s cubic-bezier(0, 0, 0.27, 0.97);
-          overflow: hidden; }
-          @media (min-width: 160px) and (max-width: 1007px) {
-            /* line 325, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/scss/style.scss */
-            body main ul li div.projectCard {
-              height: auto;
-              width: 90%; } }
-          /* line 331, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/scss/style.scss */
-          body main ul li div.projectCard.w-bk {
-            padding: 10px;
-            background-color: #fffedb;
-            box-shadow: 0px 2px 2px 2px rgba(30, 54, 65, 0.5);
-            color: #1e3641;
-            border-radius: 20px; }
-          /* line 339, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/scss/style.scss */
-          body main ul li div.projectCard img {
-            height: 200px;
-            width: auto;
-            border-radius: 50%;
-            z-index: 0; }
-          /* line 344, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/scss/style.scss */
-          body main ul li div.projectCard div.projTitle {
-            height: auto;
-            width: 50%;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            align-items: flex-start;
-            flex-wrap: wrap;
-            margin: 0px 20vw 50px 0px; }
-            /* line 348, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/scss/style.scss */
-            body main ul li div.projectCard div.projTitle h4 {
-              text-align: center;
-              font-weight: 200;
-              z-index: 1;
-              letter-spacing: 0.7em; }
-              @media (min-width: 160px) and (max-width: 640px) {
-                /* line 348, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/scss/style.scss */
-                body main ul li div.projectCard div.projTitle h4 {
-                  font-size: 20px; } }
-              @media (min-width: 641px) and (max-width: 1007px) {
-                /* line 348, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/scss/style.scss */
-                body main ul li div.projectCard div.projTitle h4 {
-                  font-size: 22px; } }
-              @media (min-width: 1008px) {
-                /* line 348, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/scss/style.scss */
-                body main ul li div.projectCard div.projTitle h4 {
-                  font-size: 24px; } }
-            /* line 363, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/scss/style.scss */
-            body main ul li div.projectCard div.projTitle .lineSeparator {
-              height: 2px;
-              width: 100%; }
-          /* line 367, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/scss/style.scss */
-          body main ul li div.projectCard p {
-            height: 20%;
-            width: 50%;
-            z-index: 1;
-            margin-bottom: 5vw;
-            margin-right: 5vw;
-            margin-top: 5vw; }
-          /* line 374, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/scss/style.scss */
-          body main ul li div.projectCard a {
-            text-align: center;
-            height: 40px;
-            width: 225px;
-            z-index: 1;
-            margin-top: 5vw; }
-  /* line 384, C:/Users/mmedina/Documents/GitHub/MarkMed.github.io/scss/style.scss */
-  body section {
-    height: 100vh;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-    flex-wrap: wrap; }
+    transform: translateY(10px);
+  }
+}
 
-/*# sourceMappingURL=../css/style.map */
+/* line 294, ../Programming/MarkMed.github.io/SCSS/style.scss */
+body header svg g {
+  stroke: rgba(240, 240, 223, 0.75);
+  stroke-width: 2px;
+  transition: 0.4s cubic-bezier(0, 0, 0.27, 0.97);
+}
+
+/* line 298, ../Programming/MarkMed.github.io/SCSS/style.scss */
+body header svg g path {
+  animation: moving 1s cubic-bezier(1, 0, 0.5, 1) infinite alternate;
+}
+
+/* line 302, ../Programming/MarkMed.github.io/SCSS/style.scss */
+body header svg:hover g {
+  stroke: #ffc33c;
+}
+
+/* line 307, ../Programming/MarkMed.github.io/SCSS/style.scss */
+body main {
+  margin-top: 100vh;
+  height: auto;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  border-radius: 23px;
+  background-color: #1b2e40;
+  background-image: linear-gradient(to right bottom, #132b40, #1e364b);
+}
+
+/* line 314, ../Programming/MarkMed.github.io/SCSS/style.scss */
+body main .mainTitle {
+  height: auto;
+  width: 80%;
+}
+
+/* line 317, ../Programming/MarkMed.github.io/SCSS/style.scss */
+body main ul {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  background-color: #1b2e40;
+}
+
+/* line 321, ../Programming/MarkMed.github.io/SCSS/style.scss */
+body main ul li {
+  height: auto;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 100px 0px;
+}
+
+/* line 325, ../Programming/MarkMed.github.io/SCSS/style.scss */
+body main ul li div.projectCard {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  transition: 0.4s cubic-bezier(0, 0, 0.27, 0.97);
+  overflow: hidden;
+}
+
+@media (min-width: 160px) and (max-width: 1007px) {
+  /* line 325, ../Programming/MarkMed.github.io/SCSS/style.scss */
+  body main ul li div.projectCard {
+    height: auto;
+    width: 90%;
+  }
+}
+
+/* line 331, ../Programming/MarkMed.github.io/SCSS/style.scss */
+body main ul li div.projectCard.w-bk {
+  padding: 10px;
+  background-color: #f0f0df;
+  box-shadow: 0px 2px 2px 2px rgba(1, 50, 57, 0.5);
+  color: #013239;
+  border-radius: 20px;
+}
+
+/* line 339, ../Programming/MarkMed.github.io/SCSS/style.scss */
+body main ul li div.projectCard img {
+  height: 200px;
+  width: auto;
+  border-radius: 50%;
+  z-index: 0;
+}
+
+/* line 344, ../Programming/MarkMed.github.io/SCSS/style.scss */
+body main ul li div.projectCard div.projTitle {
+  height: auto;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  margin: 0px 20vw 50px 0px;
+}
+
+/* line 348, ../Programming/MarkMed.github.io/SCSS/style.scss */
+body main ul li div.projectCard div.projTitle h4 {
+  text-align: center;
+  font-weight: 200;
+  z-index: 1;
+  letter-spacing: 0.7em;
+}
+
+@media (min-width: 160px) and (max-width: 640px) {
+  /* line 348, ../Programming/MarkMed.github.io/SCSS/style.scss */
+  body main ul li div.projectCard div.projTitle h4 {
+    font-size: 20px;
+  }
+}
+
+@media (min-width: 641px) and (max-width: 1007px) {
+  /* line 348, ../Programming/MarkMed.github.io/SCSS/style.scss */
+  body main ul li div.projectCard div.projTitle h4 {
+    font-size: 22px;
+  }
+}
+
+@media (min-width: 1008px) {
+  /* line 348, ../Programming/MarkMed.github.io/SCSS/style.scss */
+  body main ul li div.projectCard div.projTitle h4 {
+    font-size: 24px;
+  }
+}
+
+/* line 363, ../Programming/MarkMed.github.io/SCSS/style.scss */
+body main ul li div.projectCard div.projTitle .lineSeparator {
+  height: 2px;
+  width: 100%;
+}
+
+/* line 367, ../Programming/MarkMed.github.io/SCSS/style.scss */
+body main ul li div.projectCard p {
+  height: 20%;
+  width: 50%;
+  z-index: 1;
+  margin-bottom: 5vw;
+  margin-right: 5vw;
+  margin-top: 5vw;
+}
+
+/* line 374, ../Programming/MarkMed.github.io/SCSS/style.scss */
+body main ul li div.projectCard a {
+  text-align: center;
+  height: 40px;
+  width: 225px;
+  z-index: 1;
+  margin-top: 5vw;
+}
+
+/* line 384, ../Programming/MarkMed.github.io/SCSS/style.scss */
+body section {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+/*# sourceMappingURL=style.css.map */
