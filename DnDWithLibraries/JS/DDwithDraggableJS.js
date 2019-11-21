@@ -6,7 +6,7 @@ window.onload=(()=>{
 	const imgArray = document.querySelectorAll("#startStorage img.element2Drag");
 	const cardsArray = document.querySelector("#elementStart div.card");
 
-    const draggable = new Draggable(document.getElementById("startStorage"), {
+    const draggable = new Draggable.Draggable(document.getElementById("startStorage"), {
         draggable: '#startStorage .element2Drag'
     });
       
