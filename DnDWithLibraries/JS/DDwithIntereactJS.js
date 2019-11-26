@@ -8,6 +8,8 @@ window.onload=(()=>{
 	let elemetDragging;
 
 	function makeDraggable(elem){
+		
+		let timer;
 		const position = { x: 0, y: 0 }
 		elem.setAttribute("style",
 			"touch-action: none; user-select: none"
@@ -22,10 +24,12 @@ window.onload=(()=>{
 			// ],
 			listeners: {
 				start (event) {
+					clearTimeout(timer);
 					console.log(event.type, event.target);
 					elemetDragging = elem;
 					globalVar=elem;
 					console.log("dragStart");
+					event.target.style.transition = ``;
 				},
 				move (event) {
 					console.log("dragging");
@@ -34,9 +38,15 @@ window.onload=(()=>{
 					event.target.style.transform = `translate(${position.x}px, ${position.y}px)`;
 				},
 				end (event) {
-					position.x = 0;
-					position.y = 0;
 					console.log("drag end");
+					timer = setTimeout(()=>{
+						position.x = 0;
+						position.y = 0;
+						event.target.style.transition = `0.6s ease`;
+						event.target.style.transform = ``;
+					}
+					, 1000
+					);
 				}
 			}
 		})
