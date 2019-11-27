@@ -6,11 +6,12 @@ window.onload=(()=>{
 	const cardsArray = document.querySelectorAll("#elementStart div.card");
 
 	let elemetDragging;
+	
+	const position = { x: 0, y: 0 }
 
 	function makeDraggable(elem){
 		
 		let timer;
-		const position = { x: 0, y: 0 }
 		elem.setAttribute("style",
 			"touch-action: none; user-select: none"
 		);
@@ -29,21 +30,21 @@ window.onload=(()=>{
 					elemetDragging = elem;
 					globalVar=elem;
 					console.log("dragStart");
-					event.target.style.transition = ``;
+					elemetDragging.style.transition = ``;
 				},
 				move (event) {
 					console.log("dragging");
 					position.x += event.dx;
 					position.y += event.dy;
-					event.target.style.transform = `translate(${position.x}px, ${position.y}px)`;
+					elemetDragging.style.transform = `translate(${position.x}px, ${position.y}px)`;
 				},
 				end (event) {
 					console.log("drag end");
 					timer = setTimeout(()=>{
 						position.x = 0;
 						position.y = 0;
-						event.target.style.transition = `0.6s ease`;
-						event.target.style.transform = ``;
+						elemetDragging.style.transition = `0.6s ease`;
+						elemetDragging.style.transform = ``;
 					}
 					, 1000
 					);
@@ -61,7 +62,9 @@ window.onload=(()=>{
 					+ ' was dropped into '
 					+ event.target.getAttribute("class"));
 				console.log(event);
-				elemetDragging.setAttribute("style", "");
+				elemetDragging.style.transform = ``
+				position.x = 0;
+				position.y = 0;
 				event.target.innerHTML += elemetDragging.outerHTML;
 			}
 		})
