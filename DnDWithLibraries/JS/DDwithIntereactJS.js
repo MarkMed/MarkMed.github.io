@@ -9,25 +9,30 @@ window.onload=(()=>{
 	
 	const position = { x: 0, y: 0 }
 
-	function deleteFromParent(eleme){
+	function deleteFromParent(elem){
 		elem.parentElement.removeChild(elem);
 	}
 
 	function emitEvent(elem, eventToEmit){
-			
+		console.log("DROPPED!")
 		let eventIntance = document.createEvent("HTMLEvents");
 		eventIntance.initEvent(eventToEmit, true, false);
-		elem.get(0).dispatchEvent(eventIntance);
+		elem.dispatchEvent(eventIntance);
 
 	}
 	
 	function addEvent(listenEvent, elem, func, useCapture){
-		elem.get(0).addEventListener(listenEvent, func, useCapture);
+		elem.addEventListener(listenEvent, func, useCapture);
 	}
 	
 	function makeDraggable(elem){
 		
 		let timer;
+
+		elem.addEventListener("dropped", ()=>{
+			console.log("DROPPED LISTENED!")
+			deleteFromParent(elem);
+		});
 		elem.setAttribute("style",
 			"touch-action: none; user-select: none"
 		);
@@ -66,7 +71,7 @@ window.onload=(()=>{
 					);
 				}
 			}
-		})
+		});
 	}
 
 	function makeDroppable(elem, elemnts2Accept){
@@ -78,6 +83,7 @@ window.onload=(()=>{
 					+ ' was dropped into '
 					+ event.target.getAttribute("class"));
 				console.log(event);
+				emitEvent(elem, "dropped")
 				elemetDragging.style.transform = ``
 				position.x = 0;
 				position.y = 0;
