@@ -30,7 +30,6 @@ window.onload=(()=>{
 		let timer;
 
 		elem.addEventListener("dropped", ()=>{
-			console.log("DROPPED LISTENED!")
 			deleteFromParent(elem);
 		});
 		elem.setAttribute("style",
@@ -66,33 +65,54 @@ window.onload=(()=>{
 						position.y = 0;
 						elemetDragging.style.transition = `0.6s ease`;
 						elemetDragging.style.transform = ``;
-					}
-					, 1000
-					);
+					}, 1000);
 				}
 			}
 		});
 	}
 
 	function makeDroppable(elem, elemnts2Accept){
+		function dropZoneClass(dropArea, toDo, class2Remove){
+			
+			console.log("Function running!", dropArea);
+			if(toDo === "remove"){
+				dropArea.classList.remove(class2Remove);
+			}
+			if(toDo === "add"){				
+				dropArea.classList.add(class2Remove);
+			}
+
+		}
 		interact(elem)
 		.dropzone({
 			accept: elemnts2Accept,
+			ondragenter: (event)=>{
+				console.log("DRAGENTER!");
+				let draggingElement = event.relatedTarget;
+				let dropArea = event.target;
+				dropZoneClass(dropArea, "add" ,"allowDrop");
+			},
+			ondragleave: (event)=>{
+				console.log("DRAGLeave!");
+				let draggingElement = event.relatedTarget;
+				let dropArea = event.target;
+				dropZoneClass(dropArea, "remove", "allowDrop");
+			},
 			ondrop: (event)=>{
-				console.log(event.relatedTarget.getAttribute("class")
+				let draggingElement = event.relatedTarget;
+				let dropArea = event.target;
+				dropZoneClass(dropArea, "remove", "allowDrop");
+				console.log(draggingElement.getAttribute("class")
 					+ ' was dropped into '
-					+ event.target.getAttribute("class"));
+					+ dropArea.getAttribute("class"));
 				console.log(event);
-				emitEvent(event.relatedTarget, "dropped")
+				emitEvent(draggingElement, "dropped");
 				elemetDragging.style.transform = ``
 				position.x = 0;
 				position.y = 0;
-				event.target.innerHTML += elemetDragging.outerHTML;
+				dropArea.innerHTML += elemetDragging.outerHTML;
 			}
 		})
-        .on('dropactivate', function (event) {
-          event.target.classList.add('drop-activated')
-        })
 	}
 
 	//////////////////////////////////////////////////////////////////////////////////
