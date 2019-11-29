@@ -83,7 +83,7 @@ window.onload=(()=>{
 					+ ' was dropped into '
 					+ event.target.getAttribute("class"));
 				console.log(event);
-				emitEvent(elem, "dropped")
+				emitEvent(event.relatedTarget, "dropped")
 				elemetDragging.style.transform = ``
 				position.x = 0;
 				position.y = 0;
