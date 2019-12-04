@@ -26,12 +26,12 @@ window.onload=(()=>{
 	}
 	
 	function makeDraggable(elem){
-		
 		let timer;
 
-		elem.addEventListener("dropped", ()=>{
+		elem.addEventListener("droppedOnDropZone", ()=>{
 			deleteFromParent(elem);
 		});
+
 		elem.setAttribute("style",
 			"touch-action: none; user-select: none"
 		);
@@ -53,25 +53,29 @@ window.onload=(()=>{
 					elemetDragging.style.transition = ``;
 				},
 				move (event) {
-					console.log("dragging");
 					position.x += event.dx;
 					position.y += event.dy;
 					elemetDragging.style.transform = `translate(${position.x}px, ${position.y}px)`;
 				},
 				end (event) {
 					console.log("drag end");
+					emitEvent(elem, "dropped");
 					timer = setTimeout(()=>{
 						position.x = 0;
 						position.y = 0;
-						elemetDragging.style.transition = `0.6s ease`;
-						elemetDragging.style.transform = ``;
-					}, 1000);
+						elem.style.transition = `0.6s ease`;
+						elem.style.transform = ``;
+					}, 200);
 				}
 			}
 		});
 	}
 
 	function makeDroppable(elem, elemnts2Accept){
+		
+		
+		let timer;
+
 		function dropZoneClass(dropArea, toDo, class2Remove){
 			
 			console.log("Function running!", dropArea);
@@ -83,9 +87,21 @@ window.onload=(()=>{
 			}
 
 		}
+		function revertBack(elem){
+			timer = setTimeout(()=>{
+				position.x = 0;
+				position.y = 0;
+				elem.style.transition = `0.6s ease`;
+				elem.style.transform = ``;
+			}, 200);
+		}
+
 		interact(elem)
 		.dropzone({
 			accept: elemnts2Accept,
+			ondropactivate: (event)=>{
+				console.log("dropactive")
+			},
 			ondragenter: (event)=>{
 				console.log("DRAGENTER!");
 				let draggingElement = event.relatedTarget;
@@ -96,6 +112,9 @@ window.onload=(()=>{
 				console.log("DRAGLeave!");
 				let draggingElement = event.relatedTarget;
 				let dropArea = event.target;
+				draggingElement.addEventListener("dropped", ()=>{
+					revertBack(draggingElement)
+				});
 				dropZoneClass(dropArea, "remove", "allowDrop");
 			},
 			ondrop: (event)=>{
@@ -106,7 +125,7 @@ window.onload=(()=>{
 					+ ' was dropped into '
 					+ dropArea.getAttribute("class"));
 				console.log(event);
-				emitEvent(draggingElement, "dropped");
+				emitEvent(draggingElement, "droppedOnDropZone");
 				elemetDragging.style.transform = ``
 				position.x = 0;
 				position.y = 0;
