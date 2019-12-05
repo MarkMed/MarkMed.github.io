@@ -6,15 +6,24 @@ window.onload=(()=>{
 	const cardsArray = document.querySelectorAll("#elementStart div.card");
 
 	let elemetDragging;
+	let timer;
 	
 	const position = { x: 0, y: 0 }
+	
+	function revertBack(elem){
+		timer = setTimeout(()=>{
+			position.x = 0;
+			position.y = 0;
+			elem.style.transition = `0.6s ease`;
+			elem.style.transform = ``;
+		}, 200);
+	}
 
 	function deleteFromParent(elem){
 		elem.parentElement.removeChild(elem);
 	}
 
 	function emitEvent(elem, eventToEmit){
-		console.log("DROPPED!")
 		let eventIntance = document.createEvent("HTMLEvents");
 		eventIntance.initEvent(eventToEmit, true, false);
 		elem.dispatchEvent(eventIntance);
@@ -26,10 +35,13 @@ window.onload=(()=>{
 	}
 	
 	function makeDraggable(elem){
-		let timer;
 
 		elem.addEventListener("droppedOnDropZone", ()=>{
 			deleteFromParent(elem);
+		});
+		elem.addEventListener("dragCanceled", ()=>{
+			console.log("dragCanceled listened!");
+			revertBack(elem);
 		});
 
 		elem.setAttribute("style",
@@ -60,21 +72,13 @@ window.onload=(()=>{
 				end (event) {
 					console.log("drag end");
 					emitEvent(elem, "dropped");
-					timer = setTimeout(()=>{
-						position.x = 0;
-						position.y = 0;
-						elem.style.transition = `0.6s ease`;
-						elem.style.transform = ``;
-					}, 200);
+					revertBack(elem)
 				}
 			}
 		});
 	}
 
 	function makeDroppable(elem, elemnts2Accept){
-		
-		
-		let timer;
 
 		function dropZoneClass(dropArea, toDo, class2Remove){
 			
@@ -86,14 +90,6 @@ window.onload=(()=>{
 				dropArea.classList.add(class2Remove);
 			}
 
-		}
-		function revertBack(elem){
-			timer = setTimeout(()=>{
-				position.x = 0;
-				position.y = 0;
-				elem.style.transition = `0.6s ease`;
-				elem.style.transform = ``;
-			}, 200);
 		}
 
 		interact(elem)
@@ -113,7 +109,8 @@ window.onload=(()=>{
 				let draggingElement = event.relatedTarget;
 				let dropArea = event.target;
 				draggingElement.addEventListener("dropped", ()=>{
-					revertBack(draggingElement)
+					console.log("DROPPED!")
+					emitEvent(draggingElement, "dragCanceled");
 				});
 				dropZoneClass(dropArea, "remove", "allowDrop");
 			},
