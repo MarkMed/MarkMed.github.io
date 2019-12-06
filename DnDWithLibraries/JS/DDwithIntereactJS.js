@@ -85,10 +85,6 @@ window.onload=(()=>{
 
 		}
 
-		elem.addEventListener("dropAccepted", ()=>{
-			console.log("dropAccepted listened!");			
-			dropZoneClass(elem, "add" ,"allowDrop");
-		});
 		interact(elem)
 		.dropzone({
 			accept: elemnts2Accept,
@@ -99,7 +95,11 @@ window.onload=(()=>{
 				console.log("DRAGENTER!");
 				let draggingElement = event.relatedTarget;
 				let dropArea = event.target;
-				emitEvent(dropArea, "dropAccepted");
+				draggingElement.addEventListener("dropAccepted", ()=>{
+					console.log("dropAccepted listened!");			
+					dropZoneClass(elem, "add" ,"allowDrop");
+				});
+				emitEvent(draggingElement, "dropAccepted");
 			},
 			ondragleave: (event)=>{
 				console.log("DRAGLeave!");
