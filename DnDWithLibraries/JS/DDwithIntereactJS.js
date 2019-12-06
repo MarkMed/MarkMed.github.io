@@ -43,18 +43,11 @@ window.onload=(()=>{
 			console.log("dragCanceled listened!");
 			revertBack(elem);
 		});
-
 		elem.setAttribute("style",
 			"touch-action: none; user-select: none"
 		);
 		interact(elem).draggable({
 			inertia: true,
-			// modifiers: [
-			// 	interact.modifiers.restrictRect({
-			// 		restriction: 'parent',
-			// 		endOnly: true
-			// 	})
-			// ],
 			listeners: {
 				start (event) {
 					clearTimeout(timer);
@@ -92,6 +85,10 @@ window.onload=(()=>{
 
 		}
 
+		elem.addEventListener("dropAccepted", ()=>{
+			console.log("dropAccepted listened!");			
+			dropZoneClass(elem, "add" ,"allowDrop");
+		});
 		interact(elem)
 		.dropzone({
 			accept: elemnts2Accept,
@@ -102,7 +99,7 @@ window.onload=(()=>{
 				console.log("DRAGENTER!");
 				let draggingElement = event.relatedTarget;
 				let dropArea = event.target;
-				dropZoneClass(dropArea, "add" ,"allowDrop");
+				emitEvent(dropArea, "dropAccepted");
 			},
 			ondragleave: (event)=>{
 				console.log("DRAGLeave!");
