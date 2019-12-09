@@ -35,14 +35,6 @@ window.onload=(()=>{
 	}
 	
 	function makeDraggable(elem){
-
-		elem.addEventListener("droppedOnDropZone", ()=>{
-			deleteFromParent(elem);
-		});
-		elem.addEventListener("dragCanceled", ()=>{
-			console.log("dragCanceled listened!");
-			revertBack(elem);
-		});
 		elem.setAttribute("style",
 			"touch-action: none; user-select: none"
 		);
@@ -50,12 +42,27 @@ window.onload=(()=>{
 			inertia: true,
 			listeners: {
 				start (event) {
+
+					elem.addEventListener("droppedOnDropZone", ()=>{
+						console.log(">> dropEvent listened <<");
+						deleteFromParent(elem);
+					});
+					elem.addEventListener("dragCanceled", ()=>{
+						console.log(">> dragCanceled listened <<");
+						revertBack(elem);
+					});
+
 					clearTimeout(timer);
-					console.log(event.type, event.target);
-					elemetDragging = elem;
-					globalVar=elem;
-					console.log("dragStart");
-					elemetDragging.style.transition = ``;
+
+					// GX Drag
+					elem.addEventListener("dragging", ()=>{
+						console.log(">> Drag listened <<");	
+						elemetDragging = elem;
+						globalVar=elem;
+						console.log("dragStart");
+						elemetDragging.style.transition = ``;
+					});
+					emitEvent(elem, "dragging");
 				},
 				move (event) {
 					position.x += event.dx;
@@ -63,9 +70,18 @@ window.onload=(()=>{
 					elemetDragging.style.transform = `translate(${position.x}px, ${position.y}px)`;
 				},
 				end (event) {
-					console.log("drag end");
-					emitEvent(elem, "dropped");
-					revertBack(elem)
+
+					elem.removeEventListener("droppedOnDropZone", ()=>{
+						console.log(">> dropEvent listened <<");
+						deleteFromParent(elem);
+					});
+					elem.removeEventListener("dragCanceled", ()=>{
+						console.log(">> dragCanceled listened <<");
+						revertBack(elem);
+					});
+
+					revertBack(elem)					
+					emitEvent(elem, "dragCanceled");
 				}
 			}
 		});
@@ -74,8 +90,6 @@ window.onload=(()=>{
 	function makeDroppable(elem, elemnts2Accept){
 
 		function dropZoneClass(dropArea, toDo, class2Remove){
-			
-			console.log("Function running!", dropArea);
 			if(toDo === "remove"){
 				dropArea.classList.remove(class2Remove);
 			}
@@ -95,30 +109,31 @@ window.onload=(()=>{
 				console.log("DRAGENTER!");
 				let draggingElement = event.relatedTarget;
 				let dropArea = event.target;
+				// draggingElement.removeEventListener("dragCanceled", ()=>{
+				// 	console.log(">> dragCanceled listened <<");
+				// 	revertBack(elem);
+				// });
+				// GX Drop Accepted
 				draggingElement.addEventListener("dropAccepted", ()=>{
-					console.log("dropAccepted listened!");			
+					console.log(">> dropAccepted listened <<");			
 					dropZoneClass(elem, "add" ,"allowDrop");
 				});
 				emitEvent(draggingElement, "dropAccepted");
 			},
 			ondragleave: (event)=>{
-				console.log("DRAGLeave!");
 				let draggingElement = event.relatedTarget;
 				let dropArea = event.target;
-				draggingElement.addEventListener("dropped", ()=>{
-					console.log("DROPPED!")
-					emitEvent(draggingElement, "dragCanceled");
-				});
 				dropZoneClass(dropArea, "remove", "allowDrop");
+				// elem.addEventListener("dragCanceled", ()=>{
+				// 	console.log(">> dragCanceled listened <<");
+				// 	revertBack(elem);
+				// });
 			},
 			ondrop: (event)=>{
 				let draggingElement = event.relatedTarget;
 				let dropArea = event.target;
-				dropZoneClass(dropArea, "remove", "allowDrop");
-				console.log(draggingElement.getAttribute("class")
-					+ ' was dropped into '
-					+ dropArea.getAttribute("class"));
-				console.log(event);
+				dropZoneClass(dropArea, "remove", "allowDrop");				
+				// GX Drop
 				emitEvent(draggingElement, "droppedOnDropZone");
 				elemetDragging.style.transform = ``
 				position.x = 0;
