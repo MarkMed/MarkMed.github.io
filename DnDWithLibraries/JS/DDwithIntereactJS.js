@@ -38,30 +38,31 @@ window.onload=(()=>{
 		elem.setAttribute("style",
 			"touch-action: none; user-select: none"
 		);
+
+		// GX Drag
+		elem.addEventListener("dragging", ()=>{
+			console.log(">> Drag listened <<");	
+			elemetDragging = elem;
+			globalVar=elem;
+			console.log("dragStart");
+			elemetDragging.style.transition = ``;
+		});
+
+		elem.addEventListener("droppedOnDropZone", ()=>{
+			console.log(">> dropEvent listened <<");
+			deleteFromParent(elem);
+		});
+		elem.addEventListener("dragCanceled", ()=>{
+			console.log(">> dragCanceled listened <<");
+			console.log(elem);
+			revertBack(elem);
+		});
 		interact(elem).draggable({
 			inertia: true,
 			listeners: {
 				start (event) {
 
-					elem.addEventListener("droppedOnDropZone", ()=>{
-						console.log(">> dropEvent listened <<");
-						deleteFromParent(elem);
-					});
-					elem.addEventListener("dragCanceled", ()=>{
-						console.log(">> dragCanceled listened <<");
-						revertBack(elem);
-					});
-
 					clearTimeout(timer);
-
-					// GX Drag
-					elem.addEventListener("dragging", ()=>{
-						console.log(">> Drag listened <<");	
-						elemetDragging = elem;
-						globalVar=elem;
-						console.log("dragStart");
-						elemetDragging.style.transition = ``;
-					});
 					emitEvent(elem, "dragging");
 				},
 				move (event) {
@@ -76,6 +77,7 @@ window.onload=(()=>{
 						deleteFromParent(elem);
 					});
 					elem.removeEventListener("dragCanceled", ()=>{
+						console.log(elem);
 						console.log(">> dragCanceled listened <<");
 						revertBack(elem);
 					});
