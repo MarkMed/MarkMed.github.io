@@ -34,12 +34,11 @@ window.onload=(()=>{
 		elem.addEventListener(listenEvent, func, useCapture);
 	}
 	
-	function makeDraggable(elem){
+	function makeDraggable(elem, dropTarget){
 		elem.setAttribute("style",
 			"touch-action: none; user-select: none"
 		);
 
-		// GX Drag
 		elem.addEventListener("dragging", ()=>{
 			console.log(">> Drag listened <<");	
 			elemetDragging = elem;
@@ -63,6 +62,7 @@ window.onload=(()=>{
 				start (event) {
 
 					clearTimeout(timer);
+					// GX Drag
 					emitEvent(elem, "dragging");
 				},
 				move (event) {
@@ -71,6 +71,7 @@ window.onload=(()=>{
 					elemetDragging.style.transform = `translate(${position.x}px, ${position.y}px)`;
 				},
 				end (event) {
+					console.log("event.relatedTarget", event.relatedTarget);
 
 					elem.removeEventListener("droppedOnDropZone", ()=>{
 						console.log(">> dropEvent listened <<");
@@ -81,9 +82,11 @@ window.onload=(()=>{
 						console.log(">> dragCanceled listened <<");
 						revertBack(elem);
 					});
-
-					revertBack(elem)					
-					emitEvent(elem, "dragCanceled");
+					// Mmmm 7-7
+					if (event.relatedTarget != dropTarget){
+						revertBack(elem)
+						emitEvent(elem, "dragCanceled");
+					}			
 				}
 			}
 		});
@@ -115,6 +118,7 @@ window.onload=(()=>{
 				// 	console.log(">> dragCanceled listened <<");
 				// 	revertBack(elem);
 				// });
+
 				// GX Drop Accepted
 				draggingElement.addEventListener("dropAccepted", ()=>{
 					console.log(">> dropAccepted listened <<");			
@@ -160,11 +164,11 @@ window.onload=(()=>{
 	///////////////////////////////////////
 
 	for(let i=0; i<imgArray.length; i++){
-		makeDraggable(imgArray[i]);
+		makeDraggable(imgArray[i], imgTarget);
 	}
 
 	for(let i=0; i<cardsArray.length; i++){
-		makeDraggable(cardsArray[i]);
+		makeDraggable(cardsArray[i], cardTarget);
 	}
 
 	makeDroppable(imgTarget, "img.element2Drag");
