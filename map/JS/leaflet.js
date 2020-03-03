@@ -1049,5 +1049,51 @@ window.addEventListener("load", () => {
 		addConcentricCircle("rgba(243, 200, 96, 0)",'rgba(30, 54, 75, 0.7)', 1600);
 		addConcentricCircle("rgba(243, 200, 96, 0)", 'rgba(30, 54, 75, 0.7)', 2800);
 		addConcentricCircle("rgba(243, 200, 96, 1)", 'rgba(30, 54, 75, 0)', 6100);
-	});
+    });
+    
+	(document.getElementsByClassName("luxFX")[2]).addEventListener("click", ()=>{
+		///////////////////////////////////////////////////////		
+		function addMMarker(autoCoords, autoTitle, popUpContent){
+			var title=autoTitle;
+			var coords=autoCoords.latlng;
+			var marker=L.marker([coords.lat, coords.lng], {
+				icon: luxMark,
+				draggable: false,
+			});
+			marker.bindPopup("<h3>"+autoTitle+"</h3>"+((!!popUpContent)?(popUpContent):("<p>Here would be some info about location</p><p><i>Perhaps some meta info</i> and a <a href='google'>link</a></p><p>This represents fixed data added to the marker</p>"))+"");
+			marker.addTo(map);
+	
+			
+			marker.addEventListener("dblclick", (ev)=>{
+				ev.preventDefault();
+			});
+	
+			function saveMarker(){
+				if(title===""){
+					title="Unassigned Name";
+				}
+				var newMark=new mark(markers.length, title, marker);
+				marker.id=markers.length;
+				markers.push(newMark);
+				markers[marker.id].markObj.options.title=title;
+			}
+			saveMarker();			
+		}
+        function errorHandle(errorParam){
+            console.error(errorHandle);
+        }
+        function returnPosition({coords}){
+            addMMarker({latlng:{lat: coords.latitude, lng: coords.longitude}}, "Your actual position", "<p>Press again <i>Locate Me</i> to refresh your location</p>");
+        }
+        function locateMe(){
+          if (navigator.geolocation) {
+              navigator.geolocation.getCurrentPosition(returnPosition, errorHandle);
+          }
+          else {
+            console.error("This browser does not support Geolocation API")
+          }
+        }
+        locateMe()
+
+    });
 });
