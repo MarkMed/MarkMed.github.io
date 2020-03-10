@@ -35,6 +35,7 @@ window.onload=(()=>{
 	}
 	
 	function makeDraggable(elem, dropTarget){
+		let dropTargets;
 		elem.setAttribute("style",
 			"touch-action: none; user-select: none"
 		);
@@ -60,6 +61,10 @@ window.onload=(()=>{
 			inertia: true,
 			listeners: {
 				start (event) {
+					dropTargets = document.querySelectorAll(
+					  `[id = "targetStorage"]`
+					);
+					console.log(dropTargets);
 
 					clearTimeout(timer);
 					// GX Drag
@@ -71,6 +76,7 @@ window.onload=(()=>{
 					elemetDragging.style.transform = `translate(${position.x}px, ${position.y}px)`;
 				},
 				end (event) {
+					let i = 0;
 					console.log("event.relatedTarget", event.relatedTarget);
 
 					elem.removeEventListener("droppedOnDropZone", ()=>{
@@ -83,10 +89,13 @@ window.onload=(()=>{
 						revertBack(elem);
 					});
 					// Mmmm 7-7
-					if (event.relatedTarget != dropTarget){
-						revertBack(elem)
-						emitEvent(elem, "dragCanceled");
-					}			
+					
+					while((i < dropTargets.length) && !(event.relatedTarget === dropTargets[i])){
+						i++;
+					}
+					if(!(i < dropTargets.length)){
+					  emitEvent(elem, "dragCanceled");
+					}
 				}
 			}
 		});

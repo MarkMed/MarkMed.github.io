@@ -1,9 +1,10 @@
+"use strict";
 function maxSubarraySum(arr, k) {
     if (arr.length < k) {
-        return null;
+        return -Infinity;
     }
-    var maxSum = 0, tempSum;
-    for (var i = 0; i < arr.length; i++) {
+    let maxSum = 0, tempSum = 0;
+    for (let i = 0; i < arr.length; i++) {
         if (i < k) {
             maxSum += arr[i];
             tempSum = maxSum;

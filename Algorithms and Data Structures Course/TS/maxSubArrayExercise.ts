@@ -1,10 +1,10 @@
 function maxSubarraySum(arr: Array<number>, k: number): number{
 	if(arr.length < k){
-		return null
+		return -Infinity
 	}
 	let
 		maxSum = 0,
-		tempSum: number,
+		tempSum = 0;
 	for(let i = 0; i < arr.length; i++){
 
 		if(i < k){

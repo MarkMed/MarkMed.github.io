@@ -1,6 +1,7 @@
+"use strict";
 function isSubsequence(str1, str2) {
-    var i = 0, j = 0;
-    var comparison = str1.length < str2.length, str = {
+    let i = 0, j = 0;
+    const comparison = str1.length < str2.length, str = {
         larger: (comparison) ? (str2) : (str1),
         smaller: (comparison) ? (str1) : (str2)
     };

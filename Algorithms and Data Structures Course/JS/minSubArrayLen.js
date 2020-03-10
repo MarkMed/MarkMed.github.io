@@ -1,5 +1,6 @@
+"use strict";
 function minSubArrayLen(arr, numb) {
-    var minLength = Infinity, totalSum = 0, winStart = 0, winEnd = 0;
+    let minLength = Infinity, totalSum = 0, winStart = 0, winEnd = 0;
     while (winStart < arr.length) {
         if (arr[winEnd] === numb || arr[winEnd] > numb) {
             return 1;
