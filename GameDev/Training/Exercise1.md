@@ -18,7 +18,7 @@
 
 > A video 2D shooter game like Starbound.
 > 
-> The target audience would be people whoe loves pixelart games and people who loves frenetic games
+> The target audience would be people who loves pixelart games and people who loves frenetic games
 > 
 > The game can be played via web and/or in smarts devices (tablets and cellphones)
 ---
@@ -44,7 +44,7 @@
 
 ### 4. My player-type:
 
->  In the game u can be everythin (_killer_, _explorer_, _achiever_ and _socializer_), but I am mainly _killer_ and _explorer_ because I like to go around the area, collect items, look for monsters, and find my target monster. Also I like to defend my self from hostiles monsters and hunt my target monster to complete the quest.
+>  In the game u can be everything (_killer_, _explorer_, _achiever_ and _socializer_), but I am mainly _killer_ and _explorer_ because I like to go around the area, collect items, look for monsters, and find my target monster. Also I like to defend my self from hostiles monsters and hunt my target monster to complete the quest.
 > I don't care about complete goals, I just like to play the main purposes of the game: Hunt, defend, and explore.
 > 
 >  There is posibilities to be a _achiever_ or _socializer_ player too, but, I generally like to play alone because I like to decide when the quest ends.
