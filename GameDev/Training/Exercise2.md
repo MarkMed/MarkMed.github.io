@@ -1,6 +1,7 @@
 # Exercise 2
-## Analysis and Typology of Fun
+## 1 - Analysis and Typology of Fun
 ### 1. Selected Game:
+
 > Unreal Tournament 99
 >
 > Factors and Components of fun:
@@ -16,7 +17,9 @@
 > * Competition
 > * Achieves
 ---
+
 ### 2. Selected Situation:
+
 > Programming
 >
 > While I am programming I must to solve errors, create solutions, and add new features to my code.
@@ -29,7 +32,9 @@
 > * Humor
 > * Limit Situations (Exciting, anger, joy)
 ---
+
 ### 3. Game idealization with last factors and components:
+
 > An online 3D game where you have blocks, items, and pieces to build machines with friends and other players to complete the amazing challenges of the terrain.
 >
 > In this game, you must use your **Creativity** and **Talk with other players** to complete the **Challenges** of the terrain.
@@ -45,13 +50,17 @@
 > * Achieves
 > * Competition
 ---
-## The concept and the Game Experience
+
+## 2 - The concept and the Game Experience
+
 ### 1. Recently played game:
+
 > Monster Hunter World
 >
 > Very exciting. You are drop in a huge map, explore, looking for clues to locate your monster target. When you are facing to the located monster, you should be very alert and evading or blocking its attacks.
 > It's a very exciting experience. An awe, discovering, fighting, and relaxing experience.
 ---
+
 ### 2. Thinking in experience, and making!
 > I think in a frantic experience. A full frenzy experience, an experience of speed, of risk, of emotion and surprise, and a futuristic experience. An experience of mental speed and competitive combats.
 >

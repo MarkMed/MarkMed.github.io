@@ -1,5 +1,5 @@
 # Exercise 1
-## Introduction to VideoGame Development Process
+## 1 - Introduction to VideoGame Development Process
 ### 1. My own concept of _VideoGame_ :
 
 > Is a computer program that contains dynamics or challenges for user entertainment through constant interaction with said program.
@@ -23,7 +23,7 @@
 > The game can be played via web and/or in smarts devices (tablets and cellphones)
 ---
 
-## Types of games and players
+## 2 - Types of games and players
 
 ### 1. Selected Game:
 > Monster Hunter World
