@@ -37,13 +37,19 @@
 ### Experience - Dynamics - Mechanics MDA Design:
 ![MDA](.\Exercise3-MDA.png)
 
-### Immersion Elements
+### Immersion Elements and why
 
-> * Game elements:
+> * Game elements
 >	+ Maps
 >	+ Weapons
 >	+ Items
 >	+ Vehicles
+> * Curious Physics:
+>   + Gravity Interaction
+>   + Teleports
+>   + Time interaction
+>   + Non-Eucledian Places
+>   + 4D
 > * Futuristic Design
 >	+ Space enviroment
 >	+ Alien stuff inclusion
@@ -59,3 +65,8 @@
 >	+ Psytrance
 >	+ Goa
 >	+ Nitzhonot
+>
+> The _Game Elements_ are basics for the game. The key here is within the _design_ (Futuristic Desing) and mechaincs of each item, weapon, vehicles, maps, and enviroments. This will be curious and wonderful to the player and users who likes this cyberpunk genre.
+> The _Curious Physics_ feature should be catchy for players. Forcing them to think and learn how the map works and taking advantage over opponents using these _Curious Physics_ within the map.
+> And the _Fast/Frantic Music_ is for experience purposes. It adds an extra frantic and fast experience to every play while players are thinking quickly, being fast in their movements, and always thinking in their next movements.
+> In that way I think that players will always be immersed in the game and its dynamics.
