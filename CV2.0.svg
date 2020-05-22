@@ -155,9 +155,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.70710678"
-     inkscape:cx="730.13762"
-     inkscape:cy="563.54411"
+     inkscape:zoom="8"
+     inkscape:cx="-125.71122"
+     inkscape:cy="1097.5358"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -166,7 +166,8 @@
      inkscape:window-height="1057"
      inkscape:window-x="-8"
      inkscape:window-y="-8"
-     inkscape:window-maximized="1" />
+     inkscape:window-maximized="1"
+     inkscape:pagecheckerboard="true" />
   <metadata
      id="metadata5">
     <rdf:RDF>
@@ -185,7 +186,14 @@
      id="layer1"
      transform="translate(0,1.8097168e-5)">
     <rect
-       style="opacity:0.25;fill:#fffedb;fill-opacity:1;stroke:#fffedb;stroke-width:0.18520832;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:markers stroke fill"
+       style="opacity:1;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.32200938;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:0.74901961;paint-order:markers stroke fill"
+       id="rect1395"
+       width="10.429109"
+       height="10.314974"
+       x="-32.901333"
+       y="12.120152" />
+    <rect
+       style="opacity:1;fill:#fffedb;fill-opacity:1;stroke:#fffedb;stroke-width:0.18520832;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:markers stroke fill"
        id="rect2309"
        width="217.39705"
        height="304.10938"
@@ -294,7 +302,7 @@
            x="-143.44167"
            y="-59.358784" /></flowRegion><flowPara
          id="flowPara2435" /></flowRoot>    <rect
-       style="opacity:0.25;fill:#1e364b;fill-opacity:1;stroke:none;stroke-width:0.08093136;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:markers stroke fill"
+       style="opacity:0.25;fill:#013c3b;fill-opacity:1;stroke:none;stroke-width:0.08093136;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:markers stroke fill"
        id="rect2439"
        width="74.25"
        height="297"
@@ -1840,5 +1848,840 @@
        inkscape:export-filename="C:\Users\MarkMed\projects.png"
        inkscape:export-xdpi="96"
        inkscape:export-ydpi="96" />
+    <circle
+       inkscape:export-ydpi="96"
+       inkscape:export-xdpi="96"
+       inkscape:export-filename="C:\Users\MarkMed\about.png"
+       r="4.2094951"
+       cy="38.543339"
+       cx="-16.668741"
+       id="circle1397"
+       style="opacity:1;fill:none;fill-opacity:0.17587938;stroke:#fffedb;stroke-width:0.17938749;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:markers stroke fill" />
+    <g
+       inkscape:export-ydpi="96"
+       inkscape:export-xdpi="96"
+       inkscape:export-filename="C:\Users\MarkMed\about.png"
+       transform="translate(-0.88867118,21.492695)"
+       id="g1407">
+      <g
+         id="g1403"
+         transform="matrix(0.01187977,0,0,0.01187977,-19.709977,13.268908)"
+         style="fill:#1d354b;fill-opacity:0.74901961"
+         inkscape:export-filename="C:\Users\MarkMed\interests.png"
+         inkscape:export-xdpi="96"
+         inkscape:export-ydpi="96">
+        <path
+           id="path1399"
+           d="M 405.364,413.978 299.866,374.06 v -25.482 c 28.007,-13.324 49.052,-38.989 56.06,-69.924 h 10.181 c 15.275,0 27.703,-12.428 27.703,-27.703 v -14.142 c 0,-8.118 -6.3,-17.9665 -9.091,-20.502 -2.791,-2.5355 -0.174,-0.0644 -0.174,-0.0644 0,0 -5.16783,-7.41296 -26.11779,-7.41296 -20.94996,0 -7.47321,-33.05964 -7.47321,-33.05964 l -7.499,15 v 65.232 c 0,48.223 -39.232,87.455 -87.455,87.455 -48.223,0 -87.455,-39.232 -87.455,-87.455 V 190.77 l -14.999,18.335 -10.89076,0.13058 c -6.08285,0 -12.58325,4.53442 -15.37425,7.07042 -2.791,2.536 -9.091,12.385 -9.091,20.503 v 14.142 c 0,15.275 12.428,27.703 27.703,27.703 h 10.181 c 7.009,30.935 28.053,56.6 56.061,69.924 v 25.482 l -105.498,39.918 c -26.321,9.959 -44.006,35.559 -44.006,63.701 V 504.5 c 0,4.142 3.358,7.5 7.5,7.5 H 308.5 c 4.143,0 7.5,-3.358 7.5,-7.5 0,-4.142 -3.357,-7.5 -7.5,-7.5 H 142.281 v -22.805 c 0,-4.142 -3.358,-7.5 -7.5,-7.5 -4.142,0 -7.5,3.358 -7.5,7.5 V 497 h -49.65 v -19.321 c 0,-21.945 13.79,-41.906 34.315,-49.672 l 110.343,-41.752 c 2.875,-1.088 4.846,-3.94 4.846,-7.015 v -24.931 c 9.16,2.694 18.846,4.146 28.866,4.146 10.02,0 19.706,-1.453 28.866,-4.147 v 24.931 c 0,3.075 1.969,5.926 4.846,7.015 l 110.343,41.752 c 20.524,7.766 34.314,27.727 34.314,49.672 V 497 h -49.65 v -22.805 c 0,-4.142 -3.357,-7.5 -7.5,-7.5 -4.143,0 -7.5,3.358 -7.5,7.5 V 497 H 343.5 c -4.143,0 -7.5,3.358 -7.5,7.5 0,4.142 3.357,7.5 7.5,7.5 h 98.37 c 4.143,0 7.5,-3.358 7.5,-7.5 v -26.821 c -10e-4,-28.143 -17.685,-53.743 -44.006,-63.701 z M 378.81,250.95 c 0,7.004 -5.698,12.703 -12.703,12.703 h -7.938 c 0.188,-2.527 0.285,-5.078 0.285,-7.652 v -31.896 h 7.652 c 7.005,0 12.703,5.699 12.703,12.704 v 14.141 z m -12.703,-41.845 h -7.652 v 0 c 2.54926,0.0848 5.10133,0 7.652,0 z m -212.561,0 v 0 0 h -7.653 z m -7.653,54.549 c -7.004,0 -12.703,-5.699 -12.703,-12.703 v -14.142 c 0,-7.005 5.699,-12.704 12.703,-12.704 h 7.653 v 31.896 c 0,2.574 0.098,5.125 0.285,7.652 h -7.938 z"
+           inkscape:connector-curvature="0"
+           style="fill:#fffedb;fill-opacity:1"
+           sodipodi:nodetypes="ccccssszczccsssccczsssccccsssssscsssccsccscscsccsccssscssssscccscscssccccccccccccssscsccc" />
+        <path
+           id="path1401"
+           d="m 326.711,434.37 h -50.508 c -1.164,0 -2.313,0.271 -3.354,0.792 L 256,443.587 239.151,435.163 c -1.041,-0.521 -2.189,-0.792 -3.354,-0.792 h -50.508 c -4.142,0 -7.5,3.358 -7.5,7.5 0,4.142 3.358,7.5 7.5,7.5 h 48.738 l 18.62,9.31 c 1.056,0.528 2.205,0.792 3.354,0.792 1.149,0 2.299,-0.264 3.354,-0.792 l 18.619,-9.31 h 48.737 c 4.143,0 7.5,-3.358 7.5,-7.5 0,-4.142 -3.358,-7.501 -7.5,-7.501 z"
+           inkscape:connector-curvature="0"
+           style="opacity:1;fill:#fffedb;fill-opacity:1" />
+      </g>
+      <path
+         style="fill:none;stroke:#fffedb;stroke-width:0.17727083;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         d="m -17.796779,15.882233 v 0 c -0.0877,-1.263212 0.955959,-1.336584 1.13148,-1.336584 0.175521,0 1.200402,0.05817 1.123921,1.336429 v 0"
+         id="path1405"
+         inkscape:connector-curvature="0"
+         sodipodi:nodetypes="cczcc" />
+    </g>
+    <path
+       inkscape:connector-curvature="0"
+       id="path1409"
+       d="m -15.019819,36.144644 h 1.122532"
+       style="opacity:1;fill:none;stroke:#fffedb;stroke-width:0.18520834;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       inkscape:export-filename="C:\Users\MarkMed\about.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <circle
+       r="0.09411151"
+       cy="36.146313"
+       cx="-15.307855"
+       id="circle1411"
+       style="opacity:1;fill:#fffedb;fill-opacity:1;stroke:none;stroke-width:0.06625111;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:markers stroke fill"
+       inkscape:export-filename="C:\Users\MarkMed\about.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <path
+       inkscape:export-ydpi="96"
+       inkscape:export-xdpi="96"
+       inkscape:export-filename="C:\Users\MarkMed\about.png"
+       style="opacity:1;fill:none;stroke:#fffedb;stroke-width:0.18520834;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m -14.999669,36.673811 h 1.363352"
+       id="path1413"
+       inkscape:connector-curvature="0" />
+    <circle
+       inkscape:export-ydpi="96"
+       inkscape:export-xdpi="96"
+       inkscape:export-filename="C:\Users\MarkMed\about.png"
+       style="opacity:1;fill:#fffedb;fill-opacity:1;stroke:none;stroke-width:0.06625111;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:markers stroke fill"
+       id="circle1415"
+       cx="-15.307855"
+       cy="36.67548"
+       r="0.09411151" />
+    <path
+       inkscape:connector-curvature="0"
+       id="path1417"
+       d="m -14.999669,37.202978 h 0.842755"
+       style="opacity:1;fill:none;stroke:#fffedb;stroke-width:0.18520834;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       inkscape:export-filename="C:\Users\MarkMed\about.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <circle
+       r="0.09411151"
+       cy="37.204647"
+       cx="-15.307855"
+       id="circle1419"
+       style="opacity:1;fill:#fffedb;fill-opacity:1;stroke:none;stroke-width:0.06625111;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:markers stroke fill"
+       inkscape:export-filename="C:\Users\MarkMed\about.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <circle
+       inkscape:export-ydpi="96"
+       inkscape:export-xdpi="96"
+       inkscape:export-filename="C:\Users\MarkMed\about.png"
+       style="opacity:1;fill:#fffedb;fill-opacity:1;stroke:none;stroke-width:0.06625111;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:markers stroke fill"
+       id="circle1421"
+       cx="-15.307855"
+       cy="37.73381"
+       r="0.09411151" />
+    <path
+       inkscape:connector-curvature="0"
+       id="path1423"
+       d="m -15.017209,38.249619 h 1.363352"
+       style="opacity:1;fill:none;stroke:#fffedb;stroke-width:0.18520834;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       inkscape:export-filename="C:\Users\MarkMed\about.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <circle
+       r="0.09411151"
+       cy="38.262978"
+       cx="-15.307855"
+       id="circle1425"
+       style="opacity:1;fill:#fffedb;fill-opacity:1;stroke:none;stroke-width:0.06625111;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:markers stroke fill"
+       inkscape:export-filename="C:\Users\MarkMed\about.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <path
+       inkscape:export-ydpi="96"
+       inkscape:export-xdpi="96"
+       inkscape:export-filename="C:\Users\MarkMed\about.png"
+       style="opacity:1;fill:none;stroke:#fffedb;stroke-width:0.18520834;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m -14.999669,38.790479 h 0.842755"
+       id="path1427"
+       inkscape:connector-curvature="0" />
+    <circle
+       inkscape:export-ydpi="96"
+       inkscape:export-xdpi="96"
+       inkscape:export-filename="C:\Users\MarkMed\about.png"
+       style="opacity:1;fill:#fffedb;fill-opacity:1;stroke:none;stroke-width:0.06625111;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:markers stroke fill"
+       id="circle1429"
+       cx="-15.307855"
+       cy="38.792145"
+       r="0.09411151" />
+    <path
+       inkscape:connector-curvature="0"
+       id="path1431"
+       d="m -14.999669,39.319646 h 0.842755"
+       style="opacity:1;fill:none;stroke:#fffedb;stroke-width:0.18520834;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       inkscape:export-filename="C:\Users\MarkMed\about.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <path
+       inkscape:export-ydpi="96"
+       inkscape:export-xdpi="96"
+       inkscape:export-filename="C:\Users\MarkMed\about.png"
+       style="opacity:1;fill:none;stroke:#fffedb;stroke-width:0.18520834;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m -15.017209,37.720452 h 1.363352"
+       id="path1433"
+       inkscape:connector-curvature="0" />
+    <circle
+       r="0.09411151"
+       cy="39.321312"
+       cx="-15.307855"
+       id="circle1435"
+       style="opacity:1;fill:#fffedb;fill-opacity:1;stroke:none;stroke-width:0.06625111;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:markers stroke fill"
+       inkscape:export-filename="C:\Users\MarkMed\about.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <g
+       inkscape:export-ydpi="96"
+       inkscape:export-xdpi="96"
+       inkscape:export-filename="C:\Users\MarkMed\about.png"
+       style="stroke-width:0.14148098;stroke-miterlimit:4;stroke-dasharray:none"
+       transform="matrix(-1.3090688,0,0,1.3090688,-29.409369,14.277616)"
+       id="g1443">
+      <circle
+         inkscape:export-ydpi="96"
+         inkscape:export-xdpi="96"
+         inkscape:export-filename="C:\Users\MarkMed\projects.png"
+         style="opacity:1;fill:none;fill-opacity:1;stroke:#fffedb;stroke-width:0.14148098;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:markers stroke fill"
+         id="circle1437"
+         cx="-9.2658596"
+         cy="17.422749"
+         r="0.35367963" />
+      <path
+         inkscape:export-ydpi="96"
+         inkscape:export-xdpi="96"
+         inkscape:export-filename="C:\Users\MarkMed\projects.png"
+         style="opacity:1;fill:none;stroke:#fffedb;stroke-width:0.14148098;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         d="m -9.0003541,17.688734 0.484433,0.484433"
+         id="path1439"
+         inkscape:connector-curvature="0" />
+      <path
+         d="M -9.3140291,17.573662 A 0.15921064,0.15921064 0 0 1 -9.432033,17.419876"
+         sodipodi:open="true"
+         sodipodi:end="3.1415927"
+         sodipodi:start="1.8325957"
+         sodipodi:ry="0.15921064"
+         sodipodi:rx="0.15921064"
+         sodipodi:cy="17.419876"
+         sodipodi:cx="-9.2728224"
+         sodipodi:type="arc"
+         id="path1441"
+         style="opacity:1;fill:none;fill-opacity:1;stroke:#fffedb;stroke-width:0.09014881;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:markers stroke fill"
+         inkscape:export-filename="C:\Users\MarkMed\projects.png"
+         inkscape:export-xdpi="96"
+         inkscape:export-ydpi="96" />
+    </g>
+    <circle
+       style="opacity:0.75;fill:none;fill-opacity:0.17587938;stroke:#1e364b;stroke-width:0.17938749;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:markers stroke fill"
+       id="circle1217"
+       cx="-16.668741"
+       cy="16.582924"
+       r="4.2094951"
+       inkscape:export-filename="C:\Users\MarkMed\about.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <g
+       id="g1283"
+       transform="translate(0.00312236,-0.9392541)"
+       inkscape:export-filename="C:\Users\MarkMed\about.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96">
+      <g
+         inkscape:export-ydpi="96"
+         inkscape:export-xdpi="96"
+         inkscape:export-filename="C:\Users\MarkMed\interests.png"
+         style="fill:#1d354b;fill-opacity:0.74901961"
+         transform="matrix(0.01187977,0,0,0.01187977,-19.709977,13.268908)"
+         id="g2736-8">
+        <path
+           sodipodi:nodetypes="ccccssszczccsssccczsssccccsssssscsssccsccscscsccsccssscssssscccscscssccccccccccccssscsccc"
+           style="fill:#1e364b;fill-opacity:1"
+           inkscape:connector-curvature="0"
+           d="M 405.364,413.978 299.866,374.06 v -25.482 c 28.007,-13.324 49.052,-38.989 56.06,-69.924 h 10.181 c 15.275,0 27.703,-12.428 27.703,-27.703 v -14.142 c 0,-8.118 -6.3,-17.9665 -9.091,-20.502 -2.791,-2.5355 -0.174,-0.0644 -0.174,-0.0644 0,0 -5.16783,-7.41296 -26.11779,-7.41296 -20.94996,0 -7.47321,-33.05964 -7.47321,-33.05964 l -7.499,15 v 65.232 c 0,48.223 -39.232,87.455 -87.455,87.455 -48.223,0 -87.455,-39.232 -87.455,-87.455 V 190.77 l -14.999,18.335 -10.89076,0.13058 c -6.08285,0 -12.58325,4.53442 -15.37425,7.07042 -2.791,2.536 -9.091,12.385 -9.091,20.503 v 14.142 c 0,15.275 12.428,27.703 27.703,27.703 h 10.181 c 7.009,30.935 28.053,56.6 56.061,69.924 v 25.482 l -105.498,39.918 c -26.321,9.959 -44.006,35.559 -44.006,63.701 V 504.5 c 0,4.142 3.358,7.5 7.5,7.5 h 72.28783 c 4.143,0 7.5,-3.358 7.5,-7.5 0,-4.142 -3.357,-7.5 -7.5,-7.5 H 142.281 v -22.805 c 0,-4.142 -3.358,-7.5 -7.5,-7.5 -4.142,0 -7.5,3.358 -7.5,7.5 V 497 h -49.65 v -19.321 c 0,-21.945 13.79,-41.906 34.315,-49.672 l 110.343,-41.752 c 2.875,-1.088 4.846,-3.94 4.846,-7.015 v -24.931 c 9.16,2.694 18.846,4.146 28.866,4.146 10.02,0 19.706,-1.453 28.866,-4.147 v 24.931 c 0,3.075 1.969,5.926 4.846,7.015 l 110.343,41.752 c 20.524,7.766 34.314,27.727 34.314,49.672 V 497 h -49.65 v -22.805 c 0,-4.142 -3.357,-7.5 -7.5,-7.5 -4.143,0 -7.5,3.358 -7.5,7.5 V 497 h -0.0333 c -4.143,0 -7.5,3.358 -7.5,7.5 0,4.142 3.357,7.5 7.5,7.5 H 441.87 c 4.143,0 7.5,-3.358 7.5,-7.5 v -26.821 c -10e-4,-28.143 -17.685,-53.743 -44.006,-63.701 z M 378.81,250.95 c 0,7.004 -5.698,12.703 -12.703,12.703 h -7.938 c 0.188,-2.527 0.285,-5.078 0.285,-7.652 v -31.896 h 7.652 c 7.005,0 12.703,5.699 12.703,12.704 v 14.141 z m -12.703,-41.845 h -7.652 v 0 c 2.54926,0.0848 5.10133,0 7.652,0 z m -212.561,0 v 0 0 h -7.653 z m -7.653,54.549 c -7.004,0 -12.703,-5.699 -12.703,-12.703 v -14.142 c 0,-7.005 5.699,-12.704 12.703,-12.704 h 7.653 v 31.896 c 0,2.574 0.098,5.125 0.285,7.652 h -7.938 z"
+           id="path2720-6" />
+      </g>
+      <path
+         sodipodi:nodetypes="cczcc"
+         inkscape:connector-curvature="0"
+         id="path1271"
+         d="m -17.796779,15.882233 v 0 c -0.0877,-1.263212 0.955959,-1.336584 1.13148,-1.336584 0.175521,0 1.200402,0.05817 1.123921,1.336429 v 0"
+         style="fill:none;stroke:#1e364b;stroke-width:0.17727083;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+    </g>
+    <g
+       id="g1355"
+       transform="matrix(-1.3090688,0,0,1.3090688,-28.517575,-8.1543333)"
+       style="stroke-width:0.14148098;stroke-miterlimit:4;stroke-dasharray:none"
+       inkscape:export-filename="C:\Users\MarkMed\about.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96">
+      <circle
+         r="0.35367963"
+         cy="17.422749"
+         cx="-9.2658596"
+         id="circle1275"
+         style="opacity:1;fill:none;fill-opacity:1;stroke:#1e364b;stroke-width:0.14148098;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:markers stroke fill"
+         inkscape:export-filename="C:\Users\MarkMed\projects.png"
+         inkscape:export-xdpi="96"
+         inkscape:export-ydpi="96" />
+      <path
+         inkscape:connector-curvature="0"
+         id="path1277"
+         d="m -9.0003541,17.688734 0.484433,0.484433"
+         style="opacity:1;fill:none;stroke:#1e364b;stroke-width:0.14148098;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         inkscape:export-filename="C:\Users\MarkMed\projects.png"
+         inkscape:export-xdpi="96"
+         inkscape:export-ydpi="96" />
+      <path
+         inkscape:export-ydpi="96"
+         inkscape:export-xdpi="96"
+         inkscape:export-filename="C:\Users\MarkMed\projects.png"
+         style="opacity:1;fill:none;fill-opacity:1;stroke:#1e364b;stroke-width:0.09014881;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:markers stroke fill"
+         id="circle1363"
+         sodipodi:type="arc"
+         sodipodi:cx="-9.2728224"
+         sodipodi:cy="17.419876"
+         sodipodi:rx="0.15921064"
+         sodipodi:ry="0.15921064"
+         sodipodi:start="1.8325957"
+         sodipodi:end="3.1415927"
+         sodipodi:open="true"
+         d="M -9.3140291,17.573662 A 0.15921064,0.15921064 0 0 1 -9.432033,17.419876" />
+    </g>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.36540985px;line-height:1.25;font-family:Raleway;-inkscape-font-specification:Raleway;letter-spacing:0px;word-spacing:0px;fill:#1e364b;fill-opacity:1;stroke:none;stroke-width:0.11827048"
+       x="-16.948593"
+       y="19.097301"
+       id="text1319"><tspan
+         sodipodi:role="line"
+         id="tspan1317"
+         x="-16.948593"
+         y="19.097301"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Sitka Banner';-inkscape-font-specification:'Sitka Banner';fill:#1e364b;fill-opacity:1;stroke-width:0.11827048">i</tspan></text>
+    <circle
+       inkscape:export-ydpi="96"
+       inkscape:export-xdpi="96"
+       inkscape:export-filename="C:\Users\MarkMed\about.png"
+       r="1.0907656"
+       cy="18.381039"
+       cx="-16.656738"
+       id="circle1321"
+       style="opacity:1;fill:none;fill-opacity:0.17587938;stroke:#1e364b;stroke-width:0.17727083;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:markers stroke fill" />
+    <g
+       id="g2420"
+       transform="translate(0,10.710826)"
+       style="opacity:0.75"
+       inkscape:export-filename="C:\Users\MarkMed\aboutW.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96">
+      <circle
+         style="opacity:1;fill:none;fill-opacity:0.17587938;stroke:#fffedb;stroke-width:0.17938749;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:markers stroke fill"
+         id="circle2394"
+         cx="-16.668741"
+         cy="16.582924"
+         r="4.2094951"
+         inkscape:export-filename="C:\Users\MarkMed\about.png"
+         inkscape:export-xdpi="96"
+         inkscape:export-ydpi="96" />
+      <g
+         id="g2402"
+         transform="translate(0.00312236,-0.9392541)"
+         inkscape:export-filename="C:\Users\MarkMed\about.png"
+         inkscape:export-xdpi="96"
+         inkscape:export-ydpi="96"
+         style="">
+        <g
+           inkscape:export-ydpi="96"
+           inkscape:export-xdpi="96"
+           inkscape:export-filename="C:\Users\MarkMed\interests.png"
+           style="fill:#1d354b;fill-opacity:0.74901961"
+           transform="matrix(0.01187977,0,0,0.01187977,-19.709977,13.268908)"
+           id="g2398">
+          <path
+             sodipodi:nodetypes="ccccssszczccsssccczsssccccsssssscsssccsccscscsccsccssscssssscccscscssccccccccccccssscsccc"
+             style="fill:#fffedb;fill-opacity:1"
+             inkscape:connector-curvature="0"
+             d="M 405.364,413.978 299.866,374.06 v -25.482 c 28.007,-13.324 49.052,-38.989 56.06,-69.924 h 10.181 c 15.275,0 27.703,-12.428 27.703,-27.703 v -14.142 c 0,-8.118 -6.3,-17.9665 -9.091,-20.502 -2.791,-2.5355 -0.174,-0.0644 -0.174,-0.0644 0,0 -5.16783,-7.41296 -26.11779,-7.41296 -20.94996,0 -7.47321,-33.05964 -7.47321,-33.05964 l -7.499,15 v 65.232 c 0,48.223 -39.232,87.455 -87.455,87.455 -48.223,0 -87.455,-39.232 -87.455,-87.455 V 190.77 l -14.999,18.335 -10.89076,0.13058 c -6.08285,0 -12.58325,4.53442 -15.37425,7.07042 -2.791,2.536 -9.091,12.385 -9.091,20.503 v 14.142 c 0,15.275 12.428,27.703 27.703,27.703 h 10.181 c 7.009,30.935 28.053,56.6 56.061,69.924 v 25.482 l -105.498,39.918 c -26.321,9.959 -44.006,35.559 -44.006,63.701 V 504.5 c 0,4.142 3.358,7.5 7.5,7.5 h 72.28783 c 4.143,0 7.5,-3.358 7.5,-7.5 0,-4.142 -3.357,-7.5 -7.5,-7.5 H 142.281 v -22.805 c 0,-4.142 -3.358,-7.5 -7.5,-7.5 -4.142,0 -7.5,3.358 -7.5,7.5 V 497 h -49.65 v -19.321 c 0,-21.945 13.79,-41.906 34.315,-49.672 l 110.343,-41.752 c 2.875,-1.088 4.846,-3.94 4.846,-7.015 v -24.931 c 9.16,2.694 18.846,4.146 28.866,4.146 10.02,0 19.706,-1.453 28.866,-4.147 v 24.931 c 0,3.075 1.969,5.926 4.846,7.015 l 110.343,41.752 c 20.524,7.766 34.314,27.727 34.314,49.672 V 497 h -49.65 v -22.805 c 0,-4.142 -3.357,-7.5 -7.5,-7.5 -4.143,0 -7.5,3.358 -7.5,7.5 V 497 h -0.0333 c -4.143,0 -7.5,3.358 -7.5,7.5 0,4.142 3.357,7.5 7.5,7.5 H 441.87 c 4.143,0 7.5,-3.358 7.5,-7.5 v -26.821 c -10e-4,-28.143 -17.685,-53.743 -44.006,-63.701 z M 378.81,250.95 c 0,7.004 -5.698,12.703 -12.703,12.703 h -7.938 c 0.188,-2.527 0.285,-5.078 0.285,-7.652 v -31.896 h 7.652 c 7.005,0 12.703,5.699 12.703,12.704 v 14.141 z m -12.703,-41.845 h -7.652 v 0 c 2.54926,0.0848 5.10133,0 7.652,0 z m -212.561,0 v 0 0 h -7.653 z m -7.653,54.549 c -7.004,0 -12.703,-5.699 -12.703,-12.703 v -14.142 c 0,-7.005 5.699,-12.704 12.703,-12.704 h 7.653 v 31.896 c 0,2.574 0.098,5.125 0.285,7.652 h -7.938 z"
+             id="path2396" />
+        </g>
+        <path
+           sodipodi:nodetypes="cczcc"
+           inkscape:connector-curvature="0"
+           id="path2400"
+           d="m -17.796779,15.882233 v 0 c -0.0877,-1.263212 0.955959,-1.336584 1.13148,-1.336584 0.175521,0 1.200402,0.05817 1.123921,1.336429 v 0"
+           style="fill:none;stroke:#fffedb;stroke-width:0.17727083;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+      </g>
+      <g
+         id="g2410"
+         transform="matrix(-1.3090688,0,0,1.3090688,-28.517575,-8.1543333)"
+         style="stroke-width:0.14148098;stroke-miterlimit:4;stroke-dasharray:none"
+         inkscape:export-filename="C:\Users\MarkMed\about.png"
+         inkscape:export-xdpi="96"
+         inkscape:export-ydpi="96">
+        <circle
+           r="0.35367963"
+           cy="17.422749"
+           cx="-9.2658596"
+           id="circle2404"
+           style="opacity:1;fill:none;fill-opacity:1;stroke:#fffedb;stroke-width:0.14148098;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:markers stroke fill"
+           inkscape:export-filename="C:\Users\MarkMed\projects.png"
+           inkscape:export-xdpi="96"
+           inkscape:export-ydpi="96" />
+        <path
+           inkscape:connector-curvature="0"
+           id="path2406"
+           d="m -9.0003541,17.688734 0.484433,0.484433"
+           style="opacity:1;fill:none;stroke:#fffedb;stroke-width:0.14148098;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+           inkscape:export-filename="C:\Users\MarkMed\projects.png"
+           inkscape:export-xdpi="96"
+           inkscape:export-ydpi="96" />
+        <path
+           inkscape:export-ydpi="96"
+           inkscape:export-xdpi="96"
+           inkscape:export-filename="C:\Users\MarkMed\projects.png"
+           style="opacity:1;fill:none;fill-opacity:1;stroke:#fffedb;stroke-width:0.09014881;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:markers stroke fill"
+           id="path2408"
+           sodipodi:type="arc"
+           sodipodi:cx="-9.2728224"
+           sodipodi:cy="17.419876"
+           sodipodi:rx="0.15921064"
+           sodipodi:ry="0.15921064"
+           sodipodi:start="1.8325957"
+           sodipodi:end="3.1415927"
+           sodipodi:open="true"
+           d="M -9.3140291,17.573662 A 0.15921064,0.15921064 0 0 1 -9.432033,17.419876" />
+      </g>
+      <g
+         id="g2418"
+         transform="translate(-1.9931362,3.2867745)"
+         style="">
+        <text
+           id="text2414"
+           y="15.810528"
+           x="-14.955458"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.36540985px;line-height:1.25;font-family:Raleway;-inkscape-font-specification:Raleway;letter-spacing:0px;word-spacing:0px;fill:#fffedb;fill-opacity:1;stroke:none;stroke-width:0.11827048"
+           xml:space="preserve"><tspan
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Sitka Banner';-inkscape-font-specification:'Sitka Banner';fill:#fffedb;fill-opacity:1;stroke-width:0.11827048"
+             y="15.810528"
+             x="-14.955458"
+             id="tspan2412"
+             sodipodi:role="line">i</tspan></text>
+        <circle
+           style="opacity:1;fill:none;fill-opacity:0.17587938;stroke:#fffedb;stroke-width:0.17727083;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:markers stroke fill"
+           id="circle2416"
+           cx="-14.663602"
+           cy="15.094265"
+           r="1.0907656"
+           inkscape:export-filename="C:\Users\MarkMed\about.png"
+           inkscape:export-xdpi="96"
+           inkscape:export-ydpi="96" />
+      </g>
+    </g>
+    <g
+       id="g1544"
+       inkscape:export-filename="C:\Users\MarkMed\about.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96">
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.78827071px;line-height:1.25;font-family:Raleway;-inkscape-font-specification:Raleway;letter-spacing:0px;word-spacing:0px;fill:#1e364b;fill-opacity:1;stroke:none;stroke-width:0.13941352;opacity:0.75;"
+         x="-26.728338"
+         y="8.2327375"
+         id="text1414"><tspan
+           sodipodi:role="line"
+           id="tspan1412"
+           x="-26.728338"
+           y="8.2327375"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Sitka Banner';-inkscape-font-specification:'Sitka Banner';fill:#1e364b;fill-opacity:1;stroke-width:0.13941352;">i</tspan></text>
+      <circle
+         inkscape:export-ydpi="96"
+         inkscape:export-xdpi="96"
+         inkscape:export-filename="C:\Users\MarkMed\about.png"
+         r="1.2857602"
+         cy="7.3884292"
+         cx="-26.384308"
+         id="circle1416"
+         style="opacity:0.75;fill:none;fill-opacity:0.17587938;stroke:#1e364b;stroke-width:0.18520834;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:markers stroke fill" />
+      <circle
+         inkscape:export-ydpi="96"
+         inkscape:export-xdpi="96"
+         inkscape:export-filename="C:\Users\MarkMed\projects.png"
+         r="4.2094951"
+         cy="6.2228894"
+         cx="-27.252073"
+         id="circle1272"
+         style="opacity:0.75;fill:none;fill-opacity:0.17587938;stroke:#1e364b;stroke-width:0.17938749;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:markers stroke fill" />
+      <path
+         sodipodi:nodetypes="cccccc"
+         inkscape:connector-curvature="0"
+         id="path1274"
+         d="m -29.678001,9.0557505 v -5.751876 h 3.26189 l 1.723946,2.740937 v 3.036413 z"
+         style="opacity:0.75;fill:none;stroke:#1e364b;stroke-width:0.18520834;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         inkscape:export-filename="C:\Users\MarkMed\projects.png"
+         inkscape:export-xdpi="96"
+         inkscape:export-ydpi="96" />
+      <path
+         inkscape:export-ydpi="96"
+         inkscape:export-xdpi="96"
+         inkscape:export-filename="C:\Users\MarkMed\about.png"
+         style="opacity:0.75;fill:none;stroke:#1c354b;stroke-width:0.18520834;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         d="m -28.926652,3.8448923 h 1.122532"
+         id="path1409-1"
+         inkscape:connector-curvature="0" />
+      <circle
+         inkscape:export-ydpi="96"
+         inkscape:export-xdpi="96"
+         inkscape:export-filename="C:\Users\MarkMed\about.png"
+         style="opacity:0.75;fill:#1d354b;fill-opacity:1;stroke:none;stroke-width:0.06625111;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:markers stroke fill"
+         id="circle1411-5"
+         cx="-29.214685"
+         cy="3.846561"
+         r="0.09411151" />
+      <path
+         inkscape:connector-curvature="0"
+         id="path1413-9"
+         d="m -28.906502,4.3740593 h 1.363352"
+         style="opacity:0.75;fill:none;stroke:#1c354b;stroke-width:0.18520834;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         inkscape:export-filename="C:\Users\MarkMed\about.png"
+         inkscape:export-xdpi="96"
+         inkscape:export-ydpi="96" />
+      <circle
+         r="0.09411151"
+         cy="4.3757281"
+         cx="-29.214685"
+         id="circle1415-8"
+         style="opacity:0.75;fill:#1d354b;fill-opacity:1;stroke:none;stroke-width:0.06625111;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:markers stroke fill"
+         inkscape:export-filename="C:\Users\MarkMed\about.png"
+         inkscape:export-xdpi="96"
+         inkscape:export-ydpi="96" />
+      <path
+         inkscape:export-ydpi="96"
+         inkscape:export-xdpi="96"
+         inkscape:export-filename="C:\Users\MarkMed\about.png"
+         style="opacity:0.75;fill:none;stroke:#1c354b;stroke-width:0.18520834;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         d="m -28.906502,4.9032262 h 0.842755"
+         id="path1417-0"
+         inkscape:connector-curvature="0" />
+      <circle
+         inkscape:export-ydpi="96"
+         inkscape:export-xdpi="96"
+         inkscape:export-filename="C:\Users\MarkMed\about.png"
+         style="opacity:0.75;fill:#1d354b;fill-opacity:1;stroke:none;stroke-width:0.06625111;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:markers stroke fill"
+         id="circle1419-5"
+         cx="-29.214685"
+         cy="4.9048953"
+         r="0.09411151" />
+      <circle
+         r="0.09411151"
+         cy="5.4340587"
+         cx="-29.214685"
+         id="circle1421-6"
+         style="opacity:0.75;fill:#1d354b;fill-opacity:1;stroke:none;stroke-width:0.06625111;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:markers stroke fill"
+         inkscape:export-filename="C:\Users\MarkMed\about.png"
+         inkscape:export-xdpi="96"
+         inkscape:export-ydpi="96" />
+      <path
+         inkscape:export-ydpi="96"
+         inkscape:export-xdpi="96"
+         inkscape:export-filename="C:\Users\MarkMed\about.png"
+         style="opacity:0.75;fill:none;stroke:#1c354b;stroke-width:0.18520833;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         d="m -28.924042,5.9498672 h 1.363352"
+         id="path1423-3"
+         inkscape:connector-curvature="0" />
+      <circle
+         inkscape:export-ydpi="96"
+         inkscape:export-xdpi="96"
+         inkscape:export-filename="C:\Users\MarkMed\about.png"
+         style="opacity:0.75;fill:#1d354b;fill-opacity:1;stroke:none;stroke-width:0.06625111;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:markers stroke fill"
+         id="circle1425-9"
+         cx="-29.214685"
+         cy="5.9632254"
+         r="0.09411151" />
+      <path
+         inkscape:connector-curvature="0"
+         id="path1427-5"
+         d="m -28.906502,6.4907272 h 0.842755"
+         style="opacity:0.75;fill:none;stroke:#1c354b;stroke-width:0.18520834;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         inkscape:export-filename="C:\Users\MarkMed\about.png"
+         inkscape:export-xdpi="96"
+         inkscape:export-ydpi="96" />
+      <circle
+         r="0.09411151"
+         cy="6.4923925"
+         cx="-29.214685"
+         id="circle1429-1"
+         style="opacity:0.75;fill:#1d354b;fill-opacity:1;stroke:none;stroke-width:0.06625111;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:markers stroke fill"
+         inkscape:export-filename="C:\Users\MarkMed\about.png"
+         inkscape:export-xdpi="96"
+         inkscape:export-ydpi="96" />
+      <path
+         inkscape:connector-curvature="0"
+         id="path1433-0"
+         d="m -28.893598,5.4207002 h 1.805265"
+         style="opacity:0.75;fill:none;stroke:#1c354b;stroke-width:0.18520833;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         inkscape:export-filename="C:\Users\MarkMed\about.png"
+         inkscape:export-xdpi="96"
+         inkscape:export-ydpi="96" />
+      <circle
+         inkscape:export-ydpi="96"
+         inkscape:export-xdpi="96"
+         inkscape:export-filename="C:\Users\MarkMed\about.png"
+         style="opacity:0.75;fill:#1d354b;fill-opacity:1;stroke:none;stroke-width:0.06625111;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:markers stroke fill"
+         id="circle1435-5"
+         cx="-29.214685"
+         cy="7.0215602"
+         r="0.09411151" />
+      <path
+         inkscape:connector-curvature="0"
+         id="path1381"
+         d="m -28.955322,7.0198941 h 0.539052"
+         style="opacity:0.75;fill:none;stroke:#1c354b;stroke-width:0.18520833;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         inkscape:export-filename="C:\Users\MarkMed\about.png"
+         inkscape:export-xdpi="96"
+         inkscape:export-ydpi="96" />
+      <path
+         inkscape:connector-curvature="0"
+         id="path1391"
+         d="m -28.955902,8.066535 h 0.842755"
+         style="opacity:0.75;fill:none;stroke:#1c354b;stroke-width:0.18520834;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         inkscape:export-filename="C:\Users\MarkMed\about.png"
+         inkscape:export-xdpi="96"
+         inkscape:export-ydpi="96" />
+      <circle
+         r="0.09411151"
+         cy="7.5507302"
+         cx="-29.214685"
+         id="circle1393"
+         style="opacity:0.75;fill:#1d354b;fill-opacity:1;stroke:none;stroke-width:0.06625111;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:markers stroke fill"
+         inkscape:export-filename="C:\Users\MarkMed\about.png"
+         inkscape:export-xdpi="96"
+         inkscape:export-ydpi="96" />
+      <circle
+         inkscape:export-ydpi="96"
+         inkscape:export-xdpi="96"
+         inkscape:export-filename="C:\Users\MarkMed\about.png"
+         style="opacity:0.75;fill:#1d354b;fill-opacity:1;stroke:none;stroke-width:0.06625111;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:markers stroke fill"
+         id="circle1395"
+         cx="-29.214685"
+         cy="8.0798931"
+         r="0.09411151" />
+      <path
+         inkscape:connector-curvature="0"
+         id="path1397"
+         d="m -28.924042,8.595702 h 1.363352"
+         style="opacity:0.75;fill:none;stroke:#1c354b;stroke-width:0.18520834;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         inkscape:export-filename="C:\Users\MarkMed\about.png"
+         inkscape:export-xdpi="96"
+         inkscape:export-ydpi="96" />
+      <circle
+         r="0.09411151"
+         cy="8.6090603"
+         cx="-29.214685"
+         id="circle1399"
+         style="opacity:0.75;fill:#1d354b;fill-opacity:1;stroke:none;stroke-width:0.06625111;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:markers stroke fill"
+         inkscape:export-filename="C:\Users\MarkMed\about.png"
+         inkscape:export-xdpi="96"
+         inkscape:export-ydpi="96" />
+      <path
+         inkscape:export-ydpi="96"
+         inkscape:export-xdpi="96"
+         inkscape:export-filename="C:\Users\MarkMed\about.png"
+         style="opacity:0.75;fill:none;stroke:#1c354b;stroke-width:0.18520834;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         d="m -28.94567,7.5490613 h 0.842755"
+         id="path1440"
+         inkscape:connector-curvature="0" />
+    </g>
+    <g
+       id="g1517"
+       style="opacity:0.75"
+       inkscape:export-filename="C:\Users\MarkMed\aboutW.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96">
+      <text
+         id="text1444"
+         y="8.2327375"
+         x="-37.311672"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.78827071px;line-height:1.25;font-family:Raleway;-inkscape-font-specification:Raleway;letter-spacing:0px;word-spacing:0px;fill:#fffedb;fill-opacity:1;stroke:none;stroke-width:0.13941352"
+         xml:space="preserve"><tspan
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Sitka Banner';-inkscape-font-specification:'Sitka Banner';fill:#fffedb;fill-opacity:1;stroke-width:0.13941352"
+           y="8.2327375"
+           x="-37.311672"
+           id="tspan1442"
+           sodipodi:role="line">i</tspan></text>
+      <circle
+         style="opacity:1;fill:none;fill-opacity:0.17587938;stroke:#fffedb;stroke-width:0.18520834;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:markers stroke fill"
+         id="circle1446"
+         cx="-36.96764"
+         cy="7.3884292"
+         r="1.2857602"
+         inkscape:export-filename="C:\Users\MarkMed\about.png"
+         inkscape:export-xdpi="96"
+         inkscape:export-ydpi="96" />
+      <circle
+         style="opacity:1;fill:none;fill-opacity:0.17587938;stroke:#fffedb;stroke-width:0.17938749;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:markers stroke fill"
+         id="circle1448"
+         cx="-37.835407"
+         cy="6.2228894"
+         r="4.2094951"
+         inkscape:export-filename="C:\Users\MarkMed\projects.png"
+         inkscape:export-xdpi="96"
+         inkscape:export-ydpi="96" />
+      <path
+         inkscape:export-ydpi="96"
+         inkscape:export-xdpi="96"
+         inkscape:export-filename="C:\Users\MarkMed\projects.png"
+         style="opacity:1;fill:none;stroke:#fffedb;stroke-width:0.18520834;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         d="m -40.261335,9.0557505 v -5.751876 h 3.26189 l 1.723946,2.740937 v 3.036413 z"
+         id="path1450"
+         inkscape:connector-curvature="0"
+         sodipodi:nodetypes="cccccc" />
+      <path
+         inkscape:connector-curvature="0"
+         id="path1452"
+         d="m -39.509986,3.8448923 h 1.122532"
+         style="opacity:1;fill:none;stroke:#fffedb;stroke-width:0.18520834;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         inkscape:export-filename="C:\Users\MarkMed\about.png"
+         inkscape:export-xdpi="96"
+         inkscape:export-ydpi="96" />
+      <circle
+         r="0.09411151"
+         cy="3.846561"
+         cx="-39.798019"
+         id="circle1454"
+         style="opacity:1;fill:#fffedb;fill-opacity:1;stroke:none;stroke-width:0.06625111;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:markers stroke fill"
+         inkscape:export-filename="C:\Users\MarkMed\about.png"
+         inkscape:export-xdpi="96"
+         inkscape:export-ydpi="96" />
+      <path
+         inkscape:export-ydpi="96"
+         inkscape:export-xdpi="96"
+         inkscape:export-filename="C:\Users\MarkMed\about.png"
+         style="opacity:1;fill:none;stroke:#fffedb;stroke-width:0.18520834;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         d="m -39.489836,4.3740593 h 1.363352"
+         id="path1456"
+         inkscape:connector-curvature="0" />
+      <circle
+         inkscape:export-ydpi="96"
+         inkscape:export-xdpi="96"
+         inkscape:export-filename="C:\Users\MarkMed\about.png"
+         style="opacity:1;fill:#fffedb;fill-opacity:1;stroke:none;stroke-width:0.06625111;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:markers stroke fill"
+         id="circle1458"
+         cx="-39.798019"
+         cy="4.3757281"
+         r="0.09411151" />
+      <path
+         inkscape:connector-curvature="0"
+         id="path1460"
+         d="m -39.489836,4.9032262 h 0.842755"
+         style="opacity:1;fill:none;stroke:#fffedb;stroke-width:0.18520834;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         inkscape:export-filename="C:\Users\MarkMed\about.png"
+         inkscape:export-xdpi="96"
+         inkscape:export-ydpi="96" />
+      <circle
+         r="0.09411151"
+         cy="4.9048953"
+         cx="-39.798019"
+         id="circle1462"
+         style="opacity:1;fill:#fffedb;fill-opacity:1;stroke:none;stroke-width:0.06625111;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:markers stroke fill"
+         inkscape:export-filename="C:\Users\MarkMed\about.png"
+         inkscape:export-xdpi="96"
+         inkscape:export-ydpi="96" />
+      <circle
+         inkscape:export-ydpi="96"
+         inkscape:export-xdpi="96"
+         inkscape:export-filename="C:\Users\MarkMed\about.png"
+         style="opacity:1;fill:#fffedb;fill-opacity:1;stroke:none;stroke-width:0.06625111;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:markers stroke fill"
+         id="circle1464"
+         cx="-39.798019"
+         cy="5.4340587"
+         r="0.09411151" />
+      <path
+         inkscape:connector-curvature="0"
+         id="path1466"
+         d="m -39.507376,5.9498672 h 1.363352"
+         style="opacity:1;fill:none;stroke:#fffedb;stroke-width:0.18520834;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         inkscape:export-filename="C:\Users\MarkMed\about.png"
+         inkscape:export-xdpi="96"
+         inkscape:export-ydpi="96" />
+      <circle
+         r="0.09411151"
+         cy="5.9632254"
+         cx="-39.798019"
+         id="circle1468"
+         style="opacity:1;fill:#fffedb;fill-opacity:1;stroke:none;stroke-width:0.06625111;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:markers stroke fill"
+         inkscape:export-filename="C:\Users\MarkMed\about.png"
+         inkscape:export-xdpi="96"
+         inkscape:export-ydpi="96" />
+      <path
+         inkscape:export-ydpi="96"
+         inkscape:export-xdpi="96"
+         inkscape:export-filename="C:\Users\MarkMed\about.png"
+         style="opacity:1;fill:none;stroke:#fffedb;stroke-width:0.18520834;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         d="m -39.489836,6.4907272 h 0.842755"
+         id="path1470"
+         inkscape:connector-curvature="0" />
+      <circle
+         inkscape:export-ydpi="96"
+         inkscape:export-xdpi="96"
+         inkscape:export-filename="C:\Users\MarkMed\about.png"
+         style="opacity:1;fill:#fffedb;fill-opacity:1;stroke:none;stroke-width:0.06625111;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:markers stroke fill"
+         id="circle1472"
+         cx="-39.798019"
+         cy="6.4923925"
+         r="0.09411151" />
+      <path
+         inkscape:export-ydpi="96"
+         inkscape:export-xdpi="96"
+         inkscape:export-filename="C:\Users\MarkMed\about.png"
+         style="opacity:1;fill:none;stroke:#fffedb;stroke-width:0.18520834;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         d="m -39.476932,5.4207002 h 1.805265"
+         id="path1474"
+         inkscape:connector-curvature="0" />
+      <circle
+         r="0.09411151"
+         cy="7.0215602"
+         cx="-39.798019"
+         id="circle1476"
+         style="opacity:1;fill:#fffedb;fill-opacity:1;stroke:none;stroke-width:0.06625111;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:markers stroke fill"
+         inkscape:export-filename="C:\Users\MarkMed\about.png"
+         inkscape:export-xdpi="96"
+         inkscape:export-ydpi="96" />
+      <path
+         inkscape:export-ydpi="96"
+         inkscape:export-xdpi="96"
+         inkscape:export-filename="C:\Users\MarkMed\about.png"
+         style="opacity:1;fill:none;stroke:#fffedb;stroke-width:0.18520834;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         d="m -39.538656,7.0198941 h 0.539052"
+         id="path1478"
+         inkscape:connector-curvature="0" />
+      <path
+         inkscape:export-ydpi="96"
+         inkscape:export-xdpi="96"
+         inkscape:export-filename="C:\Users\MarkMed\about.png"
+         style="opacity:1;fill:none;stroke:#fffedb;stroke-width:0.18520834;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         d="m -39.539236,8.066535 h 0.842755"
+         id="path1480"
+         inkscape:connector-curvature="0" />
+      <circle
+         inkscape:export-ydpi="96"
+         inkscape:export-xdpi="96"
+         inkscape:export-filename="C:\Users\MarkMed\about.png"
+         style="opacity:1;fill:#fffedb;fill-opacity:1;stroke:none;stroke-width:0.06625111;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:markers stroke fill"
+         id="circle1482"
+         cx="-39.798019"
+         cy="7.5507302"
+         r="0.09411151" />
+      <circle
+         r="0.09411151"
+         cy="8.0798931"
+         cx="-39.798019"
+         id="circle1484"
+         style="opacity:1;fill:#fffedb;fill-opacity:1;stroke:none;stroke-width:0.06625111;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:markers stroke fill"
+         inkscape:export-filename="C:\Users\MarkMed\about.png"
+         inkscape:export-xdpi="96"
+         inkscape:export-ydpi="96" />
+      <path
+         inkscape:export-ydpi="96"
+         inkscape:export-xdpi="96"
+         inkscape:export-filename="C:\Users\MarkMed\about.png"
+         style="opacity:1;fill:none;stroke:#fffedb;stroke-width:0.18520834;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         d="m -39.507376,8.595702 h 1.363352"
+         id="path1486"
+         inkscape:connector-curvature="0" />
+      <circle
+         inkscape:export-ydpi="96"
+         inkscape:export-xdpi="96"
+         inkscape:export-filename="C:\Users\MarkMed\about.png"
+         style="opacity:1;fill:#fffedb;fill-opacity:1;stroke:none;stroke-width:0.06625111;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:markers stroke fill"
+         id="circle1488"
+         cx="-39.798019"
+         cy="8.6090603"
+         r="0.09411151" />
+      <path
+         inkscape:connector-curvature="0"
+         id="path1490"
+         d="m -39.529004,7.5490613 h 0.842755"
+         style="opacity:1;fill:none;stroke:#fffedb;stroke-width:0.18520834;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         inkscape:export-filename="C:\Users\MarkMed\about.png"
+         inkscape:export-xdpi="96"
+         inkscape:export-ydpi="96" />
+    </g>
   </g>
 </svg>
