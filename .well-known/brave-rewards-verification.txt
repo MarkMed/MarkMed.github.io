@@ -1,0 +1,4 @@
+This is a Brave Rewards publisher verification file.
+
+Domain: markmed.github.io
+Token: 28779f9e7b765b8073a615d1acb07fd5e7c4923f6501c933e7934bbec311cf81
