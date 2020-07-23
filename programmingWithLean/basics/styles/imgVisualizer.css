@@ -1,0 +1,47 @@
+img{
+	margin: 20px;
+}
+.size-100x100{
+	width: 100px;
+	height: 100px;
+}
+.size-200x200{
+	width: 200px;
+	height: 200px;
+}
+.size-300x300{
+	width: 300px;
+	height: 300px;
+}
+.circle-img{
+	border-radius: 100%;
+}
+.rounded-20{
+	border-radius: 20px;
+}
+#grayImg{
+	filter: grayscale(100%);
+}
+.medium-border{
+	border-width: 5px;
+	border-style: solid;
+}
+.small-border{
+	border-width: 5px;
+	border-style: solid;
+}
+.blue-border {
+	border-color: rgba(20, 150, 255, 0.8);
+}
+.red-border {
+	border-color: rgba(255,150, 20, 0.8);
+}
+.specialImg{
+	filter: blur(1px) grayscale(100%);
+	transform: none;
+	transition: 0.5s ease;
+}
+.specialImg:hover{
+	filter: none;
+	transform: scale(1.3);
+}
