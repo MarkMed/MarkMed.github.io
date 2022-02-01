@@ -1,0 +1,251 @@
+:root{
+  --primary-color-100: rgba(96, 125, 139,1);
+  --primary-color-75: rgba(96, 125, 139,0.75);
+  --primary-color-50: rgba(96, 125, 139,0.5);
+  --primary-color-25: rgba(96, 125, 139,0.25);
+  --primary-color-0: rgba(96, 125, 139,0);
+
+  --shadow: 0px 3px 12px 0px rgba(0, 0, 0, 0.35), 0 2px 3px 0px rgba(0, 0, 0, 0.20);
+	--lifted-shadow: 0px 5px 14px 0px rgba(0, 0, 0, 0.45), 0 4px 4px 0px rgba(0, 0, 0, 0.15);
+	--big-shadow: 0px 8px 30px 4px rgba(0, 0, 0, 0.2), 0px 5px 11px 0px rgba(0, 0, 0, 0.2);
+	--no-shadow: 0 0px 0px 0px rgba(0, 0, 0, 0), 0 0px 0px 0px rgba(0, 0, 0, 0);
+
+	--animation: 0.3s ease;
+}
+
+body{
+  font-family: 'Quicksand', sans-serif;
+  scroll-behavior: smooth;
+  padding-bottom: 100px;
+}
+
+/* NAV STYLES */
+.logo h1{
+  margin: 0;
+  height: 100%;
+  margin-left: 20px;
+  font-weight: 100;
+	text-transform: uppercase;
+}
+ul#navSide{
+  min-width: 300px;
+  width: 40%;
+}
+ul.sidenav .user-view{
+  min-height: 5em;
+  padding: 10px 20px;
+}
+ul.sidenav .user-view span{
+  
+  line-height: initial;
+}
+ul.sidenav .user-view .background{
+  background-image: url(../assets/bkGround.jpg);
+  background-position: top;
+  background-size: cover;
+  box-shadow: 0px -5em 3em rgba(0, 0, 0, 0.5) inset;
+}
+ul.sidenav .user-view img.circle{
+  width: 120px;
+  height: 120px;
+}
+ul.sidenav .user-view h2{
+  margin: 0;
+  margin-top: 30px;
+}
+@media screen and (max-width: 992px) {
+	.logo {
+		margin-left: 0px;
+		width: 70%;
+		text-align: center;
+	}
+  
+  div.nav-content{
+    display: none;
+  }
+}
+
+/* CONTENT STYLES */
+
+section{
+  padding-top: 130px;
+  margin-bottom: -90px;
+}
+@media screen and (max-width: 992px){
+  section{
+    padding-top: 40px;
+    margin-bottom: -20px;
+  }
+}
+nav a.brand-logo.logo{
+  
+  height: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: column;
+  line-height: 1em;
+  flex-wrap: wrap;
+}
+main section h2{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	flex-direction: row;
+	text-transform: uppercase;
+	font-size: 1.5em;
+  letter-spacing: 2px;
+  margin: 1em 0 1em 0;
+}
+
+section h2::after{
+	content: " ";
+	margin-left: 10px;
+	margin-top: 5px;
+	flex-grow: 1;
+	border-radius: 30px;
+	border: 1px solid var(--primary-color-75);
+}
+
+section div.itemContainer {
+  /* padding: 20px; */
+  margin-bottom: 20px
+}
+section div.itemContainer article.itemData{
+  /* border-left: 2px solid var(--primary-color-75); */
+  box-shadow: -3px 1px 5px -2px  rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  padding: 10px;
+  padding-left: 5px;
+  margin: 15px;
+  margin-bottom: 0;
+}
+section div.itemContainer article.itemData:last-child{
+  margin-bottom: 15px;
+}
+section div.itemContainer article.itemData .itemTitle{
+  margin-bottom: 10px;
+}
+section div.itemContainer article.itemData .itemTitle h4{
+  margin: 0;
+}
+section div.itemContainer article.itemData .itemTitle h5{
+  margin: 0;
+}
+section div.itemContainer article.itemData .itemDescription{
+  
+  margin: 0;
+}
+section div.itemContainer article.itemData .itemDescription p{
+  padding: 0;
+  margin: 0;
+}
+section div.itemContainer article.itemData .itemDescription ul{
+  margin: 0;
+  margin-bottom: 10px;
+}
+section div.itemContainer article.itemData .itemDate{
+  margin-bottom: 10px;
+}
+
+svg{
+  fill: #607d8b;
+}
+section#aboutMe img{
+  border-radius: 100%;
+  width: auto;
+  height: 100%;
+  max-height: 200px;
+  box-shadow: var(--shadow);
+}
+
+@media screen and (min-width: 992px) {
+  li#contactOpt{
+    display: none;
+  }
+  section#contact{
+    display: none;
+  }
+}
+
+
+
+
+/* Custom classes */
+.roundedBorders {
+  border-radius: 15px;
+}
+.roundedBorders2 {
+  border-radius: 8px;
+}
+
+.flex-row {
+  display: flex;
+  flex-direction: row;
+}
+.flex-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+.flex-justify-spaceEvenly {
+  justify-content: space-evenly;
+}
+.flex-justify-spaceBetween {
+  justify-content: space-between;
+}
+.flex-justify-center {
+  justify-content: center;
+}
+.flex-justify-start {
+  justify-content: flex-start;
+}
+.flex-justify-end {
+  justify-content: flex-end;
+}
+
+.flex-alignItems-center {
+  align-items: center;
+}
+.flex-alignItems-start {
+  align-items: flex-start;
+}
+
+.fGap20{
+  gap: 20px;
+}
+
+.fGrow1{
+  flex: 1
+}
+
+
+
+.fontSmallMicro{
+  font-size:  0.75rem;
+}
+.fontSmallSize{
+  font-size:  1rem;
+}
+.fontNormalSize{
+  font-size:  1.25rem;
+}
+.fontNotableSize{
+  font-size:  1.5rem;
+}
+.fontBigSize{
+  font-size:  1.75rem;
+}
+.fontHugeSize{
+  font-size:  2rem;
+}
+.fontBold{
+  font-weight: bold;
+}
+.fontJosefin{
+  font-family: 'Josefin Sans', sans-serif;
+}
