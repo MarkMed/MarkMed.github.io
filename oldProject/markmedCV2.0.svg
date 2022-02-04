@@ -886,6 +886,39 @@
        y1="-105.31832"
        x2="195.89973"
        y2="-105.31832" />
+    <rect
+       x="8.9802561"
+       y="-237.97679"
+       width="189.33373"
+       height="30.495453"
+       id="rect2765" />
+    <rect
+       x="8.9802561"
+       y="-237.97679"
+       width="187.64993"
+       height="11.973675"
+       id="rect2767" />
+    <rect
+       x="8.9802561"
+       y="-237.97679"
+       width="183.67339"
+       height="58.772434"
+       id="rect2769" />
+    <rect
+       x="8.9802561"
+       y="-237.97679"
+       width="189.33373"
+       height="30.495453"
+       id="rect2771" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient1754"
+       id="linearGradient2773"
+       gradientUnits="userSpaceOnUse"
+       x1="122.78162"
+       y1="-104.06287"
+       x2="117.31767"
+       y2="-104.06287" />
   </defs>
   <sodipodi:namedview
      id="base"
@@ -895,8 +928,8 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="1.4142136"
-     inkscape:cx="413.51424"
-     inkscape:cy="1849.298"
+     inkscape:cx="618.40122"
+     inkscape:cy="959.13801"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      inkscape:document-rotation="0"
@@ -4596,17 +4629,6 @@
        ry="2.2529666" />
     <text
        xml:space="preserve"
-       style="font-size:4.23333px;line-height:1.25;font-family:Quicksand;-inkscape-font-specification:Quicksand;letter-spacing:0px;fill:#607d8b;fill-opacity:1;stroke-width:0.264583"
-       x="10.662317"
-       y="46.671448"
-       id="text2433"><tspan
-         sodipodi:role="line"
-         id="tspan2742"
-         x="10.662317"
-         y="46.671448"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.23333px;font-family:Quicksand;-inkscape-font-specification:Quicksand;fill:#546e7a;fill-opacity:1;stroke-width:0.264583">Salesforce Developer</tspan></text>
-    <text
-       xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:4.93889px;line-height:1.25;font-family:Quicksand;-inkscape-font-specification:'Quicksand Medium';letter-spacing:0.79375px;fill:#607d8b;fill-opacity:1;stroke-width:0.264583"
        x="5.2024031"
        y="38.169373"
@@ -4619,186 +4641,186 @@
     <text
        xml:space="preserve"
        style="font-size:4.23333px;line-height:1.25;font-family:Quicksand;-inkscape-font-specification:Quicksand;letter-spacing:0px;fill:#607d8b;fill-opacity:1;stroke-width:0.264583"
-       x="10.532891"
-       y="74.202148"
+       x="11.936056"
+       y="49.506443"
        id="text2596"><tspan
          sodipodi:role="line"
          id="tspan2594"
-         x="10.532891"
-         y="74.202148"
+         x="11.936056"
+         y="49.506443"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.23333px;font-family:Quicksand;-inkscape-font-specification:Quicksand;fill:#546e7a;fill-opacity:1;stroke-width:0.264583">FullStack Web Developer</tspan></text>
     <text
        xml:space="preserve"
        style="font-size:4.23333px;line-height:1.25;font-family:Quicksand;-inkscape-font-specification:Quicksand;letter-spacing:0px;fill:#607d8b;fill-opacity:1;stroke-width:0.264583"
-       x="10.585108"
-       y="78.544922"
+       x="11.988273"
+       y="53.849216"
        id="text2600"><tspan
          sodipodi:role="line"
          id="tspan2598"
-         x="10.585108"
-         y="78.544922"
+         x="11.988273"
+         y="53.849216"
          style="font-style:italic;font-variant:normal;font-weight:300;font-stretch:normal;font-size:4.23333px;font-family:Quicksand;-inkscape-font-specification:'Quicksand Light';fill:#546e7a;fill-opacity:1;stroke-width:0.264583">Houlak</tspan></text>
     <rect
        style="fill:#def0f9;fill-opacity:1;stroke-width:7.9375;stroke-linecap:round;stroke-linejoin:round"
        id="rect3325"
        width="26.824444"
        height="3.5960693"
-       x="175.2348"
-       y="72.112122"
+       x="173.55101"
+       y="47.416416"
        rx="1.7980347"
        ry="1.7980347" />
     <text
        xml:space="preserve"
        style="font-size:2.69662px;line-height:1.25;font-family:Quicksand;-inkscape-font-specification:Quicksand;letter-spacing:0px;fill:#546e7a;fill-opacity:1;stroke-width:0.264583"
-       x="176.55789"
-       y="74.769958"
+       x="174.8741"
+       y="50.074253"
        id="text2604"><tspan
          sodipodi:role="line"
          id="tspan2602"
-         x="176.55789"
-         y="74.769958"
+         x="174.8741"
+         y="50.074253"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.69662px;font-family:Quicksand;-inkscape-font-specification:Quicksand;fill:#546e7a;fill-opacity:1;stroke-width:0.264583">Apr. 2021 - Jul. 2021</tspan></text>
     <text
        xml:space="preserve"
        id="text2640"
-       style="font-size:3.52778px;line-height:1.25;font-family:Quicksand;-inkscape-font-specification:Quicksand;white-space:pre;shape-inside:url(#rect3028);fill:#37474f;fill-opacity:1;"
-       transform="translate(4.4430943,318.52322)"><tspan
+       style="font-size:3.52778px;line-height:0;font-family:Quicksand;-inkscape-font-specification:Quicksand;white-space:pre;shape-inside:url(#rect3028);fill:#37474f;fill-opacity:1;"
+       transform="translate(4.4430943,293.82751)"><tspan
          x="8.9804688"
-         y="-234.71337"><tspan
-           style="fill:#546e7a;fill-opacity:1">- Developed the whole frontend and backend of a simple app using </tspan><tspan
-           style="font-weight:bold">ExpressJS (NodeJS)</tspan><tspan
-           style="fill:#546e7a;fill-opacity:1">, and </tspan><tspan
-           style="font-weight:bold">React</tspan><tspan
-           style="fill:#546e7a;fill-opacity:1"> + </tspan><tspan
-           style="font-weight:bold">MaterialU</tspan><tspan
-           style="fill:#546e7a;fill-opacity:1">I
+         y="-234.36059"><tspan
+           style="line-height:1.45;fill:#546e7a;fill-opacity:1">- Developed the whole frontend and backend of a simple app using </tspan><tspan
+           style="font-weight:bold;line-height:1.45">ExpressJS (NodeJS)</tspan><tspan
+           style="line-height:1.45;fill:#546e7a;fill-opacity:1">, and </tspan><tspan
+           style="font-weight:bold;line-height:1.45">React</tspan><tspan
+           style="line-height:1.45;fill:#546e7a;fill-opacity:1"> + </tspan><tspan
+           style="font-weight:bold;line-height:1.45">MaterialU</tspan><tspan
+           style="line-height:1.45;fill:#546e7a;fill-opacity:1">I
 </tspan></tspan><tspan
          x="8.9804688"
-         y="-230.30364"><tspan
-           style="fill:#546e7a;fill-opacity:1">- Connect App with </tspan><tspan
-           style="font-weight:bold">Mercado Libre API</tspan><tspan
-           style="fill:#546e7a;fill-opacity:1">, fetching and sending data.
+         y="-229.24531"><tspan
+           style="line-height:1.45;fill:#546e7a;fill-opacity:1">- Connect App with </tspan><tspan
+           style="font-weight:bold;line-height:1.45">Mercado Libre API</tspan><tspan
+           style="line-height:1.45;fill:#546e7a;fill-opacity:1">, fetching and sending data.
 </tspan></tspan><tspan
          x="8.9804688"
-         y="-225.89391"><tspan
-           style="fill:#546e7a;fill-opacity:1">- Helped during deadline in development of an client app using </tspan><tspan
-           style="font-weight:bold">React</tspan><tspan
-           style="fill:#546e7a;fill-opacity:1"> + </tspan><tspan
-           style="font-weight:bold">API</tspan></tspan></text>
+         y="-224.13003"><tspan
+           style="line-height:1.45;fill:#546e7a;fill-opacity:1">- Helped during deadline in development of an client app using </tspan><tspan
+           style="font-weight:bold;line-height:1.45">React</tspan><tspan
+           style="line-height:1.45;fill:#546e7a;fill-opacity:1"> + </tspan><tspan
+           style="font-weight:bold;line-height:1.45">API</tspan></tspan></text>
     <text
        xml:space="preserve"
        style="font-size:4.23333px;line-height:1.25;font-family:Quicksand;-inkscape-font-specification:Quicksand;letter-spacing:0px;fill:#607d8b;fill-opacity:1;stroke-width:0.264583"
-       x="10.532907"
-       y="101.53271"
+       x="11.936071"
+       y="81.933792"
        id="text2644"><tspan
          sodipodi:role="line"
          id="tspan2642"
-         x="10.532907"
-         y="101.53271"
+         x="11.936071"
+         y="81.933792"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.23333px;font-family:Quicksand;-inkscape-font-specification:Quicksand;fill:#546e7a;fill-opacity:1;stroke-width:0.264583">Web UI Developer</tspan></text>
     <text
        xml:space="preserve"
        style="font-size:4.23333px;line-height:1.25;font-family:Quicksand;-inkscape-font-specification:Quicksand;letter-spacing:0px;fill:#607d8b;fill-opacity:1;stroke-width:0.264583"
-       x="10.585123"
-       y="105.87549"
+       x="11.988288"
+       y="86.276573"
        id="text2648"><tspan
          sodipodi:role="line"
          id="tspan2646"
-         x="10.585123"
-         y="105.87549"
+         x="11.988288"
+         y="86.276573"
          style="font-style:italic;font-variant:normal;font-weight:300;font-stretch:normal;font-size:4.23333px;font-family:Quicksand;-inkscape-font-specification:'Quicksand Light';fill:#546e7a;fill-opacity:1;stroke-width:0.264583">Globant</tspan></text>
     <rect
        style="fill:#def0f9;fill-opacity:1;stroke-width:7.9375;stroke-linecap:round;stroke-linejoin:round"
        id="rect3087"
        width="29.73485"
        height="3.5960693"
-       x="172.32437"
-       y="99.430359"
+       x="170.64058"
+       y="79.831444"
        rx="1.7980347"
        ry="1.7980347" />
     <text
        xml:space="preserve"
        style="font-size:2.69662px;line-height:1.25;font-family:Quicksand;-inkscape-font-specification:Quicksand;letter-spacing:0px;direction:rtl;fill:#546e7a;fill-opacity:1;stroke-width:0.264583"
-       x="200.23788"
-       y="102.07422"
+       x="198.55409"
+       y="82.475304"
        id="text2652"><tspan
          sodipodi:role="line"
          id="tspan2650"
-         x="200.23788"
-         y="102.07422"
+         x="198.55409"
+         y="82.475304"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.69662px;font-family:Quicksand;-inkscape-font-specification:Quicksand;direction:rtl;fill:#546e7a;fill-opacity:1;stroke-width:0.264583">Dec. 2020 - Mar. 2021</tspan></text>
     <text
        xml:space="preserve"
        id="text2684"
-       style="font-size:3.52778px;line-height:1.25;font-family:Quicksand;-inkscape-font-specification:Quicksand;white-space:pre;shape-inside:url(#rect3030);fill:#37474f;fill-opacity:1;"
-       transform="translate(4.4431143,345.85379)"><tspan
+       style="font-size:3.52778px;line-height:0;font-family:Quicksand;-inkscape-font-specification:Quicksand;white-space:pre;shape-inside:url(#rect3030);fill:#37474f;fill-opacity:1;"
+       transform="translate(4.4431143,326.25487)"><tspan
          x="8.9804688"
-         y="-234.71337"><tspan
-           style="fill:#546e7a;fill-opacity:1">- Learned new </tspan><tspan
-           style="font-weight:bold">Dart</tspan><tspan
-           style="fill:#546e7a;fill-opacity:1"> and </tspan><tspan
-           style="font-weight:bold">Flutter</tspan><tspan
-           style="fill:#546e7a;fill-opacity:1"> technologies for develop mobile apps, web apps, and desktop programs.
+         y="-234.36059"><tspan
+           style="line-height:1.45;fill:#546e7a;fill-opacity:1">- Learned new </tspan><tspan
+           style="font-weight:bold;line-height:1.45">Dart</tspan><tspan
+           style="line-height:1.45;fill:#546e7a;fill-opacity:1"> and </tspan><tspan
+           style="font-weight:bold;line-height:1.45">Flutter</tspan><tspan
+           style="line-height:1.45;fill:#546e7a;fill-opacity:1"> technologies for develop mobile apps, web apps, and desktop programs.
 </tspan></tspan><tspan
          x="8.9804688"
-         y="-230.30364"><tspan
-           style="fill:#546e7a;fill-opacity:1">- Rebranding client projects using technologies like </tspan><tspan
-           style="font-weight:bold">React</tspan><tspan
-           style="fill:#546e7a;fill-opacity:1">, </tspan><tspan
-           style="font-weight:bold">JS,</tspan><tspan
-           style="fill:#546e7a;fill-opacity:1"> </tspan><tspan
-           style="font-weight:bold">Ruby</tspan><tspan
-           style="fill:#546e7a;fill-opacity:1">, and </tspan><tspan
-           style="font-weight:bold">HTML</tspan></tspan></text>
+         y="-229.24531"><tspan
+           style="line-height:1.45;fill:#546e7a;fill-opacity:1">- Rebranding client projects using technologies like </tspan><tspan
+           style="font-weight:bold;line-height:1.45">React</tspan><tspan
+           style="line-height:1.45;fill:#546e7a;fill-opacity:1">, </tspan><tspan
+           style="font-weight:bold;line-height:1.45">JS,</tspan><tspan
+           style="line-height:1.45;fill:#546e7a;fill-opacity:1"> </tspan><tspan
+           style="font-weight:bold;line-height:1.45">Ruby</tspan><tspan
+           style="line-height:1.45;fill:#546e7a;fill-opacity:1">, and </tspan><tspan
+           style="font-weight:bold;line-height:1.45">HTML</tspan></tspan></text>
     <text
        xml:space="preserve"
        style="font-size:4.23333px;line-height:1.25;font-family:Quicksand;-inkscape-font-specification:Quicksand;letter-spacing:0px;fill:#607d8b;fill-opacity:1;stroke-width:0.264583"
-       x="10.532907"
-       y="124.94482"
+       x="11.936071"
+       y="109.61684"
        id="text2688"><tspan
          sodipodi:role="line"
          id="tspan2686"
-         x="10.532907"
-         y="124.94482"
+         x="11.936071"
+         y="109.61684"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.23333px;font-family:Quicksand;-inkscape-font-specification:Quicksand;fill:#546e7a;fill-opacity:1;stroke-width:0.264583">Junior Programmer</tspan></text>
     <text
        xml:space="preserve"
        style="font-size:4.23333px;line-height:1.25;font-family:Quicksand;-inkscape-font-specification:Quicksand;letter-spacing:0px;fill:#607d8b;fill-opacity:1;stroke-width:0.264583"
-       x="10.585123"
-       y="129.28754"
+       x="11.988288"
+       y="113.95956"
        id="text2692"><tspan
          sodipodi:role="line"
          id="tspan2690"
-         x="10.585123"
-         y="129.28754"
+         x="11.988288"
+         y="113.95956"
          style="font-style:italic;font-variant:normal;font-weight:300;font-stretch:normal;font-size:4.23333px;font-family:Quicksand;-inkscape-font-specification:'Quicksand Light';fill:#546e7a;fill-opacity:1;stroke-width:0.264583">GeneXus</tspan></text>
     <rect
        style="fill:#def0f9;fill-opacity:1;stroke-width:7.9375;stroke-linecap:round;stroke-linejoin:round"
        id="rect3089"
        width="29.73485"
        height="3.5960693"
-       x="172.32437"
-       y="122.7229"
+       x="170.64058"
+       y="107.39492"
        rx="1.7980347"
        ry="1.7980347" />
     <text
        xml:space="preserve"
        style="font-size:2.69662px;line-height:1.25;font-family:Quicksand;-inkscape-font-specification:Quicksand;letter-spacing:0px;direction:rtl;fill:#546e7a;fill-opacity:1;stroke-width:0.264583"
-       x="200.3916"
-       y="125.44189"
+       x="198.70781"
+       y="110.11391"
        id="text2696"><tspan
          sodipodi:role="line"
          id="tspan2694"
-         x="200.3916"
-         y="125.44189"
+         x="198.70781"
+         y="110.11391"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.69662px;font-family:Quicksand;-inkscape-font-specification:Quicksand;direction:rtl;fill:#546e7a;fill-opacity:1;stroke-width:0.264583">Apr. 2018 - Dec. 2020</tspan></text>
     <text
        xml:space="preserve"
        id="text2770"
-       style="font-size:3.52778px;line-height:1.25;font-family:Quicksand;-inkscape-font-specification:Quicksand;white-space:pre;shape-inside:url(#rect3032);fill:#37474f;fill-opacity:1;"
-       transform="translate(4.4431143,369.26589)"><tspan
+       style="font-size:3.52778px;line-height:1.45;font-family:Quicksand;-inkscape-font-specification:Quicksand;white-space:pre;shape-inside:url(#rect3032);fill:#37474f;fill-opacity:1;"
+       transform="translate(4.4431143,353.93792)"><tspan
          x="8.9804688"
-         y="-234.71337"><tspan
+         y="-234.36059"><tspan
            style="fill:#546e7a;fill-opacity:1">- Tested internal features of </tspan><tspan
            style="font-weight:bold">GeneXus</tspan><tspan
            style="fill:#546e7a;fill-opacity:1">. I used </tspan><tspan
@@ -4807,11 +4829,11 @@
            style="font-weight:bold">Bootstrap</tspan><tspan
            style="fill:#546e7a;fill-opacity:1"> frameworks to fast development and UI </tspan></tspan><tspan
          x="8.9804688"
-         y="-230.30364"><tspan
+         y="-229.24531"><tspan
            style="fill:#546e7a;fill-opacity:1">testing of the internal features.
 </tspan></tspan><tspan
          x="8.9804688"
-         y="-225.89391"><tspan
+         y="-224.13003"><tspan
            style="fill:#546e7a;fill-opacity:1">- I developed Web Components using </tspan><tspan
            style="font-weight:bold">StencilJS</tspan><tspan
            style="fill:#546e7a;fill-opacity:1">, </tspan><tspan
@@ -4820,46 +4842,46 @@
            style="font-weight:bold">SASS</tspan><tspan
            style="fill:#546e7a;fill-opacity:1">. These web components are now used in </tspan></tspan><tspan
          x="8.9804688"
-         y="-221.48418"><tspan
+         y="-219.01475"><tspan
            style="fill:#546e7a;fill-opacity:1">the new Angular Generator of GeneXus.
 </tspan></tspan><tspan
          x="8.9804688"
-         y="-217.07445"><tspan
+         y="-213.89947"><tspan
            style="fill:#546e7a;fill-opacity:1">- To test the web components, I use </tspan><tspan
            style="font-weight:bold">Jest</tspan><tspan
            style="fill:#546e7a;fill-opacity:1">. These e2e tests help to check if the web components functionalities are </tspan></tspan><tspan
          x="8.9804688"
-         y="-212.66472"><tspan
+         y="-208.78419"><tspan
            style="fill:#546e7a;fill-opacity:1">still working when a new feature or a fix are implemented.
 </tspan></tspan><tspan
          x="8.9804688"
-         y="-208.25499"><tspan
+         y="-203.66891"><tspan
            style="fill:#546e7a;fill-opacity:1">- I learned and use the </tspan><tspan
            style="font-weight:bold">Leaflet library</tspan><tspan
            style="fill:#546e7a;fill-opacity:1"> to develop the gx-map, a web component that shows a map and you are </tspan></tspan><tspan
          x="8.9804688"
-         y="-203.84526"><tspan
+         y="-198.55363"><tspan
            style="fill:#546e7a;fill-opacity:1">able to use a lot of functionalities.
 </tspan></tspan><tspan
          x="8.9804688"
-         y="-199.43553"><tspan
+         y="-193.43835"><tspan
            style="fill:#546e7a;fill-opacity:1">- Also, I was involved in fixing and improving web components developed by other team-mates. These web </tspan></tspan><tspan
          x="8.9804688"
-         y="-195.0258"><tspan
+         y="-188.32307"><tspan
            style="fill:#546e7a;fill-opacity:1">components had to be quickly fixed/improved in order to include them in the new GeneXus version.</tspan></tspan></text>
     <path
        style="fill:none;stroke:#546e7a;stroke-width:0.211667;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       d="M 8.0533143,71.02994 V 93.05651"
+       d="M 9.4564793,46.334236 V 71.073592"
        id="path2772"
        sodipodi:nodetypes="cc" />
     <path
        style="fill:none;stroke:#546e7a;stroke-width:0.211667;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       d="m 8.0533143,98.34816 v 18.05782"
+       d="M 9.4564793,78.749246 V 98.490864"
        id="path2774"
        sodipodi:nodetypes="cc" />
     <path
        style="fill:none;stroke:#546e7a;stroke-width:0.211667;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       d="m 8.0533143,121.69765 v 53.18692"
+       d="m 9.4564793,106.36968 v 60.29629"
        id="path2776"
        sodipodi:nodetypes="cc" />
     <path
@@ -4876,60 +4898,6 @@
        y="249.692"
        ry="1.7436365"
        rx="0" />
-    <text
-       xml:space="preserve"
-       style="font-size:4.23333px;line-height:1.25;font-family:Quicksand;-inkscape-font-specification:Quicksand;letter-spacing:0px;fill:#607d8b;fill-opacity:1;stroke-width:0.264583"
-       x="10.714563"
-       y="51.014221"
-       id="text2437"><tspan
-         sodipodi:role="line"
-         id="tspan2435"
-         x="10.714563"
-         y="51.014221"
-         style="font-style:italic;font-variant:normal;font-weight:300;font-stretch:normal;font-size:4.23333px;font-family:Quicksand;-inkscape-font-specification:'Quicksand Light';fill:#546e7a;fill-opacity:1;stroke-width:0.264583">Nimacloud</tspan></text>
-    <rect
-       style="fill:#def0f9;fill-opacity:1;stroke-width:7.9375;stroke-linecap:round;stroke-linejoin:round"
-       id="rect3321"
-       width="29.022703"
-       height="3.5960717"
-       x="173.0365"
-       y="44.58667"
-       rx="1.7980359"
-       ry="1.7980359" />
-    <text
-       xml:space="preserve"
-       style="font-size:2.69662px;line-height:1.25;font-family:Quicksand;-inkscape-font-specification:Quicksand;letter-spacing:0px;fill:#546e7a;fill-opacity:1;stroke-width:0.264583"
-       x="175.22943"
-       y="47.126282"
-       id="text2441"><tspan
-         sodipodi:role="line"
-         id="tspan3054"
-         x="175.22943"
-         y="47.126282"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.69662px;font-family:Quicksand;-inkscape-font-specification:Quicksand;fill:#546e7a;fill-opacity:1;stroke-width:0.264583">Aug. 2021 - Oct. 2021</tspan></text>
-    <text
-       xml:space="preserve"
-       id="text2477"
-       style="font-size:3.52778px;line-height:1.25;font-family:Quicksand;-inkscape-font-specification:Quicksand;white-space:pre;shape-inside:url(#rect2481);fill:#37474f;fill-opacity:1;"
-       transform="translate(4.4039243,290.99248)"><tspan
-         x="8.9804688"
-         y="-234.71337"><tspan
-           style="fill:#546e7a;fill-opacity:1">- Learned basics of Salesforce, reaching more than 45k point in Treailhead. (Almost </tspan><tspan
-           style="font-weight:bold">Ranger</tspan><tspan
-           style="fill:#546e7a;fill-opacity:1">!)
-</tspan></tspan><tspan
-         x="8.9804688"
-         y="-230.30364"><tspan
-           style="fill:#546e7a;fill-opacity:1">- Solved many tasks requiring knowledge of </tspan><tspan
-           style="font-weight:bold">Salesforce</tspan><tspan
-           style="fill:#546e7a;fill-opacity:1"> and </tspan><tspan
-           style="font-weight:bold">Apex</tspan><tspan
-           style="fill:#546e7a;fill-opacity:1">.</tspan></tspan></text>
-    <path
-       style="fill:none;stroke:#546e7a;stroke-width:0.211667;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       d="M 8.0532343,43.63484 V 65.66141"
-       id="path3319"
-       sodipodi:nodetypes="cc" />
     <rect
        style="fill:url(#linearGradient3342);fill-opacity:1;stroke:none;stroke-width:0.70822;stroke-linecap:round;stroke-linejoin:round;filter:url(#filter1934)"
        id="rect3149"
@@ -7803,5 +7771,336 @@
          x="192.66949"
          id="tspan2539"
          sodipodi:role="line">2018 - 2020</tspan></text>
+    <rect
+       style="fill:url(#linearGradient2773);fill-opacity:1;stroke:none;stroke-width:0.70822;stroke-linecap:round;stroke-linejoin:round;filter:url(#filter1934)"
+       id="rect2532"
+       width="136.36888"
+       height="199.41916"
+       x="119.65101"
+       y="-204.70789"
+       transform="matrix(0,-1,-1,0,270.52949,297.98771)"
+       rx="2.2529666"
+       ry="2.2529666" />
+    <rect
+       style="fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.70822;stroke-linecap:round;stroke-linejoin:round"
+       id="rect2535"
+       width="136.64963"
+       height="199.41916"
+       x="-177.53014"
+       y="-475.2374"
+       transform="matrix(0,-1,-1,0,0,0)"
+       rx="2.2529666"
+       ry="2.2529666" />
+    <text
+       xml:space="preserve"
+       style="font-size:4.23333px;line-height:1.25;font-family:Quicksand;-inkscape-font-specification:Quicksand;letter-spacing:0px;fill:#607d8b;fill-opacity:1;stroke-width:0.264583"
+       x="281.19254"
+       y="46.671448"
+       id="text2539"><tspan
+         sodipodi:role="line"
+         id="tspan2537"
+         x="281.19254"
+         y="46.671448"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.23333px;font-family:Quicksand;-inkscape-font-specification:Quicksand;fill:#546e7a;fill-opacity:1;stroke-width:0.264583">Salesforce Developer</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:4.23333px;line-height:1.25;font-family:Quicksand;-inkscape-font-specification:Quicksand;letter-spacing:0px;fill:#607d8b;fill-opacity:1;stroke-width:0.264583"
+       x="281.06311"
+       y="74.202148"
+       id="text2543"><tspan
+         sodipodi:role="line"
+         id="tspan2541"
+         x="281.06311"
+         y="74.202148"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.23333px;font-family:Quicksand;-inkscape-font-specification:Quicksand;fill:#546e7a;fill-opacity:1;stroke-width:0.264583">FullStack Web Developer</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:4.23333px;line-height:1.25;font-family:Quicksand;-inkscape-font-specification:Quicksand;letter-spacing:0px;fill:#607d8b;fill-opacity:1;stroke-width:0.264583"
+       x="281.11533"
+       y="78.544922"
+       id="text2547"><tspan
+         sodipodi:role="line"
+         id="tspan2545"
+         x="281.11533"
+         y="78.544922"
+         style="font-style:italic;font-variant:normal;font-weight:300;font-stretch:normal;font-size:4.23333px;font-family:Quicksand;-inkscape-font-specification:'Quicksand Light';fill:#546e7a;fill-opacity:1;stroke-width:0.264583">Houlak</tspan></text>
+    <rect
+       style="fill:#def0f9;fill-opacity:1;stroke-width:7.9375;stroke-linecap:round;stroke-linejoin:round"
+       id="rect2549"
+       width="26.824444"
+       height="3.5960693"
+       x="445.76501"
+       y="72.112122"
+       rx="1.7980347"
+       ry="1.7980347" />
+    <text
+       xml:space="preserve"
+       style="font-size:2.69662px;line-height:1.25;font-family:Quicksand;-inkscape-font-specification:Quicksand;letter-spacing:0px;fill:#546e7a;fill-opacity:1;stroke-width:0.264583"
+       x="447.0881"
+       y="74.769958"
+       id="text2553"><tspan
+         sodipodi:role="line"
+         id="tspan2551"
+         x="447.0881"
+         y="74.769958"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.69662px;font-family:Quicksand;-inkscape-font-specification:Quicksand;fill:#546e7a;fill-opacity:1;stroke-width:0.264583">Apr. 2021 - Jul. 2021</tspan></text>
+    <text
+       xml:space="preserve"
+       id="text2589"
+       style="font-size:3.52778px;line-height:1.25;font-family:Quicksand;-inkscape-font-specification:Quicksand;white-space:pre;shape-inside:url(#rect2765);fill:#37474f;fill-opacity:1;"
+       transform="translate(274.9733,318.52322)"><tspan
+         x="8.9804688"
+         y="-234.71337"><tspan
+           style="fill:#546e7a;fill-opacity:1">- Developed the whole frontend and backend of a simple app using </tspan><tspan
+           style="font-weight:bold">ExpressJS (NodeJS)</tspan><tspan
+           style="fill:#546e7a;fill-opacity:1">, and </tspan><tspan
+           style="font-weight:bold">React</tspan><tspan
+           style="fill:#546e7a;fill-opacity:1"> + </tspan><tspan
+           style="font-weight:bold">MaterialU</tspan><tspan
+           style="fill:#546e7a;fill-opacity:1">I
+</tspan></tspan><tspan
+         x="8.9804688"
+         y="-230.30364"><tspan
+           style="fill:#546e7a;fill-opacity:1">- Connect App with </tspan><tspan
+           style="font-weight:bold">Mercado Libre API</tspan><tspan
+           style="fill:#546e7a;fill-opacity:1">, fetching and sending data.
+</tspan></tspan><tspan
+         x="8.9804688"
+         y="-225.89391"><tspan
+           style="fill:#546e7a;fill-opacity:1">- Helped during deadline in development of an client app using </tspan><tspan
+           style="font-weight:bold">React</tspan><tspan
+           style="fill:#546e7a;fill-opacity:1"> + </tspan><tspan
+           style="font-weight:bold">API</tspan></tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:4.23333px;line-height:1.25;font-family:Quicksand;-inkscape-font-specification:Quicksand;letter-spacing:0px;fill:#607d8b;fill-opacity:1;stroke-width:0.264583"
+       x="281.06311"
+       y="101.53271"
+       id="text2593"><tspan
+         sodipodi:role="line"
+         id="tspan2591"
+         x="281.06311"
+         y="101.53271"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.23333px;font-family:Quicksand;-inkscape-font-specification:Quicksand;fill:#546e7a;fill-opacity:1;stroke-width:0.264583">Web UI Developer</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:4.23333px;line-height:1.25;font-family:Quicksand;-inkscape-font-specification:Quicksand;letter-spacing:0px;fill:#607d8b;fill-opacity:1;stroke-width:0.264583"
+       x="281.11533"
+       y="105.87549"
+       id="text2597"><tspan
+         sodipodi:role="line"
+         id="tspan2595"
+         x="281.11533"
+         y="105.87549"
+         style="font-style:italic;font-variant:normal;font-weight:300;font-stretch:normal;font-size:4.23333px;font-family:Quicksand;-inkscape-font-specification:'Quicksand Light';fill:#546e7a;fill-opacity:1;stroke-width:0.264583">Globant</tspan></text>
+    <rect
+       style="fill:#def0f9;fill-opacity:1;stroke-width:7.9375;stroke-linecap:round;stroke-linejoin:round"
+       id="rect2599"
+       width="29.73485"
+       height="3.5960693"
+       x="442.85458"
+       y="99.430359"
+       rx="1.7980347"
+       ry="1.7980347" />
+    <text
+       xml:space="preserve"
+       style="font-size:2.69662px;line-height:1.25;font-family:Quicksand;-inkscape-font-specification:Quicksand;letter-spacing:0px;direction:rtl;fill:#546e7a;fill-opacity:1;stroke-width:0.264583"
+       x="470.7681"
+       y="102.07422"
+       id="text2603"><tspan
+         sodipodi:role="line"
+         id="tspan2601"
+         x="470.7681"
+         y="102.07422"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.69662px;font-family:Quicksand;-inkscape-font-specification:Quicksand;direction:rtl;fill:#546e7a;fill-opacity:1;stroke-width:0.264583">Dec. 2020 - Mar. 2021</tspan></text>
+    <text
+       xml:space="preserve"
+       id="text2635"
+       style="font-size:3.52778px;line-height:1.25;font-family:Quicksand;-inkscape-font-specification:Quicksand;white-space:pre;shape-inside:url(#rect2767);fill:#37474f;fill-opacity:1;"
+       transform="translate(274.97332,345.85379)"><tspan
+         x="8.9804688"
+         y="-234.71337"><tspan
+           style="fill:#546e7a;fill-opacity:1">- Learned new </tspan><tspan
+           style="font-weight:bold">Dart</tspan><tspan
+           style="fill:#546e7a;fill-opacity:1"> and </tspan><tspan
+           style="font-weight:bold">Flutter</tspan><tspan
+           style="fill:#546e7a;fill-opacity:1"> technologies for develop mobile apps, web apps, and desktop programs.
+</tspan></tspan><tspan
+         x="8.9804688"
+         y="-230.30364"><tspan
+           style="fill:#546e7a;fill-opacity:1">- Rebranding client projects using technologies like </tspan><tspan
+           style="font-weight:bold">React</tspan><tspan
+           style="fill:#546e7a;fill-opacity:1">, </tspan><tspan
+           style="font-weight:bold">JS,</tspan><tspan
+           style="fill:#546e7a;fill-opacity:1"> </tspan><tspan
+           style="font-weight:bold">Ruby</tspan><tspan
+           style="fill:#546e7a;fill-opacity:1">, and </tspan><tspan
+           style="font-weight:bold">HTML</tspan></tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:4.23333px;line-height:1.25;font-family:Quicksand;-inkscape-font-specification:Quicksand;letter-spacing:0px;fill:#607d8b;fill-opacity:1;stroke-width:0.264583"
+       x="281.06311"
+       y="124.94482"
+       id="text2639"><tspan
+         sodipodi:role="line"
+         id="tspan2637"
+         x="281.06311"
+         y="124.94482"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.23333px;font-family:Quicksand;-inkscape-font-specification:Quicksand;fill:#546e7a;fill-opacity:1;stroke-width:0.264583">Junior Programmer</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:4.23333px;line-height:1.25;font-family:Quicksand;-inkscape-font-specification:Quicksand;letter-spacing:0px;fill:#607d8b;fill-opacity:1;stroke-width:0.264583"
+       x="281.11533"
+       y="129.28754"
+       id="text2643"><tspan
+         sodipodi:role="line"
+         id="tspan2641"
+         x="281.11533"
+         y="129.28754"
+         style="font-style:italic;font-variant:normal;font-weight:300;font-stretch:normal;font-size:4.23333px;font-family:Quicksand;-inkscape-font-specification:'Quicksand Light';fill:#546e7a;fill-opacity:1;stroke-width:0.264583">GeneXus</tspan></text>
+    <rect
+       style="fill:#def0f9;fill-opacity:1;stroke-width:7.9375;stroke-linecap:round;stroke-linejoin:round"
+       id="rect2645"
+       width="29.73485"
+       height="3.5960693"
+       x="442.85458"
+       y="122.7229"
+       rx="1.7980347"
+       ry="1.7980347" />
+    <text
+       xml:space="preserve"
+       style="font-size:2.69662px;line-height:1.25;font-family:Quicksand;-inkscape-font-specification:Quicksand;letter-spacing:0px;direction:rtl;fill:#546e7a;fill-opacity:1;stroke-width:0.264583"
+       x="470.92181"
+       y="125.44189"
+       id="text2649"><tspan
+         sodipodi:role="line"
+         id="tspan2647"
+         x="470.92181"
+         y="125.44189"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.69662px;font-family:Quicksand;-inkscape-font-specification:Quicksand;direction:rtl;fill:#546e7a;fill-opacity:1;stroke-width:0.264583">Apr. 2018 - Dec. 2020</tspan></text>
+    <text
+       xml:space="preserve"
+       id="text2723"
+       style="font-size:3.52778px;line-height:1.25;font-family:Quicksand;-inkscape-font-specification:Quicksand;white-space:pre;shape-inside:url(#rect2769);fill:#37474f;fill-opacity:1;"
+       transform="translate(274.97332,369.26589)"><tspan
+         x="8.9804688"
+         y="-234.71337"><tspan
+           style="fill:#546e7a;fill-opacity:1">- Tested internal features of </tspan><tspan
+           style="font-weight:bold">GeneXus</tspan><tspan
+           style="fill:#546e7a;fill-opacity:1">. I used </tspan><tspan
+           style="font-weight:bold">SemanticUI</tspan><tspan
+           style="fill:#546e7a;fill-opacity:1"> and </tspan><tspan
+           style="font-weight:bold">Bootstrap</tspan><tspan
+           style="fill:#546e7a;fill-opacity:1"> frameworks to fast development and UI </tspan></tspan><tspan
+         x="8.9804688"
+         y="-230.30364"><tspan
+           style="fill:#546e7a;fill-opacity:1">testing of the internal features.
+</tspan></tspan><tspan
+         x="8.9804688"
+         y="-225.89391"><tspan
+           style="fill:#546e7a;fill-opacity:1">- I developed Web Components using </tspan><tspan
+           style="font-weight:bold">StencilJS</tspan><tspan
+           style="fill:#546e7a;fill-opacity:1">, </tspan><tspan
+           style="font-weight:bold">TypeScript</tspan><tspan
+           style="fill:#546e7a;fill-opacity:1">, and </tspan><tspan
+           style="font-weight:bold">SASS</tspan><tspan
+           style="fill:#546e7a;fill-opacity:1">. These web components are now used in </tspan></tspan><tspan
+         x="8.9804688"
+         y="-221.48418"><tspan
+           style="fill:#546e7a;fill-opacity:1">the new Angular Generator of GeneXus.
+</tspan></tspan><tspan
+         x="8.9804688"
+         y="-217.07445"><tspan
+           style="fill:#546e7a;fill-opacity:1">- To test the web components, I use </tspan><tspan
+           style="font-weight:bold">Jest</tspan><tspan
+           style="fill:#546e7a;fill-opacity:1">. These e2e tests help to check if the web components functionalities are </tspan></tspan><tspan
+         x="8.9804688"
+         y="-212.66472"><tspan
+           style="fill:#546e7a;fill-opacity:1">still working when a new feature or a fix are implemented.
+</tspan></tspan><tspan
+         x="8.9804688"
+         y="-208.25499"><tspan
+           style="fill:#546e7a;fill-opacity:1">- I learned and use the </tspan><tspan
+           style="font-weight:bold">Leaflet library</tspan><tspan
+           style="fill:#546e7a;fill-opacity:1"> to develop the gx-map, a web component that shows a map and you are </tspan></tspan><tspan
+         x="8.9804688"
+         y="-203.84526"><tspan
+           style="fill:#546e7a;fill-opacity:1">able to use a lot of functionalities.
+</tspan></tspan><tspan
+         x="8.9804688"
+         y="-199.43553"><tspan
+           style="fill:#546e7a;fill-opacity:1">- Also, I was involved in fixing and improving web components developed by other team-mates. These web </tspan></tspan><tspan
+         x="8.9804688"
+         y="-195.0258"><tspan
+           style="fill:#546e7a;fill-opacity:1">components had to be quickly fixed/improved in order to include them in the new GeneXus version.</tspan></tspan></text>
+    <path
+       style="fill:none;stroke:#546e7a;stroke-width:0.211667;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="M 278.58352,71.02994 V 93.05651"
+       id="path2725"
+       sodipodi:nodetypes="cc" />
+    <path
+       style="fill:none;stroke:#546e7a;stroke-width:0.211667;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 278.58352,98.34816 v 18.05782"
+       id="path2727"
+       sodipodi:nodetypes="cc" />
+    <path
+       style="fill:none;stroke:#546e7a;stroke-width:0.211667;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 278.58352,121.69765 v 53.18692"
+       id="path2729"
+       sodipodi:nodetypes="cc" />
+    <text
+       xml:space="preserve"
+       style="font-size:4.23333px;line-height:1.25;font-family:Quicksand;-inkscape-font-specification:Quicksand;letter-spacing:0px;fill:#607d8b;fill-opacity:1;stroke-width:0.264583"
+       x="281.24478"
+       y="51.014221"
+       id="text2733"><tspan
+         sodipodi:role="line"
+         id="tspan2731"
+         x="281.24478"
+         y="51.014221"
+         style="font-style:italic;font-variant:normal;font-weight:300;font-stretch:normal;font-size:4.23333px;font-family:Quicksand;-inkscape-font-specification:'Quicksand Light';fill:#546e7a;fill-opacity:1;stroke-width:0.264583">Nimacloud</tspan></text>
+    <rect
+       style="fill:#def0f9;fill-opacity:1;stroke-width:7.9375;stroke-linecap:round;stroke-linejoin:round"
+       id="rect2735"
+       width="29.022703"
+       height="3.5960717"
+       x="443.56671"
+       y="44.58667"
+       rx="1.7980359"
+       ry="1.7980359" />
+    <text
+       xml:space="preserve"
+       style="font-size:2.69662px;line-height:1.25;font-family:Quicksand;-inkscape-font-specification:Quicksand;letter-spacing:0px;fill:#546e7a;fill-opacity:1;stroke-width:0.264583"
+       x="445.75964"
+       y="47.126282"
+       id="text2739"><tspan
+         sodipodi:role="line"
+         id="tspan2737"
+         x="445.75964"
+         y="47.126282"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.69662px;font-family:Quicksand;-inkscape-font-specification:Quicksand;fill:#546e7a;fill-opacity:1;stroke-width:0.264583">Aug. 2021 - Oct. 2021</tspan></text>
+    <text
+       xml:space="preserve"
+       id="text2761"
+       style="font-size:3.52778px;line-height:1.25;font-family:Quicksand;-inkscape-font-specification:Quicksand;white-space:pre;shape-inside:url(#rect2771);fill:#37474f;fill-opacity:1;"
+       transform="translate(274.93413,290.99248)"><tspan
+         x="8.9804688"
+         y="-234.71337"><tspan
+           style="fill:#546e7a;fill-opacity:1">- Learned basics of Salesforce, reaching more than 45k point in Treailhead. (Almost </tspan><tspan
+           style="font-weight:bold">Ranger</tspan><tspan
+           style="fill:#546e7a;fill-opacity:1">!)
+</tspan></tspan><tspan
+         x="8.9804688"
+         y="-230.30364"><tspan
+           style="fill:#546e7a;fill-opacity:1">- Solved many tasks requiring knowledge of </tspan><tspan
+           style="font-weight:bold">Salesforce</tspan><tspan
+           style="fill:#546e7a;fill-opacity:1"> and </tspan><tspan
+           style="font-weight:bold">Apex</tspan><tspan
+           style="fill:#546e7a;fill-opacity:1">.</tspan></tspan></text>
+    <path
+       style="fill:none;stroke:#546e7a;stroke-width:0.211667;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="M 278.58344,43.63484 V 65.66141"
+       id="path2763"
+       sodipodi:nodetypes="cc" />
   </g>
 </svg>
