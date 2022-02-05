@@ -216,9 +216,9 @@ section#skills div.contentContainer div:nth-child(1n){
   padding: 0;
 }
 
-  section#skills div.contentContainer div:nth-child(1) article.contentSection{
-    margin-top: 0px;
-  }
+section#skills div.contentContainer div:nth-child(1) article.contentSection{
+   margin-top: 0px;
+}
 @media only screen and (min-width: 993px){
   section#skills div.contentContainer div:nth-child(2) article.contentSection{
     margin-left: 10px;
@@ -243,18 +243,23 @@ section#skills div.contentContainer .contentSection div.starsContainer img{
 section#contact div article{
   padding: 10px;
   min-height: 50px;
+  transition: var(--animation);
+  cursor: pointer;
+}
+
+section#contact div article:active{
+  transform: translateY(3px);
+  box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.2);
 }
 
 section#contact div.itemContainer div.contactItem {
   padding: 0;
   padding-bottom: 10px;
 }
-/* section#contact div.itemContainer div.contactItem:nth-child(2n) {
-  padding-top: 10px;
-} */
 
 @media only screen and (min-width: 601px){
-  section#contact div.itemContainer div.contactItem:nth-child(1),section#contact div.itemContainer div.contactItem:nth-child(4) {
+  section#contact div.itemContainer div.contactItem:nth-child(1),
+  section#contact div.itemContainer div.contactItem:nth-child(4) {
     padding-right: 10px;
   }
   section#contact div.itemContainer div.contactItem:nth-child(2) {
@@ -284,7 +289,6 @@ footer{
   margin-top: 20vh;
 
 }
-
 
 
 /* Custom classes */
@@ -341,7 +345,6 @@ footer{
 .fGrow1{
   flex: 1
 }
-
 
 
 .fontSmallMicro{
