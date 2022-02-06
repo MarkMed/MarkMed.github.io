@@ -194,9 +194,7 @@ section#skills div.contentContainer div:nth-child(2){
 section#skills div.contentContainer div:first-child .contentSection{
   box-shadow: -3px 2px 5px rgba(0, 0, 0, 0.267);
 }
-section#skills div.contentContainer div:last-child article.contentSection {
-  margin-bottom: 20px;
-}
+
 section#skills div.contentContainer .contentSection h3{
   margin-top: 10px;
   margin-bottom: 5px;
@@ -221,15 +219,15 @@ section#skills div.contentContainer div:nth-child(1) article.contentSection{
 }
 @media only screen and (min-width: 993px){
   section#skills div.contentContainer div:nth-child(2) article.contentSection{
-    margin-left: 10px;
-    margin-top: 0px;
+    margin-right: 10px;
   }
 }
 section#skills div.contentContainer div:nth-child(2) .contentSection  ul li{
   min-width: auto;
+  padding-left: 10%;
 }
 section#skills div.contentContainer div:nth-child(3) mkm-star-rating{
-  width: 90%;
+  width: 150px;
 }
 section#skills div.contentContainer .contentSection div.starsContainer{
   width: 150px;
