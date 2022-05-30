@@ -168,6 +168,11 @@ section#aboutMe img{
   box-shadow: var(--shadow);
 }
 
+section ul li{
+  line-height: 1.2rem;
+  margin-bottom: 5px;
+}
+
 
 /* section#skills div.contentContainer{
   padding-top: 10px;
@@ -267,6 +272,10 @@ section#contact div.itemContainer div.contactItem {
 
 svg{
   fill: #607d8b;
+}
+
+section ul.techStack li{
+  margin: 0;
 }
 
 @media screen and (min-width: 992px) {
