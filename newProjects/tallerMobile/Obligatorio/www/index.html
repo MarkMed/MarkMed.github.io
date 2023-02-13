@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <link rel="icon" href="data:,">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finanz App</title>
+
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.esm.js"></script>
+    <script nomodule src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core/css/ionic.bundle.css" />
+    <style>
+        ion-card.summary ion-card-header {
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+
+        ion-card.summary ion-card-header ion-card-title{
+            margin: 0;
+        }
+        #homeScreen ion-header ion-toolbar ion-button{
+            margin-right: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <ion-app>
+        <ion-router id="router">
+            <ion-route url="/registration" component="registrationScreen"></ion-route>
+            <ion-route url="/login" component="loginScreen"></ion-route>
+            <ion-route url="/" component="loginScreen"></ion-route>
+            <ion-route url="/logout" component="loginScreen"></ion-route>
+            <ion-route url="/home" component="homeScreen"></ion-route>
+            <ion-route url="/map" component="mapScreen"></ion-route>
+        </ion-router>
+        <ion-nav></ion-nav>
+
+        <ion-menu id="menu" content-id="menu-content">
+            <ion-header>
+                <ion-toolbar color="primary">
+                    <ion-title>
+                        FINANZ APP</ion-title>
+                </ion-toolbar>
+            </ion-header>
+            <ion-content>
+                <ion-list>
+                    <ion-item id="loginMenuBtn" href="/login">
+                        <ion-icon name="log-in" slot="start"></ion-icon>
+                        Ingresar
+                    </ion-item>
+                    <ion-item id="registerMenuBtn" href="/registration">
+                        <ion-icon name="person-add" slot="start"></ion-icon>
+                        Registrarse
+                    </ion-item>
+                    <ion-item id="homeMenuBtn" href="/home">
+                        <ion-icon name="home" slot="start"></ion-icon>
+                        Home
+                    </ion-item>
+                    <ion-item id="mapMenuBtn" href="/map">
+                        <ion-icon name="storefront" slot="start"></ion-icon>
+                        Cajeros
+                    </ion-item>
+                    <ion-item id="logoutMenuBtn" href="/login">
+                        <ion-icon name="log-out" slot="start"></ion-icon>
+                        Cerrar Sesión
+                    </ion-item>
+                </ion-list>
+            </ion-content>
+        </ion-menu>
+        <div id="menu-content"></div>
+
+        <registrationScreen id="registrationScreen" class="ion-page">
+            <ion-header>
+                <ion-toolbar>
+                    <ion-buttons slot="start">
+                        <ion-menu-button></ion-menu-button>
+                    </ion-buttons>
+                    <ion-title>Registration</ion-title>
+                </ion-toolbar>
+            </ion-header>
+
+            <ion-content>
+                <ion-item>
+                    <ion-label position="floating">Usuario</ion-label>
+                    <ion-input placeholder="Enter text" type="text" name="nUser" id="nUser"></ion-input>
+                    <ion-icon slot="start" name="person"></ion-icon>
+                </ion-item>
+                <ion-item>
+                    <ion-label position="floating">Departamento</ion-label>
+                    <ion-input placeholder="Enter text" type="text" name="nDepartamento" id="nDepartamento"></ion-input>
+                    <ion-icon name="earth" slot="start"></ion-icon>
+                </ion-item>
+                <ion-item>
+                    <ion-label position="floating">Ciudad</ion-label>
+                    <ion-input placeholder="Enter text" type="text" name="nCiudad" id="nCiudad"></ion-input>
+                    <ion-icon slot="start" name="trail-sign"></ion-icon>
+                </ion-item>
+
+                <ion-item>
+                    <ion-label position="floating">Contraseña</ion-label>
+                    <ion-input type="password" name="nPassword" id="nPassword" minlength="8"></ion-input>
+                    <ion-icon slot="start" name="lock-closed"></ion-icon>
+                </ion-item>
+
+                <ion-item>
+                    <ion-label position="floating">Verificación</ion-label>
+                    <ion-input type="password" name="nPasswordVerif" id="nPasswordVerif" minlength="8"></ion-input>
+                    <ion-icon slot="start" name="lock-closed"></ion-icon>
+                </ion-item>
+
+                <ion-button id="registrationBtn" expand="block">
+                    Registrarse
+                    <ion-icon name="send" slot="end"></ion-icon>
+                    <ion-ripple-effect></ion-ripple-effect>
+                </ion-button>
+
+            </ion-content>
+
+        </registrationScreen>
+
+        <loginScreen id="loginScreen" class="ion-page">
+            <ion-header>
+                <ion-toolbar>
+                    <ion-buttons slot="start">
+                        <ion-menu-button></ion-menu-button>
+                    </ion-buttons>
+                    <ion-title>Login</ion-title>
+                </ion-toolbar>
+            </ion-header>
+            <ion-content>
+
+                <ion-item>
+                    <ion-label position="floating">Usuario</ion-label>
+                    <ion-input placeholder="Enter text" type="text" name="user" id="loginUser"></ion-input>
+                    <ion-icon slot="start" name="person"></ion-icon>
+                </ion-item>
+                <ion-item>
+                    <ion-label position="floating">Contraseña</ion-label>
+                    <ion-input placeholder="Enter text" type="password" name="password" id="loginPassword"></ion-input>
+                    <ion-icon slot="start" name="lock-closed"></ion-icon>
+                </ion-item>
+                <ion-button id="loginBtn" expand="block">
+                    Login
+                    <ion-icon name="log-in" slot="end"></ion-icon>
+                    <ion-ripple-effect></ion-ripple-effect>
+                </ion-button>
+            </ion-content>
+        </loginScreen>
+
+        <homeScreen id="homeScreen" class="ion-page">
+            <ion-header>
+                <ion-toolbar>
+                    <ion-buttons slot="start">
+                        <ion-menu-button></ion-menu-button>
+                    </ion-buttons>
+                    <ion-title>Home</ion-title>
+
+                    <ion-button slot="end" size="small">
+                        <ion-icon name="pencil" slot="end"></ion-icon>
+                        Ingresar
+                    </ion-button>
+                </ion-toolbar>
+            </ion-header>
+            <ion-content>
+                <ion-card class="summary">
+                    <ion-card-header>
+                        <ion-card-subtitle>Ingresos</ion-card-subtitle>
+                        <ion-card-title>$45600</ion-card-title>
+                    </ion-card-header>
+                </ion-card>
+                <ion-card class="summary">
+                    <ion-card-header>
+                        <ion-card-subtitle>Gastos</ion-card-subtitle>
+                        <ion-card-title>$14574</ion-card-title>
+                    </ion-card-header>
+                </ion-card>
+                <ion-card class="summary">
+                    <ion-card-header>
+                        <ion-card-subtitle>Saldo Restante</ion-card-subtitle>
+                        <ion-card-title>$37546</ion-card-title>
+                    </ion-card-header>
+                </ion-card>
+                <ion-card>
+                    <ion-segment value="movimientos">
+                        <ion-segment-button value="movimientos">
+                            <ion-label>Movimientos</ion-label>
+                        </ion-segment-button>
+                        <ion-segment-button value="gastos">
+                            <ion-label>Gastos</ion-label>
+                        </ion-segment-button>
+                        <ion-segment-button value="Ingresos">
+                            <ion-label>Ingresos</ion-label>
+                        </ion-segment-button>
+                    </ion-segment>
+                    <ion-card-content>
+                        <ion-list>
+                            <ion-list-header>
+                                <ion-label>12/04/2022</ion-label>
+                            </ion-list-header>
+                            <ion-item>
+                                <ion-label>Gasto1</ion-label>
+                            </ion-item>
+                            <ion-item>
+                                <ion-label>Gasto2</ion-label>
+                            </ion-item>
+                            <ion-item>
+                                <ion-label>Gast4235235o2</ion-label>
+                            </ion-item>
+                            <ion-item>
+                                <ion-label>Gastdfsvsdo2</ion-label>
+                            </ion-item>
+                            <ion-item>
+                                <ion-label>Gagwegwsto2</ion-label>
+                            </ion-item>
+                            <ion-item>
+                                <ion-label>Gastvwegwgo2</ion-label>
+                            </ion-item>
+                        </ion-list>
+                        <ion-list>
+                            <ion-list-header>
+                                <ion-label>10/04/2022</ion-label>
+                            </ion-list-header>
+                            <ion-item>
+                                <ion-label>Gasto1</ion-label>
+                            </ion-item>
+                            <ion-item>
+                                <ion-label>Gasto2</ion-label>
+                            </ion-item>
+                            <ion-item>
+                                <ion-label>Gast4235235o2</ion-label>
+                            </ion-item>
+                            <ion-item>
+                                <ion-label>Gastdfsvsdo2</ion-label>
+                            </ion-item>
+                            <ion-item>
+                                <ion-label>Gagwegwsto2</ion-label>
+                            </ion-item>
+                            <ion-item>
+                                <ion-label>Gastvwegwgo2</ion-label>
+                            </ion-item>
+                        </ion-list>
+                    </ion-card-content>
+                </ion-card>
+                <!-- <ion-fab slot="fixed" horizontal="end" vertical="bottom">
+                    <ion-fab-button size="small">
+                        <ion-icon name="add"></ion-icon>
+                    </ion-fab-button>
+                    <ion-fab-list side="top">
+                        <ion-fab-button>
+                            Ingreso
+                        </ion-fab-button>
+                        <ion-fab-button>
+                            Gasto
+                        </ion-fab-button>
+                    </ion-fab-list>
+                </ion-fab> -->
+            </ion-content>
+        </homeScreen>
+
+        <mapScreen id="mapScreen" class="ion-page">
+            <ion-header>
+                <ion-toolbar>
+                    <ion-buttons slot="start">
+                        <ion-menu-button></ion-menu-button>
+                    </ion-buttons>
+                    <ion-title>Cajeros Cercanos</ion-title>
+                </ion-toolbar>
+            </ion-header>
+            <ion-content>
+                map
+            </ion-content>
+        </mapScreen>
+
+    </ion-app>
+    <script type="text/javascript" src="js/miCodigo.js"></script>
+</body>
+
+</html>
