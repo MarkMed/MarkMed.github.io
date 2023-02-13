@@ -119,10 +119,12 @@ document.addEventListener("DOMContentLoaded", function () {
     }
     return false;
   };
+  
   const redirectLoginError = (errorText) => {
     navigateTo("loginScreen");
     presentToast(errorText, "top", "danger")
   };
+
   const loginFunc = () => {
     try {
       // let usuarioEncontrado = false;
@@ -172,6 +174,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
     return false;
   };
+
   const activateSession = () => {
     try {
       if (isUserLogged()) {
@@ -200,6 +203,7 @@ document.addEventListener("DOMContentLoaded", function () {
     try {
       clearAppData();
       // window.location.href = "./index.html"
+      resetInputs()
       menuOptionsToDisplay([menuOptions.login, menuOptions.registration]);
       navigateTo("loginScreen");
       nav.popToRoot();
