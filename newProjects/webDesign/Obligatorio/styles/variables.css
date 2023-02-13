@@ -1,0 +1,35 @@
+:root{
+	--primary-color-100: rgba(198, 225, 229, 1);
+	--primary-color-75: rgba(192, 225, 229, 0.75);
+	--primary-color-50: rgba(192, 225, 229, 0.5);
+	--primary-color-25: rgba(192, 225, 229, 0.25);
+	--primary-color-0: rgba(192, 225, 229, 0);
+
+	--secondary-color-100: rgba(44, 99, 107, 1);
+	--secondary-color-75: rgba(44, 99, 107, 0.75);
+	--secondary-color-50: rgba(44, 99, 107, 0.5);
+	--secondary-color-25: rgba(44, 99, 107, 0.25);
+	--secondary-color-0: rgba(44, 99, 107, 0);
+
+	--dark-grey-100: rgba(77, 79, 83, 1);
+	--dark-grey-75: rgba(77, 79, 83, 0.75);
+	--dark-grey-50: rgba(77, 79, 83, 0.5);
+	--dark-grey-25: rgba(77, 79, 83, 0.25);
+	--dark-grey-0: rgba(77, 79, 83, 0);
+
+	--light-grey-100: rgba(208, 208, 211, 1);
+	--light-grey-75: rgba(208, 208, 211, 0.75);
+	--light-grey-50: rgba(208, 208, 211, 0.5);
+	--light-grey-25: rgba(208, 208, 211, 0.25);
+	--light-grey-0: rgba(208, 208, 211, 0);
+
+	--shadow: 0px 3px 12px 0px rgba(0, 0, 0, 0.35), 0 2px 3px 0px rgba(0, 0, 0, 0.20);
+	--lifted-shadow: 0px 5px 14px 0px rgba(0, 0, 0, 0.45), 0 4px 4px 0px rgba(0, 0, 0, 0.15);
+	--big-shadow: 0px 8px 30px 4px rgba(0, 0, 0, 0.2), 0px 5px 11px 0px rgba(0, 0, 0, 0.2);
+	--no-shadow: 0 0px 0px 0px rgba(0, 0, 0, 0), 0 0px 0px 0px rgba(0, 0, 0, 0);
+
+	--animation: 0.3s ease;
+
+	--navHeight: 150px
+
+}
