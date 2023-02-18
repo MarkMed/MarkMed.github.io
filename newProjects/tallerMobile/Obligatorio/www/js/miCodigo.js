@@ -165,6 +165,7 @@ window.addEventListener("load", function () {
     if (screen === "/login") {
       if (!isUserLogged()) {
         displaySection(screens.login);
+        navigateTo("loginScreen")
       } else {
         msg = "Cierra sesión para iniciar con otro usuario";
         displaySection(screens.home);
@@ -187,7 +188,8 @@ window.addEventListener("load", function () {
         hideAllLoadingScreens();
       } else {
         msg = "Antes debes iniciar session!";
-        displaySection(screens.login);
+        // displaySection(screens.login);     
+        navigateTo("loginScreen")
         // nav.popToRoot();
         presentToast(msg, "top", "warning");
       }

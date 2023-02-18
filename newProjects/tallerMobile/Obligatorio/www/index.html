@@ -29,11 +29,11 @@
             margin-right: 10px;
         }
 
-        #registrationScreen ion-content ion-item ion-list {
+        ion-item ion-list {
             width: 100%;
         }
 
-        #registrationScreen ion-content ion-item ion-list ion-select {
+        ion-item ion-list ion-select {
             padding-left: 0;
             max-width: 100%;
         }
@@ -71,6 +71,18 @@
         #map {
             width: 100%;
             height: 100%;
+        }
+        ion-datetime {
+            box-shadow: inset 0px 0px 10px 0px rgba(0, 0, 0, 0.3)
+        }
+        /* ion-datetime-button {
+            width: 100%;
+        }
+        ion-datetime-button #date-button {
+            width: 100%;
+        } */
+        button.action-sheet-cancel{
+            background-color: rgba(0, 0, 0, 0.1) !important;
         }
     </style>
 </head>
@@ -339,7 +351,7 @@
                         </ion-toolbar>
                     </ion-header>
                     <ion-content class="ion-padding">
-                       
+
                         <ion-item>
                             <ion-label position="floating">Descripcion</ion-label>
                             <ion-input placeholder="Descripcion" type="text" id="conceptoGasto"></ion-input>
@@ -377,7 +389,8 @@
                             <ion-icon name="calendar-number" slot="start"></ion-icon>
                             <ion-datetime-button datetime="datetimeGasto"></ion-datetime-button>
                             <ion-modal>
-                                <ion-datetime id="datetimeGasto"></ion-datetime>
+                                <ion-datetime id="datetimeGasto" presentation="date" color="primary"
+                                show-default-buttons="true" done-text="Confirmar" cancel-text="Cancelar"></ion-datetime>
                             </ion-modal>
                         </ion-item>
 
@@ -398,7 +411,7 @@
                         </ion-toolbar>
                     </ion-header>
                     <ion-content class="ion-padding">
-                       
+
                         <ion-item>
                             <ion-label position="floating">Descripcion</ion-label>
                             <ion-input placeholder="Descripcion" type="text" id="conceptoIngreso"></ion-input>
@@ -430,12 +443,15 @@
                             <ion-input placeholder="Importe" type="number" id="importeIngreso"></ion-input>
                             <ion-icon name="logo-usd" slot="start"></ion-icon>
                         </ion-item>
-                        
+
                         <ion-item>
                             <ion-icon name="calendar-number" slot="start"></ion-icon>
                             <ion-datetime-button datetime="datetimeIngreso"></ion-datetime-button>
                             <ion-modal>
-                                <ion-datetime id="datetimeIngreso"></ion-datetime>
+                                <ion-datetime id="datetimeIngreso" presentation="date" color="primary"
+                                    show-default-buttons="true" done-text="Confirmar" cancel-text="Cancelar">
+
+                                </ion-datetime>
                             </ion-modal>
                         </ion-item>
 
