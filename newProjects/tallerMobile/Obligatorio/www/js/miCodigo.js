@@ -1,6 +1,6 @@
 window.addEventListener("load", function () {
   console.log("START!");
-  let map
+  let map;
   class Usuario {
     constructor(usuario, password, idDepartamento, idCiudad) {
       this.usuario = usuario;
@@ -9,14 +9,31 @@ window.addEventListener("load", function () {
       this.idCiudad = idCiudad;
     }
   }
+
+  class Movimiento {
+    constructor(idUsuario, concepto, categoria, total, medio, fecha) {
+      this.idUsuario = idUsuario;
+      this.concepto = concepto;
+      this.categoria = categoria;
+      this.total = total;
+      this.medio = medio;
+      this.fecha = fecha;
+    }
+  }
   const LH_STRING_LOGGED_USER = "isLoggedUser";
   const LH_STRING_USER_TOKEN = "userToken";
+  const LH_STRING_USER_ID = "userId";
+
   const env = {
     apiURL: "https://dwallet.develotion.com",
   };
   const nav = document.querySelector("ion-nav");
   const menu = document.querySelector("#menu");
 
+  const modals = {
+    modalIngreso: document.querySelector("#ingresoModal"),
+    modalGasto: document.querySelector("#gastoModal"),
+  };
   const screens = {
     login: document.querySelector("#loginScreen"),
     registration: document.querySelector("#registrationScreen"),
@@ -46,9 +63,33 @@ window.addEventListener("load", function () {
     submitBtn: document.querySelector("#loginScreen #loginBtn"),
   };
   const loadingElems = {
+    homeLoading: document.querySelector("#homeScreen div.loading"),
     mapLoading: document.querySelector("#mapScreen div.loading"),
-  }
+  };
+  const homeElem = {
+    newMovementBtn: document.querySelector("#homeScreen #newMovement"),
+  };
 
+  const gastoElems = {
+    inputConcepto: document.querySelector("#homeScreen #conceptoGasto"),
+    inputRubro: document.querySelector("#homeScreen #rubroGasto"),
+    inputMedio: document.querySelector("#homeScreen #medioGasto"),
+    inputImporte: document.querySelector("#homeScreen #importeGasto"),
+    inputFecha: document.querySelector("#homeScreen #datetimeGasto"),
+    registrarGastoBtn: document.querySelector("#homeScreen #registrarGasto"),
+    cancelBtn: document.querySelector("#homeScreen #cancelGasto"),
+  };
+  const ingresoElems = {
+    inputConcepto: document.querySelector("#homeScreen #conceptoIngreso"),
+    inputRubro: document.querySelector("#homeScreen #rubroIngreso"),
+    inputMedio: document.querySelector("#homeScreen #medioIngreso"),
+    inputImporte: document.querySelector("#homeScreen #importeIngreso"),
+    inputFecha: document.querySelector("#homeScreen #datetimeIngreso"),
+    registrarIngresoBtn: document.querySelector(
+      "#homeScreen #registrarIngreso"
+    ),
+    cancelBtn: document.querySelector("#homeScreen #cancelIngreso"),
+  };
 
   const presentToast = (msgParam, positionParam, status) => {
     const toast = document.createElement("ion-toast");
@@ -91,11 +132,27 @@ window.addEventListener("load", function () {
   const resetInputs = () => {
     loginElem.inputPassword.value = "";
     loginElem.inputUser.value = "";
+
     registrationElem.inputUser.value = "";
     registrationElem.inputCity.value = "";
     registrationElem.inputDpto.value = "";
     registrationElem.inputPassword.value = "";
     registrationElem.inputPasswordVerif.value = "";
+
+    resetInputsMovimientos();
+  };
+  const resetInputsMovimientos = () => {
+    ingresoElems.inputConcepto.value = "";
+    // ingresoElems.inputFecha.value = new Date();
+    ingresoElems.inputImporte.value = 0;
+    ingresoElems.inputMedio.value = "";
+    ingresoElems.inputRubro.value = "";
+
+    gastoElems.inputConcepto.value = "";
+    // gastoElems.inputFecha.value = new Date();
+    gastoElems.inputImporte.value = 0;
+    gastoElems.inputRubro.value = "";
+    gastoElems.inputMedio.value = "";
   };
 
   const navigateTo = (screen) => {
@@ -104,16 +161,70 @@ window.addEventListener("load", function () {
 
   const navegation = (event) => {
     const screen = event.detail.to;
-    if (screen === "/login" || screen === "/logout" || screen === "/") {
-      displaySection(screens.login);
+    let msg = "";
+    if (screen === "/login") {
+      if (!isUserLogged()) {
+        displaySection(screens.login);
+      } else {
+        msg = "Cierra sesión para iniciar con otro usuario";
+        displaySection(screens.home);
+        loadRubros();
+        presentToast(msg, "top", "warning");
+      }
+    } else if (screen === "/logout") {
+      if (isUserLogged()) {
+        displaySection(screens.login);
+      } else {
+        msg = "Antes debes iniciar session!";
+        displaySection(screens.login);
+        // nav.popToRoot();
+        presentToast(msg, "top", "warning");
+      }
     } else if (screen === "/home") {
-      displaySection(screens.home);
+      if (isUserLogged()) {
+        displaySection(screens.home);
+        loadRubros();
+        hideAllLoadingScreens();
+      } else {
+        msg = "Antes debes iniciar session!";
+        displaySection(screens.login);
+        // nav.popToRoot();
+        presentToast(msg, "top", "warning");
+      }
+    } else if (screen === "/") {
+      if (isUserLogged()) {
+        displaySection(screens.home);
+        loadRubros();
+        hideAllLoadingScreens();
+      } else {
+        displaySection(screens.login);
+      }
     } else if (screen === "/registration") {
-      displaySection(screens.registration);
-      loadDepartments();
+      if (!isUserLogged()) {
+        displaySection(screens.registration);
+        loadDepartments();
+      } else {
+        msg = "Finaliza la sesión para registrar un nuevo usuario";
+        displaySection(screens.home);
+        loadRubros();
+        presentToast(msg, "top", "warning");
+        // hideAllLoadingScreens();
+      }
     } else if (screen === "/map") {
-      displaySection(screens.map);
-      initializeMap();
+      if (isUserLogged()) {
+        displaySection(screens.map);
+        if (!map) {
+          initializeMap();
+        }
+      } else {
+        msg = "Antes debes iniciar session!";
+        displaySection(screens.login);
+        //  nav.popToRoot();
+        presentToast(msg, "top", "warning");
+      }
+      // } else {
+      //   displaySection(screens.login);
+      //   presentToast(msg, "top", "warning");
     }
   };
 
@@ -122,6 +233,10 @@ window.addEventListener("load", function () {
       !!localStorage.getItem(LH_STRING_LOGGED_USER) &&
       !!localStorage.getItem(LH_STRING_USER_TOKEN)
     );
+  };
+
+  const closeModal = (modal) => {
+    modal.dismiss();
   };
 
   const clearAppData = () => {
@@ -133,16 +248,20 @@ window.addEventListener("load", function () {
 
   const hideAllLoadingScreens = () => {
     for (const elem in loadingElems) {
-      loadingElems[elem].style.display = "none"
+      loadingElems[elem].style.display = "none";
     }
-  }
+  };
+
+  const showLoadingScreen = (elem) => {
+    elem.style.display = "";
+  };
 
   const redirectLoginError = (errorText) => {
     navigateTo("loginScreen");
     presentToast(errorText, "top", "danger");
   };
 
-  const loginAPI = (user, pass) => {
+  const loginApiReq = (user, pass) => {
     let myHeaders = new Headers();
     myHeaders.append("Content-Type", "application/json");
 
@@ -168,9 +287,13 @@ window.addEventListener("load", function () {
         }
 
         localStorage.setItem(LH_STRING_LOGGED_USER, true);
-        localStorage.setItem(LH_STRING_USER_TOKEN, JSON.stringify(result.apiKey)); // HACER PREGUNTA!
+        localStorage.setItem(
+          LH_STRING_USER_TOKEN,
+          JSON.stringify(result.apiKey)
+        );
+        localStorage.setItem(LH_STRING_USER_ID, JSON.stringify(result.id));
         activateSession();
-        presentToast(`Login success!`, "top", "success");
+        presentToast(`Login success! Bienvenido/a ${user}`, "top", "success");
       })
       .catch((errorParam) => {
         presentToast(`${errorParam}`, "top", "danger");
@@ -187,7 +310,7 @@ window.addEventListener("load", function () {
         throw new Error("Ingrese todos los datos");
       }
 
-      loginAPI(loginElem.inputUser.value, loginElem.inputPassword.value);
+      loginApiReq(loginElem.inputUser.value, loginElem.inputPassword.value);
     } catch (error) {
       console.log(error);
       presentToast(`${error}`, "top", "danger");
@@ -198,7 +321,11 @@ window.addEventListener("load", function () {
   const activateSession = () => {
     try {
       if (isUserLogged()) {
-        menuOptionsToDisplay([menuOptions.home, menuOptions.logout]);
+        menuOptionsToDisplay([
+          menuOptions.home,
+          menuOptions.map,
+          menuOptions.logout,
+        ]);
         // displaySection(homeDiv);
         resetInputs();
         // getProducts();
@@ -213,7 +340,9 @@ window.addEventListener("load", function () {
       redirectLoginError(errorParam);
     }
   };
-  const getUserToken = () => JSON.parse(localStorage.getItem("userData"));
+  const getUserToken = () =>
+    JSON.parse(localStorage.getItem(LH_STRING_USER_TOKEN));
+  const getUserID = () => JSON.parse(localStorage.getItem(LH_STRING_USER_ID));
 
   const logoutFunc = () => {
     if (!isUserLogged) {
@@ -222,19 +351,31 @@ window.addEventListener("load", function () {
       return false;
     }
     try {
-      const msg = "Has finalizado la session. Adiós ";
+      console.log("deslogueando...");
+      const msg = "Has finalizado la session!";
       presentToast(`${msg}`, "top", "warning");
       clearAppData();
       // window.location.href = "./index.html"
       resetInputs();
       menuOptionsToDisplay([menuOptions.login, menuOptions.registration]);
       navigateTo("loginScreen");
-      nav.popToRoot();
+      // nav.popToRoot();
+      resetMap();
     } catch (error) {
       // console.log(error);
       presentToast(`${error}`, "top", "warning");
+
+      console.log("UN ERROR: ", error);
     }
   };
+
+  //Corrige el formato de fecha para que lo pueda recibir la API
+  const parseDate = (fecha) =>
+    `${fecha.getFullYear()}-${
+      fecha.getMonth() + 1 < 10
+        ? "0" + (fecha.getMonth() + 1)
+        : fecha.getMonth() + 1
+    }-${fecha.getDate() < 10 ? "0" + fecha.getDate() : fecha.getDate()}`;
 
   //crear objeto usuario con el valor de los inputs
   const createUser = () => {
@@ -245,8 +386,54 @@ window.addEventListener("load", function () {
       registrationElem.inputCity.value
     );
   };
+
+  //crear gasto con el valor de los inputs
+  const createGasto = () => {
+    try {
+      if (isUserLogged()) {
+        throw new Error("Antes debes loggearte!");
+      }
+      let gastoDate = new Date(gastoElems.inputFecha.value);
+      let fechaFormateada = parseDate(gastoDate);
+      console.log(fechaFormateada);
+      return new Movimiento(
+        getUserID(),
+        gastoElems.inputConcepto.value,
+        gastoElems.inputRubro.value,
+        gastoElems.inputImporte.value,
+        gastoElems.inputMedio.value,
+        fechaFormateada
+      );
+    } catch (errorParam) {
+      console.log(errorParam);
+      redirectLoginError(errorParam);
+    }
+  };
+
+  //creo el ingreso con el valor de los inputs
+  const createIngreso = () => {
+    try {
+      if (isUserLogged()) {
+        throw new Error("Antes debes loggearte!");
+      }
+      let ingresoDate = new Date(ingresoElems.inputFecha.value);
+      let fechaFormateada = parseDate(ingresoDate);
+      console.log(fechaFormateada);
+      return new Movimiento(
+        localStorage.getItem(LH_STRING_USER_ID),
+        ingresoElems.inputConcepto.value,
+        ingresoElems.inputRubro.value,
+        ingresoElems.inputImporte.value,
+        ingresoElems.inputMedio.value,
+        fechaFormateada
+      );
+    } catch (errorParam) {
+      console.log(errorParam);
+      redirectLoginError(errorParam);
+    }
+  };
   // registro contra la API
-  const registerAPI = (user) => {
+  const registerApiReq = (user) => {
     var myHeaders = new Headers();
     myHeaders.append("Content-Type", "application/json");
 
@@ -261,18 +448,68 @@ window.addEventListener("load", function () {
       .then((result) => {
         console.log(result);
         //si todo da bien lo auto-loguea
-        if (result.codigo == "200") loginAPI(user.usuario, user.password);
+        if (result.codigo == "200") loginApiReq(user.usuario, user.password);
         if (result.codigo == "409")
           presentToast(`${result.mensaje}`, "top", "danger");
       })
       .catch((error) => console.log(error));
   };
 
+  //agrego el movimiento contra la API
+  const addMovimientoApi = (movimiento) => {
+    var myHeaders = new Headers();
+    myHeaders.append("Content-Type", "application/json");
+    myHeaders.append("apikey", getUserToken());
+
+    var requestOptions = {
+      method: "POST",
+      headers: myHeaders,
+      body: JSON.stringify(movimiento),
+    };
+
+    fetch(`${env.apiURL}/movimientos.php`, requestOptions)
+      .then((response) => response.json())
+      .then((result) => {
+        console.log(result);
+        if (result.codigo == "200") {
+          presentToast(`${result.mensaje}`, "top", "success");
+        } else {
+          presentToast(`${result.mensaje}`, "top", "danger");
+        }
+      })
+      .catch((error) => console.log("error", error));
+  };
   const registerFunc = () => {
     try {
       let user = createUser();
       validateUser(user);
-      registerAPI(user);
+      registerApiReq(user);
+    } catch (error) {
+      console.log(error);
+      presentToast(`${error}`, "top", "danger");
+    }
+  };
+
+  //creo el gasto, valido y agrego el movimiento contra la api
+  const addGastoFunc = () => {
+    try {
+      let gasto = createGasto();
+      console.log(gasto);
+      validateMovimiento(gasto);
+      addMovimientoApi(gasto);
+    } catch (error) {
+      console.log(error);
+      presentToast(`${error}`, "top", "danger");
+    }
+  };
+
+  //creo el ingreso, valido y agrego el movimiento contra la api
+  const addIngresoFunc = () => {
+    try {
+      let ingreso = createIngreso();
+      console.log(ingreso);
+      validateMovimiento(ingreso);
+      addMovimientoApi(ingreso);
     } catch (error) {
       console.log(error);
       presentToast(`${error}`, "top", "danger");
@@ -306,6 +543,27 @@ window.addEventListener("load", function () {
     }
   };
 
+  // valido que los inputs no esten vacios
+  const validateMovimiento = (movimiento) => {
+    if (!movimiento.idUsuario) {
+      throw new Error("Error al identificar al usuario");
+    }
+    if (!movimiento.concepto) {
+      throw new Error("La descripcion no puede estar vacía");
+    }
+    if (!movimiento.categoria) {
+      throw new Error("El rubro no puede estar vacío");
+    }
+    if (!movimiento.total) {
+      throw new Error("El importe total no puede estar vacío");
+    }
+    if (!movimiento.medio) {
+      throw new Error("El medio no puede estar vacío");
+    }
+    if (!movimiento.fecha) {
+      throw new Error("La fecha no puede estar vacía");
+    }
+  };
   // obtener departamentos para cargar el select de registro
   const getDepartments = () => {
     var myHeaders = new Headers();
@@ -340,6 +598,56 @@ window.addEventListener("load", function () {
   const loadDepartments = () => {
     try {
       getDepartments();
+    } catch (error) {
+      console.log(error.message);
+    }
+  };
+
+  // obtener rubros para cargar select
+  const getRubros = () => {
+    var myHeaders = new Headers();
+    myHeaders.append("Content-Type", "application/json");
+    myHeaders.append("apikey", getUserToken());
+
+    var requestOptions = {
+      method: "GET",
+      headers: myHeaders,
+      redirect: "follow",
+    };
+
+    fetch(`${env.apiURL}/rubros.php`, requestOptions)
+      .then((response) => response.json())
+      .then(function (resp) {
+        let i = 0;
+        let card = "";
+        while (i < resp.rubros.length) {
+          if (resp.rubros[i].id < 7) {
+            card =
+              "<ion-select-option value='" +
+              resp.rubros[i].id +
+              "'>" +
+              resp.rubros[i].nombre +
+              "</ion-select-option>";
+            gastoElems.inputRubro.innerHTML += card;
+          } else {
+            card =
+              "<ion-select-option value='" +
+              resp.rubros[i].id +
+              "'>" +
+              resp.rubros[i].nombre +
+              "</ion-select-option>";
+            ingresoElems.inputRubro.innerHTML += card;
+          }
+
+          i++;
+        }
+      })
+      .catch((error) => console.log("error", error));
+  };
+  // cargo los rubros
+  const loadRubros = () => {
+    try {
+      getRubros();
     } catch (error) {
       console.log(error.message);
     }
@@ -384,8 +692,59 @@ window.addEventListener("load", function () {
     }
   };
 
+  // HOME
+  const mostrarFormularioModal = {
+    gasto: () => {
+      console.log("MOSTRAR MODAL DE GASTOS");
+    },
+    ingreso: () => {
+      console.log("MOSTRAR MODAL DE INGRESO");
+    },
+  };
+  // const selectNewMovement = () => {
+  //   const actionSheet = document.createElement('ion-action-sheet');
+  //   actionSheet.header = 'Registrar nuevo movimiento';
+  //   actionSheet.buttons = [
+  //     {
+  //       text: 'Nuevo Gasto',
+  //       role: 'selected',
+  //       handler:()=>{
+  //         mostrarFormularioModal.gasto();
+  //       }
+  //     },
+  //     {
+  //       text: 'Nuevo Ingreso',
+  //       role: 'selected',
+  //       handler:()=>{
+  //         mostrarFormularioModal.ingreso()
+  //       }
+  //     },
+  //     {
+  //       text: 'Cancel',
+  //       role: 'cancel',
+  //       data: {
+  //         action: 'cancel',
+  //       },
+  //     },
+  //   ];
+
+  //   document.body.appendChild(actionSheet);
+  //   return actionSheet.present()
+  // }
+
   // MAP
+  const resetMap = () => {
+    if (map) {
+      map.eachLayer(function (layer) {
+        map.removeLayer(layer);
+      });
+      map.remove();
+      map = undefined
+    }
+    // map = null
+  };
   const renderMap = () => {
+    console.log("no hay mapa, renderizando uno nuevo");
     map = L.map("map", {
       center: [-32.741082231501245, -55.98632812500001],
       zoom: 3,
@@ -399,32 +758,34 @@ window.addEventListener("load", function () {
     mapLayer.addTo(map);
   };
   const setMapUbication = (lat, long, zoom) => {
-    map.flyTo([lat, long], zoom)
-  }
+    map.flyTo([lat, long], zoom);
+  };
   const getMyUbication = async () => {
     const successCallback = (position) => {
-      console.log("position", position)
-      setMapUbication(position.coords.latitude, position.coords.longitude, 12)
+      console.log("position", position);
+      setMapUbication(position.coords.latitude, position.coords.longitude, 12);
     };
-    
     const errorCallback = (error) => {
       console.log(error);
       presentToast(`No se ha podido acceder a su ubicación.`, "top", "danger");
     };
-    
+
     navigator.geolocation.getCurrentPosition(successCallback, errorCallback);
-  }
+  };
   const initializeMap = () => {
+    showLoadingScreen(loadingElems.mapLoading);
     setTimeout(function () {
       renderMap();
       setTimeout(() => {
         setMapUbication(-32.741082231501245, -55.98632812500001, 8);
-        hideAllLoadingScreens()
+        hideAllLoadingScreens();
         getMyUbication();
       }, 1000);
     }, 2000);
-  }
+  };
 
+  // INICIALIZACION DE LA APP
+  clearAppData();
   // menuOptionsToDisplay([menuOptions.login, menuOptions.registration]);
   //Router
   document
@@ -443,15 +804,36 @@ window.addEventListener("load", function () {
       });
     }
   }
+
+  ingresoElems.cancelBtn.addEventListener("click", () => {
+    resetInputsMovimientos();
+    closeModal(modals.modalIngreso);
+  });
+  gastoElems.cancelBtn.addEventListener("click", () => {
+    resetInputsMovimientos();
+    closeModal(modals.modalGasto);
+  });
   loginElem.submitBtn.addEventListener("click", () => {
     loginFunc();
   });
   registrationElem.submitBtn.addEventListener("click", () => {
     registerFunc();
   });
+  gastoElems.registrarGastoBtn.addEventListener("click", () => {
+    addGastoFunc();
+  });
+  ingresoElems.registrarIngresoBtn.addEventListener("click", () => {
+    addIngresoFunc();
+  });
   registrationElem.inputDpto.addEventListener("ionChange", (e) => {
     console.log(e.target.value);
     loadCitiesForDep(e.target.value);
   });
-
+  // homeElem.newMovementBtn.addEventListener("click", e =>{
+  //   console.log(e.target);
+  //   selectNewMovement();
+  // })
 });
+
+// Manejo de formato fecha para API
+//`${miFecha.getFullYear()}-${(miFecha.getMonth()+1 < 10)?("0"+(miFecha.getMonth()+1)):(miFecha.getMonth()+1)}-${(miFecha.getDate() < 10)?("0"+(miFecha.getDate())):(miFecha.getDate())}`
