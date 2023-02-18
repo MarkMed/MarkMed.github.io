@@ -789,7 +789,7 @@ window.addEventListener("load", function () {
 
   // INICIALIZACION DE LA APP
   clearAppData();
-  // menuOptionsToDisplay([menuOptions.login, menuOptions.registration]);
+  menuOptionsToDisplay([menuOptions.login, menuOptions.registration]);
   //Router
   document
     .querySelector("#router")
