@@ -204,6 +204,7 @@ window.addEventListener("load", function () {
     } else if (screen === "/registration") {
       if (!isUserLogged()) {
         displaySection(screens.registration);
+        registrationElem.inputCity.setAttribute("disabled", "true")
         loadDepartments();
       } else {
         msg = "Finaliza la sesión para registrar un nuevo usuario";
@@ -591,7 +592,7 @@ window.addEventListener("load", function () {
             "</ion-select-option>";
           i++;
         }
-        registrationElem.inputDpto.innerHTML = card;
+        registrationElem.inputDpto.innerHTML = card; 
       })
       .catch((error) => console.log("error", error));
   };
@@ -829,7 +830,9 @@ window.addEventListener("load", function () {
   });
   registrationElem.inputDpto.addEventListener("ionChange", (e) => {
     console.log(e.target.value);
+    registrationElem.inputCity.value="";
     loadCitiesForDep(e.target.value);
+    registrationElem.inputCity.setAttribute("disabled", "false")
   });
   // homeElem.newMovementBtn.addEventListener("click", e =>{
   //   console.log(e.target);
