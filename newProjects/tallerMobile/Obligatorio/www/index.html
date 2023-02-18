@@ -72,16 +72,18 @@
             width: 100%;
             height: 100%;
         }
+
         ion-datetime {
             box-shadow: inset 0px 0px 10px 0px rgba(0, 0, 0, 0.3)
         }
+
         /* ion-datetime-button {
             width: 100%;
         }
         ion-datetime-button #date-button {
             width: 100%;
         } */
-        button.action-sheet-cancel{
+        button.action-sheet-cancel {
             background-color: rgba(0, 0, 0, 0.1) !important;
         }
     </style>
@@ -231,19 +233,27 @@
                     </ion-buttons>
                     <ion-title>Home</ion-title>
 
-                    <ion-button id="newMovement" slot="end" size="small">
-                        <ion-icon name="pencil" slot="end"></ion-icon>
-                        Registrar
+                    <ion-button id="newMovement" slot="end">
+                        <ion-label>
+                            <ion-icon name="create"></ion-icon>Registrar
+                        </ion-label>
                     </ion-button>
                     <ion-popover trigger="newMovement" trigger-action="click">
                         <ion-content class="ion-padding">
                             <ion-button id="nuevoGasto" expand="block" size="small">
-                                <ion-icon name="add" slot="start"></ion-icon>
-                                Nuevo Gasto
+
+                                <!-- <ion-item color="primary"> -->
+                                <ion-label>Nuevo Gasto</ion-label>
+                                <ion-icon name="exit" slot="start"></ion-icon>
+                                <!-- </ion-item> -->
+
                             </ion-button>
                             <ion-button id="nuevoIngreso" expand="block" size="small">
-                                <ion-icon name="add" slot="start"></ion-icon>
-                                Nuevo Ingreso
+
+                                <!-- <ion-item color="primary"> -->
+                                <ion-icon name="enter" slot="start"></ion-icon>
+                                <ion-label>Nuevo Ingreso</ion-label>
+                                <!-- </ion-item> -->
                             </ion-button>
                         </ion-content>
                     </ion-popover>
@@ -275,12 +285,15 @@
                     <ion-segment value="movimientos">
                         <ion-segment-button value="movimientos">
                             <ion-label>Movimientos</ion-label>
+                            <ion-icon name="stats-chart"></ion-icon>
                         </ion-segment-button>
                         <ion-segment-button value="gastos">
                             <ion-label>Gastos</ion-label>
+                            <ion-icon name="exit"></ion-icon>
                         </ion-segment-button>
                         <ion-segment-button value="Ingresos">
                             <ion-label>Ingresos</ion-label>
+                            <ion-icon name="enter"></ion-icon>
                         </ion-segment-button>
                     </ion-segment>
                     <ion-card-content>
@@ -390,7 +403,8 @@
                             <ion-datetime-button datetime="datetimeGasto"></ion-datetime-button>
                             <ion-modal>
                                 <ion-datetime id="datetimeGasto" presentation="date" color="primary"
-                                show-default-buttons="true" done-text="Confirmar" cancel-text="Cancelar"></ion-datetime>
+                                    show-default-buttons="true" done-text="Confirmar"
+                                    cancel-text="Cancelar"></ion-datetime>
                             </ion-modal>
                         </ion-item>
 
