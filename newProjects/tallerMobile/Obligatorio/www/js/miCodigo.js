@@ -369,12 +369,14 @@ window.addEventListener("load", function () {
         resetInputs();
         loadRubros();
         switchListTo(homeElem.listAllMovements);
-        setTimeout(function () {
-          renderMovementsData(userMovements);
-        }, 1000);
-        setTimeout(function () {
-          hideAllLoadingScreens();
-        }, 1500);
+        // getMovements();
+        // setTimeout(function () {
+        //   renderMovementsData(userMovements);
+        // }, 1000);
+        getMovements();
+        // setTimeout(function () {
+        //   hideAllLoadingScreens();
+        // }, 1500);
         // getProducts();
         // displayProducts(products);
         return true;
@@ -610,6 +612,7 @@ window.addEventListener("load", function () {
       throw new Error("La fecha no puede estar vacía");
     }
   };
+
   // obtener departamentos para cargar el select de registro
   const getDepartments = () => {
     var myHeaders = new Headers();
@@ -639,11 +642,48 @@ window.addEventListener("load", function () {
       })
       .catch((error) => console.log("error", error));
   };
-
   // cargo el select de departamentos
   const loadDepartments = () => {
     try {
       getDepartments();
+    } catch (error) {
+      console.log(error.message);
+    }
+  };
+
+  // obtener ciudades para un departamento por parametro
+  const getCitiesForDep = (idDep) => {
+    var myHeaders = new Headers();
+    myHeaders.append("Content-Type", "application/json");
+
+    var requestOptions = {
+      method: "GET",
+      headers: myHeaders,
+      redirect: "follow",
+    };
+
+    fetch(`${env.apiURL}/ciudades.php?idDepartamento=${idDep}`, requestOptions)
+      .then((response) => response.json())
+      .then(function (resp) {
+        let i = 0;
+        let card = "";
+        while (i < resp.ciudades.length) {
+          card +=
+            "<ion-select-option value='" +
+            resp.ciudades[i].id +
+            "'>" +
+            resp.ciudades[i].nombre +
+            "</ion-select-option>";
+          i++;
+        }
+        registrationElem.inputCity.innerHTML = card;
+      })
+      .catch((error) => console.log("error", error));
+  };
+  // cargo el select de ciudades
+  const loadCitiesForDep = (idDep) => {
+    try {
+      getCitiesForDep(idDep);
     } catch (error) {
       console.log(error.message);
     }
@@ -701,55 +741,18 @@ window.addEventListener("load", function () {
     }
   };
 
-  // obtener ciudades para un departamento por parametro
-  const getCitiesForDep = (idDep) => {
-    var myHeaders = new Headers();
-    myHeaders.append("Content-Type", "application/json");
-
-    var requestOptions = {
-      method: "GET",
-      headers: myHeaders,
-      redirect: "follow",
-    };
-
-    fetch(`${env.apiURL}/ciudades.php?idDepartamento=${idDep}`, requestOptions)
-      .then((response) => response.json())
-      .then(function (resp) {
-        let i = 0;
-        let card = "";
-        while (i < resp.ciudades.length) {
-          card +=
-            "<ion-select-option value='" +
-            resp.ciudades[i].id +
-            "'>" +
-            resp.ciudades[i].nombre +
-            "</ion-select-option>";
-          i++;
-        }
-        registrationElem.inputCity.innerHTML = card;
-      })
-      .catch((error) => console.log("error", error));
-  };
-
-  // cargo el select de ciudades
-  const loadCitiesForDep = (idDep) => {
-    try {
-      getCitiesForDep(idDep);
-    } catch (error) {
-      console.log(error.message);
-    }
-  };
-
   // HOME
   // funcion para verificar si el movimiento es gasto
   const isGasto = (movimiento) => movimiento.rubro < 7;
-  // const skeletonElems = (cant)=>{
+  /* const skeletonElems = (cant)=>{
   //   let skeletonResult = "";
   //   for (let i = 0; i < cant; i++) {
   //     skeletonElems += `<ion-skeleton-text animated="true" style="width: 100%;"></ion-skeleton-text>`
   //   }
   //   return skeletonResult
-  // }
+  // }*/
+
+  // reinicia elementos que muestran datos
   const resetMovementsData = () => {
     homeElem.listAllMovements.innerHTML = "";
     homeElem.listExpensesMovements.innerHTML = "";
@@ -758,6 +761,8 @@ window.addEventListener("load", function () {
     homeElem.totalExpenses.innerHTML = "$";
     homeElem.totalIncome.innerHTML = "$";
   };
+
+  // crea elementos y calcula datos para mostrar en elementos
   const renderMovementsData = (movementsParam) => {
     try {
       if (!isUserLogged()) {
@@ -765,50 +770,110 @@ window.addEventListener("load", function () {
       }
       //miniFuncion para crear y devolver list item con datos
       const renderListItem = (data) => {
-        return `<ion-item><ion-label>${data.descripcion}
-        ${data.importe}
+        return `<ion-item><ion-label>
+        <h2>${data.descripcion}</h2>
+        <p>${data.importe}</p>
         ${data.rubro}
         ${data.medio}
         ${data.fecha}
-        <ion-button>
+        <ion-button color="danger">
           <ion-icon slot="icon-only" name="trash"></ion-icon>
         </ion-button>
         </ion-label></ion-item>`;
       };
+      
+      //miniFuncion para crear y devolver nota en caso de que no haya datos
+      const noDataNote = (movementType)=>{
+        if(movementType === "allMovements"){
+          return `<ion-item><ion-note style="width: 100%"><h2 style="text-align: center; font-style: italic;">No hay ningún movimiento registrado<h2></ion-note></ion-item>`
+        }
+        else if(movementType === "expensesMovements"){
+          return `<ion-item><ion-note style="width: 100%"><h2 style="text-align: center; font-style: italic;">No hay ningún gasto registrado<h2></ion-note></ion-item>`
+        }
+        else if(movementType === "incomeMovements"){
+          return `<ion-item><ion-note style="width: 100%"><h2 style="text-align: center; font-style: italic;">No hay ningún ingreso registrado<h2></ion-note></ion-item>`
+        }
+        else{
+          return `<ion-item><ion-note style="width: 100%"><h2 style="text-align: center; font-style: italic;">No hay ningún movimiento<h2></ion-note></ion-item>`
+        }
+      };
+
       let total = {
         expenses: 0,
         available: 0,
         income: 0,
       };
+
       console.log("renderizando movimientos");
       resetMovementsData();
-      for (const movimiento of movementsParam) {
-        homeElem.listAllMovements.innerHTML += renderListItem(movimiento);
-        if (isGasto(movimiento)) {
-          homeElem.listExpensesMovements.innerHTML +=
-            renderListItem(movimiento);
-          total.expenses += movimiento.importe;
-          total.available -= movimiento.importe;
-        } else {
-          homeElem.listIncomeMovements.innerHTML += renderListItem(movimiento);
-          total.income += movimiento.importe;
-          total.available += movimiento.importe;
+      if (movementsParam.length > 0) {
+        for (const movimiento of movementsParam) {
+          homeElem.listAllMovements.innerHTML += renderListItem(movimiento);
+          if (isGasto(movimiento)) {
+            homeElem.listExpensesMovements.innerHTML +=
+              renderListItem(movimiento);
+            total.expenses += movimiento.importe;
+            total.available -= movimiento.importe;
+          } else {
+            homeElem.listIncomeMovements.innerHTML +=
+              renderListItem(movimiento);
+            total.income += movimiento.importe;
+            total.available += movimiento.importe;
+          }
         }
+        homeElem.totalAvailable.innerHTML += total.available;
+        homeElem.totalExpenses.innerHTML += total.expenses;
+        homeElem.totalIncome.innerHTML += total.income;
+      } else {
+        homeElem.listAllMovements.innerHTML += noDataNote("allMovements");
+        homeElem.listExpensesMovements.innerHTML += noDataNote("expensesMovements");
+        homeElem.listIncomeMovements.innerHTML += noDataNote("incomeMovements");
+        homeElem.totalAvailable.innerHTML += "-";
+        homeElem.totalExpenses.innerHTML += "-";
+        homeElem.totalIncome.innerHTML += "-";
       }
-      homeElem.totalAvailable.innerHTML += total.available;
-      homeElem.totalExpenses.innerHTML += total.expenses;
-      homeElem.totalIncome.innerHTML += total.income;
     } catch (errorParam) {
       console.log(errorParam);
       redirectLoginError(errorParam);
     }
   };
+
+  // switchea entre las listas
   const switchListTo = (listElem) => {
     console.log("cambiando a:", listElem);
     homeElem.listAllMovements.style.display = "none";
     homeElem.listIncomeMovements.style.display = "none";
     homeElem.listExpensesMovements.style.display = "none";
     listElem.style.display = "";
+  };
+
+  const getMovements = () => {
+    var myHeaders = new Headers();
+    myHeaders.append("Content-Type", "application/json");
+    myHeaders.append("apikey", getUserToken());
+
+    var requestOptions = {
+      method: "GET",
+      headers: myHeaders,
+      redirect: "follow",
+    };
+
+    fetch(
+      `${env.apiURL}/movimientos.php?idUsuario=${getFromLocalStorage(
+        LS_STRING_USER_ID
+      )}`,
+      requestOptions
+    )
+      .then((response) => response.json())
+      .then((result) => {
+        console.log(result);
+        if (result.codigo == 200) {
+          // renderMovementsData(result.movimientos);
+          renderMovementsData(userMovements);
+          hideAllLoadingScreens();
+        }
+      })
+      .catch((error) => console.log("error", error));
   };
 
   // MAP
@@ -863,7 +928,7 @@ window.addEventListener("load", function () {
     }, 2000);
   };
 
-  // INICIALIZACION DE LA APP
+  //--------- INICIALIZACION DE LA APP ---------//
   clearAppData();
   menuOptionsToDisplay([menuOptions.login, menuOptions.registration]);
   //Router
@@ -874,6 +939,7 @@ window.addEventListener("load", function () {
   menuOptions.logout.addEventListener("click", () => {
     logoutFunc();
   });
+
   // Set close behavior when click a menu opt
   for (const elem in menuOptions) {
     if (Object.hasOwnProperty.call(menuOptions, elem)) {
