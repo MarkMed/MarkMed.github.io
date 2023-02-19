@@ -868,8 +868,8 @@ window.addEventListener("load", function () {
       .then((result) => {
         console.log(result);
         if (result.codigo == 200) {
-          // renderMovementsData(result.movimientos);
-          renderMovementsData(userMovements);
+          renderMovementsData(result.movimientos);
+          // renderMovementsData(userMovements);
           hideAllLoadingScreens();
         }
       })
