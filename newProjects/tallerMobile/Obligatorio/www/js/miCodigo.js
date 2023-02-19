@@ -5,7 +5,23 @@ window.addEventListener("load", function () {
     {
       descripcion: "asdkajhdk jahmovimientooo 2",
       importe: 234,
-      rubro: 7,
+      rubro: 6,
+      medio: "Efectivo",
+      fecha: "22/03/2023",
+    },
+    {
+      descripcion: "gasto F xd",
+      importe: 2234,
+      rubro: 6,
+      medio: "Efectivo",
+      fecha: "23/03/2023",
+    },
+    {
+      descripcion: "asdasaaaaaaaaaa PAGOOOO 2",
+      importe: 50400,
+      rubro: 8,
+      medio: "Banco",
+      fecha: "26/03/2023",
     },
   ];
   class Usuario {
@@ -77,11 +93,17 @@ window.addEventListener("load", function () {
   const homeElem = {
     newMovementBtn: document.querySelector("#homeScreen #newMovement"),
     listAllMovements: this.document.querySelector("#homeScreen #allMovements"),
-    listIncomeMovements: this.document.querySelector("#homeScreen #incomeMovements"),
-    listExpensesMovements: this.document.querySelector("#homeScreen #expensesMovements"),
+    listIncomeMovements: this.document.querySelector(
+      "#homeScreen #incomeMovements"
+    ),
+    listExpensesMovements: this.document.querySelector(
+      "#homeScreen #expensesMovements"
+    ),
     segmentAll: this.document.querySelector("#homeScreen #segmentAll"),
-    segmentExpenses: this.document.querySelector("#homeScreen #segmentExpenses"),
-    segmentIncome: this.document.querySelector("#homeScreen #segmentIncome")
+    segmentExpenses: this.document.querySelector(
+      "#homeScreen #segmentExpenses"
+    ),
+    segmentIncome: this.document.querySelector("#homeScreen #segmentIncome"),
   };
 
   const gastoElems = {
@@ -110,8 +132,7 @@ window.addEventListener("load", function () {
     localStorage.setItem(keyParam, valueParam);
   };
 
-  const getFromLocalStorage = keyParam => localStorage.getItem(keyParam)
-  
+  const getFromLocalStorage = (keyParam) => localStorage.getItem(keyParam);
 
   const presentToast = (msgParam, positionParam, status) => {
     const toast = document.createElement("ion-toast");
@@ -308,10 +329,7 @@ window.addEventListener("load", function () {
         }
 
         saveInLocalStorage(LS_STRING_LOGGED_USER, true);
-        saveInLocalStorage(
-          LS_STRING_USER_TOKEN,
-          JSON.stringify(result.apiKey)
-        );
+        saveInLocalStorage(LS_STRING_USER_TOKEN, JSON.stringify(result.apiKey));
         saveInLocalStorage(LS_STRING_USER_ID, JSON.stringify(result.id));
         activateSession();
         presentToast(`Login success! Bienvenido/a ${user}`, "top", "success");
@@ -351,9 +369,9 @@ window.addEventListener("load", function () {
         navigateTo("homeScreen");
         resetInputs();
         loadRubros();
-        renderMovementsLists("userMovements");
+        renderMovementsLists(userMovements);
         setTimeout(function () {
-            hideAllLoadingScreens();
+          hideAllLoadingScreens();
         }, 2000);
         // getProducts();
         // displayProducts(products);
@@ -645,7 +663,7 @@ window.addEventListener("load", function () {
       .then((response) => response.json())
       .then(function (resp) {
         console.log("rubros", JSON.stringify(resp.rubros));
-        saveInLocalStorage(LS_STRING_RUBROS_LIST, JSON.stringify(resp.rubros))
+        saveInLocalStorage(LS_STRING_RUBROS_LIST, JSON.stringify(resp.rubros));
         let i = 0;
         let card = "";
         while (i < resp.rubros.length) {
@@ -721,16 +739,52 @@ window.addEventListener("load", function () {
   };
 
   // HOME
+  // funcion para verificar si el movimiento es gasto
+  const isGasto = (movimiento) => movimiento.rubro < 7;
+  const resetMovementsLists = () => {
+    homeElem.listAllMovements.innerHTML = ""
+    homeElem.listExpensesMovements.innerHTML = ""
+    homeElem.listIncomeMovements.innerHTML = ""
+  };
   const renderMovementsLists = (movementsParam) => {
-    console.log("renderizará la lista de movimientos");
+    try {
+      if (!isUserLogged()) {
+        throw new Error("Antes debes loggearte!");
+      }
+      //miniFuncion para crear y devolver list item con datos
+      const renderListItem = (data) => {
+        return `<ion-item><ion-label>${data.descripcion}
+        ${data.importe}
+        ${data.rubro}
+        ${data.medio}
+        ${data.fecha}
+        <ion-button>
+          <ion-icon slot="icon-only" name="trash"></ion-icon>
+        </ion-button>
+        </ion-label></ion-item>`;
+      };
+      console.log("renderizando movimientos");
+      resetMovementsLists();
+      for (const movimiento of movementsParam) {
+        homeElem.listAllMovements.innerHTML += renderListItem(movimiento);
+        if (isGasto(movimiento)) {
+          homeElem.listExpensesMovements.innerHTML += renderListItem(movimiento);
+        } else {
+          homeElem.listIncomeMovements.innerHTML += renderListItem(movimiento);
+        }
+      }
+    } catch (errorParam) {
+      console.log(errorParam);
+      redirectLoginError(errorParam);
+    }
   };
   const switchListTo = (listElem) => {
-    console.log("cambiando a:", listElem)
-    homeElem.listAllMovements.style.display = "none"
-    homeElem.listIncomeMovements.style.display = "none"
-    homeElem.listExpensesMovements.style.display = "none"
-    listElem.style.display = ""
-  }
+    console.log("cambiando a:", listElem);
+    homeElem.listAllMovements.style.display = "none";
+    homeElem.listIncomeMovements.style.display = "none";
+    homeElem.listExpensesMovements.style.display = "none";
+    listElem.style.display = "";
+  };
 
   // MAP
   const resetMap = () => {
@@ -831,15 +885,15 @@ window.addEventListener("load", function () {
     loadCitiesForDep(e.target.value);
     registrationElem.inputCity.setAttribute("disabled", "false");
   });
-  homeElem.segmentAll.addEventListener("click", ()=>{
-    switchListTo(homeElem.listAllMovements)
-  })
-  homeElem.segmentExpenses.addEventListener("click", ()=>{
-    switchListTo(homeElem.listExpensesMovements)
-  })
-  homeElem.segmentIncome.addEventListener("click", ()=>{
-    switchListTo(homeElem.listIncomeMovements)
-  })
+  homeElem.segmentAll.addEventListener("click", () => {
+    switchListTo(homeElem.listAllMovements);
+  });
+  homeElem.segmentExpenses.addEventListener("click", () => {
+    switchListTo(homeElem.listExpensesMovements);
+  });
+  homeElem.segmentIncome.addEventListener("click", () => {
+    switchListTo(homeElem.listIncomeMovements);
+  });
   // homeElem.newMovementBtn.addEventListener("click", e =>{
   //   console.log(e.target);
   //   selectNewMovement();
