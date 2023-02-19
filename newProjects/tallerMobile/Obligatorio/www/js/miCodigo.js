@@ -92,18 +92,17 @@ window.addEventListener("load", function () {
   };
   const homeElem = {
     newMovementBtn: document.querySelector("#homeScreen #newMovement"),
-    listAllMovements: this.document.querySelector("#homeScreen #allMovements"),
-    listIncomeMovements: this.document.querySelector(
-      "#homeScreen #incomeMovements"
-    ),
-    listExpensesMovements: this.document.querySelector(
+    listAllMovements: document.querySelector("#homeScreen #allMovements"),
+    listIncomeMovements: document.querySelector("#homeScreen #incomeMovements"),
+    listExpensesMovements: document.querySelector(
       "#homeScreen #expensesMovements"
     ),
-    segmentAll: this.document.querySelector("#homeScreen #segmentAll"),
-    segmentExpenses: this.document.querySelector(
-      "#homeScreen #segmentExpenses"
-    ),
-    segmentIncome: this.document.querySelector("#homeScreen #segmentIncome"),
+    segmentAll: document.querySelector("#homeScreen #segmentAll"),
+    segmentExpenses: document.querySelector("#homeScreen #segmentExpenses"),
+    segmentIncome: document.querySelector("#homeScreen #segmentIncome"),
+    totalIncome: document.querySelector("#homeScreen #totalIncome"),
+    totalExpenses: document.querySelector("#homeScreen #totalExpenses"),
+    totalAvailable: document.querySelector("#homeScreen #totalAvailable"),
   };
 
   const gastoElems = {
@@ -369,10 +368,13 @@ window.addEventListener("load", function () {
         navigateTo("homeScreen");
         resetInputs();
         loadRubros();
-        renderMovementsLists(userMovements);
+        switchListTo(homeElem.listAllMovements);
+        setTimeout(function () {
+          renderMovementsData(userMovements);
+        }, 1000);
         setTimeout(function () {
           hideAllLoadingScreens();
-        }, 2000);
+        }, 1500);
         // getProducts();
         // displayProducts(products);
         return true;
@@ -741,12 +743,22 @@ window.addEventListener("load", function () {
   // HOME
   // funcion para verificar si el movimiento es gasto
   const isGasto = (movimiento) => movimiento.rubro < 7;
-  const resetMovementsLists = () => {
-    homeElem.listAllMovements.innerHTML = ""
-    homeElem.listExpensesMovements.innerHTML = ""
-    homeElem.listIncomeMovements.innerHTML = ""
+  // const skeletonElems = (cant)=>{
+  //   let skeletonResult = "";
+  //   for (let i = 0; i < cant; i++) {
+  //     skeletonElems += `<ion-skeleton-text animated="true" style="width: 100%;"></ion-skeleton-text>`
+  //   }
+  //   return skeletonResult
+  // }
+  const resetMovementsData = () => {
+    homeElem.listAllMovements.innerHTML = "";
+    homeElem.listExpensesMovements.innerHTML = "";
+    homeElem.listIncomeMovements.innerHTML = "";
+    homeElem.totalAvailable.innerHTML = "$";
+    homeElem.totalExpenses.innerHTML = "$";
+    homeElem.totalIncome.innerHTML = "$";
   };
-  const renderMovementsLists = (movementsParam) => {
+  const renderMovementsData = (movementsParam) => {
     try {
       if (!isUserLogged()) {
         throw new Error("Antes debes loggearte!");
@@ -763,16 +775,29 @@ window.addEventListener("load", function () {
         </ion-button>
         </ion-label></ion-item>`;
       };
+      let total = {
+        expenses: 0,
+        available: 0,
+        income: 0,
+      };
       console.log("renderizando movimientos");
-      resetMovementsLists();
+      resetMovementsData();
       for (const movimiento of movementsParam) {
         homeElem.listAllMovements.innerHTML += renderListItem(movimiento);
         if (isGasto(movimiento)) {
-          homeElem.listExpensesMovements.innerHTML += renderListItem(movimiento);
+          homeElem.listExpensesMovements.innerHTML +=
+            renderListItem(movimiento);
+          total.expenses += movimiento.importe;
+          total.available -= movimiento.importe;
         } else {
           homeElem.listIncomeMovements.innerHTML += renderListItem(movimiento);
+          total.income += movimiento.importe;
+          total.available += movimiento.importe;
         }
       }
+      homeElem.totalAvailable.innerHTML += total.available;
+      homeElem.totalExpenses.innerHTML += total.expenses;
+      homeElem.totalIncome.innerHTML += total.income;
     } catch (errorParam) {
       console.log(errorParam);
       redirectLoginError(errorParam);
