@@ -6,14 +6,14 @@ window.addEventListener("load", function () {
       descripcion: "asdkajhdk jahmovimientooo 2",
       importe: 234,
       rubro: 6,
-      medio: "Efectivo",
+      medio: " Tarjeta Crédito",
       fecha: "22/03/2023",
     },
     {
       descripcion: "gasto F xd",
       importe: 2234,
-      rubro: 6,
-      medio: "Efectivo",
+      rubro: 1,
+      medio: "Tarjeta Débito",
       fecha: "23/03/2023",
     },
     {
@@ -92,6 +92,7 @@ window.addEventListener("load", function () {
   };
   const homeElem = {
     newMovementBtn: document.querySelector("#homeScreen #newMovement"),
+    movementPopup: document.querySelector("#homeScreen #movementPopup"),
     listAllMovements: document.querySelector("#homeScreen #allMovements"),
     listIncomeMovements: document.querySelector("#homeScreen #incomeMovements"),
     listExpensesMovements: document.querySelector(
@@ -438,7 +439,7 @@ window.addEventListener("load", function () {
   //crear gasto con el valor de los inputs
   const createGasto = () => {
     try {
-      if (isUserLogged()) {
+      if (!isUserLogged()) {
         throw new Error("Antes debes loggearte!");
       }
       let gastoDate = new Date(gastoElems.inputFecha.value);
@@ -461,7 +462,7 @@ window.addEventListener("load", function () {
   //creo el ingreso con el valor de los inputs
   const createIngreso = () => {
     try {
-      if (isUserLogged()) {
+      if (!isUserLogged()) {
         throw new Error("Antes debes loggearte!");
       }
       let ingresoDate = new Date(ingresoElems.inputFecha.value);
@@ -521,6 +522,22 @@ window.addEventListener("load", function () {
         console.log(result);
         if (result.codigo == "200") {
           presentToast(`${result.mensaje}`, "top", "success");
+          showLoadingScreen(loadingElems.homeLoading);
+
+          gastoElems.registrarGastoBtn.innerHTML = `Registrar
+          <ion-icon name="cash" slot="end"></ion-icon>
+          <ion-ripple-effect></ion-ripple-effect>`;
+          ingresoElems.registrarIngresoBtn.innerHTML = `Registrar
+          <ion-icon name="cash" slot="end"></ion-icon>
+          <ion-ripple-effect></ion-ripple-effect>`;
+          resetInputsMovimientos();
+          closeModal(modals.modalIngreso);
+          closeModal(modals.modalGasto);
+          homeElem.movementPopup.dismiss()
+
+          setTimeout(() => {
+            getMovements();
+          }, 500);
         } else {
           presentToast(`${result.mensaje}`, "top", "danger");
         }
@@ -544,6 +561,7 @@ window.addEventListener("load", function () {
       let gasto = createGasto();
       console.log(gasto);
       validateMovimiento(gasto);
+      gastoElems.registrarGastoBtn.innerHTML = `<ion-spinner name="crescent" color="secondary"></ion-spinner>`;
       addMovimientoApi(gasto);
     } catch (error) {
       console.log(error);
@@ -557,6 +575,7 @@ window.addEventListener("load", function () {
       let ingreso = createIngreso();
       console.log(ingreso);
       validateMovimiento(ingreso);
+      ingresoElems.registrarIngresoBtn.innerHTML = `<ion-spinner name="crescent" color="secondary"></ion-spinner>`;
       addMovimientoApi(ingreso);
     } catch (error) {
       console.log(error);
@@ -743,7 +762,7 @@ window.addEventListener("load", function () {
 
   // HOME
   // funcion para verificar si el movimiento es gasto
-  const isGasto = (movimiento) => movimiento.rubro < 7;
+  const isGasto = (movimiento) => movimiento.categoria < 7;
   /* const skeletonElems = (cant)=>{
   //   let skeletonResult = "";
   //   for (let i = 0; i < cant; i++) {
@@ -757,9 +776,17 @@ window.addEventListener("load", function () {
     homeElem.listAllMovements.innerHTML = "";
     homeElem.listExpensesMovements.innerHTML = "";
     homeElem.listIncomeMovements.innerHTML = "";
-    homeElem.totalAvailable.innerHTML = "$";
-    homeElem.totalExpenses.innerHTML = "$";
-    homeElem.totalIncome.innerHTML = "$";
+    homeElem.totalAvailable.innerHTML = "-";
+    homeElem.totalExpenses.innerHTML = "-";
+    homeElem.totalIncome.innerHTML = "-";
+  };
+
+  const getRubroNameById = (rubroId) => {
+    const rubrosList = JSON.parse(getFromLocalStorage(LS_STRING_RUBROS_LIST));
+    // console.log("rubrosList", rubrosList);
+    for (let rubro of rubrosList) {
+      if (rubro.id == rubroId) return rubro.nombre;
+    }
   };
 
   // crea elementos y calcula datos para mostrar en elementos
@@ -770,31 +797,38 @@ window.addEventListener("load", function () {
       }
       //miniFuncion para crear y devolver list item con datos
       const renderListItem = (data) => {
-        return `<ion-item><ion-label>
-        <h2>${data.descripcion}</h2>
-        <p>${data.importe}</p>
-        ${data.rubro}
-        ${data.medio}
-        ${data.fecha}
+        return `<ion-item>
+        
+        <ion-label style="flex: 2">
+          <h2>${data.concepto}</h2>
+          <p>
+            <ion-icon slot="start" name="${isGasto(data)?"caret-down":"caret-up"}" color="${isGasto(data)?"danger":"success"}"></ion-icon> 
+            <i>${getRubroNameById(data.categoria)}</i>
+          </p>
+
+          <ion-chip>
+            <ion-icon name="logo-usd"></ion-icon>
+            <ion-label><b>${data.total}</b></ion-label>
+          </ion-chip><i>${data.medio}</i>
+        </ion-label>
+        <ion-label>
+          <p>${data.fecha}</p>
+        </ion-label>
         <ion-button color="danger">
           <ion-icon slot="icon-only" name="trash"></ion-icon>
-        </ion-button>
-        </ion-label></ion-item>`;
+        </ion-button></ion-item>`;
       };
-      
+
       //miniFuncion para crear y devolver nota en caso de que no haya datos
-      const noDataNote = (movementType)=>{
-        if(movementType === "allMovements"){
-          return `<ion-item><ion-note style="width: 100%"><h2 style="text-align: center; font-style: italic;">No hay ningún movimiento registrado<h2></ion-note></ion-item>`
-        }
-        else if(movementType === "expensesMovements"){
-          return `<ion-item><ion-note style="width: 100%"><h2 style="text-align: center; font-style: italic;">No hay ningún gasto registrado<h2></ion-note></ion-item>`
-        }
-        else if(movementType === "incomeMovements"){
-          return `<ion-item><ion-note style="width: 100%"><h2 style="text-align: center; font-style: italic;">No hay ningún ingreso registrado<h2></ion-note></ion-item>`
-        }
-        else{
-          return `<ion-item><ion-note style="width: 100%"><h2 style="text-align: center; font-style: italic;">No hay ningún movimiento<h2></ion-note></ion-item>`
+      const noDataNote = (movementType) => {
+        if (movementType === "allMovements") {
+          return `<ion-item><ion-note style="width: 100%"><h2 style="text-align: center; font-style: italic;">No hay ningún movimiento registrado<h2></ion-note></ion-item>`;
+        } else if (movementType === "expensesMovements") {
+          return `<ion-item><ion-note style="width: 100%"><h2 style="text-align: center; font-style: italic;">No hay ningún gasto registrado<h2></ion-note></ion-item>`;
+        } else if (movementType === "incomeMovements") {
+          return `<ion-item><ion-note style="width: 100%"><h2 style="text-align: center; font-style: italic;">No hay ningún ingreso registrado<h2></ion-note></ion-item>`;
+        } else {
+          return `<ion-item><ion-note style="width: 100%"><h2 style="text-align: center; font-style: italic;">No hay ningún movimiento<h2></ion-note></ion-item>`;
         }
       };
 
@@ -806,31 +840,43 @@ window.addEventListener("load", function () {
 
       console.log("renderizando movimientos");
       resetMovementsData();
+      let hayGastos = false;
+      let hayIngresos = false;
       if (movementsParam.length > 0) {
         for (const movimiento of movementsParam) {
           homeElem.listAllMovements.innerHTML += renderListItem(movimiento);
           if (isGasto(movimiento)) {
+            hayGastos = true;
             homeElem.listExpensesMovements.innerHTML +=
               renderListItem(movimiento);
-            total.expenses += movimiento.importe;
-            total.available -= movimiento.importe;
+            total.expenses += movimiento.total;
+            total.available -= movimiento.total;
           } else {
+            hayIngresos = true;
             homeElem.listIncomeMovements.innerHTML +=
               renderListItem(movimiento);
-            total.income += movimiento.importe;
-            total.available += movimiento.importe;
+            total.income += movimiento.total;
+            total.available += movimiento.total;
           }
         }
-        homeElem.totalAvailable.innerHTML += total.available;
-        homeElem.totalExpenses.innerHTML += total.expenses;
-        homeElem.totalIncome.innerHTML += total.income;
+        homeElem.totalAvailable.innerHTML = `$${total.available}`;
+        homeElem.totalExpenses.innerHTML = `$${total.expenses}`;
+        homeElem.totalIncome.innerHTML = `$${total.income}`;
       } else {
         homeElem.listAllMovements.innerHTML += noDataNote("allMovements");
-        homeElem.listExpensesMovements.innerHTML += noDataNote("expensesMovements");
+        homeElem.listExpensesMovements.innerHTML +=
+          noDataNote("expensesMovements");
         homeElem.listIncomeMovements.innerHTML += noDataNote("incomeMovements");
         homeElem.totalAvailable.innerHTML += "-";
         homeElem.totalExpenses.innerHTML += "-";
         homeElem.totalIncome.innerHTML += "-";
+      }
+      if (!hayGastos) {
+        homeElem.listExpensesMovements.innerHTML +=
+          noDataNote("expensesMovements");
+      }
+      if(!hayIngresos) {
+        homeElem.listIncomeMovements.innerHTML += noDataNote("incomeMovements");
       }
     } catch (errorParam) {
       console.log(errorParam);
@@ -868,9 +914,11 @@ window.addEventListener("load", function () {
       .then((result) => {
         console.log(result);
         if (result.codigo == 200) {
-          renderMovementsData(result.movimientos);
-          // renderMovementsData(userMovements);
-          hideAllLoadingScreens();
+          setTimeout(() => {
+            renderMovementsData(result.movimientos);
+            // renderMovementsData(userMovements);
+            hideAllLoadingScreens();
+          }, 500);
         }
       })
       .catch((error) => console.log("error", error));

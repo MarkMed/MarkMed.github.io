@@ -39,6 +39,7 @@
         }
 
         #transactionsList {
+            min-height: 97%;
             max-height: 97%;
             margin-bottom: 10px;
         }
@@ -46,11 +47,22 @@
         #transactionsList ion-card-content {
             padding-left: 0;
             padding-right: 0;
+            position: absolute;
+            max-height: 81%;
+            height: 900px;
+            width: 100%;
         }
 
         #transactionsList #listContainer {
             overflow-y: scroll;
-            height: 900px;
+            /* height: 900px; */
+            max-height: 100%;
+        }
+        /*  #transactionsList #listContainer ion-list{
+           height: 1200px;
+        } */
+        #transactionsList #listContainer ion-list ion-item{
+            min-height: 110px;
         }
 
         ion-action-sheet div.action-sheet-wrapper.ion-overlay-wrapper {
@@ -238,7 +250,7 @@
                             <ion-icon name="create"></ion-icon>Registrar
                         </ion-label>
                     </ion-button>
-                    <ion-popover trigger="newMovement" trigger-action="click">
+                    <ion-popover id="movementPopup" trigger="newMovement" trigger-action="click">
                         <ion-content class="ion-padding">
                             <ion-button id="nuevoGasto" expand="block" size="small">
 
