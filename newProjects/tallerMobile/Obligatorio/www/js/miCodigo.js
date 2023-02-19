@@ -797,7 +797,7 @@ window.addEventListener("load", function () {
       }
       //miniFuncion para crear y devolver list item con datos
       const renderListItem = (data) => {
-        return `<ion-item>
+        return `<ion-item lines="full">
         
         <ion-label style="flex: 2">
           <h2>${data.concepto}</h2>
@@ -808,7 +808,7 @@ window.addEventListener("load", function () {
 
           <ion-chip>
             <ion-icon name="logo-usd"></ion-icon>
-            <ion-label><b>${data.total}</b></ion-label>
+            <ion-label><b>${data.total}</b></ion-label> 
           </ion-chip><i>${data.medio}</i>
         </ion-label>
         <ion-label>
