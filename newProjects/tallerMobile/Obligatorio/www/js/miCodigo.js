@@ -1,6 +1,13 @@
 window.addEventListener("load", function () {
   console.log("START!");
   let map;
+  let userMovements = [
+    {
+      descripcion: "asdkajhdk jahmovimientooo 2",
+      importe: 234,
+      rubro: 7,
+    },
+  ];
   class Usuario {
     constructor(usuario, password, idDepartamento, idCiudad) {
       this.usuario = usuario;
@@ -20,9 +27,10 @@ window.addEventListener("load", function () {
       this.fecha = fecha;
     }
   }
-  const LH_STRING_LOGGED_USER = "isLoggedUser";
-  const LH_STRING_USER_TOKEN = "userToken";
-  const LH_STRING_USER_ID = "userId";
+  const LS_STRING_LOGGED_USER = "isLoggedUser";
+  const LS_STRING_USER_TOKEN = "userToken";
+  const LS_STRING_USER_ID = "userId";
+  const LS_STRING_RUBROS_LIST = "rubrosList";
 
   const env = {
     apiURL: "https://dwallet.develotion.com",
@@ -68,6 +76,12 @@ window.addEventListener("load", function () {
   };
   const homeElem = {
     newMovementBtn: document.querySelector("#homeScreen #newMovement"),
+    listAllMovements: this.document.querySelector("#homeScreen #allMovements"),
+    listIncomeMovements: this.document.querySelector("#homeScreen #incomeMovements"),
+    listExpensesMovements: this.document.querySelector("#homeScreen #expensesMovements"),
+    segmentAll: this.document.querySelector("#homeScreen #segmentAll"),
+    segmentExpenses: this.document.querySelector("#homeScreen #segmentExpenses"),
+    segmentIncome: this.document.querySelector("#homeScreen #segmentIncome")
   };
 
   const gastoElems = {
@@ -90,6 +104,14 @@ window.addEventListener("load", function () {
     ),
     cancelBtn: document.querySelector("#homeScreen #cancelIngreso"),
   };
+
+  // LS
+  const saveInLocalStorage = (keyParam, valueParam) => {
+    localStorage.setItem(keyParam, valueParam);
+  };
+
+  const getFromLocalStorage = keyParam => localStorage.getItem(keyParam)
+  
 
   const presentToast = (msgParam, positionParam, status) => {
     const toast = document.createElement("ion-toast");
@@ -165,11 +187,10 @@ window.addEventListener("load", function () {
     if (screen === "/login") {
       if (!isUserLogged()) {
         displaySection(screens.login);
-        navigateTo("loginScreen")
+        navigateTo("loginScreen");
       } else {
         msg = "Cierra sesión para iniciar con otro usuario";
         displaySection(screens.home);
-        loadRubros();
         presentToast(msg, "top", "warning");
       }
     } else if (screen === "/logout") {
@@ -184,19 +205,17 @@ window.addEventListener("load", function () {
     } else if (screen === "/home") {
       if (isUserLogged()) {
         displaySection(screens.home);
-        loadRubros();
-        hideAllLoadingScreens();
+        // hideAllLoadingScreens();
       } else {
         msg = "Antes debes iniciar session!";
-        // displaySection(screens.login);     
-        navigateTo("loginScreen")
+        // displaySection(screens.login);
+        navigateTo("loginScreen");
         // nav.popToRoot();
         presentToast(msg, "top", "warning");
       }
     } else if (screen === "/") {
       if (isUserLogged()) {
         displaySection(screens.home);
-        loadRubros();
         hideAllLoadingScreens();
       } else {
         displaySection(screens.login);
@@ -204,12 +223,11 @@ window.addEventListener("load", function () {
     } else if (screen === "/registration") {
       if (!isUserLogged()) {
         displaySection(screens.registration);
-        registrationElem.inputCity.setAttribute("disabled", "true")
+        registrationElem.inputCity.setAttribute("disabled", "true");
         loadDepartments();
       } else {
         msg = "Finaliza la sesión para registrar un nuevo usuario";
         displaySection(screens.home);
-        loadRubros();
         presentToast(msg, "top", "warning");
         // hideAllLoadingScreens();
       }
@@ -233,8 +251,8 @@ window.addEventListener("load", function () {
 
   const isUserLogged = () => {
     return (
-      !!localStorage.getItem(LH_STRING_LOGGED_USER) &&
-      !!localStorage.getItem(LH_STRING_USER_TOKEN)
+      !!getFromLocalStorage(LS_STRING_LOGGED_USER) &&
+      !!getFromLocalStorage(LS_STRING_USER_TOKEN)
     );
   };
 
@@ -289,12 +307,12 @@ window.addEventListener("load", function () {
           throw new Error("Datos invalidos o No existe usuario");
         }
 
-        localStorage.setItem(LH_STRING_LOGGED_USER, true);
-        localStorage.setItem(
-          LH_STRING_USER_TOKEN,
+        saveInLocalStorage(LS_STRING_LOGGED_USER, true);
+        saveInLocalStorage(
+          LS_STRING_USER_TOKEN,
           JSON.stringify(result.apiKey)
         );
-        localStorage.setItem(LH_STRING_USER_ID, JSON.stringify(result.id));
+        saveInLocalStorage(LS_STRING_USER_ID, JSON.stringify(result.id));
         activateSession();
         presentToast(`Login success! Bienvenido/a ${user}`, "top", "success");
       })
@@ -330,10 +348,15 @@ window.addEventListener("load", function () {
           menuOptions.logout,
         ]);
         // displaySection(homeDiv);
+        navigateTo("homeScreen");
         resetInputs();
+        loadRubros();
+        renderMovementsLists("userMovements");
+        setTimeout(function () {
+            hideAllLoadingScreens();
+        }, 2000);
         // getProducts();
         // displayProducts(products);
-        navigateTo("homeScreen");
         return true;
       } else {
         throw new Error("Debes loggearte antes!");
@@ -344,8 +367,8 @@ window.addEventListener("load", function () {
     }
   };
   const getUserToken = () =>
-    JSON.parse(localStorage.getItem(LH_STRING_USER_TOKEN));
-  const getUserID = () => JSON.parse(localStorage.getItem(LH_STRING_USER_ID));
+    JSON.parse(getFromLocalStorage(LS_STRING_USER_TOKEN));
+  const getUserID = () => JSON.parse(getFromLocalStorage(LS_STRING_USER_ID));
 
   const logoutFunc = () => {
     if (!isUserLogged) {
@@ -423,7 +446,7 @@ window.addEventListener("load", function () {
       let fechaFormateada = parseDate(ingresoDate);
       console.log(fechaFormateada);
       return new Movimiento(
-        localStorage.getItem(LH_STRING_USER_ID),
+        getFromLocalStorage(LS_STRING_USER_ID),
         ingresoElems.inputConcepto.value,
         ingresoElems.inputRubro.value,
         ingresoElems.inputImporte.value,
@@ -592,7 +615,7 @@ window.addEventListener("load", function () {
             "</ion-select-option>";
           i++;
         }
-        registrationElem.inputDpto.innerHTML = card; 
+        registrationElem.inputDpto.innerHTML = card;
       })
       .catch((error) => console.log("error", error));
   };
@@ -621,6 +644,8 @@ window.addEventListener("load", function () {
     fetch(`${env.apiURL}/rubros.php`, requestOptions)
       .then((response) => response.json())
       .then(function (resp) {
+        console.log("rubros", JSON.stringify(resp.rubros));
+        saveInLocalStorage(LS_STRING_RUBROS_LIST, JSON.stringify(resp.rubros))
         let i = 0;
         let card = "";
         while (i < resp.rubros.length) {
@@ -696,44 +721,16 @@ window.addEventListener("load", function () {
   };
 
   // HOME
-  const mostrarFormularioModal = {
-    gasto: () => {
-      console.log("MOSTRAR MODAL DE GASTOS");
-    },
-    ingreso: () => {
-      console.log("MOSTRAR MODAL DE INGRESO");
-    },
+  const renderMovementsLists = (movementsParam) => {
+    console.log("renderizará la lista de movimientos");
   };
-  // const selectNewMovement = () => {
-  //   const actionSheet = document.createElement('ion-action-sheet');
-  //   actionSheet.header = 'Registrar nuevo movimiento';
-  //   actionSheet.buttons = [
-  //     {
-  //       text: 'Nuevo Gasto',
-  //       role: 'selected',
-  //       handler:()=>{
-  //         mostrarFormularioModal.gasto();
-  //       }
-  //     },
-  //     {
-  //       text: 'Nuevo Ingreso',
-  //       role: 'selected',
-  //       handler:()=>{
-  //         mostrarFormularioModal.ingreso()
-  //       }
-  //     },
-  //     {
-  //       text: 'Cancel',
-  //       role: 'cancel',
-  //       data: {
-  //         action: 'cancel',
-  //       },
-  //     },
-  //   ];
-
-  //   document.body.appendChild(actionSheet);
-  //   return actionSheet.present()
-  // }
+  const switchListTo = (listElem) => {
+    console.log("cambiando a:", listElem)
+    homeElem.listAllMovements.style.display = "none"
+    homeElem.listIncomeMovements.style.display = "none"
+    homeElem.listExpensesMovements.style.display = "none"
+    listElem.style.display = ""
+  }
 
   // MAP
   const resetMap = () => {
@@ -742,7 +739,7 @@ window.addEventListener("load", function () {
         map.removeLayer(layer);
       });
       map.remove();
-      map = undefined
+      map = undefined;
     }
     // map = null
   };
@@ -830,10 +827,19 @@ window.addEventListener("load", function () {
   });
   registrationElem.inputDpto.addEventListener("ionChange", (e) => {
     console.log(e.target.value);
-    registrationElem.inputCity.value="";
+    registrationElem.inputCity.value = "";
     loadCitiesForDep(e.target.value);
-    registrationElem.inputCity.setAttribute("disabled", "false")
+    registrationElem.inputCity.setAttribute("disabled", "false");
   });
+  homeElem.segmentAll.addEventListener("click", ()=>{
+    switchListTo(homeElem.listAllMovements)
+  })
+  homeElem.segmentExpenses.addEventListener("click", ()=>{
+    switchListTo(homeElem.listExpensesMovements)
+  })
+  homeElem.segmentIncome.addEventListener("click", ()=>{
+    switchListTo(homeElem.listIncomeMovements)
+  })
   // homeElem.newMovementBtn.addEventListener("click", e =>{
   //   console.log(e.target);
   //   selectNewMovement();
