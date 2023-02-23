@@ -533,7 +533,7 @@ window.addEventListener("load", function () {
           resetInputsMovimientos();
           closeModal(modals.modalIngreso);
           closeModal(modals.modalGasto);
-          homeElem.movementPopup.dismiss()
+          homeElem.movementPopup.dismiss();
 
           setTimeout(() => {
             getMovements();
@@ -802,7 +802,9 @@ window.addEventListener("load", function () {
         <ion-label style="flex: 2">
           <h2>${data.concepto}</h2>
           <p>
-            <ion-icon slot="start" name="${isGasto(data)?"caret-down":"caret-up"}" color="${isGasto(data)?"danger":"success"}"></ion-icon> 
+            <ion-icon slot="start" name="${
+              isGasto(data) ? "caret-down" : "caret-up"
+            }" color="${isGasto(data) ? "danger" : "success"}"></ion-icon> 
             <i>${getRubroNameById(data.categoria)}</i>
           </p>
 
@@ -814,7 +816,7 @@ window.addEventListener("load", function () {
         <ion-label>
           <p>${data.fecha}</p>
         </ion-label>
-        <ion-button color="danger">
+        <ion-button color="danger" data-id=${data.id}>
           <ion-icon slot="icon-only" name="trash"></ion-icon>
         </ion-button></ion-item>`;
       };
@@ -845,16 +847,34 @@ window.addEventListener("load", function () {
       if (movementsParam.length > 0) {
         for (const movimiento of movementsParam) {
           homeElem.listAllMovements.innerHTML += renderListItem(movimiento);
+          // console.log("element",homeElem.listAllMovements.querySelector(`ion-button[data-id="${movimiento.id}"]`))
+          // console.log("movimiento.id", movimiento.id)
+          // homeElem.listAllMovements
+          //   .querySelector(`ion-button[data-id="${movimiento.id}"]`)
+          //   .addEventListener("click", (ev) => {
+          //     console.log("BOTON!")
+          //     deleteMovementHandler(ev);
+          // });
           if (isGasto(movimiento)) {
             hayGastos = true;
             homeElem.listExpensesMovements.innerHTML +=
               renderListItem(movimiento);
+            // homeElem.listExpensesMovements
+            //   .querySelector(`ion-button[data-id="${movimiento.id}"]`)
+            //   .addEventListener("click", (ev) => {
+            //     deleteMovementHandler(ev);
+            //   });
             total.expenses += movimiento.total;
             total.available -= movimiento.total;
           } else {
             hayIngresos = true;
             homeElem.listIncomeMovements.innerHTML +=
               renderListItem(movimiento);
+            // homeElem.listIncomeMovements
+            //   .querySelector(`ion-button[data-id="${movimiento.id}"]`)
+            //   .addEventListener("click", (ev) => {
+            //     deleteMovementHandler(ev);
+            //   });
             total.income += movimiento.total;
             total.available += movimiento.total;
           }
@@ -862,6 +882,29 @@ window.addEventListener("load", function () {
         homeElem.totalAvailable.innerHTML = `$${total.available}`;
         homeElem.totalExpenses.innerHTML = `$${total.expenses}`;
         homeElem.totalIncome.innerHTML = `$${total.income}`;
+
+        // Establece función de eliminar para cada botón de cada lista
+        for (const movementBtn of homeElem.listAllMovements.querySelectorAll(
+          "ion-item ion-button"
+        )) {
+          movementBtn.addEventListener("click", (ev) => {
+            deleteMovementHandler(ev);
+          });
+        }
+        for (const movementBtn of homeElem.listExpensesMovements.querySelectorAll(
+          "ion-item ion-button"
+        )) {
+          movementBtn.addEventListener("click", (ev) => {
+            deleteMovementHandler(ev);
+          });
+        }
+        for (const movementBtn of homeElem.listIncomeMovements.querySelectorAll(
+          "ion-item ion-button"
+        )) {
+          movementBtn.addEventListener("click", (ev) => {
+            deleteMovementHandler(ev);
+          });
+        }
       } else {
         homeElem.listAllMovements.innerHTML += noDataNote("allMovements");
         homeElem.listExpensesMovements.innerHTML +=
@@ -875,7 +918,7 @@ window.addEventListener("load", function () {
         homeElem.listExpensesMovements.innerHTML +=
           noDataNote("expensesMovements");
       }
-      if(!hayIngresos) {
+      if (!hayIngresos) {
         homeElem.listIncomeMovements.innerHTML += noDataNote("incomeMovements");
       }
     } catch (errorParam) {
@@ -922,6 +965,55 @@ window.addEventListener("load", function () {
         }
       })
       .catch((error) => console.log("error", error));
+  };
+
+  const deleteMovementRequest = (movementElem) => {
+    let reqHeader = new Headers();
+    reqHeader.append("Content-Type", "application/json");
+    reqHeader.append("apikey", getUserToken());
+
+    let rawData = JSON.stringify({
+      idMovimiento: Number(movementElem.getAttribute("data-id")),
+    });
+
+    var reqOptions = {
+      method: "DELETE",
+      headers: reqHeader,
+      body: rawData,
+      redirect: "follow",
+    };
+    movementElem.innerHTML =
+      '<ion-spinner name="lines-sharp-small"></ion-spinner>';
+    fetch(`${env.apiURL}/movimientos.php`, reqOptions)
+      .then((response) => response.json())
+      .then((result) => {
+        console.log(result);
+        if (result.codigo === 200) {
+          // throw new Error("Error al eliminar el movimiento");
+          setTimeout(() => {
+            presentToast(`${result.mensaje}`, "top", "success");
+            setTimeout(() => {
+              // showLoadingScreen(loadingElems.homeLoading);
+              getMovements();
+            }, 300);
+          }, 800);
+        } else {
+          movementElem.innerHTML = '<ion-icon slot="icon-only" name="trash"></ion-icon>'
+          throw new Error(result.mensaje);
+        }
+      })
+      .catch((errorParam) => {
+        console.log("error", errorParam);
+        presentToast(`${errorParam}`, "top", "danger");
+      });
+  };
+
+  const deleteMovementHandler = (ev) => {
+    let movementElem = ev.target;
+    // console.log("movement", movementBtn);
+    // console.log("movementId", movementBtn.getAttribute("data-id"));
+    deleteMovementRequest(movementElem);
+
   };
 
   // MAP
