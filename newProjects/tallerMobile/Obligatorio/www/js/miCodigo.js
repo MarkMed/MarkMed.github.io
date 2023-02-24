@@ -1,5 +1,6 @@
 window.addEventListener("load", function () {
   console.log("START!");
+  let cajeros;
   let map;
   let userMovements = [
     {
@@ -47,6 +48,7 @@ window.addEventListener("load", function () {
   const LS_STRING_USER_TOKEN = "userToken";
   const LS_STRING_USER_ID = "userId";
   const LS_STRING_RUBROS_LIST = "rubrosList";
+  const LS_STRING_UBICATION = "userUbication";
 
   const env = {
     apiURL: "https://dwallet.develotion.com",
@@ -998,7 +1000,8 @@ window.addEventListener("load", function () {
             }, 300);
           }, 800);
         } else {
-          movementElem.innerHTML = '<ion-icon slot="icon-only" name="trash"></ion-icon>'
+          movementElem.innerHTML =
+            '<ion-icon slot="icon-only" name="trash"></ion-icon>';
           throw new Error(result.mensaje);
         }
       })
@@ -1013,7 +1016,6 @@ window.addEventListener("load", function () {
     // console.log("movement", movementBtn);
     // console.log("movementId", movementBtn.getAttribute("data-id"));
     deleteMovementRequest(movementElem);
-
   };
 
   // MAP
@@ -1045,9 +1047,28 @@ window.addEventListener("load", function () {
     map.flyTo([lat, long], zoom);
   };
   const getMyUbication = async () => {
+    let myMarker = L.icon({
+      iconUrl: "./myLocation.png",
+      iconSize: [33, 50],
+      iconAnchor: [17, 50],
+      popupAnchor:	[0, -38.5]
+  
+    });
     const successCallback = (position) => {
       console.log("position", position);
-      setMapUbication(position.coords.latitude, position.coords.longitude, 12);
+      setMapUbication(position.coords.latitude, position.coords.longitude, 15);
+
+      L.marker([position.coords.latitude, position.coords.longitude], {
+          icon: myMarker,
+      }).addTo(map);
+      saveInLocalStorage(
+        LS_STRING_UBICATION,
+        JSON.stringify({
+          lat: position.coords.latitude,
+          lon: position.coords.longitude,
+        })
+      );
+      getCajerosApi();
     };
     const errorCallback = (error) => {
       console.log(error);
@@ -1067,6 +1088,93 @@ window.addEventListener("load", function () {
       }, 1000);
     }, 2000);
   };
+
+  // const calcDistance = (punto1, punto2)=>{
+  //   return Math.sqrt((Math.pow((punto2.lat - punto1.lat, 2) + (Math.pow((punto2.lon - punto1.lon, 2))
+  // }
+  const calcularDistanciaEntrePuntos = (puntoInicial, puntoFinal) => {
+    // Dividimos entre 1000 para pasar de m a km.
+    let distancia = Number(
+      map.distance(puntoInicial, puntoFinal) / 1000
+    ).toFixed(2);
+    return distancia;
+  };
+
+  const ordenarCajeros = (cajeros) => {
+    let result = [...cajeros];
+    let ubicacionUsuario = JSON.parse(getFromLocalStorage(LS_STRING_UBICATION));
+    for (const cajero of result) {
+      cajero.distancia = calcularDistanciaEntrePuntos(
+        [ubicacionUsuario.lat, ubicacionUsuario.lon],
+        [cajero.latitud, cajero.longitud]
+      );
+    }
+    result.sort((a, b) => a.distancia - b.distancia);
+    return result;
+  };
+
+  //funcion para traer cajeros y cargar marcadores en el mapa
+  const getCajerosApi = () => {
+    // let cajeros;
+    var myHeaders = new Headers();
+    myHeaders.append("Content-Type", "application/json");
+
+    var requestOptions = {
+      method: "GET",
+      headers: myHeaders,
+    };
+
+    try {
+      fetch(`${env.apiURL}/cajeros.php`, requestOptions)
+        .then((response) => response.json())
+        .then((result) => {
+          console.log(result.cajeros);
+          const cajerosOrdenados = ordenarCajeros(result.cajeros);
+          for (let i = 0; i < 5; i++) {
+            let cajero = cajerosOrdenados[i];
+            // LLAMO PARA DIBUJAR
+            setCajeroInMap(cajero);
+          }
+        })
+        .catch((error) => console.log("error", error));
+
+      // for (const cajero of cajeros) {
+      //   L.marker([cajero.latitud, cajero.longitud])
+      //   .addTo(map)
+      //   .bindPopup(
+      //     `Disponibilidad Dinero: ${(cajero.disponible)?("Si"):("No")}, Recibe depositos: ${(cajero.depositos)?("Si"):("No")}`
+      //   );
+
+      // }
+    } catch (error) {
+      console.log(error);
+    }
+  };
+  //seteo cajeros
+  const setCajeroInMap = (cajero) => {
+    try {
+      // if (!isUserLogged) {
+      //   const msg = "Debes Loggearte!";
+      //   presentToast(`${msg}`, "top", "warning");
+      // }
+      L.marker([cajero.latitud, cajero.longitud])
+        .addTo(map)
+        .bindPopup(
+          `Disponibilidad Dinero: ${
+            cajero.disponible ? "Si" : "No"
+          }, Recibe depositos: ${cajero.depositos ? "Si" : "No"}`
+        );
+      // setMarkersMap();
+    } catch (error) {
+      console.log(error);
+      presentToast(`${error}`, "top", "danger");
+    }
+  };
+
+  // 1ro Petición y traigo todos los cajeros
+  // 2ndo guardo los cajeros
+  // 3ro filtro los cajeros segun distancia (más ceranos)
+  // 4to dibujo los 5 cajeros más cercanos
 
   //--------- INICIALIZACION DE LA APP ---------//
   clearAppData();
