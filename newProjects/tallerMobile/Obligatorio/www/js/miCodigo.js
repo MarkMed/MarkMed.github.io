@@ -129,6 +129,8 @@ window.addEventListener("load", function () {
     cancelBtn: document.querySelector("#homeScreen #cancelIngreso"),
   };
 
+  const shareBtn = document.querySelector("#menu #shareBtnContainer #shareBtn")
+
   // LS
   const saveInLocalStorage = (keyParam, valueParam) => {
     localStorage.setItem(keyParam, valueParam);
@@ -1176,6 +1178,41 @@ window.addEventListener("load", function () {
   // 3ro filtro los cajeros segun distancia (más ceranos)
   // 4to dibujo los 5 cajeros más cercanos
 
+  const shareHandler = () =>{
+    shareApp();
+    shareNavegador();
+    presentToast("Compartir!", "top", "success");
+  }
+  const shareApp = async () => {
+    console.log("Implementar share func");
+    // implementar
+    try {
+   
+      if(Capacitor.isNativePlatform()){
+        await Capacitor.Plugins.Share.share({
+          title: 'FinanzAPP',
+          text: 'Check out this APP!',
+          url: 'https://dwallet.develotion.com/site/',
+          dialogTitle: 'Share with buddies',
+        });
+      }
+    } catch (e) {
+      console.log("No se puede compartir en Navegador de esta manera!");
+    }
+
+
+
+  };
+
+  const shareNavegador = () =>{
+    
+      navigator.share({
+        title: 'FinanzAPP',
+        text: 'Check out this APP!',
+        url: 'https://dwallet.develotion.com/site/'
+      });
+    
+  }
   //--------- INICIALIZACION DE LA APP ---------//
   clearAppData();
   menuOptionsToDisplay([menuOptions.login, menuOptions.registration]);
@@ -1237,6 +1274,9 @@ window.addEventListener("load", function () {
   //   console.log(e.target);
   //   selectNewMovement();
   // })
+  shareBtn.addEventListener("click", ()=>{
+    shareHandler()
+  })
 });
 
 // Manejo de formato fecha para API
