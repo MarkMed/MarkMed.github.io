@@ -209,23 +209,40 @@ section#skills div.contentContainer .contentSection ul{
   margin: 0;
   transition: var(--animation);
 }
+section#skills div.contentContainer .contentSection ul.techList{
+  padding: 0;
+  text-overflow: ellipsis; /* enables ellipsis */
+  white-space: nowrap; /* keeps the text in a single line */
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+
 section#skills div.contentContainer .contentSection ul li{
-  min-width: 100%;
-  max-height: 30px;
+  min-width: 300px;
+  max-height: 35px;
   min-height: 10px;
   margin-bottom: 5px;
   line-height: 1em;
-  text-overflow: ellipsis;
-  white-space: nowrap;
 }
-section#skills div.contentContainer .contentSection ul li p{
-  text-overflow: ellipsis;
-  white-space: nowrap;
+section#skills div.contentContainer .contentSection ul.techList li{
+  min-width: 100%;
+  text-overflow: ellipsis; /* enables ellipsis */
+  white-space: nowrap; /* keeps the text in a single line */
+  overflow: hidden;
+}
+section#skills div.contentContainer .contentSection ul.techList li div:nth-child(1n){
   flex: 1;
+  max-width: 45%;
+}
+section#skills div.contentContainer .contentSection ul.techList li p{
+  flex: 1;
+  text-overflow: ellipsis; /* enables ellipsis */
+  white-space: nowrap; /* keeps the text in a single line */
+  overflow: hidden;
+  min-width: 50%;
 }
 section#skills div.contentContainer div:nth-child(1n){
-  padding: 0;  
-  flex: 1;
+  padding: 0;
 }
 
 section#skills div.contentContainer div:nth-child(1) article.contentSection{
@@ -244,7 +261,7 @@ section#skills div.contentContainer div:nth-child(3) mkm-star-rating{
   width: 150px;
 }
 section#skills div.contentContainer .contentSection div.starsContainer{
-  width: 150px;
+  /* width: 150px; */
   min-height: 50px;
   margin-right: 20px;
 }
