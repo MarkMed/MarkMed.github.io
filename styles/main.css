@@ -228,7 +228,8 @@ section#skills div.contentContainer .contentSection ul.techList li{
   min-width: 100%;
   text-overflow: ellipsis; /* enables ellipsis */
   white-space: nowrap; /* keeps the text in a single line */
-  overflow: hidden;
+  /* overflow: hidden; */
+  min-height: 25px;
 }
 section#skills div.contentContainer .contentSection ul.techList li div:nth-child(1n){
   flex: 1;
@@ -238,11 +239,19 @@ section#skills div.contentContainer .contentSection ul.techList li p{
   flex: 1;
   text-overflow: ellipsis; /* enables ellipsis */
   white-space: nowrap; /* keeps the text in a single line */
-  overflow: hidden;
+  /* overflow: hidden; */
   min-width: 50%;
+  margin: 0;
 }
-section#skills div.contentContainer div:nth-child(1n){
+section#skills div.contentContainer div:nth-child(1n).starRatemodeContainer{
   padding: 0;
+  flex: 1;
+}
+section#skills div.contentContainer div:nth-child(1n).starRatemodeContainer p{
+  flex: 2;
+}
+section#skills div.contentContainer div:nth-child(1n).starRatemodeContainer div.starsContainer{
+  flex: 1;
 }
 
 section#skills div.contentContainer div:nth-child(1) article.contentSection{
@@ -253,16 +262,16 @@ section#skills div.contentContainer div:nth-child(1) article.contentSection{
     margin-right: 10px;
   }
 }
-section#skills div.contentContainer div:nth-child(2) .contentSection  ul li{
+/* section#skills div.contentContainer div:nth-child(2) .contentSection  ul li{
   min-width: auto;
   padding-left: 10%;
-}
+} */
 section#skills div.contentContainer div:nth-child(3) mkm-star-rating{
   width: 150px;
 }
 section#skills div.contentContainer .contentSection div.starsContainer{
   /* width: 150px; */
-  min-height: 50px;
+  /* min-height: 50px; */
   margin-right: 20px;
 }
 section#skills div.contentContainer .contentSection div.starsContainer img{
