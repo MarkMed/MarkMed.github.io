@@ -166,6 +166,7 @@ section#aboutMe img{
   height: 100%;
   max-height: 200px;
   box-shadow: var(--shadow);
+  max-width: 100%;
 }
 
 section ul li{
@@ -209,14 +210,22 @@ section#skills div.contentContainer .contentSection ul{
   transition: var(--animation);
 }
 section#skills div.contentContainer .contentSection ul li{
-  min-width: 300px;
+  min-width: 100%;
   max-height: 30px;
   min-height: 10px;
   margin-bottom: 5px;
   line-height: 1em;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+section#skills div.contentContainer .contentSection ul li p{
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  flex: 1;
 }
 section#skills div.contentContainer div:nth-child(1n){
-  padding: 0;
+  padding: 0;  
+  flex: 1;
 }
 
 section#skills div.contentContainer div:nth-child(1) article.contentSection{

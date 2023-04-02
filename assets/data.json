@@ -1,0 +1,42 @@
+{
+	"food": [
+	  {
+		"Name": "food1",
+		"Type": "type1",
+		"Price": 1
+	  },
+	  {
+		"Name": "food2",
+		"Type": "type2",
+		"Price": 2
+	  },
+	  {
+		"Name": "food3",
+		"Type": "type3",
+		"Price": 3
+	  }
+	],
+	"skills": [
+		{
+			"stars": 5,
+			"techs": ["HTML","CSS", "JavaScript", "Web Components"]
+		},
+		{
+			"stars": 4,
+			"techs": ["TypeScript","StencilJS","ReactJS","SASS","UI Design","R.W.D.","SEO","Git","GitHub"]
+		},
+		{
+			"stars": 3,
+			"techs": ["Java","Ionic","SQL","Bootstrap 5.1","MaterializeCSS","MaterialUI", "Lua"]
+		},
+		{
+			"stars": 2,
+			"techs": ["C#","ASP.NET","NodeJS","ExpressJS", "MongoDB", "Dart", "Flutter"]
+		},
+		{
+			"stars": 1,
+			"techs": ["Unity3D"]
+		}
+
+	]
+  }
