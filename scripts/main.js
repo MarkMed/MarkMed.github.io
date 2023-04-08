@@ -10,6 +10,13 @@ document.addEventListener("DOMContentLoaded", function () {
   const htmlElems = {
     techList1: document.getElementById("techList1"),
     techList2: document.getElementById("techList2"),
+    seeMoreBtns: {
+      aboutMe: document.getElementById("seeMoreToggle_aboutMe")
+    },
+    hiddenElems: {
+      aboutMeParagraph: document.querySelectorAll("section#aboutMe div.itemContainer article p")[document.querySelectorAll("section#aboutMe div.itemContainer article p").length-1],
+      techList2: document.getElementById("techList2")
+    }
   };
   const openSidenav = (sidenavToOpen) => {
     sidenavToOpen.open();
@@ -89,6 +96,25 @@ document.addEventListener("DOMContentLoaded", function () {
     loadSkills();
     // htmlElems.techList.innerHTML = "";
   };
+  const displayElement = (elem) => {
+    elem.style.display = ""
+  }
+  const hideElement = (elem) => {
+    elem.style.display = "none"
+  }
+
+  const toggleSeeMore = (triggerBtn, contentToToggle)=>{
+    const isDisplayed = triggerBtn.getAttribute("data-display")-1+1;
+    if(isDisplayed){
+      hideElement(contentToToggle)
+      triggerBtn.setAttribute("data-display", isDisplayed-1)
+      triggerBtn.innerHTML = "More About Me"
+    } else {
+      displayElement(contentToToggle)
+      triggerBtn.setAttribute("data-display", isDisplayed+1)
+      triggerBtn.innerHTML = "Hide this info"
+    }
+  }
 
   // STACKWOVERGOD!
   document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
@@ -104,6 +130,13 @@ document.addEventListener("DOMContentLoaded", function () {
   for (const elemOption of sidenavOptions) {
     elemOption.addEventListener("click", closeMainSidenav);
   }
+  htmlElems.seeMoreBtns.aboutMe.addEventListener("click", ()=>{
+    toggleSeeMore(htmlElems.seeMoreBtns.aboutMe, htmlElems.hiddenElems.aboutMeParagraph)
+    // console.log(htmlElems.hiddenElems.aboutMeParagraph)
+  })
+
+  hideElement(htmlElems.hiddenElems.aboutMeParagraph)
+  // hideElement(htmlElems.hiddenElems.techList2)
 
   loadData();
 });
