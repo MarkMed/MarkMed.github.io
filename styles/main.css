@@ -12,6 +12,9 @@
 
 	--animation: 0.3s ease;
 }
+.smoothTransition{
+  transition: var(--animation);
+}
 
 body{
   font-family: 'Quicksand', sans-serif;
