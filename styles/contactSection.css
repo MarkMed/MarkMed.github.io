@@ -1,0 +1,27 @@
+
+section#contact div article{
+	padding: 10px;
+	min-height: 50px;
+	transition: var(--animation);
+	cursor: pointer;
+  }
+  
+  section#contact div article:active{
+	transform: translateY(3px);
+	box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.2);
+  }
+  
+  section#contact div.itemContainer div.contactItem {
+	padding: 0;
+	padding-bottom: 10px;
+  }
+  
+  @media only screen and (min-width: 601px){
+	section#contact div.itemContainer div.contactItem:nth-child(1),
+	section#contact div.itemContainer div.contactItem:nth-child(4) {
+	  padding-right: 10px;
+	}
+	section#contact div.itemContainer div.contactItem:nth-child(2) {
+	  padding: 0px;
+	}
+  }
