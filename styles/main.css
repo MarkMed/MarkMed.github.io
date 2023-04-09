@@ -5,6 +5,12 @@
   --primary-color-25: rgba(96, 125, 139,0.25);
   --primary-color-0: rgba(96, 125, 139,0);
 
+  --light-color-100: rgba(255, 255, 255, 1);
+  --light-color-75: rgba(255, 255, 255, 0.75);
+  --light-color-50: rgba(255, 255, 255, 0.5);
+  --light-color-25: rgba(255, 255, 255, 0.25);
+  --light-color-0: rgba(255, 255, 255, 0);
+
   --shadow: 0px 3px 12px 0px rgba(0, 0, 0, 0.35), 0 2px 3px 0px rgba(0, 0, 0, 0.20);
 	--lifted-shadow: 0px 5px 14px 0px rgba(0, 0, 0, 0.45), 0 4px 4px 0px rgba(0, 0, 0, 0.15);
 	--big-shadow: 0px 8px 30px 4px rgba(0, 0, 0, 0.2), 0px 5px 11px 0px rgba(0, 0, 0, 0.2);
@@ -51,7 +57,19 @@ ul.sidenav .user-view img.circle{
 }
 ul.sidenav .user-view h2{
   margin: 0;
-  margin-top: 30px;
+  margin-top: 30px;  
+  text-align: center;
+}
+ul.sidenav .user-view span{
+  text-align: center;
+}
+ul.sidenav a.sidenavOption::before{
+  /* background-color: red; */
+  /* border-left: 5px solid var(--light-color-75); */
+  /* box-shadow: 5px 0px 5px var(--light-color-75); */
+  content: "";
+  border: 1px solid var(--light-color-75);
+  margin-right: 15px;
 }
 @media screen and (max-width: 992px) {
 	.logo {
