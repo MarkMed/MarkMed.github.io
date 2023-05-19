@@ -1,0 +1,31 @@
+section#courses div.contentContainer{
+	padding: 0px;
+}
+
+section#courses div.contentContainer .itemData{
+	padding: 10px
+}
+section#courses div.contentContainer{
+	padding-bottom: 10px;
+}
+@media only screen and (min-width: 993px){
+	section#courses div.contentContainer:nth-child(2n-1){
+		padding-right: 5px;
+		background-color: rgb(131, 46, 131);
+	}
+	section#courses div.contentContainer:nth-child(2n){
+		padding-left: 5px;
+		background-color: violet;
+	}
+}
+
+section#courses div.contentContainer .itemTitle h4{
+	margin: 0;
+}
+section#courses div.contentContainer .itemTitle h5{
+	margin: 0;
+}
+
+section#courses div.contentContainer .itemDescription ul{
+	padding: 0;
+}
