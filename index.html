@@ -15,6 +15,7 @@
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	<link rel="stylesheet" href="./styles/main.css">
 	<link rel="stylesheet" href="./styles/aboutMeSection.css">
+	<link rel="stylesheet" href="./styles/expSection.css">
 	<link rel="stylesheet" href="./styles/skillsSection.css">
 	<link rel="stylesheet" href="./styles/projectsSection.css">
 	<link rel="stylesheet" href="./styles/contactSection.css">
@@ -45,7 +46,7 @@
 				</ul>
 				<a href="#" data-target="navSide" class="sidenav-trigger"><i class="material-icons">menu</i></a>
 			</div>
-			<div class="nav-content white z-depth-2">
+			<div class="nav-content grey lighten-4 z-depth-2">
 				<ul class="col s12 flex-row flex-wrap flex-justify-spaceEvenly flex-alignItems-center ">
 					<li>
 						<a href="https://github.com/MarkMed?tab=repositories" target="_blank"
@@ -117,7 +118,7 @@
 	<main id="top" class="container blue-grey-text">
 		<section id="aboutMe">
 			<h2>About Me</h2>
-			<div class="itemContainer white roundedBorders z-depth-3">
+			<div class="itemContainer grey lighten-4 roundedBorders z-depth-3">
 				<article
 					class="row flex-row flex-alignItems-end flex-justify-spaceBetween paddingTop20 flex-wrap-reverse">
 					<div
@@ -129,7 +130,7 @@
 								<span>Web Developer</span><span>IT Analyst Student</span>
 							</h3>
 						</div>
-						<p>Hi! I am Marcos Medina, a restless Developer.
+						<p>Hi! I am <b>Marcos Medina</b>, a restless Developer.
 							I have been working as a FrontEnd Developer for three years!
 						</p>
 						<p>I love design and develop Web interfaces, connect those interfaces with API if it needed,
@@ -153,7 +154,7 @@
 		<section id="experience">
 			<h2>Work Experience</h2>
 			<div class="itemContainer flex-col flex-justify-center flex-alignItems-center ">
-				<article class="row itemData white roundedBorders z-depth-1 ">
+				<article class="row itemData grey lighten-4 roundedBorders z-depth-1 ">
 					<div class="itemTitle col s12 l8">
 						<h4>Jr Analyst</h4>
 						<h5>Tata Consultancy Services</h5>
@@ -203,7 +204,7 @@
 						</ul>
 					</div>
 				</article>
-				<article class="row itemData white roundedBorders z-depth-1 ">
+				<article class="row itemData grey lighten-4 roundedBorders z-depth-1 ">
 					<div class="itemTitle col s12 l8">
 						<h4>FullStack Web Developer</h4>
 						<h5>Houlak</h5>
@@ -229,7 +230,7 @@
 						</ul>
 					</div>
 				</article>
-				<article class="row itemData white roundedBorders z-depth-1 ">
+				<article class="row itemData grey lighten-4 roundedBorders z-depth-1">
 					<div class="itemTitle col s12  l8">
 						<h4>Web UI Developer</h4>
 						<h5>Globant</h5>
@@ -252,7 +253,7 @@
 						</ul>
 					</div>
 				</article>
-				<article class="row itemData white roundedBorders z-depth-2 ">
+				<article class="row itemData grey lighten-4 roundedBorders z-depth-1">
 					<div class="itemTitle col s12 l8">
 						<h4>Junior Programmer</h4>
 						<h5>GeneXus</h5>
@@ -291,15 +292,104 @@
 				</article>
 			</div>
 		</section>
-		<section id="skills" class="fullwidth">
+		<section id="skills" class="fullwidth smoothTransition">
 			<h2>Skills</h2>
-			<div class="contentContainer row">
+			<div id="skillsMode" class="row smoothTransition">
+				<div class="col s12 flex-row flex-justify-end flex-alignItems-start">
+					<p class="blue-grey-text fontNormalSize">View mode:</p>
+					<div id="switchElem" class="switch blue-grey-text flex-row flex-alignItems-center">
+						<label class="blue-grey-text fontSmallSize">
+							Summary
+							<input id="skillsModeCheckbox" type="checkbox">
+							<span class="lever"></span>
+							All rating
+						</label>
+					</div>
+				</div>
+			</div>
+			<div id="rateMode" class="contentContainer row rateMode smoothTransition hiddenContent flex-row flex-wrap">
 
 
+
+
+				<div class="col s12 l7 padding0">
+					<article
+						class="contentSection white roundedBorders z-depth-1 itemData flex-col flex-justify-start flex-alignItems-start">
+						<h3 class="fontBigSize ">Skills Rate Mode</h3>
+						<ul class="row">
+							<li class="col s12 flex-row flex-justify-start flex-alignItems-center">
+								<div class="starRatemodeContainer flex-row flex-justify-star flex-alignItems-center">
+									<div class="starsContainer flex-row flex-justify-end flex-alignItems-center">
+										<mkm-star-rating current-rate="1" stars-color="rgba(96, 125, 139,1)">
+										</mkm-star-rating>
+									</div>
+									<p>I willl need a lot of help and guidence.</p>
+								</div>
+							</li>
+							<li class="col s12 flex-row flex-justify-start flex-alignItems-center">
+								<div class="starRatemodeContainer flex-row flex-justify-star flex-alignItems-center">
+									<div class="starsContainer flex-row flex-justify-end flex-alignItems-center">
+										<mkm-star-rating current-rate="2" stars-color="rgba(96, 125, 139,1)">
+										</mkm-star-rating>
+									</div>
+									<p>I know some things, but still need help.</p>
+								</div>
+							</li>
+							<li class="col s12 flex-row flex-justify-start flex-alignItems-center">
+								<div class="starRatemodeContainer flex-row flex-justify-star flex-alignItems-center">
+									<div class="starsContainer flex-row flex-justify-end flex-alignItems-center">
+										<mkm-star-rating current-rate="3" stars-color="rgba(96, 125, 139,1)">
+										</mkm-star-rating>
+									</div>
+									<p>I can handle myself, but need guidence.</p>
+								</div>
+							</li>
+							<li class="col s12 flex-row flex-justify-start flex-alignItems-center">
+								<div class="starRatemodeContainer flex-row flex-justify-star flex-alignItems-center">
+									<div class="starsContainer flex-row flex-justify-end flex-alignItems-center">
+										<mkm-star-rating current-rate="4" stars-color="rgba(96, 125, 139,1)">
+										</mkm-star-rating>
+									</div>
+									<p>I know what I am doing, check my work!</p>
+								</div>
+							</li>
+							<li class="col s12 flex-row flex-justify-start flex-alignItems-center">
+								<div class="starRatemodeContainer flex-row flex-justify-star flex-alignItems-center">
+									<div class="starsContainer flex-row flex-justify-end flex-alignItems-center">
+										<mkm-star-rating current-rate="5" stars-color="rgba(96, 125, 139,1)">
+										</mkm-star-rating>
+									</div>
+									<p>I can teach you about the technology!</p>
+								</div>
+							</li>
+						</ul>
+					</article>
+				</div>
+				
+				<div class="col s12 l5 softSkillRateMode">
+					<article
+						class="contentSection white roundedBorders z-depth-1 itemData flex-col flex-justify-start flex-alignItems-start ">
+						<h3 class="fontBigSize">Soft skills</h3>
+						<ul >
+							<li>
+								<p>- Agile and DevOps experience</p>
+							</li>
+							<li>
+								<p>- Scalable and reusable code</p>
+							</li>
+							<li>
+								<p>- Commented and clean code</p>
+							</li>
+							<li>
+								<p>- Active communication</p>
+							</li>
+						</ul>
+					</article>
+				</div>
 
 				<div class="col s12 padding0">
 					<article
-						class="contentSection white roundedBorders z-depth-2 flex-row flex-justify-spaceEvenly flex-alignItems-start flex-wrap">
+						class="contentSection white roundedBorders z-depth-1 flex-row flex-justify-spaceEvenly flex-alignItems-start flex-wrap">
 						<h3 class="col s12 fontBigSize">Technologies</h3>
 						<ul id="techList1"
 							class="techList col s12 m6 flex-col flex-justify-spaceEvenly flex-alignItems-start flex-wrap smoothTransition">
@@ -395,87 +485,126 @@
 					</article>
 				</div>
 
-				<div class="col s12 l7 padding0">
-					<article
-						class="contentSection white roundedBorders z-depth-1 itemData flex-col flex-justify-start flex-alignItems-start">
-						<h3 class="fontBigSize ">Skills Rate Mode</h3>
-						<ul class="row">
-							<li class="col s12 flex-row flex-justify-start flex-alignItems-center">
-								<div class="starRatemodeContainer flex-row flex-justify-star flex-alignItems-center">
-									<div class="starsContainer flex-row flex-justify-end flex-alignItems-center">
-										<mkm-star-rating current-rate="1" stars-color="rgba(96, 125, 139,1)">
-										</mkm-star-rating>
-									</div>
-									<p>I willl need a lot of help and guidence.</p>
-								</div>
+			</div>
+
+			<div id="skillsSummary" class="contentContainer row flex-row flex-wrap smoothTransition">
+				<article class="col s12 l6 xl3">
+
+					<div
+						class=" contentSection white roundedBorders z-depth-1 itemData flex-col flex-justify-start flex-alignItems-start ">
+						<h3 class="fontNotableSize">Top Technologies</h3>
+						<ul >
+							<li>
+								<p>- JavaScript</p>
 							</li>
-							<li class="col s12 flex-row flex-justify-start flex-alignItems-center">
-								<div class="starRatemodeContainer flex-row flex-justify-star flex-alignItems-center">
-									<div class="starsContainer flex-row flex-justify-end flex-alignItems-center">
-										<mkm-star-rating current-rate="2" stars-color="rgba(96, 125, 139,1)">
-										</mkm-star-rating>
-									</div>
-									<p>I know some things, but still need help.</p>
-								</div>
+							<li>
+								<p>- HTML</p>
 							</li>
-							<li class="col s12 flex-row flex-justify-start flex-alignItems-center">
-								<div class="starRatemodeContainer flex-row flex-justify-star flex-alignItems-center">
-									<div class="starsContainer flex-row flex-justify-end flex-alignItems-center">
-										<mkm-star-rating current-rate="3" stars-color="rgba(96, 125, 139,1)">
-										</mkm-star-rating>
-									</div>
-									<p>I can handle myself, but need guidence.</p>
-								</div>
+							<li>
+								<p>- CSS</p>
 							</li>
-							<li class="col s12 flex-row flex-justify-start flex-alignItems-center">
-								<div class="starRatemodeContainer flex-row flex-justify-star flex-alignItems-center">
-									<div class="starsContainer flex-row flex-justify-end flex-alignItems-center">
-										<mkm-star-rating current-rate="4" stars-color="rgba(96, 125, 139,1)">
-										</mkm-star-rating>
-									</div>
-									<p>I know what I am doing, check my work!</p>
-								</div>
+							<li>
+								<p>- SASS</p>
 							</li>
-							<li class="col s12 flex-row flex-justify-start flex-alignItems-center">
-								<div class="starRatemodeContainer flex-row flex-justify-star flex-alignItems-center">
-									<div class="starsContainer flex-row flex-justify-end flex-alignItems-center">
-										<mkm-star-rating current-rate="5" stars-color="rgba(96, 125, 139,1)">
-										</mkm-star-rating>
-									</div>
-									<p>I can teach you about the technology!</p>
-								</div>
+							<li>
+								<p>- ReactJS</p>
+							</li>
+							<li>
+								<p>- TypeScript</p>
+							</li>
+							<li>
+								<p>- StencilJS</p>
 							</li>
 						</ul>
-					</article>
-				</div>
+					</div>
+				</article>
 
-				<div class="col s12 l5 padding0">
-					<article
+				<article class="col s12 l6 xl3">
+					<div
 						class="contentSection white roundedBorders z-depth-1 itemData flex-col flex-justify-start flex-alignItems-start ">
-						<h3 class="fontBigSize">Soft skills</h3>
-						<ul class="softSkills">
+						<h3 class="fontNotableSize">Knowledge & Tools</h3>
+						<ul >
 							<li>
-								<p>- Focus on good results for the client</p>
+								<p>- Git & GitFlow</p>
 							</li>
 							<li>
-								<p>- Proficient on the development of scalable and reusable web components</p>
+								<p>- UI/UX Design</p>
 							</li>
 							<li>
-								<p>- Write clean code</p>
+								<p>- Responsive Design</p>
 							</li>
 							<li>
-								<p>- Good team communication & open to feedback</p>
+								<p>- Browser rendering</p>
 							</li>
 							<li>
-								<p>- Good English Skills (speaking, writing, listening, reading)</p>
+								<p>- Web Components / Shadow DOM</p>
 							</li>
 							<li>
-								<p>- Understanding Portuguese (listening, reading)</p>
+								<p>- Algorithms and Data Structure</p>
+							</li>
+							<li>
+								<p>- SEO</p>
 							</li>
 						</ul>
-					</article>
-				</div>
-
+					</div>
+				</article>
+				<article class=" col s12 l6 xl3">
+					<div
+						class="contentSection white roundedBorders z-depth-1 itemData flex-col flex-justify-start flex-alignItems-start ">
+						<h3 class="fontNotableSize">Soft skills</h3>
+						<ul >
+							<li>
+								<p>- Agile and DevOps experience</p>
+							</li>
+							<li>
+								<p>- Scalable and reusable code</p>
+							</li>
+							<li>
+								<p>- Commented and clean code</p>
+							</li>
+							<li>
+								<p>- Active communication</p>
+							</li>
+						</ul>
+					</div>
+				</article>
+				<article class=" col s12 l6 xl3">
+					<div
+						class="contentSection white roundedBorders z-depth-1 itemData flex-col flex-justify-start flex-alignItems-start ">
+						<h3 class="fontNotableSize">Used technologies</h3>
+						<ul >
+							<li>
+								<p>- OfficeJS (M365)</p>
+							</li>
+							<li>
+								<p>- Material Design</p>
+							</li>
+							<li>
+								<p>- Bootstrap 5.1</p>
+							</li>
+							<li>
+								<p>- NodeJS & ExpressJS</p>
+							</li>
+							<li>
+								<p>- MongoDB</p>
+							</li>
+							<li>
+								<p>- SQL</p>
+							</li>
+							<li>
+								<p>- Java</p>
+							</li>
+							<li>
+								<p>- C#</p>
+							</li>
+							<li>
+								<p>- ASP.Net</p>
+							</li>
+							<li>
+								<p>- Ionic</p>
+							</li>
+					</div>
+				</article>
 			</div>
 		</section>
 		<section id="education">
@@ -529,7 +658,8 @@
 					<div class="itemDescription col s12 row">
 						<ul class="col s12 flex-row flex-col flex-justify-spaceEvenly flex-alignItems-start">
 							<li>
-								| asdaSpaceDream is a scheduler and task manager web app developed in less than 48 hours for
+								| asdaSpaceDream is a scheduler and task manager web app developed in less than 48 hours
+								for
 								<strong class="fontBold">NASA's Space Apps</strong>.
 							</li>
 							<li>| asdadTo get a fast development and a modern style, we decided to use <strong
@@ -543,7 +673,8 @@
 								way to pass data and get a great layout.
 							</li>
 							<li>
-								| sdadsadsTo develop the calendar, we saw <strong class="fontBold">React Scheduler</strong> as
+								| sdadsadsTo develop the calendar, we saw <strong class="fontBold">React
+									Scheduler</strong> as
 								the best solution,
 								because it is implemented very well with MaterialUI, getting as result, a very
 								functional and interactive calendar
@@ -1258,7 +1389,7 @@
 				</div>
 				<div class="contactItem col s12 m6">
 					<article
-						class="white roundedBordersSmall z-depth-2 yellow flex-row flex-justify-center flex-alignItems-center blue ">
+						class="grey lighten-4 roundedBordersSmall z-depth-2 yellow flex-row flex-justify-center flex-alignItems-center blue ">
 						<div class="flex-row flex-justify-center flex-alignItems-center">
 
 							<i class="material-icons">phone_android</i>

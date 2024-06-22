@@ -6,6 +6,7 @@ document.addEventListener("DOMContentLoaded", function () {
   let instances = M.Sidenav.init(elems, { outDuration: SIDENAV_DURATION });
   let moreOptionBtn = document.getElementById("moreOptions");
   let sidenavOptions = document.getElementsByClassName("sidenavOption");
+  let skillsModeCheckbox = document.getElementById("skillsModeCheckbox");
   let data;
   const htmlElems = {
     techList1: document.getElementById("techList1"),
@@ -116,6 +117,10 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 
+  const toggleSkillsViewMode = ()=>{
+
+  }
+
   // STACKWOVERGOD!
   document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
     anchor.addEventListener("click", function (e) {
@@ -125,6 +130,17 @@ document.addEventListener("DOMContentLoaded", function () {
       });
     });
   });
+  skillsModeCheckbox.addEventListener("change", ()=>{
+    let skillsSummary = document.getElementById("skillsSummary");
+    let rateMode = document.getElementById("rateMode");
+    if(skillsModeCheckbox.checked){
+      skillsSummary.classList.add("hiddenContent")
+      rateMode.classList.remove("hiddenContent")
+    } else {
+      skillsSummary.classList.remove("hiddenContent")
+      rateMode.classList.add("hiddenContent")
+    }
+  })
 
   moreOptionBtn.addEventListener("click", openMainSidenav);
   for (const elemOption of sidenavOptions) {

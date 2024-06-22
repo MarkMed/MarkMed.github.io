@@ -22,6 +22,9 @@
 body{
   font-family: 'Quicksand', sans-serif;
   scroll-behavior: smooth;
+  background-repeat: repeat;
+  background-position: 45vw 200px;
+  background-image: radial-gradient(circle, #cfd8dc, #ced8dc, #ccd8dc, #cad8db, #c9d8db, #c7d7da, #c6d7da, #c4d6d9, #c2d4d8, #bfd3d7, #bdd1d7, #bbcfd6);
   /* padding-bottom: 100px; */
 }
 
@@ -83,6 +86,8 @@ ul.sidenav a.sidenavOption::before{
   }
 }
 
+
+
 /* CONTENT STYLES */
 
 section{
@@ -107,6 +112,11 @@ nav a.brand-logo.logo{
 }
 main {
   margin-top: -60px !important;
+}
+@media screen and (min-width: 1400px){
+  main {
+    min-width: 1300px;
+  }
 }
 main section h2{
 	display: flex;
@@ -206,6 +216,31 @@ footer{
 
 }
 
+/* width */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #607d8b6a;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #607d8b;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #405965;
+}
+
+
+.hidden{
+  display: none;
+}
+
 
 /* Custom classes */
 .paddingRight0{
@@ -279,6 +314,9 @@ footer{
 .fGap20{
   gap: 20px;
 }
+.fGap10{
+  gap: 10px;
+}
 .fGrow1{
   flex: 1
 }
@@ -317,3 +355,23 @@ footer{
 .smoothTransition{
   transition: var(--animation);
 }
+/* @keyframes  disappearAnimation {
+  0% {
+    opacity: 1;
+    display: initial;
+  }
+  50% {
+    opacity: 0;
+    display: initial;
+  }
+  100% {
+    opacity: 0;
+    display: none;
+  }
+} 
+.disappear{
+  transform: translateY(20px);
+  animation-name: disappearAnimation;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+}*/

@@ -1,99 +1,159 @@
-
-section#skills div.contentContainer article.contentSection {
+section#skills div.contentContainer .contentSection {
 	/* box-shadow: -3px 1px 5px -2px  rgba(0, 0, 0, 0.2); */
 	border-radius: 5px;
 	padding: 10px 15px;
-	margin: 10px 0px;
-	margin-bottom: 0;
-	min-height: 250px;
+	/* margin: 10px 0px; */
+	height: 100%;
 	transition: var(--animation);
 	/* background-color: rebeccapurple; */
-	
-  }
-  /* section#skills div.contentContainer div:first-child{
-	padding-right: 0;
-  }
-  section#skills div.contentContainer div:nth-child(2){
-	padding-left: 0;
-  } */
-  
-  section#skills div.contentContainer div:first-child .contentSection{
-	box-shadow: -3px 2px 5px rgba(0, 0, 0, 0.267);
-  }
-  
-  section#skills div.contentContainer .contentSection h3{
-	margin-top: 10px;
-	margin-bottom: 5px;
-  }
-  section#skills div.contentContainer .contentSection ul{
-	margin: 0;
-	transition: var(--animation);
-  }
-  section#skills div.contentContainer .contentSection ul.techList{
-	padding: 0;
-	text-overflow: ellipsis; /* enables ellipsis */
-	white-space: nowrap; /* keeps the text in a single line */
-	overflow: hidden;
+
+}
+
+section#skills div.contentContainer.rateMode div{
 	margin-bottom: 10px;
   }
-  
-  section#skills div.contentContainer .contentSection ul li{
-	min-width: 300px;
+section#skills div.contentContainer.rateMode div div.starsContainer{
+	margin-bottom: 0;
+  }
+
+section#skills div.contentContainer article {
+	padding: 0px;
+	padding-bottom: 10px;
+	/* height: 100%; */
+}
+section#skills  div.softSkillRateMode{
+	padding: 0px;
+}
+@media screen and (min-width: 992px) {
+	section#skills div.contentContainer article:nth-child(2n-1) {
+		padding-right: 10px;
+	}
+}
+@media screen and (min-width: 992px) {
+	section#skills  div.softSkillRateMode {
+		padding-left: 10px;
+	}
+}
+@media screen and (min-width: 1201px) {
+	section#skills div.contentContainer article:nth-child(2) {
+		padding-right: 10px;
+	}
+}
+
+
+
+
+section#skills div.contentContainer .contentSection h3 {
+	margin-top: 10px;
+	margin-bottom: 5px;
+}
+
+section#skills div.contentContainer .contentSection ul {
+	margin: 0;
+	transition: var(--animation);
+}
+
+section#skills div.contentContainer .contentSection ul.techList {
+	padding: 0;
+	text-overflow: ellipsis;
+	/* enables ellipsis */
+	white-space: nowrap;
+	/* keeps the text in a single line */
+	overflow: hidden;
+	margin-bottom: 10px;
+}
+
+section#skills div.contentContainer .contentSection ul li {
+	min-width: 100%;
 	max-height: 35px;
 	min-height: 10px;
 	margin-bottom: 5px;
 	line-height: 1em;
-  }
-  section#skills div.contentContainer .contentSection ul.techList li{
+}
+
+section#skills div.contentContainer .contentSection ul.techList li {
 	min-width: 100%;
-	text-overflow: ellipsis; /* enables ellipsis */
-	white-space: nowrap; /* keeps the text in a single line */
+	text-overflow: ellipsis;
+	/* enables ellipsis */
+	white-space: nowrap;
+	/* keeps the text in a single line */
 	/* overflow: hidden; */
 	min-height: 25px;
-  }
-  section#skills div.contentContainer .contentSection ul.techList li div:nth-child(1n){
+}
+
+section#skills div.contentContainer .contentSection ul.techList li div:nth-child(1n) {
 	flex: 1;
 	max-width: 45%;
-  }
-  section#skills div.contentContainer .contentSection ul.techList li p{
+}
+
+section#skills div.contentContainer .contentSection ul.techList li p {
 	flex: 1;
-	text-overflow: ellipsis; /* enables ellipsis */
-	white-space: nowrap; /* keeps the text in a single line */
+	text-overflow: ellipsis;
+	/* enables ellipsis */
+	white-space: nowrap;
+	/* keeps the text in a single line */
 	/* overflow: hidden; */
 	min-width: 50%;
 	margin: 0;
-  }
-  section#skills div.contentContainer div:nth-child(1n).starRatemodeContainer{
+}
+
+section#skills div.contentContainer div:nth-child(1n).starRatemodeContainer {
 	padding: 0;
 	flex: 1;
-  }
-  section#skills div.contentContainer div:nth-child(1n).starRatemodeContainer p{
+}
+
+section#skills div.contentContainer div:nth-child(1n).starRatemodeContainer p {
 	flex: 2;
-  }
-  section#skills div.contentContainer div:nth-child(1n).starRatemodeContainer div.starsContainer{
-	flex: 1;
-  }
-  
-  section#skills div.contentContainer div:nth-child(1) article.contentSection{
-	 margin-top: 0px;
-  }
-  @media only screen and (min-width: 993px){
-	section#skills div.contentContainer div:nth-child(2) article.contentSection{
-	  margin-right: 10px;
+}
+
+section#skills div.contentContainer div:nth-child(1n).starRatemodeContainer div.starsContainer {
+	flex: 1.5;
+}
+
+section#skills div.contentContainer div:nth-child(1) article.contentSection {
+	margin-top: 0px;
+}
+section#skills div.contentContainer div:nth-child(1) article.contentSection:nth-child(1) {
+	padding-top: 0px;
+}
+
+/* @media only screen and (min-width: 993px) {
+	section#skills div.contentContainer div:nth-child(2) article.contentSection {
+		margin-right: 10px;
 	}
-  }
-  /* section#skills div.contentContainer div:nth-child(2) .contentSection  ul li{
+} */
+
+/* section#skills div.contentContainer div:nth-child(2) .contentSection  ul li{
 	min-width: auto;
 	padding-left: 10%;
   } */
-  section#skills div.contentContainer div:nth-child(3) mkm-star-rating{
+section#skills div.contentContainer div:nth-child(3) mkm-star-rating {
 	width: 150px;
-  }
-  section#skills div.contentContainer .contentSection div.starsContainer{
+}
+
+section#skills div.contentContainer .contentSection div.starsContainer {
 	/* width: 150px; */
 	/* min-height: 50px; */
 	margin-right: 20px;
-  }
-  section#skills div.contentContainer .contentSection div.starsContainer img{
+}
+
+section#skills div.contentContainer .contentSection div.starsContainer img {
 	width: 100%;
-  }
+}
+
+section#skills div#switchElem{
+	min-height: 30px;
+}
+
+section#skills div#skillsMode {
+	margin-bottom: 0px;
+}
+section#skills div#skillsMode p{
+	margin: 0px;
+	margin-right: 10px;
+	min-height: 30px;
+}
+
+section#skills h2{
+	margin-bottom: 0px;
+}
